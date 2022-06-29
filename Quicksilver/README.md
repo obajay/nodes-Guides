@@ -60,8 +60,6 @@
     indexer="null" && \
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.quicksilverd/config/config.toml
 
-(ВАЖНО) На этом этапе нужно воспользоваться снэпшотом
-
 #### You will need to sync using state_sync. Synchronizing from scratch will not work because of the conflict of consensus.
     SNAP_RPC1="http://node02.quicktest-1.quicksilver.zone:26657" \
     && SNAP_RPC2="http://node03.quicktest-1.quicksilver.zone:26657"
