@@ -23,6 +23,7 @@
 ## Create/recover wallet
     evmosd keys add <walletname>
     evmosd keys add <walletname> --recover
+##### when creating, do not forget to write down the seed phrase    
 ## Genesis
     wget https://archive.evmos.org/mainnet/genesis.json
     mv genesis.json ~/.evmosd/config/    
