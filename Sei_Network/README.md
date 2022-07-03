@@ -61,13 +61,11 @@ Explorer: https://sei.explorers.guru/validators
 ### set the minimum price for gas in app.toml
     sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0025usei\"/;" ~/.sei/config/app.toml
 
-### add seeds/bpeers/peers to config.toml
+### add seeds/peers to config.toml
     external_address=$(wget -qO- eth0.me)
     sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.sei/config/config.toml
     peers=""
     sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.sei/config/config.toml
-    bpeers=""
-    sed -i.bak -e "s/^bootstrap-peers *=.*/bootstrap-peers = \"$bpeers\"/" $HOME/.sei/config/config.toml
     seeds=""
     sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.sei/config/config.toml
 
@@ -75,7 +73,7 @@ Explorer: https://sei.explorers.guru/validators
     pruning="custom" && \
     pruning_keep_recent="100" && \
     pruning_keep_every="0" && \
-    pruning_interval="50" && \
+    pruning_interval="10" && \
     sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.sei/config/app.toml && \
     sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.sei/config/app.toml && \
     sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.sei/config/app.toml && \
