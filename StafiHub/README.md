@@ -87,7 +87,7 @@
     
     
 ### Generate keys
-    stafihubd keys add <YOUR_WALLET_NAME> --keyring-backend file
+    stafihubd keys add <YOUR_WALLET_NAME>
 #### You can recover your keys with --recover flag if you have mnemonic
 
 ### Faucet
