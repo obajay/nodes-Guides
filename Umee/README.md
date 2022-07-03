@@ -6,12 +6,12 @@
 
 #Go and binaries 
 
-    wget https://golang.org/dl/go1.18.1.linux-amd64.tar.gz; \
-    rm -rv /usr/local/go; \
-    tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz && \
-    rm -v go1.18.1.linux-amd64.tar.gz && \
-    echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile && \
-    source ~/.bash_profile && \
+    wget https://golang.org/dl/go1.18.1.linux-amd64.tar.gz;
+    rm -rv /usr/local/go;
+    tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz &&
+    rm -v go1.18.1.linux-amd64.tar.gz &&
+    echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile &&
+    source ~/.bash_profile &&
     go version
 
     cd $HOME 
