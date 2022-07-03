@@ -20,6 +20,9 @@
 
     evmosd init <moniker-name> --chain-id evmos_9001-2
     
+## Create/recover wallet
+    evmosd keys add <walletname>
+    evmosd keys add <walletname> --recover
 ## Genesis
     wget https://archive.evmos.org/mainnet/genesis.json
     mv genesis.json ~/.evmosd/config/    
