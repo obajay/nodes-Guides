@@ -31,23 +31,19 @@ Explorer: https://sei.explorers.guru/validators
      go version
 
 ## Node installation 
-### IMPORTANT - currently 1.0.4 needs to be loaded using snapshot or statesync
+### IMPORTANT - currently 1.0.5beta needs to be loaded using snapshot or statesync
 
 ### Installing the binaries
-
-    sudo systemctl restart seid && journalctl -u seid -f -o cat
-    sudo systemctl stop seid && \
-    sudo rm -rf $HOME/sei-chain && \
+    
     git clone https://github.com/sei-protocol/sei-chain.git && \
     cd sei-chain && \
-    git checkout 1.0.4beta && \
+    git checkout 1.0.5beta && \
     make install
 
     seid version --long | head
-### version 1.0.4beta
-#### commit: 09b267bbc7d32d3f61ab1b186f59f4bc5fea8970
-    sudo systemctl restart seid && journalctl -u seid -f -o cat
-
+### version 1.0.5beta
+#### commit: 776f64eae55e06c945f722d7ef32e3e6d4f27291
+    
 ## Initializing the node to create the necessary configuration files
     seid init <name_moniker> --chain-id sei-testnet-2
 
