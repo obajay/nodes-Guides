@@ -15,7 +15,7 @@
 ## Build
     git clone https://github.com/evmos/evmos
     cd evmos
-    git checkout v4.0.1
+    git checkout v6.0.1
     make install
 
     evmosd init <moniker-name> --chain-id evmos_9001-2
