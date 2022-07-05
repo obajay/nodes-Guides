@@ -84,7 +84,8 @@
     sudo systemctl daemon-reload
     sudo systemctl enable stafihubd
     sudo systemctl restart stafihubd
-    
+    sudo journalctl -u stafihubd -f -o cat
+
     
 ### Generate keys
     stafihubd keys add <YOUR_WALLET_NAME>
