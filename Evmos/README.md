@@ -68,8 +68,10 @@
     WantedBy=multi-user.target
     EOF
     
- [Snapshot](https://polkachu.com/tendermint_snapshots/evmos)    (optional)
-    
+ [Snapshot](https://polkachu.com/tendermint_snapshots/evmos)    (optional) \
+    or \
+ [RPC](https://nodejumper.io/evmos/sync) (optional)
+ 
 # Start
     sudo systemctl daemon-reload
     sudo systemctl enable evmosd
