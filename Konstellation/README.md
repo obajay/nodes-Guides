@@ -1,3 +1,5 @@
+[Explorer](https://www.mintscan.io/konstellation/validators)
+
 # Konstellation Mainnet guide
 
     sudo apt update && sudo apt upgrade -y
