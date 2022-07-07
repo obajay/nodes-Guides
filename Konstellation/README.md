@@ -101,7 +101,7 @@
     --commission-rate "0.07" \
     --min-self-delegation "1" \
     --details="" \
-      --identity="" \
+    --identity="" \
     --pubkey  $(knstld tendermint show-validator) \
     --moniker <moniker> \
     --fees 2000000udarc \
