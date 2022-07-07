@@ -102,7 +102,7 @@
     --details="" \
     --identity="" \
     --pubkey  $(bitsongd tendermint show-validator) \
-    --moniker <moniker>\
+    --moniker <moniker> \
     --fees 2000ubtsg \
     --chain-id bitsong-2b -y
 
