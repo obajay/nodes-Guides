@@ -92,6 +92,22 @@
     sudo systemctl restart knstld
     sudo journalctl -u knstld -f -o cat
 
+## Creating validator
+    knstld tx staking create-validator \
+    --amount 1000000udarc \
+    --from <walletName> \
+    --commission-max-change-rate "0.1" \
+    --commission-max-rate "0.2" \
+    --commission-rate "0.07" \
+    --min-self-delegation "1" \
+    --details="" \
+      --identity="" \
+    --pubkey  $(knstld tendermint show-validator) \
+    --moniker <moniker> \
+    --fees 2000000udarc \
+    --chain-id darchub -y
+
+
 
 ### Delete node
 
