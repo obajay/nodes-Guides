@@ -1,3 +1,5 @@
+[Explorer](https://www.mintscan.io/bitsong/validators)
+
 # Bitsong Mainnet guide
 
     sudo apt update && sudo apt upgrade -y
