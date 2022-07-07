@@ -97,7 +97,7 @@
     bitsongd tx staking create-validator \
     --amount 1000000ubtsg \
     --from <walletName> \
-    --commission-max-change-rate "0.01" \
+    --commission-max-change-rate "0.1" \
     --commission-max-rate "0.2" \
     --commission-rate "0.05" \
     --min-self-delegation "1" \
