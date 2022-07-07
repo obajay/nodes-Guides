@@ -89,7 +89,22 @@
     sudo systemctl restart bitsongd
     sudo journalctl -u bitsongd -f -o cat
 
+## Create validator
 
+
+    bitsongd tx staking create-validator \
+    --amount 1000000ubtsg \
+    --from <walletName> \
+    --commission-max-change-rate "0.01" \
+    --commission-max-rate "0.2" \
+    --commission-rate "0.05" \
+    --min-self-delegation "1" \
+    --details="" \
+    --identity="" \
+    --pubkey  $(bitsongd tendermint show-validator) \
+    --moniker <moniker>\
+    --fees 2000ubtsg \
+    --chain-id bitsong-2b -y
 
 ## Delete node
 
