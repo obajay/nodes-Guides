@@ -83,7 +83,6 @@
     WantedBy=multi-user.target
     EOF
 
-    Snapshot (optional)
 ## Start
 
     sudo systemctl daemon-reload
