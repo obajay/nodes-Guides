@@ -109,15 +109,16 @@
     --amount=1000000ubze \
     --pubkey=$(bzed tendermint show-validator) \
     --moniker="<moniker>" \
-    --website="<web site>" \
-    --identity="<identity>" \
-    --chain-id=beezee-1 \
-    --commission-rate="0.04" \
+    --identity="" \
+    --details="" \
+    --website="" \
+    --chain-id="beezee-1" \
+    --commission-rate="0.10" \
     --commission-max-rate="0.20" \
     --commission-max-change-rate="0.01" \
     --min-self-delegation="1" \
-    --gas="auto" \
-    --from=<walletName> -y
+    --fees 500ubze \
+    --from=<walletname> -y
 
 
 # Delete node
