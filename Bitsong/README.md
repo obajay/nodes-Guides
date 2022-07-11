@@ -37,7 +37,7 @@
 
 ## Set up the minimum gas price $HOME/.bitsongd/config/app.toml as well as seed and peers
 
-    sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.001btsg\"/;" ~/.bitsongd/config/app.toml
+    sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.001ubtsg\"/;" ~/.bitsongd/config/app.toml
 
     external_address=$(wget -qO- eth0.me)
     sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.bitsongd/config/config.toml
