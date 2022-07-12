@@ -41,17 +41,17 @@ Explorer: https://sei.explorers.guru/validators
     make install
 
     seid version --long | head
-	 version 1.0.6
+	 version 1.0.6beta
     
 ## Initializing the node to create the necessary configuration files
     seid init <name_moniker> --chain-id atlantic-1
 
 ## Downloading Genesis
-    wget -O $HOME/.sei/config/genesis.json "https://raw.githubusercontent.com/sei-protocol/testnet/main/sei-testnet-2/genesis.json"
+    wget -O $HOME/.sei/config/genesis.json "https://raw.githubusercontent.com/sei-protocol/testnet/master/sei-incentivized-testnet/genesis.json"
 
 ### Let's check the genesis
     sha256sum ~/.sei/config/genesis.json
-#### aec481191276a4c5ada2c3b86ac6c8aad0cea5c4aa6440314470a2217520e2cc
+#### 4ae7193446b53d78bb77cab1693a6ddf6c1fe58c9693ed151e71f43956fdb3f7
 
 ## Download addrbook
     wget -O $HOME/.sei/config/addrbook.json "https://raw.githubusercontent.com/sei-protocol/testnet/main/sei-testnet-2/addrbook.json"
@@ -63,7 +63,7 @@ Explorer: https://sei.explorers.guru/validators
 ### add seeds/peers to config.toml
     external_address=$(wget -qO- eth0.me)
     sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.sei/config/config.toml
-    peers=""
+    peers="a37d65086e78865929ccb7388146fb93664223f7@18.144.13.149:26656,8ff4bd654d7b892f33af5a30ada7d8239d6f467b@91.223.3.190:51656,c4e8c9b1005fe6459a922f232dd9988f93c71222@65.108.227.133:26656"
     sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.sei/config/config.toml
     seeds=""
     sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.sei/config/config.toml
