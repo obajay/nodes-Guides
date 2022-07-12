@@ -37,7 +37,7 @@ Explorer: https://sei.explorers.guru/validators
     
     git clone https://github.com/sei-protocol/sei-chain.git && \
     cd sei-chain && \
-    git checkout 1.0.6 && \
+    git checkout 1.0.6beta && \
     make install
 
     seid version --long | head
