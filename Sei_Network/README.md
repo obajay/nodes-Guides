@@ -37,12 +37,11 @@ Explorer: https://sei.explorers.guru/validators
     
     git clone https://github.com/sei-protocol/sei-chain.git && \
     cd sei-chain && \
-    git checkout 1.0.5beta && \
+    git checkout 1.0.6 && \
     make install
 
     seid version --long | head
-### version 1.0.5beta
-#### commit: 776f64eae55e06c945f722d7ef32e3e6d4f27291
+	 version 1.0.6
     
 ## Initializing the node to create the necessary configuration files
     seid init <name_moniker> --chain-id sei-testnet-2
