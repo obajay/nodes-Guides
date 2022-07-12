@@ -19,7 +19,7 @@
 
     git clone https://github.com/bitsongofficial/go-bitsong/
     cd go-bitsong
-    git checkout v0.10.0
+    git checkout v0.11.0
     make install
 
     bitsongd init <moniker-name> --chain-id bitsong-2b
