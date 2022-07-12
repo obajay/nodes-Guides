@@ -4,7 +4,7 @@
 
 ## Testnet details
 
-Network Chain ID: sei-testnet-2 \
+Network Chain ID: atlantic-1 \
 Denom: usei \
 official instruction: https://docs.seinetwork.io/nodes-and-validators/joining-testnets \
 Explorer: https://sei.explorers.guru/validators 
@@ -44,7 +44,7 @@ Explorer: https://sei.explorers.guru/validators
 	 version 1.0.6
     
 ## Initializing the node to create the necessary configuration files
-    seid init <name_moniker> --chain-id sei-testnet-2
+    seid init <name_moniker> --chain-id atlantic-1
 
 ## Downloading Genesis
     wget -O $HOME/.sei/config/genesis.json "https://raw.githubusercontent.com/sei-protocol/testnet/main/sei-testnet-2/genesis.json"
@@ -58,7 +58,7 @@ Explorer: https://sei.explorers.guru/validators
 
 ## Set up node configuration
 ### set the minimum price for gas in app.toml
-    sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0025usei\"/;" ~/.sei/config/app.toml
+    sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0usei\"/;" ~/.sei/config/app.toml
 
 ### add seeds/peers to config.toml
     external_address=$(wget -qO- eth0.me)
@@ -116,7 +116,7 @@ We take test coins in discord
 
 ## Create a validator
     seid tx staking create-validator \
-    --chain-id sei-testnet-2 \
+    --chain-id atlantic-1 \
     --commission-rate 0.05 \
     --commission-max-rate 0.2 \
     --commission-max-change-rate 0.1 \
