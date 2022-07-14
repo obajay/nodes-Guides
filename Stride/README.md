@@ -1,3 +1,4 @@
+[EXPLORER](https://poolparty.stride.zone/STRIDE/staking)
 # Guide Stride   14.07.22
 
     sudo apt update && sudo apt upgrade -y && \
