@@ -18,7 +18,7 @@
     cd stride
     git checkout c53f6c562d9d3e098aab5c27303f41ee055572cb
     sh ./scripts-local/build.sh -s $HOME/go/bin
-    strided version
+    
 
 ## Initialisation
     strided init <moniker> --chain-id STRIDE-1
