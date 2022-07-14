@@ -21,7 +21,9 @@
     cd go-bitsong
     git checkout v0.11.0
     make install
-
+    bitsongd version
+    0.11.0
+    
     bitsongd init <moniker-name> --chain-id bitsong-2b
 
 ## Create/recover wallet
