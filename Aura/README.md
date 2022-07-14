@@ -137,6 +137,7 @@
     rm /etc/systemd/system/aurad.service && \
     sudo systemctl daemon-reload && \
     cd $HOME && \
-    rm -rf .aura aura && \
+    rm -rf .aura && \
+    rm -rf aura && \
     rm -rf $(which aurad)
 
