@@ -30,7 +30,7 @@
 
 ## Genesis
 
-        wget -O $HOME/.memed/config/genesis.json "https://raw.githubusercontent.com/memecosmos/mainnet/main/meme-1/genesis.json"
+    wget -O $HOME/.memed/config/genesis.json "https://raw.githubusercontent.com/memecosmos/mainnet/main/meme-1/genesis.json"
 
 ## Download addrbook
 
