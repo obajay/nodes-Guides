@@ -17,12 +17,12 @@
     go version
 
 ### Node installation
-    git clone https://github.com/ingenuity-build/quicksilver.git --branch v0.4.0
+    git clone https://github.com/ingenuity-build/quicksilver.git --branch v0.4.2
     cd quicksilver
     make install
     quicksilverd version
-#### version: v0.4.0
-#### commit: 2b3d79696a06f3902105909849ce245ce917ddb7
+#### version: v0.4.2
+
 
 ### Initialize the node
     quicksilverd init <name_node> --chain-id killerqueen-1
