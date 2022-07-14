@@ -17,6 +17,8 @@
     cd evmos
     git checkout v6.0.1
     make install
+    evmosd version
+    6.0.1
 
     evmosd init <moniker-name> --chain-id evmos_9001-2
     
