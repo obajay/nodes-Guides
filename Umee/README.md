@@ -4,7 +4,7 @@
     
     sudo apt install make clang pkg-config libssl-dev build-essential git jq ncdu bsdmainutils htop net-tools lsof -y < "/dev/null"
 
-#Go and binaries 
+## Go and binaries 
 
     wget https://golang.org/dl/go1.18.1.linux-amd64.tar.gz;
     rm -rv /usr/local/go;
