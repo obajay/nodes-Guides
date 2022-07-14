@@ -21,7 +21,9 @@
     cd bze
     git checkout v5.0.1
     make install
-
+    bzed version
+    5.0.1
+    
     bzed init <moniker> --chain-id beezee-1
     bzed config chain-id beezee-1
     
