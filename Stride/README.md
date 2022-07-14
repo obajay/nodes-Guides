@@ -84,7 +84,7 @@
     WantedBy=multi-user.target
     EOF
 
-# Start node
+# Start node (one command)
     sudo systemctl daemon-reload && \
     sudo systemctl enable strided && \
     sudo systemctl restart strided && \
@@ -109,7 +109,7 @@
     -y
 
 
-### Delete node
+### Delete node (one command)
     sudo systemctl stop strided && \
     sudo systemctl disable strided && \
     rm /etc/systemd/system/strided.service && \
