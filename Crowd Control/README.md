@@ -21,7 +21,7 @@
     version: latest-322f785e
     commit: 322f785e5d52844653c19bd1f6002d7148b7dd29
     
-    Cardchain init <name_moniker> --chain-id Cardchain
+    Cardchain init <moniker> --chain-id Cardchain
 
 ## Create/recover wallet
 
