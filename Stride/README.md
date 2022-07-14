@@ -1,5 +1,5 @@
 [EXPLORER](https://poolparty.stride.zone/STRIDE/staking)
-# Guide Stride   14.07.22
+# Guide Stride 
 
     sudo apt update && sudo apt upgrade -y && \
     sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
@@ -14,7 +14,7 @@
     go version
 
 
-# Binary
+# Binary   14.07.22
     git clone https://github.com/Stride-Labs/stride.git
     cd stride
     git checkout c53f6c562d9d3e098aab5c27303f41ee055572cb
