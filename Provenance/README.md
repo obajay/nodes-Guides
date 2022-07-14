@@ -3,7 +3,8 @@
 # Provenance mainnet guide
 
     sudo apt update && sudo apt upgrade -y
-    sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
+    sudo apt install curl build-essential git wget jq make gcc tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip fail2ban libleveldb-dev -y
+
 
 ## GO 18.1 (one command)
 
