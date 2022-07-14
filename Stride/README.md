@@ -20,10 +20,10 @@
     sh ./scripts-local/build.sh -s $HOME/go/bin
     strided version
 
-# Initialisation | ONE COMMAND
+## Initialisation
     strided init <moniker> --chain-id STRIDE-1
 
-# Add wallet
+## Add wallet
     strided keys add <walletName>
     strided keys add <walletName> --recover
 
