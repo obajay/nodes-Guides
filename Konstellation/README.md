@@ -20,7 +20,9 @@
     git clone -b v0.5.0 https://github.com/konstellation/konstellation
     cd konstellation
     make install
-
+    knstld version
+    0.5.0
+    
     knstld init <moniker-name> --chain-id darchub
 
 ## Create/recover wallet
