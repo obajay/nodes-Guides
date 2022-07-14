@@ -1,4 +1,4 @@
-# Bitsong Mainnet guide
+# Cardchain testnet guide
 
     sudo apt update && sudo apt upgrade -y
     sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
@@ -13,7 +13,7 @@
     source ~/.bash_profile && \
     go version
 
-# Build
+# Build 13.07.22
 
     curl https://get.ignite.com/DecentralCardGame/Cardchain@latest! | sudo bash
     
