@@ -82,6 +82,8 @@
 
 ## State sync (optional)
     a9fac0534bd6853f5810fdc692564967bd01b1fe@rpc-1.getbze.com:26656
+    peers="a9fac0534bd6853f5810fdc692564967bd01b1fe@rpc-1.getbze.com:26656"
+    sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.bze/config/config.toml
 
     SNAP_RPC=https://rpc-2.getbze.com:443
 
