@@ -89,7 +89,7 @@
     sudo systemctl restart teritorid
     sudo journalctl -u teritorid -f -o cat
 
-[DICSORD FAUCET](https://discord.gg/zzJEmR8nhr)
+[DISCORD FAUCET](https://discord.gg/zzJEmR8nhr)
 
 ## Create validator
     teritorid tx staking create-validator \
