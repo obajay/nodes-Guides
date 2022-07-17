@@ -14,7 +14,7 @@
     source ~/.bash_profile && \
     go version
 
-# Build 11.07.22
+# Build 11.05.22
 
 	git clone https://github.com/rizon-world/rizon
 	cd rizon
