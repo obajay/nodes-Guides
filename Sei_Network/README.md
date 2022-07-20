@@ -35,8 +35,8 @@ Explorer: https://sei.explorers.guru/validators
 
 ### Installing the binaries (one command)
     
-    git clone https://github.com/sei-protocol/sei-chain.git && \
-    cd sei-chain && \
+    git clone https://github.com/sei-protocol/sei-chain.git
+    cd sei-chain
     git checkout 1.0.6beta-val-count-fix
     make install
     seid version --long | head
