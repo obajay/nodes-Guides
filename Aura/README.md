@@ -108,10 +108,10 @@
 
 ## Start
 
-    sudo systemctl daemon-reload && \ 
+    sudo systemctl daemon-reload && \
     sudo systemctl enable aurad && \
-    sudo systemctl restart aurad && \
-    sudo journalctl -u aurad -f -o cat
+    sudo systemctl restart aurad && sudo journalctl -u aurad -f -o cat
+
 
 ## Create validator
 
