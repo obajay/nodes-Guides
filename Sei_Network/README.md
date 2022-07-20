@@ -33,10 +33,12 @@ Explorer: https://sei.explorers.guru/validators
 ## Node installation 
 ### IMPORTANT - currently 1.0.5beta needs to be loaded using snapshot or statesync
 
-### Installing the binaries (one command)
+### Installing the binaries
     
     git clone https://github.com/sei-protocol/sei-chain.git
     cd sei-chain
+    sudo systemctl stop seid
+    git checkout master && git pull
     git checkout 1.0.6beta-val-count-fix
     make install
     seid version --long | head
