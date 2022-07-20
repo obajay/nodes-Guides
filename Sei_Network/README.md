@@ -37,11 +37,12 @@ Explorer: https://sei.explorers.guru/validators
     
     git clone https://github.com/sei-protocol/sei-chain.git && \
     cd sei-chain && \
-    git checkout 1.0.6beta && \
+    git checkout 1.0.6beta-val-count-fix
     make install
-
     seid version --long | head
-	 version 1.0.6beta
+		*version: 1.0.6beta-val-count-fix*
+		*commit: 79f0c2759fbe5e6b0b470b1581ce0bf3c47e9c06*
+
     
 ## Initializing the node to create the necessary configuration files
     seid init <name_moniker> --chain-id atlantic-1
