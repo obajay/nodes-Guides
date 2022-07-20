@@ -28,6 +28,18 @@
     
     provenanced init <moniker> --chain-id pio-mainnet-1
 
+## UPD on block 6512577 (22.07.22) mango - v1.11.1
+    export PIO_HOME=~/.provenanced
+    sudo systemctl stop provenanced && cd provenance
+    git pull
+    git checkout tags/v1.11.1 -b v1.11.1
+    make clean
+    make install
+
+    provenanced version
+      *version: v1.11.1*
+    sudo systemctl restart provenanced && journalctl -u provenanced -f -o cat
+
 ## Create/recover wallet
 
     provenanced keys add <walletname>
