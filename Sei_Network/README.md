@@ -37,7 +37,6 @@ Explorer: https://sei.explorers.guru/validators
     
     git clone https://github.com/sei-protocol/sei-chain.git
     cd sei-chain
-    sudo systemctl stop seid
     git checkout master && git pull
     git checkout 1.0.6beta-val-count-fix
     make install
