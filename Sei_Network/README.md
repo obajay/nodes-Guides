@@ -55,10 +55,6 @@ Explorer: https://sei.explorers.guru/validators
     sha256sum ~/.sei/config/genesis.json
 #### 4ae7193446b53d78bb77cab1693a6ddf6c1fe58c9693ed151e71f43956fdb3f7
 
-## Downloading addrbook
-    wget -O $HOME/.sei/config/addrbook.json "https://github.com/sei-protocol/testnet/blob/main/sei-incentivized-testnet/addrbook.json"
-
-
 ## Set up node configuration
 ### set the minimum price for gas in app.toml
     sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0usei\"/;" ~/.sei/config/app.toml
