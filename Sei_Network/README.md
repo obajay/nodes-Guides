@@ -102,7 +102,7 @@ Explorer: https://sei.explorers.guru/validators
     [Install]
     WantedBy=multi-user.target
     EOF
-
+## START
     sudo systemctl daemon-reload && \
     sudo systemctl enable seid && \
     sudo systemctl restart seid && sudo journalctl -u seid -f -o cat
