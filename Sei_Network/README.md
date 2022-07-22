@@ -33,7 +33,7 @@ Explorer: https://sei.explorers.guru/validators
 ## Node installation 
 ### IMPORTANT - currently 1.0.5beta needs to be loaded using snapshot or statesync
 
-### Installing the binaries
+### Installing the binaries (22.07.22)
     
     git clone https://github.com/sei-protocol/sei-chain.git
     cd sei-chain
