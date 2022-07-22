@@ -38,11 +38,11 @@ Explorer: https://sei.explorers.guru/validators
     git clone https://github.com/sei-protocol/sei-chain.git
     cd sei-chain
     git checkout master && git pull
-    git checkout 1.0.6beta-val-count-fix
+    git checkout 1.0.7beta-postfix
     make install
     seid version --long | head
-		*version: 1.0.6beta-val-count-fix*
-		*commit: 79f0c2759fbe5e6b0b470b1581ce0bf3c47e9c06*
+		*version: 1.0.7beta-postfix*
+		*commit: 6a8d8798c75fd9e2136e599ecc97dd541b0474b4*
 
     
 ## Initializing the node to create the necessary configuration files
