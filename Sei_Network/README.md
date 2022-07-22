@@ -41,8 +41,8 @@ Explorer: https://sei.explorers.guru/validators
     git checkout 1.0.7beta-postfix
     make install
     seid version --long | head
-		*version: 1.0.7beta-postfix*
-		*commit: 6a8d8798c75fd9e2136e599ecc97dd541b0474b4*
++ version: 1.0.7beta-postfix
++ commit: 6a8d8798c75fd9e2136e599ecc97dd541b0474b4*
 
     
 ## Initializing the node to create the necessary configuration files
@@ -52,8 +52,8 @@ Explorer: https://sei.explorers.guru/validators
     wget -O $HOME/.sei/config/genesis.json "https://raw.githubusercontent.com/sei-protocol/testnet/master/sei-incentivized-testnet/genesis.json"
 
 ### Let's check the genesis
-    sha256sum ~/.sei/config/genesis.json
-#### 4ae7193446b53d78bb77cab1693a6ddf6c1fe58c9693ed151e71f43956fdb3f7
+`sha256sum ~/.sei/config/genesis.json`
++ 4ae7193446b53d78bb77cab1693a6ddf6c1fe58c9693ed151e71f43956fdb3f7
 
 ## Set up node configuration
 ### set the minimum price for gas in app.toml
