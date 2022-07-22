@@ -31,7 +31,7 @@ Explorer: https://sei.explorers.guru/validators
      go version
 
 ## Node installation 
-### IMPORTANT - currently 1.0.5beta needs to be loaded using snapshot or statesync
+### IMPORTANT - currently 1.0.7beta needs to be loaded using snapshot or statesync
 
 ### Installing the binaries (22.07.22)
     
