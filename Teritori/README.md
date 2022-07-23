@@ -7,7 +7,7 @@
 
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
-| Mainnet   |   2| 4GB  | 100GB    |
+| Testnet   |   2| 4GB  | 100GB    |
 
 ### Preparing the server
 
