@@ -103,9 +103,9 @@
 
 ## Start
 
-    sudo systemctl daemon-reload && \ 
-    sudo systemctl enable Cardchain && \
-    sudo systemctl restart Cardchain && \
+    sudo systemctl daemon-reload
+    sudo systemctl enable Cardchain
+    sudo systemctl restart Cardchain
     sudo journalctl -u Cardchain -f -o cat
 
 ## Create validator
