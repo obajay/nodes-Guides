@@ -1,5 +1,18 @@
-[EXPLORER](https://www.mintscan.io/rizon/validators)
 # Rizon mainnet guide
+
+![rizon (2)](https://user-images.githubusercontent.com/44331529/180607172-a7f5cf1f-d1e7-4e9c-b3a0-a51871c2992d.png)
+![rizon (1)](https://user-images.githubusercontent.com/44331529/180607173-f918aff4-499b-4996-bc2c-3f1fd5bc3d6f.png)
+
+[Website](https://rizon.world/) \
+[EXPLORER](https://www.mintscan.io/rizon/validators)
+=
+- **Minimum hardware requirements**:
+
+| Node Type |CPU | RAM  | Storage  | 
+|-----------|----|------|----------|
+| Mainnet   |   4| 8GB  | 200GB    |
+
+### Preparing the server
 
     sudo apt update && sudo apt upgrade -y
     sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
