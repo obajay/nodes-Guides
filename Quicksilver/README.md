@@ -1,3 +1,7 @@
+# TESTNET ENDED  15.07.22
+
+
+
 ### Updating the repositories  
 
     sudo apt update && sudo apt upgrade -y
