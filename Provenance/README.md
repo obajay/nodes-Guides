@@ -1,6 +1,18 @@
-[EXPLORER](https://www.mintscan.io/provenance/validators)
-
 # Provenance mainnet guide
+![ppr (2)](https://user-images.githubusercontent.com/44331529/180606866-29524746-c733-43da-9af1-b6acf2a97eb3.png)
+![ppr (1)](https://user-images.githubusercontent.com/44331529/180606868-07bdcdb1-ba8d-4b84-9cf0-23db6b13916c.png)
+
+
+[Website](https://provenance.io/) \
+[EXPLORER](https://www.mintscan.io/provenance/validators)
+=
+- **Minimum hardware requirements**:
+
+| Node Type |CPU | RAM  | Storage  | 
+|-----------|----|------|----------|
+| Mainnet   |   4| 8GB  | 250GB    |
+
+### Preparing the server
 
     sudo apt update && sudo apt upgrade -y
     sudo apt install curl build-essential git wget jq make gcc tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip fail2ban libleveldb-dev -y
@@ -23,10 +35,10 @@
     git checkout tags/v1.11.1 -b v1.11.1
     make clean
     make install
-    provenanced version
-          *version v1.11.1*
+`provenanced version`
+- version v1.11.1
     
-    provenanced init <moniker> --chain-id pio-mainnet-1
+      provenanced init <moniker> --chain-id pio-mainnet-1
 
 ## Create/recover wallet
 
