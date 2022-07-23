@@ -1,6 +1,16 @@
+# Celestia testnet guide
+![Celestia](https://user-images.githubusercontent.com/44331529/180597147-c00ebd04-de42-476e-bc8c-1142479a839b.png)
+
+
 [EXPLORER](https://celestia.explorers.guru/validators)
 ===
-# Celestia testnet guide
+- **Minimum hardware requirements**:
+
+| Network   |CPU | RAM  | Storage  | 
+|-----------|----|------|----------|
+| Mamaki    |   4| 8GB  | 160GB    |
+
+### Preparing the server
 
     sudo apt update && sudo apt upgrade -y
     sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
