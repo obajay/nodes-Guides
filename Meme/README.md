@@ -1,5 +1,17 @@
-[EXPLORER](https://ping.pub/meme/staking)
 # MEME mainnet guide
+![mm (2)](https://user-images.githubusercontent.com/44331529/180606614-565409bd-fa7e-4e50-990d-b2e47614d172.png)
+![mm (1)](https://user-images.githubusercontent.com/44331529/180606616-069f9ce4-ffc4-4c0b-ac08-19e168054991.png)
+
+
+[EXPLORER](https://ping.pub/meme/staking)
+=
+- **Minimum hardware requirements**:
+
+| Node Type |CPU | RAM  | Storage  | 
+|-----------|----|------|----------|
+| Mainnet   |   4| 8GB  | 200GB    |
+
+### Preparing the server
 
     sudo apt update && sudo apt upgrade -y
     sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
