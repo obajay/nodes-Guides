@@ -1,6 +1,18 @@
-[Explorer](https://www.mintscan.io/konstellation/validators)
-
 # Konstellation Mainnet guide
+![Konstel (1)](https://user-images.githubusercontent.com/44331529/180598012-bab9dd14-99d9-4db4-b6ca-45644f0ee50a.png)
+![Konstel (2)](https://user-images.githubusercontent.com/44331529/180598013-4f5b4103-c7cb-4bf4-892f-ff88ff0034af.png)
+
+
+[Website](https://konstellation.tech/) \
+[Explorer](https://www.mintscan.io/konstellation/validators)
+=
+- **Minimum hardware requirements**:
+
+| Network   |CPU | RAM  | Storage  | 
+|-----------|----|------|----------|
+| Mainnet   |  4 | 8GB  |  160GB   |
+
+### Preparing the server
 
     sudo apt update && sudo apt upgrade -y
     sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
