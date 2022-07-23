@@ -121,6 +121,8 @@
     rm /etc/systemd/system/Cardchain.service && \
     sudo systemctl daemon-reload && \
     cd $HOME && \
-    rm -rf .Cardchain cd Cardchain && \
+    rm -rf .Cardchain 
+    rm -rf Cardchain && \
+    rm -rf Tetnet1 && \
     rm -rf $(which Cardchain)
 
