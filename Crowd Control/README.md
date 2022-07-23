@@ -8,7 +8,7 @@
 
 | Network   |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
-| Mamaki    |   2| 4GB  | 100GB    |
+| Testnet   |   2| 4GB  | 100GB    |
 
 ### Preparing the server
 
