@@ -25,15 +25,15 @@
     source ~/.bash_profile && \
     go version
     
-## Build
+## Build    (16.07.22)
     git clone https://github.com/evmos/evmos
     cd evmos
-    git checkout v6.0.1
+    git checkout v6.0.2
     make install
-    evmosd version
-    6.0.1
+`evmosd version`
++ 6.0.2
 
-    evmosd init <moniker-name> --chain-id evmos_9001-2
+      evmosd init <moniker-name> --chain-id evmos_9001-2
     
 ## Create/recover wallet
     evmosd keys add <walletname>
