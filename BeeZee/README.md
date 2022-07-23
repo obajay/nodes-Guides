@@ -1,4 +1,14 @@
+![Beezee](https://user-images.githubusercontent.com/44331529/180596395-845e85eb-ed01-4bca-ae94-90bdbfd6e5be.png)
+
+
 [Explorer](https://explorer.erialos.me/beezee/staking)
+=
+
+- **Minimum hardware requirements**:
+
+| Node Type |CPU | RAM  | Storage  | 
+|-----------|----|------|----------|
+| Mainnet   |   4| 8GB  | 160GB    |
 
 # BeeZee Mainnet guide
 
