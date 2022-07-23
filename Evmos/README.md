@@ -2,7 +2,7 @@
 ![Evmos (1)](https://user-images.githubusercontent.com/44331529/180597649-e0fdcf22-9c86-4c7a-9133-af576fc7631d.png)
 ![Evmos (2)](https://user-images.githubusercontent.com/44331529/180597656-9b765fb8-ef2c-41cc-977f-cdc7c51a6c3a.png)
 
-[Website](https://evmos.org/)
+[Website](https://evmos.org/) \
 [EXPLORER](https://www.mintscan.io/evmos/validators)
 =
 - **Recommended hardware requirements**:
