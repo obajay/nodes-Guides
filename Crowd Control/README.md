@@ -56,7 +56,7 @@
     external_address=$(wget -qO- eth0.me)
     sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.Cardchain/config/config.toml
 
-    peers="a506820ea90c5b0ddb9005ef720a121e9f6bbaeb@45.136.28.158:26658,407fd08d831eaec4be840bf762740a72c5c48ea6@159.69.11.174:36656"
+    peers="61f05a01167b1aec59275f74c3d7c3dc7e9388d4@45.136.28.158:26658"
     sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.Cardchain/config/config.toml
 
     #bpeers=""
