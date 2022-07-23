@@ -1,5 +1,17 @@
 # Crowd Control testnet guide
 
+![Crowd Control](https://user-images.githubusercontent.com/44331529/180597315-e25b1929-8973-4149-b2c6-b9086c1787bd.png)
+
+[EXPLORER](https://explorer.theamsolutions.info/Cardchain/staking)
+=
+- **Minimum hardware requirements**:
+
+| Network   |CPU | RAM  | Storage  | 
+|-----------|----|------|----------|
+| Mamaki    |   2| 4GB  | 100GB    |
+
+### Preparing the server
+
     sudo apt update && sudo apt upgrade -y
     sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 
