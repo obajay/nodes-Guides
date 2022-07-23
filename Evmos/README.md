@@ -1,4 +1,17 @@
 # Evmos Mainnet guide
+![Evmos (1)](https://user-images.githubusercontent.com/44331529/180597649-e0fdcf22-9c86-4c7a-9133-af576fc7631d.png)
+![Evmos (2)](https://user-images.githubusercontent.com/44331529/180597656-9b765fb8-ef2c-41cc-977f-cdc7c51a6c3a.png)
+
+
+[EXPLORER](https://www.mintscan.io/evmos/validators)
+=
+- **Recommended hardware requirements**:
+
+| Network   |CPU | RAM  | Storage  | 
+|-----------|----|------|----------|
+| Mainnet   |  16| 128GB| 2TB SSD/NVMe |
+
+### Preparing the server
 
     sudo apt update && sudo apt upgrade -y && \
     sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
