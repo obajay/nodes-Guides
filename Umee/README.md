@@ -1,7 +1,17 @@
 # Umee mainnet guide
+![изображение](https://user-images.githubusercontent.com/44331529/180614842-60138156-dcfd-4dce-9ff2-c89fcc5c38dc.png)
 
+[EXPLORER 1](https://umee.explorers.guru/validators) \
+[EXPLORER 2](https://www.mintscan.io/umee/validators)
+=
+- **Recommended hardware requirements**:
+
+| Node Type |CPU | RAM  | Storage  | 
+|-----------|----|------|----------|
+| Mainnet   |   8| 16GB  | 500GB    |
+
+### Preparing the server
     sudo apt update
-    
     sudo apt install make clang pkg-config libssl-dev build-essential git jq ncdu bsdmainutils htop net-tools lsof -y < "/dev/null"
 
 ## Go and binaries 
