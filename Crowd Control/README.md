@@ -25,15 +25,16 @@
     source ~/.bash_profile && \
     go version
 
-# Build 13.07.22
+# Build 23.07.22
 
     curl https://get.ignite.com/DecentralCardGame/Cardchain@latest! | sudo bash
+    sudo apt-get install jq
+`Cardchain version --long | head`
++ version: latest-bf2b2b7b
++ commit: bf2b2b7b07a9fd32ae68f9b72f1d83f608735b5b
     
-    Cardchain version --long | head
-    version: latest-322f785e
-    commit: 322f785e5d52844653c19bd1f6002d7148b7dd29
     
-    Cardchain init <moniker> --chain-id Cardchain
+      Cardchain init <moniker> --chain-id Cardchain
 
 ## Create/recover wallet
 
@@ -58,9 +59,6 @@
 
     peers="61f05a01167b1aec59275f74c3d7c3dc7e9388d4@45.136.28.158:26658"
     sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.Cardchain/config/config.toml
-
-    #bpeers=""
-    #sed -i.bak -e "s/^bootstrap-peers *=.*/bootstrap-peers = \"$bpeers\"/" $HOME/.Cardchain/config/config.toml
 
     seeds=""
     sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.Cardchain/config/config.toml
