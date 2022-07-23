@@ -107,7 +107,6 @@ You can ask for tokens in the #faucet Discord channel after synchronization \
 
     stafihubd tx staking create-validator -y --amount=1000000ufis --pubkey=$(stafihubd tendermint show-validator) --moniker=<YOUR_NODE_NAME> --commission-rate=0.10 --commission-max-rate=0.20 --commission-max-change-rate=0.1 --min-self-delegation=1 --from=<YOUR_WALLET_NAME> --chain-id=stafihub-public-testnet-3 --gas-prices=0.025ufis
 
-[Explorer](https://testnet-explorer.stafihub.io/stafi-hub-testnet/staking)
 
 
     
