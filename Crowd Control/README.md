@@ -123,6 +123,6 @@
     cd $HOME && \
     rm -rf .Cardchain 
     rm -rf Cardchain && \
-    rm -rf Tetnet1 && \
+    rm -rf Testnet1 && \
     rm -rf $(which Cardchain)
 
