@@ -1,7 +1,18 @@
+# Kyve testnet guide
+![Kyve (2)](https://user-images.githubusercontent.com/44331529/180600823-b7f4a17d-c213-49b5-a1b9-cbe2e3b630e2.png)
+![Kyve (1)](https://user-images.githubusercontent.com/44331529/180600827-c8beffd5-dcb3-4ded-a9d6-8f9aa6c0859f.png)
+
 
 [EXPLORER 1](https://explorer.kyve.network/korellia/staking) \
 [EXPLORER 2](https://kyve.explorers.guru/validators)
-# Kyve testnet guide
+=
+- **Minimum hardware requirements**:
+
+| Node Type |CPU | RAM  | Storage  | 
+|-----------|----|------|----------|
+| korellia  |   4| 8GB  | 160GB    |
+
+### Preparing the server
 
     sudo apt update && sudo apt upgrade -y
     sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
