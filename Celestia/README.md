@@ -39,6 +39,10 @@
 `sha256sum ~/.celestia-app/config/genesis.json`
 + 48747645055290a91a2671d51da399e0921fea93aa1eb0d2a54bab5c43e8a5aa
 
+## Download addrbook
+
+    wget -O $HOME/.celestia-app/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Celestia/addrbook.json"
+
 ## Peers/Seeds/Min-Gas and etc
 
     sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0utia\"/;" ~/.celestia-app/config/app.toml
