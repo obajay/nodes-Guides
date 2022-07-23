@@ -1,7 +1,16 @@
+# Uptick testnet guide
+![Uptick](https://user-images.githubusercontent.com/44331529/180614523-9a7e76e9-9243-4f38-8938-1cdaa13e2cf6.png)
+
 
 [EXPLORER](https://explorer.testnet.uptick.network/uptick-network-testnet/staking)
+=
+- **Minimum hardware requirements**:
 
-# Uptick testnet guide
+| Node Type |CPU | RAM  | Storage  | 
+|-----------|----|------|----------|
+| Mainnet   |   2| 4GB  | 100GB    |
+
+### Preparing the server
 
     sudo apt update && sudo apt upgrade -y
     sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
