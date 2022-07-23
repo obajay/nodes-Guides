@@ -1,3 +1,5 @@
+# BeeZee Mainnet guide
+
 ![Beezee](https://user-images.githubusercontent.com/44331529/180596395-845e85eb-ed01-4bca-ae94-90bdbfd6e5be.png)
 
 
@@ -10,7 +12,7 @@
 |-----------|----|------|----------|
 | Mainnet   |   4| 8GB  | 160GB    |
 
-# BeeZee Mainnet guide
+# Prepare server
 
     sudo apt update && sudo apt upgrade -y && \
     sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
