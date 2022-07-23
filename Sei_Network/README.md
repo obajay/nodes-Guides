@@ -1,13 +1,23 @@
 # Guide install node - Sei_Network
 
+![sei](https://user-images.githubusercontent.com/44331529/180607309-cc8df238-af95-451b-b99d-d858361aac51.png)
 
 
+[EXPLORER 1](https://sei.explorers.guru/validators) \
+[EXPLORER 2](https://explorer.ericet.xyz/sei/staking)
+=
 ## Testnet details
 
 Network Chain ID: atlantic-1 \
 Denom: usei \
 official instruction: https://docs.seinetwork.io/nodes-and-validators/joining-testnets \
 Explorer: https://sei.explorers.guru/validators 
+
+- **Minimum hardware requirements**:
+
+| Node Type |CPU | RAM  | Storage  | 
+|-----------|----|------|----------|
+| Atlantic-1|   4| 8GB  | 150GB    |
 
 ## Server preparation
 ### Updating the repositories
