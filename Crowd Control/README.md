@@ -29,11 +29,10 @@
 
     curl https://get.ignite.com/DecentralCardGame/Cardchain@latest! | sudo bash
     sudo apt-get install jq
-    sudo mv /usr/local/bin/Cardchain /root/go/bin/
+    
 `Cardchain version --long | head`
 + version: latest-bf2b2b7b
 + commit: bf2b2b7b07a9fd32ae68f9b72f1d83f608735b5b
-    
     
       Cardchain init <moniker> --chain-id Cardchain
 
