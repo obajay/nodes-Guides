@@ -1,5 +1,15 @@
-[EXPLORER](https://poolparty.stride.zone/STRIDE/staking)
 # Guide Stride 
+![stride](https://user-images.githubusercontent.com/44331529/180614293-57dff376-2d34-4480-803a-e8262bf37fdd.png)
+
+
+[EXPLORER](https://poolparty.stride.zone/STRIDE/staking)
+=
+- **Minimum hardware requirements**:
+
+| Node Type |CPU | RAM  | Storage  | 
+|-----------|----|------|----------|
+| Testnet   |   2| 4GB  | 100GB    |
+### Preparing the server
 
     sudo apt update && sudo apt upgrade -y && \
     sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
