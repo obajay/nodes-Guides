@@ -42,8 +42,8 @@
     cd $HOME/.stride/config
     wget -O genesis.json "https://raw.githubusercontent.com/Stride-Labs/testnet/main/poolparty/genesis.json"
 
-    sha256sum genesis.json
-    5d04857b29f223cc080b41fc3a8d0877d9ea820618943f988fccf6b9b79be17f  genesis.json
+`sha256sum genesis.json`
+- d6204cd1e90e74bb29e9e0637010829738fa5765869288aa29a12ed83e2847ea  genesis.json
 
 ### Pruning (optional)
     pruning="custom" && \
