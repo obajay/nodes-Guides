@@ -23,7 +23,7 @@
     source ~/.bash_profile && \
     go version
 
-### If the old network (STRIDE-1) was installed - remove the past components and continue according to the instructions
+### If the old network (STRIDE-1) was installed - remove the past components and continue according to the instructions (backup your priv_validator_key.json befor delete to restore your past validator)
     sudo systemctl stop strided && \
     sudo systemctl disable strided && \
     rm /etc/systemd/system/strided.service && \
