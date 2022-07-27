@@ -145,4 +145,3 @@
     rm -rf uptick && \
     rm -rf $(which uptickd)
 
-
