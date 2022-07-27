@@ -24,7 +24,7 @@
     go version
 
 
-# Binary   14.07.22
+# Binary   27.07.22
     git clone https://github.com/Stride-Labs/stride.git
     cd stride
     git checkout 644c7574ee79128970a81cf8b9f23351dcdeec62
