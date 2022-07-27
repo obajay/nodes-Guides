@@ -23,6 +23,15 @@
     source ~/.bash_profile && \
     go version
 
+### If the old network (STRIDE-1) was installed - remove the past components and continue according to the instructions
+    sudo systemctl stop strided && \
+    sudo systemctl disable strided && \
+    rm /etc/systemd/system/strided.service && \
+    sudo systemctl daemon-reload && \
+    cd $HOME && \
+    rm -rf .stride && \
+    rm -rf stride && \
+    rm -rf $(which strided)
 
 # Binary   27.07.22
     git clone https://github.com/Stride-Labs/stride.git
@@ -30,6 +39,7 @@
     git checkout 644c7574ee79128970a81cf8b9f23351dcdeec62
     sh ./scripts-local/build.sh -s $HOME/go/bin
 `strided version --long | head`
+
 
 
 ## Initialisation
