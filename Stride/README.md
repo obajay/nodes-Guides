@@ -103,7 +103,7 @@
 
 ## Create validator
     strided tx staking create-validator \
-    --amount=9900000ustrd \
+    --amount=1000000ustrd \
     --pubkey=$(strided tendermint show-validator) \
     --moniker=<moniker> \
     --chain-id=STRIDE-TESTNET-2 \
@@ -111,8 +111,7 @@
     --commission-max-rate="0.20" \
     --commission-max-change-rate="0.1" \
     --min-self-delegation="1" \
-    --fees=250ustrd \
-    --gas=200000 \
+    --fees=100ustrd \
     --from=<walletName> \
     --identity="" \
     --website="" \
