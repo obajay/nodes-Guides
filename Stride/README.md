@@ -27,23 +27,24 @@
 # Binary   14.07.22
     git clone https://github.com/Stride-Labs/stride.git
     cd stride
-    git checkout c53f6c562d9d3e098aab5c27303f41ee055572cb
+    git checkout 644c7574ee79128970a81cf8b9f23351dcdeec62
     sh ./scripts-local/build.sh -s $HOME/go/bin
-    
+    go build -mod=readonly -trimpath -o $HOME/go/bin ./...
+`strided version --long | head`
+
 
 ## Initialisation
-    strided init <moniker> --chain-id STRIDE-1
+    strided init <moniker> --chain-id STRIDE-TESTNET-2
 
 ## Add wallet
     strided keys add <walletName>
     strided keys add <walletName> --recover
 
 # Genesis
-    cd $HOME/.stride/config
-    wget -O genesis.json "https://raw.githubusercontent.com/Stride-Labs/testnet/main/poolparty/genesis.json"
+    wget -O $HOME/.stride/config/genesis.json "https://raw.githubusercontent.com/Stride-Labs/testnet/main/poolparty/genesis.json"
 
-`sha256sum genesis.json`
-- d6204cd1e90e74bb29e9e0637010829738fa5765869288aa29a12ed83e2847ea  genesis.json
+`sha256sum $HOME/.stride/config/genesis.json`
+- ea1c42e096d6f3188929c68d51ad0aa514964d82b61ebb964413ddbda35b23c7  genesis.json
 
 ### Pruning (optional)
     pruning="custom" && \
@@ -68,7 +69,7 @@
     peers=""
     sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.stride/config/config.toml
 
-    seeds="baee9ccc2496c2e3bebd54d369c3b788f9473be9@seedv1.poolparty.stridenet.co:26656"
+    seeds="b61ea4c2c549e24c1a4d2d539b4d569d2ff7dd7b@stride-node1.poolparty.stridenet.co:26656"
     sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.stride/config/config.toml
 
     sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.stride/config/config.toml
