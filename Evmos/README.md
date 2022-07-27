@@ -25,13 +25,13 @@
     source ~/.bash_profile && \
     go version
     
-## Build    (16.07.22)
+## Build    (27.07.22)
     git clone https://github.com/evmos/evmos
     cd evmos
-    git checkout v6.0.2
+    git checkout v6.0.3
     make install
 `evmosd version`
-+ 6.0.2
++ 6.0.3
 
       evmosd init <moniker-name> --chain-id evmos_9001-2
     
