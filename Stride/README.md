@@ -1,7 +1,8 @@
 # Guide Stride 
 ![stride](https://user-images.githubusercontent.com/44331529/180614293-57dff376-2d34-4480-803a-e8262bf37fdd.png)
 
-
+[Website](https://stride.zone/)
+=
 [EXPLORER](https://poolparty.stride.zone/STRIDE/staking)
 =
 - **Minimum hardware requirements**:
