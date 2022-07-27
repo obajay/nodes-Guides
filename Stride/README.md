@@ -106,7 +106,7 @@
     --amount=9900000ustrd \
     --pubkey=$(strided tendermint show-validator) \
     --moniker=<moniker> \
-    --chain-id=STRIDE-1 \
+    --chain-id=STRIDE-TESTNET-2 \
     --commission-rate="0.10" \
     --commission-max-rate="0.20" \
     --commission-max-change-rate="0.1" \
