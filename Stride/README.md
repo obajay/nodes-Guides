@@ -29,7 +29,6 @@
     cd stride
     git checkout 644c7574ee79128970a81cf8b9f23351dcdeec62
     sh ./scripts-local/build.sh -s $HOME/go/bin
-    go build -mod=readonly -trimpath -o $HOME/go/bin ./...
 `strided version --long | head`
 
 
