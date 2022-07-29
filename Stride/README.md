@@ -72,7 +72,7 @@
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.stride/config/config.toml
 
 ### Set up the minimum gas price and Peers/Seeds
-    sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ustrd\"/;" ~/.stride/config/app.toml
+    sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0025ustrd\"/;" ~/.stride/config/app.toml
 
     external_address=$(wget -qO- eth0.me) 
     sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.stride/config/config.toml
@@ -141,7 +141,7 @@
     --commission-max-rate="0.20" \
     --commission-max-change-rate="0.1" \
     --min-self-delegation="1" \
-    --fees=100ustrd \
+    --fees=500ustrd \
     --from=<walletName> \
     --identity="" \
     --website="" \
