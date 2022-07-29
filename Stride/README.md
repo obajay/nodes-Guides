@@ -3,7 +3,8 @@
 
 [Website](https://stride.zone/)
 =
-[EXPLORER](https://poolparty.stride.zone/STRIDE/staking)
+[EXPLORER 1](https://poolparty.stride.zone/STRIDE/staking)
+[EXPLORER 2](https://stride.explorers.guru/)
 =
 - **Minimum hardware requirements**:
 
