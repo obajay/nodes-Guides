@@ -1,3 +1,5 @@
+# TESTNET ENDED 28.07.22
+
 # StaFiHub Public Testnet v3
 ![stafi](https://user-images.githubusercontent.com/44331529/180599038-d3283b41-9e2f-4ed9-bf42-e74fb6cc6164.png)
 ![staaf](https://user-images.githubusercontent.com/44331529/180599049-247effec-6e6f-4e12-a6d6-f44ae061299b.png)
