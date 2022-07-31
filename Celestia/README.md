@@ -28,11 +28,13 @@
     go version
 
 # Build 13.07.22  (one command)
+```console
     git clone https://github.com/celestiaorg/celestia-app --branch v0.6.0 && \
     cd celestia-app && \
     git fetch && \
     git checkout v0.6.0 && \
-    make install
+    make install 
+```
 `celestia-appd version`
 + 0.6.0
 
