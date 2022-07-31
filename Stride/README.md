@@ -36,24 +36,30 @@
     rm -rf $(which strided)
 
 # Binary   27.07.22
-    git clone https://github.com/Stride-Labs/stride.git
-    cd stride
-    git checkout 644c7574ee79128970a81cf8b9f23351dcdeec62
-    mkdir -p $HOME/go/bin
-    sh ./scripts-local/build.sh -s $HOME/go/bin
+```console 
+git clone https://github.com/Stride-Labs/stride.git
+cd stride
+git checkout 644c7574ee79128970a81cf8b9f23351dcdeec62
+mkdir -p $HOME/go/bin
+sh ./scripts-local/build.sh -s $HOME/go/bin
+```
 `strided version --long | head`
 
 
 
 ## Initialisation
-    strided init <moniker> --chain-id STRIDE-TESTNET-2
-
+```console
+strided init <moniker> --chain-id STRIDE-TESTNET-2
+```
 ## Add wallet
-    strided keys add <walletName>
-    strided keys add <walletName> --recover
-
+```console
+strided keys add <walletName>
+strided keys add <walletName> --recover
+```
 # Genesis
-    wget -O $HOME/.stride/config/genesis.json "https://raw.githubusercontent.com/Stride-Labs/testnet/main/poolparty/genesis.json"
+```console
+wget -O $HOME/.stride/config/genesis.json "https://raw.githubusercontent.com/Stride-Labs/testnet/main/poolparty/genesis.json"
+```
 
 `sha256sum $HOME/.stride/config/genesis.json`
 - ea1c42e096d6f3188929c68d51ad0aa514964d82b61ebb964413ddbda35b23c7  genesis.json
@@ -73,41 +79,45 @@
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.stride/config/config.toml
 
 ### Set up the minimum gas price and Peers/Seeds
-    sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0025ustrd\"/;" ~/.stride/config/app.toml
+```console
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0025ustrd\"/;" ~/.stride/config/app.toml
 
-    external_address=$(wget -qO- eth0.me) 
-    sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.stride/config/config.toml
+external_address=$(wget -qO- eth0.me) 
+sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.stride/config/config.toml
 
-    peers="b61ea4c2c549e24c1a4d2d539b4d569d2ff7dd7b@stride-node1.poolparty.stridenet.co:26656"
-    sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.stride/config/config.toml
+peers="b61ea4c2c549e24c1a4d2d539b4d569d2ff7dd7b@stride-node1.poolparty.stridenet.co:26656"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.stride/config/config.toml
 
-    seeds="c0b278cbfb15674e1949e7e5ae51627cb2a2d0a9@seedv2.poolparty.stridenet.co:26656"
-    sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.stride/config/config.toml
+seeds="c0b278cbfb15674e1949e7e5ae51627cb2a2d0a9@seedv2.poolparty.stridenet.co:26656"
+sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.stride/config/config.toml
 
-    sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.stride/config/config.toml
-    sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.stride/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.stride/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.stride/config/config.toml
+```
 
 ## Download addrbook
-    wget -O $HOME/.stride/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Stride/addrbook.json"
-
+```console
+wget -O $HOME/.stride/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Stride/addrbook.json"
+```
 
 # Create a service file
-    sudo tee /etc/systemd/system/strided.service > /dev/null <<EOF
-    [Unit]
-    Description=strided
-    After=network-online.target
+```console
+sudo tee /etc/systemd/system/strided.service > /dev/null <<EOF
+[Unit]
+Description=strided
+After=network-online.target
 
-    [Service]
-    User=$USER
-    ExecStart=$(which strided) start
-    Restart=on-failure
-    RestartSec=3
-    LimitNOFILE=65535
+[Service]
+User=$USER
+ExecStart=$(which strided) start
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=65535
 
-    [Install]
-    WantedBy=multi-user.target
-    EOF
-
+[Install]
+WantedBy=multi-user.target
+EOF
+```
 ## State Sync
     strided tendermint unsafe-reset-all --home $HOME/.stride
     peers="73f15ad99a0ac6e60cda2b691bc5b71cd7f221bc@141.95.124.151:20086"
@@ -128,10 +138,12 @@
     
 
 # Start node (one command)
-    sudo systemctl daemon-reload && \
-    sudo systemctl enable strided && \
-    sudo systemctl restart strided && \
-    sudo journalctl -u strided -f -o cat
+```console
+sudo systemctl daemon-reload && \
+sudo systemctl enable strided && \
+sudo systemctl restart strided && \
+sudo journalctl -u strided -f -o cat
+```
 
 ## Create validator
     strided tx staking create-validator \
