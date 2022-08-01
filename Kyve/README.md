@@ -119,7 +119,7 @@ EOF
 ```
 ## Start
 ```console
-udo systemctl daemon-reload && \
+sudo systemctl daemon-reload && \
 sudo systemctl enable kyved && \
 sudo systemctl restart kyved && \
 sudo journalctl -u kyved -f -o cat
