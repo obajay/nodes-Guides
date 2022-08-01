@@ -54,8 +54,9 @@ wget https://github.com/KYVENetwork/chain/releases/download/v0.0.1/genesis.json
 mv genesis.json ~/.kyve/config/genesis.json
 ```
 
-## Peers/Seeds/MaxPeers
+## Peers/Seeds/MaxPeers/FilterPeers
 ```console
+sed -i -e "s/^filter_peers =./filter_peers = "true"/" $HOME/.stride/config/config.toml
 seeds="e56574f922ff41c68b80700266dfc9e01ecae383@18.156.198.41:26656"
 peers=""
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$seeds\"/; s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.kyve/config/config.toml
