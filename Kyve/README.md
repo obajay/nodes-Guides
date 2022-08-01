@@ -30,17 +30,18 @@
     go version
 
 # Build 19.07.22
-
-    cd $HOME
-    wget https://github.com/KYVENetwork/chain/releases/download/v0.6.3/chain_linux_amd64.tar.gz
-    tar -xvzf chain_linux_amd64.tar.gz
-    chmod +x chaind
-    sudo mv chaind $HOME/go/bin/
-    rm chain_linux_amd64.tar.gz
-    cd
+```console
+cd $HOME
+wget https://github.com/KYVENetwork/chain/releases/download/v0.6.3/chain_linux_amd64.tar.gz
+tar -xvzf chain_linux_amd64.tar.gz
+chmod +x chaind
+sudo mv chaind $HOME/go/bin/
+rm chain_linux_amd64.tar.gz
+cd
     
-    chaind init <moniker> --chain-id korellia
-    chaind config chain-id korellia
+chaind init <moniker> --chain-id korellia
+chaind config chain-id korellia
+```
 
 ## Create/recover wallet
 
@@ -48,16 +49,19 @@
     chaind keys add <walletname> --recover
 
 ## Genesis
+```console
+wget https://github.com/KYVENetwork/chain/releases/download/v0.0.1/genesis.json
+mv genesis.json ~/.kyve/config/genesis.json
+```
 
-    wget https://github.com/KYVENetwork/chain/releases/download/v0.0.1/genesis.json
-    mv genesis.json ~/.kyve/config/genesis.json
-
-
-## Peers/Seeds
-
-    seeds="e56574f922ff41c68b80700266dfc9e01ecae383@18.156.198.41:26656"
-    peers=""
-    sed -i.bak -e "s/^seeds *=.*/seeds = \"$seeds\"/; s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.kyve/config/config.toml
+## Peers/Seeds/MaxPeers
+```console
+seeds="e56574f922ff41c68b80700266dfc9e01ecae383@18.156.198.41:26656"
+peers=""
+sed -i.bak -e "s/^seeds *=.*/seeds = \"$seeds\"/; s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.kyve/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.kyve/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.kyve/config/config.toml
+```
 
 ### Pruning (optional)
 
@@ -76,53 +80,50 @@
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.kyve/config/config.toml
 
 ## State Sync
+```console
+SNAP_RPC="141.95.124.151:20057"
+peers="e9a2567ee5fda3f98fce7b0e4342ef1e85c9fed9@141.95.124.151:20056"
+sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.kyve/config/config.toml
 
-	SNAP_RPC="65.108.57.92:26657"
-	peers="d040c94305f0b421df815d5375201b34f8cae999@65.108.57.92:26656"
-	sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.kyve/config/config.toml
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
 
-	LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-	BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
-	TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
 
-	echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-
-	sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-	s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
-	s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-	s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-	s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.kyve/config/config.toml
-
-	wget -qO $HOME/.kyve/config/addrbook.json https://api.testnet.run/addrbook-korellia.json
-	chaind tendermint unsafe-reset-all --home $HOME/.kyve
-	**sudo systemctl restart kyved && journalctl -u kyved -f -o cat**  (if node runnig)
-
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.kyve/config/config.toml
+chaind tendermint unsafe-reset-all --home $HOME/.kyve
+```
 
 # Create a service file
+```console
+sudo tee <<EOF > /dev/null /etc/systemd/system/kyved.service
+[Unit]
+Description=KYVE Chain-Node daemon
+After=network-online.target
 
-	sudo tee <<EOF > /dev/null /etc/systemd/system/kyved.service
-	[Unit]
-	Description=KYVE Chain-Node daemon
-	After=network-online.target
+[Service]
+User=$USER
+ExecStart=$(which chaind) start
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=infinity
 
-	[Service]
-	User=$USER
-	ExecStart=$(which chaind) start
-	Restart=on-failure
-	RestartSec=10
-	LimitNOFILE=infinity
-
-	[Install]
-	WantedBy=multi-user.target
-	EOF
-
+[Install]
+WantedBy=multi-user.target
+EOF
+```
 ## Start
-
-    sudo systemctl daemon-reload && \ 
-    sudo systemctl enable kyved && \
-    sudo systemctl restart kyved && \
-    sudo journalctl -u kyved -f -o cat
-
+```console
+udo systemctl daemon-reload && \
+sudo systemctl enable kyved && \
+sudo systemctl restart kyved && \
+sudo journalctl -u kyved -f -o cat
+```
 ## Create validator
 
 
@@ -142,9 +143,9 @@
 
 
 ## Delete node
-    sudo systemctl stop aurad && \
-    sudo systemctl disable aurad && \
-    rm /etc/systemd/system/aurad.service && \
+    sudo systemctl stop kyved && \
+    sudo systemctl disable kyved && \
+    rm /etc/systemd/system/kyved.service && \
     sudo systemctl daemon-reload && \
     cd $HOME && \
     rm -rf .kyve && \
