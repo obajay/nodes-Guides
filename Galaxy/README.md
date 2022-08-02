@@ -10,7 +10,7 @@
 
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
-| Testnet   |   4| 8GB  | 250GB    |
+| Mainnet   |   4| 8GB  | 250GB    |
 ### Preparing the server
 
     sudo apt update && sudo apt upgrade -y && \
