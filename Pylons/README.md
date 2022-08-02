@@ -50,9 +50,8 @@ pylonsd keys add <walletName> --recover
 ```
 # Genesis
 ```console
-cd $HOME
-curl http://194.163.172.115:26657/genesis | jq .result.genesis > genesis.json
-mv genesis.json $HOME/.pylons/config/genesis.json
+wget -O $HOME/.pylons/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Pylons/genesis.json"
+
 ```
 
 `sha256sum $HOME/.pylons/config/genesis.json`
