@@ -16,14 +16,18 @@
     sudo apt update && sudo apt upgrade -y && \
     sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
 
-## GO 18.1 (once command)
-    wget https://golang.org/dl/go1.18.1.linux-amd64.tar.gz; \
-    rm -rv /usr/local/go; \
-    tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz && \
-    rm -v go1.18.1.linux-amd64.tar.gz && \
-    echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile && \
-    source ~/.bash_profile && \
-    go version
+## GO 18.3 (one command)
+```
+ver="1.18.3" && \
+cd $HOME && \
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
+sudo rm -rf /usr/local/go && \
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
+rm "go$ver.linux-amd64.tar.gz" && \
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
+source $HOME/.bash_profile && \
+go version
+```
 
 ### If the old network (STRIDE-1) was installed - remove the past components and continue according to the instructions (backup your priv_validator_key.json befor delete to restore your past validator)
     sudo systemctl stop strided && \
