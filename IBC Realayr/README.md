@@ -121,7 +121,7 @@ gas_price = { price = 0.001, denom = '$STRIDE_DENOM' }
 gas_adjustment = 0.1
 max_msg_num = 15
 clock_drift = '5s'
-trusting_period = '1days'
+trusting_period = '8hours'
 memo_prefix='$MEMO_PREFIX'
 trust_threshold = { numerator = '1', denominator = '3' }
 [[chains]]
@@ -139,7 +139,7 @@ gas_price = { price = 0.001, denom = '$GAIA_DENOM' }
 gas_adjustment = 0.1
 max_msg_num = 15
 clock_drift = '5s'
-trusting_period = '1days'
+trusting_period = '8hours'
 memo_prefix= '$MEMO_PREFIX'
 trust_threshold = { numerator = '1', denominator = '3' }" > $HOME/.hermes/config.toml
 
