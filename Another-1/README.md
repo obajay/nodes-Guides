@@ -1,3 +1,6 @@
+# TESTNET ENDED 04.08.22
+
+
 # Guide Another-1 testnet
 
 [EXPLORER 1](https://www.skynetexplorers.com/DWS/staking) \
