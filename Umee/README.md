@@ -88,4 +88,14 @@ sudo systemctl enable umeed
 sudo systemctl restart umeed
 journalctl -u umeed -f -o cat
 ```  
-  
+### Delete node
+```
+sudo systemctl stop umeed && \
+sudo systemctl disable umeed && \
+rm /etc/systemd/system/umeed.service && \
+sudo systemctl daemon-reload && \
+cd $HOME && \
+rm -rf .umee && \
+rm -rf umee && \
+rm -rf $(which umeed)
+```
