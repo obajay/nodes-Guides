@@ -153,3 +153,4 @@ rm -rf .anone && \
 rm -rf anone && \
 rm -rf $(which anoned)
 ```
+
