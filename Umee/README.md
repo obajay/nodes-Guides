@@ -84,7 +84,7 @@ WantedBy=multi-user.target" > $HOME/umeed.service
 sudo mv $HOME/umeed.service /etc/systemd/system
 sudo tee <<EOF >/dev/null /etc/systemd/journald.conf
 Storage=persistent
-EOF 
+EOF
 ```  
 ## Start node
 ```
