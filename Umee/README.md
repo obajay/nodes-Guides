@@ -40,6 +40,12 @@ umeed version
 ## Init
     umeed init moniker --chain-id umee-1
 
+## Create/recover wallet
+```console
+umeed keys add <walletname>
+umeed keys add <walletname> --recover
+```
+
 ## Genesis
     wget -O $HOME/.umee/config/genesis.json https://github.com/umee-network/mainnet/raw/main/genesis.json
     
