@@ -1,3 +1,13 @@
+# UPD 10.08.22   UPDATE ONLY AFTER 155420 BLOCK !!
+```console
+sudo systemctl stop strided
+cd $HOME && rm -rf stride
+git clone https://github.com/Stride-Labs/stride.git && cd stride
+git checkout 4ec1b0ca818561cef04f8e6df84069b14399590e
+make build
+sudo mv build/strided $(which strided)
+sudo systemctl restart strided && journalctl -fu strided -o cat
+```
 # Guide Stride 
 ![stride](https://user-images.githubusercontent.com/44331529/180614293-57dff376-2d34-4480-803a-e8262bf37fdd.png)
 
