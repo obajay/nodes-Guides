@@ -39,16 +39,6 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-### If the old network (STRIDE-1) was installed - remove the past components and continue according to the instructions (backup your priv_validator_key.json befor delete to restore your past validator)
-    sudo systemctl stop strided && \
-    sudo systemctl disable strided && \
-    rm /etc/systemd/system/strided.service && \
-    sudo systemctl daemon-reload && \
-    cd $HOME && \
-    rm -rf .stride && \
-    rm -rf stride && \
-    rm -rf $(which strided)
-
 # Binary   27.07.22
 ```console 
 git clone https://github.com/Stride-Labs/stride.git
