@@ -8,6 +8,9 @@ make build
 sudo mv build/strided $(which strided)
 sudo systemctl restart strided && journalctl -fu strided -o cat
 ```
+`strided version --long | head`
++ version: v0.3.1
+
 # Guide Stride 
 ![stride](https://user-images.githubusercontent.com/44331529/180614293-57dff376-2d34-4480-803a-e8262bf37fdd.png)
 
