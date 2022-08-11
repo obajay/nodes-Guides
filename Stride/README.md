@@ -1,16 +1,3 @@
-# UPD 10.08.22   UPDATE ONLY AFTER 155420 BLOCK !!
-```console
-sudo systemctl stop strided
-cd $HOME && rm -rf stride
-git clone https://github.com/Stride-Labs/stride.git && cd stride
-git checkout 4ec1b0ca818561cef04f8e6df84069b14399590e
-make build
-sudo mv build/strided $(which strided)
-sudo systemctl restart strided && journalctl -fu strided -o cat
-```
-`strided version --long | head`
-+ version: v0.3.1
-
 # Guide Stride 
 ![stride](https://user-images.githubusercontent.com/44331529/180614293-57dff376-2d34-4480-803a-e8262bf37fdd.png)
 
@@ -42,16 +29,16 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Binary   27.07.22
+# Binary   10.08.22
 ```console 
-git clone https://github.com/Stride-Labs/stride.git
-cd stride
-git checkout 644c7574ee79128970a81cf8b9f23351dcdeec62
+git clone https://github.com/Stride-Labs/stride.git && cd stride
+git checkout 4ec1b0ca818561cef04f8e6df84069b14399590e
+make build
 mkdir -p $HOME/go/bin
-sh ./scripts-local/build.sh -s $HOME/go/bin
+sudo mv build/strided /root/go/bin/
 ```
 `strided version --long | head`
-
++ version: v0.3.1
 
 
 ## Initialisation
