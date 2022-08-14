@@ -6,6 +6,8 @@
 =
 [EXPLORER](https://explorer.testnet.sourceprotocol.io/source/staking)
 =
+[EXPLORER2](https://exp.nodeist.net/source/staking)
+=
 - **Minimum hardware requirements**:
 
 | Node Type |CPU | RAM  | Storage  | 
