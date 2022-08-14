@@ -93,7 +93,7 @@ mkdir $HOME/.umee/data/
 
 # download archive
 cd $HOME
-wget http://116.202.236.115:8001/umeedata.tar.gz
+wget http://116.202.236.115:7000/umeedata.tar.gz
 
 # unpack the archive
 tar -C $HOME/ -zxvf umeedata.tar.gz --strip-components 1
