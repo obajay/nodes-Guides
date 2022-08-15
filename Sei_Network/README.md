@@ -43,16 +43,16 @@ Explorer: https://sei.explorers.guru/validators
 ## Node installation 
 ### IMPORTANT - currently 1.0.7beta needs to be loaded using snapshot or statesync
 
-### Installing the binaries (22.07.22)
+### Installing the binaries (03.08.22)
     
     git clone https://github.com/sei-protocol/sei-chain.git
     cd sei-chain
     git checkout master && git pull
-    git checkout 1.0.7beta-postfix
+    git checkout 1.1.0beta
     make install
     seid version --long | head
-+ version: 1.0.7beta-postfix
-+ commit: 6a8d8798c75fd9e2136e599ecc97dd541b0474b4*
++ version: 1.1.0beta
++ commit: 33e9e1d53a3fcd26748d3134d84b5748cac5e147*
 
     
 ## Initializing the node to create the necessary configuration files
