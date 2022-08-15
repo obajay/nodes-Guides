@@ -26,9 +26,10 @@
 + version: 1.1.0beta
 + commit: 33e9e1d53a3fcd26748d3134d84b5748cac5e147*
 
-    seid init <moniker> --chain-id sei-devnet-1
-    seid config chain-id sei-devnet-1
-
+```bash
+seid init <moniker> --chain-id sei-devnet-1 \
+seid config chain-id sei-devnet-1
+```
 ### WALLET
     seid keys add <walletName> --recover
 
