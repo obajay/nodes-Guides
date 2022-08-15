@@ -113,7 +113,7 @@ WantedBy=multi-user.target
 EOF
 ```
 
-## SnapSHot   13.08.22 (4.4 GB)
+## SnapShot   13.08.22 (4.4 GB)
 ```bash
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
 rm -rf $HOME/.source/data/
