@@ -15,11 +15,16 @@
     go version
 
     cd $HOME
-## INSTALL
-    git clone https://github.com/sei-protocol/sei-chain
+### Installing the binaries (03.08.22)
+    
+    git clone https://github.com/sei-protocol/sei-chain.git
     cd sei-chain
-    git checkout 1.0.6beta
+    git checkout master && git pull
+    git checkout 1.1.0beta
     make install
+    seid version --long | head
++ version: 1.1.0beta
++ commit: 33e9e1d53a3fcd26748d3134d84b5748cac5e147*
 
     seid init <moniker> --chain-id sei-devnet-1
     seid config chain-id sei-devnet-1
