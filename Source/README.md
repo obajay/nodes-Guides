@@ -57,7 +57,7 @@ curl -s  https://raw.githubusercontent.com/Source-Protocol-Cosmos/testnets/maste
 `sha256sum $HOME/.source/config/genesis.json`
 - 2bf556b50a2094f252e0aac75c8018a9d6c0a77ba64ce39811945087f6a5165d  genesis.json
 
-### Pruning (optional)
+### Pruning (optional) one command
 ```
 pruning="custom" && \
 pruning_keep_recent="100" && \
@@ -68,7 +68,7 @@ sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_rec
 sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.source/config/app.toml && \
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.source/config/app.toml
 ```
-### Indexer (optional)
+### Indexer (optional) one command
     indexer="null" && \
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.source/config/config.toml
 
