@@ -113,7 +113,7 @@ WantedBy=multi-user.target
 EOF
 ```
 
-## SnapShot   13.08.22 (4.4 GB)
+## SnapShot   17.08.22 (5.3 GB) block height --> 1939255
 ```bash
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
 rm -rf $HOME/.source/data/
