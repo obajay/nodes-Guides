@@ -32,7 +32,7 @@
 # Build 19.07.22
 ```console
 cd $HOME
-wget https://github.com/KYVENetwork/chain/releases/download/v0.6.3/chain_linux_amd64.tar.gz
+wget https://github.com/KYVENetwork/chain/releases/download/v0.6.4/chain_linux_amd64.tar.gz
 tar -xvzf chain_linux_amd64.tar.gz
 chmod +x chaind
 sudo mv chaind $HOME/go/bin/
