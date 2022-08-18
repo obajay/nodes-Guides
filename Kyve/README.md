@@ -29,7 +29,7 @@
     source $HOME/.bash_profile && \
     go version
 
-# Build 19.07.22
+# Build 04.08.22
 ```console
 cd $HOME
 wget https://github.com/KYVENetwork/chain/releases/download/v0.6.4/chain_linux_amd64.tar.gz
