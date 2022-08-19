@@ -147,7 +147,6 @@ sudo systemctl restart strided && journalctl -u strided -f -o cat
 # StateSync GAIA
 ```console
 sudo systemctl stop gaiad
-gaiad tendermint unsafe-reset-all --home $HOME/.gaia
 PEERS="f42f1908713b97a2106a0872c7a6dbf64b274a77@141.95.124.151:23656"
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.gaia/config/config.toml
 wget -O $HOME/.stride/config/addrbook.json "https://raw.githubusercontent.com/StakeTake/guidecosmos/main/stride/GAIA/addrbook.json"
@@ -162,6 +161,7 @@ s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.gaia/config/config.toml
+gaiad tendermint unsafe-reset-all --home $HOME/.gaia
 sudo systemctl restart gaiad && journalctl -u gaiad -f -o cat
 ```
 
