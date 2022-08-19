@@ -91,7 +91,7 @@ sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.stride/config/c
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.stride/config/config.toml
 
-peers="b61ea4c2c549e24c1a4d2d539b4d569d2ff7dd7b@stride-node1.poolparty.stridenet.co:26656"
+peers="54a11c47658ebd5dcbd70eb3c62197b439482d3f@116.202.236.115:21016"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.stride/config/config.toml
 
 seeds=""
@@ -103,7 +103,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.stri
 
 ## Download addrbook
 ```console
-wget -O $HOME/.stride/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Stride/addrbook.json"
+wget -O $HOME/.stride/config/addrbook.json ""
 ```
 
 # Create a service file
