@@ -28,6 +28,18 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
+## !!!Before installation - remove the old node. Save all keys first!!!
+```bash
+sudo systemctl stop strided && \
+sudo systemctl disable strided && \
+rm /etc/systemd/system/strided.service && \
+sudo systemctl daemon-reload && \
+cd $HOME && \
+rm -rf .stride && \
+rm -rf stride && \
+rm -rf $(which strided)
+```
+
 
 # Binary   19.08.22
 ```console 
