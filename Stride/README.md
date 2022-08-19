@@ -126,7 +126,7 @@ EOF
 ```
 # StateSync STRIDE
 ```bash
-peers="73f15ad99a0ac6e60cda2b691bc5b71cd7f221bc@141.95.124.151:20086"
+peers="cf4e629008be3417081395f4ab6f591a74124d90@141.95.124.151:20086"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.stride/config/config.toml
 
 SNAP_RPC=141.95.124.151:20087
