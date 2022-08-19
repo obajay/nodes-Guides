@@ -91,7 +91,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.stri
 
 ## Download addrbook
 ```console
-wget -O $HOME/.stride/config/addrbook.json ""
+wget -O $HOME/.stride/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Stride/addrbook.json"
 ```
 
 # Create a service file
