@@ -10,7 +10,7 @@
 
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
-| Testnet   |   4| 8GB  | 200GB    |
+| Testnet   |   4| 16GB  | 200GB    |
 ### Preparing the server
 
     sudo apt update && sudo apt upgrade -y && \
@@ -29,10 +29,10 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Binary   10.08.22
+# Binary   19.08.22
 ```console 
 git clone https://github.com/Stride-Labs/stride.git && cd stride
-git checkout 4ec1b0ca818561cef04f8e6df84069b14399590e
+git checkout cf4e7f2d4ffe2002997428dbb1c530614b85df1b
 make build
 mkdir -p $HOME/go/bin
 sudo mv build/strided /root/go/bin/
@@ -43,7 +43,7 @@ sudo mv build/strided /root/go/bin/
 
 ## Initialisation
 ```console
-strided init <moniker> --chain-id STRIDE-TESTNET-2
+strided init <moniker> --chain-id STRIDE-TESTNET-4
 ```
 ## Add wallet
 ```console
@@ -56,7 +56,7 @@ wget -O $HOME/.stride/config/genesis.json "https://raw.githubusercontent.com/Str
 ```
 
 `sha256sum $HOME/.stride/config/genesis.json`
-- ea1c42e096d6f3188929c68d51ad0aa514964d82b61ebb964413ddbda35b23c7  genesis.json
+- a1f56de30c4f88de2fe2fbff1a019583bfc57e9c2c297294ce2c7ec243e46a4e  genesis.json
 
 ### Pruning (optional)
     pruning="custom" && \
@@ -82,7 +82,7 @@ sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:2
 peers="b61ea4c2c549e24c1a4d2d539b4d569d2ff7dd7b@stride-node1.poolparty.stridenet.co:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.stride/config/config.toml
 
-seeds="c0b278cbfb15674e1949e7e5ae51627cb2a2d0a9@seedv2.poolparty.stridenet.co:26656"
+seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.stride/config/config.toml
 
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.stride/config/config.toml
@@ -91,7 +91,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.stri
 
 ## Download addrbook
 ```console
-wget -O $HOME/.stride/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Stride/addrbook.json"
+wget -O $HOME/.stride/config/addrbook.json ""
 ```
 
 # Create a service file
@@ -112,45 +112,6 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-## State Sync   STRIDE
-    strided tendermint unsafe-reset-all --home $HOME/.stride
-    peers="73f15ad99a0ac6e60cda2b691bc5b71cd7f221bc@141.95.124.151:20086"
-    sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.stride/config/config.toml
-
-    SNAP_RPC=141.95.124.151:20087
-    LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-    BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
-    TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
-
-    echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-
-    sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-    s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
-    s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-    s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-    s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.stride/config/config.toml
-
-
-## State Sync	GAIA
-```console
-sudo systemctl stop gaiad
-gaiad tendermint unsafe-reset-all --home $HOME/.gaia
-PEERS="f42f1908713b97a2106a0872c7a6dbf64b274a77@141.95.124.151:23656"
-sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.gaia/config/config.toml
-wget -O $HOME/.stride/config/addrbook.json "https://raw.githubusercontent.com/StakeTake/guidecosmos/main/stride/GAIA/addrbook.json"
-SNAP_RPC="141.95.124.151:23657"
-LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 2000)); \
-TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
-echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
-s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.gaia/config/config.toml
-sudo systemctl restart gaiad && journalctl -u gaiad -f -o cat
-```
 
 # Start node (one command)
 ```console
@@ -165,7 +126,7 @@ sudo journalctl -u strided -f -o cat
     --amount=1000000ustrd \
     --pubkey=$(strided tendermint show-validator) \
     --moniker=<moniker> \
-    --chain-id=STRIDE-TESTNET-2 \
+    --chain-id=STRIDE-TESTNET-4 \
     --commission-rate="0.10" \
     --commission-max-rate="0.20" \
     --commission-max-change-rate="0.1" \
