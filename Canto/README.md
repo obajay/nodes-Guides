@@ -13,7 +13,7 @@
 | Mainnet   |   8| 16GB  | 260GB    |
 
 
-# 1)    Autoinstall script
+# 1)    Auto_install script
 ```bash
 wget -O canto https://raw.githubusercontent.com/obajay/nodes-Guides/main/Canto/canto && chmod +x canto && ./canto
 ```
