@@ -11,6 +11,14 @@
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
 | Mainnet   |   8| 16GB  | 260GB    |
+
+
+# 1)    Autoinstall script
+```bash
+wget -O canto https://raw.githubusercontent.com/obajay/nodes-Guides/main/Canto/canto && chmod +x canto && ./canto
+```
+# 2)    Manual installation
+
 ### Preparing the server
 
     sudo apt update && sudo apt upgrade -y && \
