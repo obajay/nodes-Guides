@@ -16,5 +16,4 @@ echo " SSSSSSS     S:::::S      TT:::::::TT   A:::::A             A:::::AV::::::
 echo " S::::::SSSSSS:::::S      T:::::::::T  A:::::A               A:::::AV:::::V          R::::::R     R:::::R ";
 echo " S:::::::::::::::SS       T:::::::::T A:::::A                 A:::::AV:::V           R::::::R     R:::::R ";
 echo "  SSSSSSSSSSSSSSS         TTTTTTTTTTTAAAAAAA                   AAAAAAAVVV            RRRRRRRR     RRRRRRR ";
-                                                                                                        
 echo -e "\e[0m"
