@@ -12,6 +12,13 @@
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
 | Testnet   |   4| 8GB  | 160GB    |
+
+# 1) Auto_install script
+```bash
+wget -O sources https://raw.githubusercontent.com/obajay/nodes-Guides/main/Source/sources && chmod +x sources && ./sources
+```
+# 2) Manual installation
+
 ### Preparing the server
 
     sudo apt update && sudo apt upgrade -y && \
