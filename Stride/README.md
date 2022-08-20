@@ -11,6 +11,13 @@
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
 | Testnet   |   4| 16GB  | 200GB    |
+
+# 1) Auto_install script
+```bash
+wget -O stride-x https://raw.githubusercontent.com/obajay/nodes-Guides/main/Stride/stride-x && chmod +x stride-x && ./stride-x
+```
+# 2) Manual installation
+
 ### Preparing the server
 
     sudo apt update && sudo apt upgrade -y && \
