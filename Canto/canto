@@ -119,7 +119,7 @@ break
 ;;
 "Create wallet")
 echo "_|-_|-_|-_|-_|-_|-_|"
-echo -e "      \e[1m\e[35mYour Your WalletName:\e[0m'"
+echo -e "      \e[1m\e[35m Your WalletName:\e[0m'"
 echo "_|-_|-_|-_|-_|-_|-_|"
 read Wallet
 echo export Wallet=${Wallet} >> $HOME/.bash_profile
