@@ -1,0 +1,20 @@
+#!/bin/bash
+echo -e "\033[0;35m"                                                                                                        
+echo "    SSSSSSSSSSSSSSS TTTTTTTTTTTTTTTTTTTTTTT         AAA   VVVVVVVV           VVVVVVVVRRRRRRRRRRRRRRRRR    ";
+echo "  SS:::::::::::::::ST:::::::::::::::::::::T        A:::A  V::::::V           V::::::VR::::::::::::::::R   ";
+echo " S:::::SSSSSS::::::ST:::::::::::::::::::::T       A:::::A V::::::V           V::::::VR::::::RRRRRR:::::R  ";
+echo " S:::::S     SSSSSSST:::::TT:::::::TT:::::T      A:::::::AV::::::V           V::::::VRR:::::R     R:::::R ";
+echo " S:::::S            TTTTTT  T:::::T  TTTTTT     A:::::::::AV:::::V           V:::::V   R::::R     R:::::R ";
+echo " S:::::S                    T:::::T            A:::::A:::::AV:::::V         V:::::V    R::::R     R:::::R ";
+echo "  S::::SSSS                 T:::::T           A:::::A A:::::AV:::::V       V:::::V     R::::RRRRRR:::::R  ";
+echo "   SS::::::SSSSS            T:::::T          A:::::A   A:::::AV:::::V     V:::::V      R:::::::::::::RR   ";
+echo "     SSS::::::::SS          T:::::T         A:::::A     A:::::AV:::::V   V:::::V       R::::RRRRRR:::::R  ";
+echo "       SSSSSS::::S         T:::::T        A:::::AAAAAAAAA:::::AV:::::V V:::::V        R::::R     R:::::R  ";
+echo "             S:::::S        T:::::T       A:::::::::::::::::::::AV:::::V:::::V         R::::R     R:::::R ";
+echo "             S:::::S        T:::::T      A:::::AAAAAAAAAAAAA:::::AV:::::::::V          R::::R     R:::::R ";
+echo " SSSSSSS     S:::::S      TT:::::::TT   A:::::A             A:::::AV:::::::V         RR:::::R     R:::::R ";
+echo " S::::::SSSSSS:::::S      T:::::::::T  A:::::A               A:::::AV:::::V          R::::::R     R:::::R ";
+echo " S:::::::::::::::SS       T:::::::::T A:::::A                 A:::::AV:::V           R::::::R     R:::::R ";
+echo "  SSSSSSSSSSSSSSS         TTTTTTTTTTTAAAAAAA                   AAAAAAAVVV            RRRRRRRR     RRRRRRR ";
+                                                                                                        
+echo -e "\e[0m"
