@@ -12,6 +12,8 @@ curl -s https://raw.githubusercontent.com/obajay/nodes-Guides/main/logo_1 | bash
 PS3='Select an action: '
 options=(
 "Install Node"
+"Create wallet"
+"Delete Node"
 "Exit")
 select opt in "${options[@]}"
 do
@@ -112,8 +114,35 @@ echo '=============== SETUP FINISHED ==================='
 echo -e 'Congratulations:        \e[1m\e[32mSUCCESSFUL NODE INSTALLATION\e[0m'
 echo -e 'To check logs:        \e[1m\e[33mjournalctl -u cantod -f -o cat\e[0m'
 echo -e "To check sync status: \e[1m\e[35mcurl -s localhost:26657/status\e[0m"
+
+break
+;;
+"Create wallet")
+echo "_|-_|-_|-_|-_|-_|-_|"
+echo -e "      \e[1m\e[35mYour Your WalletName:\e[0m'"
+echo "_|-_|-_|-_|-_|-_|-_|"
+read Wallet
+echo export Wallet=${Wallet} >> $HOME/.bash_profile
+source ~/.bash_profile
+cantod keys add $Wallet
+echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE!!!!!!!!!SAVE!!!!!!!!!!!!!!!!\e[0m'"
+
+break
+;;
+"Delete Node")
+sudo systemctl stop cantod && \
+sudo systemctl disable cantod && \
+rm /etc/systemd/system/cantod.service && \
+sudo systemctl daemon-reload && \
+cd $HOME && \
+rm -rf .cantod && \
+rm -rf Canto && \
+rm -rf $(which cantod)
+
+break
+;;
+"Exit")
 exit
 esac
 done
 done
-
