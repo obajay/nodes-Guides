@@ -25,9 +25,9 @@ echo -e "\e[1m\e[31mLets's begin\e[0m"
 echo "*********************"
 echo -e "\e[1m\e[32mYour Validator_Name:\e[0m'"
 echo "_|-_|-_|-_|-_|-_|-_|"
-read Validator_Name
+read NODENAME
 echo "_|-_|-_|-_|-_|-_|-_|"
-echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
+echo export NODENAME=${NODENAME} >> $HOME/.bash_profile
 echo export CHAIN_ID="STRIDE-TESTNET-4" >> $HOME/.bash_profile
 source ~/.bash_profile
 
@@ -57,7 +57,7 @@ make build
 mkdir -p $HOME/go/bin
 sudo mv build/strided /root/go/bin/
 
-strided init $Validator_Name --chain-id $CHAIN_ID
+strided init $NODENAME --chain-id $CHAIN_ID
 
 wget -O $HOME/.stride/config/genesis.json "https://raw.githubusercontent.com/Stride-Labs/testnet/main/poolparty/genesis.json"
 wget -O $HOME/.stride/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Stride/addrbook.json"
