@@ -13,6 +13,12 @@
 |-----------|----|------|----------|
 | Mainnet   |   8| 16GB | 260GB    |
 
+# 1) Auto_install script
+```bash
+wget -O agoric https://raw.githubusercontent.com/obajay/nodes-Guides/main/Agoric/agoric && chmod +x agoric && ./agoric
+```
+# 2) Manual installation
+
 ### Preparing the server
 
     sudo apt update && sudo apt upgrade -y
