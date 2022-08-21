@@ -13,7 +13,7 @@ PS3='Select an action: '
 options=(
 "Install Node"
 "Create wallet"
-"Synchronize node via StaeSync"
+"Synchronize node via StateSync"
 "Delete Node"
 "Exit")
 select opt in "${options[@]}"
@@ -133,7 +133,7 @@ echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE
 
 break
 ;;
-"Synchronize node via StaeSync")
+"Synchronize node via StateSync")
 SNAP_RPC="51.195.189.48:26657"
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
