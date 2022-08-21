@@ -60,7 +60,7 @@ In current example we will learn how to set up IBC relayer between two cosmos ch
 
 sudo tee $HOME/.relayer/config/config.yaml > /dev/null <<EOF
 global:
-    api-listen-addr: :5183
+    api-listen-addr:5183
     timeout: 10s
     memo: $MEMO
     light-cache-size: 20
