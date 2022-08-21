@@ -28,15 +28,16 @@
     go version
 
 ## Build
-
+```
     git clone -b v0.5.0 https://github.com/konstellation/konstellation
     cd konstellation
     make install
-    knstld version
-    0.5.0
-    
-    knstld init <moniker-name> --chain-id darchub
-
+```
+`knstld version`
++ 0.5.0
+```    
+knstld init <moniker-name> --chain-id darchub
+```
 ## Create/recover wallet
 
     knstld keys add <walletname>
@@ -78,6 +79,7 @@
 
 
 [Snapshot](https://polkachu.com/tendermint_snapshots/konstellation)
+=
 
 ## Create a service file
 
