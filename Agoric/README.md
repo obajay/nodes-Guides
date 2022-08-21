@@ -150,7 +150,6 @@ sudo systemctl restart agoricd && journalctl -u agoricd -f -o cat
     --chain-id=agoric-3 \
     --gas-adjustment=1.4 -y
 
-
 ## Delete node
     sudo systemctl stop agoricd && \
     sudo systemctl disable agoricd && \
