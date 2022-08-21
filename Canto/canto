@@ -13,6 +13,7 @@ PS3='Select an action: '
 options=(
 "Install Node"
 "Create wallet"
+"Synchronize node via SnapShot"
 "Delete Node"
 "Exit")
 select opt in "${options[@]}"
@@ -126,6 +127,20 @@ echo export Wallet=${Wallet} >> $HOME/.bash_profile
 source ~/.bash_profile
 cantod keys add $Wallet
 echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE!!!!!!!!!SAVE!!!!!!!!!!!!!!!!\e[0m'"
+
+break
+;;
+"Synchronize node via SnapShot")
+sudo systemctl stop cantod
+rm -rf $HOME/.cantod/data/
+mkdir $HOME/.cantod/data/
+cd $HOME
+wget http://116.202.236.115:7000/cantodata.tar.gz
+tar -C $HOME/ -zxvf cantodata.tar.gz --strip-components 1
+wget -O $HOME/.cantod/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/Canto/priv_validator_state.json"
+cd $HOME
+rm cantodata.tar.gz
+sudo systemctl restart cantod && journalctl -u cantod -f -o cat
 
 break
 ;;
