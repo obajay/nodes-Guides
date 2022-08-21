@@ -22,9 +22,9 @@ case $opt in
 
 "Install Node")
 echo "*********************"
-echo -e "\e[1m\e[31mLets's begin\e[0m"
+echo -e "\e[1m\e[35m   Lets's begin\e[0m"
 echo "*********************"
-echo -e "\e[1m\e[32mYour Validator_Name:\e[0m'"
+echo -e "\e[1m\e[32m   Your Validator_Name:\e[0m"
 echo "_|-_|-_|-_|-_|-_|-_|"
 read NODENAME
 echo "_|-_|-_|-_|-_|-_|-_|"
