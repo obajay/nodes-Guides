@@ -25,7 +25,7 @@ case $opt in
 echo "*********************"
 echo -e "\e[1m\e[35m   Lets's begin\e[0m"
 echo "*********************"
-echo -e "\e[1m\e[32m  Enter your Validator_Name:\e[0m'"
+echo -e "\e[1m\e[32m  Enter your Validator_Name:\e[0m"
 echo "_|-_|-_|-_|-_|-_|-_|"
 read Validator_Name
 echo "_|-_|-_|-_|-_|-_|-_|"
