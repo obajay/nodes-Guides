@@ -11,7 +11,7 @@
 
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
-| korellia  |   4| 8GB  | 160GB    |
+| Mainnet   |   8| 16GB | 260GB    |
 
 ### Preparing the server
 
