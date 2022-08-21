@@ -13,6 +13,7 @@ PS3='Select an action: '
 options=(
 "Install Node"
 "Create wallet"
+"Synchronize node via snapshot"
 "Delete Node"
 "Exit")
 select opt in "${options[@]}"
@@ -124,6 +125,20 @@ echo export Wallet=${Wallet} >> $HOME/.bash_profile
 source ~/.bash_profile
 sourced keys add $Wallet
 echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE!!!!!!!!!SAVE!!!!!!!!!!!!!!!!\e[0m'"
+
+break
+;;
+"Synchronize node via snapshot")
+sudo systemctl stop sourced
+rm -rf $HOME/.source/data/
+mkdir $HOME/.source/data/
+cd $HOME
+wget http://116.202.236.115:8000/sourcedata.tar.gz
+tar -C $HOME/ -zxvf sourcedata.tar.gz --strip-components 1
+wget -O $HOME/.source/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/priv_validator_state.json"
+cd $HOME
+rm sourcedata.tar.gz
+sudo systemctl restart sourced && sudo journalctl -u sourced -f -o cat
 
 break
 ;;
