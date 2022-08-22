@@ -161,14 +161,14 @@ echo -e "      \e[1m\e[35mSOON\e[0m"
 break
 ;;
 "Delete Node")
-sudo systemctl stop agoricd && \
-sudo systemctl disable agoricd && \
-rm /etc/systemd/system/agoricd.service && \
+sudo systemctl stop haqqd && \
+sudo systemctl disable haqqd && \
+rm /etc/systemd/system/haqqd.service && \
 sudo systemctl daemon-reload && \
 cd $HOME && \
-rm -rf ag0 && \
-rm -rf .agoric && \
-rm -rf $(which ag0)
+rm -rf .haqqd && \
+rm -rf haqq && \
+rm -rf $(which haqqd)
 
 break
 ;;
