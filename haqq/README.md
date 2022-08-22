@@ -47,8 +47,8 @@ haqqd init <moniker-name> --chain-id=haqq_53211-1
 ```
 ## Add wallet
 ```console
-cantod keys add <walletName>
-cantod keys add <walletName> --recover
+haqqd keys add <walletName>
+haqqd keys add <walletName> --recover
 ```
 # Genesis
 ```console
