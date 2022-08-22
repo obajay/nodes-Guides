@@ -36,16 +36,18 @@ wget -O agoric https://raw.githubusercontent.com/obajay/nodes-Guides/main/Agoric
     source $HOME/.bash_profile && \
     go version
     
-# Build 27.07.22
-    export GIT_BRANCH=agoric-6
-    git clone https://github.com/Agoric/ag0
-    cd ag0
-    git checkout agoric-upgrade-6
-    make build && make install
-    . $HOME/.bash_profile
-    cp $HOME/ag0/build/ag0 /usr/local/bin
+# Build 22.08.22
+```bash
+export GIT_BRANCH=agoric-7
+git clone https://github.com/Agoric/ag0
+cd ag0
+git checkout agoric-upgrade-7
+make build && make install
+. $HOME/.bash_profile
+cp $HOME/ag0/build/ag0 /usr/local/bin
+```
 `ag0 version`
-- HEAD-31c78ba3aa872b54c4de448763c5b8044b8f950c
+- HEAD-ee4376c49b0931914e8e921ee4ded0026aafeeb8
 
       ag0 init <moniker> --chain-id agoric-3
     
