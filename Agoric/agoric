@@ -14,6 +14,7 @@ options=(
 "Install Node"
 "Create wallet"
 "Synchronization via StateSync"
+"UPDATE"
 "Delete Node"
 "Exit")
 select opt in "${options[@]}"
@@ -151,6 +152,21 @@ s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.agoric/config/config.toml
 sudo systemctl stop agoricd && ag0 unsafe-reset-all
 sudo systemctl restart agoricd && journalctl -u agoricd -f -o cat
+
+break
+;;
+"UPDATE")
+systemctl stop agoricd
+cd ~
+rm -rf ag0
+export GIT_BRANCH=agoric-7
+git clone https://github.com/Agoric/ag0
+cd ag0
+git checkout agoric-upgrade-7
+make build && make install
+. $HOME/.bash_profile
+cp $HOME/ag0/build/ag0 /usr/local/bin
+systemctl restart agoricd.service && journalctl -u agoricd.service -f -o cat
 
 break
 ;;
