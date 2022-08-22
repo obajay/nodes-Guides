@@ -93,7 +93,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.haqq
 
 ## Download addrbook
 ```console
-wget -O $HOME/.haqqd/config/addrbook.json "https://raw.githubusercontent.com/obajay/Testnets-guides-private/main/haqq/addrbook.json?token=GHSAT0AAAAAABUSBAWCWVYFFZGWM4ANUI44YX57WLA"
+wget -O $HOME/.haqqd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/haqq/addrbook.json"
 ```
 
 # Create a service file
