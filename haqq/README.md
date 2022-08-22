@@ -10,6 +10,13 @@
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
 | Testnet   |   4| 8GB  | 100GB    |
+
+# 1) Auto_install script
+```bash
+wget -O haqq1 https://raw.githubusercontent.com/obajay/nodes-Guides/main/haqq/haqq1 && chmod +x haqq1 && ./haqq1
+```
+# 2) Manual installation
+
 ### Preparing the server
 
     sudo apt update && sudo apt upgrade -y && \
