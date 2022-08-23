@@ -107,7 +107,8 @@ sed -i -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
 s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.agoric/config/config.toml
-sudo systemctl stop agoricd && ag0 unsafe-reset-all
+ag0 tendermint unsafe-reset-all --home $HOME/.agoric
+wget -O $HOME/.agoric/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Agoric/addrbook.json"
 sudo systemctl restart agoricd && journalctl -u agoricd -f -o cat
 ```
 
