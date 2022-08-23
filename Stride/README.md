@@ -12,7 +12,7 @@
 |-----------|----|------|----------|
 | Testnet   |   4| 16GB  | 200GB    |
 
-# 1) Auto_install script
+# 1) Auto_install script 
 ```bash
 wget -O stride-x https://raw.githubusercontent.com/obajay/nodes-Guides/main/Stride/stride-x && chmod +x stride-x && ./stride-x
 ```
