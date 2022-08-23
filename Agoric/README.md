@@ -15,7 +15,7 @@
 
 # 1) Auto_install script
 ```bash
-wget -O agoric https://raw.githubusercontent.com/obajay/nodes-Guides/main/Agoric/agoric && chmod +x agoric && ./agoric
+wget -O agoric3 https://raw.githubusercontent.com/obajay/nodes-Guides/main/Agoric/agoric3 && chmod +x agoric3 && ./agoric3
 ```
 # 2) Manual installation
 
