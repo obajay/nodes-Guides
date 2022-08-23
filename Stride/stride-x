@@ -13,6 +13,7 @@ PS3='Select an action: '
 options=(
 "Install Node"
 "Create wallet"
+"UPDATE"
 "Synchronize Stride node via StateSync"
 "Synchronize Gaia   node via StateSync"
 "Delete Node"
@@ -129,6 +130,18 @@ echo export Wallet=${Wallet} >> $HOME/.bash_profile
 source ~/.bash_profile
 strided keys add $Wallet
 echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE!!!!!!!!!SAVE!!!!!!!!!!!!!!!!\e[0m'"
+
+break
+;;
+"UPDATE")
+cd ~
+rm -rf stride
+git clone https://github.com/Stride-Labs/stride.git && cd stride
+git checkout 90859d68d39b53333c303809ee0765add2e59dab
+make build
+mkdir -p $HOME/go/bin
+sudo mv build/strided $(which strided)
+sudo systemctl restart strided && journalctl -u strided -f -o cat
 
 break
 ;;
