@@ -78,7 +78,7 @@ cp $HOME/ag0/build/ag0 /usr/local/bin
     sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" ~/.agoric/config/app.toml && \
     sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.agoric/config/app.toml
 
-### Indexer (optional)
+### Indexer (optional) 
 
     indexer="null" && \
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.agoric/config/config.toml
