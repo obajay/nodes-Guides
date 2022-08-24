@@ -103,7 +103,7 @@ wget -O $HOME/.bze/config/addrbook.json "https://raw.githubusercontent.com/obaja
     WantedBy=multi-user.target
     EOF
 
-# Snaphot 24.08.22 (0.1 GB)
+# Snaphot 24.08.22 (0.1 GB) block height --> 2293057
 ```bash
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
 rm -rf $HOME/.bze/data/
@@ -128,6 +128,7 @@ cd && cat .bze/data/priv_validator_state.json
 # don't forget to delete the archive to save space
 cd $HOME
 rm bzedata.tar.gz
+sudo systemctl restart bzed && sudo journalctl -u bzed -f -o cat
 ```
         
 # Start
