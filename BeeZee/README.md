@@ -32,7 +32,7 @@ wget -O beezzeed https://raw.githubusercontent.com/obajay/nodes-Guides/main/BeeZ
     echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile && \
     source ~/.bash_profile && \
     go version
-
+ 
 ## Build
 ```bash
 git clone https://github.com/bze-alphateam/bze
