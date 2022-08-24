@@ -122,9 +122,8 @@ wget -O $HOME/.bze/config/addrbook.json "https://raw.githubusercontent.com/obaja
     s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
     s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
     s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.bze/config/config.toml
-    cd /root/.bze/
-    bzed unsafe-reset-all
-    
+    bzed unsafe-reset-all --keep-addr-book
+        
 # Start
 
     sudo systemctl daemon-reload
