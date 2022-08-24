@@ -103,26 +103,32 @@ wget -O $HOME/.bze/config/addrbook.json "https://raw.githubusercontent.com/obaja
     WantedBy=multi-user.target
     EOF
 
+# Snaphot 24.08.22 (0.1 GB)
+```bash
+# install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
+rm -rf $HOME/.bze/data/
+mkdir $HOME/.bze/data/
 
-## State sync (optional)
-    a9fac0534bd6853f5810fdc692564967bd01b1fe@rpc-1.getbze.com:26656
-    peers="a9fac0534bd6853f5810fdc692564967bd01b1fe@rpc-1.getbze.com:26656"
-    sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.bze/config/config.toml
+# download archive
+cd $HOME
+wget http://116.202.236.115:7001/bzedata.tar.gz
 
-    SNAP_RPC=https://rpc-2.getbze.com:443
+# unpack the archive
+tar -C $HOME/ -zxvf bzedata.tar.gz --strip-components 1
+# !! IMPORTANT POINT. If the validator was created earlier. Need to reset priv_validator_state.json  !!
+wget -O $HOME/.bze/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/priv_validator_state.json"
+cd && cat .bze/data/priv_validator_state.json
+{
+  "height": "0",
+  "round": 0,
+  "step": 0
+}
 
-    LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-    BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
-    TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
-
-    echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-
-    sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-    s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
-    s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-    s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-    s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.bze/config/config.toml
-    bzed unsafe-reset-all --keep-addr-book
+# after unpacking, run the node
+# don't forget to delete the archive to save space
+cd $HOME
+rm bzedata.tar.gz
+```
         
 # Start
 
