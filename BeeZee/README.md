@@ -12,6 +12,12 @@
 |-----------|----|------|----------|
 | Mainnet   |   4| 8GB  | 160GB    |
 
+# 1) Auto_install script
+```bash
+wget -O beezzeed https://raw.githubusercontent.com/obajay/nodes-Guides/main/BeeZee/beezzeed && chmod +x beezzeed && ./beezzeed
+```
+# 2) Manual installation
+
 ### Preparing the server
 
     sudo apt update && sudo apt upgrade -y && \
@@ -28,17 +34,18 @@
     go version
 
 ## Build
-
-    git clone https://github.com/bze-alphateam/bze
-    cd bze
-    git checkout v5.0.1
-    make install
-    bzed version
-    5.0.1
-    
-    bzed init <moniker> --chain-id beezee-1
-    bzed config chain-id beezee-1
-    
+```bash
+git clone https://github.com/bze-alphateam/bze
+cd bze
+git checkout v5.0.1
+make install
+```
+`bzed version`
++ 5.0.1
+```bash
+bzed init <moniker> --chain-id beezee-1
+bzed config chain-id beezee-1
+```    
 ## Create/recover wallet
 
     bzed keys add <walletname>
@@ -72,6 +79,11 @@
 
     indexer="null" && \
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.bze/config/config.toml
+
+## Download addrbook
+
+wget -O $HOME/.bze/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/BeeZee/addrbook.json"
+
 
 # Create a service file
 
