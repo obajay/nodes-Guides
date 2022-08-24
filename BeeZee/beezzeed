@@ -143,6 +143,7 @@ tar -C $HOME/ -zxvf bzedata.tar.gz --strip-components 1
 wget -O $HOME/.bze/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/priv_validator_state.json"
 cd $HOME
 rm bzedata.tar.gz
+sudo systemctl restart bzed && sudo journalctl -u bzed -f -o cat
 
 break
 ;;
