@@ -13,7 +13,6 @@ PS3='Select an action: '
 options=(
 "Install Node"
 "Create wallet"
-"Synchronization via StateSync"
 "Synchronization via SnapShot"
 "UPDATE"
 "Delete Node"
@@ -126,40 +125,24 @@ source ~/.bash_profile
 bzed keys add $Wallet
 echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE!!!!!!!!!SAVE!!!!!!!!!!!!!!!!\e[0m'"
 
-break
-;;
-"Synchronization via StateSync")
-a9fac0534bd6853f5810fdc692564967bd01b1fe@rpc-1.getbze.com:26656
-peers="a9fac0534bd6853f5810fdc692564967bd01b1fe@rpc-1.getbze.com:26656"
-sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.bze/config/config.toml
-
-SNAP_RPC=https://rpc-2.getbze.com:443
-
-LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
-TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
-
-echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
-s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.bze/config/config.toml
-bzed unsafe-reset-all --keep-addr-book
-sudo systemctl restart bzed && journalctl -u bzed -f -o cat
-
 
 break
 ;;
 "UPDATE")
+echo -e "        \e[1m\e[32mNode Version\e[0m"
 bzed version
-echo -e "        \e[1m\e[35mSOOOOON\e[0m"
 
 break
 ;;
 "Synchronization via SnapShot")
-SOON
+rm -rf $HOME/.bze/data/
+mkdir $HOME/.bze/data/
+cd $HOME
+wget http://116.202.236.115:7001/bzedata.tar.gz
+tar -C $HOME/ -zxvf bzedata.tar.gz --strip-components 1
+wget -O $HOME/.bze/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/priv_validator_state.json"
+cd $HOME
+rm bzedata.tar.gz
 
 break
 ;;
