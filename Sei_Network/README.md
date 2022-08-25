@@ -19,6 +19,12 @@ Explorer: https://sei.explorers.guru/validators
 |-----------|----|------|----------|
 | Atlantic-1|   4| 8GB  | 150GB    |
 
+# 1) Auto_install script
+```bash
+wget -O sei4 https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sei_Network/sei4 && chmod +x sei4 && ./sei4
+```
+# 2) Manual installation
+
 ## Server preparation
 ### Updating the repositories
 
@@ -41,18 +47,19 @@ Explorer: https://sei.explorers.guru/validators
      go version
 
 ## Node installation 
-### IMPORTANT - currently 1.0.7beta needs to be loaded using snapshot or statesync
+### IMPORTANT - currently 1.1.1beta needs to be loaded using snapshot or statesync
 
-### Installing the binaries (03.08.22)
-    
-    git clone https://github.com/sei-protocol/sei-chain.git
-    cd sei-chain
-    git checkout master && git pull
-    git checkout 1.1.0beta
-    make install
-    seid version --long | head
-+ version: 1.1.0beta
-+ commit: 33e9e1d53a3fcd26748d3134d84b5748cac5e147*
+# Installing the binaries (18.08.22)
+```bash
+git clone https://github.com/sei-protocol/sei-chain.git
+cd sei-chain
+git checkout master && git pull
+git checkout 1.1.1beta
+make install
+```
+`seid version --long | head`
++ version: 1.1.1beta
++ commit: 9764e4d7b0fdbfacfca446c1a12a75df1693cd02
 
     
 ## Initializing the node to create the necessary configuration files
@@ -92,41 +99,47 @@ Explorer: https://sei.explorers.guru/validators
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.sei/config/config.toml
 
 ## Create a service file
-
-    sudo tee /etc/systemd/system/seid.service > /dev/null <<EOF
-    [Unit]
-    Description=seid
-    After=network-online.target
+```bash
+sudo tee /etc/systemd/system/seid.service > /dev/null <<EOF
+[Unit]
+Description=seid
+After=network-online.target
     
-    [Service]
-    User=$USER
-    ExecStart=$(which seid) start
-    Restart=on-failure
-    RestartSec=3
-    LimitNOFILE=65535
+[Service]
+User=$USER
+ExecStart=$(which seid) start
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=65535
 
-    [Install]
-    WantedBy=multi-user.target
-    EOF
-    
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+
+# Download addrbook
+```bash
+wget -O $HOME/.agoric/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sei_Network/addrbook.json"
+```
 # State Sync
+```bash
+SNAP_RPC="https://sei-testnet.nodejumper.io:443"
 
-    SNAP_RPC="https://sei-testnet.nodejumper.io:443"
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 2000)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
 
-    LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-    BLOCK_HEIGHT=$((LATEST_HEIGHT - 2000)); \
-    TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
 
-    echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+peers="4b5fb7390e9c64bc96f048816f472f4559fafd94@sei-testnet.nodejumper.io:28656"
+sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.sei/config/config.toml
 
-    peers="4b5fb7390e9c64bc96f048816f472f4559fafd94@sei-testnet.nodejumper.io:28656"
-    sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.sei/config/config.toml
-
-    sed -i -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-    s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
-    s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-    s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.sei/config/config.toml
-
+sed -i -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.sei/config/config.toml
+seid tendermint unsafe-reset-all --home /root/.sei --keep-addr-book
+```
     
 ## START
     sudo systemctl daemon-reload && \
@@ -156,3 +169,14 @@ We take test coins in discord
     --from <name_wallet> \
     --fees 5550usei
     
+## Delete Node
+```bash
+sudo systemctl stop seid && \
+sudo systemctl disable seid && \
+rm /etc/systemd/system/seid.service && \
+sudo systemctl daemon-reload && \
+cd $HOME && \
+rm -rf .sei && \
+rm -rf sei-chain && \
+rm -rf $(which seid)
+```
