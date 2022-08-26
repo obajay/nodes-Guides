@@ -129,6 +129,34 @@ s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.bitsongd/config/config.to
 bitsongd tendermint unsafe-reset-all --home /root/.bitsongd --keep-addr-book
 sudo systemctl restart bitsongd && journalctl -u bitsongd -f -o cat
 ```
+## SnapShot 26.08.22 (0.2 GB) block height --> 368413
+```bash
+# install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
+sudo systemctl stop bitsongd
+rm -rf $HOME/.bitsongd/data/
+mkdir $HOME/.bitsongd/data/
+
+# download archive
+cd $HOME
+wget http://51.195.189.48:7000/bitsongddata.tar.gz
+
+# unpack the archive
+tar -C $HOME/ -zxvf bitsongd.tar.gz --strip-components 1
+# !! IMPORTANT POINT. If the validator was created earlier. Need to reset priv_validator_state.json  !!
+wget -O $HOME/.bitsongd/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/priv_validator_state.json"
+cd && cat .bitsongd/data/priv_validator_state.json
+{
+  "height": "0",
+  "round": 0,
+  "step": 0
+}
+
+# after unpacking, run the node
+# don't forget to delete the archive to save space
+cd $HOME
+rm bitsongd.tar.gz
+sudo systemctl restart bitsongd && sudo journalctl -u bitsongd -f -o cat
+```
 
 ## Start
 
