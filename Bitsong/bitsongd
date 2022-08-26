@@ -152,7 +152,7 @@ sudo systemctl restart bitsongd && journalctl -u bitsongd -f -o cat
 break
 ;;
 "UPDATE")
-echo -e "        \e[1m\e[32mVERSION\e[0m"
+echo -e "        \e[1m\e[32mSOOOON\e[0m"
 bitsongd version
 
 
