@@ -13,6 +13,12 @@
 |-----------|----|------|----------|
 | Mainnet   |   8| 16GB | 260GB    |
 
+# 1) Auto_install script
+```bash
+wget -O bitsongd https://raw.githubusercontent.com/obajay/nodes-Guides/main/Bitsong/bitsongd && chmod +x bitsongd && ./bitsongd
+```
+# 2) Manual installation
+
 ### Preparing the server
 
     sudo apt update && sudo apt upgrade -y
@@ -51,16 +57,17 @@
 
 
 ## Set up the minimum gas price $HOME/.bitsongd/config/app.toml as well as seed and peers
+```bash
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.001ubtsg\"/;" ~/.bitsongd/config/app.toml
 
-    sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.001ubtsg\"/;" ~/.bitsongd/config/app.toml
+external_address=$(wget -qO- eth0.me)
+sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.bitsongd/config/config.toml
 
-    external_address=$(wget -qO- eth0.me)
-    sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.bitsongd/config/config.toml
-
-    peers="2af83a42fc643ddeeb5a1a10afc70fe0fa7e9201@wisdom.bonded.zone:26956"
-    sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.bitsongd/config/config.toml
-    seeds=""
-    sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.bitsongd/config/config.toml 
+peers="2af83a42fc643ddeeb5a1a10afc70fe0fa7e9201@wisdom.bonded.zone:26956"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.bitsongd/config/config.toml
+seeds=""
+sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.bitsongd/config/config.toml 
+```
 
  [SnapShot](https://sync.bonded.zone/mainnets/bitsong)
 
@@ -80,23 +87,29 @@
     indexer="null" && \
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.bitsongd/config/config.toml
 
+# Download addrbook
+```bash
+wget -O $HOME/.bitsongd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Bitsong/addrbook.json"
+```
+
 # Create a service file
+```bash
+udo tee /etc/systemd/system/bitsongd.service > /dev/null <<EOF
+[Unit]
+Description=bitsong
+After=network-online.target
 
-    sudo tee /etc/systemd/system/bitsongd.service > /dev/null <<EOF
-    [Unit]
-    Description=bitsong
-    After=network-online.target
+[Service]
+User=$USER
+ExecStart=$(which bitsongd) start
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=65535
 
-    [Service]
-    User=$USER
-    ExecStart=$(which bitsongd) start
-    Restart=on-failure
-    RestartSec=3
-    LimitNOFILE=65535
-
-    [Install]
-    WantedBy=multi-user.target
-    EOF
+[Install]
+WantedBy=multi-user.target
+EOF
+```
 
 ## Start
 
