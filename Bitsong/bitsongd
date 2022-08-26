@@ -94,12 +94,12 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.sei/config/config.tom
 
 sudo tee /etc/systemd/system/bitsongd.service > /dev/null <<EOF
 [Unit]
-Description=genesisd
+Description=bitsong
 After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which genesisd) start
+ExecStart=$(which bitsongd) start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
