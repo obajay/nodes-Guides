@@ -159,14 +159,7 @@ bitsongd version
 break
 ;;
 "Synchronization via SnapShot")
-rm -rf $HOME/.genesisd/data/
-mkdir $HOME/.genesisd/data/
-cd $HOME
-wget http://195.201.165.123:8000/genesisddata.tar.gz
-tar -C $HOME/ -zxvf genesisddata.tar.gz --strip-components 1
-cd $HOME
-rm genesisddata.tar.gz
-sudo systemctl restart genesisd && sudo journalctl -u genesisd -f -o cat
+echo -e "        \e[1m\e[32mVERSION\e[0m"
 
 break
 ;;
