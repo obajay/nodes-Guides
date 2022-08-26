@@ -94,7 +94,7 @@ wget -O $HOME/.bitsongd/config/addrbook.json "https://raw.githubusercontent.com/
 
 # Create a service file
 ```bash
-udo tee /etc/systemd/system/bitsongd.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/bitsongd.service > /dev/null <<EOF
 [Unit]
 Description=bitsong
 After=network-online.target
