@@ -164,9 +164,9 @@ cd
 rm -rf $HOME/.bitsongd/data/
 mkdir $HOME/.bitsongd/data/
 wget http://51.195.189.48:7000/bitsongddata.tar.gz
-tar -C $HOME/ -zxvf bitsongd.tar.gz --strip-components 1
+tar -C $HOME/ -zxvf bitsongddata.tar.gz --strip-components 1
 cd $HOME
-rm bitsongd.tar.gz
+rm bitsongddata.tar.gz
 sudo systemctl restart bitsongd && sudo journalctl -u bitsongd -f -o cat
 
 break
