@@ -13,7 +13,7 @@
 |-----------|----|------|----------|
 | Mainnet   |   8| 16GB | 260GB    |
 
-# 1) Auto_install script 
+# 1) Auto_install script
 ```bash
 wget -O bitsongd https://raw.githubusercontent.com/obajay/nodes-Guides/main/Bitsong/bitsongd && chmod +x bitsongd && ./bitsongd
 ```
