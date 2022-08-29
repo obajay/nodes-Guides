@@ -39,9 +39,12 @@ git checkout euphoria_v0.3.0
 make install
 ```
 `aurad version --long | head`
++ version: euphoria_v0.3.0
++ commit: d2585a031a3290cf5c31c016833bbc8fb215f27a
 
-    
-    aurad init <moniker> --chain-id euphoria-1
+```
+aurad init <moniker> --chain-id euphoria-1
+```
 
 ## Create/recover wallet
 
@@ -49,10 +52,11 @@ make install
     aurad keys add <walletname> --recover
 
 ## Genesis
-
-    wget -O $HOME/.aura/config/genesis.json "https://raw.githubusercontent.com/aura-nw/testnets/main/euphoria-1/genesis.json"
-    sha256sum ~/.aura/config/genesis.json
-    732f789aefe39e47b969f1e5ce440a675d8f6a640368d70e4d7f628b3c87e831
+```bash
+wget -O $HOME/.aura/config/genesis.json "https://raw.githubusercontent.com/aura-nw/testnets/main/euphoria-1/genesis.json"
+```
+`sha256sum ~/.aura/config/genesis.json`
++ 732f789aefe39e47b969f1e5ce440a675d8f6a640368d70e4d7f628b3c87e831
 
 ## Download addrbook
 
