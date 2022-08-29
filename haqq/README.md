@@ -3,7 +3,8 @@
 
 [Website](https://islamiccoin.net/)
 =
-[EXPLORER](https://explorer.nodestake.top/haqq-testnet/staking)
+[EXPLORER 1](https://testnet.manticore.team/haqq/staking) \
+[EXPLORER 2](https://explorer.nodestake.top/haqq-testedge/staking)
 =
 - **Minimum hardware requirements**:
 
