@@ -12,7 +12,13 @@
 
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
-| Testnet   |   3| 8GB  | 160GB    |
+| Testnet   |   4| 8GB  | 160GB    |
+# 1) Auto_install script
+```bash
+wget -O rebuss https://raw.githubusercontent.com/obajay/nodes-Guides/main/Rebus/rebuss && chmod +x rebuss && ./rebuss
+```
+# 2) Manual installation
+
 ### Preparing the server
 
     sudo apt update && sudo apt upgrade -y && \
