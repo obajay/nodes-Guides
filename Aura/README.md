@@ -33,7 +33,7 @@
 
 # Build 29.08.22
 ```bash
-it clone https://github.com/aura-nw/aura
+git clone https://github.com/aura-nw/aura
 cd aura
 git checkout euphoria_v0.3.0
 make install
