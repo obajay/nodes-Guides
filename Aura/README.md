@@ -31,14 +31,15 @@
     source ~/.bash_profile && \
     go version
 
-# Build 11.07.22
+# Build 29.08.22
+```bash
+it clone https://github.com/aura-nw/aura
+cd aura
+git checkout euphoria_v0.3.0
+make install
+```
+`aurad version --long | head`
 
-    git clone https://github.com/aura-nw/aura
-    cd aura
-    git checkout euphoria
-    make install
-    aurad version --long | head
-    euphoria_4027003
     
     aurad init <moniker> --chain-id euphoria-1
 
