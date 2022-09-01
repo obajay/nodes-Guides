@@ -7,7 +7,13 @@
 
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
-| Testnet   |   2| 4GB  | 100GB    |
+| Testnet   |   4| 8GB  | 100GB    |
+
+# 1) Auto_install script
+```bash
+wget -O teritor https://raw.githubusercontent.com/obajay/nodes-Guides/main/Teritori/teritor && chmod +x teritor && ./teritor
+```
+# 2) Manual installation
 
 ### Preparing the server
 
