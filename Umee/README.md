@@ -77,7 +77,7 @@ wget -O $HOME/.umee/config/addrbook.json "https://raw.githubusercontent.com/obaj
 ```console
 SNAP_RPC=141.95.124.151:21027
 peers="3ac6c5417f461494e9ce778f652922ae59566262@141.95.124.151:21026"
-sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:21026\"/; s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.umee/config/config.toml
+sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/; s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.umee/config/config.toml
 
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
