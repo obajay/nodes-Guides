@@ -14,7 +14,7 @@
 ```bash
 wget -O Ume https://raw.githubusercontent.com/obajay/nodes-Guides/main/Umee/Ume && chmod +x Ume && ./Ume
 ```
-2) Manual installation
+# 2) Manual installation
 
 ### Preparing the server
 ```
