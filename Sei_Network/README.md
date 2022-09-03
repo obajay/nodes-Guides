@@ -58,8 +58,8 @@ git checkout 1.1.2beta-internal
 make install
 ```
 `seid version --long | head`
-+ version: 1.1.1beta
-+ commit: 9764e4d7b0fdbfacfca446c1a12a75df1693cd02
++ version: 1.1.2beta-internal
++ commit: 23fb21f32de20869a6b1d50291ef6bbf2b2e7a0c
 
     
 ## Initializing the node to create the necessary configuration files
