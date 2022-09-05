@@ -44,8 +44,8 @@ git checkout v0.0.4
 make install
 ```
 `rebusd version --long | head`
-+ version: testnet.6f73acac323e89b6b1f7b38aa1ee884b39234e75
-+ commit: 6f73acac323e89b6b1f7b38aa1ee884b39234e75
++ version: HEAD.2bd70031d6c380d7d2cf4de8cdf546b060f54260
++ commit: 2bd70031d6c380d7d2cf4de8cdf546b060f54260
 
 ## Initialisation
 ```console
