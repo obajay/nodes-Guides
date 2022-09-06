@@ -36,8 +36,7 @@ git checkout 8650c11
 make install
 ```
 `pylonsd version version --long | head`
-+ version: 0.4.2
-+ commit: 89479b96c93ff293144ae4205a91affc806b09c8
++ version: 1.0.0-rc1-2-g8650c11b
 
 ## Initialisation
 ```console
