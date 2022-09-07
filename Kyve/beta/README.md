@@ -58,7 +58,7 @@ mv genesis-v0.7.0-beta.json ~/.kyve/config/genesis.json
 ```console
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.kyve/config/config.toml
 seeds=""
-peers=""
+peers="f40569a038c582de137aa014aa3854bc914af2b7@172.31.32.225:26656,fe686e1f25651cb1b0e0fa8a61b2e015ffd63bca@172.31.45.21:26656"
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$seeds\"/; s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.kyve/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.kyve/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.kyve/config/config.toml
