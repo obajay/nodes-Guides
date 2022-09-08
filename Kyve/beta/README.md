@@ -36,6 +36,14 @@ tar -xvzf chain_linux_amd64.tar.gz
 mv chaind $HOME/go/bin/
 chmod +x $HOME/go/bin/chaind
 ```
+```console
+UPD v0.7.0_beta1  09.09.22
+{
+   "name":"v0.7.0_beta1",
+   "info":"{\"binaries\": {\"linux/amd64\": \"https://kyve-beta.s3.eu-central-1.amazonaws.com/v0.7.0_beta1/chain_linux_amd64.tar.gz?checksum=sha256:55a0328ab9d588ef6959ba62039cd2e7ab83471d32853511f93029a2f44ba632\", \"darwin/amd64\": \"https://kyve-beta.s3.eu-central-1.amazonaws.com/v0.7.0_beta1/chain_darwin_amd64.tar.gz?checksum=sha256:8b83d7ae8d93c4eea8ed5151340d078314007c582d3b1e4a832d1f933cf23f9d\", \"linux/arm64\": \"https://kyve-beta.s3.eu-central-1.amazonaws.com/v0.7.0_beta1/chain_linux_arm64.tar.gz?checksum=sha256:764c52ce14826c1ae700541863dfb89889bf8a40d2f3aa583cf1b123942ebf02\"}}",
+   "height":29850
+}
+```
 
 ```bash
 chaind init <moniker> --chain-id kyve-beta
