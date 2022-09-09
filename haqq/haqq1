@@ -30,7 +30,7 @@ echo "_|-_|-_|-_|-_|-_|-_|"
 read Validator_Name
 echo "_|-_|-_|-_|-_|-_|-_|"
 echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
-echo export CHAIN_ID="haqq_53211-1" >> $HOME/.bash_profile
+echo export CHAIN_ID="haqq_54211-2" >> $HOME/.bash_profile
 source ~/.bash_profile
 
 echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
@@ -52,9 +52,9 @@ go version
 
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
-cd $HOME && \
-git clone -b v1.0.3 https://github.com/haqq-network/haqq && \
+cd $HOME && git clone https://github.com/haqq-network/haqq && \
 cd haqq && \
+git checkout v1.0.3 && \
 make install
 
 haqqd init $Validator_Name --chain-id $CHAIN_ID
@@ -65,9 +65,9 @@ wget -O $HOME/.haqqd/config/addrbook.json "https://raw.githubusercontent.com/oba
 
 echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
 
-seeds=""
+seeds="62bf004201a90ce00df6f69390378c3d90f6dd7e@seed2.testedge2.haqq.network:26656,23a1176c9911eac442d6d1bf15f92eeabb3981d5@seed1.testedge2.haqq.network:26656"
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.haqqd/config/config.toml
-peers="e15e1867f68011f80f2763e6691c89c923bf2f24@78.46.16.236:41656"
+peers="b3ce1618585a9012c42e9a78bf4a5c1b4bad1123@65.21.170.3:33656,952b9d918037bc8f6d52756c111d0a30a456b3fe@213.239.217.52:29656,85301989752fe0ca934854aecc6379c1ccddf937@65.109.49.111:26556,d648d598c34e0e58ec759aa399fe4534021e8401@109.205.180.81:29956,f2c77f2169b753f93078de2b6b86bfa1ec4a6282@141.95.124.150:20116,eaa6d38517bbc32bdc487e894b6be9477fb9298f@78.107.234.44:45656,37513faac5f48bd043a1be122096c1ea1c973854@65.108.52.192:36656,d2764c55607aa9e8d4cee6e763d3d14e73b83168@66.94.119.47:26656,fc4311f0109d5aed5fcb8656fb6eab29c15d1cf6@65.109.53.53:26656,297bf784ea674e05d36af48e3a951de966f9aa40@65.109.34.133:36656,bc8c24e9d231faf55d4c6c8992a8b187cdd5c214@65.109.17.86:32656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.haqqd/config/config.toml
 
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0stake\"/;" ~/.haqqd/config/app.toml
