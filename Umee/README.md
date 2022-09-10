@@ -90,7 +90,7 @@ s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.umee/config/config.toml
 umeed unsafe-reset-all
 ```
-# SnapShot 02.09.22 (0.5 GB) height 2858397
+# SnapShot 10.09.22 (0.4 GB) height 2966086
 ```bash
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
 sudo systemctl stop umeed
