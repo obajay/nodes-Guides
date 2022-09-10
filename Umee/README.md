@@ -10,7 +10,7 @@
 |-----------|----|------|----------|
 | Mainnet   |   8| 16GB  | 500GB    |
 
-# 1) Auto_install script
+# 1) Auto_install script 
 ```bash
 wget -O Ume https://raw.githubusercontent.com/obajay/nodes-Guides/main/Umee/Ume && chmod +x Ume && ./Ume
 ```
