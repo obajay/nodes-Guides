@@ -49,7 +49,7 @@ make install
 
 ## Initialisation
 ```console
-strided init <moniker> --chain-id stride-1
+strided init STAVRguide --chain-id stride-1
 ```
 ## Add wallet
 ```console
