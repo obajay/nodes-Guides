@@ -14,7 +14,7 @@
 |-----------|----|------|----------|
 | Testnet   |   8| 8GB  | 100GB    |
 
-# 1) Auto_install script 
+# 1) Auto_install script
 ```bash
 wget -O DWS https://raw.githubusercontent.com/obajay/nodes-Guides/main/DWS/DWS && chmod +x DWS && ./DWS
 ```
