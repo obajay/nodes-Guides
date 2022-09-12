@@ -36,7 +36,7 @@ wget -O DWS https://raw.githubusercontent.com/obajay/nodes-Guides/main/DWS/DWS &
     source $HOME/.bash_profile && \
     go version
 
-# Binary   01.08.22
+# Binary   12.09.22
 ```bash
 cd $HOME
 wget https://github.com/deweb-services/deweb/releases/download/v0.3/dewebd
