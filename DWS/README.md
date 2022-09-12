@@ -13,6 +13,13 @@
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
 | Testnet   |   8| 8GB  | 100GB    |
+
+# 1) Auto_install script
+```bash
+wget -O DWS https://raw.githubusercontent.com/obajay/nodes-Guides/main/DWS/DWS && chmod +x DWS && ./DWS
+```
+# 2) Manual installation
+
 ### Preparing the server
 
     sudo apt update && sudo apt upgrade -y && \
