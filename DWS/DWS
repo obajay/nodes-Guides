@@ -54,9 +54,10 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-wget https://github.com/deweb-services/deweb/releases/download/v0.3/dewebd
-chmod +x dewebd
-sudo mv dewebd /usr/local/bin/
+git clone https://github.com/deweb-services/deweb
+cd deweb
+git checkout v0.3
+make install
 
 dewebd init $Validator_Name --chain-id $CHAIN_ID
 
