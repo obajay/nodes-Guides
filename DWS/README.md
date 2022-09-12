@@ -16,7 +16,7 @@
 
 # 1) Auto_install script
 ```bash
-#wget -O DWS https://raw.githubusercontent.com/obajay/nodes-Guides/main/DWS/DWS && chmod +x DWS && ./DWS   (SOOOON)
+wget -O DWS https://raw.githubusercontent.com/obajay/nodes-Guides/main/DWS/DWS && chmod +x DWS && ./DWS
 ```
 # 2) Manual installation
 
