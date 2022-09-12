@@ -50,7 +50,7 @@ make install
 
 ## Initialisation
 ```bash
-rebusd init <moniker> --chain-id reb_1111-1
+rebusd init STAVRguide --chain-id reb_1111-1
 ```
 ## Add wallet
 ```console
