@@ -13,6 +13,7 @@ PS3='Select an action: '
 options=(
 "Install Node"
 "Create wallet"
+"Your node logs"
 "Synchronization via StateSync"
 "Synchronization via SnapShot"
 "UPDATE"
@@ -133,6 +134,10 @@ break
 "Synchronization via StateSync")
 echo -e "      \e[1m\e[35m SOOOOON\e[0m"
 
+break
+;;
+"Your node logs")
+sudo journalctl -u dewebd -f -o cat
 
 break
 ;;
