@@ -57,7 +57,7 @@ cd $HOME
 git clone https://github.com/umee-network/umee.git
 cd umee
 git pull
-git checkout tags/v1.0.3
+git checkout tags/v1.1.2
 make build
 sudo cp $HOME/umee/build/umeed /usr/local/bin
 
