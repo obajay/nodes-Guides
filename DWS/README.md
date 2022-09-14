@@ -101,7 +101,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.dewe
 
 ## Download addrbook
 ```console
-#wget -O $HOME/.deweb/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/DWS/addrbook.json"
+wget -O $HOME/.deweb/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/DWS/addrbook.json"
 ```
 
 # Create a service file
