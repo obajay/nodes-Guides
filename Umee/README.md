@@ -37,12 +37,13 @@ go version
 cd $HOME 
 git clone https://github.com/umee-network/umee.git
 cd umee
-git pull
-git checkout tags/v1.0.3
+git checkout v1.1.2
 make build
-sudo cp $HOME/umee/build/umeed /usr/local/bin
-umeed version
+mv $HOME/umee/build/umeed /usr/local/bin
 ```
+`umeed version`
++ HEAD-2708671a76d914cc960f69f26fb95c313199405a
+
 ## Init
     umeed init moniker --chain-id umee-1
 
