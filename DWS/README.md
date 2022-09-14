@@ -60,6 +60,7 @@ dewebd keys add <walletName> --recover
 # Genesis
 ```console
 curl -s https://raw.githubusercontent.com/deweb-services/deweb/main/genesis.json > ~/.deweb/config/genesis.json
+
 ```
 
 `sha256sum $HOME/.deweb/config/genesis.json`
