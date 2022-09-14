@@ -13,6 +13,7 @@ PS3='Select an action: '
 options=(
 "Install Node"
 "Create wallet"
+"Your node logs"
 "Synchronization via StateSync"
 "Synchronization via SnapShot"
 "UPDATE"
@@ -154,9 +155,20 @@ sudo systemctl restart umeed && journalctl -u umeed -f -o cat
 break
 ;;
 "UPDATE")
-echo -e "        \e[1m\e[32mVERSION\e[0m"
-umeed version
+cd $HOME 
+rm -rf umee
+git clone https://github.com/umee-network/umee.git
+cd umee
+git checkout v1.1.2
+make build
+mv $HOME/umee/build/umeed $(which umeed)
+sudo systemctl restart umeed && journalctl -u umeed -f -o cat
 
+
+break
+;;
+"Your node logs")
+sudo journalctl -u umeed -f -o cat
 
 break
 ;;
