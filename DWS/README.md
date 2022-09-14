@@ -36,7 +36,7 @@ wget -O DWS https://raw.githubusercontent.com/obajay/nodes-Guides/main/DWS/DWS &
     source $HOME/.bash_profile && \
     go version
 
-# Binary   12.09.22
+# Binary   14.09.22
 ```bash
 cd $HOME
 wget https://github.com/deweb-services/deweb/releases/download/v0.3/dewebd
@@ -50,7 +50,7 @@ sudo mv dewebd $HOME/go/bin/
 ## Initialisation
 ```console
 dewebd init <name_node> --chain-id deweb-testnet-2
-dewebd config chain-id deweb-testnet-2
+dewebd config chain-id deweb-testnet-3
 ```
 ## Add wallet
 ```console
@@ -63,7 +63,7 @@ curl -s https://raw.githubusercontent.com/deweb-services/deweb/main/genesis.json
 ```
 
 `sha256sum $HOME/.deweb/config/genesis.json`
-- b8af3c8f73a18ae6ffe8ed9429a1e8327aaec784eb90771b6e1f68ff277352bd
+- 50af96f0b0b897f5f6372db0594994c0db6b1702fc632e38493415503b60d97d
 
 ### Pruning (optional)
 ```
@@ -89,10 +89,10 @@ sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.deweb/config/co
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.deweb/config/config.toml
 
-peers="08b7968ec375444f86912c2d9c3d28e04a5f14c4@31.44.6.102:26656"
+peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.deweb/config/config.toml
 
-sed -E -i 's/seeds = \".*\"/seeds = \"08b7968ec375444f86912c2d9c3d28e04a5f14c4@seed1.deweb.services:26656\"/' $HOME/.deweb/config/config.toml
+sed -E -i 's/seeds = \".*\"/seeds = \"4e46b666a70387003b927417ed1ac7f2b7e1bea4@31.44.6.80:26656\"/' $HOME/.deweb/config/config.toml
 
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.deweb/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.deweb/config/config.toml
@@ -100,7 +100,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.dewe
 
 ## Download addrbook
 ```console
-#wget -O $HOME/.deweb/config/addrbook.json "SOON"
+#wget -O $HOME/.deweb/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/DWS/addrbook.json"
 ```
 
 # Create a service file
@@ -144,7 +144,7 @@ dewebd tx staking create-validator \
 --website="" \
 --pubkey $(dewebd tendermint show-validator) \
 --moniker STAVRguide \
---chain-id deweb-testnet-2 \
+--chain-id deweb-testnet-3 \
 --gas="auto" \
 --fees 100udws
 -y
