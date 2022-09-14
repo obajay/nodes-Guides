@@ -13,6 +13,7 @@ PS3='Select an action: '
 options=(
 "Install Node"
 "Create wallet"
+"Your node logs"
 "UPDATE"
 "Synchronize Stride node via StateSync"
 "Delete Node"
@@ -131,6 +132,11 @@ break
 ;;
 "UPDATE")
 echo -e "      \e[1m\e[32m SOOON    \e[0m'"
+
+break
+;;
+"Your node logs")
+sudo journalctl -u strided -f -o cat
 
 break
 ;;
