@@ -49,7 +49,7 @@ sudo mv dewebd $HOME/go/bin/
 
 ## Initialisation
 ```console
-dewebd init <name_node> --chain-id deweb-testnet-2
+dewebd init <name_node> --chain-id deweb-testnet-3
 dewebd config chain-id deweb-testnet-3
 ```
 ## Add wallet
