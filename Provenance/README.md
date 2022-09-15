@@ -28,17 +28,21 @@
     source ~/.bash_profile && \
     go version
 
-# Build 22.07.22
+# Build 16.09.22
+```bash
+export PIO_HOME=~/.provenanced
+git clone https://github.com/provenance-io/provenance.git && cd provenance
+git checkout tags/v1.12.0 -b v1.12.0
+make clean
+make install
+```
 
-    export PIO_HOME=~/.provenanced
-    git clone https://github.com/provenance-io/provenance.git && cd provenance
-    git checkout tags/v1.11.1 -b v1.11.1
-    make clean
-    make install
 `provenanced version`
-- version v1.11.1
-    
-      provenanced init <moniker> --chain-id pio-mainnet-1
+- version v1.12.0
+
+```    
+provenanced init STAVRguide --chain-id pio-mainnet-1
+```
 
 ## Create/recover wallet
 
