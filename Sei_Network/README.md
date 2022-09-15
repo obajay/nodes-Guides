@@ -19,7 +19,7 @@ Explorer: https://sei.explorers.guru/validators
 |-----------|----|------|----------|
 | Atlantic-1|   4| 8GB  | 150GB    |
 
-# 1) Auto_install script 
+# 1) Auto_install script
 ```bash
 wget -O sei4 https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sei_Network/sei4 && chmod +x sei4 && ./sei4
 ```
@@ -123,16 +123,12 @@ wget -O $HOME/.agoric/config/addrbook.json "https://raw.githubusercontent.com/ob
 ```
 # State Sync
 ```bash
-SNAP_RPC="https://sei-testnet.nodejumper.io:443"
-
+SNAP_RPC="https://sei-testnet-rpc.polkachu.com:443"
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 2000)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
 
 echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-
-peers="4b5fb7390e9c64bc96f048816f472f4559fafd94@sei-testnet.nodejumper.io:28656"
-sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.sei/config/config.toml
 
 sed -i -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
 s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
