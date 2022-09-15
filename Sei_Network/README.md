@@ -19,7 +19,7 @@ Explorer: https://sei.explorers.guru/validators
 |-----------|----|------|----------|
 | Atlantic-1|   4| 8GB  | 150GB    |
 
-# 1) Auto_install script
+# 1) Auto_install script 
 ```bash
 wget -O sei4 https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sei_Network/sei4 && chmod +x sei4 && ./sei4
 ```
