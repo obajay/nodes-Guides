@@ -13,6 +13,7 @@ PS3='Select an action: '
 options=(
 "Install Node"
 "Create wallet"
+"Check node logs"
 "Synchronization via StateSync"
 "Synchronization via SnapShot"
 "UPDATE"
@@ -122,7 +123,7 @@ break
 ;;
 "Create wallet")
 echo "_|-_|-_|-_|-_|-_|-_|"
-echo -e "      \e[1m\e[35m Your WalletName:\e[0m"
+echo -e "      \e[1m\e[32m Your WalletName:\e[0m"
 echo "_|-_|-_|-_|-_|-_|-_|"
 read Wallet
 echo export Wallet=${Wallet} >> $HOME/.bash_profile
@@ -133,7 +134,7 @@ echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE
 break
 ;;
 "Synchronization via StateSync")
-SNAP_RPC="https://sei-testnet-rpc.brocha.in:443"
+SNAP_RPC="https://sei-testnet-rpc.polkachu.com"
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
@@ -149,8 +150,13 @@ sudo systemctl restart seid && sudo journalctl -u seid -f -o cat
 break
 ;;
 "UPDATE")
-bzed version
+seid version
 echo -e "        \e[1m\e[35mSOOOOON\e[0m"
+
+break
+;;
+"Check node logs")
+sudo journalctl -u seid -f -o cat
 
 break
 ;;
