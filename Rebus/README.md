@@ -124,6 +124,28 @@ rebusd tendermint unsafe-reset-all --home ~/.rebusd --keep-addr-book
 sudo systemctl restart rebusd && journalctl -u rebusd -f -o cat
 ```
 
+# SnapShot 16.09.22 (0.3 GB) block height --> 118813
+```bash
+# install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
+sudo systemctl stop rebusd
+rm -rf $HOME/.rebusd/data/
+mkdir $HOME/.rebusd/data/
+
+# download archive
+cd $HOME
+wget http://51.195.189.48:7011/rebusdata.tar.gz
+
+# unpack the archive
+tar -C $HOME/ -zxvf rebusdata.tar.gz --strip-components 1
+
+# after unpacking, run the node
+# don't forget to delete the archive to save space
+cd $HOME
+rm rebusdata.tar.gz
+# start the node
+sudo systemctl restart rebusd && journalctl -u rebusd -f -o cat
+```
+
 # Create a service file
 ```console
 sudo tee /etc/systemd/system/rebusd.service > /dev/null <<EOF
