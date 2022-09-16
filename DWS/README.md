@@ -36,21 +36,21 @@ wget -O DWS https://raw.githubusercontent.com/obajay/nodes-Guides/main/DWS/DWS &
     source $HOME/.bash_profile && \
     go version
 
-# Binary   14.09.22
+# Binary   16.09.22
 ```bash
-cd $HOME
-wget https://github.com/deweb-services/deweb/releases/download/v0.3/dewebd
-chmod +x dewebd
-sudo mv dewebd $HOME/go/bin/
+git clone https://github.com/deweb-services/deweb.git
+cd deweb
+git checkout v0.3.1
+make install
 ```
 `dewebd version version --long | head`
-+ version: 0.3
-+ commit: 00ab525f3a8a1b9020862aeab80ef31e6ae0b714
++ version: 0.3.1
++ commit: 05a3111414ae9b510672925166b727371b669246
 
 ## Initialisation
 ```console
-dewebd init <name_node> --chain-id deweb-testnet-3
-dewebd config chain-id deweb-testnet-3
+dewebd init STAVRguide --chain-id deweb-testnet-sirius
+dewebd config chain-id deweb-testnet-sirius
 ```
 ## Add wallet
 ```console
@@ -58,13 +58,13 @@ dewebd keys add <walletName>
 dewebd keys add <walletName> --recover
 ```
 # Genesis
-```console
+```bash
 curl -s https://raw.githubusercontent.com/deweb-services/deweb/main/genesis.json > ~/.deweb/config/genesis.json
 
 ```
 
 `sha256sum $HOME/.deweb/config/genesis.json`
-- 50af96f0b0b897f5f6372db0594994c0db6b1702fc632e38493415503b60d97d
+- 5316dc5abf1bc46813b673e920cb6faac06850c4996da28d343120ee0d713ab9
 
 ### Pruning (optional)
 ```
@@ -93,7 +93,7 @@ sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:2
 peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.deweb/config/config.toml
 
-sed -E -i 's/seeds = \".*\"/seeds = \"4e46b666a70387003b927417ed1ac7f2b7e1bea4@31.44.6.80:26656\"/' $HOME/.deweb/config/config.toml
+sed -E -i 's/seeds = \".*\"/seeds = \"2b1aebd0029570c20932bf7a17b3d7e67cbacc52@31.44.6.134:26656\"/' $HOME/.deweb/config/config.toml
 
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.deweb/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.deweb/config/config.toml
