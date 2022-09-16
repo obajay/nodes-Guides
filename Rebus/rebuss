@@ -168,7 +168,15 @@ sudo journalctl -u rebusd -f -o cat
 break
 ;;
 "Synchronization via SnapShot")
-echo -e "      \e[1m\e[35m SOOOOON\e[0m"
+sudo systemctl stop rebusd
+rm -rf $HOME/.rebusd/data/
+mkdir $HOME/.rebusd/data/
+cd $HOME
+wget http://51.195.189.48:7011/rebusdata.tar.gz
+tar -C $HOME/ -zxvf rebusdata.tar.gz --strip-components 1
+cd $HOME
+rm rebusdata.tar.gz
+sudo systemctl restart rebusd && journalctl -u rebusd -f -o cat
 
 break
 ;;
