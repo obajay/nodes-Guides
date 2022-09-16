@@ -145,7 +145,7 @@ dewebd tx staking create-validator \
 --website="" \
 --pubkey $(dewebd tendermint show-validator) \
 --moniker STAVRguide \
---chain-id deweb-testnet-3 \
+--chain-id deweb-testnet-sirius \
 --gas="auto" \
 --fees 100udws
 -y
