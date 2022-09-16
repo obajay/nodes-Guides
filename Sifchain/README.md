@@ -20,7 +20,7 @@ Ethereum, and soon much more
 
 # 1) Auto_install script
 ```bash
-wget -O agoric3 https://raw.githubusercontent.com/obajay/nodes-Guides/main/Agoric/agoric3 && chmod +x agoric3 && ./agoric3
+SOON
 ```
 
 # 2) Manual installation
