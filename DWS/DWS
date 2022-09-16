@@ -32,7 +32,7 @@ echo "_|-_|-_|-_|-_|-_|-_|"
 read Validator_Name
 echo "_|-_|-_|-_|-_|-_|-_|"
 echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
-echo export CHAIN_ID="deweb-testnet-3" >> $HOME/.bash_profile
+echo export CHAIN_ID="deweb-testnet-sirius" >> $HOME/.bash_profile
 source ~/.bash_profile
 
 echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
@@ -54,10 +54,9 @@ go version
 
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
-cd $HOME
-git clone https://github.com/deweb-services/deweb
+git clone https://github.com/deweb-services/deweb.git
 cd deweb
-git checkout v0.3
+git checkout v0.3.1
 make install
 
 dewebd init $Validator_Name --chain-id $CHAIN_ID
@@ -75,7 +74,7 @@ sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:2
 peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.deweb/config/config.toml
 
-sed -E -i 's/seeds = \".*\"/seeds = \"4e46b666a70387003b927417ed1ac7f2b7e1bea4@31.44.6.80:26656\"/' $HOME/.deweb/config/config.toml
+sed -E -i 's/seeds = \".*\"/seeds = \"2b1aebd0029570c20932bf7a17b3d7e67cbacc52@31.44.6.134:26656\"/' $HOME/.deweb/config/config.toml
 
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.deweb/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.deweb/config/config.toml
