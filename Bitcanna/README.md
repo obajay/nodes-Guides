@@ -124,7 +124,7 @@ s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$RPC,$RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.bcna/config/config.toml
-sudo systemctl stop bcnad && bcnad unsafe-reset-all --keep-addr-book
+sudo systemctl stop bcnad && bcnad tendermint unsafe-reset-all --keep-addr-book
 sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 ```
 
