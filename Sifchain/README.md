@@ -18,9 +18,9 @@ Ethereum, and soon much more
 | Mainnet   |   8| 16GB | 260GB    |
 
 
-# 1) Auto_install script
+# 1) Auto_install script 
 ```bash
-wget -O sifchain https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sifchain/sifchain && chmod +x sifchain && ./sifchain
+wget -O https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sifchain/sifchain && chmod +x sifchain && ./sifchain
 ```
 
 # 2) Manual installation
