@@ -21,7 +21,7 @@
 
 # 1) Auto_install script
 ```bash
-wget -O bitcanna https://raw.githubusercontent.com/obajay/nodes-Guides/main/Bitcanna/bitcanna && chmod +x bitcanna && ./bitcanna
+wget -O https://raw.githubusercontent.com/obajay/nodes-Guides/main/Bitcanna/bitcanna && chmod +x bitcanna && ./bitcanna
 ```
 
 # 2) Manual installation
@@ -128,28 +128,28 @@ sudo systemctl stop bcnad && bcnad tendermint unsafe-reset-all --keep-addr-book
 sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 ```
 
-# SnapShot 17.09.22 (0.6 GB) height 8620884
+# SnapShot 17.09.22 (0.1 GB) height 5034948
 ```bash
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
-sudo systemctl stop sifnoded
-rm -rf $HOME/.sifnoded/data/
-mkdir $HOME/.sifnoded/data/
+sudo systemctl stop bcnad
+rm -rf $HOME/.bcna/data/
+mkdir $HOME/.bcna/data/
 
 # download archive
 cd $HOME
-wget http://141.95.124.151:5001/sifchaindata.tar.gz
+wget http://141.95.124.154:5101/bitcannaindata.tar.gz
 
 # unpack the archive
-tar -C $HOME/ -zxvf sifchaindata.tar.gz --strip-components 1
+tar -C $HOME/ -zxvf bitcannaindata.tar.gz --strip-components 1
 # !! IMPORTANT POINT. If the validator was created earlier. Need to reset priv_validator_state.json  !!
-wget -O $HOME/.sifnoded/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/priv_validator_state.json"
-cd && cat .sifnoded/data/priv_validator_state.json
+wget -O $HOME/.bcna/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/priv_validator_state.json"
+cd && cat .bcna/data/priv_validator_state.json
 
 # after unpacking, run the node
 # don't forget to delete the archive to save space
 cd $HOME
-rm sifchaindata.tar.gz
-systemctl restart sifnoded && journalctl -u sifnoded -f -o cat
+rm bitcannaindata.tar.gz
+sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 ```
 
 # Create a service file
