@@ -124,6 +124,29 @@ s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.sifnoded/
 sifnoded tendermint unsafe-reset-all --home $HOME/.sifnoded --keep-addr-book
 sudo systemctl restart sifnoded && journalctl -u sifnoded -f -o cat
 ```
+# SnapShot 17.09.22 (0.6 GB) height 8620884
+```bash
+# install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
+sudo systemctl stop sifnoded
+rm -rf $HOME/.sifnoded/data/
+mkdir $HOME/.sifnoded/data/
+
+# download archive
+cd $HOME
+wget http://141.95.124.151:5001/sifchaindata.tar.gz
+
+# unpack the archive
+tar -C $HOME/ -zxvf sifchaindata.tar.gz --strip-components 1
+# !! IMPORTANT POINT. If the validator was created earlier. Need to reset priv_validator_state.json  !!
+wget -O $HOME/.sifnoded/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/priv_validator_state.json"
+cd && cat .sifnoded/data/priv_validator_state.json
+
+# after unpacking, run the node
+# don't forget to delete the archive to save space
+cd $HOME
+rm sifchaindata.tar.gz
+systemctl restart sifnoded && journalctl -u sifnoded -f -o cat
+```
 
 # Create a service file
 ```bash
