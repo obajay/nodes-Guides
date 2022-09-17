@@ -20,7 +20,7 @@ Ethereum, and soon much more
 
 # 1) Auto_install script
 ```bash
-SOON
+wget -O sifchain https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sifchain/sifchain && chmod +x sifchain && ./sifchain
 ```
 
 # 2) Manual installation
@@ -51,14 +51,14 @@ rm sifnoded-v1.0-beta.11.zip
 mv ~/sifnoded $HOME/go/bin
 ```
 `sifnoded version`
-- 0.17.0
+- 1.0-beta.11
 
 ```bash
 sifnoded init STAVRguide --chain-id sifchain-1
 ```    
 
 ## Create/recover wallet
-```
+```bash
 sifnoded keys add <walletname>
 sifnoded keys add <walletname> --recover
 ```
@@ -107,21 +107,22 @@ wget -O $HOME/.sifnoded/config/addrbook.json "https://raw.githubusercontent.com/
 
 # StateSync
 ```bash
-SNAP_RPC=""
+sudo systemctl stop sifnoded
+SNAP_RPC="141.95.124.151:21057"
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
-TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
 
 echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
 
-peers=""
-sed -i -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.agoric/config/config.toml
+peers="02d427099db530f295efb39e094e23b57132da03@141.95.124.151:21056"
+sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.sifnoded/config/config.toml
 sed -i -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
 s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.sifnoded/config/config.toml
 sifnoded tendermint unsafe-reset-all --home $HOME/.sifnoded --keep-addr-book
-sudo systemctl restart sifnoded && sudo journalctl -u sifnoded -f -o cat
+sudo systemctl restart sifnoded && journalctl -u sifnoded -f -o cat
 ```
 
 # Create a service file
@@ -145,7 +146,7 @@ EOF
 
 ## Start
 ```bash
-sudo systemctl daemon-reload && \ 
+sudo systemctl daemon-reload && \
 sudo systemctl enable sifnoded && \
 sudo systemctl restart sifnoded && \
 sudo journalctl -u sifnoded -f -o cat
@@ -167,13 +168,14 @@ sudo journalctl -u sifnoded -f -o cat
 
 
 ## Delete node
-    sudo systemctl stop sifnoded && \
-    sudo systemctl disable sifnoded && \
-    rm /etc/systemd/system/sifnoded.service && \
-    sudo systemctl daemon-reload && \
-    cd $HOME && \
-    rm -rf sifnode && \
-    rm -rf .sifnoded && \
-    rm -rf $(which sifnoded)
-
+```bash
+sudo systemctl stop sifnoded && \
+sudo systemctl disable sifnoded && \
+rm /etc/systemd/system/sifnoded.service && \
+sudo systemctl daemon-reload && \
+cd $HOME && \
+rm -rf sifnode && \
+rm -rf .sifnoded && \
+rm -rf $(which sifnoded)
+```
 
