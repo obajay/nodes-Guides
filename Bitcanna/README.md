@@ -137,7 +137,7 @@ mkdir $HOME/.bcna/data/
 
 # download archive
 cd $HOME
-wget http://141.95.124.154:5101/bitcannaindata.tar.gz
+wget http://116.202.236.115:5101/bitcannaindata.tar.gz
 
 # unpack the archive
 tar -C $HOME/ -zxvf bitcannaindata.tar.gz --strip-components 1
