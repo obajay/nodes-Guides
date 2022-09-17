@@ -21,7 +21,7 @@
 
 # 1) Auto_install script
 ```bash
-SOON
+wget -O bitcanna https://raw.githubusercontent.com/obajay/nodes-Guides/main/Bitcanna/bitcanna && chmod +x bitcanna && ./bitcanna
 ```
 
 # 2) Manual installation
@@ -111,7 +111,21 @@ wget -O $HOME/.bcna/config/addrbook.json "https://raw.githubusercontent.com/obaj
 
 # StateSync
 ```bash
+RPC="http://wisdom.bonded.zone:20257"
+LATEST_HEIGHT=$(curl -s $RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
+TRUST_HASH=$(curl -s "$RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
 
+peers="8d30fc066da3161ec6dc92d50d0c035364155e11@wisdom.bonded.zone:20256"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.bcna/config/config.toml
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$RPC,$RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.bcna/config/config.toml
+sudo systemctl stop bcnad && bcnad unsafe-reset-all --keep-addr-book
+sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 ```
 
 # SnapShot 17.09.22 (0.6 GB) height 8620884
