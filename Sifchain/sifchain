@@ -164,7 +164,16 @@ journalctl -u sifnoded -f -o cat
 break
 ;;
 "Synchronization via SnapShot")
-echo -e "      \e[1m\e[32m SOOOOON  \e[0m"
+sudo systemctl stop sifnoded
+rm -rf $HOME/.sifnoded/data/
+mkdir $HOME/.sifnoded/data/
+cd $HOME
+wget http://141.95.124.151:5001/sifchaindata.tar.gz
+tar -C $HOME/ -zxvf sifchaindata.tar.gz --strip-components 1
+cd $HOME
+rm sifchaindata.tar.gz
+systemctl restart sifnoded && journalctl -u sifnoded -f -o cat
+
 
 break
 ;;
