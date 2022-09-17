@@ -20,7 +20,7 @@ Ethereum, and soon much more
 
 # 1) Auto_install script 
 ```bash
-wget -O https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sifchain/sifchain && chmod +x sifchain && ./sifchain
+wget -O sifchain https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sifchain/sifchain && chmod +x sifchain && ./sifchain
 ```
 
 # 2) Manual installation
