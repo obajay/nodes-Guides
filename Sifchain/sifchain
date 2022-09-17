@@ -40,7 +40,7 @@ echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
 
-echo -e "        \e[1m\e[32m2. Installing GO--> \e[0m" && sleep 1
+echo -e "       \e[1m\e[32m2. Installing GO--> \e[0m" && sleep 1
 #INSTALL GO
 ver="1.18.3" && \
 cd $HOME && \
