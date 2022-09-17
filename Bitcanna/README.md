@@ -21,7 +21,7 @@
 
 # 1) Auto_install script
 ```bash
-wget -O https://raw.githubusercontent.com/obajay/nodes-Guides/main/Bitcanna/bitcanna && chmod +x bitcanna && ./bitcanna
+wget -O bitcanna https://raw.githubusercontent.com/obajay/nodes-Guides/main/Bitcanna/bitcanna && chmod +x bitcanna && ./bitcanna
 ```
 
 # 2) Manual installation
