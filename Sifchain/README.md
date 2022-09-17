@@ -30,18 +30,19 @@ wget -O sifchain https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sifc
     sudo apt update && sudo apt upgrade -y
     sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 
-## GO 18.3 (one command)
+## GO 18.5
 
-    ver="1.18.3" && \
-    cd $HOME && \
-    wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-    sudo rm -rf /usr/local/go && \
-    sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-    rm "go$ver.linux-amd64.tar.gz" && \
-    echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-    source $HOME/.bash_profile && \
-    go version
-    
+```bash
+cd $HOME
+ver="1.18.5"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
+```
+
 # Build 15.09.22
 ```bash
 cd ~
