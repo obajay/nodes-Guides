@@ -6,7 +6,7 @@
 
 [Website](https://deweb.services/)
 =
-[EXPLORER]()
+[EXPLORER](https://dws.explorers.guru/validators)
 =
 - **Minimum hardware requirements**:
 
