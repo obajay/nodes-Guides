@@ -27,16 +27,18 @@
     source ~/.bash_profile && \
     go version
 
-# Build 11.05.22
+# Build 19.08.22
+```bash
+git clone https://github.com/rizon-world/rizon
+cd rizon
+git checkout v0.4.0
+make install
+```
 
-	git clone https://github.com/rizon-world/rizon
-	cd rizon
-	git checkout v0.3.0
-	make install
-    
-    rizond init <moniker> --chain-id titan-1
-	  rizond config chain-id titan-1
-
+```bash
+rizond init <moniker> --chain-id titan-1
+rizond config chain-id titan-1
+```
 
 ## Create/recover wallet
 
