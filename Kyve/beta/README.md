@@ -28,16 +28,15 @@
     source $HOME/.bash_profile && \
     go version
 
-# Build 09.09.22
+# Build 19.09.22
 ```bash
 cd $HOME
-wget https://kyve-beta.s3.eu-central-1.amazonaws.com/v0.7.0_beta2/chain_linux_amd64.tar.gz
+wget https://kyve-beta.s3.eu-central-1.amazonaws.com/v0.7.0_beta5/chain_linux_amd64.tar.gz
 tar -xvzf chain_linux_amd64.tar.gz
-mv chaind $HOME/go/bin/
-chmod +x $HOME/go/bin/chaind
+chmod +x chaind
+sudo mv chaind $HOME/go/bin/
+rm chain_linux_amd64.tar.gz
 ```
-
-
 
 ```bash
 chaind init <moniker> --chain-id kyve-beta
