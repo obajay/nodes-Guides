@@ -81,9 +81,9 @@ bzed config chain-id beezee-1
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.bze/config/config.toml
 
 ## Download addrbook
-
+```bash
 wget -O $HOME/.bze/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/BeeZee/addrbook.json"
-
+```
 
 # Create a service file
 
