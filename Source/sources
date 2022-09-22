@@ -131,7 +131,7 @@ sudo systemctl stop sourced
 rm -rf $HOME/.source/data/
 mkdir $HOME/.source/data/
 cd $HOME
-wget http://116.202.236.115:8000/sourcedata.tar.gz
+wget http://116.202.236.115:7150/sourcedata.tar.gz
 tar -C $HOME/ -zxvf sourcedata.tar.gz --strip-components 1
 wget -O $HOME/.source/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/priv_validator_state.json"
 cd $HOME
