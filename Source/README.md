@@ -120,7 +120,7 @@ WantedBy=multi-user.target
 EOF
 ```
 
-# SnapShot 20.09.22 (0.1 GB) block height --> 2428252
+# SnapShot 22.09.22 (0.1 GB) block height --> 2460728
 ```bash
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
 sudo systemctl stop sourced
@@ -129,7 +129,7 @@ mkdir $HOME/.source/data/
 
 # download archive
 cd $HOME
-wget http://116.202.236.115:8000/sourcedata.tar.gz
+wget http://116.202.236.115:7150/sourcedata.tar.gz
 
 # unpack the archive
 tar -C $HOME/ -zxvf sourcedata.tar.gz --strip-components 1
