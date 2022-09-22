@@ -13,7 +13,7 @@
 |-----------|----|------|----------|
 | Testnet   |   4| 8GB  | 160GB    |
 
-# 1) Auto_install script
+# 1) Auto_install script 
 ```bash
 wget -O sources https://raw.githubusercontent.com/obajay/nodes-Guides/main/Source/sources && chmod +x sources && ./sources
 ```
