@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```bash
-wget -O nois https://raw.githubusercontent.com/keni32/nois/main/nois && chmod +x nois && ./nois
+wget -O nois https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nois/nois && chmod +x nois && ./nois
 ```
 
 # 2) Manual installation
@@ -107,7 +107,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.noisd/config/config.t
 
 ## Download addrbook
 ```bash
-wget -O $HOME/.noisd/config/addrbook.json "https://raw.githubusercontent.com/keni32/nois/main/addrbook.json"
+wget -O $HOME/.noisd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nois/addrbook.json"
 ```
 
 # StateSync
