@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```bash
-wget -O nois https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nois/nois && chmod +x nois && ./nois
+wget -O nois https://raw.githubusercontent.com/keni32/nois/main/nois && chmod +x nois && ./nois
 ```
 
 # 2) Manual installation
