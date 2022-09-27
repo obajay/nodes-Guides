@@ -92,7 +92,7 @@ umeed unsafe-reset-all
 wget -O $HOME/.umee/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Umee/addrbook.json"
 sudo systemctl restart umeed && journalctl -u umeed -f -o cat
 ```
-# SnapShot 10.09.22 (0.4 GB) height 2966086
+# SnapShot 27.09.22 (0.5 GB) height 3211857
 ```bash
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
 sudo systemctl stop umeed
