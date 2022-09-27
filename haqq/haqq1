@@ -52,9 +52,10 @@ go version
 
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
-cd $HOME && git clone https://github.com/haqq-network/haqq && \
-cd haqq && \
-git checkout v1.0.3 && \
+cd
+git clone https://github.com/haqq-network/haqq
+cd haqq
+git checkout v1.1.0
 make install
 
 haqqd init $Validator_Name --chain-id $CHAIN_ID
@@ -155,8 +156,13 @@ systemctl restart haqqd && journalctl -u haqqd -f -o cat
 break
 ;;
 "UPDATE")
-haqqd version
-echo -e "      \e[1m\e[35mSOON\e[0m"
+cd
+rm -rf haqq
+git clone https://github.com/haqq-network/haqq
+cd haqq
+git checkout v1.1.0
+make install
+sudo systemctl restart haqqd && journalctl -u haqqd -f -o cat
 
 break
 ;;
