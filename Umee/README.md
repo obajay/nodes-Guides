@@ -90,6 +90,7 @@ s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.umee/config/config.toml
 umeed unsafe-reset-all
 wget -O $HOME/.umee/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Umee/addrbook.json"
+sudo systemctl restart umeed && journalctl -u umeed -f -o cat
 ```
 # SnapShot 10.09.22 (0.4 GB) height 2966086
 ```bash
