@@ -36,17 +36,17 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Binary   09.09.22
+# Binary   27.09.22
 ```bash 
-cd $HOME && git clone https://github.com/haqq-network/haqq && \
-cd haqq && \
-git checkout v1.0.3 && \
+git clone https://github.com/haqq-network/haqq
+cd haqq
+git checkout v1.1.0
 make install
 ```
 
 `haqqd -v`
-- version: 1.0.3
-- commit: 58215364d5be4c9ab2b17b2a80cf89f10f6de38a 
+- version: 1.1.0
+- commit: 76f2e42c15edcb844fb7129ef2b57df1294253c9 
 
 ## Initialisation
 ```console
