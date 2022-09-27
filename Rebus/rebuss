@@ -56,7 +56,8 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 #INSTALL
 cd $HOME
 git clone https://github.com/rebuschain/rebus.core.git 
-cd rebus.core && git checkout master
+cd rebus.core
+git checkout v0.2.0
 make install
 
 rebusd init $Validator_Name --chain-id $CHAIN_ID
@@ -157,8 +158,14 @@ sudo systemctl restart rebusd && journalctl -u rebusd -f -o cat
 break
 ;;
 "UPDATE")
-echo -e "        \e[1m\e[32mVERSION\e[0m"
-rebusd version
+cd $HOME
+rm -rf rebus.core
+git clone https://github.com/rebuschain/rebus.core.git 
+cd rebus.core
+git checkout v0.2.0
+make install
+sudo systemctl restart rebusd && journalctl -u rebusd -f -o cat
+
 
 break
 ;;
