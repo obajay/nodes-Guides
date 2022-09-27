@@ -36,17 +36,18 @@ wget -O rebuss https://raw.githubusercontent.com/obajay/nodes-Guides/main/Rebus/
     source $HOME/.bash_profile && \
     go version
 
-# Binary   12.09.22
+# Binary   27.09.22
 ```bash
 cd $HOME
 git clone https://github.com/rebuschain/rebus.core.git 
-cd rebus.core && git checkout master
+cd rebus.core
+git checkout v0.2.0
 make install
 
 ```
 `rebusd version --long | head`
-+ version: master.725ab954b6582cda056ef84deb1c6a5f816cd37b
-+ commit: 725ab954b6582cda056ef84deb1c6a5f816cd37b
++ version: HEAD.f3cd9873b77d6a40738b187572249d715a75bbd4
++ commit: f3cd9873b77d6a40738b187572249d715a75bbd4
 
 ## Initialisation
 ```bash
