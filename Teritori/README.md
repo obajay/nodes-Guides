@@ -31,15 +31,17 @@ wget -O teritor https://raw.githubusercontent.com/obajay/nodes-Guides/main/Terit
     go version
 
 ## Build
+```bash
+git clone https://github.com/TERITORI/teritori-chain
+cd teritori-chain
+git switch mainnet && \
+make install
+```
+```bash
+teritorid init <moniker> --chain-id teritori-testnet-v3
+teritorid config chain-id teritori-testnet-v3
+```
 
-    git clone https://github.com/TERITORI/teritori-chain
-    cd teritori-chain
-    git checkout teritori-testnet-v2
-    make install
-
-    teritorid init <moniker> --chain-id teritori-testnet-v2
-    teritorid config chain-id teritori-testnet-v2
-    
 ## Create/recover wallet
 
     teritorid keys add <walletname>
@@ -48,15 +50,18 @@ wget -O teritor https://raw.githubusercontent.com/obajay/nodes-Guides/main/Terit
 ### when creating, do not forget to write down the seed phrase
 
 # Genesis
-
-    wget https://raw.githubusercontent.com/TERITORI/teritori-chain/teritori-testnet-v2/genesis/genesis.json -O $HOME/.teritorid/config/genesis.json
+```bash
+cd $HOME
+wget https://github.com/TERITORI/teritori-chain/raw/mainnet/testnet/teritori-testnet-v3/genesis.json
+mv genesis.json .teritorid/config/
+```
 
 ## Seeds,peers and gas price
     sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0utori\"/;" ~/.teritorid/config/app.toml
     external_address=$(wget -qO- eth0.me)
     sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.teritorid/config/config.toml
 
-    peers="0dde2ae55624d822eeea57d1b5e1223b6019a531@176.9.149.15:26656,4d2ea61e6195ee4e449c1e6132cabce98f7d94e1@5.9.40.222:26656,bceb776975aab62bcfd501969c0e1a2734ed7c2e@176.9.19.162:26656"
+    peers="peers="ccc59b8a55f9c6e7a24bd693e2796f781ea3a670@65.108.227.133:27656,5ae1012f9b0f4672d8152de903d115dd2f1a3ee3@65.21.170.3:27656,22101a61b235e607d5d0ad51b698d7511ebf87e2@65.108.43.227:26796,15dd94f68c450da2c3b7c60b6364e3dce6f0cbf2@185.193.66.68:26641"
     sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.teritorid/config/config.toml
     seeds=""
     sed -i.bak -e "s/^seeds *=.*/seeds = \"$seeds\"/; s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.teritorid/config/config.toml
