@@ -30,7 +30,7 @@ wget -O teritor https://raw.githubusercontent.com/obajay/nodes-Guides/main/Terit
     source ~/.bash_profile && \
     go version
 
-## Build
+## Build 
 ```bash
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain
