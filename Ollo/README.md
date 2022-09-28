@@ -15,7 +15,7 @@
 
 # 1) Auto_install script
 ```bash
-soon
+wget -O olo https://raw.githubusercontent.com/obajay/nodes-Guides/main/Ollo/olo && chmod +x olo && ./olo
 ```
 
 # 2) Manual installation
