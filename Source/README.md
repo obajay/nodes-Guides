@@ -15,7 +15,7 @@
 
 # 1) Auto_install script 
 ```bash
-wget -O https://raw.githubusercontent.com/obajay/nodes-Guides/main/Source/sources && chmod +x sources && ./sources
+wget -O sources https://raw.githubusercontent.com/obajay/nodes-Guides/main/Source/sources && chmod +x sources && ./sources
 ```
 # 2) Manual installation
 
