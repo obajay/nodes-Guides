@@ -13,6 +13,7 @@ PS3='Select an action: '
 options=(
 "Install Node"
 "Create wallet"
+"Check node logs"
 "Synchronize node via snapshot"
 "Delete Node"
 "Exit")
@@ -137,6 +138,11 @@ wget -O $HOME/.source/data/priv_validator_state.json "https://raw.githubusercont
 cd $HOME
 rm sourcedata.tar.gz
 sudo systemctl restart sourced && sudo journalctl -u sourced -f -o cat
+
+break
+;;
+"Check node logs")
+sudo journalctl -u sourced -f -o cat
 
 break
 ;;
