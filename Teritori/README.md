@@ -38,7 +38,7 @@ git switch mainnet && \
 make install
 ```
 ```bash
-teritorid init <moniker> --chain-id teritori-testnet-v3
+teritorid init STAVRguide --chain-id teritori-testnet-v3
 teritorid config chain-id teritori-testnet-v3
 ```
 
@@ -120,7 +120,7 @@ mv genesis.json .teritorid/config/
     teritorid tx staking create-validator \
     --amount=1000000utori \
     --pubkey=$(teritorid tendermint show-validator) \
-    --moniker="<moniker>" \
+    --moniker="STAVRguide" \
     --identity="" \
     --details="" \
     --website="" \
