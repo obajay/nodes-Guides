@@ -46,8 +46,6 @@ wget -O sei4 https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sei_Netw
      source $HOME/.bash_profile && \
      go version
 
-## Node installation 
-### IMPORTANT - currently 1.1.1beta needs to be loaded using snapshot or statesync
 
 # Installing the binaries (20.09.22)
 ```bash
