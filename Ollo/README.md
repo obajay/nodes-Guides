@@ -13,7 +13,7 @@
 | Testnet   |   8| 16GB | 160GB    |
 
 
-# 1) Auto_install script
+# 1) Auto_install script 
 ```bash
 wget -O olo https://raw.githubusercontent.com/obajay/nodes-Guides/main/Ollo/olo && chmod +x olo && ./olo
 ```
