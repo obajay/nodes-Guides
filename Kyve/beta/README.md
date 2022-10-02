@@ -99,6 +99,27 @@ LimitNOFILE=infinity
 WantedBy=multi-user.target
 EOF
 ```
+# State Sync KYVE (kyve-beta)
+```bash
+SNAP_RPC="kyveb.rpc.t.stavr.tech:20057"
+peers="4d7740c5ba34ade97bb6491422eab414b7831ca0@135.181.5.47:20056"
+sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.kyve/config/config.toml
+
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.kyve/config/config.toml
+chaind tendermint unsafe-reset-all --home $HOME/.kyve
+sudo systemctl restart kyved && journalctl -u kyved -f -o cat
+```
+
 
 ## Start
 ```console
