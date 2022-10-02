@@ -34,7 +34,7 @@ wget -O teritor https://raw.githubusercontent.com/obajay/nodes-Guides/main/Terit
 ```bash
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain
-git switch mainnet && \
+git checkout b412a5a1d4853382ab9abea59e1777b8e8fcc7fc
 make install
 ```
 ```bash
