@@ -107,13 +107,12 @@ wget -O $HOME/.ollo/config/addrbook.json "https://raw.githubusercontent.com/obaj
 
 # StateSync
 ```bash
-SNAP_RPC=213.239.217.52:35657
-peers="3c0104dae0eb6266432b5aef6af1f2a83300d824@213.239.217.52:35656"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.ollo/config/config.toml
+peers="6cafaaa5044895ad0a98f138610856611f44137c@5.9.13.162:22046" 
+sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.ollo/config/config.toml
+SNAP_RPC="http://ollo.rpc.t.stavr.tech:22047"
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
-
 echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
 
 sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
@@ -122,7 +121,8 @@ s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.ollo/config/config.toml
 ollod tendermint unsafe-reset-all --home $HOME/.ollo --keep-addr-book
-systemctl restart ollod && journalctl -u ollod -f -o cat
+wget -O $HOME/.ollo/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Ollo/addrbook.json"
+sudo systemctl restart ollod && journalctl -u ollod -f -o cat
 ```
 
 # Create a service file
