@@ -11,7 +11,7 @@
 
 # 1) Auto_install script
 ```bash
-wget -O teritor https://raw.githubusercontent.com/obajay/nodes-Guides/main/Teritori/teritor && chmod +x teritor && ./teritor
+wget -O teritor https://raw.githubusercontent.com/obajay/nodes-Guides/main/Teritori/Teritori%20testnet/teritor && chmod +x teritor && ./teritor
 ```
 # 2) Manual installation
 
