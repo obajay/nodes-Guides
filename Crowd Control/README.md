@@ -27,11 +27,12 @@
     source ~/.bash_profile && \
     go version
 
-# Build 23.07.22
+# Build 03.10.22
+```bash
+curl https://get.ignite.com/DecentralCardGame/Cardchain@v0.8! | sudo bash
+sudo apt-get install jq
+```
 
-    curl https://get.ignite.com/DecentralCardGame/Cardchain@latest! | sudo bash
-    sudo apt-get install jq
-    
 `Cardchain version --long | head`
 + version: latest-bf2b2b7b
 + commit: bf2b2b7b07a9fd32ae68f9b72f1d83f608735b5b
