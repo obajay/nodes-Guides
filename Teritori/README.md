@@ -11,7 +11,7 @@
 
 # 1) Auto_install script
 ```bash
-soooon
+wget -O teritorm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Teritori/teritorm && chmod +x teritorm && ./teritorm
 ```
 # 2) Manual installation
 
