@@ -1,7 +1,7 @@
 # Teritori Mainnet guide
 ![tert](https://user-images.githubusercontent.com/44331529/180614436-1041172a-0b1e-4df3-85b7-3d18899f3e43.png)
 
-[EXPLORER](https://explorer.ericet.xyz/teritori/staking)
+[EXPLORER](http://explorer.stavr.tech/teritori-main/staking)
 =
 - **Recommended hardware requirements**:
 
