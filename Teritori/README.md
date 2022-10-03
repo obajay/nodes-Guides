@@ -16,10 +16,10 @@ soooon
 # 2) Manual installation
 
 ### Preparing the server
-
-    sudo apt update && sudo apt upgrade -y && \
-    sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
-
+```bash
+sudo apt update && sudo apt upgrade -y && \
+sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
+```
 ## GO 18.1 (one command)
 
     wget https://golang.org/dl/go1.18.1.linux-amd64.tar.gz; \
@@ -44,9 +44,10 @@ teritorid config chain-id teritori-1
 ```
 
 ## Create/recover wallet
-
-    teritorid keys add <walletname>
-    teritorid keys add <walletname> --recover
+```bash
+teritorid keys add <walletname>
+teritorid keys add <walletname> --recover
+```
 
 ### when creating, do not forget to write down the seed phrase
 
