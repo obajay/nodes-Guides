@@ -9,7 +9,7 @@
 |-----------|----|------|----------|
 | Mainnet   |  12| 32GB | 250GB    |
 
-# 1) Auto_install script
+# 1) Auto_install script 
 ```bash
 wget -O teritorm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Teritori/teritorm && chmod +x teritorm && ./teritorm
 ```
