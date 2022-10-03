@@ -93,7 +93,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.teritorid/config/conf
 ```
 # Create a service file
 ```bash
-udo tee /etc/systemd/system/teritorid.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/teritorid.service > /dev/null <<EOF
 [Unit]
 Description=Teritorid
 After=network-online.target
