@@ -34,8 +34,8 @@ sudo apt-get install jq
 ```
 
 `Cardchain version --long | head`
-+ version: latest-bf2b2b7b
-+ commit: bf2b2b7b07a9fd32ae68f9b72f1d83f608735b5b
++ version: latest
++ commit: 64d870f21f258f1116570abc18470a8e558f0629
     
       Cardchain init <moniker> --chain-id Cardchain
 
