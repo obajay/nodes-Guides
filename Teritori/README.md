@@ -3,11 +3,11 @@
 
 [EXPLORER](https://explorer.ericet.xyz/teritori/staking)
 =
-- **Minimum hardware requirements**:
+- **Recommended hardware requirements**:
 
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
-| Mainnet   |  12| 32GB | 250GB    |
+| Mainnet   |  16| 32GB | 500GB    |
 
 # 1) Auto_install script 
 ```bash
