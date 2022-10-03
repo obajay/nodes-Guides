@@ -13,6 +13,7 @@ PS3='Select an action: '
 options=(
 "Install Node"
 "Create wallet"
+"Check node logs"
 "Synchronization via StateSync"
 "UPDATE"
 "Delete Node"
@@ -55,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd
 git clone https://github.com/haqq-network/haqq
 cd haqq
-git checkout v1.1.0
+git checkout v1.2.0
 make install
 
 haqqd init $Validator_Name --chain-id $CHAIN_ID
@@ -152,6 +153,10 @@ haqqd tendermint unsafe-reset-all --home $HOME/.haqqd
 wget -O $HOME/.haqqd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/haqq/addrbook.json"
 systemctl restart haqqd && journalctl -u haqqd -f -o cat
 
+break
+;;
+"Check node logs")
+sudo journalctl -u haqqd -f -o cat
 
 break
 ;;
