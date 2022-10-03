@@ -30,7 +30,7 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bs
     source ~/.bash_profile && \
     go version
 
-## Build 
+## Build
 ```bash
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain 
