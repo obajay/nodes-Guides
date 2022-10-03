@@ -124,7 +124,7 @@ mv genesis.json .teritorid/config/
     --identity="" \
     --details="" \
     --website="" \
-    --chain-id="teritori-testnet-v2" \
+    --chain-id="teritori-testnet-v3" \
     --commission-rate="0.10" \
     --commission-max-rate="0.20" \
     --commission-max-change-rate="0.1" \
