@@ -13,6 +13,7 @@ PS3='Select an action: '
 options=(
 "Install Node"
 "Create wallet"
+"Check node logs"
 "Synchronization via StateSync"
 "Synchronization via SnapShot"
 "UPDATE"
@@ -140,6 +141,10 @@ break
 echo -e "        \e[1m\e[32mVERSION\e[0m"
 teritorid version
 
+break
+;;
+"Check node logs")
+sudo journalctl -u teritorid -f -o cat
 
 break
 ;;
