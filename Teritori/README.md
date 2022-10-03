@@ -54,8 +54,8 @@ teritorid keys add <walletname> --recover
 # Genesis
 ```bash
 cd $HOME
-wget https://github.com/TERITORI/teritori-chain/raw/mainnet/testnet/teritori-testnet-v3/genesis.json
-mv genesis.json .teritorid/config/
+wget -O ~/.teritorid/config/genesis.json https://media.githubusercontent.com/media/TERITORI/teritori-chain/v1.1.2/mainnet/teritori-1/genesis.json
+
 ```
 
 ## Seeds,peers and gas price
