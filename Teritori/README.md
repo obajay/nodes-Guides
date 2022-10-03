@@ -60,7 +60,7 @@ wget -O ~/.teritorid/config/genesis.json https://media.githubusercontent.com/med
 
 ## Seeds,peers and gas price
 ```bash
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.001utori\"/;" ~/.teritorid/config/app.toml
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0utori\"/;" ~/.teritorid/config/app.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.teritorid/config/config.toml
 
