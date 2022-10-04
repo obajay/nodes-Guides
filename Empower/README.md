@@ -14,7 +14,7 @@
 
 # 1) Auto_install script
 ```bash
-soon
+wget -O empw https://raw.githubusercontent.com/obajay/nodes-Guides/main/Empower/empw && chmod +x empw && ./empw
 ```
 # 2) Manual installation
 
@@ -37,7 +37,7 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Binary   27.09.22
+# Binary   03.10.22
 ```bash
 cd $HOME 
 git clone https://github.com/empowerchain/empowerchain
