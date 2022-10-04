@@ -72,7 +72,7 @@ sed -i.bak -e "s/^seeds *=.*/seeds = \"$seeds\"/; s/^persistent_peers *=.*/persi
 
 ## Download addrbook
 ```bash
-wget -O $HOME/.teritorid/config/addrbook.json "soon"
+wget -O $HOME/.teritorid/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Teritori/addrbook.json"
 ```
 
 ## Pruning (optional)
