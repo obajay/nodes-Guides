@@ -63,7 +63,7 @@ cd $HOME/.haqqd/config/ && wget https://raw.githubusercontent.com/haqq-network/v
 ```
 
 `sha256sum $HOME/.haqqd/config/genesis.json`
-- 8c79dda3c8f0b2b9c0f5e770136fd6044ea1a062c9272d17665cb31464a371f7  genesis.json
+- 016a7c2e56deaacb9b5299182f809db288847cd040ebdf0d326ef546c65cb95a  genesis.json
 
 ### Pruning (optional) one command
 ```
