@@ -29,13 +29,12 @@
 
 # Build 03.10.22
 ```bash
-curl https://get.ignite.com/DecentralCardGame/Cardchain@v0.8! | sudo bash
-sudo apt-get install jq
+git clone https://github.com/DecentralCardGame/Testnet && chmod +x ./Testnet/Cardchain_install.sh && chmod +x ./Testnet/Cardchain_remove.sh && ./Testnet/Cardchain_install.sh
 ```
 
 `Cardchain version --long | head`
-+ version: latest
-+ commit: 64d870f21f258f1116570abc18470a8e558f0629
++ version: latest-8103a490
++ commit: 8103a49099f2357d56e31aa090ddc1cd42e07bde
     
       Cardchain init <moniker> --chain-id Cardchain
 
