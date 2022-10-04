@@ -98,64 +98,21 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.empo
 
 ## Download addrbook
 ```bash
-wget -O $HOME/.rebusd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Rebus/addrbook.json"
-```
-# StateSync
-```bash
-sudo systemctl stop rebusd
-peers="9fe60255ffc5176f419d9913ca032d4b5dc413b1@141.95.124.151:20106"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.rebusd/config/config.toml
-SNAP_RPC="http://141.95.124.151:20107"
-LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
-TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
-
-echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
-s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.rebusd/config/config.toml
-wget -O $HOME/.rebusd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Rebus/addrbook.json"
-rebusd tendermint unsafe-reset-all --home ~/.rebusd --keep-addr-book
-sudo systemctl restart rebusd && journalctl -u rebusd -f -o cat
-```
-
-# SnapShot 16.09.22 (0.3 GB) block height --> 118813
-```bash
-# install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
-sudo systemctl stop rebusd
-rm -rf $HOME/.rebusd/data/
-mkdir $HOME/.rebusd/data/
-
-# download archive
-cd $HOME
-wget http://51.195.189.48:7011/rebusdata.tar.gz
-
-# unpack the archive
-tar -C $HOME/ -zxvf rebusdata.tar.gz --strip-components 1
-
-# after unpacking, run the node
-# don't forget to delete the archive to save space
-cd $HOME
-rm rebusdata.tar.gz
-# start the node
-sudo systemctl restart rebusd && journalctl -u rebusd -f -o cat
+wget -O $HOME/.empowerchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Empower/addrbook.json"
 ```
 
 # Create a service file
 ```console
-sudo tee /etc/systemd/system/rebusd.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/empowerd.service > /dev/null <<EOF
 [Unit]
-Description=rebus
-After=network-online.target
+Description=EmpowerChain Node
+After=network.target
 
 [Service]
 User=$USER
-ExecStart=$(which rebusd) start
+Type=simple
+ExecStart=$(which empowerd) start
 Restart=on-failure
-RestartSec=3
 LimitNOFILE=65535
 
 [Install]
@@ -165,14 +122,14 @@ EOF
 
 # Start node (one command)
 ```console
-sudo systemctl daemon-reload && sudo systemctl enable rebusd
-sudo systemctl restart rebusd && sudo journalctl -u rebusd -f -o cat
+sudo systemctl daemon-reload && sudo systemctl enable empowerd
+sudo systemctl restart empowerd && sudo journalctl -u empowerd -f -o cat
 ```
 
 ## Create validator
 ```
-rebusd tx staking create-validator \
---amount 1000000arebus \
+empowerd tx staking create-validator \
+--amount 1000000umpwr \
 --from <walletname> \
 --commission-max-change-rate "0.10" \
 --commission-max-rate "0.20" \
@@ -181,21 +138,20 @@ rebusd tx staking create-validator \
 --identity="" \
 --details="" \
 --website="" \
---pubkey $(rebusd tendermint show-validator) \
+--pubkey $(empowerd tendermint show-validator) \
 --moniker STAVRguide \
---chain-id reb_1111-1 \
---gas 300000 \
+--chain-id altruistic-1 \
 -y
 ```
 
 ### Delete node (one command)
 ```
-sudo systemctl stop rebusd && \
-sudo systemctl disable rebusd && \
-rm /etc/systemd/system/rebusd.service && \
+sudo systemctl stop empowerd && \
+sudo systemctl disable empowerd && \
+rm /etc/systemd/system/empowerd.service && \
 sudo systemctl daemon-reload && \
 cd $HOME && \
-rm -rf .rebusd && \
-rm -rf rebus.core && \
-rm -rf $(which rebusd)
+rm -rf .empowerchain && \
+rm -rf empowerchain && \
+rm -rf $(which empowerd)
 ```
