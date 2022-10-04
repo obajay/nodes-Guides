@@ -45,8 +45,8 @@ make install
 ```
 
 `haqqd -v`
-- version: 1.1.0
-- commit: 76f2e42c15edcb844fb7129ef2b57df1294253c9 
+- version: 1.2.0
+- commit:  
 
 ## Initialisation
 ```console
@@ -99,7 +99,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.haqq
 
 ## Download addrbook
 ```console
-#soon wget -O $HOME/.haqqd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/haqq/addrbook.json"
+wget -O $HOME/.haqqd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/haqq/addrbook.json"
 ```
 
 # Create a service file
