@@ -21,17 +21,16 @@ wget -O empw https://raw.githubusercontent.com/obajay/nodes-Guides/main/Empower/
 ### Preparing the server
 ```bash
 sudo apt update && sudo apt upgrade -y && \
-sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
+sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
 ## GO 18.3 (one command)
 ```bash
-ver="1.18.3" && \
-cd $HOME && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
+cd $HOME && version="1.18.3" && \
+wget "https://golang.org/dl/go$version.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
+sudo tar -C /usr/local -xzf "go$version.linux-amd64.tar.gz" && \
+rm "go$version.linux-amd64.tar.gz" && \
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
 source $HOME/.bash_profile && \
 go version
@@ -39,15 +38,17 @@ go version
 
 # Binary   03.10.22
 ```bash
-cd $HOME 
-git clone https://github.com/empowerchain/empowerchain
-cd empowerchain/chain
-make install
+cd $HOME && git clone https://github.com/empowerchain/empowerchain && \
+cd empowerchain/chain && \
+make install && \
+empowerd version --long | head
 ```
 
 ## Initialisation
 ```bash
-empowerd init STAVRguide --chain-id altruistic-1
+empowerd init STABRguide --chain-id altruistic-1 && \
+empowerd config chain-id altruistic-1
+
 ```
 ## Add wallet
 ```console
@@ -56,7 +57,7 @@ empowerd keys add <walletName> --recover
 ```
 # Genesis
 ```bash
-cd $HOME/.empowerchain/config && wget https://raw.githubusercontent.com/empowerchain/empowerchain/main/testnets/altruistic-1/genesis.json
+rm -rf $HOME/.empowerchain/config/genesis.json && cd $HOME/.empowerchain/config && wget https://raw.githubusercontent.com/empowerchain/empowerchain/main/testnets/altruistic-1/genesis.json
 ```
 
 `sha256sum $HOME/.empowerchain/config/genesis.json`
