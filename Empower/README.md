@@ -1,7 +1,8 @@
 # Empower Testnet Guide
-![Empower](https://user-images.githubusercontent.com/44331529/193759972-c06735f0-6272-45dd-aaa9-def027ffb360.png)
 
-[Website](https://www.empower.eco/)
+![empower](https://user-images.githubusercontent.com/44331529/193969092-38e7ec7f-bca0-4bd9-a31d-5ba52b71ec81.png)
+
+[Website](https://www.empowerchain.io/)
 =
 [EXPLORER 1](http://explorer.stavr.tech/empower/staking) \
 [EXPLORER 2](https://testnet.ping.pub/empower)
