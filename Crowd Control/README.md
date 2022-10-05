@@ -36,78 +36,56 @@ git clone https://github.com/DecentralCardGame/Testnet && chmod +x ./Testnet/Car
 + version: latest-8103a490
 + commit: 8103a49099f2357d56e31aa090ddc1cd42e07bde
     
-      Cardchain init <moniker> --chain-id Cardchain
-
 ## Create/recover wallet
-
-    Cardchain keys add <walletname>
-    Cardchain keys add <walletname> --recover
-
-## Genesis
-
-    wget -O $HOME/.Cardchain/config/genesis.json "https://raw.githubusercontent.com/DecentralCardGame/Testnet1/main/genesis.json"
+```bash
+Cardchain keys add <walletname>
+Cardchain keys add <walletname> --recover
+```
 
 ## Download addrbook
-
-    wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Crowd%20Control/addrbook.json"
-
+```bash
+wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Crowd%20Control/addrbook.json"
+```
 
 ## Minimum gas price/Peers/Seeds
+```bash
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ubpf\"/;" ~/.Cardchain/config/app.toml
 
-    sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ubpf\"/;" ~/.Cardchain/config/app.toml
+external_address=$(wget -qO- eth0.me)
+sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.Cardchain/config/config.toml
 
-    external_address=$(wget -qO- eth0.me)
-    sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.Cardchain/config/config.toml
+peers="61f05a01167b1aec59275f74c3d7c3dc7e9388d4@45.136.28.158:26658"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.Cardchain/config/config.toml
 
-    peers="61f05a01167b1aec59275f74c3d7c3dc7e9388d4@45.136.28.158:26658"
-    sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.Cardchain/config/config.toml
-
-    seeds=""
-    sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.Cardchain/config/config.toml
-
+seeds=""
+sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.Cardchain/config/config.toml
+```
 
 
 ### Pruning (optional)
-
-    pruning="custom" && \
-    pruning_keep_recent="100" && \
-    pruning_keep_every="0" && \
-    pruning_interval="10" && \
-    sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.Cardchain/config/app.toml && \
-    sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.Cardchain/config/app.toml && \
-    sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.Cardchain/config/app.toml && \
-    sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.Cardchain/config/app.toml
-
+```bash
+pruning="custom" && \
+pruning_keep_recent="100" && \
+pruning_keep_every="0" && \
+pruning_interval="10" && \
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.Cardchain/config/app.toml && \
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.Cardchain/config/app.toml && \
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.Cardchain/config/app.toml && \
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.Cardchain/config/app.toml
+```
 ### Indexer (optional)
-
-    indexer="null" && \
-    sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.Cardchain/config/config.toml
-
-# Create a service file
-
-    sudo tee /etc/systemd/system/Cardchain.service > /dev/null <<EOF
-    [Unit]
-    Description=Cardchain
-    After=network-online.target
-
-    [Service]
-    User=$USER
-    ExecStart=$(which Cardchain) start
-    Restart=on-failure
-    RestartSec=3
-    LimitNOFILE=65535
-
-    [Install]
-    WantedBy=multi-user.target
-    EOF
+```bash
+ndexer="null" && \
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.Cardchain/config/config.toml
+```
 
 ## Start
-
-    sudo systemctl daemon-reload
-    sudo systemctl enable Cardchain
-    sudo systemctl restart Cardchain
-    sudo journalctl -u Cardchain -f -o cat
-
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable Cardchaind.service
+sudo systemctl restart Cardchaind.service
+sudo journalctl -u Cardchaind.service -f -o cat
+```
 ## Create validator
 
 
@@ -127,13 +105,13 @@ git clone https://github.com/DecentralCardGame/Testnet && chmod +x ./Testnet/Car
 
 
 ## Delete node
-
-    sudo systemctl stop Cardchain && \
-    sudo systemctl disable Cardchain && \
-    rm /etc/systemd/system/Cardchain.service && \
-    sudo systemctl daemon-reload && \
-    cd $HOME && \
-    rm -rf .Cardchain && \
-    rm -rf Cardchain && \
-    rm -rf $(which Cardchain)
-
+```bash
+sudo systemctl stop Cardchain && \
+sudo systemctl disable Cardchain && \
+rm /etc/systemd/system/Cardchain.service && \
+sudo systemctl daemon-reload && \
+cd $HOME && \
+rm -rf .Cardchain && \
+rm -rf Cardchain && \
+rm -rf $(which Cardchain)
+```
