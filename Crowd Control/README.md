@@ -54,7 +54,7 @@ sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ubpf\"/;" ~/
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.Cardchain/config/config.toml
 
-peers="61f05a01167b1aec59275f74c3d7c3dc7e9388d4@45.136.28.158:26658"
+peers="2fb0585484acb391ce36edf90ccbe5024e64f6d0@207.180.194.156:46656,bccdf09677fea2709be54625f3d9c184b327e8de@38.242.255.239:46656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.Cardchain/config/config.toml
 
 seeds=""
@@ -106,12 +106,8 @@ sudo journalctl -u Cardchaind.service -f -o cat
 
 ## Delete node
 ```bash
-sudo systemctl stop Cardchaind.service && \
-sudo systemctl disable Cardchaind.service && \
-rm /etc/systemd/system/Cardchain.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf .Cardchain && \
-rm -rf Cardchain && \
-rm -rf $(which Cardchain)
+sudo systemctl stop Cardchaind
+sudo rm /etc/systemd/system/Cardchaind.service
+sudo rm -r $HOME/.Cardchain/
+sudo rm /usr/local/bin/Cardchain
 ```
