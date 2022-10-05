@@ -15,11 +15,11 @@
     go version
 
     cd $HOME
-### Installing the binaries (14.09.22)
+### Installing the binaries (05.10.22)
 ```bash    
 git clone https://github.com/sei-protocol/sei-chain.git
 cd sei-chain
-git checkout 1.2.0beta
+git checkout 1.2.2beta
 make install
 ```
 
