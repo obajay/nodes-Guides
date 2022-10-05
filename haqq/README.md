@@ -19,9 +19,10 @@ wget -O haqq1 https://raw.githubusercontent.com/obajay/nodes-Guides/main/haqq/ha
 # 2) Manual installation
 
 ### Preparing the server
-
-    sudo apt update && sudo apt upgrade -y && \
-    sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
+```bash
+sudo apt update && sudo apt upgrade -y && \
+sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
+```
 
 ## GO 18.3 (one command) 
 ```
@@ -95,6 +96,30 @@ sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.haqqd/config/config.toml
 
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.haqqd/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.haqqd/config/config.toml
+```
+
+# SnapShot 05.10.22 (2.4 GB) block height --> 361346
+```bash
+# install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
+sudo systemctl stop haqqd
+rm -rf $HOME/.haqqd/data/
+mkdir $HOME/.haqqd/data/
+
+# download archive
+cd $HOME
+wget http://88.198.34.226:7150/haqqddata.tar.gz
+
+# unpack the archive
+tar -C $HOME/ -zxvf haqqddata.tar.gz --strip-components 1
+# !! IMPORTANT POINT. If the validator was created earlier. Need to reset priv_validator_state.json  !!
+wget -O $HOME/.haqqd/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/Canto/priv_validator_state.json"
+cd && cat .haqqd/data/priv_validator_state.json
+
+# after unpacking, run the node
+# don't forget to delete the archive to save space
+cd $HOME
+rm haqqddata.tar.gz
+systemctl restart haqqd && journalctl -u haqqd -f -o cat
 ```
 
 ## Download addrbook
