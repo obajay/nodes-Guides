@@ -66,16 +66,9 @@ cd $HOME/.haqqd/config/ && wget https://raw.githubusercontent.com/haqq-network/v
 `sha256sum $HOME/.haqqd/config/genesis.json`
 - 016a7c2e56deaacb9b5299182f809db288847cd040ebdf0d326ef546c65cb95a  genesis.json
 
-### Pruning (optional) one command
+### Pruning
 ```
-pruning="custom" && \
-pruning_keep_recent="100" && \
-pruning_keep_every="0" && \
-pruning_interval="10" && \
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.haqqd/config/app.toml && \
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.haqqd/config/app.toml && \
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.haqqd/config/app.toml && \
-sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.haqqd/config/app.toml
+sed -i -e "s/^pruning *=.*/pruning = \"nothing\"/" $HOME/.haqqd/config/app.toml 
 ```
 ### Indexer (optional) one command
     indexer="null" && \
