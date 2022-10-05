@@ -47,12 +47,12 @@ wget -O sei4 https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sei_Netw
      go version
 
 
-# Installing the binaries (20.09.22)
+# Installing the binaries (06.10.22)
 ```bash
 git clone https://github.com/sei-protocol/sei-chain.git
 cd sei-chain
 git checkout master && git pull
-git checkout 1.2.0beta
+git checkout 1.2.2beta
 make install
 ```
 `seid version --long | head`
