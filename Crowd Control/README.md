@@ -106,8 +106,8 @@ sudo journalctl -u Cardchaind.service -f -o cat
 
 ## Delete node
 ```bash
-sudo systemctl stop Cardchain && \
-sudo systemctl disable Cardchain && \
+sudo systemctl stop Cardchaind.service && \
+sudo systemctl disable Cardchaind.service && \
 rm /etc/systemd/system/Cardchain.service && \
 sudo systemctl daemon-reload && \
 cd $HOME && \
