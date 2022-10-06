@@ -135,7 +135,7 @@ rm -rf $HOME/.noisd/data/
 mkdir $HOME/.noisd/data/
 # download archive
 cd $HOME
-wget http://195.201.165.123:7050/noisddata.tar.gz
+wget http://nois.snap.stavr.tech:7050/noisddata.tar.gz
 # unpack the archive
 tar -C $HOME/ -zxvf noisddata.tar.gz --strip-components 1
 # !! IMPORTANT POINT. If the validator was created earlier. Need to reset priv_validator_state.json  !!
