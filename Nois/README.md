@@ -127,7 +127,7 @@ s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.noisd/config/config.toml
 noisd tendermint unsafe-reset-all --home $HOME/.noisd --keep-addr-book
 systemctl restart noisd && journalctl -u noisd -f -o cat
 ```
-# Snaphot 06.10.22 (8 GB) block height --> 
+# Snaphot 06.10.22 (8 GB) block height --> 269196
 ```bash
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
 sudo systemctl stop noisd
