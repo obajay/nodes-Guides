@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```bash
-soon
+wget -O hyper https://raw.githubusercontent.com/obajay/nodes-Guides/main/Hypersign/hyper && chmod +x hyper && ./hyper
 ```
 
 # 2) Manual installation
@@ -104,7 +104,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.hid-node/config/confi
 
 ## Download addrbook
 ```bash
-wget -O $HOME/.hid-node/config/addrbook.json ""
+wget -O $HOME/.hid-node/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Hypersign/addrbook.json"
 ```
 
 # Create a service file
