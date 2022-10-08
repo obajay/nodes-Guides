@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```bash
-wget -O nois https://raw.githubusercontent.com/keni32/nois/main/nois && chmod +x nois && ./nois
+wget -O noiss https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nois/Testnet%20002/%20noiss && chmod +x noiss && ./noiss
 ```
 
 # 2) Manual installation
