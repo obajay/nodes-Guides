@@ -176,6 +176,7 @@ sudo systemctl disable noisd && \
 rm /etc/systemd/system/noisd.service && \
 sudo systemctl daemon-reload && \
 cd $HOME && \
+rm -rf full-node && \
 rm -rf .noisd && \
 rm -rf $(which noisd)
 
