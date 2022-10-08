@@ -43,7 +43,7 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 07.10.22
+# Build 07.10.22 
 ```bash
 cd ~
 git clone https://github.com/noislabs/full-node.git
