@@ -9,7 +9,8 @@
 
 [Website](https://www.bitcanna.io/)
 =
-[EXPLORER](https://www.mintscan.io/bitcanna/validators)
+[EXPLORER 1](https://explorer.stavr.tech/bitcanna/staking) \
+[EXPLORER 2](https://www.mintscan.io/bitcanna/validators)
 =
 
 - **Minimum hardware requirements**:
