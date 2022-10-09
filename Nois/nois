@@ -137,7 +137,9 @@ echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE
 break
 ;;
 "Synchronization via StateSync")
-SNAP_RPC=https://nois-testnet-rpc.polkachu.com:443
+SNAP_RPC=http://nois.rpc.t.stavr.tech:21037
+peers="2dc7ab934dfec910fac3083fd74e3451e1d3e670@135.181.5.47:21036"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.noisd/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
@@ -147,7 +149,8 @@ s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.noisd/config/config.toml
-noisd tendermint unsafe-reset-all --home $HOME/.noisd --keep-addr-book
+noisd tendermint unsafe-reset-all --home $HOME/.noisd
+wget -O $HOME/.noisd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nois/addrbook.json"
 systemctl restart noisd && journalctl -u noisd -f -o cat
 
 
@@ -166,7 +169,17 @@ journalctl -u noisd -f -o cat
 break
 ;;
 "Synchronization via SnapShot")
-echo -e "      \e[1m\e[32m SOOOOON  \e[0m"
+sudo systemctl stop noisd
+rm -rf $HOME/.noisd/data/
+mkdir $HOME/.noisd/data/
+cd $HOME
+wget http://nois.snap.stavr.tech:7050/noisddata.tar.gz
+tar -C $HOME/ -zxvf noisddata.tar.gz --strip-components 1
+wget -O $HOME/.noisd/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/priv_validator_state.json"
+cd && cat .noisd/data/priv_validator_state.json
+cd $HOME
+rm noisddata.tar.gz
+systemctl restart noisd && journalctl -u noisd -f -o cat
 
 break
 ;;
