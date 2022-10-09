@@ -135,7 +135,20 @@ echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE
 break
 ;;
 "Synchronization via StateSync")
-echo -e "      \e[1m\e[32m SOOOOON  \e[0m"
+SNAP_RPC=http://hid.rpc.t.stavr.tech:21057
+peers="3f658dc173540479ba70f58f27d60fa9de83378a@195.201.165.123:21056"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.hid-node/config/config.toml
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.hid-node/config/config.toml
+hid-noded tendermint unsafe-reset-all --home $HOME/.hid-node
+systemctl restart hid-noded && journalctl -u hid-noded -f -o cat
 
 
 break
@@ -153,7 +166,16 @@ journalctl -u hid-noded -f -o cat
 break
 ;;
 "Synchronization via SnapShot")
-echo -e "      \e[1m\e[32m SOOOOON  \e[0m"
+sudo systemctl stop hid-noded
+rm -rf $HOME/.hid-node/data/
+mkdir $HOME/.hid-node/data/
+cd $HOME
+wget http://hid.snapshot.stavr.tech:7160/hyperdata.tar.gz
+tar -C $HOME/ -zxvf hyperdata.tar.gz --strip-components 1
+cd $HOME
+rm hyperdata.tar.gz
+systemctl restart hid-noded && journalctl -u hid-noded -f -o cat
+
 
 break
 ;;
