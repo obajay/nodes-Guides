@@ -13,6 +13,7 @@ PS3='Select an action: '
 options=(
 "Install Node"
 "Create wallet"
+"Check node logs"
 "Synchronize node via SnapShot"
 "Delete Node"
 "Exit")
@@ -141,6 +142,11 @@ wget -O $HOME/.cantod/data/priv_validator_state.json "https://raw.githubusercont
 cd $HOME
 rm cantodata.tar.gz
 sudo systemctl restart cantod && journalctl -u cantod -f -o cat
+
+break
+;;
+"Check node logs")
+sudo journalctl -u cantod -f -o cat
 
 break
 ;;
