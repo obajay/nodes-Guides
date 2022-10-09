@@ -135,7 +135,7 @@ sudo systemctl stop cantod
 rm -rf $HOME/.cantod/data/
 mkdir $HOME/.cantod/data/
 cd $HOME
-wget http://116.202.236.115:7000/cantodata.tar.gz
+wget http://canto.snapshot.stavr.tech:6001/cantodata.tar.gz
 tar -C $HOME/ -zxvf cantodata.tar.gz --strip-components 1
 wget -O $HOME/.cantod/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/Canto/priv_validator_state.json"
 cd $HOME
