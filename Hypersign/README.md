@@ -109,7 +109,7 @@ wget -O $HOME/.hid-node/config/addrbook.json "https://raw.githubusercontent.com/
 # StateSync
 ```bash
 SNAP_RPC=http://hid.rpc.t.stavr.tech:21057
-peers="3f658dc173540479ba70f58f27d60fa9de83378a@195.201.165.123:21056"
+peers="2eb8a0e9e8b32e0890a8ecde766e1ab80126fddf@135.181.5.47:21056"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.hid-node/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
