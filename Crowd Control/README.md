@@ -138,5 +138,5 @@ sudo systemctl stop Cardchaind
 sudo rm /etc/systemd/system/Cardchaind.service
 sudo rm -rf $HOME/.Cardchain/
 sudo rm -rf Testnet
-sudo rm /usr/local/bin/Cardchain
+sudo rm -rf $(which Cardchaind)
 ```
