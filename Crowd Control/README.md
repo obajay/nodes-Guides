@@ -47,7 +47,7 @@ Cardchaind keys add <walletname> --recover
 ```
 # Init node and download Genesis
 ```bash
-Cardchain init STAVRguide --chain-id Testnet3
+Cardchaind init STAVRguide --chain-id Testnet3
 cp $HOME/Testnet/genesis.json $HOME/.Cardchain/config/genesis.json
 ```
 
