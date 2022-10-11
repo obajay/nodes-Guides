@@ -33,7 +33,7 @@ git clone https://github.com/DecentralCardGame/Testnet
 wget https://github.com/DecentralCardGame/Cardchain/releases/download/v0.81/Cardchain_latest_linux_amd64.tar.gz
 tar xzf Cardchain_latest_linux_amd64.tar.gz
 chmod +x Cardchaind
-sudo mv Cardchaind $HOME/go/bin/
+mv $HOME/Cardchaind /usr/local/bin
 sudo rm Cardchain_latest_linux_amd64.tar.gz
 ```
 `Cardchaind version --long | head`
