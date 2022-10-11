@@ -154,8 +154,13 @@ systemctl restart hid-noded && journalctl -u hid-noded -f -o cat
 break
 ;;
 "UPDATE")
-echo -e "        \e[1m\e[32mVERSION\e[0m"
-hid-noded version
+cd $HOME
+rm -rf hid-node
+git clone https://github.com/hypersign-protocol/hid-node.git
+cd hid-node
+git checkout v0.1.1
+make install
+sudo systemctl restart hid-noded && sudo journalctl -u hid-noded -f -o cat
 
 break
 ;;
