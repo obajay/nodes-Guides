@@ -62,7 +62,7 @@ hid-noded keys add <walletname>
 hid-noded keys add <walletname> --recover
 ```
 
-## Download Genesis
+## Download Genesis 
 
 ```bash
 curl -s  https://raw.githubusercontent.com/hypersign-protocol/networks/master/testnet/jagrat/final_genesis.json > ~/.hid-node/config/genesis.json
