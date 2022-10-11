@@ -53,7 +53,7 @@ cp $HOME/Testnet/genesis.json $HOME/.Cardchain/config/genesis.json
 
 ## Download addrbook
 ```bash
-wget -O $HOME/.Cardchain/config/addrbook.json "soon"
+wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Crowd%20Control/addrbook.json"
 ```
 
 ## Minimum gas price/Peers/Seeds
