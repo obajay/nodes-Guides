@@ -55,9 +55,10 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-git clone https://github.com/BitCannaGlobal/bcna && cd bcna
-git checkout v1.4.2
-make install
+wget https://github.com/BitCannaGlobal/bcna/releases/download/v1.4.3/bcna_linux_amd64.tar.gz
+tar zxvf bcna_linux_amd64.tar.gz
+sudo mv ./bcnad $HOME/go/bin/
+rm -rf bcna_linux_amd64.tar.gz
 
 bcnad init $Validator_Name --chain-id $CHAIN_ID
 
@@ -152,8 +153,13 @@ sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 break
 ;;
 "UPDATE")
-echo -e "        \e[1m\e[32mVERSION\e[0m"
-bcnad version
+cd $HOME
+wget https://github.com/BitCannaGlobal/bcna/releases/download/v1.4.3/bcna_linux_amd64.tar.gz
+tar zxvf bcna_linux_amd64.tar.gz
+sudo mv ./bcnad $(which bcnad)
+rm -rf bcna_linux_amd64.tar.gz
+sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
+
 
 break
 ;;
