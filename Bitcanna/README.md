@@ -28,10 +28,10 @@ wget -O bitcanna https://raw.githubusercontent.com/obajay/nodes-Guides/main/Bitc
 # 2) Manual installation
 
 ### Preparing the server
-
-    sudo apt update && sudo apt upgrade -y
-    sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
-
+```bash
+udo apt update && sudo apt upgrade -y
+sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
+```
 ## GO 18.5
 
 ```bash
@@ -46,15 +46,19 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 07.09.22
+# Build 11.10.22
 ```bash
 cd ~
-git clone https://github.com/BitCannaGlobal/bcna && cd bcna
-git checkout v1.4.2
-make install
+wget https://github.com/BitCannaGlobal/bcna/releases/download/v1.4.3/bcna_linux_amd64.tar.gz
+tar zxvf bcna_linux_amd64.tar.gz
+./bcnad version --long --output json |jq .commit 
+   >>>>> output should be >>>> "94bfd1b95655df23ec5617b06aadf80f90917521"
+sudo mv ./bcnad $HOME/go/bin/
+rm -rf bcna_linux_amd64.tar.gz
 ```
+
 `bcnad version`
-- 1.4.2
+- 
 
 ```bash
 bcnad init STAVRguide --chain-id bitcanna-1
