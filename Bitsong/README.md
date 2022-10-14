@@ -34,16 +34,21 @@ wget -O bitsongd https://raw.githubusercontent.com/obajay/nodes-Guides/main/Bits
     source ~/.bash_profile && \
     go version
 
-# Build
+# Build 14.10.22
+```bash
+git clone https://github.com/bitsongofficial/go-bitsong/
+cd go-bitsong
+git checkout v0.12.0
+make install
+```
 
-    git clone https://github.com/bitsongofficial/go-bitsong/
-    cd go-bitsong
-    git checkout v0.11.0
-    make install
-    bitsongd version
-    0.11.0
-    
-    bitsongd init <moniker-name> --chain-id bitsong-2b
+`bitsongd version version --long | head`
+- version: 0.12.0
+- commit: 66608bfaa0ed8bed4c08827b3d2dee5cc437bf3c
+
+```bash
+bitsongd init STAVRguide --chain-id bitsong-2b
+```
 
 ## Create/recover wallet
 
