@@ -113,7 +113,7 @@ s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.teritorid/config/config.t
 teritorid tendermint unsafe-reset-all --home $HOME/.teritorid --keep-addr-book
 sudo systemctl restart teritorid && journalctl -u teritorid -f -o cat
 ```
-# SnapShot 09.10.22 (0.3 GB) height 92458
+# SnapShot 14.10.22 (1 GB) height 163219
 ```bash
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
 sudo systemctl stop teritorid
