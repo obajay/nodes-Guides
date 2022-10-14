@@ -27,16 +27,17 @@
     source $HOME/.bash_profile && \
     go version
 
-# Binary   29.08.22
+# Binary   14.10.22
 ```console 
 cd $HOME
 git clone https://github.com/Pylons-tech/pylons
 cd pylons
-git checkout 8650c11
+git checkout v1.0.0-rc5
 make install
 ```
 `pylonsd version version --long | head`
-+ version: 1.0.0-rc1-2-g8650c11b
++ version: 1.0.0-rc5
++ commit: 9e173a70964d0d139d0288c2832cc027b98bd637
 
 ## Initialisation
 ```console
