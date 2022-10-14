@@ -140,7 +140,7 @@ sudo systemctl stop haqqd
 rm -rf $HOME/.haqqd/data/
 mkdir $HOME/.haqqd/data/
 cd $HOME
-wget http://88.198.34.226:7150/haqqddata.tar.gz
+wget http://haqq.snapshot.stavr.tech:7150/haqqddata.tar.gz
 tar -C $HOME/ -zxvf haqqddata.tar.gz --strip-components 1
 wget -O $HOME/.haqqd/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/Canto/priv_validator_state.json"
 cd && cat .haqqd/data/priv_validator_state.json
