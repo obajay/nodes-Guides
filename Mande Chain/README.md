@@ -4,8 +4,8 @@
 
 [GitHub](https://github.com/mande-labs)
 =
-[EXPLORER 1](https://explorer.stavr.tech/lambda/staking) \
-[EXPLORER 2](https://explorer.nodestake.top/lambda/staking)
+[EXPLORER 1](https://explorer.stavr.tech/mande-chain/staking) \
+[EXPLORER 2](https://test.anode.team/mande-network/staking)
 =
 
 - **Minimum hardware requirements**:
@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```bash
-wget -O lamb https://raw.githubusercontent.com/obajay/nodes-Guides/main/Lambda%20Network/lamb && chmod +x lamb && ./lamb
+wget -O mnd https://raw.githubusercontent.com/obajay/nodes-Guides/main/Mande%20Chain/mnd && chmod +x mnd && ./mnd
 ```
 
 # 2) Manual installation
@@ -42,7 +42,7 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 10.10.22
+# Build 15.10.22
 ```bash
 cd ~
 curl -OL https://github.com/mande-labs/testnet-1/raw/main/mande-chaind
@@ -104,7 +104,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.mande-chain/config/co
 
 ## Download addrbook
 ```bash
-wget -O $HOME/.lambdavm/config/addrbook.json "soon"
+wget -O $HOME/.mande-chain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Mande%20Chain/addrbook.json"
 ```
 
 # StateSync
