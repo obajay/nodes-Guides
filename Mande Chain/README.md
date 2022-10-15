@@ -154,6 +154,10 @@ sudo systemctl daemon-reload
 sudo systemctl enable mande-chaind
 sudo systemctl restart mande-chaind && sudo journalctl -u mande-chaind -f -o cat
 ```
+## Use faucet
+```bash
+curl -d '{"address":"YOURWALLETADDRESS"}' -H 'Content-Type: application/json' http://35.224.207.121:8080/request
+```
 
 ### Create validator
 ```bash
