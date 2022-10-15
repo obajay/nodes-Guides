@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```bash
-SOON
+wget -O lamb https://raw.githubusercontent.com/obajay/nodes-Guides/main/Lambda%20Network/lamb && chmod +x lamb && ./lamb
 ```
 
 # 2) Manual installation
@@ -107,7 +107,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.lambdavm/config/confi
 
 ## Download addrbook
 ```bash
-wget -O $HOME/.lambdavm/config/addrbook.json "soon"
+wget -O $HOME/.lambdavm/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Lambda%20Network/addrbook.json"
 ```
 
 # StateSync
