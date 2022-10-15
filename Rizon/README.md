@@ -27,11 +27,11 @@
     source ~/.bash_profile && \
     go version
 
-# Build 19.08.22
+# Build 15.10.22
 ```bash
 git clone https://github.com/rizon-world/rizon
 cd rizon
-git checkout v0.4.0
+git checkout v0.4.1
 make install
 ```
 
