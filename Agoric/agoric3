@@ -13,6 +13,7 @@ PS3='Select an action: '
 options=(
 "Install Node"
 "Create wallet"
+"CHeck node logs"
 "Synchronization via StateSync"
 "UPDATE"
 "Delete Node"
@@ -52,13 +53,12 @@ go version
 
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
-export GIT_BRANCH=agoric-7
 git clone https://github.com/Agoric/ag0
 cd ag0
-git checkout agoric-upgrade-7
+git checkout agoric-upgrade-7-2
 make build && make install
 . $HOME/.bash_profile
-cp $HOME/ag0/build/ag0 /usr/local/bin
+mv $HOME/ag0/build/ag0 /usr/local/bin
 
 ag0 init $Validator_Name --chain-id $CHAIN_ID
 
@@ -160,14 +160,18 @@ break
 systemctl stop agoricd
 cd ~
 rm -rf ag0
-export GIT_BRANCH=agoric-7
 git clone https://github.com/Agoric/ag0
 cd ag0
-git checkout agoric-upgrade-7
+git checkout agoric-upgrade-7-2
 make build && make install
 . $HOME/.bash_profile
-cp $HOME/ag0/build/ag0 /usr/local/bin
+mv $HOME/ag0/build/ag0 /usr/local/bin
 systemctl restart agoricd.service && journalctl -u agoricd.service -f -o cat
+
+break
+;;
+"CHeck node logs")
+sudo journalctl -u agoricd.service -f -o cat
 
 break
 ;;
