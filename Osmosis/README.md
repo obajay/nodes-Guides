@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```bash
-wget -O mnd https://raw.githubusercontent.com/obajay/nodes-Guides/main/Mande%20Chain/mnd && chmod +x mnd && ./mnd
+wget -O osmo https://raw.githubusercontent.com/obajay/nodes-Guides/main/Osmosis/osmo && chmod +x osmo && ./osmo
 ```
 
 # 2) Manual installation
