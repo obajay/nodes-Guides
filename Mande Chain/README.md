@@ -13,7 +13,7 @@
 
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
-| Tetsnet   |   8| 16GB | 160GB    |
+| Tetsnet   |   2|  4GB | 100GB    |
 
 
 # 1) Auto_install script
