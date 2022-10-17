@@ -97,7 +97,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.teritorid/config/conf
 # StateSync
 ```bash
 SNAP_RPC="https://teritori.rpc.m.stavr.tech"
-peers="5b491ddc6b9efd64e98ee73539e71fb6c3de8c6c@88.198.34.226:21096" 
+peers="3110d11ff2302d4deb6313b4ff5ea982ddeb3ff9@88.198.34.226:21096"
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.teritorid/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
