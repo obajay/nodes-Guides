@@ -42,15 +42,16 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 28.09.22
+# Build 17.19.22
 ```bash
 git clone https://github.com/hypersign-protocol/hid-node.git
 cd hid-node
+git checkout v0.1.2
 make install
 ```
 
 `hid-noded version`
-- v0.1.0
+- v0.1.2
 
 ```bash
 hid-noded init STAVRguide --chain-id jagrat
