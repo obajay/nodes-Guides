@@ -31,7 +31,7 @@
     source ~/.bash_profile && \
     go version
 
-# Build 15.09.22
+# Build 17.10.22
 ```bash
 git clone https://github.com/aura-nw/aura
 cd aura
