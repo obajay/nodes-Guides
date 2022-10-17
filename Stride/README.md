@@ -40,7 +40,7 @@ go version
 # Binary   17.10.22
 ```bash 
 git clone https://github.com/Stride-Labs/stride.git && cd stride
-git checkout v1.0.0
+git checkout v1.0.4
 make install
 ```
 
