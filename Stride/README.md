@@ -20,9 +20,10 @@ wget -O stride-x https://raw.githubusercontent.com/obajay/nodes-Guides/main/Stri
 # 2) Manual installation
 
 ### Preparing the server
-
-    sudo apt update && sudo apt upgrade -y && \
-    sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
+```bash
+sudo apt update && sudo apt upgrade -y && \
+sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
+```
 
 ## GO 18.3 (one command) 
 ```
@@ -36,7 +37,7 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-# Binary   09.09.22
+# Binary   17.10.22
 ```bash 
 git clone https://github.com/Stride-Labs/stride.git && cd stride
 git checkout v1.0.0
@@ -44,8 +45,8 @@ make install
 ```
 
 `strided version --long | head`
-+ version: v1.0.0
-+ commit: ""
++ version: v1.0.4
++ commit: "bd2124102127c152225e427a9dc4fc58acd3b9e3"
 
 ## Initialisation
 ```console
