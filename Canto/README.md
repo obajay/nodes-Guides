@@ -37,17 +37,17 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Binary   09.08.22
+# Binary   17.10.22
 ```console 
 git clone https://github.com/Canto-Network/Canto
 cd Canto
-git checkout v2.0.0
+git checkout v3.0.0
 make install
 
 ```
 `cantod version --long | head`
-- version: 2.0.0
-- commit: 46d8c3d80b0b39a25410513c984b9417328a7a40 
+- version: 3.0.0
+- commit:  
 
 ## Initialisation
 ```console
