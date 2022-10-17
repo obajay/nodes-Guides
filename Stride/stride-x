@@ -54,8 +54,8 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-git clone https://github.com/Stride-Labs/stride.git && cd stride
-git checkout v1.0.0
+git clone https://github.com/Stride-Labs/stride
+cd stride && git checkout v1.0.4
 make install
 
 strided init $Validator_Name --chain-id $CHAIN_ID
@@ -131,7 +131,12 @@ echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE
 break
 ;;
 "UPDATE")
-echo -e "      \e[1m\e[32m SOOON    \e[0m'"
+rm -rf stride
+git clone https://github.com/Stride-Labs/stride
+cd stride && git checkout v1.0.4
+make install
+sudo systemctl restart strided && journalctl -u strided -f -o cat
+
 
 break
 ;;
