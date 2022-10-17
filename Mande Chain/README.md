@@ -43,10 +43,11 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 15.10.22
+# Build 17.10.22
 ```bash
 cd ~
 curl -OL https://github.com/mande-labs/testnet-1/raw/main/mande-chaind
+mkdir -p $HOME/go/bin
 mv mande-chaind /$HOME/go/bin/
 chmod 744 /$HOME/go/bin/mande-chaind
 ```
