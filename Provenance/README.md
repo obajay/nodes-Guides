@@ -28,17 +28,17 @@
     source ~/.bash_profile && \
     go version
 
-# Build 16.09.22
+# Build 17.10.22
 ```bash
 export PIO_HOME=~/.provenanced
 git clone https://github.com/provenance-io/provenance.git && cd provenance
-git checkout tags/v1.12.0 -b v1.12.0
+git checkout tags/v1.12.1 -b v1.12.1
 make clean
 make install
 ```
 
 `provenanced version`
-- version v1.12.0
+- heads-v1.12.1-01e83c3c
 
 ```    
 provenanced init STAVRguide --chain-id pio-mainnet-1
