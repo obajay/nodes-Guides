@@ -42,7 +42,7 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 17.19.22
+# Build 17.10.22
 ```bash
 git clone https://github.com/hypersign-protocol/hid-node.git
 cd hid-node
