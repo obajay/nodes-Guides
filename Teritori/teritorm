@@ -57,7 +57,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain 
-git checkout v1.1.2
+git checkout v1.2.0
 make install
 
 teritorid init $Validator_Name --chain-id $CHAIN_ID
@@ -151,8 +151,14 @@ sudo systemctl restart teritorid && journalctl -u teritorid -f -o cat
 break
 ;;
 "UPDATE")
-echo -e "        \e[1m\e[32mVERSION\e[0m"
-teritorid version
+cd $HOME
+rm -rf teritori-chain
+git clone https://github.com/TERITORI/teritori-chain
+cd teritori-chain/
+git checkout v1.2.0
+make install
+sudo systemctl restart teritorid && journalctl -u teritorid -f -o cat
+
 
 break
 ;;
