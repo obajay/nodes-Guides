@@ -35,7 +35,7 @@ go version
 wget https://download.uptick.network/download/uptick/testnet/release/v0.2.3/v0.2.3.tar.gz
 tar -zxvf v0.2.3.tar.gz
 chmod +x uptick-v0.2.3/linux/uptickd
-mv /root/uptick-testnet/uptick-v0.2.3/linux/uptickd $HOME/go/bin/
+mv $HOME/uptick-v0.2.3/linux/uptickd $HOME/go/bin/
 ```
 
 `uptickd version`
