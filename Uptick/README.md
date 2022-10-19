@@ -49,7 +49,7 @@ uptickd config chain-id uptick_7000-1
 
 ## Create/recover wallet
 ```bash
-ptickd keys add <walletname>
+uptickd keys add <walletname>
 uptickd keys add <walletname> --recover
 ```
 
@@ -70,7 +70,7 @@ sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.uptickd/config/config.to
 
 ### Pruning (optional)
 ```bash
-runing="custom" && \
+pruning="custom" && \
 pruning_keep_recent="100" && \
 pruning_keep_every="0" && \
 pruning_interval="10" && \
@@ -138,7 +138,7 @@ uptickd tx staking create-validator \
 
 ## Delete node
 ```bash
-udo systemctl stop uptickd && \
+sudo systemctl stop uptickd && \
 sudo systemctl disable uptickd && \
 rm /etc/systemd/system/uptickd.service && \
 sudo systemctl daemon-reload && \
