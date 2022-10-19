@@ -144,6 +144,6 @@ rm /etc/systemd/system/uptickd.service && \
 sudo systemctl daemon-reload && \
 cd $HOME && \
 rm -rf .uptickd && \
-rm -rf uptick && \
+rm -rf uptick-v0.2.3 && \
 rm -rf $(which uptickd)
 ```
