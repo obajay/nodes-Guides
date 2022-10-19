@@ -1,5 +1,7 @@
 
-[EXPLORER](https://sei.explorers.guru/validators)
+[EXPLORER 1](https://explorer.stavr.tech/sei-devnet/staking) \
+[EXPLORER 2](https://sei.explorers.guru/validators) 
+=
 
 ## UPDATE APT
     sudo apt update && sudo apt upgrade -y
@@ -25,6 +27,7 @@ make install
 
 `seid version --long | head`
 + version: 1.2.3beta
++ commit: 0f8362d0b9160049b3dd9542ce111562bf90b074
 
 ```bash
 seid init <moniker> --chain-id sei-devnet-1 \
