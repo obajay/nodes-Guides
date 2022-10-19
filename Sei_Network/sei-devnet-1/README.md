@@ -15,17 +15,16 @@
     go version
 
     cd $HOME
-### Installing the binaries (05.10.22)
+### Installing the binaries (19.10.22)
 ```bash    
 git clone https://github.com/sei-protocol/sei-chain.git
 cd sei-chain
-git checkout 1.2.2beta
+git checkout 1.2.3beta
 make install
 ```
 
 `seid version --long | head`
-+ version: 1.2.0beta
-+ commit: caa4c602c8f4cec37b113064e0d5e9cdb7173bed
++ version: 1.2.3beta
 
 ```bash
 seid init <moniker> --chain-id sei-devnet-1 \
