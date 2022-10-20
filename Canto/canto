@@ -152,6 +152,7 @@ sudo journalctl -u cantod -f -o cat
 break
 ;;
 "Update")
+cd $HOME
 rm -rf Canto
 git clone https://github.com/Canto-Network/Canto
 cd Canto
