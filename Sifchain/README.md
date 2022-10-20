@@ -46,13 +46,13 @@ source $HOME/.bash_profile
 # Build 15.09.22
 ```bash
 cd ~
-wget -O sifnoded-v1.0-beta.11.zip https://github.com/Sifchain/sifnode/releases/download/v1.0-beta.11/sifnoded-v1.0-beta.11-linux-amd64.zip
-unzip sifnoded-v1.0-beta.11.zip
-rm sifnoded-v1.0-beta.11.zip
-mv ~/sifnoded $HOME/go/bin
+wget -O sifnoded-v1.0.13-beta.zip https://github.com/Sifchain/sifnode/releases/download/v1.0.13-beta/sifnoded-v1.0.13-beta-linux-amd64.zip
+unzip sifnoded-v1.0.13-beta.zip
+rm sifnoded-v1.0.13-beta.zip
+mv ~/sifnoded /usr/local/bin/
 ```
 `sifnoded version`
-- 1.0-beta.11
+- 1.0.13-beta
 
 ```bash
 sifnoded init STAVRguide --chain-id sifchain-1
