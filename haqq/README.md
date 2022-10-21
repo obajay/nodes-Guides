@@ -178,3 +178,20 @@ rm -rf .haqqd && \
 rm -rf haqq && \
 rm -rf $(which haqqd)
 ```
+#
+### Sync Info
+```bash
+haqqd status 2>&1 | jq .SyncInfo
+```
+### NodeINfo
+```bash
+haqqd status 2>&1 | jq .NodeInfo
+```
+### Check node logs
+```bash
+sudo journalctl -u haqqd -f -o cat
+```
+### Check Balance
+```bash
+haqqd query bank balances haqq...addresshaqq1yjgn7z09ua9vms259j
+```
