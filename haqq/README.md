@@ -46,16 +46,16 @@ make install
 ```
 
 ## Initialisation
-```console
-haqqd init <moniker-name> --chain-id=haqq_54211-3
+```bash
+haqqd init STAVRguide --chain-id=haqq_54211-3
 ```
 ## Add wallet
-```console
+```bash
 haqqd keys add <walletName>
 haqqd keys add <walletName> --recover
 ```
 # Genesis
-```console
+```bash
 cd $HOME/.haqqd/config && rm -rf genesis.json && wget https://github.com/haqq-network/validators-contest/raw/master/genesis.json
 ```
 
