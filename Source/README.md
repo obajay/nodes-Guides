@@ -120,7 +120,7 @@ WantedBy=multi-user.target
 EOF
 ```
 
-# SnapShot 27.09.22 (0.1 GB) block height --> 2530401
+# SnapShot 21.10.22 (0.2 GB) block height --> 2874419
 ```bash
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
 sudo systemctl stop sourced
