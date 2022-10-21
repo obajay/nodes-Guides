@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```bash
-soon
+wget -O okp https://raw.githubusercontent.com/obajay/nodes-Guides/main/OKP4/okp && chmod +x okp && ./okp
 ```
 
 # 2) Manual installation
