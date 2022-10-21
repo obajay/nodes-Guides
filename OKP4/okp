@@ -55,9 +55,8 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-git clone https://github.com/TERITORI/teritori-chain
-cd teritori-chain 
-git checkout v1.1.2
+git clone https://github.com/okp4/okp4d.git
+cd okp4d
 make install
 
 okp4d init $Validator_Name --chain-id $CHAIN_ID
