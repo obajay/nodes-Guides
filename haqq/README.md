@@ -92,7 +92,7 @@ sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.haqqd/
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.haqqd/config/config.toml
 ```
 
-# SnapShot 14.10.22 (1 GB) block height --> 491529
+# SnapShot 21.10.22 (0.1 GB) block height --> 594004
 ```bash
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
 sudo systemctl stop haqqd
