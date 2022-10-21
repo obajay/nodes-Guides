@@ -103,14 +103,14 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.okp4d/config/config.t
 
 ## Download addrbook
 ```bash
-wget -O $HOME/.mande-chain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Mande%20Chain/addrbook.json"
+wget -O $HOME/.okp4d/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/OKP4/addrbook.json"
 ```
 
 # StateSync
 ```bash
-SNAP_RPC=http://38.242.199.93:24657
-peers="a3e3e20528604b26b792055be84e3fd4de70533b@38.242.199.93:24656"
-sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.mande-chain/config/config.toml
+SNAP_RPC=https://okp4-testnet-rpc.polkachu.com:443
+peers="https://okp4-testnet-rpc.polkachu.com:443"
+sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.okp4d/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
@@ -121,23 +121,23 @@ sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
 s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.mande-chain/config/config.toml
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.okp4d/config/config.toml
 
-mande-chaind tendermint unsafe-reset-all --home /root/.mande-chain --keep-addr-book
-systemctl restart mande-chaind && journalctl -u mande-chaind -f -o cat
+okp4d tendermint unsafe-reset-all --home /root/.okp4d --keep-addr-book
+systemctl restart okp4d && journalctl -u okp4d -f -o cat
 
 ```
 
 # Create a service file
 ```bash
-sudo tee /etc/systemd/system/mande-chaind.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/okp4d.service > /dev/null <<EOF
 [Unit]
-Description=mande-chaind
+Description=okp4d
 After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which mande-chaind) start
+ExecStart=$(which okp4d) start --home $HOME/.okp4d
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
@@ -150,32 +150,35 @@ EOF
 ## Start
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl enable mande-chaind
-sudo systemctl restart mande-chaind && sudo journalctl -u mande-chaind -f -o cat
-```
-## Use faucet
-```bash
-curl -d '{"address":"YOURWALLETADDRESS"}' -H 'Content-Type: application/json' http://35.224.207.121:8080/request
+sudo systemctl enable okp4d
+sudo systemctl restart okp4d && sudo journalctl -u okp4d -f -o cat
 ```
 
 ### Create validator
 ```bash
-mande-chaind tx staking create-validator \
---chain-id mande-testnet-1 \
---amount 0cred \
---pubkey "$(mande-chaind tendermint show-validator)" \
---from <wallet> \
---moniker="STAVRguide" \
---fees 1000mand
+okp4d tx staking create-validator \
+  --amount 1000000uknow \
+  --from <walletName> \
+  --commission-max-change-rate "0.1" \
+  --commission-max-rate "0.2" \
+  --commission-rate "0.1" \
+  --min-self-delegation "1" \
+  --pubkey  $(okp4d tendermint show-validator) \
+  --moniker STAVRguide \
+  --chain-id okp4-nemeton \
+  --identity="" \
+  --details="" \
+  --website="" -y
 ```
 
 ## Delete node
 ```bash
-sudo systemctl stop mande-chaind && \
-sudo systemctl disable mande-chaind && \
-rm /etc/systemd/system/mande-chaind.service && \
+sudo systemctl stop okp4d && \
+sudo systemctl disable okp4d && \
+rm /etc/systemd/system/okp4d.service && \
 sudo systemctl daemon-reload && \
 cd $HOME && \
-rm -rf .mande-chain && \
-rm -rf $(which mande-chaind)
+rm -rf okp4d && \
+rm -rf .okp4d && \
+rm -rf $(which okp4d)
 ```
