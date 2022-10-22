@@ -191,3 +191,22 @@ rm -rf Canto && \
 rm -rf $(which cantod)
 ```
 
+#
+### Sync Info
+```bash
+cantod status 2>&1 | jq .SyncInfo
+```
+### NodeINfo
+```bash
+cantod status 2>&1 | jq .NodeInfo
+```
+### Check node logs
+```bash
+sudo journalctl -u cantod -f -o cat
+```
+### Check Balance
+```bash
+cantod query bank balances canto...address1yjgn7z09ua9vms259j
+```
+
+
