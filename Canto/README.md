@@ -100,7 +100,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.cant
 
 ## Download addrbook
 ```console
-wget -O $HOME/.cantod/config/addrbook.json "https://raw.githubusercontent.com/obajay/Testnets-guides-private/main/Canto/addrbook.json?token=GHSAT0AAAAAABUSBAWCQ7B2O5G5F2IIU7OGYX57EZA"
+wget -O $HOME/.cantod/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Canto/addrbook.json"
 ```
 
 # Create a service file
