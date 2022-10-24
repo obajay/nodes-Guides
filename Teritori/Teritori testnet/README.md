@@ -34,7 +34,7 @@ wget -O teritor https://raw.githubusercontent.com/obajay/nodes-Guides/main/Terit
 ```bash
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain
-git checkout b412a5a1d4853382ab9abea59e1777b8e8fcc7fc
+git checkout v1.3.0
 make install
 ```
 ```bash
@@ -108,11 +108,11 @@ mv genesis.json .teritorid/config/
 
     
 # Start
-
-    sudo systemctl daemon-reload
-    sudo systemctl enable teritorid
-    sudo systemctl restart teritorid
-    sudo journalctl -u teritorid -f -o cat
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable teritorid
+sudo systemctl restart teritorid && sudo journalctl -u teritorid -f -o cat
+```
 
 [DISCORD FAUCET](https://discord.gg/zzJEmR8nhr)
 
