@@ -96,7 +96,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.pylo
 wget -O $HOME/.pylons/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Pylons/addrbook.json"
 ```
 
-# SnapShot 21.10.22 (1.3 GB) block height --> 2617700
+# SnapShot 24.10.22 (3.2 GB) block height --> 2666403
 ```bash
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
 sudo systemctl stop pylonsd
