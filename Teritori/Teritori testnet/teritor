@@ -57,7 +57,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain
-git switch mainnet && \
+git checkout v1.3.0
 make install
 
 cd $HOME
@@ -144,17 +144,11 @@ break
 ;;
 "UPDATE")
 cd $HOME
-sudo systemctl stop teritorid
-teritorid config chain-id teritori-testnet-v3
-teritorid tendermint unsafe-reset-all --home $HOME/.teritorid
-git clone https://github.com/TERITORI/teritori-chain && \
-cd teritori-chain && \
-git switch mainnet && \
+rm -rf teritori-chain
+git clone https://github.com/TERITORI/teritori-chain
+cd teritori-chain
+git checkout v1.3.0
 make install
-cd $HOME
-wget https://github.com/TERITORI/teritori-chain/raw/mainnet/testnet/teritori-testnet-v3/genesis.json
-mv genesis.json .teritorid/config/
-wget -O $HOME/.teritorid/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Teritori/addrbook.json"
 sudo systemctl restart teritorid && sudo journalctl -u teritorid -f -o cat
 
 break
