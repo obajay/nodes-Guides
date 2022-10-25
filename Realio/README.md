@@ -105,7 +105,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.realio-network/config
 
 ## Download addrbook
 ```bash
-wget -O $HOME/.realio-network/config/addrbook.json ""
+wget -O $HOME/.realio-network/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Realio/addrbook.json"
 ```
 # Create a service file
 ```bash
