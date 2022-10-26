@@ -46,14 +46,14 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 11.10.22
+# Build 15.10.22
 ```bash
 cd ~
 mkdir -p $HOME/go/bin
-wget https://github.com/BitCannaGlobal/bcna/releases/download/v1.4.3/bcna_linux_amd64.tar.gz
+wget https://github.com/BitCannaGlobal/bcna-patch/releases/download/v1.4.4/bcna_linux_amd64.tar.gz
 tar zxvf bcna_linux_amd64.tar.gz
 ./bcnad version --long --output json |jq .commit 
-   >>>>> output should be >>>> "94bfd1b95655df23ec5617b06aadf80f90917521"
+   >>>>> output should be >>>> "1186539df2dfa0ae881ae6d5c9e5dc1e311024ce"
 sudo mv ./bcnad $HOME/go/bin/
 rm -rf bcna_linux_amd64.tar.gz
 ```
