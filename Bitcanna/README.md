@@ -49,6 +49,7 @@ go version
 # Build 11.10.22
 ```bash
 cd ~
+mkdir -p $HOME/go/bin
 wget https://github.com/BitCannaGlobal/bcna/releases/download/v1.4.3/bcna_linux_amd64.tar.gz
 tar zxvf bcna_linux_amd64.tar.gz
 ./bcnad version --long --output json |jq .commit 
