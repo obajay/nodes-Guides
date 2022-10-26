@@ -136,7 +136,7 @@ sudo systemctl stop bcnad && bcnad tendermint unsafe-reset-all --keep-addr-book
 sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 ```
 
-# SnapShot 08.10.22 (0.2 GB) height 5346921
+# SnapShot 26.10.22 (0.2 GB) height 5608896
 ```bash
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
 sudo systemctl stop bcnad
