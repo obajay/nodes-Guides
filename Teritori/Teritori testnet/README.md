@@ -2,7 +2,7 @@
 ![tert](https://user-images.githubusercontent.com/44331529/180614436-1041172a-0b1e-4df3-85b7-3d18899f3e43.png)
 
 [EXPLORER 1](http://explorer.stavr.tech/teritori/staking) \
-[explorer 2](https://explorer.nodestake.top/teritori-testnet/staking)
+[EXPLORER 2](https://explorer.nodestake.top/teritori-testnet/staking)
 =
 - **Minimum hardware requirements**:
 
