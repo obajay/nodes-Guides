@@ -127,7 +127,7 @@ hid-noded tendermint unsafe-reset-all --home $HOME/.hid-node
 systemctl restart hid-noded && journalctl -u hid-noded -f -o cat
 ```
 
-# SnapShot 12.10.22 (0.1 GB) height 189856
+# SnapShot 26.10.22 (0.1 GB) height 389157
 ```bash
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
 sudo systemctl stop hid-noded
