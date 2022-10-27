@@ -145,7 +145,7 @@ canined version
 break
 ;;
 "Check node logs")
-sudo journalctl -u teritorid -f -o cat
+sudo journalctl -u canined -f -o cat
 
 break
 ;;
