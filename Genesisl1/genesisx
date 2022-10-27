@@ -154,8 +154,8 @@ systemctl stop genesisd
 rm -rf $HOME/.genesisd/data/
 mkdir $HOME/.genesisd/data/
 cd $HOME
-wget http://195.201.165.123:8000/genesisddata.tar.gz
-tar -C $HOME/ -zxvf genesisddata.tar.gz --strip-components 1
+wget http://65.108.6.45:8000/genesisl1/l1data.tar.gz
+tar -C $HOME/ -zxvf l1data.tar.gz --strip-components 1
 cd $HOME
 rm genesisddata.tar.gz
 sudo systemctl restart genesisd && sudo journalctl -u genesisd -f -o cat
