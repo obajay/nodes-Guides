@@ -1,0 +1,181 @@
+#!/bin/bash
+
+while true
+do
+
+# Logo
+
+curl -s https://raw.githubusercontent.com/obajay/nodes-Guides/main/logo_1 | bash
+
+# Menu
+
+PS3='Select an action: '
+options=(
+"Install Node"
+"Create wallet"
+"Check node logs"
+"Synchronization via StateSync"
+"Synchronization via SnapShot"
+"UPDATE"
+"Delete Node"
+"Exit")
+select opt in "${options[@]}"
+do
+case $opt in
+
+"Install Node")
+echo "*********************"
+echo -e "\e[1m\e[35m		Lets's begin\e[0m"
+echo "*********************"
+echo -e "\e[1m\e[32m	Enter your Validator_Name:\e[0m"
+echo "_|-_|-_|-_|-_|-_|-_|"
+read Validator_Name
+echo "_|-_|-_|-_|-_|-_|-_|"
+echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
+echo export CHAIN_ID="genesis_29-2" >> $HOME/.bash_profile
+source ~/.bash_profile
+
+echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
+#UPDATE APT
+sudo apt update && sudo apt upgrade -y
+sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
+
+echo -e "        \e[1m\e[32m2. Installing GO--> \e[0m" && sleep 1
+#INSTALL GO
+ver="1.18.3" && \
+cd $HOME && \
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
+sudo rm -rf /usr/local/go && \
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
+rm "go$ver.linux-amd64.tar.gz" && \
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
+source $HOME/.bash_profile && \
+go version
+
+echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
+#INSTALL
+git clone https://github.com/alpha-omega-labs/genesisd
+cd genesisd
+make install
+
+genesisd init $Validator_Name --chain-id $CHAIN_ID
+
+wget -O $HOME/.genesisd/config/genesis.json "https://github.com/alpha-omega-labs/genesisd/raw/neolithic/genesis_29-1-state/genesis.json"
+wget -O $HOME/.genesisd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Genesisl1/addrbook.json"
+
+echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
+
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0025el1\"/;" ~/.genesisd/config/app.toml
+sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.genesisd/config/config.toml
+external_address=$(wget -qO- eth0.me) 
+sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.genesisd/config/config.toml
+
+peers="551cb3d41d457f830d75c7a5b8d1e00e6e5cbb91@135.181.97.75:26656,5082248889f93095a2fd4edd00f56df1074547ba@146.59.81.204:26651,36111b4156ace8f1cfa5584c3ccf479de4d94936@65.21.34.226:26656,c23b3d58ccae0cf34fc12075c933659ff8cca200@95.217.207.154:26656,37d8aa8a31d66d663586ba7b803afd68c01126c4@65.21.134.70:26656,d7d4ea7a661c40305cab84ac227cdb3814df4e43@139.162.195.228:26656,be81a20b7134552e270774ec861c4998fabc2969@genesisl1.3ventures.io:26656"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.genesisd/config/config.toml
+
+seeds=""
+sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.genesisd/config/config.toml
+
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.genesisd/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.genesisd/config/config.toml
+
+# pruning and indexer
+pruning="custom" && \
+pruning_keep_recent="100" && \
+pruning_keep_every="0" && \
+pruning_interval="10" && \
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.genesisd/config/app.toml && \
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.genesisd/config/app.toml && \
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.genesisd/config/app.toml && \
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.genesisd/config/app.toml
+indexer="null" && \
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.genesisd/config/config.toml
+
+
+sudo tee /etc/systemd/system/genesisd.service > /dev/null <<EOF
+[Unit]
+Description=genesisd
+After=network-online.target
+
+[Service]
+User=$USER
+ExecStart=$(which genesisd) start
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+# start service
+sudo systemctl daemon-reload
+sudo systemctl enable genesisd
+sudo systemctl restart genesisd
+
+echo '=============== SETUP FINISHED ==================='
+echo -e 'Congratulations:        \e[1m\e[32mSUCCESSFUL NODE INSTALLATION\e[0m'
+echo -e 'To check logs:        \e[1m\e[33mjournalctl -u genesisd -f -o cat\e[0m'
+echo -e "To check sync status: \e[1m\e[35mcurl -s localhost:26657/status\e[0m"
+
+break
+;;
+"Create wallet")
+echo "_|-_|-_|-_|-_|-_|-_|"
+echo -e "      \e[1m\e[35m Your WalletName:\e[0m"
+echo "_|-_|-_|-_|-_|-_|-_|"
+read Wallet
+echo export Wallet=${Wallet} >> $HOME/.bash_profile
+source ~/.bash_profile
+genesisd keys add $Wallet
+echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE!!!!!!!!!SAVE!!!!!!!!!!!!!!!!\e[0m'"
+
+break
+;;
+"Synchronization via StateSync")
+echo -e "      \e[1m\e[35m SOOOOON\e[0m"
+
+
+break
+;;
+"UPDATE")
+echo -e "        \e[1m\e[32mVERSION\e[0m"
+genesisd version
+
+break
+;;
+"Check node logs")
+sudo journalctl -u genesisd -f -o cat
+
+break
+;;
+"Synchronization via SnapShot")
+systemctl stop genesisd
+rm -rf $HOME/.genesisd/data/
+mkdir $HOME/.genesisd/data/
+cd $HOME
+wget http://195.201.165.123:8000/genesisddata.tar.gz
+tar -C $HOME/ -zxvf genesisddata.tar.gz --strip-components 1
+cd $HOME
+rm genesisddata.tar.gz
+sudo systemctl restart genesisd && sudo journalctl -u genesisd -f -o cat
+
+break
+;;
+"Delete Node")
+sudo systemctl stop genesisd && \
+sudo systemctl disable genesisd && \
+rm /etc/systemd/system/genesisd.service && \
+sudo systemctl daemon-reload && \
+cd $HOME && \
+rm -rf .genesisd && \
+rm -rf genesisd && \
+rm -rf $(which genesisd)
+
+break
+;;
+"Exit")
+exit
+esac
+done
+done
