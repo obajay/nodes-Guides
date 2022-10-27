@@ -1,5 +1,5 @@
 
-# OKP4 Testnet guide
+# DeFund Testnet guide
 
 ![defund](https://user-images.githubusercontent.com/44331529/198265844-d3d66bd2-78cf-4c14-8320-12a00f2aafe0.png)
 
