@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```bash
-SOON
+wget -O jkl https://raw.githubusercontent.com/obajay/nodes-Guides/main/Jakal/jkl && chmod +x jkl && ./jkl
 ```
 
 # 2) Manual installation
