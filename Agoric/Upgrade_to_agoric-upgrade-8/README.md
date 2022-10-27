@@ -120,3 +120,4 @@ Start agd to complete the upgrade \
 `sudo systemctl start agd`
 
 
+[Original link](https://github.com/Agoric/agoric-sdk/wiki/ag0-to-agd-upgrade-for-mainnet-1-launch)
