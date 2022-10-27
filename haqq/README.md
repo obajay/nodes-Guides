@@ -37,11 +37,11 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Binary   04.10.22
+# Binary   27.10.22
 ```bash 
 git clone https://github.com/haqq-network/haqq
 cd haqq
-git checkout v1.2.0
+git checkout v1.2.1
 make install
 ```
 
