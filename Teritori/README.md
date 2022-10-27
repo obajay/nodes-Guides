@@ -31,7 +31,7 @@ source ~/.bash_profile && \
 go version
 ```
 
-## Build 18.10.22
+## Build 18.10.22 
 ```bash
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain 
