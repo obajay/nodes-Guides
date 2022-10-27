@@ -3,9 +3,8 @@
 
 [Website](https://stride.zone/)
 =
-[EXPLORER 1](https://www.mintscan.io/stride/validators) \
-[EXPLORER 2](https://exp.nodeist.net/Stride/staking) \
-[EXPLORER 3](https://stride.explorers.guru/validators)
+[EXPLORER 1](https://explorer.stavr.tech/stride/staking) \
+[EXPLORER 2](https://www.mintscan.io/stride/validators)
 =
 - **Minimum hardware requirements**:
 
