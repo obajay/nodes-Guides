@@ -118,7 +118,7 @@ WantedBy=multi-user.target
 EOF
 ```
 
-## SnapShot   15.09.22 (69 GB)
+## SnapShot  (53 GB) 4598847 
 ```bash
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
 rm -rf $HOME/.genesisd/data/
@@ -126,10 +126,10 @@ mkdir $HOME/.genesisd/data/
 
 # download archive
 cd $HOME
-wget http://195.201.165.123:8000/genesisddata.tar.gz
+wget http://65.108.6.45:8000/genesisl1/l1data.tar.gz
 
 # unpack the archive
-tar -C $HOME/ -zxvf genesisddata.tar.gz --strip-components 1
+tar -C $HOME/ -zxvf l1data.tar.gz --strip-components 1
 
 # after unpacking, run the node
 # don't forget to delete the archive to save space
