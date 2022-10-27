@@ -88,8 +88,8 @@ After=network-online.target
 #SLOGFILE=.agoric/data/chain.slog
 User=$USER
 # OPTIONAL: turn on Cosmos nondeterminism debugging information
-#ExecStart=$HOME/go/bin/agd start --log_level=info --trace-store=.agoric/data/kvstore.trace
-ExecStart=$HOME/go/bin/agd start --log_level=warn
+#ExecStart=$(which agd) start --log_level=info --trace-store=.agoric/data/kvstore.trace
+ExecStart=$(which agd) start --log_level=info
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
