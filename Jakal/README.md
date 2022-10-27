@@ -103,7 +103,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.canine/config/config.
 
 ## Download addrbook
 ```bash
-wget -O $HOME/.canine/config/addrbook.json "SOON"
+wget -O $HOME/.canine/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Jakal/addrbook.json"
 ```
 
 # Create a service file
