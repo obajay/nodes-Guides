@@ -160,3 +160,20 @@ rm -rf canine-chain && \
 rm -rf .canine && \
 rm -rf $(which canined)
 ```
+#
+### Sync Info
+```bash
+canined status 2>&1 | jq .SyncInfo
+```
+### NodeINfo
+```bash
+canined status 2>&1 | jq .NodeInfo
+```
+### Check node logs
+```bash
+sudo journalctl -u canined -f -o cat
+```
+### Check Balance
+```bash
+canined query bank balances jkl...addressjkl1yjgn7z09ua9vms259j
+```
