@@ -78,11 +78,10 @@ go: go version go1.18.1 linux/amd64
 ## Configure agd.service
 To use systemd, we will create a service file:
 ```bash
-sudo tee <<EOF >/dev/null /etc/systemd/system/agd.service
+tee /etc/systemd/system/agoricd.service > /dev/null <<EOF
 [Unit]
 Description=Agoric Cosmos daemon
 After=network-online.target
-
 [Service]
 # OPTIONAL: turn on JS debugging information.
 #SLOGFILE=.agoric/data/chain.slog
@@ -92,8 +91,7 @@ User=$USER
 ExecStart=$(which agd) start --log_level=info
 Restart=on-failure
 RestartSec=3
-LimitNOFILE=4096
-
+LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 EOF
@@ -117,7 +115,7 @@ Once that happens, disable it:
 
 `sudo systemctl disable ag0` \
 Start agd to complete the upgrade \
-`sudo systemctl start agd`
+`systemctl restart agoricd.service && journalctl -u agoricd.service -f -o cat`
 
 
 [Original link](https://github.com/Agoric/agoric-sdk/wiki/ag0-to-agd-upgrade-for-mainnet-1-launch)
