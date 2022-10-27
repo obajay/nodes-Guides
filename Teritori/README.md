@@ -183,7 +183,7 @@ teritorid tx staking create-validator \
 --from=<walletname> -y
 ```
 
-# Delete node
+# Delete node 
 ```bash
 sudo systemctl stop teritorid && \
 sudo systemctl disable teritorid && \
