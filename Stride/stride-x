@@ -147,9 +147,9 @@ sudo journalctl -u strided -f -o cat
 break
 ;;
 "Synchronize Stride node via StateSync")
-peers="98004cf40a82aa7015d5f4fba75564201e62de26@141.95.124.151:21016"
+peers="e2593afabd2cc322fb0a1d4cdee56e7fca5e483e@157.90.179.182:26456"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.stride/config/config.toml
-SNAP_RPC=http://141.95.124.151:21017
+SNAP_RPC="https://stride-rpc.theamsolutions.info:443"
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
