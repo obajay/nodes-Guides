@@ -13,6 +13,7 @@ PS3='Select an action: '
 options=(
 "Install Node"
 "Create wallet"
+"Check node logs"
 "Synchronization via StateSync"
 "Synchronization via SnapShot"
 "UPDATE"
@@ -56,7 +57,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain 
-git checkout v1.1.2
+git checkout v1.2.0
 make install
 
 teritorid init $Validator_Name --chain-id $CHAIN_ID
@@ -132,19 +133,52 @@ echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE
 break
 ;;
 "Synchronization via StateSync")
-echo -e "      \e[1m\e[32m SOOOOON\e[0m"
+SNAP_RPC="http://88.198.34.226:21097"
+peers="3110d11ff2302d4deb6313b4ff5ea982ddeb3ff9@88.198.34.226:21096"
+sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.teritorid/config/config.toml
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.teritorid/config/config.toml
+teritorid tendermint unsafe-reset-all --home $HOME/.teritorid --keep-addr-book
+sudo systemctl restart teritorid && journalctl -u teritorid -f -o cat
 
 break
 ;;
 "UPDATE")
-echo -e "        \e[1m\e[32mVERSION\e[0m"
-teritorid version
+cd $HOME
+rm -rf teritori-chain
+git clone https://github.com/TERITORI/teritori-chain
+cd teritori-chain/
+git checkout v1.2.0
+make install
+sudo systemctl restart teritorid && journalctl -u teritorid -f -o cat
 
 
 break
 ;;
 "Synchronization via SnapShot")
-echo -e "      \e[1m\e[32m SOOOOON\e[0m"
+sudo systemctl stop teritorid
+rm -rf $HOME/.teritorid/data/
+mkdir $HOME/.teritorid/data/
+cd $HOME
+wget http://teritori.snapshot.stavr.tech:1150/terdata.tar.gz
+tar -C $HOME/ -zxvf terdata.tar.gz --strip-components 1
+wget -O $HOME/.teritorid/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/priv_validator_state.json"
+cd && cat .teritorid/data/priv_validator_state.json
+cd $HOME
+rm terdata.tar.gz
+systemctl restart teritorid && journalctl -u teritorid -f -o cat
+
+break
+;;
+"Check node logs")
+sudo journalctl -u teritorid -f -o cat
 
 break
 ;;
