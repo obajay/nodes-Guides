@@ -137,6 +137,9 @@ strided tendermint unsafe-reset-all --home /root/.stride --keep-addr-book
 sudo systemctl restart strided && journalctl -u strided -f -o cat
 ```
 
+[SNAPSHOT](https://www.theamsolutions.info/stride)
+=
+
 # Start node (one command)
 ```console
 sudo systemctl daemon-reload && \
