@@ -1,11 +1,11 @@
-# Jakal Mainnet guide
+# Jaсkal Mainnet guide
 
 ![jackal](https://user-images.githubusercontent.com/44331529/198365498-60a1a986-70e8-419d-a35c-b4d9780c0e7a.png)
 
 
 [GitHub](https://github.com/JackalLabs)
 =
-[EXPLORER 1](https://explorer.stavr.tech/jakal/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/jaсkal/staking) \
 [EXPLORER 2](https://explorer.nodestake.top/jackal/staking)
 =
 
