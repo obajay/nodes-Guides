@@ -47,17 +47,17 @@ wget -O sei4 https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sei_Netw
      go version
 
 
-# Installing the binaries (06.10.22)
+# Installing the binaries (29.10.22)
 ```bash
 git clone https://github.com/sei-protocol/sei-chain.git
 cd sei-chain
 git checkout master && git pull
-git checkout 1.2.2beta
+git checkout 1.2.3beta
 make install
 ```
 `seid version --long | head`
-+ version:  1.2.0beta
-+ commit: caa4c602c8f4cec37b113064e0d5e9cdb7173bed
++ version:  1.2.3beta
++ commit: 
 
     
 ## Initializing the node to create the necessary configuration files
