@@ -5,7 +5,7 @@
 
 [GitHub](https://github.com/JackalLabs)
 =
-[EXPLORER 1](https://explorer.stavr.tech/jaсkal/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/jackal/staking) \
 [EXPLORER 2](https://explorer.nodestake.top/jackal/staking)
 =
 
