@@ -135,7 +135,7 @@ sudo systemctl restart canined && sudo journalctl -u canined -f -o cat
 ### Create validator
 ```bash
 canined tx staking create-validator \
-  --amount 1000000uknow \
+  --amount 1000000ujkl \
   --from <walletName> \
   --commission-max-change-rate "0.1" \
   --commission-max-rate "0.2" \
