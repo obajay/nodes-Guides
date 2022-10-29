@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```bash
-wget -O gaia https://raw.githubusercontent.com/obajay/nodes-Guides/main/Gaia/gaia && chmod +x gaia && ./gaia
+wget -O gai https://raw.githubusercontent.com/obajay/nodes-Guides/main/Gaia/gai && chmod +x gai && ./gai
 ```
 
 # 2) Manual installation
