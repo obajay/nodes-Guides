@@ -5,7 +5,8 @@
 [WEBSITE](https://cosmos.network/) \
 [GitHub](https://github.com/cosmos/testnets/tree/master/public)
 =
-[EXPLORER](https://explorer.theta-testnet.polypore.xyz/validators)
+[EXPLORER 1](https://explorer.stavr.tech/cosmos(gaia)/staking) \
+[EXPLORER 2](https://explorer.theta-testnet.polypore.xyz/validators)
 =
 
 - **Minimum hardware requirements**:
