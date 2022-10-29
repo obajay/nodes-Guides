@@ -105,7 +105,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.gaia/config/config.to
 
 ## Download addrbook
 ```bash
-wget -O $HOME/.gaia/config/addrbook.json "SOON"
+wget -O $HOME/.gaia/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Gaia/addrbook.json"
 ```
 
 # Create a service file
