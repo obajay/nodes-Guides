@@ -118,12 +118,11 @@ rizond config chain-id titan-1
 	EOF
 
 ## Start
-
-    sudo systemctl daemon-reload && \ 
-    sudo systemctl enable rizond && \
-    sudo systemctl restart rizond && \
-    sudo journalctl -u rizond -f -o cat
-
+```bash
+sudo systemctl daemon-reload &&
+sudo systemctl enable rizond &&
+sudo systemctl restart rizond && sudo journalctl -u rizond -f -o cat
+```
 ## Create validator
 
 
