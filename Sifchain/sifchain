@@ -134,13 +134,12 @@ echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE
 break
 ;;
 "Synchronization via StateSync")
-sudo systemctl stop sifnoded
-SNAP_RPC="141.95.124.151:21057"
+SNAP_RPC="http://sifchain.rpc.m.stavr.tech:13157"
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
 echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-peers="02d427099db530f295efb39e094e23b57132da03@141.95.124.151:21056"
+peers="cc734391d366c30bf6755dddd07838cfa8731665@135.181.5.47:13156"
 sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.sifnoded/config/config.toml
 sed -i -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
 s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
@@ -173,7 +172,7 @@ sudo systemctl stop sifnoded
 rm -rf $HOME/.sifnoded/data/
 mkdir $HOME/.sifnoded/data/
 cd $HOME
-wget http://141.95.124.151:5001/sifchaindata.tar.gz
+wget http://sifchain.snapshot.stavr.tech:5001/sifchaindata.tar.gz
 tar -C $HOME/ -zxvf sifchaindata.tar.gz --strip-components 1
 cd $HOME
 rm sifchaindata.tar.gz
