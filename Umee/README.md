@@ -21,7 +21,7 @@ wget -O Ume https://raw.githubusercontent.com/obajay/nodes-Guides/main/Umee/Ume 
 sudo apt update
 sudo apt install make clang pkg-config libssl-dev build-essential git jq ncdu bsdmainutils htop net-tools lsof -y < "/dev/null"
 ```
-## Go and binaries  21.10.22
+## Go and binaries  27.10.22
 ```
 ver="1.18.3" && \
 cd $HOME && \
@@ -37,11 +37,11 @@ go version
 cd $HOME 
 git clone https://github.com/umee-network/umee.git
 cd umee
-git checkout v3.0.3
+git checkout v3.1.0
 make install
 ```
 `umeed version`
-+ v3.0.3
++ v3.1.0
 
 ## Init
 ```bash
