@@ -1,7 +1,7 @@
 # Umee mainnet guide
 ![изображение](https://user-images.githubusercontent.com/44331529/180614842-60138156-dcfd-4dce-9ff2-c89fcc5c38dc.png)
 
-[EXPLORER 1](https://umee.explorers.guru/validators) \
+[EXPLORER 1](https://explorer.stavr.tech/umee/staking) \
 [EXPLORER 2](https://www.mintscan.io/umee/validators)
 =
 - **Recommended hardware requirements**:
