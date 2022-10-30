@@ -135,8 +135,8 @@ echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE
 break
 ;;
 "Synchronization via StateSync")
-SNAP_RPC=141.95.124.151:21027
-peers="3ac6c5417f461494e9ce778f652922ae59566262@141.95.124.151:21026"
+SNAP_RPC=http://umee.rpc.m.stavr.tech:29007
+peers="4fea173bd41127f452226a9383dfa05deb5736ba@135.181.5.47:29006"
 sed -i -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.umee/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
