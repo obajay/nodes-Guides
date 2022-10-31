@@ -56,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 #INSTALL
 cd $HOME
 mkdir -p $HOME/go/bin
-wget https://github.com/BitCannaGlobal/bcna-patch/releases/download/v1.4.4/bcna_linux_amd64.tar.gz
+wget https://github.com/BitCannaGlobal/bcna/releases/download/v1.4.5/bcna_linux_amd64.tar.gz
 tar zxvf bcna_linux_amd64.tar.gz
 sudo mv ./bcnad $HOME/go/bin/
 rm -rf bcna_linux_amd64.tar.gz
@@ -156,7 +156,7 @@ break
 "UPDATE")
 cd $HOME
 rm  -rf ./bcna_linux_amd64.tar.gz
-wget https://github.com/BitCannaGlobal/bcna-patch/releases/download/v1.4.4/bcna_linux_amd64.tar.gz
+wget https://github.com/BitCannaGlobal/bcna/releases/download/v1.4.5/bcna_linux_amd64.tar.gz
 tar zxvf bcna_linux_amd64.tar.gz
 ./bcnad version
 sudo mv ./bcnad $(which bcnad)
