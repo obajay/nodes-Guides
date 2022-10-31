@@ -46,20 +46,38 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 15.10.22
+
+### 1_Previously to replace the binary or build from source you need to edit the file app.toml
+#### you should to declare and put in false this var: `iavl-disable-fastnode = false`
+#### Put this content in the main section, just before the [telemetry] section:
+```bash
+# IavlCacheSize set the size of the iavl tree cache. 
+# Default cache size is 50mb.
+iavl-cache-size = 781250
+
+# IAVLDisableFastNode enables or disables the fast node feature of IAVL. 
+# Default is true.
+iavl-disable-fastnode = false  
+###############################################################################
+###                         Telemetry Configuration                         ###
+###############################################################################
+```
+
+
+# Build 31.10.22
 ```bash
 cd ~
 mkdir -p $HOME/go/bin
-wget https://github.com/BitCannaGlobal/bcna-patch/releases/download/v1.4.4/bcna_linux_amd64.tar.gz
+wget https://github.com/BitCannaGlobal/bcna/releases/download/v1.4.5/bcna_linux_amd64.tar.gz
 tar zxvf bcna_linux_amd64.tar.gz
 ./bcnad version --long --output json |jq .commit 
-   >>>>> output should be >>>> "1186539df2dfa0ae881ae6d5c9e5dc1e311024ce"
+   >>>>> output should be >>>> "6c36e052e95e79455ad3c779c825fda620e5931a"
 sudo mv ./bcnad $HOME/go/bin/
 rm -rf bcna_linux_amd64.tar.gz
 ```
 
 `bcnad version`
-- 
+- 1.4.5
 
 ```bash
 bcnad init STAVRguide --chain-id bitcanna-1
