@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```bash 
-SOON
+wget -O nib https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nibiru/nib && chmod +x nib && ./nib
 ```
 # 2) Manual installation
 
