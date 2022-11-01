@@ -25,16 +25,21 @@
     source ~/.bash_profile && \
     go version
     
-## Build    (27.07.22)
-    git clone https://github.com/evmos/evmos
-    cd evmos
-    git checkout v6.0.3
-    make install
-`evmosd version`
-+ 6.0.3
+## Build    (08.10.22)
+```bash
+git clone https://github.com/evmos/evmos
+cd evmos
+git checkout v9.1.0
+make install
+```
 
-      evmosd init <moniker-name> --chain-id evmos_9001-2
-    
+`evmosd version`
++ v9.1.0
+
+```bash
+evmosd init STAVRguide --chain-id evmos_9001-2
+```
+ 
 ## Create/recover wallet
     evmosd keys add <walletname>
     evmosd keys add <walletname> --recover
