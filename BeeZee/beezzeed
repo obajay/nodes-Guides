@@ -13,6 +13,7 @@ PS3='Select an action: '
 options=(
 "Install Node"
 "Create wallet"
+"Check node logs"
 "Synchronization via SnapShot"
 "UPDATE"
 "Delete Node"
@@ -125,12 +126,21 @@ source ~/.bash_profile
 bzed keys add $Wallet
 echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE!!!!!!!!!SAVE!!!!!!!!!!!!!!!!\e[0m'"
 
+break
+;;
+"Check node logs")
+sudo journalctl -u bzed -f -o cat
+
 
 break
 ;;
 "UPDATE")
-echo -e "        \e[1m\e[32mNode Version\e[0m"
-bzed version
+cd $HOME
+cd bze
+git fetch --all
+git checkout v5.1.0
+make install
+systemctl restart bzed && journalctl -u bzed -f -o cat
 
 break
 ;;
