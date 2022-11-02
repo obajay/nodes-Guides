@@ -33,30 +33,31 @@ wget -O beezzeed https://raw.githubusercontent.com/obajay/nodes-Guides/main/BeeZ
     source ~/.bash_profile && \
     go version
  
-## Build
+## Build (01.11.22)
 ```bash
 git clone https://github.com/bze-alphateam/bze
 cd bze
-git checkout v5.0.1
+git checkout v5.1.0
 make install
 ```
 `bzed version`
-+ 5.0.1
++ 5.1.0
 ```bash
-bzed init <moniker> --chain-id beezee-1
+bzed init STAVRguide --chain-id beezee-1
 bzed config chain-id beezee-1
 ```    
 ## Create/recover wallet
-
-    bzed keys add <walletname>
-    bzed keys add <walletname> --recover
+```bash
+bzed keys add <walletname>
+bzed keys add <walletname> --recover
+```
 
 ### when creating, do not forget to write down the seed phrase
 
 # Genesis
-
-    wget https://raw.githubusercontent.com/bze-alphateam/bze/main/genesis.json -O $HOME/.bze/config/genesis.json
-
+```bash
+wget https://raw.githubusercontent.com/bze-alphateam/bze/main/genesis.json -O $HOME/.bze/config/genesis.json
+```
 ## Seeds and peers
     external_address=$(wget -qO- eth0.me)
     sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.bze/config/config.toml
