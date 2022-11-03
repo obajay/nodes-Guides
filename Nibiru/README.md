@@ -109,7 +109,7 @@ CONFIG_TOML="$HOME/.nibid/config/config.toml"
 
 ## Download addrbook
 ```console
-wget -O $HOME/.haqqd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nibiru/addrbook.json"
+wget -O $HOME/.nibid/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nibiru/addrbook.json"
 ```
 
 # Create a service file
