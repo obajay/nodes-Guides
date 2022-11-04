@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```bash
-SOON
+wget -O dfn https://raw.githubusercontent.com/obajay/nodes-Guides/main/DeFund/dfn && chmod +x dfn && ./dfn
 ```
 
 # 2) Manual installation
@@ -91,7 +91,7 @@ pruning="custom"
 pruning_keep_recent="100"
 pruning_keep_every="0"
 pruning_interval="10"
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.defundd/config/app.toml
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.defund/config/app.toml
 sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.defund/config/app.toml
 sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.defund/config/app.toml
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.defund/config/app.toml
@@ -181,5 +181,21 @@ rm -rf .defundd && \
 rm -rf $(which defundd)
 ```
 
-
+#
+### Sync Info
+```bash
+defundd status 2>&1 | jq .SyncInfo
+```
+### NodeINfo
+```bash
+defundd status 2>&1 | jq .NodeInfo
+```
+### Check node logs
+```bash
+defundd journalctl -u haqqd -f -o cat
+```
+### Check Balance
+```bash
+defundd query bank balances defund...addressdefund1yjgn7z09ua9vms259j
+```
 
