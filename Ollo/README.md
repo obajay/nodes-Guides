@@ -10,7 +10,7 @@
 
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
-| Testnet   |   8| 16GB | 160GB    |
+| Testnet   |   4|  8GB | 160GB    |
 
 
 # 1) Auto_install script 
@@ -41,10 +41,12 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 27.09.22
+# Build 05.11.22
 ```bash
-git clone https://github.com/OLLO-Station/ollo
+cd $HOME
+git clone https://github.com/OllO-Station/ollo.git
 cd ollo
+git checkout v0.0.1
 make install
 ```
 
@@ -52,7 +54,7 @@ make install
 - latest
 
 ```bash
-ollod init STAVRguide --chain-id ollo-testnet-0
+ollod init STAVRguide --chain-id ollo-testnet-1
 ```    
 
 ## Create/recover wallet
@@ -64,10 +66,10 @@ ollod keys add <walletname> --recover
 ## Download Genesis
 
 ```bash
-wget -O $HOME/.ollo/config/genesis.json https://raw.githubusercontent.com/obajay/nodes-Guides/main/Ollo/genesis.json
+wget -O ~/.ollo/config/genesis.json https://raw.githubusercontent.com/OllO-Station/networks/master/ollo-testnet-1/genesis.json
 ```
 `sha256sum $HOME/.ollo/config/genesis.json`
-+ edd83397147598bd203996bd3c4495c1249291a24376028174c32e8bad862f2d
++ 4852e73a212318cabaa6bf264e18e8aeeb42ee1e428addc0855341fad5dc7dae
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```bash
@@ -75,7 +77,7 @@ sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0utollo\"/" $HOME/.
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.ollo/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.ollo/config/config.toml
-peers="06658ccd5c119578fb662633234a2ef154881b94@172.31.19.104:26656"
+peers="a99fc4e81770ca32d574cac2e8680dccc9b55f74@18.144.61.148:26656,70ba32724461c7ed4ec8d6ddc8b5e0b1cfb9e237@54.219.57.63:26656,7864a2e4b42e5af76a83a8b644b9172fa1e40fa5@52.8.174.235:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.ollo/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.ollo/config/config.toml
@@ -107,9 +109,9 @@ wget -O $HOME/.ollo/config/addrbook.json "https://raw.githubusercontent.com/obaj
 
 # StateSync
 ```bash
-peers="6cafaaa5044895ad0a98f138610856611f44137c@5.9.13.162:22046" 
+peers="https://ollo.rpc.bccnodes.com:443" 
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.ollo/config/config.toml
-SNAP_RPC="http://ollo.rpc.t.stavr.tech:22047"
+SNAP_RPC="https://ollo.rpc.bccnodes.com:443"
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
@@ -121,8 +123,8 @@ s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.ollo/config/config.toml
 ollod tendermint unsafe-reset-all --home $HOME/.ollo
-wget -O $HOME/.ollo/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Ollo/addrbook.json"
 sudo systemctl restart ollod && journalctl -u ollod -f -o cat
+
 ```
 
 # Create a service file
@@ -154,15 +156,15 @@ sudo systemctl restart ollod && sudo journalctl -u ollod -f -o cat
 ### Create validator
 ```bash
 ollod tx staking create-validator \
---amount=50000000utollo \
+--amount=10000000utollo \
 --pubkey=$(ollod tendermint show-validator) \
 --moniker=STAVRguide \
---chain-id=ollo-testnet-0 \
+--chain-id=ollo-testnet-1 \
 --commission-rate="0.10" \
 --commission-max-rate="0.20" \
 --commission-max-change-rate="0.1" \
 --min-self-delegation="1" \
---from=STAVR1 \
+--from=<walletname> \
 --identity="" \
 --details="" \
 --website="" \
