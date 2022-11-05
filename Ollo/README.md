@@ -55,6 +55,7 @@ make install
 
 ```bash
 ollod init STAVRguide --chain-id ollo-testnet-1
+ollod config keyring-backend test
 ```    
 
 ## Create/recover wallet
