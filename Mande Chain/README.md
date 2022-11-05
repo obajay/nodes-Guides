@@ -126,7 +126,7 @@ s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.mande-chain/config/config.toml
 
-mande-chaind tendermint unsafe-reset-all --home /root/.mande-chain --keep-addr-book
+mande-chaind tendermint unsafe-reset-all --home $HOME/.mande-chain --keep-addr-book
 systemctl restart mande-chaind && journalctl -u mande-chaind -f -o cat
 
 ```
