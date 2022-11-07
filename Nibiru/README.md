@@ -150,7 +150,7 @@ nibid tx staking create-validator \
 --commission-max-rate="0.20" \
 --commission-max-change-rate="0.1" \
 --min-self-delegation="1" \
---from=STAVR1 \
+--from=<walletname> \
 --identity="" \
 --details="" \
 --website="" \
