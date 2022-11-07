@@ -64,20 +64,17 @@ iavl-disable-fastnode = false
 ```
 
 
-# Build 31.10.22
+# Build 07.11.22
 ```bash
 cd ~
-mkdir -p $HOME/go/bin
-wget https://github.com/BitCannaGlobal/bcna/releases/download/v1.4.5/bcna_linux_amd64.tar.gz
-tar zxvf bcna_linux_amd64.tar.gz
-./bcnad version --long --output json |jq .commit 
-   >>>>> output should be >>>> "6c36e052e95e79455ad3c779c825fda620e5931a"
-sudo mv ./bcnad $HOME/go/bin/
-rm -rf bcna_linux_amd64.tar.gz
+git clone https://github.com/BitCannaGlobal/bcna
+cd bcna
+git checkout v1.5.3
+make install
 ```
 
 `bcnad version`
-- 1.4.5
+- v1.5.3
 
 ```bash
 bcnad init STAVRguide --chain-id bitcanna-1
