@@ -32,7 +32,7 @@ echo "_|-_|-_|-_|-_|-_|-_|"
 read Validator_Name
 echo "_|-_|-_|-_|-_|-_|-_|"
 echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
-echo export CHAIN_ID="defund-private-2" >> $HOME/.bash_profile
+echo export CHAIN_ID="defund-private-3" >> $HOME/.bash_profile
 source ~/.bash_profile
 
 echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
@@ -60,8 +60,11 @@ git checkout v0.1.0
 make install
 
 defundd init $Validator_Name --chain-id $CHAIN_ID
-
-wget -O $HOME/.defund/config/genesis.json "https://raw.githubusercontent.com/defund-labs/testnet/main/defund-private-2/genesis.json"
+cd $HOME/.defund/config/
+wget -O $HOME/.defund/config/defund-private-3-gensis.tar.gz "https://raw.githubusercontent.com/defund-labs/testnet/main/defund-private-3/defund-private-3-gensis.tar.gz"
+tar -xzvf defund-private-3-gensis.tar.gz
+defundd config chain-id defund-private-3 
+rm -rf defund-private-3-gensis.tar.gz
 wget -O $HOME/.defund/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/DeFund/addrbook.json"
 
 
@@ -154,8 +157,15 @@ systemctl restart defundd && journalctl -u defundd -f -o cat
 break
 ;;
 "UPDATE")
-echo -e "      \e[1m\e[32m SOOOON\e[0m"
-defundd version
+systemctl stop defundd
+cd $HOME/.defund/config/
+defundd tendermint unsafe-reset-all --home $HOME/.defund
+wget -O $HOME/.defund/config/defund-private-3-gensis.tar.gz "https://raw.githubusercontent.com/defund-labs/testnet/main/defund-private-3/defund-private-3-gensis.tar.gz"
+rm -rf $HOME/.defund/config/genesis.json
+tar -xzvf defund-private-3-gensis.tar.gz
+defundd config chain-id defund-private-3 
+rm -rf defund-private-3-gensis.tar.gz
+systemctl restart defundd && journalctl -u defundd -f -o cat
 
 break
 ;;
