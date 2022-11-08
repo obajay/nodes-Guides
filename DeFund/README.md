@@ -54,7 +54,7 @@ make install
 - version: v0.1.0
 
 ```bash
-defundd init STAVRguide --chain-id defund-private-2
+defundd init STAVRguide --chain-id defund-private-3
 
 ```    
 
@@ -66,10 +66,10 @@ defundd keys add <walletname> --recover
 
 ## Download Genesis
 ```bash
-wget -O $HOME/.defund/config/genesis.json "https://raw.githubusercontent.com/defund-labs/testnet/main/defund-private-2/genesis.json"
+wget -O $HOME/.defund/config/defund-private-3-gensis.tar.gz "https://raw.githubusercontent.com/defund-labs/testnet/main/defund-private-3/defund-private-3-gensis.tar.gz"
 ```
 `sha256sum $HOME/.defund/config/genesis.json`
-+ bec32034b1ca130e2f45c603f42103490df990984fb46528994b4a99a5f77ea6
++ 1a10121467576ab6f633a14f82d98f0c39ab7949102a77ab6478b2b2110109e3
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```bash
