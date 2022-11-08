@@ -30,16 +30,17 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 18.10.22
+# Build 08.11.22
 ```bash
-wget https://download.uptick.network/download/uptick/testnet/release/v0.2.3/v0.2.3.tar.gz
-tar -zxvf v0.2.3.tar.gz
-chmod +x uptick-v0.2.3/linux/uptickd
-mv $HOME/uptick-v0.2.3/linux/uptickd $HOME/go/bin/
+cd $HOME
+wget https://github.com/UptickNetwork/uptick/releases/download/v0.2.4/uptick-linux-amd64-v0.2.4.tar.gz
+tar -zxvf uptick-linux-amd64-v0.2.4.tar.gz
+chmod +x $HOME/uptick-linux-amd64-v0.2.4/uptickd
+mv $HOME/uptick-linux-amd64-v0.2.4/uptickd $HOME/go/bin/
 ```
 
 `uptickd version`
-+ 0.2.3
++ 0.2.4
 
 ## Initialization
 ```bash
