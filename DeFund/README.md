@@ -66,7 +66,12 @@ defundd keys add <walletname> --recover
 
 ## Download Genesis
 ```bash
+cd $HOME/.defund/config/
 wget -O $HOME/.defund/config/defund-private-3-gensis.tar.gz "https://raw.githubusercontent.com/defund-labs/testnet/main/defund-private-3/defund-private-3-gensis.tar.gz"
+rm -rf $HOME/.defund/config/genesis.json
+tar -xzvf defund-private-3-gensis.tar.gz
+defundd config chain-id defund-private-3 
+rm -rf defund-private-3-gensis.tar.gz
 ```
 `sha256sum $HOME/.defund/config/genesis.json`
 + 1a10121467576ab6f633a14f82d98f0c39ab7949102a77ab6478b2b2110109e3
