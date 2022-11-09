@@ -54,9 +54,10 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME && git clone https://github.com/empowerchain/empowerchain && \
-cd empowerchain/chain && \
-make install && \
-empowerd version --long | head
+cd empowerchain/chain
+git checkout v0.0.2
+make build
+mv $HOME/empowerchain/chain/build/empowerd $HOME/go/bin/
 
 empowerd init $Validator_Name --chain-id $CHAIN_ID
 
@@ -139,8 +140,12 @@ echo -e "      \e[1m\e[32m SOOOOON\e[0m"
 break
 ;;
 "UPDATE")
-echo -e "        \e[1m\e[32mVERSION\e[0m"
-empowerd version
+cd empowerchain
+git pull
+git checkout v0.0.2
+cd chain && make build
+mv $HOME/empowerchain/chain/build/empowerd $(which empowerd)
+sudo systemctl restart empowerd && sudo journalctl -u empowerd -f -o cat
 
 break
 ;;
