@@ -37,13 +37,17 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Binary   03.10.22
+# Binary   10.11.22
 ```bash
 cd $HOME && git clone https://github.com/empowerchain/empowerchain && \
-cd empowerchain/chain && \
-make install && \
-empowerd version --long | head
+cd empowerchain/chain
+git checkout v0.0.2
+make build
+mv $HOME/empowerchain/chain/build/empowerd $HOME/go/bin/
 ```
+`empowerd version --long | head`
++ 0.0.2
+
 
 ## Initialisation
 ```bash
