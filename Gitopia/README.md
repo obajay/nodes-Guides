@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```bash
-
+wget -O gitop https://raw.githubusercontent.com/obajay/nodes-Guides/main/Gitopia/gitop && chmod +x gitop && ./gitop
 ```
 
 # 2) Manual installation
@@ -103,7 +103,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.gitopia/config/config
 
 ## Download addrbook
 ```bash
-wget -O $HOME/.canine/config/addrbook.json ""
+wget -O $HOME/.canine/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Gitopia/addrbook.json"
 ```
 
 ## StateSync
