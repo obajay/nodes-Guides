@@ -28,13 +28,13 @@
     source $HOME/.bash_profile && \
     go version
 
-# Build 28.10.22
+# Build 10.11.22
 ```bash
 cd $HOME
-wget https://kyve-beta.s3.eu-central-1.amazonaws.com/v0.7.0_beta7_v2/chain_linux_amd64.tar.gz
-tar -xvzf chain_linux_amd64.tar.gz
-chmod +x chaind
-sudo mv chaind $HOME/go/bin/
+wget https://kyve-beta.s3.eu-central-1.amazonaws.com/v0.7.0_beta8/kyved_linux_amd64.tar.gz
+tar -xvzf kyved_linux_amd64.tar.gz
+chmod +x kyved
+sudo mv kyved $HOME/go/bin/chaind
 rm chain_linux_amd64.tar.gz
 ```
 
