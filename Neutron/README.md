@@ -16,7 +16,7 @@
 
 # 1) Auto_install script
 ```bash
-
+SOOON
 ```
 
 # 2) Manual installation
@@ -107,7 +107,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.neutrond/config/confi
 
 ## Download addrbook
 ```bash
-wget -O $HOME/.neutrond/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Gitopia/addrbook.json"
+wget -O $HOME/.neutrond/config/addrbook.json "SOOON"
 ```
 
 # Create a service file
