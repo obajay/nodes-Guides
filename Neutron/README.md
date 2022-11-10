@@ -47,7 +47,7 @@ git clone -b v0.1.0 https://github.com/neutron-org/neutron.git
 cd neutron
 make install
 ```
-`neutrond version --long`
+`neutrond version --head`
 - version: 0.1.0
 - commit: a9e8ba5ebb9230bec97a4f2826d75a4e0e6130d9
 
