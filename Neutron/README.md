@@ -81,12 +81,10 @@ peers="fcde59cbba742b86de260730d54daa60467c91a5@23.109.158.180:26656,5bdc67a5d52
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.neutrond/config/config.toml
 seeds="e2c07e8e6e808fb36cca0fc580e31216772841df@seed-1.quark.ntrn.info:26656,c89b8316f006075ad6ae37349220dd56796b92fa@tenderseed.ccvalidators.com:29001"
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.neutrond/config/config.toml
+sed -i -e "s/^timeout_commit *=.*/timeout_commit = \"2s\"/" $HOME/.neutrond/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.neutrond/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.neutrond/config/config.toml
-
 ```
-
-Update your $HOME/.neutrond/config/config.toml and set `timeout_commit = "2s"`.
 
 ### Pruning (optional)
 ```bash
