@@ -27,18 +27,18 @@
     source $HOME/.bash_profile && \
     go version
 
-# Binary   01.08.22
-```console 
+# Binary   11.11.22
+```bash 
 cd $HOME
 git clone https://github.com/galaxies-labs/galaxy
 cd galaxy
-git checkout v1.0.0
+git checkout v1.2.0
 make install
 ```
 
 ## Initialisation
 ```console
-galaxyd init <Moniker> --chain-id galaxy-1
+galaxyd init STAVRguide --chain-id galaxy-1
 galaxyd config chain-id galaxy-1
 
 ```
