@@ -35,7 +35,7 @@ wget https://kyve-beta.s3.eu-central-1.amazonaws.com/v0.7.0_beta8/kyved_linux_am
 tar -xvzf kyved_linux_amd64.tar.gz
 chmod +x kyved
 sudo mv kyved $HOME/go/bin/chaind
-rm chain_linux_amd64.tar.gz
+rm kyved_linux_amd64.tar.gz
 ```
 
 ```bash
