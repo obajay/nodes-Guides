@@ -107,7 +107,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.neutrond/config/confi
 
 ## Download addrbook
 ```bash
-wget -O $HOME/.neutrond/config/addrbook.json "SOOON"
+wget -O $HOME/.neutrond/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Neutron/addrbook.json"
 ```
 
 # Create a service file
