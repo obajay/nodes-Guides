@@ -32,12 +32,12 @@
 cd $HOME
 git clone https://github.com/Pylons-tech/pylons
 cd pylons
-git checkout v1.0.1
+git checkout v1.0.2
 make install
 ```
 `pylonsd version version --long | head`
-+ version: 1.0.1
-+ commit: a5ef45d9363120fa1c25f5ffa847ca5b7643b43c
++ version: 1.0.2
++ commit: 
 
 ## Initialisation
 ```console
