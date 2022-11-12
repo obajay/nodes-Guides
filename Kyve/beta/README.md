@@ -86,6 +86,27 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.kyve
 wget -O $HOME/.kyve/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Kyve/beta/addrbook.json"
 ```
 
+
+
+# Create a service file
+```console
+sudo tee <<EOF > /dev/null /etc/systemd/system/kyved.service
+[Unit]
+Description=KYVE Chain-Node daemon
+After=network-online.target
+
+[Service]
+User=$USER
+ExecStart=$(which chaind) start
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=infinity
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+
 # SnapShot 11.11.22 (0.1 GB) height 919269
 ```bash
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
@@ -107,27 +128,10 @@ cd $HOME
 rm kyvedata.tar.gz
 wget -O $HOME/.kyve/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Kyve/beta/addrbook.json"
 mv $HOME/.kyve/priv_validator_state.json.backup $HOME/.kyve/data/priv_validator_state.json
-sudo systemctl restart chaind && sudo journalctl -u chaind -f -o cat
+sudo systemctl restart kyved && journalctl -u kyved -f -o cat
 ```
 
-# Create a service file
-```console
-sudo tee <<EOF > /dev/null /etc/systemd/system/kyved.service
-[Unit]
-Description=KYVE Chain-Node daemon
-After=network-online.target
 
-[Service]
-User=$USER
-ExecStart=$(which chaind) start
-Restart=on-failure
-RestartSec=10
-LimitNOFILE=infinity
-
-[Install]
-WantedBy=multi-user.target
-EOF
-```
 # State Sync KYVE (kyve-beta)
 ```bash
 SNAP_RPC="kyveb.rpc.t.stavr.tech:20057"
