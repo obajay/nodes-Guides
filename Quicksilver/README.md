@@ -1,5 +1,10 @@
 # Quicksilver  Testnet
 
+![quick](https://user-images.githubusercontent.com/44331529/201520331-711f381d-89ab-4b8b-bab9-114c2b2521bd.png)
+
+
+[WEBSITE](https://quicksilver.zone/)
+=
 [EXPLORER 1](https://explorer.stavr.tech/quicksilver/staking) \
 [EXPLORER 2](https://testnet.manticore.team/quicksilver/staking)
 =
