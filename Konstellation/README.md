@@ -51,7 +51,7 @@ knstld init STAVRguide --chain-id darchub
     wget -O $HOME/.knstld/config/genesis.json https://raw.githubusercontent.com/Konstellation/konstellation/master/config/genesis.json
 
 ### Download config.toml with predefined seeds and persistent peers
-    wget -O $HOME/.knstld/config/config.toml https://raw.githubusercontent.com/Konstellation/konstellation/master/config/config.toml
+    wget -O $HOME/.knstld/config/config.toml https://raw.githubusercontent.com/obajay/nodes-Guides/main/Konstellation/addrbook.json
 
 
 ### Set up the minimum gas price $HOME/.knstld/config/app.toml as well as seed and peers
@@ -64,15 +64,10 @@ knstld init STAVRguide --chain-id darchub
 
 
 ## Pruning (optional)
+```python
+sed -i -e "s/^pruning *=.*/pruning = \"nothing\"/" $HOME/.knstld/config/app.toml 
+```
 
-    pruning="custom" && \
-    pruning_keep_recent="100" && \
-    pruning_keep_every="0" && \
-    pruning_interval="10" && \
-    sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.knstld/config/app.toml && \
-    sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.knstld/config/app.toml && \
-    sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.knstld/config/app.toml && \
-    sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.knstld/config/app.toml
 
 ## Indexer (optional)
 
