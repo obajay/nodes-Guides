@@ -2,8 +2,8 @@
 ![mm (2)](https://user-images.githubusercontent.com/44331529/180606614-565409bd-fa7e-4e50-990d-b2e47614d172.png)
 ![mm (1)](https://user-images.githubusercontent.com/44331529/180606616-069f9ce4-ffc4-4c0b-ac08-19e168054991.png)
 
-
-[EXPLORER](https://ping.pub/meme/staking)
+[EXPLORER 1](https://explorer.stavr.tech/meme/staking) \
+[EXPLORER 2](https://ping.pub/meme/staking)
 =
 - **Minimum hardware requirements**:
 
@@ -26,14 +26,17 @@
     source ~/.bash_profile && \
     go version
 
-# Build 11.05.22
+# Build 15.10.22
+```python
+cd $HOME
+wget https://fix.meme.sx/memed-v1.0.0-fix.tar.gz
+tar -xvzf memed-v1.0.0-fix.tar.gz
+sudo mv ./memed $HOME/go/bin/
 
-    git clone https://github.com/MEMECosmos/meme
-    cd meme
-    git checkout main
-    make install
-    
-    memed init <moniker> --chain-id meme-1
+```
+```python
+memed init STAVRguide --chain-id meme-1
+```
 
 ## Create/recover wallet
 
