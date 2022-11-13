@@ -86,22 +86,24 @@ wget -O $HOME/.rizon/config/genesis.json "https://raw.githubusercontent.com/rizo
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.rizon/config/config.toml
 
 ## State Sync
-    SNAP_RPC="https://rizon.nodejumper.io:443"
+```python
+SNAP_RPC="https://rizon.nodejumper.io:443"
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
 
-    LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-	BLOCK_HEIGHT=$((LATEST_HEIGHT - 2000)); \
-	TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
 
-    echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+peers="0d51e8b9eb24f412dffc855c7bd854a8ecb3dff5@rizon.nodejumper.io:26656"
+sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.rizon/config/config.toml
 
-	peers="0d51e8b9eb24f412dffc855c7bd854a8ecb3dff5@rizon.nodejumper.io:26656"
-	sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.rizon/config/config.toml
-
-	sed -i -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-	s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
-	s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-	s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.rizon/config/config.toml
-
+sed -i -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.rizon/config/config.toml
+rizond tendermint unsafe-reset-all --home /root/.rizon
+sudo systemctl restart rizond && journalctl -u rizond -f -o cat
+```
 # Create a service file
 
 	sudo tee /etc/systemd/system/rizond.service > /dev/null << EOF
