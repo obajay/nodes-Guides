@@ -27,16 +27,18 @@
     source ~/.bash_profile && \
     go version
 
-## Build
-```
-    git clone -b v0.5.0 https://github.com/konstellation/konstellation
-    cd konstellation
-    make install
+## Build 13.11.22
+```python
+cd $HOME
+git clone https://github.com/knstl/konstellation/
+cd konstellation
+git checkout v0.6.0
+make install
 ```
 `knstld version`
-+ 0.5.0
++ 0.6.0
 ```    
-knstld init <moniker-name> --chain-id darchub
+knstld init STAVRguide --chain-id darchub
 ```
 ## Create/recover wallet
 
