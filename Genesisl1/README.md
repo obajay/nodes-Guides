@@ -121,6 +121,7 @@ EOF
 ## SnapShot  (53 GB) 4598847 
 ```bash
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
+sudo systemctl stop genesisd
 rm -rf $HOME/.genesisd/data/
 mkdir $HOME/.genesisd/data/
 
