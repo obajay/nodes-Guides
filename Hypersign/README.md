@@ -5,7 +5,8 @@
 [WEBSITE](https://hypersign.id/#home)
 =
 
-[EXPLORER](http://explorer.stavr.tech/hypersign/staking)
+[EXPLORER 1](http://explorer.stavr.tech/hypersign/staking) \
+[EXPLORER 2](https://explorer.theamsolutions.info/hypersign-test/staking)
 =
 
 - **Minimum hardware requirements**:
@@ -42,16 +43,16 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 17.10.22
+# Build 14.11.22
 ```bash
 git clone https://github.com/hypersign-protocol/hid-node.git
 cd hid-node
-git checkout v0.1.2
+git checkout v0.1.3
 make install
 ```
 
 `hid-noded version`
-- v0.1.2
+- v0.1.3
 
 ```bash
 hid-noded init STAVRguide --chain-id jagrat
