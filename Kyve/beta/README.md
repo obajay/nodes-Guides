@@ -110,7 +110,7 @@ EOF
 # SnapShot 11.11.22 (0.1 GB) height 919269
 ```bash
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
-sudo systemctl stop chaind
+sudo systemctl stop kyved
 cp $HOME/.kyve/data/priv_validator_state.json $HOME/.kyve/priv_validator_state.json.backup
 rm -rf $HOME/.kyve/data/
 mkdir $HOME/.kyve/data/
