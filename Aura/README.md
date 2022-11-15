@@ -113,7 +113,28 @@ s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.aura/config/config.toml
 aurad tendermint unsafe-reset-all --home $HOME/.aura --keep-addr-book
 sudo systemctl restart aurad && journalctl -u aurad -f -o cat
 ```
-## SnapShot
+# SnapShot 15.11.22 (0.5 GB) height 1886229
+```python
+# install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
+sudo systemctl stop aura
+cp $HOME/.aura/data/priv_validator_state.json $HOME/.aura/priv_validator_state.json.backup
+rm -rf $HOME/.aura/data/
+mkdir $HOME/.aura/data/
+
+# download archive
+cd $HOME
+wget http://aura.snapshot.stavr.tech:5000/auradata.tar.gz
+
+# unpack the archive
+tar -C $HOME/ -zxvf auradata.tar.gz --strip-components 1
+
+# after unpacking, run the node
+# don't forget to delete the archive to save space
+cd $HOME
+rm auradata.tar.gz
+mv $HOME/.aura/priv_validator_state.json.backup $HOME/.aura/data/priv_validator_state.json
+sudo systemctl restart aurad && sudo journalctl -u aurad -f -o cat
+```
 
 
 
