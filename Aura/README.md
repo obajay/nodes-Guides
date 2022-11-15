@@ -13,9 +13,12 @@
 |------------|------|----------|
 | Validator  | 16GB | 500GB    |
 
+# 1) Auto_install script
+```python
+wget -O aur https://raw.githubusercontent.com/obajay/nodes-Guides/main/Aura/aur && chmod +x aur && ./aur
+```
 
-
-
+# 2) Manual instruction
 ### Preparing the server
 
     sudo apt update && sudo apt upgrade -y
@@ -43,7 +46,7 @@ make install
 + commit: 
 
 ```
-aurad init <moniker> --chain-id euphoria-1
+aurad init STAVRguide --chain-id euphoria-1
 ```
 
 ## Create/recover wallet
@@ -148,7 +151,7 @@ wget -O $HOME/.aura/config/genesis.json "https://raw.githubusercontent.com/aura-
     --details="" \
     --identity="" \
     --pubkey  $(aurad tendermint show-validator) \
-    --moniker <moniker> \
+    --moniker STAVRguide \
     --fees 555ueaura \
     --chain-id euphoria-1 -y
 
