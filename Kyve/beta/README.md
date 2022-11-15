@@ -2,8 +2,8 @@
 ![Kyve (2)](https://user-images.githubusercontent.com/44331529/180600823-b7f4a17d-c213-49b5-a1b9-cbe2e3b630e2.png)
 ![Kyve (1)](https://user-images.githubusercontent.com/44331529/180600827-c8beffd5-dcb3-4ded-a9d6-8f9aa6c0859f.png)
 
-
-[EXPLORER](https://explorer.beta.kyve.network/kyve-betanet/staking)
+[EXPLORER 1](https://explorer.stavr.tech/kyvebeta/staking) \
+[EXPLORER 2](https://explorer.beta.kyve.network/kyve-betanet/staking) 
 =
 - **Minimum hardware requirements**:
 
@@ -107,26 +107,14 @@ WantedBy=multi-user.target
 EOF
 ```
 
-# SnapShot 11.11.22 (0.1 GB) height 919269
-```bash
-# install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
+# SnapShot (0.1 GB) updated every 24 hours
+```знерщт
+cd $HOME
 sudo systemctl stop kyved
 cp $HOME/.kyve/data/priv_validator_state.json $HOME/.kyve/priv_validator_state.json.backup
-rm -rf $HOME/.kyve/data/
-mkdir $HOME/.kyve/data/
-
-# download archive
-cd $HOME
-wget http://kyvebeta.snapshot.stavr.tech:5102/kyvedata.tar.gz
-
-# unpack the archive
-tar -C $HOME/ -zxvf kyvedata.tar.gz --strip-components 1
-
-# after unpacking, run the node
-# don't forget to delete the archive to save space
-cd $HOME
-rm kyvedata.tar.gz
-wget -O $HOME/.kyve/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Kyve/beta/addrbook.json"
+rm -rf $HOME/.kyve/data
+wget http://kyvebeta.snapshot.stavr.tech:5102/kyve/kyve-snap.tar.lz4 && lz4 -c -d $HOME/kyve-snap.tar.lz4 | tar -x -C $HOME/.kyve --strip-components 2
+rm -rf kyve-snap.tar.lz4
 mv $HOME/.kyve/priv_validator_state.json.backup $HOME/.kyve/data/priv_validator_state.json
 sudo systemctl restart kyved && journalctl -u kyved -f -o cat
 ```
