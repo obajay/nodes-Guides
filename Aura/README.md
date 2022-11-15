@@ -116,7 +116,7 @@ sudo systemctl restart aurad && journalctl -u aurad -f -o cat
 # SnapShot 15.11.22 (0.5 GB) height 1886229
 ```python
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
-sudo systemctl stop aura
+sudo systemctl stop aurad
 cp $HOME/.aura/data/priv_validator_state.json $HOME/.aura/priv_validator_state.json.backup
 rm -rf $HOME/.aura/data/
 mkdir $HOME/.aura/data/
