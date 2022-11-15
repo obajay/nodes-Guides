@@ -107,8 +107,8 @@ WantedBy=multi-user.target
 EOF
 ```
 
-# SnapShot (0.1 GB) updated every 24 hours
-```знерщт
+## SnapShot (0.1 GB) updated every 24 hours
+```python
 cd $HOME
 sudo systemctl stop kyved
 cp $HOME/.kyve/data/priv_validator_state.json $HOME/.kyve/priv_validator_state.json.backup
