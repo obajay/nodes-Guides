@@ -162,7 +162,7 @@ sudo journalctl -u aurad -f -o cat
 break
 ;;
 "Synchronization via SnapShot")
-sudo systemctl stop aura
+sudo systemctl stop aurad
 cp $HOME/.aura/data/priv_validator_state.json $HOME/.aura/priv_validator_state.json.backup
 rm -rf $HOME/.aura/data/
 mkdir $HOME/.aura/data/
