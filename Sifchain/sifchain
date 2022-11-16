@@ -55,9 +55,9 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-wget -O sifnoded-v1.0.13-beta.zip https://github.com/Sifchain/sifnode/releases/download/v1.0.13-beta/sifnoded-v1.0.13-beta-linux-amd64.zip
-unzip sifnoded-v1.0.13-beta.zip
-rm sifnoded-v1.0.13-beta.zip
+wget -O sifnoded-v1.0.14-beta.zip https://github.com/Sifchain/sifnode/releases/download/v1.0.14-beta/sifnoded-v1.0.14-beta-linux-amd64.zip
+unzip sifnoded-v1.0.14-beta.zip
+rm sifnoded-v1.0.14-beta.zip
 mv ~/sifnoded /usr/local/bin/
 
 sifnoded init $Validator_Name --chain-id $CHAIN_ID
@@ -153,9 +153,9 @@ break
 ;;
 "UPDATE")
 cd $HOME
-wget -O sifnoded-v1.0.13-beta.zip https://github.com/Sifchain/sifnode/releases/download/v1.0.13-beta/sifnoded-v1.0.13-beta-linux-amd64.zip
-unzip sifnoded-v1.0.13-beta.zip
-rm sifnoded-v1.0.13-beta.zip
+wget -O sifnoded-v1.0.14-beta.zip https://github.com/Sifchain/sifnode/releases/download/v1.0.14-beta/sifnoded-v1.0.14-beta-linux-amd64.zip
+unzip sifnoded-v1.0.14-beta.zip
+rm sifnoded-v1.0.14-beta.zip
 mv ~/sifnoded /usr/local/bin/
 sudo systemctl restart sifnoded && journalctl -u sifnoded -f -o cat
 
