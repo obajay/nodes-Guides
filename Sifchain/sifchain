@@ -168,15 +168,14 @@ journalctl -u sifnoded -f -o cat
 break
 ;;
 "Synchronization via SnapShot")
+cd $HOME
 sudo systemctl stop sifnoded
-rm -rf $HOME/.sifnoded/data/
-mkdir $HOME/.sifnoded/data/
-cd $HOME
-wget http://sifchain.snapshot.stavr.tech:5001/sifchaindata.tar.gz
-tar -C $HOME/ -zxvf sifchaindata.tar.gz --strip-components 1
-cd $HOME
-rm sifchaindata.tar.gz
-systemctl restart sifnoded && journalctl -u sifnoded -f -o cat
+cp $HOME/.sifnoded/data/priv_validator_state.json $HOME/.sifnoded/priv_validator_state.json.backup
+rm -rf $HOME/.sifnoded/data
+wget http://sifchain.snapshot.stavr.tech:5109/sifchain/sifchain-snap.tar.lz4 && lz4 -c -d $HOME/sifchain-snap.tar.lz4 | tar -x -C $HOME/.sifnoded --strip-components 2
+rm -rf sifchain-snap.tar.lz4
+mv $HOME/.sifnoded/priv_validator_state.json.backup $HOME/.sifnoded/data/priv_validator_state.json
+sudo systemctl restart sifnoded && journalctl -u sifnoded -f -o cat
 
 
 break
