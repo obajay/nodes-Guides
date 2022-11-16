@@ -44,7 +44,7 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-# Build 20.10.22
+# Build 03.11.22
 ```bash
 cd ~
 wget -O sifnoded-v1.0.14-beta.zip https://github.com/Sifchain/sifnode/releases/download/v1.0.14-beta/sifnoded-v1.0.14-beta-linux-amd64.zip
