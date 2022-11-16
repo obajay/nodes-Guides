@@ -125,27 +125,16 @@ s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.sifnoded/
 sifnoded tendermint unsafe-reset-all --home $HOME/.sifnoded --keep-addr-book
 sudo systemctl restart sifnoded && journalctl -u sifnoded -f -o cat
 ```
-# SnapShot 30.10.22 (0.8 GB) height 9208607
-```bash
-# install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
+# SnapShot (0.9 GB) updated every 15 hours
+```python
+cd $HOME
 sudo systemctl stop sifnoded
-rm -rf $HOME/.sifnoded/data/
-mkdir $HOME/.sifnoded/data/
-
-# download archive
-cd $HOME
-wget http://sifchain.snapshot.stavr.tech:5001/sifchaindata.tar.gz
-
-# unpack the archive
-tar -C $HOME/ -zxvf sifchaindata.tar.gz --strip-components 1
-wget -O $HOME/.sifnoded/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/priv_validator_state.json"
-cd && cat .sifnoded/data/priv_validator_state.json
-
-# after unpacking, run the node
-# don't forget to delete the archive to save space
-cd $HOME
-rm sifchaindata.tar.gz
-systemctl restart sifnoded && journalctl -u sifnoded -f -o cat
+cp $HOME/.sifnoded/data/priv_validator_state.json $HOME/.sifnoded/priv_validator_state.json.backup
+rm -rf $HOME/.sifnoded/data
+wget http://sifchain.snapshot.stavr.tech:5109/sifchain/sifchain-snap.tar.lz4 && lz4 -c -d $HOME/sifchain-snap.tar.lz4 | tar -x -C $HOME/.sifnoded --strip-components 2
+rm -rf sifchain-snap.tar.lz4
+mv $HOME/.sifnoded/priv_validator_state.json.backup $HOME/.sifnoded/data/priv_validator_state.json
+sudo systemctl restart sifnoded && journalctl -u sifnoded -f -o cat
 ```
 
 # Create a service file
