@@ -94,25 +94,15 @@ umeed unsafe-reset-all
 wget -O $HOME/.umee/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Umee/addrbook.json"
 sudo systemctl restart umeed && journalctl -u umeed -f -o cat
 ```
-# SnapShot 30.10.22 (0.6 GB) height 3665253
-```bash
-# install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
+# SnapShot (~0.9 GB) updated every 10 hours
+```python
+cd $HOME
 sudo systemctl stop umeed
-rm -rf $HOME/.umee/data/
-mkdir $HOME/.umee/data/
-
-# download archive
-cd $HOME
-wget http://umee.snapshot.stavr.tech:6000/umeedata.tar.gz
-
-# unpack the archive
-tar -C $HOME/ -zxvf umeedata.tar.gz --strip-components 1
-wget -O $HOME/.umee/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/priv_validator_state.json"
-cd && cat .umee/data/priv_validator_state.json
-# after unpacking, run the node
-# don't forget to delete the archive to save space
-cd $HOME
-rm umeedata.tar.gz
+cp $HOME/.umee/data/priv_validator_state.json $HOME/.umee/priv_validator_state.json.backup
+rm -rf $HOME/.umee/data
+wget http://umee.snapshot.stavr.tech:5108/umee/umee-snap.tar.lz4 && lz4 -c -d $HOME/umee-snap.tar.lz4 | tar -x -C $HOME/.umee --strip-components 2
+rm -rf umee-snap.tar.lz4
+mv $HOME/.umee/priv_validator_state.json.backup $HOME/.umee/data/priv_validator_state.json
 sudo systemctl restart umeed && journalctl -u umeed -f -o cat
 ```
 
