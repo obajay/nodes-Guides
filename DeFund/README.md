@@ -182,7 +182,7 @@ rm /etc/systemd/system/defundd.service && \
 sudo systemctl daemon-reload && \
 cd $HOME && \
 rm -rf defund && \
-rm -rf .defundd && \
+rm -rf .defund && \
 rm -rf $(which defundd)
 ```
 
