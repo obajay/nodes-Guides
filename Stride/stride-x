@@ -16,6 +16,7 @@ options=(
 "Your node logs"
 "UPDATE"
 "Synchronize Stride node via StateSync"
+"Synchronize Stride node via SnapShot"
 "Delete Node"
 "Exit")
 select opt in "${options[@]}"
@@ -162,6 +163,17 @@ s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.stride/config/config.toml
 strided tendermint unsafe-reset-all --home $HOME/.stride --keep-addr-book
 sudo systemctl restart strided && journalctl -u strided -f -o cat
 
+break
+;;
+"Synchronize Stride node via SnapShot")
+cd $HOME
+sudo systemctl stop strided
+cp $HOME/.stride/data/priv_validator_state.json $HOME/.stride/priv_validator_state.json.backup
+rm -rf $HOME/.stride/data
+wget http://stride.snapshot.stavr.tech:5011/stride/stride-snap.tar.lz4 && lz4 -c -d $HOME/stride-snap.tar.lz4 | tar -x -C $HOME/.stride --strip-components 2
+rm -rf umee-snap.tar.lz4
+mv $HOME/.stride/priv_validator_state.json.backup $HOME/.stride/data/priv_validator_state.json
+sudo systemctl restart strided && journalctl -u strided -f -o cat
 
 break
 ;;
