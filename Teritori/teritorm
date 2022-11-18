@@ -164,17 +164,14 @@ sudo journalctl -u teritorid -f -o cat
 break
 ;;
 "Synchronization via SnapShot")
+cd $HOME
 sudo systemctl stop teritorid
-rm -rf $HOME/.teritorid/data/
-mkdir $HOME/.teritorid/data/
-cd $HOME
-wget http://teritori.snapshot.stavr.tech:1150/terdata.tar.gz
-tar -C $HOME/ -zxvf terdata.tar.gz --strip-components 1
-wget -O $HOME/.teritorid/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/priv_validator_state.json"
-cd && cat .teritorid/data/priv_validator_state.json
-cd $HOME
-rm terdata.tar.gz
-systemctl restart teritorid && journalctl -u teritorid -f -o cat
+cp $HOME/.teritorid/data/priv_validator_state.json $HOME/.teritorid/priv_validator_state.json.backup
+rm -rf $HOME/.teritorid/data
+wget http://teritori.snapshot.stavr.tech:5000/teritori/teritori-snap.tar.lz4 && lz4 -c -d $HOME/teritori-snap.tar.lz4 | tar -x -C $HOME/.teritorid --strip-components 2
+rm -rf teritori-snap.tar.lz4
+mv $HOME/.teritorid/priv_validator_state.json.backup $HOME/.teritorid/data/priv_validator_state.json
+sudo systemctl restart teritorid && journalctl -u teritorid -f -o cat
 
 break
 ;;
