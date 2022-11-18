@@ -122,7 +122,8 @@ s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.rebusd/config/config.toml
 wget -O $HOME/.rebusd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Rebus/addrbook.json"
 rebusd tendermint unsafe-reset-all --home ~/.rebusd --keep-addr-book
-sudo systemctl r
+sudo systemctl restart rebusd && journalctl -u rebusd -f -o cat
+```
 
 # SnapShot (~1 GB) updated every 5 hours
 ```python
