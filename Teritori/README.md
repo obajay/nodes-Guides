@@ -96,8 +96,8 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.teritorid/config/conf
 
 # StateSync
 ```bash
-SNAP_RPC="http://88.198.34.226:21097"
-peers="54610f0eb6a35021ead05e8f3fea750cf5efef3d@88.198.34.226:21096"
+SNAP_RPC="http://teritori.rpc.m.stavr.tech:21097"
+peers="3110d11ff2302d4deb6313b4ff5ea982ddeb3ff9@88.198.34.226:21096"
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.teritorid/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
@@ -113,28 +113,16 @@ s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.teritorid/config/config.t
 teritorid tendermint unsafe-reset-all --home $HOME/.teritorid --keep-addr-book
 sudo systemctl restart teritorid && journalctl -u teritorid -f -o cat
 ```
-# SnapShot 14.10.22 (1 GB) height 163219
-```bash
-# install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
+# SnapShot 14.10.22 (~0.5 GB) updated every 5 hours
+```python
+cd $HOME
 sudo systemctl stop teritorid
-rm -rf $HOME/.teritorid/data/
-mkdir $HOME/.teritorid/data/
-
-# download archive
-cd $HOME
-wget http://teritori.snapshot.stavr.tech:1150/terdata.tar.gz
-
-# unpack the archive
-tar -C $HOME/ -zxvf terdata.tar.gz --strip-components 1
-# !! IMPORTANT POINT. If the validator was created earlier. Need to reset priv_validator_state.json  !!
-wget -O $HOME/.teritorid/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/priv_validator_state.json"
-cd && cat .teritorid/data/priv_validator_state.json
-
-# after unpacking, run the node
-# don't forget to delete the archive to save space
-cd $HOME
-rm terdata.tar.gz
-systemctl restart teritorid && journalctl -u teritorid -f -o cat
+cp $HOME/.teritorid/data/priv_validator_state.json $HOME/.teritorid/priv_validator_state.json.backup
+rm -rf $HOME/.teritorid/data
+wget http://teritori.snapshot.stavr.tech:5000/teritori/teritori-snap.tar.lz4 && lz4 -c -d $HOME/teritori-snap.tar.lz4 | tar -x -C $HOME/.teritorid --strip-components 2
+rm -rf teritori-snap.tar.lz4
+mv $HOME/.teritorid/priv_validator_state.json.backup $HOME/.teritorid/data/priv_validator_state.json
+sudo systemctl restart teritorid && journalctl -u teritorid -f -o cat
 ```
 
 # Create a service file
