@@ -119,8 +119,8 @@ EOF
 ```
 # StateSync STRIDE
 ```python
-SNAP_RPC=http://stride.statesync.nodersteam.com:26657
-peers="157000d06040f2a7b981c6f062da0c9da0e6e6af@stride.statesync.nodersteam.com:26656"
+SNAP_RPC=http://stride.rpc.m.stavr.tech:21017
+peers="ce24406f4c7e149e52a75edb8e73dc4501d739b9@stride.rpc.m.stavr.tech:21016"
 sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.stride/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
