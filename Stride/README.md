@@ -143,7 +143,7 @@ sudo systemctl stop strided
 cp $HOME/.stride/data/priv_validator_state.json $HOME/.stride/priv_validator_state.json.backup
 rm -rf $HOME/.stride/data
 wget http://stride.snapshot.stavr.tech:5011/stride/stride-snap.tar.lz4 && lz4 -c -d $HOME/stride-snap.tar.lz4 | tar -x -C $HOME/.stride --strip-components 2
-rm -rf umee-snap.tar.lz4
+rm -rf stride-snap.tar.lz4
 mv $HOME/.stride/priv_validator_state.json.backup $HOME/.stride/data/priv_validator_state.json
 sudo systemctl restart strided && journalctl -u strided -f -o cat
 ```
