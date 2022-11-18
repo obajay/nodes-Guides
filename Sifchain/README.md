@@ -125,7 +125,7 @@ s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.sifnoded/
 sifnoded tendermint unsafe-reset-all --home $HOME/.sifnoded --keep-addr-book
 sudo systemctl restart sifnoded && journalctl -u sifnoded -f -o cat
 ```
-# SnapShot (0.9 GB) updated every 15 hours
+# SnapShot (~2.6 GB) updated every 15 hours
 ```python
 cd $HOME
 sudo systemctl stop sifnoded
