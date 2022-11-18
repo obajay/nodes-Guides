@@ -120,37 +120,18 @@ WantedBy=multi-user.target
 EOF
 ```
 
-# SnapShot 28.10.22 (0.1 GB) block height --> 2981026
-```bash
-# install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
+# SnapShot (~0.1 GB) updated every 10 hours
+```python
+cd $HOME
 sudo systemctl stop sourced
-rm -rf $HOME/.source/data/
-mkdir $HOME/.source/data/
-
-# download archive
-cd $HOME
-wget http://116.202.236.115:7150/sourcedata.tar.gz
-
-# unpack the archive
-tar -C $HOME/ -zxvf sourcedata.tar.gz --strip-components 1
-# !! IMPORTANT POINT. If the validator was created earlier. Need to reset priv_validator_state.json  !!
-wget -O $HOME/.source/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/priv_validator_state.json"
-cd && cat .source/data/priv_validator_state.json
-{
-  "height": "0",
-  "round": 0,
-  "step": 0
-}
-
-# after unpacking, run the node
-# don't forget to delete the archive to save space
-cd $HOME
-rm sourcedata.tar.gz
-# start the node
-sudo systemctl daemon-reload && \
-sudo systemctl enable sourced && \
-sudo systemctl restart sourced && \
-sudo journalctl -u sourced -f -o cat
+cp $HOME/.source/data/priv_validator_state.json $HOME/.source/priv_validator_state.json.backup
+rm -rf $HOME/.source/data
+wget http://source.snapshot.stavr.tech:5003/source/source-snap.tar.lz4 && lz4 -c -d $HOME/source-snap.tar.lz4 | tar -x -C $HOME/.source --strip-components 2
+rm -rf source-snap.tar.lz4
+wget http://source.wasm.stavr.tech:1000/wasm-snap.tar.lz4 && lz4 -c -d $HOME/wasm-snap.tar.lz4 | tar -x -C $HOME/.source/data --strip-components 3
+rm -rf wasm-snap.tar.lz4
+mv $HOME/.source/priv_validator_state.json.backup $HOME/.source/data/priv_validator_state.json
+sudo systemctl restart sourced && journalctl -u sourced -f -o cat
 ```
 
 # Start node (one command)
