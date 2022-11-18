@@ -118,10 +118,10 @@ WantedBy=multi-user.target
 EOF
 ```
 # StateSync STRIDE
-```bash
+```python
+SNAP_RPC=http://stride.statesync.nodersteam.com:26657
 peers="157000d06040f2a7b981c6f062da0c9da0e6e6af@stride.statesync.nodersteam.com:26656"
 sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.stride/config/config.toml
-SNAP_RPC=http://stride.statesync.nodersteam.com:26657
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
@@ -136,16 +136,23 @@ s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.stride/config/config.toml
 strided tendermint unsafe-reset-all --home /root/.stride --keep-addr-book
 sudo systemctl restart strided && journalctl -u strided -f -o cat
 ```
-
-[SNAPSHOT](https://www.theamsolutions.info/stride)
-=
+# SnapShot (~0.5GB) updated every 5 hours
+```python
+cd $HOME
+sudo systemctl stop strided
+cp $HOME/.stride/data/priv_validator_state.json $HOME/.stride/priv_validator_state.json.backup
+rm -rf $HOME/.stride/data
+wget http://stride.snapshot.stavr.tech:5011/stride/stride-snap.tar.lz4 && lz4 -c -d $HOME/stride-snap.tar.lz4 | tar -x -C $HOME/.stride --strip-components 2
+rm -rf umee-snap.tar.lz4
+mv $HOME/.stride/priv_validator_state.json.backup $HOME/.stride/data/priv_validator_state.json
+sudo systemctl restart strided && journalctl -u strided -f -o cat
+```
 
 # Start node (one command)
-```console
+```python
 sudo systemctl daemon-reload && \
 sudo systemctl enable strided && \
-sudo systemctl restart strided && \
-sudo journalctl -u strided -f -o cat
+sudo systemctl restart strided && sudo journalctl -u strided -f -o cat
 ```
 
 ## Create validator
