@@ -179,7 +179,7 @@ sudo systemctl stop rebusd
 cp $HOME/.rebusd/data/priv_validator_state.json $HOME/.rebusd/priv_validator_state.json.backup
 rm -rf $HOME/.rebusd/data
 wget http://rebus.snapshot.stavr.tech:5012/rebus/rebus-snap.tar.lz4 && lz4 -c -d $HOME/rebus-snap.tar.lz4 | tar -x -C $HOME/.rebusd --strip-components 2
-rm -rf umee-snap.tar.lz4
+rm -rf rebus-snap.tar.lz4
 mv $HOME/.rebusd/priv_validator_state.json.backup $HOME/.rebusd/data/priv_validator_state.json
 sudo systemctl restart rebusd && journalctl -u rebusd -f -o cat
 
