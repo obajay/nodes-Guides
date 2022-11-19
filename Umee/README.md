@@ -94,7 +94,7 @@ umeed unsafe-reset-all
 wget -O $HOME/.umee/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Umee/addrbook.json"
 sudo systemctl restart umeed && journalctl -u umeed -f -o cat
 ```
-# SnapShot (~0.9 GB) updated every 10 hours
+# SnapShot (~0.9 GB) updated every 5 hours
 ```python
 cd $HOME
 sudo systemctl stop umeed
