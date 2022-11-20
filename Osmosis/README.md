@@ -42,15 +42,15 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 15.10.22
+# Build 20.11.22
 ```bash
 cd ~
 git clone https://github.com/osmosis-labs/osmosis && cd osmosis
-git checkout v12.1.0
+git checkout v12.3.0
 make install
 ```
 `osmosisd version --long | head`
-- version: v12.1.0
+- version: v12.3.0
 
 ```bash
 osmosisd init STAVRguide --chain-id osmosis-1
