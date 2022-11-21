@@ -37,10 +37,21 @@ source $HOME/.bash_profile && \
 go version
 ```
 # Binary   22.11.22
-```bash 
+```python
+cd $HOME
 git clone https://github.com/Stride-Labs/stride.git && cd stride
 git checkout v3.0.0
 make install
+```
+*******🟢UPDATE🟢******* 22.11.22
+
+```python
+cd $HOME/stride
+git fetch --all
+git checkout v3.0.0
+make install
+strided version
+sudo systemctl restart strided && journalctl -u strided -f -o cat
 ```
 
 `strided version --long | head`
