@@ -98,6 +98,7 @@ wget -O $HOME/.aura/config/genesis.json "https://raw.githubusercontent.com/aura-
 ```python
 SNAP_RPC="http://aura.rpc.t.stavr.tech:20357"
 SEEDS="ca62e050be3c2e688c367e373523ded011dec278@135.181.5.47:20356"
+cp $HOME/.aura/data/priv_validator_state.json $HOME/.aura/priv_validator_state.json.backup
 sed -i -e "/seeds =/ s/= .*/= \"$SEEDS\"/"  $HOME/.aura/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
@@ -111,29 +112,20 @@ s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.aura/config/config.toml
 aurad tendermint unsafe-reset-all --home $HOME/.aura --keep-addr-book
+mv $HOME/.aura/priv_validator_state.json.backup $HOME/.aura/data/priv_validator_state.json
+curl -o - -L http://aura.wasm.stavr.tech:1001/wasm-aura.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.aura --strip-components 2
 sudo systemctl restart aurad && journalctl -u aurad -f -o cat
 ```
-# SnapShot 15.11.22 (0.5 GB) height 1886229
+# SnapShot (~0.4 GB) updated every 5 hours
 ```python
-# install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
+cd $HOME
 sudo systemctl stop aurad
 cp $HOME/.aura/data/priv_validator_state.json $HOME/.aura/priv_validator_state.json.backup
-rm -rf $HOME/.aura/data/
-mkdir $HOME/.aura/data/
-
-# download archive
-cd $HOME
-wget http://aura.snapshot.stavr.tech:5000/auradata.tar.gz
-
-# unpack the archive
-tar -C $HOME/ -zxvf auradata.tar.gz --strip-components 1
-
-# after unpacking, run the node
-# don't forget to delete the archive to save space
-cd $HOME
-rm auradata.tar.gz
+rm -rf $HOME/.aura/data
+curl -o - -L http://aura.snapshot.stavr.tech:5015/aura/aura-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.aura --strip-components 2
+curl -o - -L http://aura.wasm.stavr.tech:1001/wasm-aura.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.aura --strip-components 2
 mv $HOME/.aura/priv_validator_state.json.backup $HOME/.aura/data/priv_validator_state.json
-sudo systemctl restart aurad && sudo journalctl -u aurad -f -o cat
+sudo systemctl restart aurad && journalctl -u aurad -f -o cat
 ```
 
 
