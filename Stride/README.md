@@ -36,15 +36,15 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-# Binary   26.10.22
+# Binary   22.11.22
 ```bash 
 git clone https://github.com/Stride-Labs/stride.git && cd stride
-git checkout v2.0.3
+git checkout v3.0.0
 make install
 ```
 
 `strided version --long | head`
-+ version: v2.0.3
++ version: v3.0.0
 
 ## Initialisation
 ```console
