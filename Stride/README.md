@@ -75,16 +75,10 @@ wget -O $HOME/.stride/config/genesis.json "https://raw.githubusercontent.com/Str
 `sha256sum $HOME/.stride/config/genesis.json`
 - e31b8d1a9090f128b6f7db024836213d1af2b424bfb757e38f3b5c39be738aa4  genesis.json
 
-### Pruning (optional)
-    pruning="custom" && \
-    pruning_keep_recent="100" && \
-    pruning_keep_every="0" && \
-    pruning_interval="10" && \
-    sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.stride/config/app.toml && \
-    sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.stride/config/app.toml && \
-    sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.stride/config/app.toml && \
-    sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.stride/config/app.toml
-
+### Pruning 
+```python
+sed -i -e "s/^pruning *=.*/pruning = \"nothing\"/" $HOME/.stride/config/app.toml
+```
 ### Indexer (optional)
     indexer="null" && \
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.stride/config/config.toml
