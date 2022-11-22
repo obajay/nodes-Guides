@@ -51,6 +51,7 @@ git fetch --all
 git checkout v3.0.0
 make install
 strided version
+sed -i -e "s/^pruning *=.*/pruning = \"nothing\"/" $HOME/.haqqd/config/app.toml
 sudo systemctl restart strided && journalctl -u strided -f -o cat
 ```
 
