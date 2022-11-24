@@ -45,6 +45,17 @@ git checkout v0.0.3
 make build
 mv $HOME/empowerchain/chain/build/empowerd $HOME/go/bin/
 ```
+*******🟢UPDATE🟢******* 24.11.22
+
+```python
+cd empowerchain
+git fetch --all
+git checkout v0.0.3
+cd chain && make build
+mv $HOME/empowerchain/chain/build/empowerd $(which empowerd)
+sudo systemctl restart empowerd && sudo journalctl -u empowerd -f -o cat
+```
+
 `empowerd version --long | head`
 + 0.0.3
 + commit: 9dc9ccedc17233bfd8ef49f248568014f72f7acb
