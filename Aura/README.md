@@ -34,19 +34,19 @@ wget -O aur https://raw.githubusercontent.com/obajay/nodes-Guides/main/Aura/aur 
     source ~/.bash_profile && \
     go version
 
-# Build 17.10.22
-```bash
-git clone https://github.com/aura-nw/aura
-cd aura
-git checkout euphoria_v0.3.3
+# Build 25.11.22
+```python
+cd $HOME
+git clone https://github.com/aura-nw/aura && cd aura
+git checkout euphoria_v0.4.1
 make install
 ```
 `aurad version --long | head`
-+ version: euphoria_v0.3.3
-+ commit: 
++ version: euphoria_v0.4.1
++ commit: d34b4c18338fa389902d1133b5a2dbc4767a3069
 
 ```
-aurad init STAVRguide --chain-id euphoria-1
+aurad init STAVRguide --chain-id euphoria-2
 ```
 
 ## Create/recover wallet
@@ -56,27 +56,30 @@ aurad init STAVRguide --chain-id euphoria-1
 
 ## Genesis
 ```bash
-wget -O $HOME/.aura/config/genesis.json "https://raw.githubusercontent.com/aura-nw/testnets/main/euphoria-1/genesis.json"
+wget https://github.com/aura-nw/testnets/raw/main/euphoria-2/euphoria-2-genesis.tar.gz
+tar -xzvf euphoria-2-genesis.tar.gz
+mv euphoria-2-genesis.json $HOME/.aura/config/genesis.json
 ```
 `sha256sum ~/.aura/config/genesis.json`
-+ 732f789aefe39e47b969f1e5ce440a675d8f6a640368d70e4d7f628b3c87e831
++ b0ee9ed933ac5c24697637bc56335136211e8d26962b1f8622c626c90772b0d6
 
 ## Download addrbook
-
-    wget -O $HOME/.aura/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Aura/addrbook.json"
-
+```python
+wget -O $HOME/.aura/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Aura/addrbook.json"
+```
 
 ## Minimum gas price/Peers/Seeds
-
-    sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ueaura\"/;" ~/.aura/config/app.toml
-    external_address=$(wget -qO- eth0.me)
-    sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.aura/config/config.toml
-    peers="007a30814c0dd48e9239bc874a7d8406dac6cd53@65.108.46.123:26156,64fdaa6da59901793beda215679ac2a6549b46b4@144.91.122.166:26656,d3ba3d354b657ec21377791d307a4ed01b2898d7@138.201.139.175:20356,c53157159e7cea010b86e44786831f792d852e1f@135.181.72.187:26656,594f32a7496097e5c8cecd23156862e714c9a729@144.76.224.246:56656,5d869eb132e188b848875cc169edb3614d6bb620@144.76.27.79:26656"
-    sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.aura/config/config.toml
-    seeds="705e3c2b2b554586976ed88bb27f68e4c4176a33@13.250.223.114:26656,b9243524f659f2ff56691a4b2919c3060b2bb824@13.214.5.1:26656"
-    sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.aura/config/config.toml
-    sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.aura/config/config.toml
-    sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.aura/config/config.toml
+```python
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ueaura\"/;" ~/.aura/config/app.toml
+external_address=$(wget -qO- eth0.me)
+sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.aura/config/config.toml
+peers="7cad1bcb2ad777dba21840832341f2ce14bae1a5@5.75.174.126:26656,705e3c2b2b554586976ed88bb27f68e4c4176a33@13.250.223.114:26656,b9243524f659f2ff56691a4b2919c3060b2bb824@13.214.5.1:26656,d334e2b9dd84346ea532ff3d43f3f7c4946845c9@144.91.122.166:26656,b91ee5c72905bc49beed2720bb882c923c68fbc9@65.108.142.47:21656"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.aura/config/config.toml
+seeds="705e3c2b2b554586976ed88bb27f68e4c4176a33@13.250.223.114:26656,b9243524f659f2ff56691a4b2919c3060b2bb824@13.214.5.1:26656"
+sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.aura/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.aura/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.aura/config/config.toml
+```
 
 ### Pruning (optional)
 
@@ -96,25 +99,28 @@ wget -O $HOME/.aura/config/genesis.json "https://raw.githubusercontent.com/aura-
 
 ## State Sync
 ```python
-SNAP_RPC="http://aura.rpc.t.stavr.tech:20357"
-SEEDS="ca62e050be3c2e688c367e373523ded011dec278@135.181.5.47:20356"
+sudo systemctl stop aurad
 cp $HOME/.aura/data/priv_validator_state.json $HOME/.aura/priv_validator_state.json.backup
-sed -i -e "/seeds =/ s/= .*/= \"$SEEDS\"/"  $HOME/.aura/config/config.toml
-LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
-TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+aurad tendermint unsafe-reset-all --home $HOME/.aura
+STATE_SYNC_RPC=https://aura-testnet.rpc.kjnodes.com:443
+STATE_SYNC_PEER=d5519e378247dfb61dfe90652d1fe3e2b3005a5b@aura-testnet.rpc.kjnodes.com:17656
+LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
+SYNC_BLOCK_HEIGHT=$(($LATEST_HEIGHT - 2000))
+SYNC_BLOCK_HASH=$(curl -s "$STATE_SYNC_RPC/block?height=$SYNC_BLOCK_HEIGHT" | jq -r .result.block_id.hash)
 
-echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
-s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.aura/config/config.toml
-aurad tendermint unsafe-reset-all --home $HOME/.aura --keep-addr-book
+sed -i.bak -e "s|^enable *=.*|enable = true|" $HOME/.aura/config/config.toml
+sed -i.bak -e "s|^rpc_servers *=.*|rpc_servers = \"$STATE_SYNC_RPC,$STATE_SYNC_RPC\"|" \
+  $HOME/.aura/config/config.toml
+sed -i.bak -e "s|^trust_height *=.*|trust_height = $SYNC_BLOCK_HEIGHT|" \
+  $HOME/.aura/config/config.toml
+sed -i.bak -e "s|^trust_hash *=.*|trust_hash = \"$SYNC_BLOCK_HASH\"|" \
+  $HOME/.aura/config/config.toml
+sed -i.bak -e "s|^persistent_peers *=.*|persistent_peers = \"$STATE_SYNC_PEER\"|" \
+  $HOME/.aura/config/config.toml
 mv $HOME/.aura/priv_validator_state.json.backup $HOME/.aura/data/priv_validator_state.json
-curl -o - -L http://aura.wasm.stavr.tech:1001/wasm-aura.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.aura --strip-components 2
-sudo systemctl restart aurad && journalctl -u aurad -f -o cat
+curl -L https://snapshots.kjnodes.com/aura-testnet/wasm_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.aura
+sudo systemctl restart aurad && sudo journalctl -u aurad -f -o cat
+
 ```
 # SnapShot (~0.4 GB) updated every 5 hours
 ```python
@@ -127,8 +133,6 @@ curl -o - -L http://aura.wasm.stavr.tech:1001/wasm-aura.tar.lz4 | lz4 -c -d - | 
 mv $HOME/.aura/priv_validator_state.json.backup $HOME/.aura/data/priv_validator_state.json
 sudo systemctl restart aurad && journalctl -u aurad -f -o cat
 ```
-
-
 
 # Create a service file
 
@@ -170,7 +174,7 @@ sudo systemctl restart aurad && journalctl -u aurad -f -o cat
     --pubkey  $(aurad tendermint show-validator) \
     --moniker STAVRguide \
     --fees 555ueaura \
-    --chain-id euphoria-1 -y
+    --chain-id euphoria-2 -y
 
 
 ## Delete node
