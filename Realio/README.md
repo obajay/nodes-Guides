@@ -43,19 +43,20 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 23.09.22
+# Build 25.11.22
 ```bash
 cd $HOME
 git clone https://github.com/realiotech/realio-network.git && cd realio-network
-git checkout tags/v0.4.0
+git checkout tags/v0.6.2
 make install
 ```
 `realio-networkd version --long | head`
-- version: 0.4.0
+- version: 0.6.2
 - commit: 1e0fd07fdd8fad094e86d8eac2d996ac9eda9c09
 
 ```bash
-realio-networkd init STAVRguide --chain-id realionetwork_1110-1
+realio-networkd init STAVRguide --chain-id realionetwork_1110-2
+realio-networkd config chain-id realionetwork_1110-2
 ```    
 
 ## Create/recover wallet
@@ -67,10 +68,10 @@ realio-networkd keys add <walletname> --recover
 ## Download Genesis
 
 ```bash
-curl https://raw.githubusercontent.com/realiotech/testnets/master/realionetwork_1110-1/genesis.json > $HOME/.realio-network/config/genesis.json
+curl https://raw.githubusercontent.com/realiotech/testnets/main/realionetwork_1110-2/genesis.json > $HOME/.realio-network/config/genesis.json
 ```
 `sha256sum $HOME/.realio-network/config/genesis.json`
-+ 3b535ade8f838331277e7b7b6d1edb79758fe33b814eaaf3e8795aa6b7851a0d
++ a2f8fae48eb019720ef78524d683a9ca22884dd4e9ba4f8d5b3ac10db1275183
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```bash
@@ -78,7 +79,7 @@ sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ario\"/" $HO
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.realio-network/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.realio-network/config/config.toml
-peers="2539246ebf9359e2fbc9402f6af66520532e6169@134.209.165.247:26656"
+peers="aa194e9f9add331ee8ba15d2c3d8860c5a50713f@143.110.230.177:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.realio-network/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.realio-network/config/config.toml
@@ -138,7 +139,7 @@ realio-networkd tx staking create-validator \
   --amount=1000000000000000000ario \
   --pubkey=$(realio-networkd tendermint show-validator) \
   --moniker="STAVRguide" \
-  --chain-id=realionetwork_1110-1 \
+  --chain-id=realionetwork_1110-2 \
   --commission-rate="0.10" \
   --commission-max-rate="0.20" \
   --commission-max-change-rate="0.1" \
