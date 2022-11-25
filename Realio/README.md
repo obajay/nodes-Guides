@@ -4,8 +4,8 @@
 
 [Website](https://www.realio.fund/)
 =
-[EXPLORER 1](http://explorer.stavr.tech/nois/staking) \
-[EXPLORER 2](https://testnet.ping.pub/nois/staking)
+[EXPLORER 1](https://explorer.stavr.tech/realio/staking) \
+[EXPLORER 2](https://exp.nodeist.net/t-realio/staking)
 =
 
 - **Minimum hardware requirements**:
