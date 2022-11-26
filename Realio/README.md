@@ -144,9 +144,8 @@ realio-networkd tx staking create-validator \
   --commission-max-rate="0.20" \
   --commission-max-change-rate="0.1" \
   --min-self-delegation="1" \
-  --gas="auto" \
-  --gas-adjustment=1.2 \
-  --gas-prices="0.025ario" \
+  --fees 5000000000000000ario \
+  --gas 800000
   --from=<walletName>
 ```
 
