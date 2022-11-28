@@ -29,17 +29,17 @@
     source $HOME/.bash_profile && \
     go version
 
-# Build 04.08.22
-```console
+# Build 28.11.22
+```python
 cd $HOME
-wget https://github.com/KYVENetwork/chain/releases/download/v0.6.4/chain_linux_amd64.tar.gz
-tar -xvzf chain_linux_amd64.tar.gz
-chmod +x chaind
-sudo mv chaind $HOME/go/bin/
-rm chain_linux_amd64.tar.gz
+wget https://kyve-korellia.s3.eu-central-1.amazonaws.com/v0.7.0/kyved_linux_amd64.tar.gz
+tar -xvzf kyved_linux_amd64.tar.gz
+chmod +x kyved
+sudo mv kyved $HOME/go/bin/chaind
+rm kyved_linux_amd64.tar.gz
 cd
     
-chaind init <moniker> --chain-id korellia
+chaind init STAVRguide --chain-id korellia
 chaind config chain-id korellia
 ```
 
