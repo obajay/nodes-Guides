@@ -33,15 +33,15 @@ wget -O beezzeed https://raw.githubusercontent.com/obajay/nodes-Guides/main/BeeZ
     source ~/.bash_profile && \
     go version
  
-## Build (01.11.22)
+## Build (28.11.22)
 ```bash
 git clone https://github.com/bze-alphateam/bze
 cd bze
-git checkout v5.1.0
+git checkout v5.1.2
 make install
 ```
 `bzed version`
-+ 5.1.0
++ 5.1.2
 ```bash
 bzed init STAVRguide --chain-id beezee-1
 bzed config chain-id beezee-1
