@@ -3,8 +3,8 @@
 
 [Website](https://www.pylons.tech/home/)
 =
-[EXPLORER 1](https://pylons.explorers.guru/validators) \
-[EXPLORER 2](https://wallet.pylons.tech/validators)
+[EXPLORER 1](https://explorer.stavr.tech/pylons/staking) \
+[EXPLORER 2](https://pylons.explorers.guru/validators) 
 =
 - **Minimum hardware requirements**:
 
@@ -41,7 +41,7 @@ make install
 
 ## Initialisation
 ```console
-pylonsd init <moniker> --chain-id=pylons-testnet-3
+pylonsd init STAVRguide --chain-id=pylons-testnet-3
 ```
 ## Add wallet
 ```console
@@ -165,7 +165,7 @@ pylonsd tx staking create-validator \
 --details="" \
 --website="" \
 --pubkey $(pylonsd tendermint show-validator) \
---moniker <Moniker> \
+--moniker STAVRguide \
 --chain-id pylons-testnet-3 \
 --gas="auto" \
 --fees 100udws
