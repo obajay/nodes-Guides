@@ -4,8 +4,8 @@
 
 [Website](https://bitsong.io/)
  =
-
-[Explorer](https://www.mintscan.io/bitsong/validators)
+[EXPLORER 1](https://explorer.stavr.tech/bitsong/staking) \
+[EXPLORER 2](https://www.mintscan.io/bitsong/validators)
 =
 - **Minimum hardware requirements**:
 
