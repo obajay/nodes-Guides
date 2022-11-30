@@ -44,16 +44,16 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-# Build 03.11.22
-```bash
-cd ~
-wget -O sifnoded-v1.0.14-beta.zip https://github.com/Sifchain/sifnode/releases/download/v1.0.14-beta/sifnoded-v1.0.14-beta-linux-amd64.zip
-unzip sifnoded-v1.0.14-beta.zip
-rm sifnoded-v1.0.14-beta.zip
+# Build 01.12.22
+```python
+cd $HOME
+wget https://github.com/Sifchain/sifnode/releases/download/v1.1.0-beta/sifnoded-v1.1.0-beta-linux-amd64.zip
+unzip sifnoded-v1.1.0-beta-linux-amd64.zip
+rm -rf sifnoded-v1.1.0-beta-linux-amd64.zip
 mv ~/sifnoded /usr/local/bin/
 ```
 `sifnoded version`
-- 1.0.14-beta
+- 1.1.0-beta
 
 ```bash
 sifnoded init STAVRguide --chain-id sifchain-1
