@@ -157,7 +157,7 @@ sudo systemctl restart gitopiad && sudo journalctl -u gitopiad -f -o cat
 ### Create validator
 ```bash
 gitopiad tx staking create-validator \
-  --amount 1000000ujkl \
+  --amount 1000000utlore \
   --from <walletName> \
   --commission-max-change-rate "0.1" \
   --commission-max-rate "0.2" \
