@@ -28,17 +28,17 @@
     source ~/.bash_profile && \
     go version
 
-# Build 17.10.22
-```bash
+# Build 02.12.22
+```python
 export PIO_HOME=~/.provenanced
 git clone https://github.com/provenance-io/provenance.git && cd provenance
-git checkout tags/v1.12.1 -b v1.12.1
+git checkout tags/v1.13.0 -b v1.13.0
 make clean
 make install
 ```
 
 `provenanced version`
-- heads-v1.12.1-01e83c3c
+- heads-v1.13.0
 
 ```    
 provenanced init STAVRguide --chain-id pio-mainnet-1
@@ -50,10 +50,11 @@ provenanced init STAVRguide --chain-id pio-mainnet-1
     provenanced keys add <walletname> --recover
 
 ## Genesis
-
-    wget -O $HOME/.provenanced/config/genesis.json "https://raw.githubusercontent.com/provenance-io/mainnet/main/pio-mainnet-1/genesis.json"
-    sha256sum ~/.provenanced/config/genesis.json
-            *8b10448662a55462fb23a8f4faedae2ec8a24aefe04d2e7475400c0367948940*
+```python
+wget -O $HOME/.provenanced/config/genesis.json "https://raw.githubusercontent.com/provenance-io/mainnet/main/pio-mainnet-1/genesis.json"
+```
+`sha256sum ~/.provenanced/config/genesis.json`
++ 8b10448662a55462fb23a8f4faedae2ec8a24aefe04d2e7475400c0367948940*
 
 
 ## Download addrbook
