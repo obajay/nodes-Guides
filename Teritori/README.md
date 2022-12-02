@@ -7,7 +7,7 @@
 
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
-| Mainnet   |  16| 32GB | 500GB    |
+| Mainnet   |  8 | 16GB | 200GB    |
 
 # 1) Auto_install script 
 ```bash
