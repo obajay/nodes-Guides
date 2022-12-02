@@ -78,6 +78,12 @@ sed -i -e "s/^pruning *=.*/pruning = \"nothing\"/" $HOME/.knstld/config/app.toml
 [Snapshot](https://polkachu.com/tendermint_snapshots/konstellation)
 =
 
+## Download addrbook
+```python
+wget -O $HOME/.knstld/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Konstellation/addrbook.json"
+```
+
+
 ## Create a service file
 
     sudo tee /etc/systemd/system/knstld.service > /dev/null <<EOF
