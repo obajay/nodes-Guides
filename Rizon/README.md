@@ -4,7 +4,8 @@
 ![rizon (1)](https://user-images.githubusercontent.com/44331529/180607173-f918aff4-499b-4996-bc2c-3f1fd5bc3d6f.png)
 
 [Website](https://rizon.world/) \
-[EXPLORER](https://www.mintscan.io/rizon/validators)
+[EXPLORER 1](https://explorer.stavr.tech/rizon/staking) \
+[EXPLORER 2](https://www.mintscan.io/rizon/validators)
 =
 - **Minimum hardware requirements**:
 
