@@ -120,7 +120,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.bcna/config/config.to
 
 ## Download addrbook
 ```bash
-wget -O $HOME/.bcna/config/addrbook.json ""
+wget -O $HOME/.bcna/config/addrbook.json "https://github.com/obajay/nodes-Guides/edit/main/Bitcanna/Bitcanna_DEV/addrbook.json"
 ```
 
 
