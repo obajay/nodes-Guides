@@ -43,12 +43,12 @@ git clone https://github.com/Stride-Labs/stride.git && cd stride
 git checkout v3.0.0
 make install
 ```
-*******🟢UPDATE🟢******* 22.11.22
+*******🟢UPDATE🟢******* 07.12.22
 
 ```python
 cd $HOME/stride
 git fetch --all
-git checkout v3.0.0
+git checkout v4.0.0
 make install
 strided version
 sed -i -e "s/^pruning *=.*/pruning = \"nothing\"/" $HOME/.stride/config/app.toml
@@ -56,14 +56,14 @@ sudo systemctl restart strided && journalctl -u strided -f -o cat
 ```
 
 `strided version --long | head`
-+ version: v3.0.0
++ version: v4.0.0
 
 ## Initialisation
-```console
+```python
 strided init STAVRguide --chain-id stride-1
 ```
 ## Add wallet
-```console
+```python
 strided keys add <walletName>
 strided keys add <walletName> --recover
 ```
@@ -84,7 +84,7 @@ sed -i -e "s/^pruning *=.*/pruning = \"nothing\"/" $HOME/.stride/config/app.toml
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.stride/config/config.toml
 
 ### Set up the minimum gas price and Peers/Seeds/Filter peers
-```console
+```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0ustrd\"/;" ~/.stride/config/app.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.stride/config/config.toml
 external_address=$(wget -qO- eth0.me) 
@@ -101,12 +101,12 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.stri
 ```
 
 ## Download addrbook
-```console
+```python
 wget -O $HOME/.stride/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Stride/addrbook.json"
 ```
 
 # Create a service file
-```console
+```python
 sudo tee /etc/systemd/system/strided.service > /dev/null <<EOF
 [Unit]
 Description=strided
