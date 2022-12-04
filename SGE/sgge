@@ -1,0 +1,192 @@
+#!/bin/bash
+
+while true
+do
+
+# Logo
+
+curl -s https://raw.githubusercontent.com/obajay/nodes-Guides/main/logo_1 | bash
+
+# Menu
+
+PS3='Select an action: '
+options=(
+"Install Node"
+"Create wallet"
+"Check node logs"
+"Synchronization via StateSync"
+"Synchronization via SnapShot"
+"UPDATE"
+"Delete Node"
+"Exit")
+select opt in "${options[@]}"
+do
+case $opt in
+
+"Install Node")
+echo "*********************"
+echo -e "\e[1m\e[35m		Lets's begin\e[0m"
+echo "*********************"
+echo -e "\e[1m\e[32m	Enter your Validator_Name:\e[0m"
+echo "_|-_|-_|-_|-_|-_|-_|"
+read Validator_Name
+echo "_|-_|-_|-_|-_|-_|-_|"
+echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
+echo export CHAIN_ID="sge-testnet-1" >> $HOME/.bash_profile
+source ~/.bash_profile
+
+echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
+#UPDATE APT
+sudo apt update && sudo apt upgrade -y
+sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
+
+echo -e "        \e[1m\e[32m2. Installing GO--> \e[0m" && sleep 1
+#INSTALL GO
+ver="1.19" && \
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
+sudo rm -rf /usr/local/go && \
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
+rm "go$ver.linux-amd64.tar.gz" && \
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
+source $HOME/.bash_profile && \
+go version
+
+echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
+#INSTALL
+cd $HOME
+git clone https://github.com/sge-network/sge
+git clone https://github.com/sge-network/networks
+cd sge
+git fetch --tags
+git checkout v0.0.3
+cd sge
+go mod tidy
+make install
+
+sged init $Validator_Name --chain-id $CHAIN_ID
+
+wget -O $HOME/.sge/config/genesis.json "https://raw.githubusercontent.com/sge-network/networks/master/sge-testnet-1/genesis.json"
+wget -O $HOME/.sge/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/SGE/addrbook.json"
+
+
+echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
+
+sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0usge\"/" $HOME/.sge/config/app.toml
+sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.sge/config/config.toml
+external_address=$(wget -qO- eth0.me) 
+sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.sge/config/config.toml
+peers="27f0b281ea7f4c3db01fdb9f4cf7cc910ad240a6@209.34.206.44:26656,5f3196f370fa865bfd3e4a0653dc7853f613aba6@[2a01:4f9:1a:a718::10]:26656,afa90de6a195a4a2993b2501f12a1cd306f01d02@136.243.103.32:60856,dc75f5d2f9458767f39f62bd7eab3f499fdf2761@104.248.236.171:26656,1168931936c638e92ea6d93e2271b3fe5faee6d1@51.91.145.100:26656,8a7d722dba88326ee69fcc23b5b2ac93e36d7ff2@65.108.225.158:17756,445506c736895336e36dd4f8228a60c257b30e61@20.12.75.0:26656,971643c5b9f9d279cfb7ac1b14accd109231236b@65.108.15.170:26656,788bb7ee73c023f70c41360e9014544b12fe23f9@3.15.209.96:26656,26f0965f8cd53f2b3adc26f8ca5e893929b66c15@52.44.14.245:26656,4a3f59e30cde63d00aed8c3d15bef46b34ec2c7f@50.19.180.153:26656,31d742df5a427e241d1a6b1b22813c9cb4888c07@65.21.181.169:26656"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.sge/config/config.toml
+seeds=""
+sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.sge/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.sge/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.sge/config/config.toml
+
+
+
+# pruning and indexer
+pruning="custom" && \
+pruning_keep_recent="100" && \
+pruning_keep_every="0" && \
+pruning_interval="10" && \
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" ~/.sge/config/app.toml && \
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" ~/.sge/config/app.toml && \
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" ~/.sge/config/app.toml && \
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.sge/config/app.toml
+indexer="null" && \
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.sge/config/config.toml
+
+
+sudo tee /etc/systemd/system/sged.service > /dev/null <<EOF
+[Unit]
+Description=sge
+After=network-online.target
+
+[Service]
+User=$USER
+ExecStart=$(which sged) start
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+
+# start service
+sudo systemctl daemon-reload
+sudo systemctl enable sged
+sudo systemctl restart sged
+
+echo '=============== SETUP FINISHED ==================='
+echo -e 'Congratulations:        \e[1m\e[32mSUCCESSFUL NODE INSTALLATION\e[0m'
+echo -e 'To check logs:        \e[1m\e[33mjournalctl -u sged -f -o cat\e[0m'
+echo -e "To check sync status: \e[1m\e[35mcurl -s localhost:26657/status\e[0m"
+
+break
+;;
+"Create wallet")
+echo "_|-_|-_|-_|-_|-_|-_|"
+echo -e "      \e[1m\e[35m Your WalletName:\e[0m"
+echo "_|-_|-_|-_|-_|-_|-_|"
+read Wallet
+echo export Wallet=${Wallet} >> $HOME/.bash_profile
+source ~/.bash_profile
+sged keys add $Wallet
+echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE!!!!!!!!!SAVE!!!!!!!!!!!!!!!!\e[0m'"
+
+break
+;;
+"Synchronization via StateSync")
+SNAP_RPC=rpc.sge.ppnv.space:29657
+peers="7811408e877dd68732c9307c5b16c3cb18b2dffb@​rpc.sge.ppnv.space:29656"
+sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.sge/config/config.toml
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.sge/config/config.toml
+sged tendermint unsafe-reset-all --home /root/.sge
+systemctl restart sged && journalctl -u sged -f -o cat
+
+
+break
+;;
+"UPDATE")
+echo -e "      \e[1m\e[32m SOOOON\e[0m"
+sged version
+
+break
+;;
+"Check node logs")
+sudo journalctl -u sged -f -o cat
+
+break
+;;
+"Synchronization via SnapShot")
+echo -e "      \e[1m\e[32m SOOOON\e[0m"
+
+break
+;;
+"Delete Node")
+sudo systemctl stop sged && \
+sudo systemctl disable sged && \
+rm /etc/systemd/system/sged.service && \
+sudo systemctl daemon-reload && \
+cd $HOME && \
+rm -rf sge && \
+rm -rf .sge && \
+rm -rf $(which sged)
+
+break
+;;
+"Exit")
+exit
+esac
+done
+done
