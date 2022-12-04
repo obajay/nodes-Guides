@@ -27,29 +27,29 @@
     source $HOME/.bash_profile && \
     go version
 
-# Binary   11.11.22
-```console 
+# Binary   04.13.22
+```python 
 cd $HOME
 git clone https://github.com/Pylons-tech/pylons
 cd pylons
-git checkout v1.0.2
+git checkout v1.1.0
 make install
 ```
-`pylonsd version version --long | head`
-+ version: 1.0.2
+`pylonsd version version --long`
++ version: 1.1.0
 + commit: 
 
 ## Initialisation
-```console
+```python
 pylonsd init STAVRguide --chain-id=pylons-testnet-3
 ```
 ## Add wallet
-```console
+```python
 pylonsd keys add <walletName>
 pylonsd keys add <walletName> --recover
 ```
 # Genesis
-```console
+```python
 wget -O $HOME/.pylons/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Pylons/genesis.json"
 
 ```
@@ -58,7 +58,7 @@ wget -O $HOME/.pylons/config/genesis.json "https://raw.githubusercontent.com/oba
 - bdcd16fbb89ab8a329754377f174f32df077ea0956fe66751b1fc67a802da7cd
 
 ### Pruning (optional)
-```
+```python
 pruning="custom" && \
 pruning_keep_recent="100" && \
 pruning_keep_every="0" && \
@@ -70,12 +70,12 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $
 ```
 
 ### Indexer (optional)
-```
+```python
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.pylons/config/config.toml
 ```
 ### Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
-```console
+```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ubedrock\"/;" ~/.pylons/config/app.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.pylons/config/config.toml
 external_address=$(wget -qO- eth0.me) 
@@ -92,12 +92,12 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.pylo
 ```
 
 ## Download addrbook
-```console
+```python
 wget -O $HOME/.pylons/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Pylons/addrbook.json"
 ```
 
 # SnapShot 26.10.22 (4.7 GB) block height --> 2700740
-```bash
+```python
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
 sudo systemctl stop pylonsd
 rm -rf $HOME/.pylons/data/
@@ -126,7 +126,7 @@ systemctl restart pylonsd && journalctl -u pylonsd -f -o cat
 
 
 # Create a service file
-```console
+```python
 sudo tee /etc/systemd/system/pylonsd.service > /dev/null <<EOF
 [Unit]
 Description=Pylons
@@ -153,7 +153,7 @@ sudo journalctl -u pylonsd -f -o cat
 ```
 
 ## Create validator
-```
+```python
 pylonsd tx staking create-validator \
 --amount 1000000ubedrock \
 --from <walletname> \
@@ -173,7 +173,7 @@ pylonsd tx staking create-validator \
 ```
 
 ### Delete node (one command)
-```
+```python
 sudo systemctl stop pylonsd && \
 sudo systemctl disable pylonsd && \
 rm /etc/systemd/system/pylonsd.service && \
