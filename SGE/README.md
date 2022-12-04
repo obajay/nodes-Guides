@@ -16,7 +16,7 @@
 
 
 # 1) Auto_install script
-```bash
+```python
 
 ```
 
@@ -24,14 +24,14 @@
 
 ### Preparing the server
 
-```bash
+```python
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
 ## GO 1.19
 
-```bash
+```python
 ver="1.19" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
@@ -62,13 +62,13 @@ sged init STAVRguide --chain-id sge-testnet-1
 ```    
 
 ## Create/recover wallet
-```bash
+```python
 sged keys add <walletname>
 sged keys add <walletname> --recover
 ```
 
 ## Download Genesis
-```bash
+```python
 wget -O $HOME/.sge/config/genesis.json "https://raw.githubusercontent.com/sge-network/networks/master/sge-testnet-1/genesis.json"
 
 ```
@@ -76,7 +76,7 @@ wget -O $HOME/.sge/config/genesis.json "https://raw.githubusercontent.com/sge-ne
 + 9a36a608e66fb194f404284c2d65aa5a7eb422b3efbd50869f270dfe65713e5b
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
-```bash
+```python
 sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0usge\"/" $HOME/.sge/config/app.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.sge/config/config.toml
 external_address=$(wget -qO- eth0.me) 
@@ -90,7 +90,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.sge/c
 
 ```
 ### Pruning (optional)
-```bash
+```python
 pruning="custom" && \
 pruning_keep_recent="100" && \
 pruning_keep_every="0" && \
@@ -101,14 +101,14 @@ sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.sge/config/app.toml
 ```
 ### Indexer (optional) 
-```bash
+```python
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.sge/config/config.toml
 ```
 
 ## Download addrbook
-```bash
-wget -O $HOME/.sge/config/addrbook.json "SOOON"
+```python
+wget -O $HOME/.sge/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/SGE/addrbook.json"
 ```
 
 # Create a service file
@@ -131,14 +131,14 @@ EOF
 ```
 
 ## Start
-```bash
+```python
 sudo systemctl daemon-reload
 sudo systemctl enable sged
 sudo systemctl restart sged && sudo journalctl -u sged -f -o cat
 ```
 
 ### Create validator
-```bash
+```python
 sged tx staking create-validator \
   --amount 1000000usge \
   --from <walletName> \
@@ -167,18 +167,18 @@ rm -rf $(which sged)
 ```
 #
 ### Sync Info
-```bash
+```python
 sged status 2>&1 | jq .SyncInfo
 ```
 ### NodeINfo
-```bash
+```python
 sged status 2>&1 | jq .NodeInfo
 ```
 ### Check node logs
-```bash
+```python
 sudo journalctl -u sged -f -o cat
 ```
 ### Check Balance
-```bash
+```python
 sged query bank balances sge...address1yjgn7z09ua9vms259j
 ```
