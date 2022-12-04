@@ -27,7 +27,7 @@
     source $HOME/.bash_profile && \
     go version
 
-# Binary   04.13.22
+# Binary   04.12.22
 ```python 
 cd $HOME
 git clone https://github.com/Pylons-tech/pylons
