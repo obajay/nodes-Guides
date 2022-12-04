@@ -172,6 +172,7 @@ break
 ;;
 "Synchronization via SnapShot")
 cd $HOME
+snap install lz4
 sudo systemctl stop umeed
 cp $HOME/.umee/data/priv_validator_state.json $HOME/.umee/priv_validator_state.json.backup
 rm -rf $HOME/.umee/data
