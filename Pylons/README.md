@@ -35,6 +35,17 @@ cd pylons
 git checkout v1.1.0
 make install
 ```
+*******🟢UPDATE🟢******* 04.12.22
+
+```python
+cd $HOME/pylons
+git fetch --all
+git checkout v1.1.0
+make install
+pylonsd version --long | head
+sudo systemctl restart pylonsd && journalctl -u pylonsd -f -o cat
+```
+
 `pylonsd version version --long`
 + version: 1.1.0
 + commit: 
