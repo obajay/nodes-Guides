@@ -95,12 +95,12 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.teritorid/config/conf
 ```
 
 # StateSync
-```bash
-SNAP_RPC="http://teritori.rpc.m.stavr.tech:21097"
-peers="3110d11ff2302d4deb6313b4ff5ea982ddeb3ff9@88.198.34.226:21096"
+```python
+SNAP_RPC=http://teritori.rpc.m.stavr.tech:38027
+peers="ad347ea1ec920d12ccda2341348bcc89687739ef@teritori.peers.stavr.tech:38026"
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.teritorid/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 300)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
 
 echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
@@ -116,11 +116,11 @@ sudo systemctl restart teritorid && journalctl -u teritorid -f -o cat
 # SnapShot (~0.5 GB) updated every 5 hours
 ```python
 cd $HOME
+snap install lz4
 sudo systemctl stop teritorid
 cp $HOME/.teritorid/data/priv_validator_state.json $HOME/.teritorid/priv_validator_state.json.backup
 rm -rf $HOME/.teritorid/data
-wget http://teritori.snapshot.stavr.tech:5000/teritori/teritori-snap.tar.lz4 && lz4 -c -d $HOME/teritori-snap.tar.lz4 | tar -x -C $HOME/.teritorid --strip-components 2
-rm -rf teritori-snap.tar.lz4
+curl -o - -L http://teritori.snapshot.stavr.tech:1001/teritori/teritori-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.teritorid --strip-components 2
 mv $HOME/.teritorid/priv_validator_state.json.backup $HOME/.teritorid/data/priv_validator_state.json
 sudo systemctl restart teritorid && journalctl -u teritorid -f -o cat
 ```
