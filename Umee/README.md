@@ -97,11 +97,11 @@ sudo systemctl restart umeed && journalctl -u umeed -f -o cat
 # SnapShot (~0.9 GB) updated every 5 hours
 ```python
 cd $HOME
+snap install lz4
 sudo systemctl stop umeed
 cp $HOME/.umee/data/priv_validator_state.json $HOME/.umee/priv_validator_state.json.backup
 rm -rf $HOME/.umee/data
-wget http://umee.snapshot.stavr.tech:5108/umee/umee-snap.tar.lz4 && lz4 -c -d $HOME/umee-snap.tar.lz4 | tar -x -C $HOME/.umee --strip-components 2
-rm -rf umee-snap.tar.lz4
+curl -o - -L http://umee.snapshot.stavr.tech:1000/umee/umee-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.umee --strip-components 2
 mv $HOME/.umee/priv_validator_state.json.backup $HOME/.umee/data/priv_validator_state.json
 sudo systemctl restart umeed && journalctl -u umeed -f -o cat
 ```
