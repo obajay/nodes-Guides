@@ -145,11 +145,10 @@ EOF
 ```
 
 # Start node (one command)
-```console
-sudo systemctl daemon-reload && \
-sudo systemctl enable pylonsd && \
-sudo systemctl restart pylonsd && \
-sudo journalctl -u pylonsd -f -o cat
+```python
+sudo systemctl daemon-reload &&
+sudo systemctl enable pylonsd &&
+sudo systemctl restart pylonsd && sudo journalctl -u pylonsd -f -o cat
 ```
 
 ## Create validator
@@ -168,7 +167,7 @@ pylonsd tx staking create-validator \
 --moniker STAVRguide \
 --chain-id pylons-testnet-3 \
 --gas="auto" \
---fees 100udws
+--fees 100ubedrock
 -y
 ```
 
