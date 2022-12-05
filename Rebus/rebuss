@@ -137,8 +137,8 @@ echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE
 break
 ;;
 "Synchronization via StateSync")
-SNAP_RPC="http://rebus.rpc.m.stavr.tech:17107"
-peers="02523d6634dc7523b80591ac22c8b067b7fda5a2@rebus.rpc.m.stavr.tech:17106"
+SNAP_RPC="http://rebus.rpc.m.stavr.tech:40107"
+peers="0863966356f6532377aeba663415258d44ddbd13@rebus.peer.stavr.tech:40106"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.rebusd/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
@@ -175,12 +175,13 @@ break
 ;;
 "Synchronization via SnapShot")
 cd $HOME
+snap install lz4
 sudo systemctl stop rebusd
 cp $HOME/.rebusd/data/priv_validator_state.json $HOME/.rebusd/priv_validator_state.json.backup
 rm -rf $HOME/.rebusd/data
-wget http://rebus.snapshot.stavr.tech:5012/rebus/rebus-snap.tar.lz4 && lz4 -c -d $HOME/rebus-snap.tar.lz4 | tar -x -C $HOME/.rebusd --strip-components 2
-rm -rf rebus-snap.tar.lz4
+curl -o - -L http://rebus.snapshot.stavr.tech:1005/rebus/rebus-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.rebusd --strip-components 2
 mv $HOME/.rebusd/priv_validator_state.json.backup $HOME/.rebusd/data/priv_validator_state.json
+wget -O $HOME/.rebusd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Rebus/addrbook.json"
 sudo systemctl restart rebusd && journalctl -u rebusd -f -o cat
 
 break
