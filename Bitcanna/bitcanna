@@ -135,12 +135,12 @@ break
 ;;
 "Synchronization via StateSync")
 RPC="http://bitcanna.rpc.m.stavr.tech:21327"
+peers="2ff33d346b1b0f19cd59018ceb62d06a6406d472@bitcanna.peers.stavr.tech:21326"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.bcna/config/config.toml
 LATEST_HEIGHT=$(curl -s $RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
 TRUST_HASH=$(curl -s "$RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
 echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-peers="f5ab20ff53ddaa2a473c23694b4bac2c187d7b2a@135.181.5.47:21326"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.bcna/config/config.toml
 sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
 s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$RPC,$RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
@@ -169,18 +169,14 @@ journalctl -u bcnad -f -o cat
 break
 ;;
 "Synchronization via SnapShot")
+cd $HOME
+snap install lz4
 sudo systemctl stop bcnad
-rm -rf $HOME/.bcna/data/
-mkdir $HOME/.bcna/data/
-cd $HOME
-wget http://bitcanna.snapshot.stavr.tech:5101/bitcannaindata.tar.gz
-tar -C $HOME/ -zxvf bitcannaindata.tar.gz --strip-components 1
-wget -O $HOME/.bcna/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/priv_validator_state.json"
-cd && cat .bcna/data/priv_validator_state.json
-cd $HOME
-wget -O $HOME/.bcna/config/genesis.json "https://raw.githubusercontent.com/BitCannaGlobal/bcna/main/genesis.json"
-rm bitcannaindata.tar.gz
-sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
+cp $HOME/.bcna/data/priv_validator_state.json $HOME/.bcna/priv_validator_state.json.backup
+rm -rf $HOME/.bcna/data
+curl -o - -L http://bitcanna.snapshot.stavr.tech:1004/bca/bca-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.bcna --strip-components 2
+mv $HOME/.bcna/priv_validator_state.json.backup $HOME/.bcna/data/priv_validator_state.json
+sudo systemctl restart bcnad && journalctl -u bcnad -f -o cat
 
 
 break
