@@ -76,26 +76,26 @@ make install
 `bcnad version`
 - v1.5.3
 
-```bash
+```python
 bcnad init STAVRguide --chain-id bitcanna-1
 ```    
 
 ## Create/recover wallet
-```bash
+```python
 bcnad keys add <walletname>
 bcnad keys add <walletname> --recover
 ```
 
 ## Download Genesis
 
-```bash
+```python
 wget -O $HOME/.bcna/config/genesis.json "https://raw.githubusercontent.com/BitCannaGlobal/bcna/main/genesis.json"
 ```
 `sha256sum $HOME/.bcna/config/genesis.json`
 + cd7449a199e71c400778f894abb00874badda572ac5443b7ec48bb0aad052f29
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
-```
+```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0stake\"/;" ~/.bcna/config/app.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.bcna/config/config.toml
 external_address=$(wget -qO- eth0.me) 
@@ -109,7 +109,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.bcna
 
 ```
 ### Pruning (optional)
-```bash
+```python
 pruning="custom" && \
 pruning_keep_recent="100" && \
 pruning_keep_every="0" && \
@@ -120,28 +120,27 @@ sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.bcna/config/app.toml
 ```
 ### Indexer (optional) 
-```bash
+```python
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.bcna/config/config.toml
 ```
 
 ## Download addrbook
-```bash
+```python
 wget -O $HOME/.bcna/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Bitcanna/addrbook.json"
 ```
 
 
 # StateSync
-```bash
+```python
 RPC="http://bitcanna.rpc.m.stavr.tech:21327"
+peers="2ff33d346b1b0f19cd59018ceb62d06a6406d472@bitcanna.peers.stavr.tech:21326"
 LATEST_HEIGHT=$(curl -s $RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
 TRUST_HASH=$(curl -s "$RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
 
 echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
 
-peers="f5ab20ff53ddaa2a473c23694b4bac2c187d7b2a@135.181.5.47:21326"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.bcna/config/config.toml
 sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
 s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$RPC,$RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
@@ -151,33 +150,20 @@ sudo systemctl stop bcnad && bcnad tendermint unsafe-reset-all --keep-addr-book
 sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 ```
 
-# SnapShot 26.10.22 (0.2 GB) height 5608896
-```bash
-# install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
+# SnapShot (~0.3 GB) updated every 5 hours
+```python
+cd $HOME
+snap install lz4
 sudo systemctl stop bcnad
-rm -rf $HOME/.bcna/data/
-mkdir $HOME/.bcna/data/
-
-# download archive
-cd $HOME
-wget http://bitcanna.snapshot.stavr.tech:5101/bitcannaindata.tar.gz
-
-# unpack the archive
-tar -C $HOME/ -zxvf bitcannaindata.tar.gz --strip-components 1
-# !! IMPORTANT POINT. If the validator was created earlier. Need to reset priv_validator_state.json  !!
-wget -O $HOME/.bcna/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/priv_validator_state.json"
-cd && cat .bcna/data/priv_validator_state.json
-
-# after unpacking, run the node
-# don't forget to delete the archive to save space
-cd $HOME
-wget -O $HOME/.bcna/config/genesis.json "https://raw.githubusercontent.com/BitCannaGlobal/bcna/main/genesis.json"
-rm bitcannaindata.tar.gz
-sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
+cp $HOME/.bcna/data/priv_validator_state.json $HOME/.bcna/priv_validator_state.json.backup
+rm -rf $HOME/.bcna/data
+curl -o - -L http://bitcanna.snapshot.stavr.tech:1004/bca/bca-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.bcna --strip-components 2
+mv $HOME/.bcna/priv_validator_state.json.backup $HOME/.bcna/data/priv_validator_state.json
+sudo systemctl restart bcnad && journalctl -u bcnad -f -o cat
 ```
 
 # Create a service file
-```bash
+```python
 sudo tee /etc/systemd/system/bcnad.service > /dev/null <<EOF
 [Unit]
 Description=bitcanna
@@ -196,13 +182,13 @@ EOF
 ```
 
 ## Start
-```bash
+```python
 sudo systemctl daemon-reload && sudo systemctl enable bcnad
 sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 ```
 
 ### Create validator
-```bash
+```python
 bcnad tx staking create-validator \
 --amount=1000000ubcna \
 --broadcast-mode=block \
@@ -218,7 +204,7 @@ bcnad tx staking create-validator \
 ```
 
 ## Delete node
-```bash
+```python
 sudo systemctl stop bcnad && \
 sudo systemctl disable bcnad && \
 rm /etc/systemd/system/bcnad.service && \
