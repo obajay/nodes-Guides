@@ -15,7 +15,7 @@
 | Mainnet   |   8| 16GB | 160GB    |
 
 # 1) Auto_install script
-```bash
+```python
 wget -O rebuss https://raw.githubusercontent.com/obajay/nodes-Guides/main/Rebus/rebuss && chmod +x rebuss && ./rebuss
 ```
 # 2) Manual installation
@@ -37,7 +37,7 @@ wget -O rebuss https://raw.githubusercontent.com/obajay/nodes-Guides/main/Rebus/
     go version
 
 # Binary   19.10.22
-```bash
+```python
 cd $HOME
 git clone https://github.com/rebuschain/rebus.core.git 
 cd rebus.core
@@ -50,16 +50,16 @@ make install
 + commit: ee105dac0b3f481600ba30fb75f6628f9309e91e
 
 ## Initialisation
-```bash
+```python
 rebusd init STAVRguide --chain-id reb_1111-1
 ```
 ## Add wallet
-```console
+```python
 rebusd keys add <walletName>
 rebusd keys add <walletName> --recover
 ```
 # Genesis
-```bash
+```python
 curl https://raw.githubusercontent.com/rebuschain/rebus.mainnet/master/reb_1111-1/genesis.zip > ~/.rebusd/config/genesis.zip
 cd $HOME/.rebusd/config/ 
 unzip genesis.zip && rm -rf genesis.zip
@@ -83,7 +83,7 @@ unzip genesis.zip && rm -rf genesis.zip
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.rebusd/config/config.toml
 
 ### Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
-```console
+```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0arebus\"/" ~/.rebusd/config/app.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.rebusd/config/config.toml
 external_address=$(wget -qO- eth0.me) 
@@ -100,14 +100,14 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.rebu
 ```
 
 ## Download addrbook
-```console
+```python
 wget -O $HOME/.rebusd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Rebus/addrbook.json"
 ```
 
 # StateSync
 ```python
-SNAP_RPC="http://rebus.rpc.m.stavr.tech:17107"
-peers="02523d6634dc7523b80591ac22c8b067b7fda5a2@rebus.rpc.m.stavr.tech:17106"
+SNAP_RPC="http://rebus.rpc.m.stavr.tech:40107"
+peers="0863966356f6532377aeba663415258d44ddbd13@rebus.peer.stavr.tech:40106"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.rebusd/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
@@ -128,17 +128,18 @@ sudo systemctl restart rebusd && journalctl -u rebusd -f -o cat
 # SnapShot (~1 GB) updated every 5 hours
 ```python
 cd $HOME
+snap install lz4
 sudo systemctl stop rebusd
 cp $HOME/.rebusd/data/priv_validator_state.json $HOME/.rebusd/priv_validator_state.json.backup
 rm -rf $HOME/.rebusd/data
-wget http://rebus.snapshot.stavr.tech:5012/rebus/rebus-snap.tar.lz4 && lz4 -c -d $HOME/rebus-snap.tar.lz4 | tar -x -C $HOME/.rebusd --strip-components 2
-rm -rf rebus-snap.tar.lz4
+curl -o - -L http://rebus.snapshot.stavr.tech:1005/rebus/rebus-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.rebusd --strip-components 2
 mv $HOME/.rebusd/priv_validator_state.json.backup $HOME/.rebusd/data/priv_validator_state.json
+wget -O $HOME/.rebusd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Rebus/addrbook.json"
 sudo systemctl restart rebusd && journalctl -u rebusd -f -o cat
 ```
 
 # Create a service file
-```console
+```python
 sudo tee /etc/systemd/system/rebusd.service > /dev/null <<EOF
 [Unit]
 Description=rebus
@@ -157,13 +158,13 @@ EOF
 ```
 
 # Start node (one command)
-```console
+```python
 sudo systemctl daemon-reload && sudo systemctl enable rebusd
 sudo systemctl restart rebusd && sudo journalctl -u rebusd -f -o cat
 ```
 
 ## Create validator
-```
+```python
 rebusd tx staking create-validator \
 --amount 1000000arebus \
 --from <walletname> \
@@ -182,7 +183,7 @@ rebusd tx staking create-validator \
 ```
 
 ### Delete node (one command)
-```
+```python
 sudo systemctl stop rebusd && \
 sudo systemctl disable rebusd && \
 rm /etc/systemd/system/rebusd.service && \
