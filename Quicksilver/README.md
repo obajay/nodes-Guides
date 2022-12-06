@@ -34,8 +34,20 @@ mv quicksilverd-v0.10.3-amd64 quicksilverd
 chmod +x quicksilverd
 mv $HOME/quicksilverd $HOME/go/bin/
 ```
+
+*******🟢UPDATE🟢******* 06.12.22
+
+```python
+cd $HOME
+wget https://github.com/ingenuity-build/testnets/releases/download/v0.10.0/quicksilverd-v0.10.4-amd64
+mv quicksilverd-v0.10.4-amd64 quicksilverd
+chmod +x quicksilverd
+./quicksilverd version
+mv $HOME/quicksilverd $(which quicksilverd)
+sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
+```
 `quicksilverd version`
-+ version: v0.10.3
++ version: v0.10.4
 
 
 ### Initialize the node
