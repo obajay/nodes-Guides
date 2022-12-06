@@ -41,11 +41,22 @@ git clone https://github.com/aura-nw/aura && cd aura
 git checkout euphoria_v0.4.1
 make install
 ```
-`aurad version --long | head`
-+ version: euphoria_v0.4.1
-+ commit: d34b4c18338fa389902d1133b5a2dbc4767a3069
 
+*******🟢UPDATE🟢******* 07.12.22
+
+```python
+cd $HOME/aura
+git fetch --all
+git checkout euphoria_v0.4.2
+make install
+sudo systemctl restart aurad && journalctl -u aurad -f -o cat
 ```
+
+`aurad version --long | head`
++ version: euphoria_v0.4.2
++ commit: 7922c61c8c404645007995211070c9d817713c33
+
+```python
 aurad init STAVRguide --chain-id euphoria-2
 ```
 
@@ -55,7 +66,7 @@ aurad init STAVRguide --chain-id euphoria-2
     aurad keys add <walletname> --recover
 
 ## Genesis
-```bash
+```python
 wget https://github.com/aura-nw/testnets/raw/main/euphoria-2/euphoria-2-genesis.tar.gz
 tar -xzvf euphoria-2-genesis.tar.gz
 mv euphoria-2-genesis.json $HOME/.aura/config/genesis.json
