@@ -26,11 +26,11 @@
     source ~/.bash_profile && \
     go version
 
-### Node installation 28.11.22
+### Node installation 06.12.22
 ```python
 cd $HOME
-wget https://github.com/ingenuity-build/testnets/releases/download/v0.10.0/quicksilverd-v0.10.3-amd64
-mv quicksilverd-v0.10.3-amd64 quicksilverd
+wget https://github.com/ingenuity-build/testnets/releases/download/v0.10.0/quicksilverd-v0.10.4-amd64
+mv quicksilverd-v0.10.4-amd64 quicksilverd
 chmod +x quicksilverd
 mv $HOME/quicksilverd $HOME/go/bin/
 ```
