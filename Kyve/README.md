@@ -3,7 +3,7 @@
 ![Kyve (1)](https://user-images.githubusercontent.com/44331529/180600827-c8beffd5-dcb3-4ded-a9d6-8f9aa6c0859f.png)
 
 
-[EXPLORER 1](https://explorer.kyve.network/korellia/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/kyve/staking) \
 [EXPLORER 2](https://kyve.explorers.guru/validators)
 =
 - **Minimum hardware requirements**:
@@ -81,7 +81,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.kyve
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.kyve/config/config.toml
 
 ## State Sync
-```console
+```python
 SNAP_RPC1="141.95.124.151:20057" \
 && SNAP_RPC2="65.108.126.46:28657" \
 && SNAP_RPC3="65.108.57.92:26657" \
@@ -101,6 +101,17 @@ s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.kyve/config/config.toml
 chaind tendermint unsafe-reset-all --home $HOME/.kyve
+```
+
+## SnapShot (~0.2 GB) updated every 5 hours
+```python
+cd $HOME
+sudo systemctl stop kyved
+cp $HOME/.kyve/data/priv_validator_state.json $HOME/.kyve/priv_validator_state.json.backup
+rm -rf $HOME/.kyve/data
+curl -o - -L http://kyve.snapshot.stavr.tech:1007/kyve/kyve-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.kyve --strip-components 2
+mv $HOME/.kyve/priv_validator_state.json.backup $HOME/.kyve/data/priv_validator_state.json
+sudo systemctl restart kyved && journalctl -u kyved -f -o cat
 ```
 
 # Create a service file
