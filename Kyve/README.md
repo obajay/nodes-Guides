@@ -80,6 +80,10 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.kyve
     indexer="null" && \
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.kyve/config/config.toml
 
+## Download addrbook
+```python
+wget -O $HOME/.kyve/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Kyve/addrbook.json"
+```
 ## State Sync
 ```python
 SNAP_RPC1="141.95.124.151:20057" \
@@ -103,14 +107,16 @@ s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.kyve/config/config.toml
 chaind tendermint unsafe-reset-all --home $HOME/.kyve
 ```
 
-## SnapShot (~0.2 GB) updated every 5 hours
+## SnapShot (~1 GB) updated every 5 hours
 ```python
 cd $HOME
+snap install lz4
 sudo systemctl stop kyved
 cp $HOME/.kyve/data/priv_validator_state.json $HOME/.kyve/priv_validator_state.json.backup
 rm -rf $HOME/.kyve/data
 curl -o - -L http://kyve.snapshot.stavr.tech:1007/kyve/kyve-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.kyve --strip-components 2
 mv $HOME/.kyve/priv_validator_state.json.backup $HOME/.kyve/data/priv_validator_state.json
+wget -O $HOME/.kyve/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Kyve/addrbook.json"
 sudo systemctl restart kyved && journalctl -u kyved -f -o cat
 ```
 
