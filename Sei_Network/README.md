@@ -2,9 +2,9 @@
 
 ![sei](https://user-images.githubusercontent.com/44331529/180607309-cc8df238-af95-451b-b99d-d858361aac51.png)
 
-
-[EXPLORER 1](https://sei.explorers.guru/validators) \
-[EXPLORER 2](https://explorer.ericet.xyz/sei/staking)
+[EXPLORER 1](https://explorer.stavr.tech/sei/staking) \
+[EXPLORER 2](https://sei.explorers.guru/validators) \
+[EXPLORER 3](https://explorer.ericet.xyz/sei/staking)
 =
 ## Testnet details
 
