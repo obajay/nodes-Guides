@@ -48,7 +48,7 @@ make install
 ```python
 cd $HOME/stride
 git fetch --all
-git checkout v4.0.0
+git checkout v4.0.2
 make install
 strided version
 sed -i -e "s/^pruning *=.*/pruning = \"nothing\"/" $HOME/.stride/config/app.toml
@@ -56,7 +56,7 @@ sudo systemctl restart strided && journalctl -u strided -f -o cat
 ```
 
 `strided version --long | head`
-+ version: v4.0.0
++ version: v4.0.2
 
 ## Initialisation
 ```python
