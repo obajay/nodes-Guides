@@ -41,19 +41,19 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 06.12.22
+# Build 07.12.22
 ```python
 cd $HOME
 git clone https://github.com/JackalLabs/canine-chain
 cd canine-chain
-git checkout v1.2.0-alpha.6
+git checkout v1.2.0-alpha.7
 make install
 ```
-*******🟢UPDATE🟢******* 06.12.22
+*******🟢UPDATE🟢******* 07.12.22
 ```python
 cd $HOME/canine-chain
 git fetch --all
-git checkout v1.2.0-alpha.6
+git checkout v1.2.0-alpha.7
 make install
 canined version
 #1.2.0-alpha.6
@@ -61,7 +61,7 @@ sudo systemctl restart canined && sudo journalctl -u canined -f -o cat
 ```
 
 `canined version --long | head`
-- version: 1.2.0-alpha.5
+- version: 1.2.0-alpha.7
 - commit: 
 
 ```python
