@@ -28,16 +28,26 @@
     source ~/.bash_profile && \
     go version
 
-## Build 13.11.22
+## Build 08.12.22
 ```python
 cd $HOME
 git clone https://github.com/knstl/konstellation/
 cd konstellation
-git checkout v0.6.0
+git checkout v0.6.1
 make install
 ```
+*******🟢UPDATE🟢******* 08.12.22
+```python
+cd konstellation
+git fetch --all
+git checkout v0.6.1
+make install
+knstld version --long | head
+sudo systemctl restart knstld && sudo journalctl -u knstld -f -o cat
+```
+
 `knstld version`
-+ 0.6.0
++ 0.6.1
 ```    
 knstld init STAVRguide --chain-id darchub
 ```
