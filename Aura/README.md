@@ -34,11 +34,11 @@ wget -O aur https://raw.githubusercontent.com/obajay/nodes-Guides/main/Aura/aur 
     source ~/.bash_profile && \
     go version
 
-# Build 25.11.22
+# Build 07.12.22
 ```python
 cd $HOME
 git clone https://github.com/aura-nw/aura && cd aura
-git checkout euphoria_v0.4.1
+git checkout euphoria_v0.4.2
 make install
 ```
 
