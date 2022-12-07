@@ -86,25 +86,22 @@ wget -O $HOME/.kyve/config/addrbook.json "https://raw.githubusercontent.com/obaj
 ```
 ## State Sync
 ```python
-SNAP_RPC1="141.95.124.151:20057" \
-&& SNAP_RPC2="65.108.126.46:28657" \
-&& SNAP_RPC3="65.108.57.92:26657" \
-&& SNAP_RPC4="95.216.157.18:26657"
-peers="e9a2567ee5fda3f98fce7b0e4342ef1e85c9fed9@141.95.124.151:20056,287c511b6ca0c6a5853cf52021bbbabfee6c7219@65.108.126.46:28656,d040c94305f0b421df815d5375201b34f8cae999@65.108.57.92:26656,2823ef5801b138802d076bf3e0478ec9be4e7bde@95.216.157.18:26656"
+SNAP_RPC="http://kyve.rpc.t.stavr.tech:12357"
+peers="29332feee9ab5dd743c90392a892f6f08b5c0ace@kyve.peer.stavr.tech:12356"
 sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.kyve/config/config.toml
-
-LATEST_HEIGHT=$(curl -s $SNAP_RPC1/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
-TRUST_HASH=$(curl -s "$SNAP_RPC1/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 300)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
 
 echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
 
 sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC1,$SNAP_RPC2,$SNAP_RPC3,$SNAP_RPC4\"| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.kyve/config/config.toml
-chaind tendermint unsafe-reset-all --home $HOME/.kyve
+chaind tendermint unsafe-reset-all --home $HOME/.kyve --keep-addr-book
+sudo systemctl restart kyved && journalctl -u kyved -f -o cat
 ```
 
 ## SnapShot (~1 GB) updated every 5 hours
