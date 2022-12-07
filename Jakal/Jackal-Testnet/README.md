@@ -56,7 +56,7 @@ git fetch --all
 git checkout v1.2.0-alpha.7
 make install
 canined version
-#1.2.0-alpha.6
+#1.2.0-alpha.7
 sudo systemctl restart canined && sudo journalctl -u canined -f -o cat
 ```
 
