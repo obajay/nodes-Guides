@@ -126,10 +126,10 @@ EOF
 # StateSync STRIDE
 ```python
 SNAP_RPC=http://stride.rpc.m.stavr.tech:21017
-peers="ce24406f4c7e149e52a75edb8e73dc4501d739b9@stride.rpc.m.stavr.tech:21016"
+peers="a7b4cf6f65138ba61518c2c45402da32dc8e28b7@stride.peer.stavr.tech:21016"
 sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.stride/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 300)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
 
 echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
@@ -142,15 +142,16 @@ s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.stride/config/config.toml
 strided tendermint unsafe-reset-all --home /root/.stride --keep-addr-book
 sudo systemctl restart strided && journalctl -u strided -f -o cat
 ```
-# SnapShot (~0.5GB) updated every 5 hours
+# SnapShot (~0.8GB) updated every 5 hours
 ```python
 cd $HOME
+snap install lz4
 sudo systemctl stop strided
 cp $HOME/.stride/data/priv_validator_state.json $HOME/.stride/priv_validator_state.json.backup
 rm -rf $HOME/.stride/data
-wget http://stride.snapshot.stavr.tech:5011/stride/stride-snap.tar.lz4 && lz4 -c -d $HOME/stride-snap.tar.lz4 | tar -x -C $HOME/.stride --strip-components 2
-rm -rf stride-snap.tar.lz4
+curl -o - -L http://stride.snapshot.stavr.tech:1008/stride/stride-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.stride --strip-components 2
 mv $HOME/.stride/priv_validator_state.json.backup $HOME/.stride/data/priv_validator_state.json
+wget -O $HOME/.stride/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Stride/addrbook.json"
 sudo systemctl restart strided && journalctl -u strided -f -o cat
 ```
 
