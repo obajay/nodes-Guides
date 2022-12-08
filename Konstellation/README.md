@@ -34,15 +34,18 @@ cd $HOME
 git clone https://github.com/knstl/konstellation/
 cd konstellation
 git checkout v0.6.2
-make install
+make build
+cd build
+mv knstld $HOME/go/bin/
 ```
 *******🟢UPDATE🟢******* 08.12.22
 ```python
 cd konstellation
 git fetch --all
 git checkout v0.6.2
-make install
-knstld version --long | head
+make build
+cd build
+mv knstld $(which knstld)
 sudo systemctl restart knstld && sudo journalctl -u knstld -f -o cat
 ```
 
@@ -61,17 +64,12 @@ knstld init STAVRguide --chain-id darchub
 
     wget -O $HOME/.knstld/config/genesis.json https://raw.githubusercontent.com/Konstellation/konstellation/master/config/genesis.json
 
-### Download config.toml with predefined seeds and persistent peers
-    wget -O $HOME/.knstld/config/config.toml https://raw.githubusercontent.com/obajay/nodes-Guides/main/Konstellation/addrbook.json
-
-
 ### Set up the minimum gas price $HOME/.knstld/config/app.toml as well as seed and peers
 
     sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.01udarc\"/;" ~/.knstld/config/app.toml
   
     external_address=$(wget -qO- eth0.me)
     sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.knstld/config/config.toml
-
 
 
 ## Pruning (optional)
