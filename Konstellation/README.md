@@ -33,21 +33,21 @@
 cd $HOME
 git clone https://github.com/knstl/konstellation/
 cd konstellation
-git checkout v0.6.1
+git checkout v0.6.2
 make install
 ```
 *******🟢UPDATE🟢******* 08.12.22
 ```python
 cd konstellation
 git fetch --all
-git checkout v0.6.1
+git checkout v0.6.2
 make install
 knstld version --long | head
 sudo systemctl restart knstld && sudo journalctl -u knstld -f -o cat
 ```
 
 `knstld version`
-+ 0.6.1
++ 0.6.2
 ```    
 knstld init STAVRguide --chain-id darchub
 ```
