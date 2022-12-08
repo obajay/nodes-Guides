@@ -117,7 +117,7 @@ EOF
 
 # Download addrbook
 ```bash
-wget -O $HOME/.agoric/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sei_Network/addrbook.json"
+wget -O $HOME/.sei/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sei_Network/addrbook.json"
 ```
 # State Sync
 ```bash
