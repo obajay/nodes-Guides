@@ -106,7 +106,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.humans/config/config.
 
 ## Download addrbook
 ```python
-wget -O $HOME/.sge/config/addrbook.json "SOON"
+wget -O $HOME/.humans/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Humans/addrbook.json"
 ```
 [SNAPSHOT](https://polkachu.com/testnets/humans/snapshots)
 =
@@ -146,7 +146,7 @@ humansd tx staking create-validator \
   --commission-rate "0.1" \
   --min-self-delegation "1" \
   --pubkey  $(humansd tendermint show-validator) \
-  --moniker Moniker \
+  --moniker STAVRguide \
   --chain-id testnet-1 \
   --identity="" \
   --details="" \
