@@ -28,7 +28,7 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bs
 ```
 
 ## GO 18.3 (one command)
-```bash
+```python
 cd $HOME && version="1.18.3" && \
 wget "https://golang.org/dl/go$version.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
