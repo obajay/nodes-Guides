@@ -1,3 +1,5 @@
+<h1 align="center"> 🔴TESTNET END 06.12.22🔴</h1>
+
 # Empower Testnet Guide
 
 ![empower](https://user-images.githubusercontent.com/44331529/193969092-38e7ec7f-bca0-4bd9-a31d-5ba52b71ec81.png)
