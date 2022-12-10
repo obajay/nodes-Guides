@@ -35,15 +35,43 @@ cd pylons
 git checkout v1.1.0
 make install
 ```
-*******🟢UPDATE🟢******* 04.12.22
+*******🟢UPDATE🟢******* 10.12.22
+Create Gentx to mainnet
 
 ```python
-cd $HOME/pylons
-git fetch --all
-git checkout v1.1.0
-make install
-pylonsd version --long | head
-sudo systemctl restart pylonsd && journalctl -u pylonsd -f -o cat
+git clone https://github.com/Pylons-tech/pylons
+cd pylons
+git checkout v1.1.1
+make build && make install
+
+
+`pylonsd version version --long`
++ version: 1.1.1
++ commit: 2bc3b684587d4acc9e2384cbbea2bc54eb699dc9
+
+pylonsd init STAVRguide --chain-id=pylons-mainnet-1
+pylonsd keys add <walletName>
+                OR
+pylonsd keys add <walletName> --recover
+
+Genesis  SOON
+curl -s  https://raw.githubusercontent.com/Pylons-tech/pylons/main/networks/pylons-mainnet-1/genesis.json > ~/.pylons/config/genesis.json
+
+pylonsd add-genesis-account $(pylonsd keys show <walletname> -a) 200000000ubedrock
+
+pylonsd gentx <WalletName> 200000000ubedrock \
+--chain-id="pylons-mainnet-1" \
+--moniker=STAVRguide \
+--identity="" \
+--details="" \
+--website="" \
+--commission-rate="0.05" \
+--commission-max-rate="0.20" \
+--commission-max-change-rate="0.05" \
+--min-self-delegation="1" \
+--pubkey $(pylonsd tendermint show-validator) -y
+
+
 ```
 
 `pylonsd version version --long`
