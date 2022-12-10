@@ -27,6 +27,7 @@ wget -O DWS https://raw.githubusercontent.com/obajay/nodes-Guides/main/DWS/DWS &
     sudo apt update && sudo apt upgrade -y && \
     sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
 
+
 ## GO 18.3 (one command)
     ver="1.18.3" && \
     cd $HOME && \
