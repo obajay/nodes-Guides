@@ -1,3 +1,5 @@
+<h1 align="center"> 🔴TESTNET END 06.12.22🔴</h1>
+
 # Guide DWS testnet
 
 ![dws (1)](https://user-images.githubusercontent.com/44331529/182409218-5d46916b-fcf2-42fc-8106-bfb1709d36e4.png)
