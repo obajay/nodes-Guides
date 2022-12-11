@@ -57,7 +57,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/hypersign-protocol/hid-node.git
 cd hid-node
-git checkout v0.1.3
+git checkout v0.1.4
 make install
 
 hid-noded init $Validator_Name --chain-id $CHAIN_ID
@@ -158,7 +158,7 @@ break
 cd $HOME
 cd hid-node
 git fetch --all
-git checkout v0.1.3
+git checkout v0.1.4
 make install
 sudo systemctl restart hid-noded && sudo journalctl -u hid-noded -f -o cat
 
