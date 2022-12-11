@@ -16,7 +16,7 @@
 
 
 # 1) Auto_install script
-```bash
+```Python
 wget -O nois https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nois/nois && chmod +x nois && ./nois
 ```
 
@@ -24,14 +24,14 @@ wget -O nois https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nois/noi
 
 ### Preparing the server
 
-```bash
+```Python
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
 ## GO 18.5 
 
-```bash
+```Python
 cd $HOME
 ver="1.18.5"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
@@ -44,7 +44,7 @@ go version
 ```
 
 # Build 07.10.22 
-```bash
+```Python
 cd ~
 git clone https://github.com/noislabs/full-node.git
 cd full-node/full-node/
@@ -55,19 +55,19 @@ mv out/noisd /usr/local/bin
 `noisd version`
 - 0.29.0-rc2
 
-```bash
+```Python
 noisd init STAVRguide --chain-id nois-testnet-003
 ```    
 
 ## Create/recover wallet
-```bash
+```Python
 noisd keys add <walletname>
 noisd keys add <walletname> --recover
 ```
 
 ## Download Genesis
 
-```bash
+```Python
 cd $HOME/.noisd/config/
 rm genesis.json
 curl -O https://raw.githubusercontent.com/noislabs/testnets/main/nois-testnet-003/genesis.json
@@ -76,7 +76,7 @@ curl -O https://raw.githubusercontent.com/noislabs/testnets/main/nois-testnet-00
 + 9153084f305111e72fed86f44f6a11711c421532722200c870170d98223233ba
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
-```bash
+```Python
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.noisd/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.noisd/config/config.toml
@@ -86,20 +86,20 @@ seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.noisd/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.noisd/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.noisd/config/config.toml
-export DENOM=unois
-export CONFIG_DIR=$HOME/.noisd/config
-sed -i 's/minimum-gas-prices = ""/minimum-gas-prices = "0.05'"${DENOM}"'"/' $CONFIG_DIR/app.toml \
-  && sed -i 's/^timeout_propose =.*$/timeout_propose = "2s"/' $CONFIG_DIR/config.toml \
+export CONFIG_DIR="$HOME/.noisd/config"
+# Update app.toml
+sed -i 's/minimum-gas-prices =.*$/minimum-gas-prices = "0.05unois"/' $CONFIG_DIR/app.toml
+# Update config.toml
+sed -i 's/^timeout_propose =.*$/timeout_propose = "2000ms"/' $CONFIG_DIR/config.toml \
   && sed -i 's/^timeout_propose_delta =.*$/timeout_propose_delta = "500ms"/' $CONFIG_DIR/config.toml \
   && sed -i 's/^timeout_prevote =.*$/timeout_prevote = "1s"/' $CONFIG_DIR/config.toml \
   && sed -i 's/^timeout_prevote_delta =.*$/timeout_prevote_delta = "500ms"/' $CONFIG_DIR/config.toml \
   && sed -i 's/^timeout_precommit =.*$/timeout_precommit = "1s"/' $CONFIG_DIR/config.toml \
   && sed -i 's/^timeout_precommit_delta =.*$/timeout_precommit_delta = "500ms"/' $CONFIG_DIR/config.toml \
-  && sed -i 's/^timeout_commit =.*$/timeout_commit = "2s"/' $CONFIG_DIR/config.toml
-
+  && sed -i 's/^timeout_commit =.*$/timeout_commit = "1800ms"/' $CONFIG_DIR/config.toml
 ```
 ### Pruning (optional)
-```bash
+```Python
 pruning="custom" && \
 pruning_keep_recent="100" && \
 pruning_keep_every="0" && \
@@ -110,18 +110,18 @@ sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.noisd/config/app.toml
 ```
 ### Indexer (optional) 
-```bash
+```Python
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.noisd/config/config.toml
 ```
 
 ## Download addrbook
-```bash
+```Python
 wget -O $HOME/.noisd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nois/addrbook.json"
 ```
 
 # StateSync
-```bash
+```Python
 SNAP_RPC=http://nois.rpc.t.stavr.tech:21037
 peers="2dc7ab934dfec910fac3083fd74e3451e1d3e670@135.181.5.47:21036"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.noisd/config/config.toml
@@ -141,7 +141,7 @@ systemctl restart noisd && journalctl -u noisd -f -o cat
 ```
 
 # Snaphot 09.10.22 (0.1 GB) block height --> 46921
-```bash
+```Python
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
 sudo systemctl stop noisd
 rm -rf $HOME/.noisd/data/
@@ -164,7 +164,7 @@ systemctl restart noisd && journalctl -u noisd -f -o cat
 
 
 # Create a service file
-```bash
+```Python
 sudo tee /etc/systemd/system/noisd.service > /dev/null <<EOF
 [Unit]
 Description=noisd
@@ -183,14 +183,14 @@ EOF
 ```
 
 ## Start
-```bash
+```Python
 sudo systemctl daemon-reload
 sudo systemctl enable noisd
 sudo systemctl restart noisd && sudo journalctl -u noisd -f -o cat
 ```
 
 ### Create validator
-```bash
+```Python
 noisd tx staking create-validator \
 --amount=99000000unois \
 --pubkey=$(noisd tendermint show-validator) \
@@ -210,7 +210,7 @@ noisd tx staking create-validator \
 ```
 
 ## Delete node
-```bash
+```Python
 sudo systemctl stop noisd && \
 sudo systemctl disable noisd && \
 rm /etc/systemd/system/noisd.service && \
