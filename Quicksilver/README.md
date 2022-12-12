@@ -26,35 +26,26 @@
     source ~/.bash_profile && \
     go version
 
-### Node installation 08.12.22
+### Node installation 12.12.22
 ```python
 cd $HOME
-wget https://github.com/ingenuity-build/testnets/releases/download/v0.10.0/quicksilverd-v0.10.5-amd64
-mv quicksilverd-v0.10.5-amd64 quicksilverd
+wget https://github.com/ingenuity-build/testnets/releases/download/v0.10.5/quicksilverd-v0.10.8-amd64
+mv quicksilverd-v0.10.8-amd64 quicksilverd
 chmod +x quicksilverd
 mv $HOME/quicksilverd $HOME/go/bin/
 ```
 
-*******🟢UPDATE🟢******* 08.12.22
-
-```python
-cd $HOME
-wget https://github.com/ingenuity-build/testnets/releases/download/v0.10.0/quicksilverd-v0.10.5-amd64
-mv quicksilverd-v0.10.5-amd64 quicksilverd
-chmod +x quicksilverd
-./quicksilverd version
-mv $HOME/quicksilverd $(which quicksilverd)
-sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
-```
 `quicksilverd version`
-+ version: v0.10.5
++ version: v0.10.8
 
 
 ### Initialize the node
 ```java
-quicksilverd init STAVRguide --chain-id innuendo-3
+quicksilverd config chain-id innuendo-4
+quicksilverd init STAVRguide --chain-id innuendo-4
 ```
-
+[SNAPSHOT by Kjnodes](https://services.kjnodes.com/home/testnet/quicksilver/snapshot)
+=
 ### Create wallet or restore
     quicksilverd keys add <name_wallet>
             or
@@ -65,7 +56,7 @@ quicksilverd init STAVRguide --chain-id innuendo-3
 wget -O $HOME/.quicksilverd/config/genesis.json "https://raw.githubusercontent.com/ingenuity-build/testnets/main/innuendo/genesis.json"
 ```
 `sha256sum ~/.quicksilverd/config/genesis.json`
- + 6f97a06cdcfddc5774d4ca4fbee936bc8462b72b74c4337753771fecdfebe93f
+ + 80c7d19750b6c29b8fef5de7263d6347f55681c7804300a8c207bbde0af3e6cd
 
 ### Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
@@ -73,7 +64,7 @@ sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0uqck\"/;" ~/
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.quicksilverd/config/config.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.quicksilverd/config/config.toml
-peers=""
+peers="b9b8bb23e61d53ff3b293485d04ea567ebcd7933@65.108.65.94:26656,a94cf3e93cec8eef6d67c2972e4af5eae1a118b2@65.108.2.27:26656,926ce3f8ce4cda6f1a5ee97a937a44f59ff28fbf@65.108.13.176:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.quicksilverd/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.quicksilverd/config/config.toml
@@ -96,22 +87,6 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.quic
     indexer="null" && \
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.quicksilverd/config/config.toml
 
-### StateSync
-```python
-SNAP_RPC=https://quicksilver-t.rpc.manticore.team:443
-LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
-TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
-echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
-s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" ~/.quicksilverd/config/config.toml
-quicksilverd tendermint unsafe-reset-all --home /root/.quicksilverd
-systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
-```
 
 ### Download addrbook
 ```python
@@ -137,8 +112,8 @@ WantedBy=multi-user.target
 EOF
 ```
 ```python    
-sudo systemctl daemon-reload && \
-sudo systemctl enable quicksilverd && \
+sudo systemctl daemon-reload
+sudo systemctl enable quicksilverd
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 ```
 
@@ -147,7 +122,7 @@ sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 ### Create a validator
 ```python
 quicksilverd tx staking create-validator \
---chain-id innuendo-3 \
+--chain-id innuendo-4 \
 --commission-rate=0.1 \
 --commission-max-rate=0.2 \
 --commission-max-change-rate=0.1 \
