@@ -24,14 +24,14 @@ soon
 
 ### Preparing the server
 
-```bash
+```python
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
 ## GO 18.5
 
-```bash
+```python
 cd $HOME
 ver="1.18.5"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
@@ -43,38 +43,38 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 25.11.22
-```bash
+# Build 13.12.22
+```python
 cd $HOME
 git clone https://github.com/realiotech/realio-network.git && cd realio-network
-git checkout tags/v0.6.2
+git checkout v0.6.3
 make install
 ```
 `realio-networkd version --long | head`
-- version: 0.6.2
-- commit: 1e0fd07fdd8fad094e86d8eac2d996ac9eda9c09
+- version: 0.6.3
+- commit: 9c91fde60ac8c27a12d6ef92843d806496039823
 
-```bash
+```python
 realio-networkd init STAVRguide --chain-id realionetwork_1110-2
 realio-networkd config chain-id realionetwork_1110-2
 ```    
 
 ## Create/recover wallet
-```bash
+```python
 realio-networkd keys add <walletname>
 realio-networkd keys add <walletname> --recover
 ```
 
 ## Download Genesis
 
-```bash
+```python
 curl https://raw.githubusercontent.com/realiotech/testnets/main/realionetwork_1110-2/genesis.json > $HOME/.realio-network/config/genesis.json
 ```
 `sha256sum $HOME/.realio-network/config/genesis.json`
 + a2f8fae48eb019720ef78524d683a9ca22884dd4e9ba4f8d5b3ac10db1275183
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
-```bash
+```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ario\"/" $HOME/.realio-network/config/app.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.realio-network/config/config.toml
 external_address=$(wget -qO- eth0.me) 
@@ -88,7 +88,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.real
 
 ```
 ### Pruning (optional)
-```bash
+```python
 pruning="custom" && \
 pruning_keep_recent="100" && \
 pruning_keep_every="0" && \
@@ -99,17 +99,17 @@ sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.realio-network/config/app.toml
 ```
 ### Indexer (optional) 
-```bash
+```python
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.realio-network/config/config.toml
 ```
 
 ## Download addrbook
-```bash
+```python
 wget -O $HOME/.realio-network/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Realio/addrbook.json"
 ```
 # Create a service file
-```bash
+```python
 sudo tee /etc/systemd/system/realio-networkd.service > /dev/null <<EOF
 [Unit]
 Description=realio
@@ -128,13 +128,13 @@ EOF
 ```
 
 ## Start
-```bash
+```python
 sudo systemctl daemon-reload && sudo systemctl enable realio-networkd
 sudo systemctl restart realio-networkd && sudo journalctl -u realio-networkd -f -o cat
 ```
 
 ### Create validator
-```bash
+```python
 realio-networkd tx staking create-validator \
   --amount=1000000000000000000ario \
   --pubkey=$(realio-networkd tendermint show-validator) \
@@ -150,7 +150,7 @@ realio-networkd tx staking create-validator \
 ```
 
 ## Delete node
-```bash
+```python
 sudo systemctl stop realio-networkd && \
 sudo systemctl disable realio-networkd && \
 rm /etc/systemd/system/realio-networkd.service && \
