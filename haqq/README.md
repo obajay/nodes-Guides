@@ -37,25 +37,25 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Binary   27.10.22
-```bash 
+# Binary   15.12.22
+```python
 git clone https://github.com/haqq-network/haqq
 cd haqq
-git checkout v1.2.1
+git checkout v1.3.0
 make install
 ```
 
 ## Initialisation
-```bash
+```python
 haqqd init STAVRguide --chain-id=haqq_54211-3
 ```
 ## Add wallet
-```bash
+```python
 haqqd keys add <walletName>
 haqqd keys add <walletName> --recover
 ```
 # Genesis
-```bash
+```python
 cd $HOME/.haqqd/config && rm -rf genesis.json && wget https://github.com/haqq-network/validators-contest/raw/master/genesis.json
 ```
 
@@ -63,7 +63,7 @@ cd $HOME/.haqqd/config && rm -rf genesis.json && wget https://github.com/haqq-ne
 - b93f2650bdf560cab2cf7706ecee72bfba6d947fa57f8b1b8cb887f8b428233f  genesis.json
 
 ### Pruning
-```bash
+```python
 pruning="custom" && \
 pruning_keep_recent="100" && \
 pruning_keep_every="0" && \
@@ -78,7 +78,7 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.haqqd/config/config.toml
 
 ### Set up the minimum gas price and Peers/Seeds/Filter peers
-```console
+```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0stake\"/;" ~/.haqqd/config/app.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.haqqd/config/config.toml
 external_address=$(wget -qO- eth0.me) 
@@ -93,7 +93,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.haqq
 ```
 
 # SnapShot 21.10.22 (0.1 GB) block height --> 594004
-```bash
+```python
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
 sudo systemctl stop haqqd
 rm -rf $HOME/.haqqd/data/
@@ -117,12 +117,12 @@ systemctl restart haqqd && journalctl -u haqqd -f -o cat
 ```
 
 ## Download addrbook
-```console
+```python
 wget -O $HOME/.haqqd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/haqq/addrbook.json"
 ```
 
 # Create a service file
-```console
+```python
 sudo tee /etc/systemd/system/haqqd.service > /dev/null <<EOF
 [Unit]
 Description=haqqd
@@ -142,15 +142,14 @@ EOF
 
 
 # Start node (one command)
-```console
-sudo systemctl daemon-reload && \
-sudo systemctl enable haqqd && \
-sudo systemctl restart haqqd && \
-sudo journalctl -u haqqd -f -o cat
+```python
+sudo systemctl daemon-reload &&
+sudo systemctl enable haqqd &&
+sudo systemctl restart haqqd && sudo journalctl -u haqqd -f -o cat
 ```
 
 ## Create validator
-```
+```python
 haqqd tx staking create-validator \
 --amount 1000000000000000000aISLM \
 --from <walletName> \
@@ -168,7 +167,7 @@ haqqd tx staking create-validator \
 ```
 
 ### Delete node (one command)
-```
+```python
 sudo systemctl stop haqqd && \
 sudo systemctl disable haqqd && \
 rm /etc/systemd/system/haqqd.service && \
@@ -180,18 +179,18 @@ rm -rf $(which haqqd)
 ```
 #
 ### Sync Info
-```bash
+```python
 haqqd status 2>&1 | jq .SyncInfo
 ```
 ### NodeINfo
-```bash
+```python
 haqqd status 2>&1 | jq .NodeInfo
 ```
 ### Check node logs
-```bash
+```python
 sudo journalctl -u haqqd -f -o cat
 ```
 ### Check Balance
-```bash
+```python
 haqqd query bank balances haqq...addresshaqq1yjgn7z09ua9vms259j
 ```
