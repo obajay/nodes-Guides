@@ -43,15 +43,15 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 03.11.22
+# Build 16.12.22
 ```bash
 git clone https://github.com/defund-labs/defund
 cd defund
-git checkout v0.1.0
+git checkout v0.2.1
 make install
 ```
 `defundd version`
-- version: v0.1.0
+- version: v0.2.1
 
 ```bash
 defundd init STAVRguide --chain-id defund-private-3
