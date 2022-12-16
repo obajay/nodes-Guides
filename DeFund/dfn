@@ -56,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/defund-labs/defund
 cd defund
-git checkout v0.1.0
+git checkout v0.2.1
 make install
 
 defundd init $Validator_Name --chain-id $CHAIN_ID
@@ -157,15 +157,12 @@ systemctl restart defundd && journalctl -u defundd -f -o cat
 break
 ;;
 "UPDATE")
-systemctl stop defundd
-cd $HOME/.defund/config/
-defundd tendermint unsafe-reset-all --home $HOME/.defund
-wget -O $HOME/.defund/config/defund-private-3-gensis.tar.gz "https://raw.githubusercontent.com/defund-labs/testnet/main/defund-private-3/defund-private-3-gensis.tar.gz"
-rm -rf $HOME/.defund/config/genesis.json
-tar -xzvf defund-private-3-gensis.tar.gz
-defundd config chain-id defund-private-3 
-rm -rf defund-private-3-gensis.tar.gz
-systemctl restart defundd && journalctl -u defundd -f -o cat
+cd $HOME/defund
+git fetch --all
+git checkout v0.2.1
+make install
+sudo systemctl restart defundd && sudo journalctl -u defundd -f -o cat
+
 
 break
 ;;
