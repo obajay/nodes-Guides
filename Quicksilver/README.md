@@ -7,14 +7,23 @@
 =
 [EXPLORER](https://explorer.stavr.tech/quicksilver-mainnet/staking)
 =
+
+# 1) Auto_install script
+```python
+wget -O quick https://raw.githubusercontent.com/obajay/nodes-Guides/main/Quicksilver/quick && chmod +x quick && ./quick
+```
+
+# 2) Manual installation
+
 ### Updating the repositories  
-
-    sudo apt update && sudo apt upgrade -y
-
+```python
+sudo apt update && sudo apt upgrade -y
+```
 ### Installing the necessary utilities
+```python
+sudo apt install curl build-essential git wget jq make gcc tmux nvme-cli -y
+```
 
-    sudo apt install curl build-essential git wget jq make gcc tmux nvme-cli -y
-    
 ### GO 1.19 (one command)
 ```python
 ver="1.19" && \
