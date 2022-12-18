@@ -130,7 +130,7 @@ snap install lz4
 sudo systemctl stop quicksilverd
 cp $HOME/.quicksilverd/data/priv_validator_state.json $HOME/.quicksilverd/priv_validator_state.json.backup
 rm -rf $HOME/.quicksilverd/data
-curl -o - -L http://jkl.snapshot.stavr.tech:1009/jackal/jackal-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.quicksilverd --strip-components 2
+curl -o - -L http://quick.snapshot.stavr.tech:1009/quick/quick-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.quicksilverd --strip-components 2
 mv $HOME/.quicksilverd/priv_validator_state.json.backup $HOME/.quicksilverd/data/priv_validator_state.json
 wget -O $HOME/.quicksilverd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Quicksilver/addrbook.json"
 sudo systemctl restart quicksilverd && journalctl -u quicksilverd -f -o cat
