@@ -91,7 +91,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.quic
 
 ### Download addrbook
 ```python
-wget -O $HOME/.quicksilverd/config/addrbook.json "SOOON"
+wget -O $HOME/.quicksilverd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Quicksilver/addrbook.json"
 ```
 
 ### Create a service file
