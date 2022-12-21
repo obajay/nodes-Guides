@@ -40,18 +40,19 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Binary   01.11.22
+# Binary   21.12.22
 ```bash 
 cd $HOME
 git clone https://github.com/NibiruChain/nibiru
 cd nibiru
-git checkout v0.15.0
+git checkout v0.16.2
 make install
 ```
 
 ## Initialisation
 ```bash
-nibid init STAVRguide --chain-id=nibiru-testnet-1
+nibid init STAVRguide --chain-id=nibiru-testnet-2
+nibid config chain-id nibiru-testnet-2
 ```
 ## Add wallet
 ```bash
@@ -60,12 +61,11 @@ nibid keys add <walletName> --recover
 ```
 # Genesis
 ```bash
-curl -s https://rpc.testnet-1.nibiru.fi/genesis | jq -r .result.genesis > genesis.json
-cp genesis.json $HOME/.nibid/config/genesis.json
+curl -s https://rpc.testnet-2.nibiru.fi/genesis | jq -r .result.genesis > $HOME/.nibid/config/genesis.json
 ```
 
 `sha256sum $HOME/.nibid/config/genesis.json`
-- b58b61beb34f0d9e45ec2f1449f6600acef428b401976dc90edb9d586a412ed2  genesis.json
+- 5cedb9237c6d807a89468268071647649e90b40ac8cd6d1ded8a72323144880d  genesis.json
 
 ### Pruning
 ```bash
@@ -83,14 +83,14 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.nibid/config/config.toml
 
 ### Set up the minimum gas price and Peers/Seeds/Filter peers
-```console
+```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0unibi\"/;" ~/.nibid/config/app.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.nibid/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.nibid/config/config.toml
-peers="37713248f21c37a2f022fbbb7228f02862224190@35.243.130.198:26656,ff59bff2d8b8fb6114191af7063e92a9dd637bd9@35.185.114.96:26656,cb431d789fe4c3f94873b0769cb4fce5143daf97@35.227.113.63:26656"
+peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.nibid/config/config.toml
-seeds=""
+seeds="dabcc13d6274f4dd86fd757c5c4a632f5062f817@seed-2.nibiru-testnet-2.nibiru.fi:26656,a5383b33a6086083a179f6de3c51434c5d81c69d@seed-1.nibiru-testnet-2.nibiru.fi:26656"
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.nibid/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.nibid/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.nibid/config/config.toml
@@ -108,12 +108,12 @@ CONFIG_TOML="$HOME/.nibid/config/config.toml"
 
 
 ## Download addrbook
-```console
+```python
 wget -O $HOME/.nibid/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nibiru/addrbook.json"
 ```
 
 # Create a service file
-```bash
+```python
 sudo tee /etc/systemd/system/nibid.service > /dev/null <<EOF
 [Unit]
 Description=nibiru
@@ -133,7 +133,7 @@ EOF
 
 
 # Start node (one command)
-```console
+```python
 sudo systemctl daemon-reload
 sudo systemctl enable nibid
 sudo systemctl restart nibid && sudo journalctl -u nibid -f -o cat
@@ -145,7 +145,7 @@ nibid tx staking create-validator \
 --amount=1000000unibi \
 --pubkey=$(nibid tendermint show-validator) \
 --moniker=STAVRguide \
---chain-id=nibiru-testnet-1 \
+--chain-id=nibiru-testnet-2 \
 --commission-rate="0.10" \
 --commission-max-rate="0.20" \
 --commission-max-change-rate="0.1" \
@@ -158,7 +158,7 @@ nibid tx staking create-validator \
 ```
 
 ### Delete node (one command)
-```
+```python
 sudo systemctl stop nibid && \
 sudo systemctl disable nibid && \
 rm /etc/systemd/system/nibid.service && \
@@ -170,18 +170,18 @@ rm -rf $(which nibid)
 ```
 #
 ### Sync Info
-```bash
+```python
 nibid status 2>&1 | jq .SyncInfo
 ```
 ### NodeINfo
-```bash
+```python
 nibid status 2>&1 | jq .NodeInfo
 ```
 ### Check node logs
-```bash
+```python
 sudo journalctl -u nibid -f -o cat
 ```
 ### Check Balance
-```bash
+```python
 nibid query bank balances nibi...addressnibi1yjgn7z09ua9vms259j
 ```
