@@ -32,7 +32,7 @@ echo "_|-_|-_|-_|-_|-_|-_|"
 read Validator_Name
 echo "_|-_|-_|-_|-_|-_|-_|"
 echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
-echo export CHAIN_ID="nibiru-testnet-1" >> $HOME/.bash_profile
+echo export CHAIN_ID="nibiru-testnet-2" >> $HOME/.bash_profile
 source ~/.bash_profile
 
 echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
@@ -56,13 +56,12 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/NibiruChain/nibiru
 cd nibiru
-git checkout v0.15.0
+git checkout v0.16.2
 make install
 
 nibid init $Validator_Name --chain-id $CHAIN_ID
 
-curl -s https://rpc.testnet-1.nibiru.fi/genesis | jq -r .result.genesis > genesis.json
-cp genesis.json $HOME/.nibid/config/genesis.json
+curl -s https://rpc.testnet-2.nibiru.fi/genesis | jq -r .result.genesis > $HOME/.nibid/config/genesis.json
 wget -O $HOME/.nibid/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nibiru/addrbook.json"
 
 
@@ -72,9 +71,9 @@ sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0unibi\"/;" ~
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.nibid/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.nibid/config/config.toml
-peers="37713248f21c37a2f022fbbb7228f02862224190@35.243.130.198:26656,ff59bff2d8b8fb6114191af7063e92a9dd637bd9@35.185.114.96:26656,cb431d789fe4c3f94873b0769cb4fce5143daf97@35.227.113.63:26656"
+peers="d5519e378247dfb61dfe90652d1fe3e2b3005a5b@nibiru-testnet.rpc.kjnodes.com:39656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.nibid/config/config.toml
-seeds=""
+seeds="3f472746f46493309650e5a033076689996c8881@nibiru-testnet.rpc.kjnodes.com:39659"
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.nibid/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.nibid/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.nibid/config/config.toml
