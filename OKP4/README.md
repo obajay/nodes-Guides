@@ -43,18 +43,20 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 10.10.22
+# Build 01.12.22
 ```bash
 cd $HOME
 git clone https://github.com/okp4/okp4d.git
 cd okp4d
+git checkout v3.0.0
 make install
 ```
 `okp4d version`
-- version: 2.2.0
+- version: 3.0.0
 
 ```bash
-okp4d init STAVRguide --chain-id okp4-nemeton
+okp4d init STAVRguide --chain-id okp4-nemeton-1
+okp4d config chain-id okp4-nemeton-1
 ```    
 
 ## Create/recover wallet
@@ -65,10 +67,10 @@ okp4d keys add <walletname> --recover
 
 ## Download Genesis
 ```bash
-wget -qO $HOME/.okp4d/config/genesis.json "https://raw.githubusercontent.com/okp4/networks/main/chains/nemeton/genesis.json"
+curl -Ls https://snapshots.kjnodes.com/okp4-testnet/genesis.json > $HOME/.okp4d/config/genesis.json
 ```
 `sha256sum $HOME/.okp4d/config/genesis.json`
-+ c2e8fff161850e419e1cb1bef3648c0ed0db961b7713151f10f2509e3fc2ff40
++ 2ec25f81cc2abecbc0da3de45b052ea3314d0d658b1b7f4c7b6a48d09254c742
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```bash
@@ -76,9 +78,9 @@ sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0uknow\"/;" ~
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.okp4d/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.okp4d/config/config.toml
-peers="f595a1386d5ca2e0d2cd81d3c6372c3bf84bbd16@65.109.31.114:2280,a49302f8999e5a953ebae431c4dde93479e17155@162.19.71.91:26656,dc14197ed45e84ca3afb5428eb04ea3097894d69@88.99.143.105:26656,79d179ea2e1fbdcc0c59a95ab7f1a0c48438a693@65.108.106.131:26706,501ad80236a5ac0d37aafa934c6ec69554ce7205@89.149.218.20:26656,5fbddca54548bf125ee96bb388610fe1206f087f@51.159.66.123:26656,769f74d3bb149216d0ab771d7767bd39585bc027@185.196.21.99:26656,024a57c0bb6d868186b6f627773bf427ec441ab5@65.108.2.41:36656,fff0a8c202befd9459ff93783a0e7756da305fe3@38.242.150.63:16656,2bfd405e8f0f176428e2127f98b5ec53164ae1f0@142.132.149.118:26656,bf5802cfd8688e84ac9a8358a090e99b5b769047@135.181.176.109:53656,dc9a10f2589dd9cb37918ba561e6280a3ba81b76@54.244.24.231:26656,085cf43f463fe477e6198da0108b0ab08c70c8ab@65.108.75.237:6040,803422dc38606dd62017d433e4cbbd65edd6089d@51.15.143.254:26656,b8330b2cb0b6d6d8751341753386afce9472bac7@89.163.208.12:26656"
+peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.okp4d/config/config.toml
-seeds=""
+seeds="3f472746f46493309650e5a033076689996c8881@okp4-testnet.rpc.kjnodes.com:36659"
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.okp4d/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.okp4d/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.okp4d/config/config.toml
@@ -103,30 +105,9 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.okp4d/config/config.t
 
 ## Download addrbook
 ```bash
-wget -O $HOME/.okp4d/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/OKP4/addrbook.json"
+curl -Ls https://snapshots.kjnodes.com/okp4-testnet/addrbook.json > $HOME/.okp4d/config/addrbook.json
 ```
 
-# StateSync
-```bash
-SNAP_RPC=https://okp4-testnet-rpc.polkachu.com:443
-peers="https://okp4-testnet-rpc.polkachu.com:443"
-sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.okp4d/config/config.toml
-LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
-TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
-
-echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
-s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.okp4d/config/config.toml
-
-okp4d tendermint unsafe-reset-all --home /root/.okp4d --keep-addr-book
-systemctl restart okp4d && journalctl -u okp4d -f -o cat
-
-```
 
 # Create a service file
 ```bash
@@ -165,7 +146,7 @@ okp4d tx staking create-validator \
   --min-self-delegation "1" \
   --pubkey  $(okp4d tendermint show-validator) \
   --moniker STAVRguide \
-  --chain-id okp4-nemeton \
+  --chain-id okp4-nemeton-1 \
   --identity="" \
   --details="" \
   --website="" -y
