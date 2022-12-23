@@ -57,20 +57,19 @@ iavl-disable-fastnode = false
 ```
 
 
-# Build 22.12.22
+# Build 23.12.22
 ```python
-cd $HOME
-git clone https://github.com/BitCannaGlobal/bcna.git
-cd bcna
-git checkout v2.0.1-rc3
-make build && make install 
+cd ~
+wget https://raw.githubusercontent.com/BitCannaGlobal/cosmos-statesync_client/main/statesync_DEVNET-1_client_linux_new.sh
+bash statesync_DEVNET-1_client_linux_new.sh
+sudo mv bcnad $HOME/go/bin/
 ```
 
 `bcnad version`
-- 2.0.1-rc3
+- 1.5.3
 
 ```bash
-bcnad init STAVRguide --chain-id bitcanna-dev-5
+bcnad config chain-id bitacanna-dev-1
 ```    
 
 ## Create/recover wallet
@@ -82,10 +81,10 @@ bcnad keys add <walletname> --recover
 ## Download Genesis
 
 ```bash
-wget -O $HOME/.bcna/config/genesis.json "https://raw.githubusercontent.com/BitCannaGlobal/testnet-bcna-cosmos/main/instructions/bitcanna-dev-5/genesis.json"
+wget -O $HOME/.bcna/config/genesis.json ""
 ```
 `sha256sum $HOME/.bcna/config/genesis.json`
-+ 2c4aeec0d2b416478de0d6bd5f32954f18235ae1991e9f1b685946963e3ca425
++ 9cb8333eedfb3ea0cb5674c381d2525f5146e29289253bcabad6384628a33f0b
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
@@ -93,7 +92,7 @@ sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0stake\"/;" ~/.
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.bcna/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.bcna/config/config.toml
-peers="3912bbbe1beeab27c5050558d625ac6334b1e5e8@212.227.151.143:26656"
+peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.bcna/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.bcna/config/config.toml
@@ -120,27 +119,9 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.bcna/config/config.to
 
 ## Download addrbook
 ```bash
-wget -O $HOME/.bcna/config/addrbook.json "https://github.com/obajay/nodes-Guides/edit/main/Bitcanna/Bitcanna_DEV/addrbook.json"
+wget -O $HOME/.bcna/config/addrbook.json "SOOON"
 ```
 
-
-# StateSync
-```python
-RPC="https://test-rpc-bitcanna.mintthemoon.xyz:443"
-LATEST_HEIGHT=$(curl -s $RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
-TRUST_HASH=$(curl -s "$RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
-
-echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$RPC,$RPC\"| ; \
-s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.bcna/config/config.toml
-bcnad tendermint unsafe-reset-all --home /root/.bcna --keep-addr-book
-sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
-```
 
 # Create a service file
 ```bash
@@ -179,7 +160,7 @@ bcnad tx staking create-validator \
 --commission-max-change-rate="0.1" \
 --min-self-delegation="1" \
 --from=<walletName> \
---chain-id=bitcanna-dev-5 \
+--chain-id=bitcanna-dev-1 \
 --gas=auto -y
 ```
 
