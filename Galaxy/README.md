@@ -1,3 +1,5 @@
+<h1 align="center"> 🔴 MAINNET STOPPED 25.12.22🔴</h1>
+
 # Guide Galaxy mainnet
 ![GAL](https://user-images.githubusercontent.com/44331529/182396081-d701cfac-63c1-489f-80e1-c2df72c73863.png)
 
