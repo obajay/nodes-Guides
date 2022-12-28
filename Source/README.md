@@ -123,6 +123,7 @@ EOF
 # SnapShot (~0.1 GB) updated every 6 hours
 ```python
 cd $HOME
+snap install lz4
 sudo systemctl stop sourced
 cp $HOME/.source/data/priv_validator_state.json $HOME/.source/priv_validator_state.json.backup
 rm -rf $HOME/.source/data
