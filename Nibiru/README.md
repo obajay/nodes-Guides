@@ -40,12 +40,12 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Binary   21.12.22
+# Binary   28.12.22
 ```bash 
 cd $HOME
 git clone https://github.com/NibiruChain/nibiru
 cd nibiru
-git checkout v0.16.2
+git checkout v0.16.3
 make install
 ```
 
