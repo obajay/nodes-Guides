@@ -129,6 +129,7 @@ break
 ;;
 "Synchronize node via snapshot")
 cd $HOME
+apt install lz4
 sudo systemctl stop sourced
 cp $HOME/.source/data/priv_validator_state.json $HOME/.source/priv_validator_state.json.backup
 rm -rf $HOME/.source/data
