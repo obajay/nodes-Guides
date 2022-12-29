@@ -111,9 +111,9 @@ wget -O $HOME/.nolus/config/addrbook.json "https://raw.githubusercontent.com/oba
 ```
 ## StateSync
 ```python
-SNAP_RPC=sge.rpc.t.stavr.tech:1157
-peers="9adb2e3097febc3fc6edeb35291d6c49edb5c682@sge.peers.stavr.tech:1156"
-sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.sge/config/config.toml
+SNAP_RPC=http://nolus.rpc.t.stavr.tech:1177
+peers="5bf83be8dfe52fe2c204300f1e9b1449487ce5af@nolus.peer.stavr.tech:1176"
+sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.nolus/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 300)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
@@ -124,21 +124,21 @@ sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
 s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.sge/config/config.toml
-sged tendermint unsafe-reset-all --home /root/.sge --keep-addr-book
-systemctl restart sged && journalctl -u sged -f -o cat
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.nolus/config/config.toml
+nolusd tendermint unsafe-reset-all --home /root/.nolus --keep-addr-book
+systemctl restart nolusd && journalctl -u sged -f -o cat
 ```
-## SnapShot (~0.2 GB) updated every 5 hours
+## SnapShot (~0.1 GB) updated every 5 hours
 ```python
 cd $HOME
-snap install lz4
-sudo systemctl stop sged
-cp $HOME/.sge/data/priv_validator_state.json $HOME/.sge/priv_validator_state.json.backup
-rm -rf $HOME/.sge/data
-curl -o - -L http://sge.snapshot.stavr.tech:1003/sge/sge-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.sge --strip-components 2
-mv $HOME/.sge/priv_validator_state.json.backup $HOME/.sge/data/priv_validator_state.json
-wget -O $HOME/.sge/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/SGE/addrbook.json"
-sudo systemctl restart sged && journalctl -u sged -f -o cat
+apt install lz4
+sudo systemctl stop nolusd
+cp $HOME/.nolus/data/priv_validator_state.json $HOME/.nolus/priv_validator_state.json.backup
+rm -rf $HOME/.nolus/data
+curl -o - -L http://nolus.snapshot.stavr.tech:1010/nolus/nolus-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.nolus --strip-components 2
+mv $HOME/.nolus/priv_validator_state.json.backup $HOME/.nolus/data/priv_validator_state.json
+wget -O $HOME/.nolus/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nolus/addrbook.json"
+sudo systemctl restart nolusd && journalctl -u nolusd -f -o cat
 ```
 
 # Create a service file
