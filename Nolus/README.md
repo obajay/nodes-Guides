@@ -19,7 +19,7 @@
 
 # 1) Auto_install script
 ```python
-SOOOOOOOOON
+wget -O nol https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nolus/nol && chmod +x nol && ./nol
 ```
 
 # 2) Manual installation
