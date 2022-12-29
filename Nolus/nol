@@ -1,0 +1,175 @@
+#!/bin/bash
+
+while true
+do
+
+# Logo
+
+curl -s https://raw.githubusercontent.com/obajay/nodes-Guides/main/logo_1 | bash
+
+# Menu
+
+PS3='Select an action: '
+options=(
+"Install Node"
+"Create wallet"
+"Check node logs"
+"Synchronization via StateSync"
+"Synchronization via SnapShot"
+"UPDATE"
+"Delete Node"
+"Exit")
+select opt in "${options[@]}"
+do
+case $opt in
+
+"Install Node")
+echo "*********************"
+echo -e "\e[1m\e[35m		Lets's begin\e[0m"
+echo "*********************"
+echo -e "\e[1m\e[32m	Enter your Validator_Name:\e[0m"
+echo "_|-_|-_|-_|-_|-_|-_|"
+read Validator_Name
+echo "_|-_|-_|-_|-_|-_|-_|"
+echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
+echo export CHAIN_ID="nolus-rila" >> $HOME/.bash_profile
+source ~/.bash_profile
+
+echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
+#UPDATE APT
+sudo apt update && sudo apt upgrade -y
+sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
+
+echo -e "        \e[1m\e[32m2. Installing GO--> \e[0m" && sleep 1
+#INSTALL GO
+ver="1.19" && \
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
+sudo rm -rf /usr/local/go && \
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
+rm "go$ver.linux-amd64.tar.gz" && \
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
+source $HOME/.bash_profile && \
+go version
+
+echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
+#INSTALL
+cd $HOME
+git clone https://github.com/Nolus-Protocol/nolus-core
+cd nolus-core
+git checkout v0.1.39
+make install
+
+nolusd init $Validator_Name --chain-id $CHAIN_ID
+
+wget -O $HOME/.nolus/config/genesis.json "https://raw.githubusercontent.com/Nolus-Protocol/nolus-networks/main/testnet/nolus-rila/genesis.json"
+wget -O $HOME/.nolus/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nolus/addrbook.json"
+
+
+echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
+
+sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0unls\"/" $HOME/.nolus/config/app.toml
+sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.nolus/config/config.toml
+external_address=$(wget -qO- eth0.me) 
+sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.nolus/config/config.toml
+peers="56cee116ac477689df3b4d86cea5e49cfb450dda@54.246.232.38:26656,56f14005119e17ffb4ef3091886e6f7efd375bfd@34.241.107.0:26656,7f26067679b4323496319fda007a279b52387d77@63.35.222.83:26656,7f4a1876560d807bb049b2e0d0aa4c60cc83aa0a@63.32.88.49:26656,3889ba7efc588b6ec6bdef55a7295f3dd559ebd7@3.249.209.26:26656,de7b54f988a5d086656dcb588f079eb7367f6033@34.244.137.169:26656"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.nolus/config/config.toml
+seeds=""
+sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.nolus/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.nolus/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.nolus/config/config.toml
+
+
+
+
+# pruning and indexer
+pruning="custom" && \
+pruning_keep_recent="100" && \
+pruning_keep_every="0" && \
+pruning_interval="10" && \
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" ~/.nolus/config/app.toml && \
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" ~/.nolus/config/app.toml && \
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" ~/.nolus/config/app.toml && \
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.nolus/config/app.toml
+indexer="null" && \
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.nolus/config/config.toml
+
+
+tee /etc/systemd/system/nolusd.service > /dev/null <<EOF
+[Unit]
+Description=nolusd
+After=network-online.target
+
+[Service]
+User=$USER
+ExecStart=$(which nolusd) start
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+
+# start service
+sudo systemctl daemon-reload
+sudo systemctl enable nolusd
+sudo systemctl restart nolusd
+
+echo '=============== SETUP FINISHED ==================='
+echo -e 'Congratulations:        \e[1m\e[32mSUCCESSFUL NODE INSTALLATION\e[0m'
+echo -e 'To check logs:        \e[1m\e[33mjournalctl -u nolusd -f -o cat\e[0m'
+echo -e "To check sync status: \e[1m\e[35mcurl -s localhost:26657/status\e[0m"
+
+break
+;;
+"Create wallet")
+echo "_|-_|-_|-_|-_|-_|-_|"
+echo -e "      \e[1m\e[35m Your WalletName:\e[0m"
+echo "_|-_|-_|-_|-_|-_|-_|"
+read Wallet
+echo export Wallet=${Wallet} >> $HOME/.bash_profile
+source ~/.bash_profile
+nolusd keys add $Wallet
+echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE!!!!!!!!!SAVE!!!!!!!!!!!!!!!!\e[0m'"
+
+break
+;;
+"Synchronization via StateSync")
+echo -e "      \e[1m\e[32m SOOOON\e[0m"
+
+break
+;;
+"UPDATE")
+echo -e "      \e[1m\e[32m SOOOON\e[0m"
+nolusd version
+
+break
+;;
+"Check node logs")
+sudo journalctl -u nolusd -f -o cat
+
+break
+;;
+"Synchronization via SnapShot")
+echo -e "      \e[1m\e[32m SOOOON\e[0m"
+
+break
+;;
+"Delete Node")
+sudo systemctl stop nolusd && \
+sudo systemctl disable nolusd && \
+rm /etc/systemd/system/nolusd.service && \
+sudo systemctl daemon-reload && \
+cd $HOME && \
+rm -rf nolus-core && \
+rm -rf .nolus && \
+rm -rf $(which nolusd)
+
+break
+;;
+"Exit")
+exit
+esac
+done
+done
