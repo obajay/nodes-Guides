@@ -27,18 +27,29 @@
     source $HOME/.bash_profile && \
     go version
 
-# Binary   12.12.22
+# Binary   31.12.22
 ```python 
 cd $HOME
 git clone https://github.com/Pylons-tech/pylons
 cd pylons
-git checkout v1.1.1
+git checkout v1.1.2
 make build && make install
 ```
 
+*******🟢UPDATE🟢******* 31.12.22
+
+```python
+cd $HOME/pylons
+git fetch --all
+git checkout v1.1.2
+make install
+pylonsd version --long | head
+sudo systemctl restart pylonsd && journalctl -u pylonsd -f -o cat
+```
+
 `pylonsd version version --long`
-+ version: 1.1.1
-+ commit: 2bc3b684587d4acc9e2384cbbea2bc54eb699dc9
++ version: 1.1.2
++ commit: 836c261149a88e4b874ac676dfdd5886aa2c6f21
 
 ## Initialisation
 ```python
