@@ -40,18 +40,18 @@ go version
 cd $HOME
 git clone https://github.com/ingenuity-build/quicksilver && cd quicksilver
 git fetch origin --tags
-git checkout v1.1.0
+git checkout v1.2.0
 make install
 ```
 
 `quicksilverd version`
-+ version: v1.1.0
++ version: v1.2.0
 
 
 ### Initialize the node
 ```java
-quicksilverd config chain-id quicksilver-1
-quicksilverd init STAVRguide --chain-id quicksilver-1
+quicksilverd config chain-id quicksilver-2
+quicksilverd init STAVRguide --chain-id quicksilver-2
 ```
 
 =
@@ -63,10 +63,10 @@ quicksilverd keys add <name_wallet> --recover
 ```
 ### Download Genesis
 ```python
-wget -O $HOME/.quicksilverd/config/genesis.json "https://raw.githubusercontent.com/ingenuity-build/mainnet/main/genesis.json"
+wget -O $HOME/.quicksilverd/config/genesis.json https://raw.githubusercontent.com/ingenuity-build/mainnet/main/genesis.json
 ```
 `sha256sum ~/.quicksilverd/config/genesis.json`
- + d1dc05278aa008b3ad318a32f65706b87c845eaf3b99325d419aabdca7625f6b
+ + 4398a681c600c9ed9ef736356c0bdede618d7d2f709ed74172e5e5e48c9f8d6c
 
 ### Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
@@ -166,7 +166,7 @@ sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 ### Create a validator
 ```python
 quicksilverd tx staking create-validator \
---chain-id quicksilver-1 \
+--chain-id quicksilver-2 \
 --commission-rate=0.1 \
 --commission-max-rate=0.2 \
 --commission-max-change-rate=0.1 \
