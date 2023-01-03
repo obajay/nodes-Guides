@@ -35,7 +35,7 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-### Node installation 02.01.23
+### Node installation 03.01.23
 ```python
 cd $HOME
 git clone https://github.com/ingenuity-build/quicksilver && cd quicksilver
