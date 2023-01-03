@@ -145,6 +145,7 @@ s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.okp4d/config/config.toml
 okp4d tendermint unsafe-reset-all --home /root/.okp4d --keep-addr-book
+sed -i -e "s/^snapshot-interval *=.*/snapshot-interval = \"1500\"/" $HOME/.okp4d/config/app.toml
 systemctl restart okp4d && journalctl -u okp4d -f -o cat
 
 
