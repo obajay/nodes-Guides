@@ -115,7 +115,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.lava/config/config.to
 ```python
 wget -O $HOME/.lava/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Lava_Network/addrbook.json"
 ```
-## StateSync SOOOOOOOOOOON
+## StateSync
 ```python
 SNAP_RPC=https://t-lava.rpc.utsa.tech
 peers="433be6210ad6350bebebad68ec50d3e0d90cb305@217.13.223.167:60856"
