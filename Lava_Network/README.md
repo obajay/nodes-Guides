@@ -7,7 +7,7 @@
 [GitHub](https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T.git)
 =
 [EXPLORER 1](https://explorer.stavr.tech/lava-testnet/staking) \
-[EXPLORER 2]([https://exp.utsa.tech/nolus-test](https://lava.explorers.guru/validators))
+[EXPLORER 2](https://lava.explorers.guru/validators)
 =
 
 - **Minimum hardware requirements**:
@@ -110,7 +110,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.lava/config/config.to
 
 ## Download addrbook
 ```python
-wget -O $HOME/.lava/config/addrbook.json "SOOON"
+wget -O $HOME/.lava/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Lava_Network/addrbook.json"
 ```
 ## StateSync SOOOOOOOOOOON
 ```python
