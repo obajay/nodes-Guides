@@ -51,11 +51,8 @@ git clone https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T.git
 wget https://lava-binary-upgrades.s3.amazonaws.com/testnet/v0.3.0/lavad
 chmod +x lavad
 mv lavad $HOME/go/bin/
-
-chmod +x lavad
-mv lavad $HOME/go/bin/
-
-*******🟢UPDATE🟢******* 004.01.22
+```
+*******🟢UPDATE🟢******* 04.01.23
 
 ```python
 cd $HOME
@@ -65,7 +62,6 @@ mv lavad $HOME/go/bin/
 sudo systemctl restart lavad && sudo journalctl -u lavad -f -o cat
 ```
 
-```
 `lavad version --long | head`
 - version: 0.4.0-rc2-e2c69db
 - commit: 
