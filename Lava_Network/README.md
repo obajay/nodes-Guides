@@ -117,7 +117,7 @@ wget -O $HOME/.lava/config/addrbook.json "https://raw.githubusercontent.com/obaj
 ```
 ## StateSync
 ```python
-SNAP_RPC=https://t-lava.rpc.utsa.tech
+SNAP_RPC=https://t-lava.rpc.utsa.tech:443
 peers="433be6210ad6350bebebad68ec50d3e0d90cb305@217.13.223.167:60856"
 sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.lava/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
