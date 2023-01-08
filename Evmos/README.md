@@ -25,16 +25,16 @@
     source ~/.bash_profile && \
     go version
     
-## Build    (08.10.22)
+## Build    (03.01.23)
 ```bash
 git clone https://github.com/evmos/evmos
 cd evmos
-git checkout v9.1.0
+git checkout v10.0.1
 make install
 ```
 
 `evmosd version`
-+ v9.1.0
++ v10.0.1
 
 ```bash
 evmosd init STAVRguide --chain-id evmos_9001-2
