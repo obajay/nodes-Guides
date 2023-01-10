@@ -156,8 +156,13 @@ systemctl restart lavad && journalctl -u lavad -f -o cat
 break
 ;;
 "UPDATE")
-echo -e "      \e[1m\e[32m SOOOON\e[0m"
-lavad version
+cd $HOME
+git clone https://github.com/lavanet/lava
+cd lava
+git fetch --all
+git checkout v0.4.3
+make install
+sudo systemctl restart lavad && sudo journalctl -u lavad -f -o cat
 
 break
 ;;
