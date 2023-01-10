@@ -67,7 +67,7 @@ sudo systemctl restart lavad && sudo journalctl -u lavad -f -o cat
 
 `lavad version --long | head`
 - version: 0.4.3
-- commit: 
+- commit: 5673a81fc2eb18f64d1842d0c076771b55a7487d
 
 ```python
 lavad init STAVRguide --chain-id lava-testnet-1
