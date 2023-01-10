@@ -52,18 +52,21 @@ wget https://lava-binary-upgrades.s3.amazonaws.com/testnet/v0.3.0/lavad
 chmod +x lavad
 mv lavad $HOME/go/bin/
 ```
-*******🟢UPDATE🟢******* 04.01.23
+*******🟢UPDATE🟢******* 11.01.23
 
 ```python
 cd $HOME
-wget https://lava-binary-upgrades.s3.amazonaws.com/testnet/v0.4.0/lavad
-chmod +x lavad
-mv lavad $HOME/go/bin/
+git clone https://github.com/lavanet/lava
+cd lava
+git fetch --all
+git checkout v0.4.3
+make install
+lavad version --long | head
 sudo systemctl restart lavad && sudo journalctl -u lavad -f -o cat
 ```
 
 `lavad version --long | head`
-- version: 0.4.0-rc2-e2c69db
+- version: 0.4.3
 - commit: 
 
 ```python
