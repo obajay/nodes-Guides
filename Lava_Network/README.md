@@ -44,13 +44,14 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 04.01.23
+# Build 1.01.23
 ```python
 cd $HOME
-git clone https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T.git
-wget https://lava-binary-upgrades.s3.amazonaws.com/testnet/v0.3.0/lavad
-chmod +x lavad
-mv lavad $HOME/go/bin/
+git clone https://github.com/lavanet/lava
+cd lava
+git fetch --all
+git checkout v0.4.3
+make install
 ```
 *******🟢UPDATE🟢******* 11.01.23
 
