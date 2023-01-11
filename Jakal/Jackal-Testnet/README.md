@@ -49,20 +49,20 @@ cd canine-chain
 git checkout v1.2.0-alpha.7
 make install
 ```
-*******🟢UPDATE🟢******* 07.12.22
+*******🟢UPDATE🟢******* 12.01.23
 ```python
 cd $HOME/canine-chain
 git fetch --all
-git checkout v1.2.0-alpha.7
+git checkout v1.2.0-alpha.11
 make install
 canined version
-#1.2.0-alpha.7
+#1.2.0-alpha.11
 sudo systemctl restart canined && sudo journalctl -u canined -f -o cat
 ```
 
 `canined version --long | head`
-- version: 1.2.0-alpha.7
-- commit: 
+- version: 1.2.0-alpha.11
+- commit: e8d539251f541944111cd4b040364f1fbd33dc87
 
 ```python
 canined init STAVRguide --chain-id lupulella-2
