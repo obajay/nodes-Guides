@@ -32,7 +32,7 @@ go version
 cd $HOME
 git clone https://github.com/ingenuity-build/quicksilver
 cd quicksilver
-git checkout v1.3.0
+git checkout v1.1.1-innuendo 
 make install
 ```
 
@@ -42,9 +42,8 @@ make install
 cd $HOME
 git clone https://github.com/ingenuity-build/quicksilver
 cd quicksilver
-git checkout v1.3.0
+git checkout v1.1.1-innuendo 
 make install
-quicksilverd version
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 ```
 
