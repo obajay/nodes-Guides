@@ -106,7 +106,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.mars/config/config.to
 
 ## Download addrbook
 ```python
-wget -O $HOME/.mars/config/addrbook.json "SOOON"
+wget -O $HOME/.mars/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Mars/addrbook.json"
 ```
 ## StateSync
 ```python
