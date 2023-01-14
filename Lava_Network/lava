@@ -62,7 +62,7 @@ make install
 
 lavad init $Validator_Name --chain-id $CHAIN_ID
 
-cp $HOME/GHFkqmTzpdNLDd6T/testnet-1/genesis_json/genesis.json $HOME/.lava/config
+wget -O ~/.lava/config/genesis.json https://raw.githubusercontent.com/obajay/nodes-Guides/main/Lava_Network/genesis.json
 wget -O $HOME/.lava/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Lava_Network/addrbook.json"
 
 
