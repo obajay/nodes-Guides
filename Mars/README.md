@@ -110,7 +110,7 @@ wget -O $HOME/.mars/config/addrbook.json "https://raw.githubusercontent.com/obaj
 ```
 ## StateSync
 ```python
-SNAP_RPC=http://mars.rpc.t.stavr.tech:190/
+SNAP_RPC=http://mars.rpc.t.stavr.tech:190
 peers="b42f07453d051f65978c22b8047feb9d2e634aff@mars.peer.stavr.tech:181"
 sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.mars/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
