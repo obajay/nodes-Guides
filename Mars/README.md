@@ -1,6 +1,7 @@
 # Mars Testnet guide
 
-![sge](https://user-images.githubusercontent.com/44331529/203624604-ec312821-11cd-404e-8647-bbbcfddcaf8a.png)
+![mars](https://user-images.githubusercontent.com/44331529/212458394-28b38996-0371-4841-aa51-1d2a828453ee.png)
+
 
 [WebSite](https://sgenetwork.io/)
 =
