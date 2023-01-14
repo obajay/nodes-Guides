@@ -19,7 +19,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O marss https://raw.githubusercontent.com/obajay/nodes-Guides/main/Mars/marss && chmod +x marss && ./marss
 ```
 
 # 2) Manual installation
