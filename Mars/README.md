@@ -110,9 +110,9 @@ wget -O $HOME/.mars/config/addrbook.json "https://raw.githubusercontent.com/obaj
 ```
 ## StateSync
 ```python
-SNAP_RPC=sge.rpc.t.stavr.tech:1157
-peers="9adb2e3097febc3fc6edeb35291d6c49edb5c682@sge.peers.stavr.tech:1156"
-sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.sge/config/config.toml
+SNAP_RPC=http://mars.rpc.t.stavr.tech:190/
+peers="b42f07453d051f65978c22b8047feb9d2e634aff@mars.peer.stavr.tech:181"
+sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.mars/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 300)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
@@ -123,21 +123,22 @@ sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
 s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.sge/config/config.toml
-sged tendermint unsafe-reset-all --home /root/.sge --keep-addr-book
-systemctl restart sged && journalctl -u sged -f -o cat
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.mars/config/config.toml
+marsd tendermint unsafe-reset-all --home /root/.mars --keep-addr-book
+sed -i -e "s/^snapshot-interval *=.*/snapshot-interval = \"1500\"/" $HOME/.mars/config/app.toml
+systemctl restart marsd && journalctl -u marsd -f -o cat
 ```
 ## SnapShot (~0.2 GB) updated every 5 hours
 ```python
 cd $HOME
-snap install lz4
-sudo systemctl stop sged
-cp $HOME/.sge/data/priv_validator_state.json $HOME/.sge/priv_validator_state.json.backup
-rm -rf $HOME/.sge/data
-curl -o - -L http://sge.snapshot.stavr.tech:1003/sge/sge-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.sge --strip-components 2
-mv $HOME/.sge/priv_validator_state.json.backup $HOME/.sge/data/priv_validator_state.json
-wget -O $HOME/.sge/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/SGE/addrbook.json"
-sudo systemctl restart sged && journalctl -u sged -f -o cat
+apt install lz4
+sudo systemctl stop marsd
+cp $HOME/.mars/data/priv_validator_state.json $HOME/.mars/priv_validator_state.json.backup
+rm -rf $HOME/.mars/data
+curl -o - -L http://mars.snapshot.stavr.tech:1012/mars/mars-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.mars --strip-components 2
+mv $HOME/.mars/priv_validator_state.json.backup $HOME/.mars/data/priv_validator_state.json
+wget -O $HOME/.mars/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Mars/addrbook.json"
+sudo systemctl restart marsd && journalctl -u marsd -f -o cat
 ```
 
 # Create a service file
