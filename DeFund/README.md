@@ -6,7 +6,8 @@
 [WEBSITE](https://defund.app/) \
 [GitHub](https://github.com/defund-labs/testnet)
 =
-[EXPLORER](https://defund.explorers.guru/validators)
+[EXPLORER 1](https://explorer.stavr.tech/defund-testnet/staking) \
+[EXPLORER 2](https://defund.explorers.guru/validators)
 =
 
 - **Minimum hardware requirements**:
