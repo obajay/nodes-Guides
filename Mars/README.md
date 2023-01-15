@@ -200,7 +200,7 @@ rm -rf $(which marsd)
 ```python
 marsd status 2>&1 | jq .SyncInfo
 ```
-### NodeINfo
+### Node Info
 ```python
 marsd status 2>&1 | jq .NodeInfo
 ```
