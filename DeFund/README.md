@@ -12,9 +12,9 @@
 
 - **Minimum hardware requirements**:
 
-| Node Type |CPU | RAM  | Storage  | 
-|-----------|----|------|----------|
-| Testnet   |   4|  8GB | 250GB    |
+| Node Type | CPU | RAM  | Storage  | 
+|-----------|-----|------|----------|
+| Testnet   |  4  |  8GB |  250GB   |
 
 
 # 1) Auto_install script
