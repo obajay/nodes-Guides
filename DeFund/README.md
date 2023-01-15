@@ -165,7 +165,7 @@ defundd tx staking create-validator \
   --min-self-delegation "1" \
   --pubkey  $(defundd tendermint show-validator) \
   --moniker STAVRguide \
-  --chain-id defund-private-2 \
+  --chain-id defund-private-4 \
   --identity="" \
   --details="" \
   --website="" -y
