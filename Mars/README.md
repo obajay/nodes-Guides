@@ -136,6 +136,7 @@ sudo systemctl stop marsd
 cp $HOME/.mars/data/priv_validator_state.json $HOME/.mars/priv_validator_state.json.backup
 rm -rf $HOME/.mars/data
 curl -o - -L http://mars.snapshot.stavr.tech:1012/mars/mars-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.mars --strip-components 2
+curl -o - -L http://mars.wasm.stavr.tech:1014/wasm-mars.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.mars/data --strip-components 3
 mv $HOME/.mars/priv_validator_state.json.backup $HOME/.mars/data/priv_validator_state.json
 wget -O $HOME/.mars/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Mars/addrbook.json"
 sudo systemctl restart marsd && journalctl -u marsd -f -o cat
