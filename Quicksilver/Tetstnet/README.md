@@ -35,6 +35,10 @@ cd quicksilver
 git checkout v1.3.0
 make install
 ```
+*******🟢INFO🟢******* 17.01.23
+
+`app.toml`
+halt-height 608612 
 
 *******🟢UPDATE🟢******* 12.01.23
 
