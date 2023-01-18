@@ -27,29 +27,29 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-### Node installation 17.01.23
+### Node installation 18.01.23
 ```python
 cd $HOME
 git clone https://github.com/ingenuity-build/quicksilver
 cd quicksilver
-git checkout v1.3.0
+git checkout v1.3.1
 make install
 ```
 
-*******🟢UPDATE🟢******* 17.01.23
+*******🟢UPDATE🟢******* 18.01.23
 
 ```python
 cd $HOME
 git clone https://github.com/ingenuity-build/quicksilver
 cd quicksilver
-git checkout v1.3.0
+git checkout v1.3.1
 make install
 quicksilverd version
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 ```
 
 `quicksilverd version`
-+ version: 1.3.0
++ version: 1.3.1
 
 
 ### Initialize the node
