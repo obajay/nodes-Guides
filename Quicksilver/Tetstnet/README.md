@@ -27,7 +27,7 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-### Node installation 12.01.23
+### Node installation 17.01.23
 ```python
 cd $HOME
 git clone https://github.com/ingenuity-build/quicksilver
@@ -35,12 +35,8 @@ cd quicksilver
 git checkout v1.3.0
 make install
 ```
-*******🟢INFO🟢******* 17.01.23
 
-`app.toml`
-halt-height 608612 
-
-*******🟢UPDATE🟢******* 12.01.23
+*******🟢UPDATE🟢******* 17.01.23
 
 ```python
 cd $HOME
@@ -58,8 +54,8 @@ sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 
 ### Initialize the node
 ```java
-quicksilverd config chain-id innuendo-4
-quicksilverd init STAVRguide --chain-id innuendo-4
+quicksilverd config chain-id innuendo-5
+quicksilverd init STAVRguide --chain-id innuendo-5
 ```
 [SNAPSHOT by Kjnodes](https://services.kjnodes.com/home/testnet/quicksilver/snapshot)
 =
@@ -70,10 +66,10 @@ quicksilverd init STAVRguide --chain-id innuendo-4
 
 ### Download Genesis
 ```python
-wget -O $HOME/.quicksilverd/config/genesis.json "https://raw.githubusercontent.com/ingenuity-build/testnets/main/innuendo/genesis.json"
+wget -O $HOME/.quicksilverd/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Quicksilver/Tetstnet/genesis.json"
 ```
 `sha256sum ~/.quicksilverd/config/genesis.json`
- + 80c7d19750b6c29b8fef5de7263d6347f55681c7804300a8c207bbde0af3e6cd
+ + fd19758d9b0b1c71e45599e52530c92442899fc4a4df650626e0659518833b65
 
 ### Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
@@ -81,9 +77,9 @@ sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0001uqck\"/;"
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.quicksilverd/config/config.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.quicksilverd/config/config.toml
-peers="b9b8bb23e61d53ff3b293485d04ea567ebcd7933@65.108.65.94:26656,a94cf3e93cec8eef6d67c2972e4af5eae1a118b2@65.108.2.27:26656,926ce3f8ce4cda6f1a5ee97a937a44f59ff28fbf@65.108.13.176:26656"
+peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.quicksilverd/config/config.toml
-seeds=""
+seeds="3f472746f46493309650e5a033076689996c8881@quicksilver-testnet.rpc.kjnodes.com:11659"
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.quicksilverd/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.quicksilverd/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.quicksilverd/config/config.toml
@@ -91,19 +87,21 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.quic
 
 
 ### Setting up pruning with one command (optional)
-    pruning="custom" && \
-    pruning_keep_recent="100" && \
-    pruning_keep_every="0" && \
-    pruning_interval="50" && \
-    sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.quicksilverd/config/app.toml && \
-    sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.quicksilverd/config/app.toml && \
-    sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.quicksilverd/config/app.toml && \
-    sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.quicksilverd/config/app.toml
-
+```python
+pruning="custom" && \
+pruning_keep_recent="100" && \
+pruning_keep_every="0" && \
+pruning_interval="50" && \
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.quicksilverd/config/app.toml && \
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.quicksilverd/config/app.toml && \
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.quicksilverd/config/app.toml && \
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.quicksilverd/config/app.toml
+```
 ### Disable indexing (optional)
-    indexer="null" && \
-    sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.quicksilverd/config/config.toml
-
+```python
+indexer="null" && \
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.quicksilverd/config/config.toml
+```
 
 ### Download addrbook
 ```python
@@ -139,7 +137,7 @@ sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 ### Create a validator
 ```python
 quicksilverd tx staking create-validator \
---chain-id innuendo-4 \
+--chain-id innuendo-5 \
 --commission-rate=0.1 \
 --commission-max-rate=0.2 \
 --commission-max-change-rate=0.1 \
