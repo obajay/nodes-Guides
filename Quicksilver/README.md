@@ -40,7 +40,7 @@ go version
 cd $HOME
 git clone https://github.com/ingenuity-build/quicksilver && cd quicksilver
 git fetch origin --tags
-git checkout v1.2.1
+git checkout v1.2.2
 make install
 ```
 
@@ -50,14 +50,14 @@ make install
 cd $HOME
 git clone https://github.com/ingenuity-build/quicksilver
 cd quicksilver
-git checkout v1.2.1
+git checkout v1.2.2
 make install
 quicksilverd version
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 ```
 
 `quicksilverd version`
-+ version: v1.2.1
++ version: v1.2.2
 
 
 ### Initialize the node
