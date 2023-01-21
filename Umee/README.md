@@ -41,19 +41,19 @@ cd umee
 git checkout v3.3.0
 make install
 ```
-*******🟢UPDATE🟢******* 27.12.22
+*******🟢UPDATE🟢******* 26.01.23
 
 ```python
 cd $HOME/umee
 git fetch --all
-git checkout v3.3.0
+git checkout v4.0.0
 make install
 umeed version
 sudo systemctl restart umeed && journalctl -u umeed -f -o cat
 ```
 
 `umeed version`
-+ v3.3.0
++ v4.0.0
 
 ## Init
 ```python
