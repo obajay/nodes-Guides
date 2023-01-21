@@ -22,7 +22,8 @@ wget -O crowd https://raw.githubusercontent.com/obajay/nodes-Guides/main/Crowd%2
 ```python
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
-python
+```
+
 ## GO 19 (one command)
 ```python
 ver="1.19" && \
