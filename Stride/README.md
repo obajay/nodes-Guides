@@ -43,20 +43,19 @@ git clone https://github.com/Stride-Labs/stride.git && cd stride
 git checkout v4.0.2
 make install
 ```
-*******🟢UPDATE🟢******* 07.12.22
+*******🟢UPDATE🟢******* 26.01.23
 
 ```python
 cd $HOME/stride
 git fetch --all
-git checkout v4.0.2
+git checkout v5.0.0
 make install
 strided version
-sed -i -e "s/^pruning *=.*/pruning = \"nothing\"/" $HOME/.stride/config/app.toml
 sudo systemctl restart strided && journalctl -u strided -f -o cat
 ```
 
 `strided version --long | head`
-+ version: v4.0.2
++ version: v5.0.0
 
 ## Initialisation
 ```python
