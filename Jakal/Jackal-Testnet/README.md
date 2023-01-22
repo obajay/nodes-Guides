@@ -17,20 +17,20 @@
 
 
 # 1) Auto_install script
-```bash
-SOOOON
+```python
+wget -O jkltest https://raw.githubusercontent.com/obajay/nodes-Guides/main/Jakal/Jackal-Testnet/jkltest && chmod +x jkltest && ./jkltest
 ```
 
 # 2) Manual installation
 
 ### Preparing the server
-```bash
+```python
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
 ## GO 1.19
-```bash
+```python
 ver="1.19" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
@@ -41,12 +41,12 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 07.12.22
+# Build 12.01.23
 ```python
 cd $HOME
 git clone https://github.com/JackalLabs/canine-chain
 cd canine-chain
-git checkout v1.2.0-alpha.7
+git checkout v1.2.0-alpha.11
 make install
 ```
 *******🟢UPDATE🟢******* 12.01.23
@@ -76,14 +76,14 @@ canined keys add <walletname> --recover
 ```
 
 ## Download Genesis
-```bash
+```python
 wget -O $HOME/.canine/config/genesis.json "https://raw.githubusercontent.com/JackalLabs/jackal-chain-assets/main/testnet/genesis.json"
 ```
 `sha256sum $HOME/.canine/config/genesis.json`
 + 9701001c2188abf7c117f7192030bcbab358ac1d5b1a61594f443d3b206ab5a2
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
-```bash
+```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ujkl\"/;" ~/.canine/config/app.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.canine/config/config.toml
 external_address=$(wget -qO- eth0.me) 
@@ -97,7 +97,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.cani
 
 ```
 ### Pruning (optional)
-```bash
+```python
 pruning="custom"
 pruning_keep_recent="100"
 pruning_keep_every="0"
@@ -114,12 +114,12 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.canine/config/config.
 ```
 
 ## Download addrbook
-```bash
+```python
 wget -O $HOME/.canine/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Jakal/Jackal-Testnet/addrbook.json"
 ```
 
 # Create a service file
-```bash
+```python
 sudo tee /etc/systemd/system/canined.service > /dev/null <<EOF
 [Unit]
 Description=canined
@@ -138,7 +138,7 @@ EOF
 ```
 
 ## Start
-```bash
+```python
 sudo systemctl daemon-reload
 sudo systemctl enable canined
 sudo systemctl restart canined && sudo journalctl -u canined -f -o cat
@@ -162,7 +162,7 @@ canined tx staking create-validator \
 ```
 
 ## Delete node
-```bash
+```python
 sudo systemctl stop canined && \
 sudo systemctl disable canined && \
 rm /etc/systemd/system/canined.service && \
@@ -174,18 +174,18 @@ rm -rf $(which canined)
 ```
 #
 ### Sync Info
-```bash
+```python
 canined status 2>&1 | jq .SyncInfo
 ```
 ### NodeINfo
-```bash
+```python
 canined status 2>&1 | jq .NodeInfo
 ```
 ### Check node logs
-```bash
+```python
 sudo journalctl -u canined -f -o cat
 ```
 ### Check Balance
-```bash
+```python
 canined query bank balances jkl...addressjkl1yjgn7z09ua9vms259j
 ```
