@@ -65,7 +65,7 @@ sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 quicksilverd config chain-id innuendo-5
 quicksilverd init STAVRguide --chain-id innuendo-5
 ```
-[SNAPSHOT by Kjnodes](https://services.kjnodes.com/home/testnet/quicksilver/snapshot)
+
 =
 ### Create wallet or restore
     quicksilverd keys add <name_wallet>
