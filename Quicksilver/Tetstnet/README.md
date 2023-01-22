@@ -8,14 +8,22 @@
 [EXPLORER 1](https://explorer.stavr.tech/quicksilver/staking) \
 [EXPLORER 2](https://testnet.manticore.team/quicksilver/staking)
 =
+
+# 1) Auto_install script
+```python
+wget -O quicktest https://raw.githubusercontent.com/obajay/nodes-Guides/main/Quicksilver/Tetstnet/quicktest && chmod +x quicktest && ./quicktest
+```
+
+# 2) Manual installation
+
 ### Updating the repositories  
-
-    sudo apt update && sudo apt upgrade -y
-
+```python
+sudo apt update && sudo apt upgrade -y
+```
 ### Installing the necessary utilities
-
-    sudo apt install curl build-essential git wget jq make gcc tmux nvme-cli -y
-    
+```python
+udo apt install curl build-essential git wget jq make gcc tmux nvme-cli -y
+```    
 ### GO 1.19 (one command)
 ```python
 ver="1.19" && \
