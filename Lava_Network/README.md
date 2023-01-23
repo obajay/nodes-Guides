@@ -53,21 +53,19 @@ git fetch --all
 git checkout v0.4.3
 make install
 ```
-*******🟢UPDATE🟢******* 11.01.23
+*******🟢UPDATE🟢******* 24.01.23
 
 ```python
-cd $HOME
-git clone https://github.com/lavanet/lava
-cd lava
+cd $HOME/lava
 git fetch --all
-git checkout v0.4.3
+git checkout v0.4.4
 make install
 lavad version --long | head
 sudo systemctl restart lavad && sudo journalctl -u lavad -f -o cat
 ```
 
 `lavad version --long | head`
-- version: 0.4.3
+- version: 0.4.4
 - commit: 5673a81fc2eb18f64d1842d0c076771b55a7487d
 
 ```python
