@@ -157,11 +157,9 @@ systemctl restart lavad && journalctl -u lavad -f -o cat
 break
 ;;
 "UPDATE")
-cd $HOME
-git clone https://github.com/lavanet/lava
-cd lava
+cd $HOME/lava
 git fetch --all
-git checkout v0.4.3
+git checkout v0.4.4
 make install
 sudo systemctl restart lavad && sudo journalctl -u lavad -f -o cat
 
