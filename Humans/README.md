@@ -1,5 +1,8 @@
 # Humans Testnet guide
 
+![humans](https://user-images.githubusercontent.com/44331529/214357205-c725ec73-6d62-4cbd-a847-b57247240a6a.png)
+
+
 [WebSite](https://humans.ai/) \
 [GitHub](https://github.com/humansdotai/humans)
 =
