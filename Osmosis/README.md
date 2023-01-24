@@ -46,11 +46,11 @@ go version
 ```bash
 cd ~
 git clone https://github.com/osmosis-labs/osmosis && cd osmosis
-git checkout v12.3.0
+git checkout v14.0.0
 make install
 ```
 `osmosisd version --long | head`
-- version: v12.3.0
+- version: v14.0.0
 
 ```bash
 osmosisd init STAVRguide --chain-id osmosis-1
