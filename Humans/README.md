@@ -15,7 +15,7 @@
 
 # 1) Auto_install script
 ```python
-SOON
+wget -O hum https://raw.githubusercontent.com/obajay/nodes-Guides/main/Humans/hum && chmod +x hum && ./hum
 ```
 
 # 2) Manual installation
