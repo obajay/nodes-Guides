@@ -58,7 +58,7 @@ cd $HOME
 git clone https://github.com/Canto-Network/Canto.git
 cd Canto
 git checkout main && git pull
-git checkout v4.0.0
+git checkout v5.0.0
 make install
 
 cantod init $NODENAME --chain-id $CHAIN_ID
@@ -169,13 +169,12 @@ sudo journalctl -u cantod -f -o cat
 break
 ;;
 "Update")
-cd $HOME
-rm -rf Canto
-git clone https://github.com/Canto-Network/Canto
-cd Canto
-git checkout v4.0.0
+cd $HOME/Canto
+git fetch --all
+git checkout v5.0.0
 make install
 sudo systemctl restart cantod && journalctl -u cantod -f -o cat
+
 
 break
 ;;
