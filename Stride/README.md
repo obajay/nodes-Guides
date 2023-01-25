@@ -36,11 +36,11 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-# Binary   07.12.22
+# Binary   26.01.23
 ```python
 cd $HOME
 git clone https://github.com/Stride-Labs/stride.git && cd stride
-git checkout v4.0.2
+git checkout v5.0.0
 make install
 ```
 *******🟢UPDATE🟢******* 26.01.23
