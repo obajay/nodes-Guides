@@ -144,7 +144,7 @@ sudo systemctl restart strided && journalctl -u strided -f -o cat
 # SnapShot (~0.8GB) updated every 5 hours
 ```python
 cd $HOME
-snap install lz4
+apt install lz4
 sudo systemctl stop strided
 cp $HOME/.stride/data/priv_validator_state.json $HOME/.stride/priv_validator_state.json.backup
 rm -rf $HOME/.stride/data
