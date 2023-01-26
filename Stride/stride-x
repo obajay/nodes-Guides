@@ -159,7 +159,7 @@ break
 ;;
 "Synchronize Stride node via SnapShot")
 cd $HOME
-snap install lz4
+apt install lz4
 sudo systemctl stop strided
 cp $HOME/.stride/data/priv_validator_state.json $HOME/.stride/priv_validator_state.json.backup
 rm -rf $HOME/.stride/data
