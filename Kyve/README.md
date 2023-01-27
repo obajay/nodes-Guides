@@ -29,13 +29,13 @@
     source $HOME/.bash_profile && \
     go version
 
-# Build 28.11.22
+# Build 27.01.23
 ```python
 cd $HOME
-wget https://kyve-korellia.s3.eu-central-1.amazonaws.com/v0.7.0/kyved_linux_amd64.tar.gz
+wget https://kyve-korellia.s3.eu-central-1.amazonaws.com/v0.8.0/kyved_linux_amd64.tar.gz
 tar -xvzf kyved_linux_amd64.tar.gz
-chmod +x kyved
-sudo mv kyved $HOME/go/bin/chaind
+chmod +x chaind
+sudo mv chaind $HOME/go/bin/chaind
 rm kyved_linux_amd64.tar.gz
 cd
     
