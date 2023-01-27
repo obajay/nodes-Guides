@@ -56,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 #INSTALL
 cd $HOME
 git clone https://github.com/Stride-Labs/stride
-cd stride && git checkout v5.0.0
+cd stride && git checkout v5.1.1
 make install
 
 strided init $Validator_Name --chain-id $CHAIN_ID
@@ -127,7 +127,7 @@ break
 "UPDATE")
 cd $HOME/stride
 git fetch --all
-git checkout v5.0.0
+git checkout v5.1.1
 make install
 sed -i -e "s/^pruning *=.*/pruning = \"nothing\"/" $HOME/.stride/config/app.toml
 sudo systemctl restart strided && journalctl -u strided -f -o cat
