@@ -43,19 +43,19 @@ git clone https://github.com/Stride-Labs/stride.git && cd stride
 git checkout v5.0.0
 make install
 ```
-*******🟢UPDATE🟢******* 26.01.23
+*******🟢UPDATE🟢******* 27.01.23
 
 ```python
 cd $HOME/stride
 git fetch --all
-git checkout v5.0.0
+git checkout v5.1.1
 make install
 strided version
 sudo systemctl restart strided && journalctl -u strided -f -o cat
 ```
 
 `strided version --long | head`
-+ version: v5.0.0
++ version: v5.1.1
 
 ## Initialisation
 ```python
