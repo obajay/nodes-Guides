@@ -25,6 +25,7 @@ wget -O stride-x https://raw.githubusercontent.com/obajay/nodes-Guides/main/Stri
 
 ## GO 18.3 (one command)
 ```
+
 ver="1.18.3" && \
 cd $HOME && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
