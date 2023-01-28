@@ -41,12 +41,12 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 27.01.23
+# Build 28.01.23
 ```python
 cd $HOME
 git clone https://github.com/JackalLabs/canine-chain
 cd canine-chain
-git checkout v1.2.0-alpha.13
+git checkout v23.01-beta
 make install
 ```
 *******🟢UPDATE🟢******* 28.01.23
