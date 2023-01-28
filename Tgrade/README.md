@@ -61,7 +61,7 @@ tgrade keys add <walletname> --recover
 ## Download Genesis
 
 ```bash
-wget https://raw.githubusercontent.com/confio/tgrade-networks/main/mainnet-1/config/genesis.json -O /root/.tgrade/config/genesis.json
+wget https://raw.githubusercontent.com/confio/tgrade-networks/main/mainnet-1/config/genesis.json -O $HOME/.tgrade/config/genesis.json
 ```
 `sha256sum $HOME/.tgrade/config/genesis.json`
 + 26d4bced80fe45009c8202df3b1731c24bc0100793279b95083d5b97dc9671a1
