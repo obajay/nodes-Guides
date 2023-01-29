@@ -139,8 +139,12 @@ echo -e "      \e[1m\e[32m SOOOOON  \e[0m"
 break
 ;;
 "UPDATE")
-echo -e "        \e[1m\e[32mVERSION\e[0m"
-osmosisd version
+cd $HOME/osmosis
+git pull
+git checkout v14.0.0
+make install
+systemctl restart osmosisd && journalctl -u osmosisd -f -o cat
+
 
 break
 ;;
