@@ -21,16 +21,17 @@ wget -O teritor https://raw.githubusercontent.com/obajay/nodes-Guides/main/Terit
     sudo apt update && sudo apt upgrade -y && \
     sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 
-## GO 18.1 (one command)
-
-    wget https://golang.org/dl/go1.18.1.linux-amd64.tar.gz; \
-    rm -rv /usr/local/go; \
-    tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz && \
-    rm -v go1.18.1.linux-amd64.tar.gz && \
-    echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile && \
-    source ~/.bash_profile && \
-    go version
-
+## GO 19 (one command)
+```python
+ver="1.19" && \
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
+sudo rm -rf /usr/local/go && \
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
+rm "go$ver.linux-amd64.tar.gz" && \
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
+source $HOME/.bash_profile && \
+go version
+```
 ## Build 
 ```bash
 git clone https://github.com/TERITORI/teritori-chain
