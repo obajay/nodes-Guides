@@ -42,7 +42,7 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 20.11.22
+# Build 24.01.23
 ```bash
 cd ~
 git clone https://github.com/osmosis-labs/osmosis && cd osmosis
