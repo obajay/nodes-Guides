@@ -52,7 +52,7 @@ make install
 ```
 `marsd version`
 - version: 1.0.0
-- commit: soon
+- commit: 413005a135e40bf3f5ae4c197d58bd96d4d3aa9a
 
 ```python
 marsd init STAVRguide --chain-id mars-1
@@ -70,7 +70,7 @@ wget https://raw.githubusercontent.com/mars-protocol/networks/main/mars-1/genesi
 ```
 
 `sha256sum $HOME/.mars/config/genesis.json`
-+ SOOON
++ 7d93bd062e5f6909cb46cf96b64533b821232f8766c6513ced535aa9ad37b425
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
