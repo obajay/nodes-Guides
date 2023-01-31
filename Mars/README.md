@@ -5,7 +5,7 @@
 
 [WebSite](https://marsprotocol.io/)
 =
-[EXPLORER 1](https://explorer.stavr.tech/mars-testnet/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/mars/staking) \
 [EXPLORER 2](https://explorer.nodestake.top/mars/staking) \
 [EXPLORER 3](https://explorer.bccnodes.com/mars%20-%20mainnet/staking)
 =
