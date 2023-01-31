@@ -32,7 +32,6 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bs
 ```
 
 ## GO 1.19
-
 ```python
 ver="1.19" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
