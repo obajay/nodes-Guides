@@ -14,55 +14,67 @@
 | Mainnet   |   8| 16GB | 260GB    |
 
 # 1) Auto_install script 
-```bash
+```python
 wget -O bitsongd https://raw.githubusercontent.com/obajay/nodes-Guides/main/Bitsong/bitsongd && chmod +x bitsongd && ./bitsongd
 ```
 # 2) Manual installation
 
 ### Preparing the server
-
-    sudo apt update && sudo apt upgrade -y
-    sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
-
-## GO 18.1 (one command)
-
-    wget https://golang.org/dl/go1.18.1.linux-amd64.tar.gz; \
-    rm -rv /usr/local/go; \
-    tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz && \
-    rm -v go1.18.1.linux-amd64.tar.gz && \
-    echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile && \
-    source ~/.bash_profile && \
-    go version
+```python
+sudo apt update && sudo apt upgrade -y
+sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
+```
+## GO 19 (one command)
+```python
+ver="1.19" && \
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
+sudo rm -rf /usr/local/go && \
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
+rm "go$ver.linux-amd64.tar.gz" && \
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
+source $HOME/.bash_profile && \
+go version
+```
 
 # Build 14.10.22
-```bash
+```python
 git clone https://github.com/bitsongofficial/go-bitsong/
 cd go-bitsong
 git checkout v0.12.0
 make install
 ```
+🟢UPDATE🟢 03.02.23
+```python
+cd $HOME/go-bitsong
+git fetch --all
+git checkout v0.13.0
+make install
+bitsongd version
+sudo systemctl restart bitsongd && journalctl -u bitsongd -f -o cat
+
+```
 
 `bitsongd version version --long | head`
-- version: 0.12.0
-- commit: 66608bfaa0ed8bed4c08827b3d2dee5cc437bf3c
+- version: 0.13.0
+- commit: ecf29a742bebfd9c037a9aeadb4e4ac85d4bcd4b
 
-```bash
+```python
 bitsongd init STAVRguide --chain-id bitsong-2b
 ```
 
 ## Create/recover wallet
-
-    bitsongd keys add <walletname>
-    bitsongd keys add <walletname> --recover
-
+```python
+bitsongd keys add <walletname>
+bitsongd keys add <walletname> --recover
+```
 #### when creating, do not forget to write down the seed phrase
 ## Genesis
-
-    wget -O $HOME/.bitsongd/config/genesis.json "https://raw.githubusercontent.com/bitsongofficial/networks/master/bitsong-2b/genesis.json"
-
+```python
+wget -O $HOME/.bitsongd/config/genesis.json "https://raw.githubusercontent.com/bitsongofficial/networks/master/bitsong-2b/genesis.json"
+```
 
 ## Set up the minimum gas price $HOME/.bitsongd/config/app.toml as well as seed and peers
-```bash
+```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.001ubtsg\"/;" ~/.bitsongd/config/app.toml
 
 external_address=$(wget -qO- eth0.me)
@@ -75,28 +87,28 @@ sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.bitsongd/config/config.t
 ```
 
 ### Pruning (optional)
-
-    pruning="custom" && \
-    pruning_keep_recent="100" && \
-    pruning_keep_every="0" && \
-    pruning_interval="10" && \
-    sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.bitsongd/config/app.toml && \
-    sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.bitsongd/config/app.toml && \
-    sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.bitsongd/config/app.toml && \
-    sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.bitsongd/config/app.toml
-
+```python
+pruning="custom" && \
+pruning_keep_recent="100" && \
+pruning_keep_every="0" && \
+pruning_interval="10" && \
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.bitsongd/config/app.toml && \
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.bitsongd/config/app.toml && \
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.bitsongd/config/app.toml && \
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.bitsongd/config/app.toml
+```
 ### Indexer (optional)
-
-    indexer="null" && \
-    sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.bitsongd/config/config.toml
-
+```python
+indexer="null" && \
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.bitsongd/config/config.toml
+```
 # Download addrbook
-```bash
+```python
 wget -O $HOME/.bitsongd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Bitsong/addrbook.json"
 ```
 
 # Create a service file
-```bash
+```python
 sudo tee /etc/systemd/system/bitsongd.service > /dev/null <<EOF
 [Unit]
 Description=bitsong
@@ -115,7 +127,7 @@ EOF
 ```
 
 ## StateSync
-```bash
+```python
 RPC="51.195.189.48:21037"
 LATEST_HEIGHT=$(curl -s $RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
@@ -136,7 +148,7 @@ sudo systemctl restart bitsongd && journalctl -u bitsongd -f -o cat
 ```
 
 ## Snaphot 26.08.22 (0.8 GB) block height --> 7450094
-```bash
+```python
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
 sudo systemctl stop bitsongd
 rm -rf $HOME/.bitsongd/data/
@@ -162,37 +174,36 @@ sudo systemctl restart bitsongd && sudo journalctl -u bitsongd -f -o cat
 ```
 
 ## Start
-
-    sudo systemctl daemon-reload
-    sudo systemctl enable bitsongd
-    sudo systemctl restart bitsongd
-    sudo journalctl -u bitsongd -f -o cat
-
+```python
+sudo systemctl daemon-reload
+sudo systemctl enable bitsongd
+sudo systemctl restart bitsongd
+sudo journalctl -u bitsongd -f -o cat
+```
 ## Create validator
-
-
-    bitsongd tx staking create-validator \
-    --amount 1000000ubtsg \
-    --from <walletName> \
-    --commission-max-change-rate "0.1" \
-    --commission-max-rate "0.2" \
-    --commission-rate "0.05" \
-    --min-self-delegation "1" \
-    --details="" \
-    --identity="" \
-    --pubkey  $(bitsongd tendermint show-validator) \
-    --moniker <moniker> \
-    --fees 2000ubtsg \
-    --chain-id bitsong-2b -y
-
+```python
+bitsongd tx staking create-validator \
+--amount 1000000ubtsg \
+--from <walletName> \
+--commission-max-change-rate "0.1" \
+--commission-max-rate "0.2" \
+--commission-rate "0.05" \
+--min-self-delegation "1" \
+--details="" \
+--identity="" \
+--pubkey  $(bitsongd tendermint show-validator) \
+--moniker <moniker> \
+--fees 2000ubtsg \
+--chain-id bitsong-2b -y
+```
 ## Delete node
-
-    sudo systemctl stop bitsongd && \
-    sudo systemctl disable bitsongd && \
-    rm /etc/systemd/system/bitsongd.service && \
-    sudo systemctl daemon-reload && \
-    cd $HOME && \
-    rm -rf .bitsongd && \
-    rm -rf go-bitsong && \
-    rm -rf $(which bitsongd)
-
+```python
+sudo systemctl stop bitsongd && \
+sudo systemctl disable bitsongd && \
+rm /etc/systemd/system/bitsongd.service && \
+sudo systemctl daemon-reload && \
+cd $HOME && \
+rm -rf .bitsongd && \
+rm -rf go-bitsong && \
+rm -rf $(which bitsongd)
+```
