@@ -19,7 +19,7 @@
 
 # 1) Auto_install script
 ```python
-SOOOON
+wget -O mars1 https://raw.githubusercontent.com/obajay/nodes-Guides/main/Mars/mars1 && chmod +x mars1 && ./mars1
 ```
 
 # 2) Manual installation
@@ -106,7 +106,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.mars/config/config.to
 
 ## Download addrbook
 ```python
-wget -O $HOME/.mars/config/addrbook.json "SOOON"
+wget -O $HOME/.mars/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Mars/addrbook.json"
 ```
 ## StateSync
 ```python
