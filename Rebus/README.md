@@ -25,17 +25,17 @@ wget -O rebuss https://raw.githubusercontent.com/obajay/nodes-Guides/main/Rebus/
     sudo apt update && sudo apt upgrade -y && \
     sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
 
-## GO 18.3 (one command)
-    ver="1.18.3" && \
-    cd $HOME && \
-    wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-    sudo rm -rf /usr/local/go && \
-    sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-    rm "go$ver.linux-amd64.tar.gz" && \
-    echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-    source $HOME/.bash_profile && \
-    go version
-
+## GO 19 (one command)
+```python
+ver="1.19" && \
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
+sudo rm -rf /usr/local/go && \
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
+rm "go$ver.linux-amd64.tar.gz" && \
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
+source $HOME/.bash_profile && \
+go version
+```
 # Binary   19.10.22
 ```python
 cd $HOME
@@ -43,11 +43,20 @@ git clone https://github.com/rebuschain/rebus.core.git
 cd rebus.core
 git checkout v0.2.3
 make install
-
 ```
+*******🟢UPDATE🟢******* 06.02.23
+
+```python
+cd $HOME/rebus.core
+git fetch --all
+git checkout v0.3.0
+make install
+sudo systemctl restart rebusd && journalctl -u rebusd -f -o cat
+```
+
 `rebusd version --long | head`
-+ version: 0.2.3
-+ commit: ee105dac0b3f481600ba30fb75f6628f9309e91e
++ version: 0.3.0
++ commit: e415d80fd380e230ba2c508ada58db7ad20376e7
 
 ## Initialisation
 ```python
