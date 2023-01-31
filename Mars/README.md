@@ -56,6 +56,7 @@ make install
 
 ```python
 marsd init STAVRguide --chain-id mars-1
+marsd config chain-id mars-1
 ```    
 
 ## Create/recover wallet
