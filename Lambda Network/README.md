@@ -17,7 +17,7 @@
 
 
 # 1) Auto_install script
-```bash
+```python
 wget -O lamb https://raw.githubusercontent.com/obajay/nodes-Guides/main/Lambda%20Network/lamb && chmod +x lamb && ./lamb
 ```
 
@@ -25,27 +25,27 @@ wget -O lamb https://raw.githubusercontent.com/obajay/nodes-Guides/main/Lambda%2
 
 ### Preparing the server
 
-```bash
+```python
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
-## GO 18.5
+## GO 19.4
 
-```bash
-cd $HOME
-ver="1.18.5"
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
-sudo rm -rf /usr/local/go
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
-rm "go$ver.linux-amd64.tar.gz"
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
-source $HOME/.bash_profile
+```python
+cd $HOME && \
+ver="1.19.4" && \
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
+sudo rm -rf /usr/local/go && \
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
+rm "go$ver.linux-amd64.tar.gz" && \
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
+source $HOME/.bash_profile && \
 go version
 ```
 
 # Build 10.10.22
-```bash
+```python
 cd ~
 git clone https://github.com/LambdaIM/lambdavm.git
 cd lambdavm
@@ -54,19 +54,19 @@ make install
 `lambdavm version`
 - 1.0.0
 
-```bash
+```python
 lambdavm init STAVRguide --chain-id lambda_92000-1
 ```    
 
 ## Create/recover wallet
-```bash
+```python
 lambdavm keys add <walletname>
 lambdavm keys add <walletname> --recover
 ```
 
 ## Download Genesis
 
-```bash
+```python
 wget https://raw.githubusercontent.com/LambdaIM/mainnet/main/lambda_92000-1/genesis.json
 mv genesis.json ~/.lambdavm/config/
 ```
@@ -74,7 +74,7 @@ mv genesis.json ~/.lambdavm/config/
 + 1ff02001539bc1e9828fe170006f055c04df280c61c4ca9ecc9e7b6a272b7777
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
-```bash
+```python
 sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.01ulamb\"/" $HOME/.lambdavm/config/app.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.lambdavm/config/config.toml
 external_address=$(wget -qO- eth0.me) 
@@ -89,7 +89,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.lamb
 
 ```
 ### Pruning (optional)
-```bash
+```python
 pruning="custom" && \
 pruning_keep_recent="100" && \
 pruning_keep_every="0" && \
@@ -100,24 +100,23 @@ sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.lambdavm/config/app.toml
 ```
 ### Indexer (optional) 
-```bash
+```python
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.lambdavm/config/config.toml
 ```
 
 ## Download addrbook
-```bash
+```python
 wget -O $HOME/.lambdavm/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Lambda%20Network/addrbook.json"
 ```
 
 # StateSync
-```bash
-SNAP_RPC=https://rpc.lambda.nodestake.top:443
-
-peers="https://rpc.lambda.nodestake.top:443" 
+```python
+SNAP_RPC=http://lambda.rpc.m.stavr.tech:31327
+peers="4573d28b7bf5cfb0a1b79e796efb388a1db8d046@lambda.peer.stavr.tech:31326" 
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.lambdavm/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
 
 echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
@@ -131,9 +130,21 @@ lambdavm tendermint unsafe-reset-all --home $HOME/.lambdavm
 systemctl restart lambdavm && journalctl -u lambdavm -f -o cat
 
 ```
+# SnapShot (~0.2 GB) updated every 5 hours
+```python
+cd $HOME
+apt install lz4
+sudo systemctl stop lambdavm
+cp $HOME/.lambdavm/data/priv_validator_state.json $HOME/.lambdavm/priv_validator_state.json.backup
+rm -rf $HOME/.lambdavm/data
+curl -o - -L http://lambda.snapshot.stavr.tech:5016/lambda/lambda-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.lambdavm --strip-components 2
+mv $HOME/.lambdavm/priv_validator_state.json.backup $HOME/.lambdavm/data/priv_validator_state.json
+wget -O $HOME/.lambdavm/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Lambda%20Network/addrbook.json"
+sudo systemctl restart aurad && journalctl -u aurad -f -o cat
+```
 
 # Create a service file
-```bash
+```python
 sudo tee /etc/systemd/system/lambdavm.service > /dev/null <<EOF
 [Unit]
 Description=lambdavm
@@ -150,14 +161,14 @@ EOF
 ```
 
 ## Start
-```bash
+```python
 sudo systemctl daemon-reload
 sudo systemctl enable lambdavm
 sudo systemctl restart lambdavm && sudo journalctl -u lambdavm -f -o cat
 ```
 
 ### Create validator
-```bash
+```python
 lambdavm tx staking create-validator \
   --amount="1000000000000000000"ulamb \
   --pubkey=$(lambdavm tendermint show-validator) \
@@ -177,7 +188,7 @@ lambdavm tx staking create-validator \
 ```
 
 ## Delete node
-```bash
+```python
 sudo systemctl stop lambdavm && \
 sudo systemctl disable lambdavm && \
 rm /etc/systemd/system/lambdavm.service && \
