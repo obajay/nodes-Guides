@@ -140,7 +140,7 @@ rm -rf $HOME/.lambdavm/data
 curl -o - -L http://lambda.snapshot.stavr.tech:5016/lambda/lambda-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.lambdavm --strip-components 2
 mv $HOME/.lambdavm/priv_validator_state.json.backup $HOME/.lambdavm/data/priv_validator_state.json
 wget -O $HOME/.lambdavm/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Lambda%20Network/addrbook.json"
-sudo systemctl restart aurad && journalctl -u aurad -f -o cat
+sudo systemctl restart lambdavm && sudo journalctl -u lambdavm -f -o cat
 ```
 
 # Create a service file
