@@ -13,7 +13,7 @@
 
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
-| Mainnet   |   4|  8GB | 150GB    |
+| Testnet   |   4|  8GB | 150GB    |
 
 
 # 1) Auto_install script
