@@ -1,8 +1,9 @@
 # Dymension Testnet guide
 
-![jackal](https://user-images.githubusercontent.com/44331529/198365498-60a1a986-70e8-419d-a35c-b4d9780c0e7a.png)
+![dymension](https://user-images.githubusercontent.com/44331529/216242184-e602001a-8794-495a-81fc-b0d10589963e.png)
 
 
+[WebSite](https://dymension.xyz/) \
 [GitHub](https://github.com/dymensionxyz/testnets)
 =
 [EXPLORER 1](SOOON) \
