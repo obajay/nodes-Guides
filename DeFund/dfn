@@ -56,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/defund-labs/defund
 cd defund
-git checkout v0.2.2
+git checkout v0.2.3
 make install
 
 defundd init $Validator_Name --chain-id $CHAIN_ID
@@ -159,17 +159,9 @@ break
 "UPDATE")
 cd $HOME/defund
 git fetch --all
-git checkout v0.2.2
+git checkout v0.2.3
 make install
-defundd config chain-id defund-private-4
-cd $HOME/.defund/config
-curl -s https://raw.githubusercontent.com/defund-labs/testnet/main/defund-private-4/genesis.json > ~/.defund/config/genesis.json
-peers="d837b7f78c03899d8964351fb95c78e84128dff6@174.83.6.129:30791,f03f3a18bae28f2099648b1c8b1eadf3323cf741@162.55.211.136:26656,f8fa20444c3c56a2d3b4fdc57b3fd059f7ae3127@148.251.43.226:56656,70a1f41dea262730e7ab027bcf8bd2616160a9a9@142.132.202.86:17000,e47e5e7ae537147a23995117ea8b2d4c2a408dcb@172.104.159.69:45656,74e6425e7ec76e6eaef92643b6181c42d5b8a3b8@defund-testnet-seed.itrocket.net:443"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.defund/config/config.toml
-seeds=""
-sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.defund/config/config.toml
-defundd tendermint unsafe-reset-all
-sudo systemctl restart defundd && sudo journalctl -u defundd -f -o cat
+sudo systemctl restart defundd && journalctl -u defundd -f -o cat
 
 
 break
