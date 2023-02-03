@@ -44,15 +44,16 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 15.01.23
+# Build 03.02.23
 ```python
 git clone https://github.com/defund-labs/defund
 cd defund
-git checkout v0.2.2
+git checkout v0.2.3
 make install
 ```
 `defundd version`
-- version: v0.2.2
+- version: v0.2.3
+- commit: ad2fd28e269f25ef84e4c4ba01570db98df7d64a
 
 ```python
 defundd init STAVRguide --chain-id defund-private-4
