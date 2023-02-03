@@ -54,7 +54,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 #INSTALL
 git clone https://github.com/bitsongofficial/go-bitsong/
 cd go-bitsong
-git checkout v0.12.0
+git checkout v0.13.0
 make install
 
 bitsongd init $Validator_Name --chain-id $CHAIN_ID
