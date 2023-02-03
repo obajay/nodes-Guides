@@ -36,15 +36,15 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-# Binary   19.10.22
+# Binary   03.02.22
 ```python
 cd $HOME
 git clone https://github.com/rebuschain/rebus.core.git 
 cd rebus.core
-git checkout v0.2.3
+git checkout v0.3.0
 make install
 ```
-*******🟢UPDATE🟢******* 06.02.23
+*******🟢UPDATE🟢******* 03.02.23
 
 ```python
 cd $HOME/rebus.core
