@@ -6,7 +6,7 @@
 [WebSite](https://c4e.io/) \
 [GitHub](https://github.com/chain4energy)
 =
-[EXPLORER 1](https://explorer.stavr.tech/mars/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/c4e/staking) \
 [EXPLORER 2](https://exp.utsa.tech/c4e/staking)
 =
 
@@ -108,7 +108,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.c4e-chain/config/conf
 
 ## Download addrbook
 ```python
-wget -O $HOME/.c4e-chain/config/addrbook.json "SOOOOOOON"
+wget -O $HOME/.c4e-chain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/C4E(chain4Energy)/addrbook.json"
 ```
 ## StateSync
 ```python
