@@ -19,7 +19,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O c4e https://raw.githubusercontent.com/obajay/nodes-Guides/main/C4E(chain4Energy)/c4e && chmod +x c4e && ./c4e
 ```
 
 # 2) Manual installation
