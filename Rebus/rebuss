@@ -172,7 +172,7 @@ break
 ;;
 "Synchronization via SnapShot")
 cd $HOME
-snap install lz4
+apt install lz4
 sudo systemctl stop rebusd
 cp $HOME/.rebusd/data/priv_validator_state.json $HOME/.rebusd/priv_validator_state.json.backup
 rm -rf $HOME/.rebusd/data
