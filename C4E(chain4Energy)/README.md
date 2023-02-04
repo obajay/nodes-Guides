@@ -69,25 +69,24 @@ c4ed keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget https://raw.githubusercontent.com/mars-protocol/networks/main/mars-1/genesis.json -O $HOME/.mars/config/genesis.json
-
+wget https://raw.githubusercontent.com/obajay/nodes-Guides/main/C4E(chain4Energy)/genesis.json -O $HOME/.c4e-chain/config/genesis.json
 ```
 
-`sha256sum $HOME/.mars/config/genesis.json`
-+ 7d93bd062e5f6909cb46cf96b64533b821232f8766c6513ced535aa9ad37b425
+`sha256sum $HOME/.c4e-chain/config/genesis.json`
++ 6c736993a681a6759d3ec41550995fe04f48dd332d03375d879f3b464c6ceabf
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
-sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0umars\"/" $HOME/.mars/config/app.toml
-sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.mars/config/config.toml
+sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0uc4e\"/" $HOME/.c4e-chain/config/app.toml
+sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.c4e-chain/config/config.toml
 external_address=$(wget -qO- eth0.me) 
-sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.mars/config/config.toml
+sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.c4e-chain/config/config.toml
 peers=""
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.mars/config/config.toml
-seeds="52de8a7e2ad3da459961f633e50f64bf597c7585@seed.marsprotocol.io:443,d2d2629c8c8a8815f85c58c90f80b94690468c4f@tenderseed.ccvalidators.com:26012"
-sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.mars/config/config.toml
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.mars/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.mars/config/config.toml
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.c4e-chain/config/config.toml
+seeds=""
+sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.c4e-chain/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.c4e-chain/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.c4e-chain/config/config.toml
 ```
 
 ### Pruning (optional)
@@ -96,20 +95,20 @@ pruning="custom" && \
 pruning_keep_recent="100" && \
 pruning_keep_every="0" && \
 pruning_interval="10" && \
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" ~/.mars/config/app.toml && \
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" ~/.mars/config/app.toml && \
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" ~/.mars/config/app.toml && \
-sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.mars/config/app.toml
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" ~/.c4e-chain/config/app.toml && \
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" ~/.c4e-chain/config/app.toml && \
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" ~/.c4e-chain/config/app.toml && \
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.c4e-chain/config/app.toml
 ```
 ### Indexer (optional) 
 ```python
 indexer="null" && \
-sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.mars/config/config.toml
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.c4e-chain/config/config.toml
 ```
 
 ## Download addrbook
 ```python
-wget -O $HOME/.mars/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Mars/addrbook.json"
+wget -O $HOME/.c4e-chain/config/addrbook.json "SOOOOOOON"
 ```
 ## StateSync
 ```python
@@ -148,14 +147,14 @@ sudo systemctl restart marsd && journalctl -u marsd -f -o cat
 
 # Create a service file
 ```python
-sudo tee /etc/systemd/system/marsd.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/c4ed.service > /dev/null <<EOF
 [Unit]
-Description=sge
+Description=c4e
 After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which marsd) start
+ExecStart=$(which c4ed) start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
@@ -168,52 +167,53 @@ EOF
 ## Start
 ```python
 sudo systemctl daemon-reload
-sudo systemctl enable marsd
-sudo systemctl restart marsd && sudo journalctl -u marsd -f -o cat
+sudo systemctl enable c4ed
+sudo systemctl restart c4ed && sudo journalctl -u c4ed -f -o cat
 ```
 
 ### Create validator
 ```python
-marsd tx staking create-validator \
-  --amount 1000000umars \
+c4ed tx staking create-validator \
+  --amount 1000000uc4e \
   --from <walletName> \
   --commission-max-change-rate "0.1" \
   --commission-max-rate "0.2" \
   --commission-rate "0.1" \
   --min-self-delegation "1" \
-  --pubkey  $(marsd tendermint show-validator) \
+  --pubkey  $(c4ed tendermint show-validator) \
   --moniker STAVRguide \
-  --chain-id mars-1 \
+  --chain-id perun-1 \
   --identity="" \
   --details="" \
   --website="" -y
 ```
 
 ## Delete node
-```bash
-sudo systemctl stop marsd && \
-sudo systemctl disable marsd && \
-rm /etc/systemd/system/marsd.service && \
+```python
+sudo systemctl stop c4ed && \
+sudo systemctl disable c4ed && \
+rm /etc/systemd/system/c4ed.service && \
 sudo systemctl daemon-reload && \
 cd $HOME && \
-rm -rf mars && \
-rm -rf .mars && \
-rm -rf $(which marsd)
+rm -rf c4e-chains && \
+rm -rf .c4e-chain && \
+rm -rf $(which c4ed)
 ```
 #
 ### Sync Info
 ```python
-marsd status 2>&1 | jq .SyncInfo
+source $HOME/.bash_profile
+c4ed status 2>&1 | jq .SyncInfo
 ```
 ### Node Info
 ```python
-marsd status 2>&1 | jq .NodeInfo
+c4ed status 2>&1 | jq .NodeInfo
 ```
 ### Check node logs
 ```python
-sudo journalctl -u marsd -f -o cat
+sudo journalctl -u c4ed -f -o cat
 ```
 ### Check Balance
 ```python
-marsd query bank balances mars...address1yjgn7z09ua9vms259j
+c4ed query bank balances c4e...address1yjgn7z09ua9vms259j
 ```
