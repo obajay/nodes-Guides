@@ -70,7 +70,7 @@ babylond keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget SOOON -O $HOME/.babylond/config/genesis.json
+wget https://raw.githubusercontent.com/obajay/nodes-Guides/main/Babylon/genesis.json -O $HOME/.babylond/config/genesis.json
 
 ```
 `sha256sum $HOME/..babylond/config/genesis.json`
