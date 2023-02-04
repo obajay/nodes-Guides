@@ -48,12 +48,12 @@ go version
 ```python
 git clone https://github.com/defund-labs/defund
 cd defund
-git checkout v0.2.3
+git checkout v0.2.4
 make install
 ```
-`defundd version`
-- version: v0.2.3
-- commit: ad2fd28e269f25ef84e4c4ba01570db98df7d64a
+`defundd version --long`
+- version: v0.2.4
+- commit: 1140938aa59a6233aa658fd24f9bcb0fd9c72757
 
 ```python
 defundd init STAVRguide --chain-id defund-private-4
