@@ -137,7 +137,7 @@ sudo systemctl restart rebusd && journalctl -u rebusd -f -o cat
 # SnapShot (~1 GB) updated every 5 hours
 ```python
 cd $HOME
-snap install lz4
+apt install lz4
 sudo systemctl stop rebusd
 cp $HOME/.rebusd/data/priv_validator_state.json $HOME/.rebusd/priv_validator_state.json.backup
 rm -rf $HOME/.rebusd/data
