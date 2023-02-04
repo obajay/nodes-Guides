@@ -180,6 +180,7 @@ rm -rf $(which haqqd)
 #
 ### Sync Info
 ```python
+source $HOME/.bash_profile
 haqqd status 2>&1 | jq .SyncInfo
 ```
 ### NodeINfo
