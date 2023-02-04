@@ -7,7 +7,7 @@
 [WebSite](https://babylonchain.io/) \
 [GitHub](https://github.com/babylonchain)
 =
-[EXPLORER](https://explorer.stavr.tech/humans-testnet/staking)
+[EXPLORER](https://explorer.stavr.tech/babylon-testnet)
 =
 
 - **Minimum hardware requirements**:
@@ -19,7 +19,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O babyl https://raw.githubusercontent.com/obajay/nodes-Guides/main/Babylon/babyl && chmod +x babyl && ./babyl
 ```
 
 # 2) Manual installation
@@ -86,8 +86,8 @@ sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.babylond/config
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.babylond/config/config.toml
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.babylond/config/config.toml
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.babylond/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.babylond/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.babylond/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.babylond/config/config.toml
 
 ```
 ### Pruning (optional)
@@ -109,7 +109,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.babylond/config/confi
 
 ## Download addrbook
 ```python
-wget -O $HOME/.babylond/config/addrbook.json "SOOOOOOOOON"
+wget -O $HOME/.babylond/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Babylon/addrbook.json"
 ```
 
 # Create a service file
