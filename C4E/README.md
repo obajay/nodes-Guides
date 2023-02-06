@@ -112,9 +112,9 @@ wget -O $HOME/.c4e-chain/config/addrbook.json "https://raw.githubusercontent.com
 ```
 ## StateSync
 ```python
-SNAP_RPC=http://mars.rpc.t.stavr.tech:190
-peers="d79cd692ab2a4ef1a8be282cb398d6267b871b6d@mars.peer.stavr.tech:181"
-sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.mars/config/config.toml
+SNAP_RPC=http://c4e.rpc.m.stavr.tech:17097
+peers="e3d0b136495c3f4382ac801fbc89083d32625ff8@c4e.peer.stavr.tech:17096"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.c4e-chain/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
@@ -125,24 +125,21 @@ sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
 s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.mars/config/config.toml
-marsd tendermint unsafe-reset-all --home /root/.mars --keep-addr-book
-sed -i -e "s/^snapshot-interval *=.*/snapshot-interval = \"1500\"/" $HOME/.mars/config/app.toml
-curl -o - -L http://mars.wasm.stavr.tech:1014/wasm-mars.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.mars/data --strip-components 3
-systemctl restart marsd && journalctl -u marsd -f -o cat
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.c4e-chain/config/config.toml
+c4ed tendermint unsafe-reset-all --home /root/.c4e-chain --keep-addr-book
+sudo systemctl restart c4ed && journalctl -u c4ed -f -o cat
 ```
-## SnapShot (~0.2 GB) updated every 5 hours
+## SnapShot (~0.1 GB) updated every 5 hours
 ```python
 cd $HOME
 apt install lz4
-sudo systemctl stop marsd
-cp $HOME/.mars/data/priv_validator_state.json $HOME/.mars/priv_validator_state.json.backup
-rm -rf $HOME/.mars/data
-curl -o - -L http://mars.snapshot.stavr.tech:1012/mars/mars-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.mars --strip-components 2
-curl -o - -L http://mars.wasm.stavr.tech:1014/wasm-mars.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.mars/data --strip-components 3
-mv $HOME/.mars/priv_validator_state.json.backup $HOME/.mars/data/priv_validator_state.json
-wget -O $HOME/.mars/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Mars/addrbook.json"
-sudo systemctl restart marsd && journalctl -u marsd -f -o cat
+sudo systemctl stop c4ed
+cp $HOME/.c4e-chain/data/priv_validator_state.json $HOME/.c4e-chain/priv_validator_state.json.backup
+rm -rf $HOME/.c4e-chain/data
+curl -o - -L http://c4e.snapshot.stavr.tech:1018/c4e/c4e-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.c4e-chain --strip-components 2
+mv $HOME/.c4e-chain/priv_validator_state.json.backup $HOME/.c4e-chain/data/priv_validator_state.json
+wget https://raw.githubusercontent.com/obajay/nodes-Guides/main/C4E/genesis.json -O $HOME/.c4e-chain/config/genesis.json
+sudo systemctl restart c4ed && journalctl -u c4ed -f -o cat
 ```
 
 # Create a service file
