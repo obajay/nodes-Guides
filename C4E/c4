@@ -181,7 +181,7 @@ sudo systemctl disable c4ed && \
 rm /etc/systemd/system/c4ed.service && \
 sudo systemctl daemon-reload && \
 cd $HOME && \
-rm -rf c4e-chains && \
+rm -rf c4e-chain && \
 rm -rf .c4e-chain && \
 rm -rf $(which c4ed)
 
