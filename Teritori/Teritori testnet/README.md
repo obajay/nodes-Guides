@@ -32,14 +32,15 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-## Build 
-```bash
+
+## Build 11.02.23
+```python
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain
-git checkout v1.3.0
+git checkout v1.3.1
 make install
 ```
-```bash
+```python
 teritorid init STAVRguide --chain-id teritori-testnet-v3
 teritorid config chain-id teritori-testnet-v3
 ```
