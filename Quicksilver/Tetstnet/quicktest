@@ -54,10 +54,10 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-git clone https://github.com/ingenuity-build/quicksilver
-cd quicksilver
-git checkout v1.4.0-rc4
-make install
+wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.0-rc4/quicksilverd-v1.4.0-rc4-amd64
+chmod +x quicksilverd-v1.4.0-rc4-amd64
+mv quicksilverd-v1.4.0-rc4-amd64 /root/go/bin/quicksilverd
+
 
 quicksilverd init $Validator_Name --chain-id $CHAIN_ID
 
@@ -152,12 +152,11 @@ systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 break
 ;;
 "UPDATE")
-cd $HOME/quicksilver
-git fetch --all
-git checkout v1.4.0-rc4
-make install
+cd $HOME
+wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.0-rc4/quicksilverd-v1.4.0-rc4-amd64
+chmod +x quicksilverd-v1.4.0-rc4-amd64
+mv quicksilverd-v1.4.0-rc4-amd64 /root/go/bin/quicksilverd
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
-
 
 break
 ;;
