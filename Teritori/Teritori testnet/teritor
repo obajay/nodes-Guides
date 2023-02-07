@@ -56,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain
-git checkout v1.3.0
+git checkout v1.3.1
 make install
 
 cd $HOME
@@ -159,7 +159,7 @@ cd $HOME
 rm -rf teritori-chain
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain
-git checkout v1.3.0
+git checkout v1.3.1
 make install
 sudo systemctl restart teritorid && sudo journalctl -u teritorid -f -o cat
 
