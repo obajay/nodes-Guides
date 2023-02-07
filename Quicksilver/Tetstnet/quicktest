@@ -56,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/ingenuity-build/quicksilver
 cd quicksilver
-git checkout v1.3.2
+git checkout v1.4.0-rc4
 make install
 
 quicksilverd init $Validator_Name --chain-id $CHAIN_ID
@@ -152,8 +152,12 @@ systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 break
 ;;
 "UPDATE")
-echo -e "      \e[1m\e[32m SOOOON\e[0m"
-quicksilverd version
+cd $HOME/quicksilver
+git fetch --all
+git checkout v1.4.0-rc4
+make install
+sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
+
 
 break
 ;;
