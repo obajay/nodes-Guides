@@ -43,11 +43,11 @@ cd go-bitsong
 git checkout v0.13.0
 make install
 ```
-🟢UPDATE🟢 03.02.23
+🟢UPDATE🟢 17.02.23
 ```python
 cd $HOME/go-bitsong
 git fetch --all
-git checkout v0.13.0
+git checkout v0.14.0
 make install
 bitsongd version
 sudo systemctl restart bitsongd && journalctl -u bitsongd -f -o cat
@@ -55,8 +55,8 @@ sudo systemctl restart bitsongd && journalctl -u bitsongd -f -o cat
 ```
 
 `bitsongd version version --long | head`
-- version: 0.13.0
-- commit: ecf29a742bebfd9c037a9aeadb4e4ac85d4bcd4b
+- version: 0.14.0
+- commit: e5847ac0b4f0319811d62140f4e438d33163ad0d
 
 ```python
 bitsongd init STAVRguide --chain-id bitsong-2b
