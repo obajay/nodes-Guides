@@ -113,10 +113,8 @@ EOF
 
 ## Start
 ```python
-sudo systemctl daemon-reload && \
-sudo systemctl enable kyved && \
-sudo systemctl restart kyved && \
-sudo journalctl -u kyved -f -o cat
+sudo systemctl daemon-reload && sudo systemctl enable kyved && 
+sudo systemctl restart kyved && sudo journalctl -u kyved -f -o cat
 ```
 ## Create validator
 ```python
