@@ -55,53 +55,53 @@ kyved keys add <walletname> --recover
 
 ## Genesis
 ```python
-wget https://nc2.breithecker.de/s/z3bDsQk8D6snyWA/download/genesis-v0.7.0-beta.json
-mv genesis-v0.7.0-beta.json ~/.kyve/config/genesis.json
+wget -O $HOME/.kyve/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Kyve/Kaon/genesis.json"
 ```
 
 ## Peers/Seeds/MaxPeers/FilterPeers
-```console
+```python
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.kyve/config/config.toml
 seeds=""
-peers="410bf0cb2cdb9a6e159c14b9d01531b9ecb1edd4@3.70.26.46:26656"
+peers="f5f83485ce4fc708dfa8b4de22361fdd15fba3ee@192.168.0.97:26656,ed9989e0b003b24f3d38d060017b73af5c61b18c@192.168.1.118:26656,78d76da232b5a9a5648baa20b7bd95d7c7b9d249@142.93.161.118:26656,61909d4ad9fac1890d69b93612e7a4177c8d1104@192.168.1.177:26656,aaa8a6f7eab9d20e87bcc01ddd53616cbd203c36@136.243.88.91:26656"
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$seeds\"/; s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.kyve/config/config.toml
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.kyve/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.kyve/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.kyve/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.kyve/config/config.toml
 ```
 
 ### Pruning (optional)
-
-    pruning="custom" && \
-    pruning_keep_recent="100" && \
-    pruning_keep_every="0" && \
-    pruning_interval="10" && \
-    sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" ~/.kyve/config/app.toml && \
-    sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" ~/.kyve/config/app.toml && \
-    sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" ~/.kyve/config/app.toml && \
-    sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.kyve/config/app.toml
-
+```python
+pruning="custom" && \
+pruning_keep_recent="100" && \
+pruning_keep_every="0" && \
+pruning_interval="10" && \
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" ~/.kyve/config/app.toml && \
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" ~/.kyve/config/app.toml && \
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" ~/.kyve/config/app.toml && \
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.kyve/config/app.toml
+```
 ### Indexer (optional)
-
-    indexer="null" && \
-    sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.kyve/config/config.toml
+```python
+ndexer="null" && \
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.kyve/config/config.toml
+```
 
 ## Download addrbook
-```
-wget -O $HOME/.kyve/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Kyve/beta/addrbook.json"
+```python
+wget -O $HOME/.kyve/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Kyve/Kaon/addrbook.json"
 ```
 
 
 
 # Create a service file
-```console
+```python
 sudo tee <<EOF > /dev/null /etc/systemd/system/kyved.service
 [Unit]
-Description=KYVE Chain-Node daemon
+Description=KYVE
 After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which chaind) start
+ExecStart=$(which kyved) start
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=infinity
@@ -111,73 +111,55 @@ WantedBy=multi-user.target
 EOF
 ```
 
-## SnapShot (0.1 GB) updated every 24 hours
-```python
-cd $HOME
-sudo systemctl stop kyved
-cp $HOME/.kyve/data/priv_validator_state.json $HOME/.kyve/priv_validator_state.json.backup
-rm -rf $HOME/.kyve/data
-wget http://kyvebeta.snapshot.stavr.tech:5102/kyve/kyve-snap.tar.lz4 && lz4 -c -d $HOME/kyve-snap.tar.lz4 | tar -x -C $HOME/.kyve --strip-components 2
-rm -rf kyve-snap.tar.lz4
-mv $HOME/.kyve/priv_validator_state.json.backup $HOME/.kyve/data/priv_validator_state.json
-sudo systemctl restart kyved && journalctl -u kyved -f -o cat
-```
-
-
-# State Sync KYVE (kyve-beta)
-```bash
-SNAP_RPC="kyveb.rpc.t.stavr.tech:20057"
-peers="4d7740c5ba34ade97bb6491422eab414b7831ca0@135.181.5.47:20056"
-sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.kyve/config/config.toml
-
-LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
-TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
-
-echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
-s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.kyve/config/config.toml
-chaind tendermint unsafe-reset-all --home $HOME/.kyve
-sudo systemctl restart kyved && journalctl -u kyved -f -o cat
-```
-
-
 ## Start
-```console
+```python
 sudo systemctl daemon-reload && \
 sudo systemctl enable kyved && \
 sudo systemctl restart kyved && \
 sudo journalctl -u kyved -f -o cat
 ```
 ## Create validator
-
-
-	chaind tx staking create-validator \
-	--amount 10000000000tkyve \
-	--moniker="STAVRGuide" \
-	--identity="<identity>" \
-	--website="<website>" \
-	--details="<any details>" \
-	--commission-rate "0.10" \
-	--commission-max-rate "0.20" \
-	--commission-max-change-rate "0.05" \
-	--min-self-delegation "1" \
-	--pubkey "$(chaind tendermint show-validator)" \
-	--from <your-key-name> \
-	--chain-id kyve-beta
-
+```python
+kyved tx staking create-validator \
+-amount 10000000000tkyve \
+--moniker="STAVRGuide" \
+--identity="<identity>" \
+--website="<website>" \
+--details="<any details>" \
+--commission-rate "0.10" \
+--commission-max-rate "0.20" \
+--commission-max-change-rate "0.05" \
+--min-self-delegation "1" \
+--pubkey "$(kyved tendermint show-validator)" \
+--from <your-key-name> \
+--chain-id kaon-1
+```
 
 ## Delete node
-    sudo systemctl stop kyved && \
-    sudo systemctl disable kyved && \
-    rm /etc/systemd/system/kyved.service && \
-    sudo systemctl daemon-reload && \
-    cd $HOME && \
-    rm -rf .kyve && \
-    rm -rf $(which chaind)
+```python
+sudo systemctl stop kyved && \
+sudo systemctl disable kyved && \
+rm /etc/systemd/system/kyved.service && \
+sudo systemctl daemon-reload && \
+cd $HOME && \
+rm -rf .kyve && \
+rm -rf $(which kyved)
+```
 
-
+### Sync Info
+```python
+source $HOME/.bash_profile
+kyved status 2>&1 | jq .SyncInfo
+```
+### NodeINfo
+```python
+kyved status 2>&1 | jq .NodeInfo
+```
+### Check node logs
+```python
+sudo journalctl -u kyved -f -o cat
+```
+### Check Balance
+```python
+kyved query bank balances kyve...addresshaqq1yjgn7z09ua9vms259j
+```
