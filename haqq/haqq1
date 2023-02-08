@@ -57,7 +57,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd
 git clone https://github.com/haqq-network/haqq
 cd haqq
-git checkout v1.3.0
+git checkout v1.3.1
 make install
 
 haqqd init $Validator_Name --chain-id $CHAIN_ID
@@ -154,7 +154,7 @@ break
 "UPDATE")
 cd $HOME/haqq
 git fetch --all
-git checkout v1.3.0
+git checkout v1.3.1
 make install
 sudo systemctl restart haqqd && journalctl -u haqqd -f -o cat
 
