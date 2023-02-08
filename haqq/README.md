@@ -37,13 +37,23 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Binary   15.12.22
+# Binary   09.02.23
 ```python
 git clone https://github.com/haqq-network/haqq
 cd haqq
 git checkout v1.3.0
 make install
 ```
+*******🟢UPDATE🟢******* 09.02.23
+```python
+cd $HOME/haqq
+git fetch --all
+git checkout v1.3.1
+make install
+haqqd version
+sudo systemctl restart haqqd && journalctl -u haqqd -f -o cat
+```
+
 
 ## Initialisation
 ```python
