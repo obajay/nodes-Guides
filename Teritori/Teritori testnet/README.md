@@ -17,10 +17,10 @@ wget -O teritor https://raw.githubusercontent.com/obajay/nodes-Guides/main/Terit
 # 2) Manual installation
 
 ### Preparing the server
-
-    sudo apt update && sudo apt upgrade -y && \
-    sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
-
+```python
+sudo apt update && sudo apt upgrade -y && \
+sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
+```
 ## GO 19 (one command)
 ```python
 ver="1.19" && \
@@ -33,13 +33,23 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-## Build 11.02.23
+## Build 10.02.23
 ```python
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain
 git checkout v1.3.1
 make install
 ```
+*******🟢UPDATE🟢******* 10.02.23
+```python
+cd $HOME/teritori-chain
+git fetch --all
+git checkout v1.3.1
+make install
+sudo systemctl restart teritorid && sudo journalctl -u teritorid -f -o cat
+```
+
+
 ```python
 teritorid init STAVRguide --chain-id teritori-testnet-v3
 teritorid config chain-id teritori-testnet-v3
