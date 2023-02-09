@@ -158,7 +158,7 @@ break
 cd $HOME
 cd hid-node
 git fetch --all
-git checkout v0.1.5
+git checkout v0.1.6
 make install
 sudo systemctl restart hid-noded && sudo journalctl -u hid-noded -f -o cat
 
