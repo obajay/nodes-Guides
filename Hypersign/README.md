@@ -51,14 +51,13 @@ git checkout v0.1.5
 make install
 ```
 
-*******🟢UPDATE🟢******* 18.12.22
+*******🟢UPDATE🟢******* 13.02.23
 ```python
 cd $HOME/hid-node
-wget https://github.com/hypersign-protocol/hid-node/releases/download/v0.1.5/hid-noded-0.1.5-linux-amd64.tar.gz
-tar -zxvf hid-noded-0.1.5-linux-amd64.tar.gz
-mv $HOME/hid-noded-0.1.5-linux-amd64/hid-noded $HOME/go/bin/
-rm hid-noded-0.1.5-linux-amd64.tar.gz
-rm -r hid-noded-0.1.5-linux-amd64
+git fetch --all
+git checkout v0.1.6
+make install
+hid-noded version
 sudo systemctl restart hid-noded && sudo journalctl -u hid-noded -f -o cat
 ```
 
