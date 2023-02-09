@@ -14,20 +14,21 @@
 | Testnet   |   4| 8GB  | 160GB    |
 
 # 1) Auto_install script 
-```bash
+```python
 wget -O sources https://raw.githubusercontent.com/obajay/nodes-Guides/main/Source/sources && chmod +x sources && ./sources
 ```
 # 2) Manual installation
 
 ### Preparing the server
-
-    sudo apt update && sudo apt upgrade -y && \
-    sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
-
-## GO 18.3 (one command)
+```python
+sudo apt update && sudo apt upgrade -y && \
+sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
 ```
-ver="1.18.3" && \
+
+## GO 19.4 (one command)
+```python
 cd $HOME && \
+ver="1.19.4" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
@@ -38,7 +39,7 @@ go version
 ```
 
 # Binary   01.08.22
-```console 
+```python 
 git clone -b testnet https://github.com/Source-Protocol-Cosmos/source.git
 cd ~/source
 make install
@@ -48,16 +49,17 @@ make install
 - commit: e06b810e842e57ec8f5432c9cdd57883a69b3cee 
 
 ## Initialisation
-```console
-sourced init <moniker-name> --chain-id=sourcechain-testnet
+```python
+sourced init STAVRguide --chain-id=sourcechain-testnet
 ```
 ## Add wallet
-```console
+```python
 sourced keys add <walletName>
+    or
 sourced keys add <walletName> --recover
 ```
 # Genesis
-```console
+```python
 curl -s  https://raw.githubusercontent.com/Source-Protocol-Cosmos/testnets/master/sourcechain-testnet/genesis.json > ~/.source/config/genesis.json
 ```
 
@@ -65,7 +67,7 @@ curl -s  https://raw.githubusercontent.com/Source-Protocol-Cosmos/testnets/maste
 - 2bf556b50a2094f252e0aac75c8018a9d6c0a77ba64ce39811945087f6a5165d  genesis.json
 
 ### Pruning (optional) one command
-```
+```python
 pruning="custom" && \
 pruning_keep_recent="100" && \
 pruning_keep_every="0" && \
@@ -76,11 +78,12 @@ sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.source/config/app.toml
 ```
 ### Indexer (optional) one command
-    indexer="null" && \
-    sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.source/config/config.toml
-
+```python
+indexer="null" && \
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.source/config/config.toml
+```
 ### Set up the minimum gas price and Peers/Seeds/Filter peers
-```console
+```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0usource\"/;" ~/.source/config/app.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.source/config/config.toml
 external_address=$(wget -qO- eth0.me) 
@@ -97,12 +100,12 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.sour
 ```
 
 ## Download addrbook
-```console
+```python
 wget -O $HOME/.source/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Source/addrbook.json"
 ```
 
 # Create a service file
-```console
+```python
 sudo tee /etc/systemd/system/sourced.service > /dev/null <<EOF
 [Unit]
 Description=source
@@ -123,7 +126,7 @@ EOF
 # SnapShot (~0.1 GB) updated every 6 hours
 ```python
 cd $HOME
-snap install lz4
+apt install lz4
 sudo systemctl stop sourced
 cp $HOME/.source/data/priv_validator_state.json $HOME/.source/priv_validator_state.json.backup
 rm -rf $HOME/.source/data
@@ -142,7 +145,7 @@ sudo systemctl restart sourced && sudo journalctl -u sourced -f -o cat
 ```
 
 ## Create validator
-```
+```python
 sourced tx staking create-validator \
 --amount=1000000usource \
 --pubkey=$(sourced tendermint show-validator) \
@@ -161,7 +164,7 @@ sourced tx staking create-validator \
 ```
 
 ### Delete node (one command)
-```
+```python
 sudo systemctl stop sourced && \
 sudo systemctl disable sourced && \
 rm /etc/systemd/system/sourced.service && \
