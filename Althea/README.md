@@ -181,6 +181,7 @@ althea tx staking create-validator \
 --from <wallet> \
 --moniker="STAVRguide" \
 --chain-id althea_7357-1 \
+--gas 350000 \
 --identity="" \
 --website="" \
 --details="" -y
