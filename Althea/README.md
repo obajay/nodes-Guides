@@ -193,8 +193,8 @@ sudo systemctl disable althea && \
 rm /etc/systemd/system/althea.service && \
 sudo systemctl daemon-reload && \
 cd $HOME && \
-rm -rf canine-chain && \
-rm -rf .canine && \
+rm -rf althea-chain && \
+rm -rf .althea && \
 rm -rf $(which althea)
 ```
 #
