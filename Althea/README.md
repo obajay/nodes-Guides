@@ -175,8 +175,8 @@ althea tx staking create-validator \
 --commission-rate 0.1 \
 --commission-max-rate 1 \
 --commission-max-change-rate 1 \
---min-self-delegation "1000000" \
---amount 1000000ualthea \
+--min-self-delegation "1" \
+--amount 1000000000000000000ualthea \
 --pubkey $(althea tendermint show-validator) \
 --from <wallet> \
 --moniker="STAVRguide" \
