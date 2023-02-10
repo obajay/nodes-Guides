@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O althe https://raw.githubusercontent.com/obajay/nodes-Guides/main/Althea/althe && chmod +x althe && ./althe
 ```
 
 # 2) Manual installation
