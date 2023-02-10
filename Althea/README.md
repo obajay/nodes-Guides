@@ -44,7 +44,7 @@ go version
 ```python
 git clone https://github.com/althea-net/althea-chain
 cd althea-chain
-git checkout v0.3.1
+git checkout v0.3.2
 make install
 ```
 *******🟢UPDATE🟢******* 00.00.23
@@ -53,8 +53,8 @@ SOOON
 ```
 
 `althea version --long`
-- version: v0.3.1
-- commit: 7cd4aa52c4e064244e67ca70b2c0eb8197d35146
+- version: v0.3.2
+- commit: 5ff81e16371983cbb3591476e6595d27946ff124
 
 ```python
 althea init STAVRguide --chain-id althea_7357-1
@@ -70,12 +70,11 @@ althea keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget https://raw.githubusercontent.com/althea-net/althea-chain-docs/main/testnet-3-genesis.json
-mv testnet-3-genesis.json ~/.althea/config/genesis.json
+wget -O $HOME/.althea/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Althea/genesis.json"
 
 ```
 `sha256sum $HOME/.althea/config/genesis.json`
-+ 82d9ce0d0d273abecbbc9bd4a70c6f3bedbb0a1ffe75fa3ff523b3e22c796f03
++ af9260b536bc83875ae335d43a1b467967616a439ac736b3d18d6167a404f0b9
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
@@ -83,7 +82,7 @@ sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ualthea\"/;"
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.althea/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.althea/config/config.toml
-peers=""
+peers="733e9d5f995c2866df9f2e1254551940f060a70c@51.159.159.112:26656,11e8f38e3c5601e4ab2333d5a5bbb108a39b8e1c@159.69.110.238:26656,a81cf8f7f330e2e09bec93c866214f7b3b336849@65.109.87.88:26356,83147260a704b75283ca6da218516ee0eaa82956@170.64.156.36:26656,617433cdf5411fc9241d0f77239f751a14669368@146.190.156.221:26656,856ac01afa0163c27b69e1b25464427310120924@85.25.134.23:26656,d320b861277a338daefec6e620daafe07fc5ee19@65.108.199.36:20036,8203297aacaea1d889fcf36240484c9efc217bbd@116.202.156.106:26656,c6e1ed7117cd56036cc51835945d155e9c474c01@167.235.144.3:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.althea/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.althea/config/config.toml
@@ -110,7 +109,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.althea/config/config.
 
 ## Download addrbook
 ```python
-wget -O $HOME/.althea/config/addrbook.json "SOON"
+wget -O $HOME/.althea/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Althea/addrbook.json"
 ```
 
 # Create a service file
