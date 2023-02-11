@@ -1,6 +1,6 @@
 # Althea Testnet guide
 
-![althea](https://user-images.githubusercontent.com/44331529/217901756-3b01d3c0-aa9e-4704-8eb7-cf3d6cddb239.png)
+![Althea_Logo-BLUE_SIGNAL](https://user-images.githubusercontent.com/44331529/218240936-c2095305-1a28-45f6-8ccd-d068a4fe5754.svg)
 
 [WebSite](https://www.althea.net/)\
 [GitHub](https://github.com/althea-net)
