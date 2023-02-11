@@ -71,7 +71,7 @@ dymd keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget https://raw.githubusercontent.com/dymensionxyz/testnets/main/dymension-hub/35-C/pre-genesis.json -O $HOME/.dymension/config/genesis.json
+wget https://raw.githubusercontent.com/obajay/nodes-Guides/main/Dymension/genesis.json -O $HOME/.dymension/config/genesis.json
 ```
 `sha256sum $HOME/.dymension/config/genesis.json`
 + cf20e3b15d089ceeaaa9bb2abcd48a50f98e9f2274f4320aeae534d6972c4ee2
