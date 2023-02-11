@@ -130,7 +130,7 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-# StateSync Jackal Testnet
+# StateSync Dymension Testnet
 ```python
 SOOOOOOOOOOON
 ```
