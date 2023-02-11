@@ -6,8 +6,7 @@
 [WebSite](https://dymension.xyz/) \
 [GitHub](https://github.com/dymensionxyz/testnets)
 =
-[EXPLORER 1](SOOON) \
-[EXPLORER 2](SOOON)
+[EXPLORER](https://explorer.stavr.tech/dymension-testnet/staking)
 =
 
 - **Minimum hardware requirements**:
@@ -72,23 +71,23 @@ dymd keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-SOOOOOOON
+wget https://raw.githubusercontent.com/dymensionxyz/testnets/main/dymension-hub/35-C/pre-genesis.json -O $HOME/.dymension/config/genesis.json
 ```
 `sha256sum $HOME/.dymension/config/genesis.json`
-+ SOOOOOOOON
++ cf20e3b15d089ceeaaa9bb2abcd48a50f98e9f2274f4320aeae534d6972c4ee2
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ujkl\"/;" ~/.dymension/config/app.toml
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0udym\"/;" ~/.dymension/config/app.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.dymension/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.dymension/config/config.toml
-peers=""
+peers="dc237ba44f4f178f6a72b60d9dee2337d424bfce@65.109.85.226:26656,3515bc6054d3e71caf2e04effaad8c95ee4b6dc6@165.232.186.173:26656,e9a375501c0a2eab296a16753667c708ed64649e@95.214.53.46:26656,2d05753b4f5ac3bcd824afd96ea268d9c32ed84d@65.108.132.239:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.dymension/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.dymension/config/config.toml
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.dymension/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.dymension/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.dymension/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.dymension/config/config.toml
 
 ```
 ### Pruning (optional)
