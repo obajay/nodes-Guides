@@ -55,9 +55,10 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-git clone https://github.com/LambdaIM/lambdavm.git
-cd lambdavm
+git clone https://github.com/LambdaIM/lambdavm.git && cd lambdavm
+git checkout 035d5b253c1a9d9d084a0a593ebfdd7089b59c80
 make install
+
 
 lambdavm init $Validator_Name --chain-id $CHAIN_ID
 
