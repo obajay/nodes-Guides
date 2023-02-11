@@ -46,9 +46,9 @@ go version
 
 # Build 10.10.22
 ```python
-cd ~
-git clone https://github.com/LambdaIM/lambdavm.git
-cd lambdavm
+cd $HOME
+git clone https://github.com/LambdaIM/lambdavm.git && cd lambdavm
+git checkout 035d5b253c1a9d9d084a0a593ebfdd7089b59c80
 make install
 ```
 `lambdavm version`
