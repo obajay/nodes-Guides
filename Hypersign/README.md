@@ -17,7 +17,7 @@
 
 
 # 1) Auto_install script
-```bash
+```python
 wget -O hyper https://raw.githubusercontent.com/obajay/nodes-Guides/main/Hypersign/hyper && chmod +x hyper && ./hyper
 ```
 
@@ -25,65 +25,69 @@ wget -O hyper https://raw.githubusercontent.com/obajay/nodes-Guides/main/Hypersi
 
 ### Preparing the server
 
-```bash
+```python
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
-## GO 18.5
-```bash
-cd $HOME
-ver="1.18.5"
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
-sudo rm -rf /usr/local/go
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
-rm "go$ver.linux-amd64.tar.gz"
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
-source $HOME/.bash_profile
+## GO 19
+```python
+ver="1.19" && \
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
+sudo rm -rf /usr/local/go && \
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
+rm "go$ver.linux-amd64.tar.gz" && \
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
+source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 18.12.22
-```bash
-git clone https://github.com/hypersign-protocol/hid-node.git
-cd hid-node
-git checkout v0.1.5
-make install
+# Build 13.02.23
+```python
+cd $HOME
+wget https://github.com/hypersign-protocol/hid-node/releases/download/v0.1.6/hid-noded-0.1.6-linux-amd64.tar.gz
+tar -xvzf hid-noded-0.1.6-linux-amd64.tar.gz
+rm -rf hid-noded-0.1.6-linux-amd64.tar.gz
+chmod +x hid-noded
+mv $HOME/hid-noded $HOME/go/bin/
 ```
 
 *******🟢UPDATE🟢******* 13.02.23
 ```python
-cd $HOME/hid-node
-git fetch --all
-git checkout v0.1.6
-make install
+cd $HOME
+wget https://github.com/hypersign-protocol/hid-node/releases/download/v0.1.6/hid-noded-0.1.6-linux-amd64.tar.gz
+tar -xvzf hid-noded-0.1.6-linux-amd64.tar.gz
+rm -rf hid-noded-0.1.6-linux-amd64.tar.gz
+chmod +x hid-noded
+mv $HOME/hid-noded $(which hid-noded)
 hid-noded version
 sudo systemctl restart hid-noded && sudo journalctl -u hid-noded -f -o cat
 ```
 
 `hid-noded version`
-- v0.1.5
+- version v0.1.6
+- commit: b9d66f4
 
-```bash
+```python
 hid-noded init STAVRguide --chain-id jagrat
 ```    
 
 ## Create/recover wallet
-```bash
+```python
 hid-noded keys add <walletname>
 hid-noded keys add <walletname> --recover
 ```
 
 ## Download Genesis 
 
-```bash
+```python
 curl -s  https://raw.githubusercontent.com/hypersign-protocol/networks/master/testnet/jagrat/final_genesis.json > ~/.hid-node/config/genesis.json
 ```
 `sha256sum $HOME/.hid-node/config/genesis.json`
 + 7de2e77cff6d601387a46a760e9c0d7a573b2cfdbdaebb0f04512878543fc0a1
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
-```bash
+```python
 sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0uhid\"/" $HOME/.hid-node/config/app.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.hid-node/config/config.toml
 external_address=$(wget -qO- eth0.me) 
@@ -97,7 +101,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.hid-
 
 ```
 ### Pruning (optional)
-```bash
+```python
 pruning="custom" && \
 pruning_keep_recent="100" && \
 pruning_keep_every="0" && \
@@ -108,18 +112,18 @@ sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.hid-node/config/app.toml
 ```
 ### Indexer (optional) 
-```bash
+```python
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.hid-node/config/config.toml
 ```
 
 ## Download addrbook
-```bash
+```python
 wget -O $HOME/.hid-node/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Hypersign/addrbook.json"
 ```
 
 # StateSync
-```bash
+```python
 SNAP_RPC=http://hid.rpc.t.stavr.tech:21057
 peers="2eb8a0e9e8b32e0890a8ecde766e1ab80126fddf@135.181.5.47:21056"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.hid-node/config/config.toml
@@ -139,7 +143,7 @@ systemctl restart hid-noded && journalctl -u hid-noded -f -o cat
 ```
 
 # SnapShot 26.10.22 (0.1 GB) height 389157
-```bash
+```python
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
 sudo systemctl stop hid-noded
 rm -rf $HOME/.hid-node/data/
@@ -163,7 +167,7 @@ systemctl restart hid-noded && journalctl -u hid-noded -f -o cat
 ```
 
 # Create a service file
-```bash
+```python
 sudo tee /etc/systemd/system/hid-noded.service > /dev/null <<EOF
 [Unit]
 Description=hypersign
@@ -182,14 +186,14 @@ EOF
 ```
 
 ## Start
-```bash
+```python
 sudo systemctl daemon-reload
 sudo systemctl enable hid-noded
 sudo systemctl restart hid-noded && sudo journalctl -u hid-noded -f -o cat
 ```
 
 ### Create validator
-```bash
+```python
 hid-noded tx staking create-validator \
 --amount=10000000uhid \
 --pubkey=$(hid-noded tendermint show-validator) \
@@ -208,7 +212,7 @@ hid-noded tx staking create-validator \
 ```
 
 ## Delete node
-```bash
+```python
 sudo systemctl stop hid-noded && \
 sudo systemctl disable hid-noded && \
 rm /etc/systemd/system/hid-noded.service && \
