@@ -109,7 +109,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.dymension/config/conf
 
 ## Download addrbook
 ```python
-wget -O $HOME/.dymension/config/addrbook.json "SOOOOOOOOON
+wget -O $HOME/.dymension/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Dymension/addrbook.json
 ```
 
 # Create a service file
