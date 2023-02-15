@@ -52,8 +52,9 @@ umeed version
 sudo systemctl restart umeed && journalctl -u umeed -f -o cat
 ```
 
-`umeed version`
-+ v4.0.1
+`umeed version --long`
++ version: HEAD-c9c37b571b83f1820396a1e13b582867aa884bd1
++ commit: c9c37b571b83f1820396a1e13b582867aa884bd1
 
 ## Init
 ```python
