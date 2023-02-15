@@ -61,7 +61,7 @@ make install
 dymd init $Validator_Name --chain-id $CHAIN_ID
 
 wget https://raw.githubusercontent.com/obajay/nodes-Guides/main/Dymension/genesis.json -O $HOME/.dymension/config/genesis.json
-wget -O $HOME/.dymension/config/addrbook.json "soon"
+wget -O $HOME/.dymension/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Dymension/addrbook.json"
 
 
 
