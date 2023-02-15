@@ -127,7 +127,7 @@ s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.core/coreum-testnet-1/con
 cored tendermint unsafe-reset-all
 systemctl restart cored && journalctl -u cored -f -o cat
 ```
-# SnapShot (~0.5 GB) updated every 5 hours
+# SnapShot (~0.2 GB) updated every 5 hours
 ```python
 cd $HOME
 apt install lz4
