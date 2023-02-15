@@ -124,7 +124,7 @@ s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.core/coreum-testnet-1/config/config.toml
-cored tendermint unsafe-reset-all --home /root/.core/coreum-testnet-1
+cored tendermint unsafe-reset-all
 systemctl restart cored && journalctl -u cored -f -o cat
 ```
 # SnapShot (~0.5 GB) updated every 5 hours
