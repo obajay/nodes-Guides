@@ -167,10 +167,8 @@ break
 cd $HOME
 apt install lz4
 sudo systemctl stop cored
-cp $HOME/.core/coreum-testnet-1/data/priv_validator_state.json $HOME/.core/coreum-testnet-1/priv_validator_state.json.backup
 rm -rf $HOME/.core/coreum-testnet-1/data
 curl -o - -L http://coreum.snapshot.stavr.tech:1022/cored/cored-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.core/coreum-testnet-1 --strip-components 2
-mv $HOME/.core/coreum-testnet-1/priv_validator_state.json.backup $HOME/.core/coreum-testnet-1/data/priv_validator_state.json
 wget -O $HOME/.core/coreum-testnet-1/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Coreum/addrbook.json"
 sudo systemctl restart cored && journalctl -u cored -f -o cat
 
