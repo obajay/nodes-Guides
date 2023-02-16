@@ -43,15 +43,15 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 07.11.22
+# Build 16.02.23
 ```bash
 cd $HOME
 git clone https://github.com/JackalLabs/canine-chain && cd canine-chain
-git checkout v1.1.2-hotfix
+git checkout v1.1.3.1
 make install
 ```
 `canined version`
-- version: 1.1.2
+- version: 1.1.3.1
 
 ```bash
 canined init STAVRguide --chain-id jackal-1
