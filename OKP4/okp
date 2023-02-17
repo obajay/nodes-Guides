@@ -152,8 +152,11 @@ systemctl restart okp4d && journalctl -u okp4d -f -o cat
 break
 ;;
 "UPDATE")
-echo -e "        \e[1m\e[32mVERSION\e[0m"
-okp4d version
+cd $HOME/okp4d
+git fetch --all
+git checkout v4.0.0
+make install
+sudo systemctl restart okp4d && sudo journalctl -u okp4d -f -o cat
 
 break
 ;;
