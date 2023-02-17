@@ -1,0 +1,837 @@
+{
+  "genesis_time": "2023-02-10T15:00:00.050122553Z",
+  "chain_id": "qsr-questnet-04",
+  "initial_height": "1",
+  "consensus_params": {
+    "block": {
+      "max_bytes": "22020096",
+      "max_gas": "-1",
+      "time_iota_ms": "1000"
+    },
+    "evidence": {
+      "max_age_num_blocks": "100000",
+      "max_age_duration": "172800000000000",
+      "max_bytes": "1048576"
+    },
+    "validator": {
+      "pub_key_types": [
+        "ed25519"
+      ]
+    },
+    "version": {}
+  },
+  "app_hash": "",
+  "app_state": {
+    "auth": {
+      "params": {
+        "max_memo_characters": "256",
+        "tx_sig_limit": "7",
+        "tx_size_cost_per_byte": "10",
+        "sig_verify_cost_ed25519": "590",
+        "sig_verify_cost_secp256k1": "1000"
+      },
+      "accounts": [
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar14589xta8jurql2gvv4yfeqk2qwre7d9dn3h5dg",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar1jt9w26mpxxjsk63mvd4m2ynj0af09csldzymy5",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar1fswsppr2darpd8cvg5p994gzux9pmwgqw4z8t5",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar1c2nk4zhku9v9ww4c76va6502xsqjdre5qdkj6y",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar1l58x93k4x4v0908678a4dcadzs4cd294hxectw",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar1lpvnz5dyw34wrdjerc37x9ru52u98ed5ayahmk",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar1y3ehn829sxl8xxcc4elzhgezxwvrxrl9a3j5x2",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar1vkec9wje9g8k93qm47s9umg0ntul58f62m4wmu",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar16px4fsgl448ajzc022cdydlmpndhffr5f4q5nk",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar1x5wgh6vwye60wv3dtshs9dmqggwfx2ldarkyp2",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar1ydcykukwk4kz0smqg5dt5uhl0a5dwt45lawj7n",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar14qekdkj2nmmwea4ufg9n002a3pud23y8tp6ku4",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar138mqg6euuyhsnmyps4r9gsxs47zm6npkr9gq38",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar1cs70skzs8re863um07c6tm0p3l7lyazdurelcl",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar1akxx3cnggvdnz5esuadt52nk2h5m66c5npfhv6",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar153ngtc24r3pvxgcztc0rg9jwxl8v9qff7dut0s",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar1sztmmvmv5a3kpqzkcw7t2c43tfdfa67y9pe0gp",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar1quwyej8qk0jmw8wj6qvt6j7h8ta5uwvtrs9nha",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar1su60l57kqz8725mlfc7cml45d9z0j59zx2ytgn",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar1hm34uuxweee8zwpl292h38g0h2j85a0aa5d65k",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar15j65hlelv7tcrjtes9t6pmzqznxh0854dtjdc5",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar1tfrwyqqe99hpjs6yqx45ls3ds79nq5gdsxtwt7",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar1nxc3zy824gjvxu0g8ulv2n0kjngmxwtv0xjv7y",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar17qe4cuv83dvz99w967pjtu5fzusy8mqrs8j34f",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar1wzdhlvurmav577eu7n3z329eg5ykaez050az8l",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar1jwkpcrezst5ku2g55ysc37gf925uxzql8ckesk",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar189twv6584s8na8ns6phxv5jxa320ygkzhc9443",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar14smd09mdxza67v6ytfpz28v63fawta2cptj9nv",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "quasar1dpkycjqg0x9mkfted5a60t8znzrn3c9epsy9d0",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        }
+      ]
+    },
+    "bank": {
+      "params": {
+        "send_enabled": [],
+        "default_send_enabled": true
+      },
+      "balances": [
+        {
+          "address": "quasar1quwyej8qk0jmw8wj6qvt6j7h8ta5uwvtrs9nha",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "50000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar1ydcykukwk4kz0smqg5dt5uhl0a5dwt45lawj7n",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "50000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar1y3ehn829sxl8xxcc4elzhgezxwvrxrl9a3j5x2",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "50000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar1x5wgh6vwye60wv3dtshs9dmqggwfx2ldarkyp2",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "50000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar189twv6584s8na8ns6phxv5jxa320ygkzhc9443",
+          "coins": [
+            {
+              "denom": "uayy",
+              "amount": "100000000000000"
+            },
+            {
+              "denom": "uoro",
+              "amount": "100000000000000"
+            },
+            {
+              "denom": "uqsr",
+              "amount": "100000000000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar1fswsppr2darpd8cvg5p994gzux9pmwgqw4z8t5",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "50000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar1tfrwyqqe99hpjs6yqx45ls3ds79nq5gdsxtwt7",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "50000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar1vkec9wje9g8k93qm47s9umg0ntul58f62m4wmu",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "50000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar1dpkycjqg0x9mkfted5a60t8znzrn3c9epsy9d0",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "10000000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar1wzdhlvurmav577eu7n3z329eg5ykaez050az8l",
+          "coins": [
+            {
+              "denom": "uayy",
+              "amount": "100000000000"
+            },
+            {
+              "denom": "uoro",
+              "amount": "100000000000"
+            },
+            {
+              "denom": "uqsr",
+              "amount": "100000000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar1sztmmvmv5a3kpqzkcw7t2c43tfdfa67y9pe0gp",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "50000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar1su60l57kqz8725mlfc7cml45d9z0j59zx2ytgn",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "50000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar138mqg6euuyhsnmyps4r9gsxs47zm6npkr9gq38",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "50000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar1jt9w26mpxxjsk63mvd4m2ynj0af09csldzymy5",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "50000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar1jwkpcrezst5ku2g55ysc37gf925uxzql8ckesk",
+          "coins": [
+            {
+              "denom": "uayy",
+              "amount": "100000000000"
+            },
+            {
+              "denom": "uoro",
+              "amount": "100000000000"
+            },
+            {
+              "denom": "uqsr",
+              "amount": "100000000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar1nxc3zy824gjvxu0g8ulv2n0kjngmxwtv0xjv7y",
+          "coins": [
+            {
+              "denom": "uayy",
+              "amount": "100000000000"
+            },
+            {
+              "denom": "uoro",
+              "amount": "100000000000"
+            },
+            {
+              "denom": "uqsr",
+              "amount": "100000000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar153ngtc24r3pvxgcztc0rg9jwxl8v9qff7dut0s",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "50000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar15j65hlelv7tcrjtes9t6pmzqznxh0854dtjdc5",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "50000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar14qekdkj2nmmwea4ufg9n002a3pud23y8tp6ku4",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "50000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar14smd09mdxza67v6ytfpz28v63fawta2cptj9nv",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "10000000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar14589xta8jurql2gvv4yfeqk2qwre7d9dn3h5dg",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "50000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar1hm34uuxweee8zwpl292h38g0h2j85a0aa5d65k",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "50000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar1c2nk4zhku9v9ww4c76va6502xsqjdre5qdkj6y",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "50000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar1cs70skzs8re863um07c6tm0p3l7lyazdurelcl",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "50000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar16px4fsgl448ajzc022cdydlmpndhffr5f4q5nk",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "50000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar1akxx3cnggvdnz5esuadt52nk2h5m66c5npfhv6",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "50000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar17qe4cuv83dvz99w967pjtu5fzusy8mqrs8j34f",
+          "coins": [
+            {
+              "denom": "uayy",
+              "amount": "100000000000000"
+            },
+            {
+              "denom": "uoro",
+              "amount": "100000000000000"
+            },
+            {
+              "denom": "uqsr",
+              "amount": "100000000000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar1lpvnz5dyw34wrdjerc37x9ru52u98ed5ayahmk",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "50000000"
+            }
+          ]
+        },
+        {
+          "address": "quasar1l58x93k4x4v0908678a4dcadzs4cd294hxectw",
+          "coins": [
+            {
+              "denom": "uqsr",
+              "amount": "50000000"
+            }
+          ]
+        }
+      ],
+      "supply": [],
+      "denom_metadata": []
+    },
+    "capability": {
+      "index": "1",
+      "owners": []
+    },
+    "crisis": {
+      "constant_fee": {
+        "denom": "uqsr",
+        "amount": "50000000"
+      }
+    },
+    "distribution": {
+      "params": {
+        "community_tax": "0.020000000000000000",
+        "base_proposer_reward": "0.010000000000000000",
+        "bonus_proposer_reward": "0.040000000000000000",
+        "withdraw_addr_enabled": true
+      },
+      "fee_pool": {
+        "community_pool": []
+      },
+      "delegator_withdraw_infos": [],
+      "previous_proposer": "",
+      "outstanding_rewards": [],
+      "validator_accumulated_commissions": [],
+      "validator_historical_rewards": [],
+      "validator_current_rewards": [],
+      "delegator_starting_infos": [],
+      "validator_slash_events": []
+    },
+    "epochs": {
+      "epochs": [
+        {
+          "identifier": "week",
+          "start_time": "0001-01-01T00:00:00Z",
+          "duration": "604800s",
+          "current_epoch": "0",
+          "current_epoch_start_time": "0001-01-01T00:00:00Z",
+          "epoch_counting_started": false,
+          "current_epoch_start_height": "0"
+        },
+        {
+          "identifier": "day",
+          "start_time": "0001-01-01T00:00:00Z",
+          "duration": "86400s",
+          "current_epoch": "0",
+          "current_epoch_start_time": "0001-01-01T00:00:00Z",
+          "epoch_counting_started": false,
+          "current_epoch_start_height": "0"
+        },
+        {
+          "identifier": "minute",
+          "start_time": "0001-01-01T00:00:00Z",
+          "duration": "60s",
+          "current_epoch": "0",
+          "current_epoch_start_time": "0001-01-01T00:00:00Z",
+          "epoch_counting_started": false,
+          "current_epoch_start_height": "0"
+        }
+      ]
+    },
+    "evidence": {
+      "evidence": []
+    },
+    "feegrant": {
+      "allowances": []
+    },
+    "genutil": {
+      "gen_txs": []
+    },
+    "gov": {
+      "starting_proposal_id": "1",
+      "deposits": [],
+      "votes": [],
+      "proposals": [],
+      "deposit_params": {
+        "min_deposit": [
+          {
+            "denom": "uqsr",
+            "amount": "10000000"
+          }
+        ],
+        "max_deposit_period": "172800s"
+      },
+      "voting_params": {
+        "voting_period": "172800s"
+      },
+      "tally_params": {
+        "quorum": "0.334000000000000000",
+        "threshold": "0.500000000000000000",
+        "veto_threshold": "0.334000000000000000"
+      }
+    },
+    "ibc": {
+      "client_genesis": {
+        "clients": [],
+        "clients_consensus": [],
+        "clients_metadata": [],
+        "params": {
+          "allowed_clients": [
+            "06-solomachine",
+            "07-tendermint"
+          ]
+        },
+        "create_localhost": false,
+        "next_client_sequence": "0"
+      },
+      "connection_genesis": {
+        "connections": [],
+        "client_connection_paths": [],
+        "next_connection_sequence": "0",
+        "params": {
+          "max_expected_time_per_block": "30000000000"
+        }
+      },
+      "channel_genesis": {
+        "channels": [],
+        "acknowledgements": [],
+        "commitments": [],
+        "receipts": [],
+        "send_sequences": [],
+        "recv_sequences": [],
+        "ack_sequences": [],
+        "next_channel_sequence": "0"
+      }
+    },
+    "interchainaccounts": {
+      "controller_genesis_state": {
+        "active_channels": [],
+        "interchain_accounts": [],
+        "ports": [],
+        "params": {
+          "controller_enabled": true
+        }
+      },
+      "host_genesis_state": {
+        "active_channels": [],
+        "interchain_accounts": [],
+        "port": "icahost",
+        "params": {
+          "host_enabled": true,
+          "allow_messages": []
+        }
+      }
+    },
+    "intergamm": {
+      "params": {
+        "quasar_denom_to_native_zone_id_map": {},
+        "osmosis_denom_to_quasar_denom_map": {},
+        "complete_zone_info_map": {}
+      }
+    },
+    "mint": {
+      "minter": {
+        "inflation": "0.130000000000000000",
+        "annual_provisions": "0.000000000000000000"
+      },
+      "params": {
+        "mint_denom": "uqsr",
+        "inflation_rate_change": "0.130000000000000000",
+        "inflation_max": "0.200000000000000000",
+        "inflation_min": "0.070000000000000000",
+        "goal_bonded": "0.670000000000000000",
+        "blocks_per_year": "6311520"
+      }
+    },
+    "params": null,
+    "qoracle": {
+      "params": {
+        "denom_prices_exp_duration": "360000000000"
+      },
+      "denom_symbol_mappings": [
+        {
+          "denom": "uatom",
+          "oracle_symbol": "ATOM",
+          "multiplier": "0.000001000000000000"
+        },
+        {
+          "denom": "uosmo",
+          "oracle_symbol": "OSMO",
+          "multiplier": "0.000001000000000000"
+        }
+      ],
+      "bandchain_genesis_state": {
+        "port": "qbandchainoracle",
+        "params": {
+          "enabled": true,
+          "authorized_channel": "",
+          "packet_timeout_height": {
+            "revision_number": "0",
+            "revision_height": "0"
+          },
+          "packet_timeout_timestamp": "180000000000",
+          "coin_rates_params": {
+            "epoch_identifier": "minute",
+            "symbols": [
+              "BTC",
+              "OSMO",
+              "BNB",
+              "ATOM"
+            ],
+            "script_params": {
+              "script_id": "37",
+              "ask_count": "4",
+              "min_count": "3",
+              "fee_limit": [
+                {
+                  "denom": "uband",
+                  "amount": "30"
+                }
+              ],
+              "prepare_gas": "600000",
+              "execute_gas": "600000"
+            }
+          }
+        }
+      },
+      "osmosis_genesis_state": {
+        "port": "qosmosisoracle",
+        "params": {
+          "enabled": true,
+          "epoch_identifier": "minute",
+          "authorized_channel": "",
+          "packet_timeout_height": {
+            "revision_number": "0",
+            "revision_height": "0"
+          },
+          "packet_timeout_timestamp": "180000000000"
+        }
+      }
+    },
+    "qtransfer": {
+      "params": {
+        "wasm_hooks_enabled": true
+      }
+    },
+    "slashing": {
+      "params": {
+        "signed_blocks_window": "100",
+        "min_signed_per_window": "0.500000000000000000",
+        "downtime_jail_duration": "600s",
+        "slash_fraction_double_sign": "0.050000000000000000",
+        "slash_fraction_downtime": "0.010000000000000000"
+      },
+      "signing_infos": [],
+      "missed_blocks": []
+    },
+    "staking": {
+      "params": {
+        "unbonding_time": "259200s",
+        "max_validators": 21,
+        "max_entries": 7,
+        "historical_entries": 10000,
+        "bond_denom": "uqsr",
+        "min_commission_rate": "0.000000000000000000"
+      },
+      "last_total_power": "0",
+      "last_validator_powers": [],
+      "validators": [],
+      "delegations": [],
+      "unbonding_delegations": [],
+      "redelegations": [],
+      "exported": false
+    },
+    "transfer": {
+      "port_id": "transfer",
+      "denom_traces": [],
+      "params": {
+        "send_enabled": true,
+        "receive_enabled": true
+      }
+    },
+    "upgrade": {},
+    "vesting": {},
+    "wasm": {
+      "params": {
+        "code_upload_access": {
+          "permission": "Everybody",
+          "address": ""
+        },
+        "instantiate_default_permission": "Everybody"
+      },
+      "codes": [],
+      "contracts": [],
+      "sequences": [],
+      "gen_msgs": []
+    }
+  }
+}
