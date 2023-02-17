@@ -51,8 +51,21 @@ cd okp4d
 git checkout v3.0.0
 make install
 ```
+*******🟢UPDATE🟢******* 22.02.23
+```python
+cd $HOME/okp4d
+git fetch --all
+git checkout v4.0.0
+make install
+okp4d version --long | head
+#commit: 8ca4e15ea6e6c35f990113b40b6afd2c988c08a9
+#version: 4.0.0
+sudo systemctl restart okp4d && sudo journalctl -u okp4d -f -o cat
+```
+
 `okp4d version`
-- version: 3.0.0
+- version: 4.0.0
+- commit: 8ca4e15ea6e6c35f990113b40b6afd2c988c08a9
 
 ```bash
 okp4d init STAVRguide --chain-id okp4-nemeton-1
