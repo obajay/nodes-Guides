@@ -73,7 +73,7 @@ quasarnoded keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O $HOME/.quasarnode/config/genesis.json "https://raw.githubusercontent.com/quasar-finance/questnet/main/v04/pre-genesis.json"
+wget -O $HOME/.quasarnode/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Quasar/genesis.json"
 ```
 `sha256sum $HOME/.quasarnode/config/genesis.json`
 + 8f38e35f88f4cbe983f7791d0d49b3f4123660c472408892c46ab145855fe3a5
@@ -111,7 +111,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.quasarnode/config/con
 
 ## Download addrbook
 ```python
-wget -O $HOME/.quasarnode/config/addrbook.json "soon"
+wget -O $HOME/.quasarnode/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Quasar/addrbook.json"
 ```
 
 # Create a service file
