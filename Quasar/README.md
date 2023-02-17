@@ -6,7 +6,7 @@
 [WebSite](https://www.quasar.fi/)\
 [GitHub](https://github.com/quasar-finance)
 =
-[EXPLORER](https://explorer.stavr.tech/althea-testnet/staking)
+[EXPLORER](https://explorer.stavr.tech/quasar-testnet/staking)
 =
 
 - **Minimum hardware requirements**:
