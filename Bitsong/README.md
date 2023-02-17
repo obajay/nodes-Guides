@@ -36,11 +36,11 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 03.02.22
+# Build 17.02.22
 ```python
 git clone https://github.com/bitsongofficial/go-bitsong/
 cd go-bitsong
-git checkout v0.13.0
+git checkout v0.14.0
 make install
 ```
 🟢UPDATE🟢 17.02.23
