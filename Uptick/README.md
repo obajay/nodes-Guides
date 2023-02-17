@@ -12,15 +12,15 @@
 | Testnet   |   4| 8GB  | 150GB    |
 
 ### Preparing the server
-```bash
+```python
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
-## GO 18.3 (one command)
-```bash
-ver="1.18.3" && \
+## GO 19.4 (one command)
+```python
 cd $HOME && \
+ver="1.19.4" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
@@ -31,36 +31,45 @@ go version
 ```
 
 # Build 28.11.22
-```bash
+```python
 cd $HOME
 git clone https://github.com/UptickNetwork/uptick.git
 cd uptick
 git checkout v0.2.4
 make install
 ```
+*******🟢UPDATE🟢******* 20.02.23
+```python
+cd $HOME/uptick
+git fetch --all
+git checkout v0.2.5
+make install
+sudo systemctl restart uptickd && journalctl -u uptickd -f -o cat
+```
 
 `uptickd version`
-+ 0.2.4
++ version: v0.2.5
++ commit: 17716164d170aa3bd1ca386f1216f101f3f60c5c
 
 ## Initialization
-```bash
+```python
 uptickd init STAVRguide --chain-id uptick_7000-2
 uptickd config chain-id uptick_7000-2
 ```
 
 ## Create/recover wallet
-```bash
+```python
 uptickd keys add <walletname>
 uptickd keys add <walletname> --recover
 ```
 
 ## Genesis
-```bash
+```python
 curl -o $HOME/.uptickd/config/genesis.json https://raw.githubusercontent.com/UptickNetwork/uptick-testnet/main/uptick_7000-2/genesis.json
 ```
 
 ## Peers/Seeds/Gas
-```bash
+```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0auptick\"/;" ~/.uptickd/config/app.toml
 external_address=$(wget -qO- eth0.me)
 peers="eecdfb17919e59f36e5ae6cec2c98eeeac05c0f2@peer0.testnet.uptick.network:26656,178727600b61c055d9b594995e845ee9af08aa72@peer1.testnet.uptick.network:26656,f97a75fb69d3a5fe893dca7c8d238ccc0bd66a8f@uptick-seed.p2p.brocha.in:30554,94b63fddfc78230f51aeb7ac34b9fb86bd042a77@uptick-testnet-rpc.p2p.brocha.in:30556,902a93963c96589432ee3206944cdba392ae5c2d@65.108.42.105:27656"
@@ -70,7 +79,7 @@ sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.uptickd/config/config.to
 ```
 
 ### Pruning (optional)
-```bash
+```python
 pruning="custom" && \
 pruning_keep_recent="100" && \
 pruning_keep_every="0" && \
@@ -82,13 +91,13 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~
 ```
 
 ### Indexer (optional)
-```bash
+```python
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.uptickd/config/config.toml
 ```
 
 ## SNAPSHOT
-```bash
+```python
 wget https://download.uptick.network/download/uptick/testnet/node/data/data.tar.gz
 tar -C $HOME/.uptickd/data/ -zxvf data.tar.gz --strip-components 1
 sed -i -e "s/^pruning *=.*/pruning = \"nothing\"/" $HOME/.uptickd/config/app.toml
@@ -96,7 +105,7 @@ sudo systemctl restart uptickd && sudo journalctl -u uptickd -f -o cat
 ```
 
 # Create a service file
-```bash
+```python
 sudo tee /etc/systemd/system/uptickd.service > /dev/null <<EOF
 [Unit]
 Description=uptick
@@ -115,14 +124,14 @@ EOF
 ```
 
 ## Start
-```bash
+```python
 sudo systemctl daemon-reload && \
 sudo systemctl enable uptickd && \
 sudo systemctl restart uptickd && sudo journalctl -u uptickd -f -o cat
 ```
 
 ## Create validator
-```bash
+```python
 uptickd tx staking create-validator \
 --chain-id uptick_7000-2 \
 --commission-rate=0.1 \
@@ -138,7 +147,7 @@ uptickd tx staking create-validator \
 ```
 
 ## Delete node
-```bash
+```python
 sudo systemctl stop uptickd && \
 sudo systemctl disable uptickd && \
 rm /etc/systemd/system/uptickd.service && \
