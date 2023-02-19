@@ -129,7 +129,7 @@ sed -i -e "s/^snapshot-interval *=.*/snapshot-interval = \"1500\"/" $HOME/.mars/
 curl -o - -L http://mars.wasm.stavr.tech:1014/wasm-mars.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.mars/data --strip-components 3
 systemctl restart marsd && journalctl -u marsd -f -o cat
 ```
-## SnapShot (~0.2 GB) updated every 5 hours
+## SnapShot (~0.2 GB)
 ```python
 cd $HOME
 apt install lz4
