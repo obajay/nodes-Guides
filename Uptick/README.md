@@ -30,12 +30,12 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 28.11.22
+# Build 20.02.23
 ```python
 cd $HOME
 git clone https://github.com/UptickNetwork/uptick.git
 cd uptick
-git checkout v0.2.4
+git checkout v0.2.5
 make install
 ```
 *******🟢UPDATE🟢******* 20.02.23
