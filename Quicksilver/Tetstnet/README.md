@@ -35,7 +35,7 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-### Node installation 2.02.23
+### Node installation 22.02.23
 ```python
 cd $HOME
 wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.0-rc7/quicksilverd-v1.4.0-rc7-amd64
