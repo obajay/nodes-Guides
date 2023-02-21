@@ -10,18 +10,18 @@
 | Mainnet   |  8 | 16GB | 200GB    |
 
 # 1) Auto_install script 
-```bash
+```python
 wget -O teritorm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Teritori/teritorm && chmod +x teritorm && ./teritorm
 ```
 # 2) Manual installation
 
 ### Preparing the server
-```bash
+```python
 sudo apt update && sudo apt upgrade -y && \
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 ## GO 19 (one command)
-```bash
+```python
 ver="1.19" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
@@ -33,20 +33,32 @@ go version
 ```
 
 ## Build 28.10.22 
-```bash
+```python
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain 
 git checkout v1.3.0
 make install
 ```
 
-```bash
+*******🟢UPDATE🟢******* 23.02.23
+```python
+cd $HOME/teritori-chain
+git fetch --all
+git checkout v1.3.1
+make install
+sudo systemctl restart rebusd && journalctl -u rebusd -f -o cat
+```
+`teritorid version --long`
++ version: v1.3.1
++ commit: 13752ae2d11f3b305add3fec90717dab21c60b1c
+
+```python
 teritorid init STAVRguide --chain-id teritori-1
 teritorid config chain-id teritori-1
 ```
 
 ## Create/recover wallet
-```bash
+```python
 teritorid keys add <walletname>
 teritorid keys add <walletname> --recover
 ```
@@ -54,14 +66,14 @@ teritorid keys add <walletname> --recover
 ### when creating, do not forget to write down the seed phrase
 
 # Genesis
-```bash
+```python
 cd $HOME
 wget -O ~/.teritorid/config/genesis.json https://media.githubusercontent.com/media/TERITORI/teritori-chain/v1.1.2/mainnet/teritori-1/genesis.json
 
 ```
 
 ## Seeds,peers and gas price
-```bash
+```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0utori\"/;" ~/.teritorid/config/app.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.teritorid/config/config.toml
@@ -73,12 +85,12 @@ sed -i.bak -e "s/^seeds *=.*/seeds = \"$seeds\"/; s/^persistent_peers *=.*/persi
 ```
 
 ## Download addrbook
-```bash
+```python
 wget -O $HOME/.teritorid/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Teritori/addrbook.json"
 ```
 
 ## Pruning (optional)
-```bash
+```python
 pruning="custom" && \
 pruning_keep_recent="100" && \
 pruning_keep_every="0" && \
@@ -90,7 +102,7 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $
 ```
 
 ## Indexer (optional)
-```bash
+```python
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.teritorid/config/config.toml
 ```
@@ -127,7 +139,7 @@ sudo systemctl restart teritorid && journalctl -u teritorid -f -o cat
 ```
 
 # Create a service file
-```bash
+```python
 sudo tee /etc/systemd/system/teritorid.service > /dev/null <<EOF
 [Unit]
 Description=Teritorid
@@ -147,7 +159,7 @@ EOF
 
     
 # Start
-```bash
+```python
 sudo systemctl daemon-reload
 sudo systemctl enable teritorid
 sudo systemctl restart teritorid
@@ -155,7 +167,7 @@ sudo journalctl -u teritorid -f -o cat
 ```
 
 ## Create validator
-```bash
+```python
 teritorid tx staking create-validator \
 --amount=1000000utori \
 --pubkey=$(teritorid tendermint show-validator) \
@@ -173,7 +185,7 @@ teritorid tx staking create-validator \
 ```
 
 # Delete node 
-```bash
+```python
 sudo systemctl stop teritorid && \
 sudo systemctl disable teritorid && \
 rm /etc/systemd/system/teritorid.service && \
