@@ -46,7 +46,7 @@ cd $HOME/teritori-chain
 git fetch --all
 git checkout v1.3.1
 make install
-sudo systemctl restart rebusd && journalctl -u rebusd -f -o cat
+sudo systemctl restart teritorid && sudo journalctl -u teritorid -f -o cat
 ```
 `teritorid version --long`
 + version: v1.3.1
