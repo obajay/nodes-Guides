@@ -2,8 +2,8 @@
 
 ![ge](https://user-images.githubusercontent.com/44331529/184477593-51a56796-6da8-4b8c-a4ec-9de62084b9e2.png)
 
-[EXPLORER 1](https://explorer.stavr.tech/genesisl1/staking)
-[EXPLORER 2](https://exp.utsa.tech/genesis/staking)
+[EXPLORER 1](https://explorer.stavr.tech/genesisl1/staking) \
+[EXPLORER 2](https://exp.utsa.tech/genesis/staking) \
 [EXPLORER 3](https://ping.pub/genesisl1/staking)
 =
 - **Minimum hardware requirements**:
@@ -14,7 +14,7 @@
 
 # 1) Auto_install script
 
-```bash
+```python
 wget -O genesisx https://raw.githubusercontent.com/obajay/nodes-Guides/main/Genesisl1/genesisx && chmod +x genesisx && ./genesisx
 ```
 # 2) Manual installation
@@ -24,7 +24,7 @@ wget -O genesisx https://raw.githubusercontent.com/obajay/nodes-Guides/main/Gene
     sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
 
 ## GO 18.3 (one command)
-```
+```python
 ver="1.18.3" && \
 cd $HOME && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
@@ -37,7 +37,7 @@ go version
 ```
 
 # Binary   01.08.22
-```console 
+```python 
 git clone https://github.com/alpha-omega-labs/genesisd
 cd genesisd
 make install
@@ -47,16 +47,16 @@ make install
 - commit: 15ed4af4db64c0ed4db4ad4b1d0df3cd32b0c13a 
 
 ## Initialisation
-```console
+```python
 genesisd init <nodeNAme> --chain-id genesis_29-2
 ```
 ## Add wallet
-```console
+```python
 genesisd keys add <walletName>
 genesisd keys add <walletName> --recover
 ```
 # Genesis
-```console
+```python
 wget -O $HOME/.genesisd/config/genesis.json "https://github.com/alpha-omega-labs/genesisd/raw/neolithic/genesis_29-1-state/genesis.json"
 ```
 
@@ -64,7 +64,7 @@ wget -O $HOME/.genesisd/config/genesis.json "https://github.com/alpha-omega-labs
 - b8f6939f3bfaeec666c7efb94a683e9295e40705ef08af14d55014e4fa11757f  genesis.json
 
 ### Pruning (optional)
-```
+```python
 pruning="custom" && \
 pruning_keep_recent="100" && \
 pruning_keep_every="0" && \
@@ -79,7 +79,7 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.genesisd/config/config.toml
 
 ### Set up the minimum gas price and Peers/Seeds/Filter peers
-```console
+```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0025el1\"/;" ~/.genesisd/config/app.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.genesisd/config/config.toml
 external_address=$(wget -qO- eth0.me) 
@@ -96,12 +96,12 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.gene
 ```
 
 ## Download addrbook
-```console
+```python
 wget -O $HOME/.genesisd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Genesisl1/addrbook.json"
 ```
 
 # Create a service file
-```console
+```python
 sudo tee /etc/systemd/system/genesisd.service > /dev/null <<EOF
 [Unit]
 Description=genesisd
@@ -120,7 +120,7 @@ EOF
 ```
 
 ## SnapShot  (53 GB) 4598847 
-```bash
+```python
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
 sudo systemctl stop genesisd
 rm -rf $HOME/.genesisd/data/
@@ -141,7 +141,7 @@ rm genesisddata.tar.gz
 ```
 
 # Start node (one command)
-```console
+```python
 sudo systemctl daemon-reload && \
 sudo systemctl enable genesisd && \
 sudo systemctl restart genesisd && \
@@ -149,7 +149,7 @@ sudo journalctl -u genesisd -f -o cat
 ```
 
 ## Create validator
-```
+```python
 genesisd tx staking create-validator \
 --amount=1000000el1 \
 --pubkey=$(genesisd tendermint show-validator) \
@@ -168,7 +168,7 @@ genesisd tx staking create-validator \
 ```
 
 ### Delete node (one command)
-```
+```python
 sudo systemctl stop genesisd && \
 sudo systemctl disable genesisd && \
 rm /etc/systemd/system/genesisd.service && \
