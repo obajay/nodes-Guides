@@ -41,7 +41,7 @@ go version
 
 
 
-# Build 23.12.22
+# Build 22.02.23
 ```python
 cd $HOME
 wget https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.0-rc2/bcna_linux_amd64.tar.gz
