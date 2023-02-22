@@ -40,33 +40,19 @@ go version
 ```
 
 
-### 1_Previously to replace the binary or build from source you need to edit the file app.toml
-#### you should to declare and put in false this var: `iavl-disable-fastnode = false`
-#### Put this content in the main section, just before the [telemetry] section:
-```python
-# IavlCacheSize set the size of the iavl tree cache. 
-# Default cache size is 50mb.
-iavl-cache-size = 781250
-
-# IAVLDisableFastNode enables or disables the fast node feature of IAVL. 
-# Default is true.
-iavl-disable-fastnode = false  
-###############################################################################
-###                         Telemetry Configuration                         ###
-###############################################################################
-```
-
 
 # Build 23.12.22
 ```python
-cd ~
-wget https://raw.githubusercontent.com/BitCannaGlobal/cosmos-statesync_client/main/statesync_DEVNET-1_client_linux_new.sh
-bash statesync_DEVNET-1_client_linux_new.sh
-sudo mv bcnad $HOME/go/bin/
+cd $HOME
+wget https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.0-rc2/bcna_linux_amd64.tar.gz
+tar -xvzf bcna_linux_amd64.tar.gz
+rm -rf bcna_linux_amd64.tar.gz
+chmod +x bcnad
+mv bcnad $HOME/go/bin/
 ```
 
 `bcnad version`
-- 1.5.3
+- 1.6.0-rc2
 
 ```python
 bcnad config chain-id bitacanna-dev-1
