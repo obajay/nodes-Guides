@@ -17,19 +17,19 @@
 
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
-| Mainnet   |   4|  8GB | 260GB    |
+| Devnet    |   4|  8GB | 260GB    |
 
 
 ### Preparing the server
-```bash
+```python
 udo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
-## GO 18.5
+## GO 19.4
 
-```bash
+```python
 cd $HOME
-ver="1.18.5"
+ver="1.19.4"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
@@ -43,7 +43,7 @@ go version
 ### 1_Previously to replace the binary or build from source you need to edit the file app.toml
 #### you should to declare and put in false this var: `iavl-disable-fastnode = false`
 #### Put this content in the main section, just before the [telemetry] section:
-```bash
+```python
 # IavlCacheSize set the size of the iavl tree cache. 
 # Default cache size is 50mb.
 iavl-cache-size = 781250
@@ -68,19 +68,19 @@ sudo mv bcnad $HOME/go/bin/
 `bcnad version`
 - 1.5.3
 
-```bash
+```python
 bcnad config chain-id bitacanna-dev-1
 ```    
 
 ## Create/recover wallet
-```bash
+```python
 bcnad keys add <walletname>
 bcnad keys add <walletname> --recover
 ```
 
 ## Download Genesis
 
-```bash
+```python
 wget -O $HOME/.bcna/config/genesis.json ""
 ```
 `sha256sum $HOME/.bcna/config/genesis.json`
@@ -112,19 +112,19 @@ sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.bcna/config/app.toml
 ```
 ### Indexer (optional) 
-```bash
+```python
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.bcna/config/config.toml
 ```
 
 ## Download addrbook
-```bash
+```python
 wget -O $HOME/.bcna/config/addrbook.json "SOOON"
 ```
 
 
 # Create a service file
-```bash
+```python
 sudo tee /etc/systemd/system/bcnad.service > /dev/null <<EOF
 [Unit]
 Description=bitcanna
@@ -143,13 +143,13 @@ EOF
 ```
 
 ## Start
-```bash
+```python
 sudo systemctl daemon-reload && sudo systemctl enable bcnad
 sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 ```
 
 ### Create validator
-```bash
+```python
 bcnad tx staking create-validator \
 --amount=1000000ubcna \
 --broadcast-mode=block \
@@ -165,7 +165,7 @@ bcnad tx staking create-validator \
 ```
 
 ## Delete node
-```bash
+```python
 sudo systemctl stop bcnad && \
 sudo systemctl disable bcnad && \
 rm /etc/systemd/system/bcnad.service && \
