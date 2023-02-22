@@ -2,8 +2,9 @@
 
 ![ge](https://user-images.githubusercontent.com/44331529/184477593-51a56796-6da8-4b8c-a4ec-9de62084b9e2.png)
 
-
-[EXPLORER](https://ping.pub/genesisl1/staking)
+[EXPLORER 1](https://explorer.stavr.tech/genesisl1/staking)
+[EXPLORER 2](https://exp.utsa.tech/genesis/staking)
+[EXPLORER 3](https://ping.pub/genesisl1/staking)
 =
 - **Minimum hardware requirements**:
 
