@@ -67,7 +67,7 @@ bcnad keys add <walletname> --recover
 ## Download Genesis
 
 ```python
-wget -O $HOME/.bcna/config/genesis.json ""
+wget -O $HOME/.bcna/config/genesis.json "https://raw.githubusercontent.com/BitCannaGlobal/bcna/main/devnets/bitcanna-dev-1/genesis.json"
 ```
 `sha256sum $HOME/.bcna/config/genesis.json`
 + 9cb8333eedfb3ea0cb5674c381d2525f5146e29289253bcabad6384628a33f0b
@@ -105,7 +105,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.bcna/config/config.to
 
 ## Download addrbook
 ```python
-wget -O $HOME/.bcna/config/addrbook.json "SOOON"
+wget -O $HOME/.bcna/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Bitcanna/Bitcanna_DEV/addrbook.json"
 ```
 
 
