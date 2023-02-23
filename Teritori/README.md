@@ -32,11 +32,11 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-## Build 28.10.22 
+## Build 23.02.23 
 ```python
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain 
-git checkout v1.3.0
+git checkout v1.3.1
 make install
 ```
 
