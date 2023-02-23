@@ -154,8 +154,11 @@ systemctl restart nolusd && journalctl -u nolusd -f -o cat
 break
 ;;
 "UPDATE")
-echo -e "      \e[1m\e[32m SOOOON\e[0m"
-nolusd version
+cd $HOME/nolus-core
+git fetch --all
+git checkout v0.1.43
+make install
+sudo systemctl restart nolusd && sudo journalctl -u nolusd -f -o cat
 
 break
 ;;
