@@ -81,7 +81,7 @@ hid-noded keys add <walletname> --recover
 ## Download Genesis 
 
 ```python
-curl -s  https://raw.githubusercontent.com/hypersign-protocol/networks/master/testnet/jagrat/final_genesis.json > ~/.hid-node/config/genesis.json
+curl -s  https://raw.githubusercontent.com/obajay/nodes-Guides/main/Hypersign/genesis.json > ~/.hid-node/config/genesis.json
 ```
 `sha256sum $HOME/.hid-node/config/genesis.json`
 + 7de2e77cff6d601387a46a760e9c0d7a573b2cfdbdaebb0f04512878543fc0a1
