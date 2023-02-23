@@ -38,9 +38,9 @@ go version
 ### Node installation 23.02.23
 ```python
 cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.0-rc7/quicksilverd-v1.4.0-rc7-amd64
-chmod +x quicksilverd-v1.4.0-rc7-amd64
-mv $HOME/quicksilverd-v1.4.0-rc7-amd64 $HOME/go/bin/quicksilverd
+wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.0-rc8/quicksilverd-v1.4.0-rc8-amd64
+chmod +x quicksilverd-v1.4.0-rc8-amd64
+mv $HOME/quicksilverd-v1.4.0-rc8-amd64 $HOME/go/bin/quicksilverd
 
 ```
 
