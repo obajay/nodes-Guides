@@ -38,18 +38,18 @@ cd uptick
 git checkout v0.2.5
 make install
 ```
-*******🟢UPDATE🟢******* 20.02.23
+*******🟢UPDATE🟢******* 26.02.23
 ```python
 cd $HOME/uptick
 git fetch --all
-git checkout v0.2.5
+git checkout v0.2.6
 make install
 sudo systemctl restart uptickd && journalctl -u uptickd -f -o cat
 ```
 
 `uptickd version`
-+ version: v0.2.5
-+ commit: 17716164d170aa3bd1ca386f1216f101f3f60c5c
++ version: v0.2.6
++ commit: 16a24a10731b975966efc2a7674980610dce2759
 
 ## Initialization
 ```python
