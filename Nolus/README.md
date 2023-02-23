@@ -51,11 +51,20 @@ git clone https://github.com/Nolus-Protocol/nolus-core
 cd nolus-core
 git checkout v0.1.39
 make install
-
 ```
+*******🟢UPDATE🟢******* 24.02.23
+```python
+cd $HOME/nolus-core
+git fetch --all
+git checkout v0.1.43
+make install
+sudo systemctl restart uptickd && journalctl -u uptickd -f -o cat
+```
+
+
 `nolusd version --long`
-- version: 0.1.39
-- commit: 9ca56877c69aa4dbda9fdd82223dbbeebab594a6
+- version: 0.1.43
+- commit: 90c21c44b5a4cae64e192ae2cabdeec9edec4736
 
 ```python
 nolusd init STAVRguide --chain-id nolus-rila
