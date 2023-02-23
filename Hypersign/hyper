@@ -64,7 +64,7 @@ mv $HOME/hid-noded $HOME/go/bin/
 hid-noded init $Validator_Name --chain-id $CHAIN_ID
 
 cd $HOME
-curl -s  https://raw.githubusercontent.com/hypersign-protocol/networks/master/testnet/jagrat/final_genesis.json > ~/.hid-node/config/genesis.json
+curl -s  https://raw.githubusercontent.com/obajay/nodes-Guides/main/Hypersign/genesis.json > ~/.hid-node/config/genesis.json
 wget -O $HOME/.hid-node/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Hypersign/addrbook.json"
 
 
