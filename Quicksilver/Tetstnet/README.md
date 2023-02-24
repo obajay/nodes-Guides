@@ -163,7 +163,7 @@ cp $HOME/.quicksilverd/data/priv_validator_state.json $HOME/.quicksilverd/priv_v
 rm -rf $HOME/.quicksilverd/data
 curl -o - -L http://quickt.snapshot.stavr.tech:1016/quickt/quickt-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.quicksilverd --strip-components 2
 mv $HOME/.quicksilverd/priv_validator_state.json.backup $HOME/.quicksilverd/data/priv_validator_state.json
-wget -O $HOME/.quicksilverd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Quicksilver/addrbook.json"
+wget -O $HOME/.quicksilverd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Quicksilver/Tetstnet/addrbook.json"
 sudo systemctl restart quicksilverd && journalctl -u quicksilverd -f -o cat
 ```
 
