@@ -44,12 +44,12 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 15.12.22
+# Build 24.02.23
 ```python
 cd $HOME
 git clone https://github.com/Nolus-Protocol/nolus-core
 cd nolus-core
-git checkout v0.1.39
+git checkout v0.1.43
 make install
 ```
 *******🟢UPDATE🟢******* 24.02.23
@@ -58,6 +58,7 @@ cd $HOME/nolus-core
 git fetch --all
 git checkout v0.1.43
 make install
+sed -i -e "s/^pruning *=.*/pruning = \"nothing\"/" $HOME/.nolus/config/app.toml
 sudo systemctl restart uptickd && journalctl -u uptickd -f -o cat
 ```
 
@@ -97,16 +98,9 @@ sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.nolus/c
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.nolus/config/config.toml
 
 ```
-### Pruning (optional)
+### Pruning
 ```python
-pruning="custom" && \
-pruning_keep_recent="100" && \
-pruning_keep_every="0" && \
-pruning_interval="10" && \
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" ~/.nolus/config/app.toml && \
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" ~/.nolus/config/app.toml && \
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" ~/.nolus/config/app.toml && \
-sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.nolus/config/app.toml
+sed -i -e "s/^pruning *=.*/pruning = \"nothing\"/" $HOME/.nolus/config/app.toml
 ```
 ### Indexer (optional) 
 ```python
