@@ -16,21 +16,20 @@
 | Testnet   |   4| 8GB  | 100GB    |
 
 # 1) Auto_install script
-```bash 
+```python 
 wget -O nib https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nibiru/nib && chmod +x nib && ./nib
 ```
 # 2) Manual installation
 
 ### Preparing the server
-```bash
+```python
 sudo apt update && sudo apt upgrade -y && \
 sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
 ```
 
-## GO 18.3 (one command) 
-```
-ver="1.18.3" && \
-cd $HOME && \
+## GO 19 (one command) 
+```python
+ver="1.19" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
@@ -40,35 +39,36 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Binary   28.12.22
-```bash 
+# Binary   27.02.23
+```python 
 cd $HOME
 git clone https://github.com/NibiruChain/nibiru
 cd nibiru
-git checkout v0.16.3
+git checkout v0.19.2
 make install
 ```
 
 ## Initialisation
-```bash
-nibid init STAVRguide --chain-id=nibiru-testnet-2
-nibid config chain-id nibiru-testnet-2
+```python
+nibid init STAVRguide --chain-id=nibiru-itn-1
+nibid config chain-id nibiru-itn-1
+
 ```
 ## Add wallet
-```bash
+```python
 nibid keys add <walletName>
 nibid keys add <walletName> --recover
 ```
 # Genesis
-```bash
-curl -s https://rpc.testnet-2.nibiru.fi/genesis | jq -r .result.genesis > $HOME/.nibid/config/genesis.json
+```python
+wget -O $HOME/.nibid/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nibiru/genesis.json"
 ```
 
 `sha256sum $HOME/.nibid/config/genesis.json`
-- 5cedb9237c6d807a89468268071647649e90b40ac8cd6d1ded8a72323144880d  genesis.json
+- e162ace87f5cbc624aa2a4882006312ef8762a8a549cf4a22ae35bba12482c72  genesis.json
 
 ### Pruning
-```bash
+```python
 pruning="custom" && \
 pruning_keep_recent="100" && \
 pruning_keep_every="0" && \
@@ -79,8 +79,10 @@ sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.nibid/config/app.toml
 ```
 ### Indexer (optional) one command
-    indexer="null" && \
-    sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.nibid/config/config.toml
+```python
+indexer="null" && \
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.nibid/config/config.toml
+```
 
 ### Set up the minimum gas price and Peers/Seeds/Filter peers
 ```python
@@ -90,19 +92,10 @@ external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.nibid/config/config.toml
 peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.nibid/config/config.toml
-seeds="dabcc13d6274f4dd86fd757c5c4a632f5062f817@seed-2.nibiru-testnet-2.nibiru.fi:26656,a5383b33a6086083a179f6de3c51434c5d81c69d@seed-1.nibiru-testnet-2.nibiru.fi:26656"
+seeds="dd58949cab9bf75a42b556d04d3a4b1bbfadd8b5@144.76.97.251:40656"
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.nibid/config/config.toml
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.nibid/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.nibid/config/config.toml
-CONFIG_TOML="$HOME/.nibid/config/config.toml"
- sed -i 's/timeout_propose =.*/timeout_propose = "100ms"/g' $CONFIG_TOML
- sed -i 's/timeout_propose_delta =.*/timeout_propose_delta = "500ms"/g' $CONFIG_TOML
- sed -i 's/timeout_prevote =.*/timeout_prevote = "100ms"/g' $CONFIG_TOML
- sed -i 's/timeout_prevote_delta =.*/timeout_prevote_delta = "500ms"/g' $CONFIG_TOML
- sed -i 's/timeout_precommit =.*/timeout_precommit = "100ms"/g' $CONFIG_TOML
- sed -i 's/timeout_precommit_delta =.*/timeout_precommit_delta = "500ms"/g' $CONFIG_TOML
- sed -i 's/timeout_commit =.*/timeout_commit = "1s"/g' $CONFIG_TOML
- sed -i 's/skip_timeout_commit =.*/skip_timeout_commit = false/g' $CONFIG_TOML
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.nibid/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.nibid/config/config.toml
 
 ```
 
@@ -145,7 +138,7 @@ nibid tx staking create-validator \
 --amount=1000000unibi \
 --pubkey=$(nibid tendermint show-validator) \
 --moniker=STAVRguide \
---chain-id=nibiru-testnet-2 \
+--chain-id=nibiru-itn-1 \
 --commission-rate="0.10" \
 --commission-max-rate="0.20" \
 --commission-max-change-rate="0.1" \
