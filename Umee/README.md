@@ -33,12 +33,12 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-# Binary   15.02.23
+# Binary   28.02.23
 ```python
 cd $HOME
 git clone https://github.com/umee-network/umee.git
 cd umee
-git checkout v4.0.1
+git checkout v4.1.0
 make install
 ```
 *******🟢UPDATE🟢******* 28.02.23
