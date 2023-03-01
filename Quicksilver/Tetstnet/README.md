@@ -24,9 +24,9 @@ sudo apt update && sudo apt upgrade -y
 ```python
 udo apt install curl build-essential git wget jq make gcc tmux nvme-cli -y
 ```    
-### GO 1.19 (one command)
+### GO 1.19.5 (one command)
 ```python
-ver="1.19" && \
+ver="1.19.5" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
@@ -35,30 +35,30 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-### Node installation 23.02.23
+### Node installation 01.03.23
 ```python
 cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.0-rc8/quicksilverd-v1.4.0-rc8-amd64
-chmod +x quicksilverd-v1.4.0-rc8-amd64
-mv $HOME/quicksilverd-v1.4.0-rc8-amd64 $HOME/go/bin/quicksilverd
+wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.0-rc9/quicksilverd-v1.4.0-rc9-amd64
+chmod +x quicksilverd-v1.4.0-rc9-amd64
+mv $HOME/quicksilverd-v1.4.0-rc9-amd64 $HOME/go/bin/quicksilverd
 
 ```
 
-*******🟢UPDATE🟢******* 23.02.23
+*******🟢UPDATE🟢******* 01.03.23
 
 ```python
 cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.0-rc8/quicksilverd-v1.4.0-rc8-amd64
-chmod +x quicksilverd-v1.4.0-rc8-amd64
-mv $HOME/quicksilverd-v1.4.0-rc8-amd64 $(which quicksilverd)
+wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.0-rc9/quicksilverd-v1.4.0-rc9-amd64     
+chmod +x quicksilverd-v1.4.0-rc9-amd64
+mv $HOME/quicksilverd-v1.4.0-rc9-amd64 $(which quicksilverd)
 quicksilverd version
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 
 ```
 
 `quicksilverd version --long`
-+ version: v1.4.0-rc8
-+ commit: 5e295f8322988c19c7dc4852aecd95df8b21d4a3
++ version: v1.4.0-rc9
++ commit: efbc1f8ed4a82de0ebf7a9405fcb51a90867a71d
 
 ### Initialize the node
 ```java
