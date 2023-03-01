@@ -153,11 +153,11 @@ sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 break
 ;;
 "UPDATE")
-cd $HOME
-cd bcna
+cd $HOME/bcna
 git fetch --all
-git checkout v1.5.3
+git checkout v1.6.0
 make build
+mv $HOME/bcna/build/bcnad $(which bcnad)
 sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 
 break
