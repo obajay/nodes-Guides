@@ -21,14 +21,14 @@
 
 
 # 1) Auto_install script
-```bash
+```python
 wget -O bitcanna https://raw.githubusercontent.com/obajay/nodes-Guides/main/Bitcanna/bitcanna && chmod +x bitcanna && ./bitcanna
 ```
 
 # 2) Manual installation
 
 ### Preparing the server
-```bash
+```python
 udo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
@@ -49,7 +49,7 @@ go version
 ### 1_Previously to replace the binary or build from source you need to edit the file app.toml
 #### you should to declare and put in false this var: `iavl-disable-fastnode = false`
 #### Put this content in the main section, just before the [telemetry] section:
-```bash
+```python
 # IavlCacheSize set the size of the iavl tree cache. 
 # Default cache size is 50mb.
 iavl-cache-size = 781250
@@ -64,8 +64,8 @@ iavl-disable-fastnode = false
 
 
 # Build 07.11.22
-```bash
-cd ~
+```python
+cd $HOME
 git clone https://github.com/BitCannaGlobal/bcna
 cd bcna
 git checkout v1.5.3
@@ -77,17 +77,17 @@ make install
 ```python
 cd bcna
 git fetch --all
-git checkout v1.6.0
+git checkout v1.6.0-fix
 make install
 bcnad version
-#v1.6.0
-#856b26369f0470fe960bc0eaf095d2b85c6f4c78
+#v1.6.0-fix
+#c3219e52643d68caeb07ca20744d82c78bcafd93
 sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 ```
 
 `bcnad version`
-- version: v1.6.0
-- commit: 856b26369f0470fe960bc0eaf095d2b85c6f4c78
+- version: v1.6.0-fix
+- commit: c3219e52643d68caeb07ca20744d82c78bcafd93
 
 ```python
 bcnad init STAVRguide --chain-id bitcanna-1
