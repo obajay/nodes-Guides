@@ -44,7 +44,8 @@ export PIO_HOME=~/.provenanced
 cd provenance
 git fetch --all
 git checkout v1.14.0
-make install
+make build
+mv $HOME/provenance/build/provenanced $(which provenanced)
 provenanced version
 #version: v1.14.0
 #commit: 4fbc73b7
