@@ -32,16 +32,17 @@ wget -O bitcanna https://raw.githubusercontent.com/obajay/nodes-Guides/main/Bitc
 udo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
-## GO 19
+## GO 19.5
 
 ```python
-ver="1.19" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+cd $HOME
+ver="1.19.5"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 go version
 ```
 
@@ -71,8 +72,22 @@ git checkout v1.5.3
 make install
 ```
 
+*******🟢UPDATE🟢******* 02.03.23
+
+```python
+cd bcna
+git fetch --all
+git checkout v1.6.0
+make install
+bcnad version
+#v1.6.0
+#856b26369f0470fe960bc0eaf095d2b85c6f4c78
+sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
+```
+
 `bcnad version`
-- v1.5.3
+- version: v1.6.0
+- commit: 856b26369f0470fe960bc0eaf095d2b85c6f4c78
 
 ```python
 bcnad init STAVRguide --chain-id bitcanna-1
