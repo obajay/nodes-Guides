@@ -66,7 +66,7 @@ provenanced init STAVRguide --chain-id pio-mainnet-1
 rovenanced keys add <walletname>
         OR
 provenanced keys add <walletname> --recover
-
+```
 ## Genesis
 ```python
 wget -O $HOME/.provenanced/config/genesis.json "https://raw.githubusercontent.com/provenance-io/mainnet/main/pio-mainnet-1/genesis.json"
