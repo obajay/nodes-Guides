@@ -132,7 +132,7 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-# StateSync Althea Testnet
+# StateSync Juno Mainnet
 ```python
 soon
 ```
