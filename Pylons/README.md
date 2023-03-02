@@ -50,7 +50,7 @@ sudo systemctl restart pylonsd && journalctl -u pylonsd -f -o cat
 
 `pylonsd version version --long`
 + version: 1.1.4
-+ commit: 
++ commit: 5d0e6bcfce19e17b777caf94fa6328e78adb6474
 
 ## Initialisation
 ```python
