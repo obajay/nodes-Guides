@@ -1,8 +1,8 @@
 # Juno Mainnet guide
 
-![Althea_Logo-BLUE_SIGNAL](https://user-images.githubusercontent.com/44331529/218240936-c2095305-1a28-45f6-8ccd-d068a4fe5754.svg)
+![juno](https://user-images.githubusercontent.com/44331529/222464046-d33e1e1f-ac42-4f9c-8c34-7f978772d5ed.png)
 
-[WebSite](https://www.althea.net/)\
+[WebSite](https://www.junonetwork.io/)\
 [GitHub](https://github.com/CosmosContracts)
 =
 [EXPLORER 1](https://explorer.stavr.tech/juno/staking) \
@@ -72,7 +72,7 @@ junod keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O $HOME/.juno/config/genesis.json "SOON"
+wget -O $HOME/.juno/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Juno/genesis.json"
 
 ```
 `sha256sum $HOME/.juno/config/genesis.json`
