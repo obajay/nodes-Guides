@@ -16,40 +16,41 @@
     sudo apt update && sudo apt upgrade -y && \
     sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
 
-## GO 18.3 (one command)
-    ver="1.18.3" && \
-    cd $HOME && \
-    wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-    sudo rm -rf /usr/local/go && \
-    sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-    rm "go$ver.linux-amd64.tar.gz" && \
-    echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-    source $HOME/.bash_profile && \
-    go version
+## GO 19.5 (one command)
+---pytohn
+ver="1.19.5" && \
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
+sudo rm -rf /usr/local/go && \
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
+rm "go$ver.linux-amd64.tar.gz" && \
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
+source $HOME/.bash_profile && \
+go version
+```
 
-# Binary   31.12.22
+# Binary   02.03.23
 ```python 
 cd $HOME
 git clone https://github.com/Pylons-tech/pylons
 cd pylons
-git checkout v1.1.2
+git checkout v1.1.4
 make build && make install
 ```
 
-*******🟢UPDATE🟢******* 31.12.22
+*******🟢UPDATE🟢******* 02.03.23
 
 ```python
 cd $HOME/pylons
 git fetch --all
-git checkout v1.1.2
+git checkout v1.1.4
 make install
 pylonsd version --long | head
 sudo systemctl restart pylonsd && journalctl -u pylonsd -f -o cat
 ```
 
 `pylonsd version version --long`
-+ version: 1.1.2
-+ commit: 836c261149a88e4b874ac676dfdd5886aa2c6f21
++ version: 1.1.4
++ commit: 
 
 ## Initialisation
 ```python
