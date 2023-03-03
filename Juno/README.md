@@ -54,7 +54,7 @@ make install
 SOOON
 ```
 
-`althea version --long`
+`junod version --long`
 - version: v2.0.0
 - commit: c5286524143747a3a6df42ef5095a588b78df734
 
