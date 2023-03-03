@@ -3,7 +3,7 @@
 ![mmm](https://user-images.githubusercontent.com/44331529/195984832-4b59ffcb-4253-40ee-9168-edc7bfa7425f.png)
 
 [WEBSITE](https://www.mande.network/) \
-[GitHub](https://github.com/mande-labs)
+[GitHub](https://github.com/mande-labs/testnet-2)
 =
 [EXPLORER 1](https://explorer.stavr.tech/mande-chain/staking) \
 [EXPLORER 2](https://test.anode.team/mande-network/staking)
@@ -25,14 +25,14 @@ wget -O mnd https://raw.githubusercontent.com/obajay/nodes-Guides/main/Mande%20C
 
 ### Preparing the server
 
-```bash
+```python
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
 ## GO 1.19
 
-```bash
+```python
 ver="1.19" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
@@ -43,52 +43,58 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 17.10.22
-```bash
-cd ~
-curl -OL https://github.com/mande-labs/testnet-1/raw/main/mande-chaind
-mkdir -p $HOME/go/bin
-mv mande-chaind /$HOME/go/bin/
-chmod 744 /$HOME/go/bin/mande-chaind
+# Build 03.03.23
+```python
+cd $HOME
+git clone https://github.com/mande-labs/mande-chain.git
+cd mande-chain
+git checkout v1.2.2
+ignite chain build --release
+ #or jus download binary file -->> https://drive.google.com/file/d/19tSlJRWKyYpLBWkWTMC6NQYOCrViE9-9/view?usp=share_link
+cd $HOME/mande-chain/release/
+tar -xvzf mande-chain_linux_amd64.tar.gz
+mv mande-chaind $HOME/go/bin/
+
 ```
 `mande-chaind version --long | head`
-- version: 1.3-00086e89
-- commit: 00086e892d5747326b3c13808604422ad4428ffa
+- version: 1.2.2
+- commit: 23e306bc798d1d01ddb409ff6bce93478aa03fc4
 
-```bash
-mande-chaind init STAVRguide --chain-id mande-testnet-1
+```python
+mande-chaind init STAVRguide --chain-id mande-testnet-2
+mande-chaind config chain-id mande-testnet-2
 ```    
 
 ## Create/recover wallet
-```bash
+```python
 mande-chaind keys add <walletname>
 mande-chaind keys add <walletname> --recover
 ```
 
 ## Download Genesis
 
-```bash
-wget -O $HOME/.mande-chain/config/genesis.json "https://raw.githubusercontent.com/mande-labs/testnet-1/main/genesis.json"
+```python
+wget -O $HOME/.mande-chain/config/genesis.json "https://raw.githubusercontent.com/mande-labs/testnet-2/main/genesis.json"
 ```
 `sha256sum $HOME/.mande-chain/config/genesis.json`
-+ acf013812a983e41bb97c9b29582a619719182c17704b86494735b16e6407041
++ 7b139aea9b1d4210ab89078bd2ec2cd28b86d10870232d07dabdf5d5472f472d
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
-```bash
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0mand\"/;" ~/.mande-chain/config/app.toml
+```python
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.005mand\"/;" ~/.mande-chain/config/app.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.mande-chain/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.mande-chain/config/config.toml
-peers="cd3e4f5b7f5680bbd86a96b38bc122aa46668399@34.171.132.212:26656,6780b2648bd2eb6adca2ca92a03a25b216d4f36b@34.170.16.69:26656,a3e3e20528604b26b792055be84e3fd4de70533b@38.242.199.93:24656"
+peers="dbd1f5b01f010b9e6ae6d9f293d2743b03482db5@34.171.132.212:26656,1d1da5742bdd281f0829124ec60033f374e9ddac@34.170.16.69:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.mande-chain/config/config.toml
-seeds="cd3e4f5b7f5680bbd86a96b38bc122aa46668399@34.171.132.212:26656"
+seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.mande-chain/config/config.toml
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.mande-chain/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.mande-chain/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.mande-chain/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.mande-chain/config/config.toml
 
 ```
 ### Pruning (optional)
-```bash
+```python
 pruning="custom" && \
 pruning_keep_recent="100" && \
 pruning_keep_every="0" && \
@@ -99,40 +105,24 @@ sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.mande-chain/config/app.toml
 ```
 ### Indexer (optional) 
-```bash
+```python
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.mande-chain/config/config.toml
 ```
 
 ## Download addrbook
-```bash
-wget -O $HOME/.mande-chain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Mande%20Chain/addrbook.json"
+```python
+wget -O $HOME/.mande-chain/config/addrbook.json "SOON"
 ```
 
 # StateSync
-```bash
-SNAP_RPC=http://38.242.199.93:24657
-peers="a3e3e20528604b26b792055be84e3fd4de70533b@38.242.199.93:24656"
-sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.mande-chain/config/config.toml
-LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
-TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
-
-echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
-s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.mande-chain/config/config.toml
-
-mande-chaind tendermint unsafe-reset-all --home $HOME/.mande-chain --keep-addr-book
-systemctl restart mande-chaind && journalctl -u mande-chaind -f -o cat
+```python
+SOON
 
 ```
 
 # Create a service file
-```bash
+```python
 sudo tee /etc/systemd/system/mande-chaind.service > /dev/null <<EOF
 [Unit]
 Description=mande-chaind
@@ -151,7 +141,7 @@ EOF
 ```
 
 ## Start
-```bash
+```python
 sudo systemctl daemon-reload
 sudo systemctl enable mande-chaind
 sudo systemctl restart mande-chaind && sudo journalctl -u mande-chaind -f -o cat
@@ -161,18 +151,19 @@ sudo systemctl restart mande-chaind && sudo journalctl -u mande-chaind -f -o cat
 =
 
 ### Create validator
-```bash
+```python
 mande-chaind tx staking create-validator \
---chain-id mande-testnet-1 \
+--chain-id mande-testnet-2 \
 --amount 0cred \
 --pubkey "$(mande-chaind tendermint show-validator)" \
 --from <wallet> \
 --moniker="STAVRguide" \
---fees 1000mand
+--fees 1000mand \
+--gas-adjustment=1.15 -y
 ```
 
 ## Delete node
-```bash
+```python
 sudo systemctl stop mande-chaind && \
 sudo systemctl disable mande-chaind && \
 rm /etc/systemd/system/mande-chaind.service && \
