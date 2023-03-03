@@ -72,11 +72,11 @@ junod keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O $HOME/.juno/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Juno/genesis.json"
+wget -O $HOME/.juno/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Juno/Testnet/genesis.json"
 
 ```
 `sha256sum $HOME/.juno/config/genesis.json`
-+ a5c08e53aca0390c45def85a6d16c0e7176bd0026b0a465aff5d1896ec0134a1
++ 4c90e8bfce9b7fab824b923cbb7bdddf276f1040f3651fdb5304a4289147ea90
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
@@ -86,7 +86,7 @@ external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.juno/config/config.toml
 peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.juno/config/config.toml
-seeds="ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:12656"
+seeds="ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@testnet-seeds.polkachu.com:12656"
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.juno/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.juno/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.juno/config/config.toml
@@ -111,7 +111,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.juno/config/config.to
 
 ## Download addrbook
 ```python
-wget -O $HOME/.juno/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Juno/addrbook.json"
+wget -O $HOME/.juno/config/addrbook.json "soon"
 ```
 
 # Create a service file
