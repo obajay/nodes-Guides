@@ -35,30 +35,29 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-### Bunary 20.02.23
+### Bunary 04.03.23
 ```python
 cd $HOME
-git clone https://github.com/ingenuity-build/quicksilver && cd quicksilver
-git fetch origin --tags
-git checkout v1.2.3
-make install
+wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.2.4/quicksilverd-v1.2.4-amd64
+cd quicksilver
+chmod +x quicksilverd-v1.2.4-amd64
+mv quicksilverd-v1.2.4-amd64 $HOME/go/bin/quicksilverd
 ```
 
-*******🟢UPDATE🟢******* 20.02.23
+*******🟢UPDATE🟢******* 04.03.23
 
 ```python
 cd $HOME
-git clone https://github.com/ingenuity-build/quicksilver
-cd quicksilver
-git checkout v1.2.3
-make install
-quicksilverd version
+wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.2.4/quicksilverd-v1.2.4-amd64
+chmod +x quicksilverd-v1.2.4-amd64
+mv quicksilverd-v1.2.4-amd64 $(which quicksilverd)
+quicksilverd version --long
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 ```
 
 `quicksilverd version`
-+ version: v1.2.3
-+ commit: aa898c9468f542827e9dc9b83fdb02bb416a2b0f
++ version: v1.2.4
++ commit: 08236aad4e7f31ab5198be182e4a500473132643
 
 ### Initialize the node
 ```java
