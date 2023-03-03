@@ -39,7 +39,6 @@ go version
 ```python
 cd $HOME
 wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.2.4/quicksilverd-v1.2.4-amd64
-cd quicksilver
 chmod +x quicksilverd-v1.2.4-amd64
 mv quicksilverd-v1.2.4-amd64 $HOME/go/bin/quicksilverd
 ```
