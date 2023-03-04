@@ -59,7 +59,7 @@ git fetch --all
 git checkout v0.1.43
 make install
 sed -i -e "s/^pruning *=.*/pruning = \"nothing\"/" $HOME/.nolus/config/app.toml
-sudo systemctl restart uptickd && journalctl -u uptickd -f -o cat
+sudo systemctl restart nolusd && journalctl -u nolusd -f -o cat
 ```
 
 
