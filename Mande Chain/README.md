@@ -112,7 +112,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.mande-chain/config/co
 
 ## Download addrbook
 ```python
-wget -O $HOME/.mande-chain/config/addrbook.json "SOON"
+wget -O $HOME/.mande-chain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Mande%20Chain/addrbook.json"
 ```
 
 # StateSync
