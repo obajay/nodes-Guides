@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O juno-t https://raw.githubusercontent.com/obajay/nodes-Guides/main/Juno/Testnet/juno-t && chmod +x juno-t && ./juno-t
 ```
 
 # 2) Manual installation
@@ -80,8 +80,8 @@ wget -O $HOME/.juno/config/genesis.json "https://raw.githubusercontent.com/obaja
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ujuno\"/;" ~/.juno/config/app.toml
-sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.althea/juno/config.toml
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ujunox\"/;" ~/.juno/config/app.toml
+sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.juno/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.juno/config/config.toml
 peers=""
@@ -155,7 +155,7 @@ junod tx staking create-validator \
 --commission-max-rate 1 \
 --commission-max-change-rate 1 \
 --min-self-delegation "1" \
---amount 1000000ujuno \
+--amount 1000000ujunox \
 --pubkey $(junod tendermint show-validator) \
 --from <wallet> \
 --moniker="STAVRguide" \
