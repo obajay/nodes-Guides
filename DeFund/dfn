@@ -159,7 +159,7 @@ break
 "UPDATE")
 cd $HOME/defund
 git fetch --all
-git checkout v0.2.4
+git checkout v0.2.5
 make install
 sudo systemctl restart defundd && journalctl -u defundd -f -o cat
 
