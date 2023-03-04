@@ -51,9 +51,22 @@ cd defund
 git checkout v0.2.4
 make install
 ```
+*******🟢UPDATE🟢******* 05.03.23
+
+```python
+cd $HOME/defund
+git fetch --all
+git checkout v0.2.5
+make install
+defundd version --long
+ #version: v0.2.5
+ #commit: da71d64cfd5b6a9b0c4f0b485c9601cafa91e7f7
+sudo systemctl restart defundd && journalctl -u defundd -f -o cat
+```
+
 `defundd version --long`
-- version: v0.2.4
-- commit: 1140938aa59a6233aa658fd24f9bcb0fd9c72757
+- version: v0.2.5
+- commit: da71d64cfd5b6a9b0c4f0b485c9601cafa91e7f7
 
 ```python
 defundd init STAVRguide --chain-id defund-private-4
