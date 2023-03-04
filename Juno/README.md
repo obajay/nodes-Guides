@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O juno https://raw.githubusercontent.com/obajay/nodes-Guides/main/Juno/juno && chmod +x juno && ./juno
 ```
 
 # 2) Manual installation
