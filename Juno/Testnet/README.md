@@ -46,7 +46,7 @@ go version
 cd $HOME
 git clone https://github.com/CosmosContracts/juno juno
 cd juno
-git checkout v12.0.0-beta.1
+git checkout v13.0.0-beta.2
 make install
 ```
 *******🟢UPDATE🟢******* 00.00.23
@@ -55,8 +55,8 @@ SOOON
 ```
 
 `junod version --long`
-- version: v12.0.0-beta.1
-- commit: c2aa971c72afcac13fa09e622db40853f5c86f24
+- version: v13.0.0-beta.2
+- commit: 6b69a3d2a9ef8bfca4bf9cb33fe53bf609aa63b6
 
 ```python
 junod init STAVRguide --chain-id uni-6
