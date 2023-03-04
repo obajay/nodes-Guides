@@ -111,7 +111,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.juno/config/config.to
 
 ## Download addrbook
 ```python
-wget -O $HOME/.juno/config/addrbook.json "soon"
+wget -O $HOME/.juno/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Juno/Testnet/addrbook.json"
 ```
 
 # Create a service file
