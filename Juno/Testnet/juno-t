@@ -173,7 +173,7 @@ rm -rf $HOME/.juno/data
 curl -o - -L http://junot.snapshot.stavr.tech:1030/junot/junot-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.juno --strip-components 2
 curl -o - -L http://juno-t.wasm.stavr.tech:1001/wasm-junot.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.juno/ --strip-components 2
 mv $HOME/.juno/priv_validator_state.json.backup $HOME/.juno/data/priv_validator_state.json
-wget -O $HOME/.juno/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Juno/Testnet/genesis.json"
+wget -O $HOME/.juno/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Juno/Testnet/addrbook.json"
 sudo systemctl restart junod && journalctl -u junod -f -o cat
 
 break
