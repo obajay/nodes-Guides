@@ -132,7 +132,7 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-# StateSync Juno Mainnet
+# StateSync Juno Testnet
 ```python
 SNAP_RPC=http://juno.rpc.t.stavr.tech:1067
 PEERS="518d31bf039289b6c8d8defd7e9509d8e28b7cd3@junot.peer.stavr.tech:1066"
@@ -151,7 +151,7 @@ junod tendermint unsafe-reset-all --home $HOME/.juno
 sed -i -e "s/^snapshot-interval *=.*/snapshot-interval = \"1500\"/" $HOME/.juno/config/app.toml
 sudo systemctl restart junod && journalctl -u junod -f -o cat
 ```
-# SnapShot Mainnet (~0.6GB) updated every 5 hours  
+# SnapShot Testnet (~0.6GB) updated every 5 hours  
 ```python
 cd $HOME
 snap install lz4
