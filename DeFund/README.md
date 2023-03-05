@@ -44,11 +44,11 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 03.02.23
+# Build 05.0..23
 ```python
 git clone https://github.com/defund-labs/defund
 cd defund
-git checkout v0.2.4
+git checkout v0.2.5
 make install
 ```
 *******🟢UPDATE🟢******* 05.03.23
