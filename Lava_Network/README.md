@@ -53,20 +53,20 @@ git fetch --all
 git checkout v0.6.0
 make install
 ```
-*******🟢UPDATE🟢******* 21.02.23
+*******🟢UPDATE🟢******* 06.03.23
 
 ```python
 cd $HOME/lava
 git fetch --all
-git checkout v0.6.0
+git checkout v0.7.0-RC1
 make install
 lavad version --long | head
 sudo systemctl restart lavad && sudo journalctl -u lavad -f -o cat
 ```
 
 `lavad version --long | head`
-- version: 0.6.0
-- commit: c7f7556cd1cb5bda4ae8a735beb55f82e38014dc
+- version: 0.7.0-RC1
+- commit: 5eecc1a2eab6aeee60f328ef458e1a07d947f242
 
 ```python
 lavad init STAVRguide --chain-id lava-testnet-1
