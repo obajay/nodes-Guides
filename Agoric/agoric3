@@ -41,8 +41,7 @@ sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq bui
 
 echo -e "        \e[1m\e[32m2. Installing GO--> \e[0m" && sleep 1
 #INSTALL GO
-ver="1.18.3" && \
-cd $HOME && \
+ver="1.19.5" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
@@ -53,14 +52,15 @@ go version
 
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
-git clone https://github.com/Agoric/ag0
-cd ag0
-git checkout agoric-upgrade-7-2
-make build && make install
-. $HOME/.bash_profile
-mv $HOME/ag0/build/ag0 /usr/local/bin
+cd $HOME
+git clone https://github.com/Agoric/agoric-sdk
+cd $agoric-sdk
+git checkout pismoC
+yarn install
+yarn build
+cd packages/cosmic-swingset && make
 
-ag0 init $Validator_Name --chain-id $CHAIN_ID
+agd init $Validator_Name --chain-id $CHAIN_ID
 
 curl https://main.agoric.net/genesis.json > $HOME/.agoric/config/genesis.json 
 wget -O $HOME/.agoric/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Agoric/addrbook.json"
@@ -101,8 +101,8 @@ After=network-online.target
 #SLOGFILE=.agoric/data/chain.slog
 User=$USER
 # OPTIONAL: turn on Cosmos nondeterminism debugging information
-#ExecStart=$(which ag0) start --log_level=info --trace-store=.agoric/data/kvstore.trace
-ExecStart=$(which ag0) start --log_level=info
+#ExecStart=$(which agd) start --log_level=info --trace-store=.agoric/data/kvstore.trace
+ExecStart=$(which agd) start --log_level=info
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
@@ -157,15 +157,12 @@ sudo systemctl restart agoricd && journalctl -u agoricd -f -o cat
 break
 ;;
 "UPDATE")
-systemctl stop agoricd
-cd ~
-rm -rf ag0
-git clone https://github.com/Agoric/ag0
-cd ag0
-git checkout agoric-upgrade-7-2
-make build && make install
-. $HOME/.bash_profile
-mv $HOME/ag0/build/ag0 /usr/local/bin
+cd $HOME/agoric-sdk
+git fetch --all
+git checkout pismoC
+yarn install
+yarn build
+cd packages/cosmic-swingset && make
 systemctl restart agoricd.service && journalctl -u agoricd.service -f -o cat
 
 break
