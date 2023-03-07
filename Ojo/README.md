@@ -207,7 +207,7 @@ sudo journalctl -u ojod -f -o cat
 ojod query bank balances ojo...addressjkl1yjgn7z09ua9vms259j
 ```
 
-# Install price-feeder
+<h1 align="center"> 🔥Install price-feeder🔥</h1> 
 
 
 ```python
