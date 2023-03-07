@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O sao https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sao/sao && chmod +x sao && ./sao
 ```
 
 # 2) Manual installation
