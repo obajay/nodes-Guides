@@ -169,8 +169,8 @@ sudo systemctl disable ojod && \
 rm /etc/systemd/system/ojod.service && \
 sudo systemctl daemon-reload && \
 cd $HOME && \
-rm -rf sao-consensus && \
-rm -rf .sao && \
+rm -rf ojo && \
+rm -rf .ojo && \
 rm -rf $(which ojod)
 
 break
