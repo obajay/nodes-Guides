@@ -42,6 +42,7 @@ go version
 
 # Build 04.03.23
 ```python
+cd $HOME
 git clone https://github.com/SaoNetwork/sao-consensus.git
 cd sao-consensus
 git checkout testnet0
