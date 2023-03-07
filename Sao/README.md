@@ -70,7 +70,7 @@ saod keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O $HOME/.sao/config/genesis.json "SOON"
+wget -O $HOME/.sao/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sao/genesis.json"
 
 ```
 `sha256sum $HOME/.sao/config/genesis.json`
@@ -109,7 +109,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.sao/config/config.tom
 
 ## Download addrbook
 ```python
-wget -O $HOME/.sao/config/addrbook.json "soon"
+wget -O $HOME/.sao/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sao/addrbook.json"
 ```
 
 # Create a service file
