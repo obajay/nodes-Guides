@@ -72,7 +72,7 @@ ojod keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O $HOME/.ojo/config/genesis.json "soon"
+wget -O $HOME/.ojo/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Ojo/genesis.json"
 
 ```
 `sha256sum $HOME/.ojo/config/genesis.json`
@@ -111,7 +111,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.ojo/config/config.tom
 
 ## Download addrbook
 ```python
-wget -O $HOME/.ojo/config/addrbook.json "SOOON"
+wget -O $HOME/.ojo/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Ojo/addrbook.json"
 ```
 
 # Create a service file
