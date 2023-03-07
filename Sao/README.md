@@ -83,7 +83,7 @@ sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0sao\"/;" ~/.
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.sao/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.sao/config/config.toml
-peers=""
+peers="557c49ddc6c98e5c5ac6030a93451ad5fcd54e34@164.90.147.133:20656,4a4c330115ed36bf8a5c8ffbc568d165ee91bd72@207.154.243.48:20656,e5d450435d3041e57400edb1cb65845f33be5b13@167.71.53.182:26656,244c464e3d500ee3f242fa3a10ae50d4cd02fc26@164.90.221.101:26656,a22a3ad8f847ab87bd64d0b9365b870750bde4e5@143.198.204.248:20656,395e1f7e7ea858fd9093de8832a25be67e7b6d9d@171.226.79.93:09656,a5298771c624a376fdb83c48cc6c630e58092c62@192.18.136.151:26656,59cef823c1a426f15eb9e688287cd1bc2b6ea42d@152.70.126.187:26656,18bd77a58bea85dce428e2bc0cd1eed461947d1c@89.163.215.6:55656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.sao/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.sao/config/config.toml
