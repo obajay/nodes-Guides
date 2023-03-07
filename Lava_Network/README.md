@@ -44,13 +44,13 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 21.02.23
+# Build 06.03.23
 ```python
 cd $HOME
 git clone https://github.com/lavanet/lava
 cd lava
 git fetch --all
-git checkout v0.6.0
+git checkout v0.7.0-RC1
 make install
 ```
 *******🟢UPDATE🟢******* 06.03.23
