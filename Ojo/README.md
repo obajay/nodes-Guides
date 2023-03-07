@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O ojjo https://raw.githubusercontent.com/obajay/nodes-Guides/main/Ojo/ojjo && chmod +x ojjo && ./ojjo
 ```
 
 # 2) Manual installation
