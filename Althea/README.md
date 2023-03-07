@@ -42,6 +42,7 @@ go version
 
 # Build 09.02.23
 ```python
+cd $HOME
 git clone https://github.com/althea-net/althea-chain
 cd althea-chain
 git checkout v0.3.2
