@@ -45,7 +45,7 @@ cd $HOME
 git clone https://github.com/BitCannaGlobal/bcna
 cd bcna
 git checkout v1.6.2-rc1
-mak einstall
+make install
 ```
 
 `bcnad version --long`
