@@ -39,19 +39,18 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 07.03.23
+# Build 08.03.23
 ```python
 cd $HOME
-wget https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.1/bcna_linux_amd64.tar.gz
-tar -xvzf bcna_linux_amd64.tar.gz
-rm -rf bcna_linux_amd64.tar.gz
-chmod +x bcnad
-mv bcnad $HOME/go/bin/
+git clone https://github.com/BitCannaGlobal/bcna
+cd bcna
+git checkout v1.6.2-rc1
+mak einstall
 ```
 
 `bcnad version --long`
-+ version: 1.6.1
-+ commit: 2730dc4b1fae92ab92a4bda97823f0da804bfbd5
++ version: 1.6.2-rc1
++ commit: 419fdc6c948cf732caca5444bf8f02028170d10f
 
 ```python
 bcnad config chain-id bitacanna-dev-1
