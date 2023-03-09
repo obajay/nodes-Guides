@@ -155,9 +155,8 @@ break
 "UPDATE")
 cd $HOME/bcna
 git fetch --all
-git checkout v1.6.0-fix
-make build
-mv $HOME/bcna/build/bcnad $(which bcnad)
+git checkout v1.6.1
+make install
 sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 
 break
