@@ -31,14 +31,13 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 08.02.23
+# Build 09.03.23
 ```python
 cd $HOME
-wget https://files.kyve.network/chain/v1.0.0-rc0/kyved_linux_amd64.tar.gz
-tar -xvzf kyved_linux_amd64.tar.gz
-chmod +x kyved
-sudo mv kyved $HOME/go/bin/kyved
-rm kyved_linux_amd64.tar.gz
+git clone https://github.com/KYVENetwork/chain/
+cd chain
+git checkout v1.0.0-rc1
+make install
 ```
 
 *******🟢UPDATE🟢******* 09.03.23
@@ -53,6 +52,10 @@ kyved version --long
 #commit: cedc217027c2b7e3d2b7077abe7a4fa4442a19c4
 systemctl restart kyved && journalctl -u kyved -f -o cat
 ```
+`kyved version --long`
++ version: v1.0.0-rc1
++ commit: cedc217027c2b7e3d2b7077abe7a4fa4442a19c4
+
 
 ```python
 kyved init STAVRguide --chain-id kaon-1
