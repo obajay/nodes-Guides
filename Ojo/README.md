@@ -162,7 +162,7 @@ rm -rf $HOME/.ojo/data
 curl -o - -L http://ojo.snapshot.stavr.tech:1026/ojo/ojo-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.ojo --strip-components 2
 mv $HOME/.ojo/priv_validator_state.json.backup $HOME/.ojo/data/priv_validator_state.json
 wget -O $HOME/.ojo/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Ojo/addrbook.json"
-sudo systemctl restart ojod && journalctl -u ojod -f -o cat```
+sudo systemctl restart ojod && journalctl -u ojod -f -o cat
 ```
 
 ## Start
