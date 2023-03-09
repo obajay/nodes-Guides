@@ -148,6 +148,7 @@ s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.sao/config/config.toml
 saod tendermint unsafe-reset-all --home /root/.sao --keep-addr-book
+sed -i -e "s/^snapshot-interval *=.*/snapshot-interval = \"1500\"/" $HOME/.sao/config/app.toml
 sudo systemctl restart saod && journalctl -u saod -f -o cat
 ```
 # SnapShot Testnet (~0.2GB) updated every 5 hours  
