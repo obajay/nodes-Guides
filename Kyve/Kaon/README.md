@@ -34,19 +34,19 @@ go version
 # Build 09.03.23
 ```python
 cd $HOME
-git clone https://github.com/KYVENetwork/chain/
-cd chain
-git checkout v1.0.0-rc1
-make install
+wget https://github.com/KYVENetwork/chain/releases/download/v1.0.0-rc1/kyved_linux_amd64.tar.gz
+tar -xvzf kyved_linux_amd64.tar.gz
+chmod +x ./kyved
+mv kyved $HOME/go/bin/
 ```
 
 *******🟢UPDATE🟢******* 09.03.23
 ```python
 cd $HOME
-git clone https://github.com/KYVENetwork/chain/
-cd chain
-git checkout v1.0.0-rc1
-make install
+wget https://github.com/KYVENetwork/chain/releases/download/v1.0.0-rc1/kyved_linux_amd64.tar.gz
+tar -xvzf kyved_linux_amd64.tar.gz
+chmod +x ./kyved
+mv kyved $(which kyved)
 kyved version --long
 #version: v1.0.0-rc1
 #commit: cedc217027c2b7e3d2b7077abe7a4fa4442a19c4
