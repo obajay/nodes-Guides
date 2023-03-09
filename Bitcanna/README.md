@@ -72,22 +72,21 @@ git checkout v1.5.3
 make install
 ```
 
-*******🟢UPDATE🟢******* 02.03.23
-
+*******🟢UPDATE🟢******* 10.03.23
 ```python
 cd bcna
 git fetch --all
-git checkout v1.6.0-fix
+git checkout v1.6.1
 make install
-bcnad version
-#v1.6.0-fix
-#c3219e52643d68caeb07ca20744d82c78bcafd93
+bcnad version --long
+#version: 1.6.1
+#commit: 2730dc4b1fae92ab92a4bda97823f0da804bfbd5
 sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 ```
 
 `bcnad version`
-- version: v1.6.0-fix
-- commit: c3219e52643d68caeb07ca20744d82c78bcafd93
+- version: 1.6.1
+- commit: 2730dc4b1fae92ab92a4bda97823f0da804bfbd5
 
 ```python
 bcnad init STAVRguide --chain-id bitcanna-1
