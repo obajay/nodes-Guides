@@ -63,12 +63,12 @@ iavl-disable-fastnode = false
 ```
 
 
-# Build 07.11.22
+# Build 10.03.23
 ```python
 cd $HOME
 git clone https://github.com/BitCannaGlobal/bcna
 cd bcna
-git checkout v1.5.3
+git checkout v1.6.1
 make install
 ```
 
