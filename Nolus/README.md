@@ -44,19 +44,19 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 24.02.23
+# Build 10.03.23
 ```python
 cd $HOME
 git clone https://github.com/Nolus-Protocol/nolus-core
 cd nolus-core
-git checkout v0.1.43
+git checkout v0.2.1-testnet
 make install
 ```
-*******🟢UPDATE🟢******* 24.02.23
+*******🟢UPDATE🟢******* 10.03.23
 ```python
 cd $HOME/nolus-core
 git fetch --all
-git checkout v0.1.43
+git checkout v0.2.1-testnet
 make install
 sed -i -e "s/^pruning *=.*/pruning = \"nothing\"/" $HOME/.nolus/config/app.toml
 sudo systemctl restart nolusd && journalctl -u nolusd -f -o cat
@@ -64,8 +64,8 @@ sudo systemctl restart nolusd && journalctl -u nolusd -f -o cat
 
 
 `nolusd version --long`
-- version: 0.1.43
-- commit: 90c21c44b5a4cae64e192ae2cabdeec9edec4736
+- version: 0.2.1-testnet
+- commit: b33e872e7411d86549a4a8ac1ffbf9b1f5190efa
 
 ```python
 nolusd init STAVRguide --chain-id nolus-rila
