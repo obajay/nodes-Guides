@@ -54,7 +54,7 @@ make install
 cd $HOME
 wget https://github.com/CosmosContracts/juno/releases/download/v13.0.0/junod
 chmod +x junod
-mv junod $(wich junod)
+mv junod $HOME/go/bin/
 sudo systemctl restart junod && sudo journalctl -u junod -f -o cat
 ```
 
