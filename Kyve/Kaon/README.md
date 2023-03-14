@@ -1,6 +1,6 @@
 # Kyve testnet guide kyve-kaon-1
-![Kyve (2)](https://user-images.githubusercontent.com/44331529/180600823-b7f4a17d-c213-49b5-a1b9-cbe2e3b630e2.png)
-![Kyve (1)](https://user-images.githubusercontent.com/44331529/180600827-c8beffd5-dcb3-4ded-a9d6-8f9aa6c0859f.png)
+![kyve](https://user-images.githubusercontent.com/44331529/224904387-84e58953-38ac-400d-b497-27172a9c8641.png)
+
 
 [GitHub](https://github.com/KYVENetwork/networks/tree/main/kaon-1)
 =
