@@ -43,19 +43,21 @@ git checkout euphoria_v0.4.2
 make install
 ```
 
-*******🟢UPDATE🟢******* 07.12.22
-
+*******🟢UPDATE🟢******* 15.03.23
 ```python
 cd $HOME/aura
 git fetch --all
-git checkout euphoria_v0.4.2
+git checkout euphoria_v0.4.4
 make install
+aurad version --long
+#version: euphoria_v0.4.4
+#commit: b4f8f4807c72c2b8b59d124050322cd6e6a2dd76
 sudo systemctl restart aurad && journalctl -u aurad -f -o cat
 ```
 
 `aurad version --long | head`
-+ version: euphoria_v0.4.2
-+ commit: 7922c61c8c404645007995211070c9d817713c33
++ version: euphoria_v0.4.4
++ commit: b4f8f4807c72c2b8b59d124050322cd6e6a2dd76
 
 ```python
 aurad init STAVRguide --chain-id euphoria-2
