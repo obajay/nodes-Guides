@@ -126,7 +126,7 @@ sudo journalctl -u kyved -f -o cat
 
 ```python
 kyved tx staking create-validator \
---amount 10000000000tkyve \
+--amount 10000000000ukyve \
 --moniker="STAVRguide" \
 --identity="<identity>" \
 --website="<website>" \
@@ -137,6 +137,8 @@ kyved tx staking create-validator \
 --min-self-delegation "1" \
 --pubkey "$(kyved tendermint show-validator)" \
 --from <your-key-name> \
+--gas 51000000 \
+--fees 1020000ukyve \
 --chain-id kyve-1
 ```
 
