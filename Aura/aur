@@ -162,7 +162,7 @@ break
 "UPDATE")
 cd $HOME/aura
 git fetch --all
-git checkout euphoria_v0.4.2
+git checkout euphoria_v0.4.4
 make install
 sudo systemctl restart aurad && journalctl -u aurad -f -o cat
 
