@@ -58,7 +58,7 @@ curl https://files.kyve.network/mainnet/genesis.json > ~/.kyve/config/genesis.js
 ```
 
 ## Peers/Seeds/MaxPeers/FilterPeers
-```console
+```python
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.kyve/config/config.toml
 seeds=""
 peers="b950b6b08f7a6d5c3e068fcd263802b336ffe047@18.198.182.214:26656,25da6253fc8740893277630461eb34c2e4daf545@3.76.244.30:26656"
