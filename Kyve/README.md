@@ -125,19 +125,19 @@ sudo journalctl -u kyved -f -o cat
 ## Create validator
 
 ```python
-	kyved tx staking create-validator \
-	--amount 10000000000tkyve \
-	--moniker="STAVRguide" \
-	--identity="<identity>" \
-	--website="<website>" \
-	--details="<any details>" \
-	--commission-rate "0.10" \
-	--commission-max-rate "0.20" \
-	--commission-max-change-rate "0.05" \
-	--min-self-delegation "1" \
-	--pubkey "$(kyved tendermint show-validator)" \
-	--from <your-key-name> \
-	--chain-id kyve-1
+kyved tx staking create-validator \
+--amount 10000000000tkyve \
+--moniker="STAVRguide" \
+--identity="<identity>" \
+--website="<website>" \
+--details="<any details>" \
+--commission-rate "0.10" \
+--commission-max-rate "0.20" \
+--commission-max-change-rate "0.05" \
+--min-self-delegation "1" \
+--pubkey "$(kyved tendermint show-validator)" \
+--from <your-key-name> \
+--chain-id kyve-1
 ```
 
 ## Delete node
@@ -152,3 +152,20 @@ rm -rf .kyve && \
 rm -rf $(which kyved)
 ```
 
+### Sync Info
+```python
+source $HOME/.bash_profile
+kyved status 2>&1 | jq .SyncInfo
+```
+### NodeINfo
+```python
+kyved status 2>&1 | jq .NodeInfo
+```
+### Check node logs
+```python
+sudo journalctl -u kyved -f -o cat
+```
+### Check Balance
+```python
+kyved query bank balances kyve...addresshaqq1yjgn7z09ua9vms259j
+```
