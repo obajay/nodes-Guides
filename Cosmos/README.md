@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O cosmos https://raw.githubusercontent.com/obajay/nodes-Guides/main/Cosmos/cosmos && chmod +x cosmos && ./cosmos
 ```
 
 # 2) Manual installation
@@ -45,23 +45,23 @@ go version
 ```python
 cd $HOME
 git clone https://github.com/cosmos/gaia cosmos
-cd cosmos
-git checkout v9.0.0
+cd gaia
+git checkout v9.0.1
 make install
 
 ```
 *******🟢UPDATE🟢******* 15.03.23
 ```python
-cd $HOME/cosmo
-git fetch --all
-git checkout v9.0.0
-make install
+cd $HOME
+wget https://github.com/cosmos/gaia/releases/download/v9.0.1/gaiad-v9.0.1-linux-amd64
+chmod +x gaiad-v9.0.1-linux-amd64
+mv gaiad-v9.0.1-linux-amd64 $HOME/go/bin/gaiad
 sudo systemctl restart gaiad && journalctl -u gaiad -f -o cat
 ```
 
 `gaiad version --long`
-- version: v8.0.0
-- commit: f9507c7e79f258aaa9a2265ca7d94e53988ffe16
+- version: v9.0.1
+- commit: 4b14265197d9beeb6c8b0d407433c852a5af6422
 
 ```python
 gaiad init STAVRguide --chain-id cosmoshub-4
@@ -118,7 +118,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.gaia/config/config.to
 
 ## Download addrbook
 ```python
-wget -O $HOME/.gaia/config/addrbook.json "SOON"
+wget -O $HOME/.gaia/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Cosmos/addrbook.json"
 ```
 
 # Create a service file
