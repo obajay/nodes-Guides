@@ -54,10 +54,9 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-git clone https://github.com/cosmos/gaia cosmos
-cd cosmos
-git checkout v9.0.0
-make install
+wget https://github.com/cosmos/gaia/releases/download/v9.0.1/gaiad-v9.0.1-linux-amd64
+chmod +x gaiad-v9.0.1-linux-amd64
+mv gaiad-v9.0.1-linux-amd64 $HOME/go/bin/gaiad
 
 gaiad init $Validator_Name --chain-id $CHAIN_ID
 
@@ -139,8 +138,11 @@ echo -e "      \e[1m\e[32m SOOOON\e[0m"
 break
 ;;
 "UPDATE")
-echo -e "      \e[1m\e[32m SOOOON\e[0m"
-gaiad version
+cd $HOME
+wget https://github.com/cosmos/gaia/releases/download/v9.0.1/gaiad-v9.0.1-linux-amd64
+chmod +x gaiad-v9.0.1-linux-amd64
+mv gaiad-v9.0.1-linux-amd64 $HOME/go/bin/gaiad
+sudo systemctl restart gaiad && journalctl -u gaiad -f -o cat
 
 break
 ;;
