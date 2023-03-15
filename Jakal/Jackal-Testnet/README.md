@@ -140,7 +140,7 @@ EOF
 # StateSync Jackal Testnet
 ```python
 SNAP_RPC=http://jkl.rpc.t.stavr.tech:19127
-peers="fa10dc1a1dc81ee2741e7f88327cb13d2ab56f54@jkltest.peer.stavr.tech:19126"
+peers="8a11570dbaa0f4d98ca2ef0ad117e9c1154d81b9@jkltest.peer.stavr.tech:19126"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.canine/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \
@@ -156,7 +156,7 @@ s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.canine/config/config.toml
 canined tendermint unsafe-reset-all --home /root/.canine --keep-addr-book
 systemctl restart canined && journalctl -u canined -f -o cat
 ```
-# SnapShot Testnet (~0.2GB) updated every 5 hours  
+# SnapShot Testnet (~0.5 GB) updated every 5 hours  
 ```python
 cd $HOME
 apt install lz4
