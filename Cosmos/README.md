@@ -46,22 +46,22 @@ go version
 cd $HOME
 git clone https://github.com/cosmos/gaia cosmos
 cd gaia
-git checkout v9.0.1
+git checkout v9.0.0
 make install
 
 ```
 *******🟢UPDATE🟢******* 15.03.23
 ```python
 cd $HOME
-wget https://github.com/cosmos/gaia/releases/download/v9.0.1/gaiad-v9.0.1-linux-amd64
-chmod +x gaiad-v9.0.1-linux-amd64
-mv gaiad-v9.0.1-linux-amd64 $HOME/go/bin/gaiad
+wget https://github.com/cosmos/gaia/releases/download/v9.0.0/gaiad-v9.0.0-linux-amd64
+chmod +x gaiad-v9.0.0-linux-amd64
+mv gaiad-v9.0.0-linux-amd64 $HOME/go/bin/gaiad
 sudo systemctl restart gaiad && journalctl -u gaiad -f -o cat
 ```
 
 `gaiad version --long`
-- version: v9.0.1
-- commit: 4b14265197d9beeb6c8b0d407433c852a5af6422
+- version: v9.0.0
+- commit: 682770f2410ab0d33ac7f0c7203519d7a99fa2b6
 
 ```python
 gaiad init STAVRguide --chain-id cosmoshub-4
