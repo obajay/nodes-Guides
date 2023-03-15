@@ -137,7 +137,7 @@ EOF
 # StateSync 
 ```python
 SNAP_RPC=http://quick.rpc.t.stavr.tech:21027
-peers="1a178dec165fad14ab1b2fb6832dd092f6ab7a5b@quickt.peers.stavr.tech:21026"
+peers="d0d0903d8c2f514c92284341d48aa422d4e37740@quickt.peers.stavr.tech:21026"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.quicksilverd/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \
