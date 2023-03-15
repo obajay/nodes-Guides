@@ -16,7 +16,7 @@
 
 
 # 1) Auto_install script
-```bash
+```python
 wget -O osmo https://raw.githubusercontent.com/obajay/nodes-Guides/main/Osmosis/osmo && chmod +x osmo && ./osmo
 ```
 
@@ -24,14 +24,14 @@ wget -O osmo https://raw.githubusercontent.com/obajay/nodes-Guides/main/Osmosis/
 
 ### Preparing the server
 
-```bash
+```python
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
 ## GO 1.19
 
-```bash
+```python
 ver="1.19" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
@@ -43,8 +43,8 @@ go version
 ```
 
 # Build 24.01.23
-```bash
-cd ~
+```python
+cd $HOME
 git clone https://github.com/osmosis-labs/osmosis && cd osmosis
 git checkout v14.0.0
 make install
@@ -62,19 +62,19 @@ sudo systemctl restart gaiad && journalctl -u gaiad -f -o cat
 `osmosisd version --long | head`
 - version: v14.0.0
 
-```bash
+```python
 osmosisd init STAVRguide --chain-id osmosis-1
 ```    
 
 ## Create/recover wallet
-```bash
+```python
 osmosisd keys add <walletname>
 osmosisd keys add <walletname> --recover
 ```
 
 ## Download Genesis
 
-```bash
+```python
 wget -O $HOME/.osmosisd/config/genesis.json "https://github.com/osmosis-labs/networks/raw/main/osmosis-1/genesis.json"
 ```
 `sha256sum ~/.osmosisd/config/genesis.json`
@@ -106,21 +106,21 @@ sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.osmosisd/config/app.toml
 ```
 ### Indexer (optional) 
-```bash
+```python
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.osmosisd/config/config.toml
 ```
 
 ## Download addrbook
-```bash
-wget -O $HOME/.mande-chain/config/addrbook.json "SOON"
+```python
+wget -O $HOME/.mande-chain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Osmosis/addrbook.json"
 ```
 
 [SNAPSHOT](https://polkachu.com/tendermint_snapshots/osmosis)
 =
 
 # Create a service file
-```bash
+```python
 sudo tee /etc/systemd/system/osmosisd.service > /dev/null <<EOF
 [Unit]
 Description=osmosisd
@@ -139,19 +139,19 @@ EOF
 ```
 
 ## Start
-```bash
+```python
 sudo systemctl daemon-reload
 sudo systemctl enable osmosisd
 sudo systemctl restart osmosisd && sudo journalctl -u osmosisd -f -o cat
 ```
 
 ### Create validator
-```bash
+```python
 SOON
 ```
 
 ## Delete node
-```bash
+```python
 systemctl stop osmosisd && \
 systemctl disable osmosisd && \
 rm /etc/systemd/system/osmosisd.service && \
