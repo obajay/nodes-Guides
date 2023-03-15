@@ -49,6 +49,16 @@ git clone https://github.com/osmosis-labs/osmosis && cd osmosis
 git checkout v14.0.0
 make install
 ```
+
+*******🟢UPDATE🟢******* 16.03.23
+```python
+cd $HOME/osmosis
+git fetch --all
+git checkout v15.0.0
+make install
+sudo systemctl restart gaiad && journalctl -u gaiad -f -o cat
+```
+
 `osmosisd version --long | head`
 - version: v14.0.0
 
