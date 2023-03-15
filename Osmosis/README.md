@@ -113,7 +113,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.osmosisd/config/confi
 
 ## Download addrbook
 ```python
-wget -O $HOME/.mande-chain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Osmosis/addrbook.json"
+wget -O $HOME/.osmosisd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Osmosis/addrbook.json"
 ```
 
 [SNAPSHOT](https://polkachu.com/tendermint_snapshots/osmosis)
