@@ -68,25 +68,25 @@ iavl-disable-fastnode = false
 cd $HOME
 git clone https://github.com/BitCannaGlobal/bcna
 cd bcna
-git checkout v1.6.1
+git checkout v1.6.2
 make install
 ```
 
-*******🟢UPDATE🟢******* 10.03.23
+*******🟢UPDATE🟢******* 16.03.23
 ```python
-cd bcna
+cd $HOME/bcna
 git fetch --all
-git checkout v1.6.1
+git checkout v1.6.2
 make install
 bcnad version --long
-#version: 1.6.1
-#commit: 2730dc4b1fae92ab92a4bda97823f0da804bfbd5
+#version: 1.6.2
+#commit: 8ca3c8f90aaf5a2ca553be173918ff2f4c4b3473
 sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 ```
 
 `bcnad version`
-- version: 1.6.1
-- commit: 2730dc4b1fae92ab92a4bda97823f0da804bfbd5
+- version: 1.6.2
+- commit: 8ca3c8f90aaf5a2ca553be173918ff2f4c4b3473
 
 ```python
 bcnad init STAVRguide --chain-id bitcanna-1
