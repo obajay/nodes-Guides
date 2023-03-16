@@ -35,11 +35,11 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-# Build 07.12.22
+# Build 15.03.23
 ```python
 cd $HOME
 git clone https://github.com/aura-nw/aura && cd aura
-git checkout euphoria_v0.4.2
+git checkout euphoria_v0.4.4
 make install
 ```
 
