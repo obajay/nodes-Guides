@@ -55,7 +55,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 #INSTALL
 cd $HOME
 git clone https://github.com/aura-nw/aura && cd aura
-git checkout euphoria_v0.4.2
+git checkout euphoria_v0.4.4
 make install
 
 aurad init $Validator_Name --chain-id $CHAIN_ID
