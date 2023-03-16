@@ -133,7 +133,7 @@ break
 "UPDATE")
 cd $HOME/stride
 git fetch --all
-git checkout v6.0.0
+git checkout v7.0.0
 make install
 sed -i -e "s/^pruning *=.*/pruning = \"nothing\"/" $HOME/.stride/config/app.toml
 sudo systemctl restart strided && journalctl -u strided -f -o cat
