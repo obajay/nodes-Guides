@@ -58,7 +58,7 @@ SOOON
 - commit: 99e52829472911af197a589f8a616833f076cff0
 
 ```python
-saod init STAVRguide --chain-id sao-testnet0
+saod init STAVRguide --chain-id sao-testnet1
 saod config chain-id sao-testnet1
 ```    
 
