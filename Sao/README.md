@@ -40,12 +40,12 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 04.03.23
+# Build 16.03.23
 ```python
 cd $HOME
 git clone https://github.com/SaoNetwork/sao-consensus.git
 cd sao-consensus
-git checkout testnet0
+git checkout v0.1.3
 make install
 ```
 *******🟢UPDATE🟢******* 00.00.23
@@ -54,12 +54,12 @@ SOOON
 ```
 
 `saod version --long`
-- version: 0.0.9-28-g284ebe6
-- commit: 284ebe63db9256dc83f745f861809859abec995e
+- version: 0.1.3
+- commit: 99e52829472911af197a589f8a616833f076cff0
 
 ```python
 saod init STAVRguide --chain-id sao-testnet0
-saod config chain-id sao-testnet0
+saod config chain-id sao-testnet1
 ```    
 
 ## Create/recover wallet
@@ -75,7 +75,7 @@ wget -O $HOME/.sao/config/genesis.json "https://raw.githubusercontent.com/obajay
 
 ```
 `sha256sum $HOME/.sao/config/genesis.json`
-+ fbd400351e29ca405906937ee343f0be099903d506d7ae06249c23d8922d6794
++ 4df3995bbe58f769b5f312e3bcecfcd4779fc78fdd94519127c6b59a6da89d08
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
@@ -83,7 +83,7 @@ sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0sao\"/;" ~/.
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.sao/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.sao/config/config.toml
-peers="557c49ddc6c98e5c5ac6030a93451ad5fcd54e34@164.90.147.133:20656,4a4c330115ed36bf8a5c8ffbc568d165ee91bd72@207.154.243.48:20656,e5d450435d3041e57400edb1cb65845f33be5b13@167.71.53.182:26656,244c464e3d500ee3f242fa3a10ae50d4cd02fc26@164.90.221.101:26656,a22a3ad8f847ab87bd64d0b9365b870750bde4e5@143.198.204.248:20656,395e1f7e7ea858fd9093de8832a25be67e7b6d9d@171.226.79.93:09656,a5298771c624a376fdb83c48cc6c630e58092c62@192.18.136.151:26656,59cef823c1a426f15eb9e688287cd1bc2b6ea42d@152.70.126.187:26656,18bd77a58bea85dce428e2bc0cd1eed461947d1c@89.163.215.6:55656"
+peers="099fae8829071292f6b1cfaa2b5d637da4aac1b9@203.23.128.181:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.sao/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.sao/config/config.toml
@@ -180,7 +180,7 @@ saod tx staking create-validator \
   --details="" \
   --identity="" \
   --website="" \
-  --chain-id="sao-testnet0" \
+  --chain-id="sao-testnet1" \
   --commission-rate="0.10" \
   --commission-max-rate="0.50" \
   --commission-max-change-rate="0.01" \
