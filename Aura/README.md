@@ -5,6 +5,7 @@
 
 
 [EXPLORER](https://explorer.stavr.tech/aura-mainnet)
+=
 
 - **Minimum hardware requirements**:
 
