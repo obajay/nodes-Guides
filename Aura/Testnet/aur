@@ -63,7 +63,7 @@ aurad init $Validator_Name --chain-id $CHAIN_ID
 wget https://github.com/aura-nw/testnets/raw/main/euphoria-2/euphoria-2-genesis.tar.gz
 tar -xzvf euphoria-2-genesis.tar.gz
 mv euphoria-2-genesis.json $HOME/.aura/config/genesis.json
-wget -O $HOME/.aura/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Aura/addrbook.json"
+wget -O $HOME/.aura/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Aura/Testnet/addrbook.json"
 
 
 echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
