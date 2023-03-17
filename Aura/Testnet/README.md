@@ -15,7 +15,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O aur https://raw.githubusercontent.com/obajay/nodes-Guides/main/Aura/aur && chmod +x aur && ./aur
+wget -O aur https://raw.githubusercontent.com/obajay/nodes-Guides/main/Aura/Testnet/aur && chmod +x aur && ./aur
 ```
 
 # 2) Manual instruction
@@ -79,7 +79,7 @@ mv euphoria-2-genesis.json $HOME/.aura/config/genesis.json
 
 ## Download addrbook
 ```python
-wget -O $HOME/.aura/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Aura/addrbook.json"
+wget -O $HOME/.aura/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Aura/Testnet/addrbook.json"
 ```
 
 ## Minimum gas price/Peers/Seeds
