@@ -58,8 +58,8 @@ make install
 - commit: 462ff3ad9721a1fcfd6edc63654b4b13569a6f9a
 
 ```python
-sged init STAVRguide --chain-id sge-testnet-2
-sged config chain-id sge-testnet-2
+sged init STAVRguide --chain-id sge-network-2
+sged config chain-id sge-network-2
 ```    
 
 ## Create/recover wallet
@@ -157,7 +157,7 @@ sged tx staking create-validator \
   --min-self-delegation "1" \
   --pubkey  $(sged tendermint show-validator) \
   --moniker STAVRguide \
-  --chain-id sge-testnet-2 \
+  --chain-id sge-network-2 \
   --identity="" \
   --details="" \
   --website="" -y
