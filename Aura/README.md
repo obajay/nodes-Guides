@@ -4,7 +4,7 @@
 ![aaura](https://user-images.githubusercontent.com/44331529/180595514-1dfc72a9-b72e-477b-ab5b-54f8a5071c7d.png)
 
 
-[EXPLORER](https://testnet.owlstake.com/Aura-Network/staking)
+[EXPLORER](https://explorer.stavr.tech/aura-mainnet)
 
 - **Minimum hardware requirements**:
 
@@ -130,7 +130,7 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 EOF
-
+```
 ## Start
 ```python
 sudo systemctl daemon-reload &&
