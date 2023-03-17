@@ -136,7 +136,7 @@ break
 ;;
 "Synchronization via StateSync")
 SNAP_RPC=sge.rpc.t.stavr.tech:1157
-peers="9adb2e3097febc3fc6edeb35291d6c49edb5c682@sge.peers.stavr.tech:1156"
+peers="fc616f3e9dc79997e60bd915a9233b6cc81bcd0f@sge.peers.stavr.tech:1156"
 sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.sge/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 300)); \
