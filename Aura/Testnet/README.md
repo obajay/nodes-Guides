@@ -5,7 +5,7 @@
 
 
 
-[EXPLORER](https://testnet.owlstake.com/Aura-Network/staking)
+[EXPLORER](https://explorer.stavr.tech/aura-testnet/staking)
 
 - **Minimum hardware requirements**:
 
