@@ -54,10 +54,10 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-cd $HOME
-git clone --branch aura_v0.4.3 https://github.com/aura-nw/aura
+git clone https://github.com/aura-nw/aura
 cd aura
-make
+git checkout Aura_v0.4.3
+make install
 
 aurad init $Validator_Name --chain-id $CHAIN_ID
 
