@@ -14,7 +14,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O auram https://raw.githubusercontent.com/obajay/nodes-Guides/main/Aura/auram && chmod +x auram && ./auram
 ```
 
 # 2) Manual instruction
@@ -100,7 +100,7 @@ sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.aura/config/app.toml
 ```
 ### Indexer (optional)
-```
+```python
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.aura/config/config.toml
 ```
