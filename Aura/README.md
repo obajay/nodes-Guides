@@ -11,7 +11,7 @@
 
 | Node Type  | RAM  | Storage  | 
 |------------|------|----------|
-| Mainnet    | 16GB | 500GB    |
+| Mainnet    | 10GB | 200GB    |
 
 # 1) Auto_install script
 ```python
@@ -25,7 +25,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 ## GO 19 (one command)
-```pyton
+```python
 ver="1.19" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
