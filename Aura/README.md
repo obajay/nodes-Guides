@@ -38,9 +38,10 @@ go version
 # Build 17.03.23
 ```python
 cd $HOME
-git clone --branch aura_v0.4.3 https://github.com/aura-nw/aura
+git clone https://github.com/aura-nw/aura
 cd aura
-make
+git checkout Aura_v0.4.3
+make install
 ```
 
 *******🟢UPDATE🟢******* 00.00.23
