@@ -109,7 +109,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.sge/config/config.tom
 
 ## Download addrbook
 ```python
-wget -O $HOME/.sge/config/addrbook.json "SOON"
+wget -O $HOME/.sge/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/SGE/sgge"
 ```
 ## StateSync
 ```python
