@@ -40,7 +40,7 @@ go version
 cd $HOME
 git clone https://github.com/aura-nw/aura
 cd aura
-git checkout Aura_v0.4.3
+git checkout aura_v0.4.4
 make install
 ```
 
@@ -50,8 +50,8 @@ SOOON
 ```
 
 `aurad version --long | head`
-+ version: Aura_v0.4.3
-+ commit: 019eacad3805a0c5101904035bbbf13deed68b05
++ version: aura_v0.4.4
++ commit: 222d63e1aa5b6fee5aea689bcdfcb9af2dbc82a2
 
 ```python
 aurad init STAVRguide --chain-id xstaxy-1
