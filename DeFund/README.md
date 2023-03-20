@@ -44,33 +44,33 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 05.0..23
+# Build 20.03.23
 ```python
 git clone https://github.com/defund-labs/defund
 cd defund
-git checkout v0.2.5
+git checkout v0.2.6
 make install
 ```
-*******🟢UPDATE🟢******* 05.03.23
+*******🟢UPDATE🟢******* 20.03.23
 
 ```python
 cd $HOME/defund
 git fetch --all
-git checkout v0.2.5
+git checkout v0.2.6
 make install
 defundd version --long
- #version: v0.2.5
- #commit: da71d64cfd5b6a9b0c4f0b485c9601cafa91e7f7
+ #version: v0.2.6
+ #commit: 8f2ebe3d30efe84e013ec5fcdf21a3b99e786c3d
 sudo systemctl restart defundd && journalctl -u defundd -f -o cat
 ```
 
 `defundd version --long`
-- version: v0.2.5
-- commit: da71d64cfd5b6a9b0c4f0b485c9601cafa91e7f7
+- version: v0.2.6
+- commit: 8f2ebe3d30efe84e013ec5fcdf21a3b99e786c3d
 
 ```python
-defundd init STAVRguide --chain-id defund-private-4
-defundd config chain-id defund-private-4
+defundd init STAVRguide --chain-id orbit-alpha-1
+defundd config chain-id orbit-alpha-1
 ```    
 
 ## Create/recover wallet
@@ -82,10 +82,10 @@ defundd keys add <walletname> --recover
 ## Download Genesis
 ```python
 cd $HOME/.defund/config
-curl -s https://raw.githubusercontent.com/defund-labs/testnet/main/defund-private-4/genesis.json > ~/.defund/config/genesis.json
+curl -s https://raw.githubusercontent.com/defund-labs/testnet/main/orbit-alpha-1/genesis.json > ~/.defund/config/genesis.json
 ```
 `sha256sum $HOME/.defund/config/genesis.json`
-+ db13a33fbb4048c8701294de79a42a2b5dff599d653c0ee110390783c833208b
++ 58916f9c7c4c4b381f55b6274bce9b8b8d482bfb15362099814ff7d0c1496658
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
@@ -93,9 +93,9 @@ sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ufetf\"/;" ~
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.defund/config/config.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.defund/config/config.toml
-peers="d837b7f78c03899d8964351fb95c78e84128dff6@174.83.6.129:30791,f03f3a18bae28f2099648b1c8b1eadf3323cf741@162.55.211.136:26656,f8fa20444c3c56a2d3b4fdc57b3fd059f7ae3127@148.251.43.226:56656,70a1f41dea262730e7ab027bcf8bd2616160a9a9@142.132.202.86:17000,e47e5e7ae537147a23995117ea8b2d4c2a408dcb@172.104.159.69:45656,74e6425e7ec76e6eaef92643b6181c42d5b8a3b8@defund-testnet-seed.itrocket.net:443"
+peers="f902d7562b7687000334369c491654e176afd26d@170.187.157.19:26656,f8093378e2e5e8fc313f9285e96e70a11e4b58d5@rpc-2.defund.nodes.guru:45656,878c7b70a38f041d49928dc02418619f85eecbf6@rpc-3.defund.nodes.guru:45656,3594b1f46c6321d9f99cda8ad5ef5a367ce06ccf@199.247.16.116:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.defund/config/config.toml
-seeds=""
+seeds="f902d7562b7687000334369c491654e176afd26d@170.187.157.19:26656,2b76e96658f5e5a5130bc96d63f016073579b72d@rpc-1.defund.nodes.guru:45656"
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.defund/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.defund/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.defund/config/config.toml
@@ -120,26 +120,12 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.defund/config/config.
 
 ## Download addrbook
 ```python
-wget -O $HOME/.defund/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/DeFund/addrbook.json"
+wget -O $HOME/.defund/config/addrbook.json "SOON"
 ```
 
 ## StateSync
 ```python
-SNAP_RPC=https://t-defund.rpc.utsa.tech:443
-peers="https://t-defund.rpc.utsa.tech:443"
-LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
-TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
-
-echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
-s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.defund/config/config.toml
-defundd tendermint unsafe-reset-all --home $HOME/.defund
-systemctl restart defundd && journalctl -u defundd -f -o cat
+SOOON
 ```
 
 # Create a service file
@@ -179,7 +165,7 @@ defundd tx staking create-validator \
   --min-self-delegation "1" \
   --pubkey  $(defundd tendermint show-validator) \
   --moniker STAVRguide \
-  --chain-id defund-private-4 \
+  --chain-id orbit-alpha-1 \
   --identity="" \
   --details="" \
   --website="" -y
