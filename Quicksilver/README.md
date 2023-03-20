@@ -35,12 +35,12 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-### Bunary 04.03.23
+### Bunary 20.03.23
 ```python
 cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.2.4/quicksilverd-v1.2.4-amd64
-chmod +x quicksilverd-v1.2.4-amd64
-mv quicksilverd-v1.2.4-amd64 $HOME/go/bin/quicksilverd
+wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.2.7/quicksilverd-v1.2.7-amd64
+chmod +x quicksilverd-v1.2.7-amd64
+mv quicksilverd-v1.2.7-amd64 $HOME/go/bin/quicksilverd
 ```
 
 *******🟢UPDATE🟢******* 20.03.23
