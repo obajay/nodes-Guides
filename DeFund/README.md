@@ -120,7 +120,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.defund/config/config.
 
 ## Download addrbook
 ```python
-wget -O $HOME/.defund/config/addrbook.json "SOON"
+wget -O $HOME/.defund/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/DeFund/addrbook.json"
 ```
 
 ## StateSync
