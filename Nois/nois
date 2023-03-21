@@ -32,7 +32,7 @@ echo "_|-_|-_|-_|-_|-_|-_|"
 read Validator_Name
 echo "_|-_|-_|-_|-_|-_|-_|"
 echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
-echo export CHAIN_ID="nois-testnet-003" >> $HOME/.bash_profile
+echo export CHAIN_ID="nois-testnet-004" >> $HOME/.bash_profile
 source ~/.bash_profile
 
 echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
@@ -54,17 +54,14 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-git clone https://github.com/noislabs/full-node.git
-cd full-node/full-node/
-git checkout nois-testnet-003
-./build.sh
-mv out/noisd /usr/local/bin
+git clone https://github.com/noislabs/noisd
+cd noisd
+git checkout v0.6.0
+make install
 
 noisd init $Validator_Name --chain-id $CHAIN_ID
 
-cd $HOME/.noisd/config/
-rm genesis.json
-curl -O https://raw.githubusercontent.com/noislabs/testnets/main/nois-testnet-003/genesis.json
+curl https://anode.team/Nois/test/genesis.json > ~/.noisd/config/genesis.json
 wget -O $HOME/.noisd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nois/addrbook.json"
 
 
@@ -82,7 +79,7 @@ sed -i 's/^timeout_propose =.*$/timeout_propose = "2000ms"/' $CONFIG_DIR/config.
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.noisd/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.noisd/config/config.toml
-peers="2bf8002d0f65c3d86fca31ea0f043d912682c3e0@65.109.70.23:17356"
+peers="d3ce97769bc00a698aee0f40eb8de0b2279b6b2c@65.109.28.177:32656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.noisd/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.noisd/config/config.toml
@@ -144,22 +141,7 @@ echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE
 break
 ;;
 "Synchronization via StateSync")
-SNAP_RPC=http://nois.rpc.t.stavr.tech:21037
-peers="2dc7ab934dfec910fac3083fd74e3451e1d3e670@135.181.5.47:21036"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.noisd/config/config.toml
-LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
-TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
-echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
-s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.noisd/config/config.toml
-noisd tendermint unsafe-reset-all --home $HOME/.noisd
-wget -O $HOME/.noisd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nois/addrbook.json"
-systemctl restart noisd && journalctl -u noisd -f -o cat
-
+echo -e "        \e[1m\e[32mSOOON\e[0m"
 
 break
 ;;
@@ -176,17 +158,8 @@ journalctl -u noisd -f -o cat
 break
 ;;
 "Synchronization via SnapShot")
-sudo systemctl stop noisd
-rm -rf $HOME/.noisd/data/
-mkdir $HOME/.noisd/data/
-cd $HOME
-wget http://nois.snap.stavr.tech:7050/noisddata.tar.gz
-tar -C $HOME/ -zxvf noisddata.tar.gz --strip-components 1
-wget -O $HOME/.noisd/data/priv_validator_state.json "https://raw.githubusercontent.com/obajay/StateSync-snapshots/main/priv_validator_state.json"
-cd && cat .noisd/data/priv_validator_state.json
-cd $HOME
-rm noisddata.tar.gz
-systemctl restart noisd && journalctl -u noisd -f -o cat
+echo -e "        \e[1m\e[32mSOOON\e[0m"
+
 
 break
 ;;
