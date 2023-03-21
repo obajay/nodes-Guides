@@ -17,7 +17,7 @@
 
 
 # 1) Auto_install script
-```bash
+```python
 wget -O okp https://raw.githubusercontent.com/obajay/nodes-Guides/main/OKP4/okp && chmod +x okp && ./okp
 ```
 
@@ -25,14 +25,14 @@ wget -O okp https://raw.githubusercontent.com/obajay/nodes-Guides/main/OKP4/okp 
 
 ### Preparing the server
 
-```bash
+```python
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
 ## GO 1.19
 
-```bash
+```python
 ver="1.19" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
@@ -51,42 +51,42 @@ cd okp4d
 git checkout v4.0.0
 make install
 ```
-*******🟢UPDATE🟢******* 22.02.23
+*******🟢UPDATE🟢******* 22.03.23
 ```python
 cd $HOME/okp4d
 git fetch --all
-git checkout v4.0.0
+git checkout v4.1.0
 make install
 okp4d version --long | head
-#commit: 8ca4e15ea6e6c35f990113b40b6afd2c988c08a9
-#version: 4.0.0
+#commit: c11c417f8d1d5ed20a74c501a4869c4d07d46747
+#version: 4.1.0
 sudo systemctl restart okp4d && sudo journalctl -u okp4d -f -o cat
 ```
 
 `okp4d version`
-- version: 4.0.0
-- commit: 8ca4e15ea6e6c35f990113b40b6afd2c988c08a9
+- version: 4.1.0
+- commit: c11c417f8d1d5ed20a74c501a4869c4d07d46747
 
-```bash
+```python
 okp4d init STAVRguide --chain-id okp4-nemeton-1
 okp4d config chain-id okp4-nemeton-1
 ```    
 
 ## Create/recover wallet
-```bash
+```python
 okp4d keys add <walletname>
 okp4d keys add <walletname> --recover
 ```
 
 ## Download Genesis
-```bash
+```python
 curl -Ls https://snapshots.kjnodes.com/okp4-testnet/genesis.json > $HOME/.okp4d/config/genesis.json
 ```
 `sha256sum $HOME/.okp4d/config/genesis.json`
 + 2ec25f81cc2abecbc0da3de45b052ea3314d0d658b1b7f4c7b6a48d09254c742
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
-```bash
+```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0uknow\"/;" ~/.okp4d/config/app.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.okp4d/config/config.toml
 external_address=$(wget -qO- eth0.me) 
@@ -100,7 +100,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.okp4
 
 ```
 ### Pruning (optional)
-```bash
+```python
 pruning="custom"
 pruning_keep_recent="100"
 pruning_keep_every="0"
@@ -111,7 +111,7 @@ sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.okp4d/config/app.toml
 ```
 ### Indexer (optional) 
-```bash
+```python
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.okp4d/config/config.toml
 ```
@@ -158,7 +158,7 @@ wget -O $HOME/.okp4d/config/addrbook.json "https://raw.githubusercontent.com/oba
 
 
 # Create a service file
-```bash
+```python
 sudo tee /etc/systemd/system/okp4d.service > /dev/null <<EOF
 [Unit]
 Description=okp4d
@@ -177,14 +177,14 @@ EOF
 ```
 
 ## Start
-```bash
+```python
 sudo systemctl daemon-reload
 sudo systemctl enable okp4d
 sudo systemctl restart okp4d && sudo journalctl -u okp4d -f -o cat
 ```
 
 ### Create validator
-```bash
+```python
 okp4d tx staking create-validator \
   --amount 1000000uknow \
   --from <walletName> \
@@ -201,7 +201,7 @@ okp4d tx staking create-validator \
 ```
 
 ## Delete node
-```bash
+```python
 sudo systemctl stop okp4d && \
 sudo systemctl disable okp4d && \
 rm /etc/systemd/system/okp4d.service && \
