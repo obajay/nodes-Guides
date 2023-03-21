@@ -67,7 +67,7 @@ aurad keys add <walletname> --recover
 
 ## Genesis
 ```python
-wget -O $HOME/.aura/config/genesis.json "https://raw.githubusercontent.com/aura-nw/mainnet-artifacts/main/xstaxy-1/genesis.json"
+wget -O $HOME/.aura/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Aura/genesis.json"
 ```
 `sha256sum ~/.aura/config/genesis.json`
 + 319943868db0397ee3b368a673cbf8758554fca879c84745bdad3e452af26696
