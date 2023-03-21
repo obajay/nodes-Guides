@@ -62,15 +62,16 @@ make install
 aurad init $Validator_Name --chain-id $CHAIN_ID
 
 wget -O $HOME/.aura/config/genesis.json "https://raw.githubusercontent.com/aura-nw/mainnet-artifacts/main/xstaxy-1/genesis.json"
+wget -O $HOME/.aura/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Aura/addrbook.json"
 
 echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
 
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.001uaura\"/;" ~/.aura/config/app.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.aura/config/config.toml
-peers="a1f949c765bfc493ddd2e0e8477170bcc3b86a57@194.163.179.176:26656,ad1febeb65726dd3f7c4083aac558ebda85a74ed@172.31.94.13:26656,a58b4dec687b60ba05cf9a3e4cd1181b09c0661f@65.109.93.152:26656,9cbe9c1f3e782ead1395c2bc205a9757aea038ea@192.168.3.113:26656,c25f51f6506d760c16f0be044f6165ae9038faa0@136.243.95.80:26656,3e05f2b0fdd750511dbff9d3f6a47d3bc3d4b1f0@141.95.204.81:26656,65b12c86e329744de6ec109ac87cce1624f3c5fc@162.19.171.125:26656"
+peers="ebc272824924ea1a27ea3183dd0b9ba713494f83@auranetwork-mainnet-peer.autostake.com:26966,edbd221ceecf4e0234fb60d617a025c6b0e56bf0@178.250.154.15:36656,b91ee5c72905bc49beed2720bb882c923c68fbc9@80.92.206.66:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.aura/config/config.toml
-seeds=""
+seeds="ebc272824924ea1a27ea3183dd0b9ba713494f83@auranetwork-mainnet-peer.autostake.com:26966"
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.aura/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.aura/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.aura/config/config.toml
