@@ -51,7 +51,7 @@ git checkout v0.6.0
 make install
 ```
 `noisd version`
-- 0.29.0-rc2
+- 0.6.0
 
 ```Python
 noisd init STAVRguide --chain-id nois-testnet-004
