@@ -185,7 +185,7 @@ aurad tx staking create-validator \
 
 ## Delete node
 ```python
-udo systemctl stop aurad && \
+sudo systemctl stop aurad && \
 sudo systemctl disable aurad && \
 rm /etc/systemd/system/aurad.service && \
 sudo systemctl daemon-reload && \
