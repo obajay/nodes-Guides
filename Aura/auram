@@ -167,7 +167,7 @@ apt install lz4
 sudo systemctl stop aurad
 cp $HOME/.aura/data/priv_validator_state.json $HOME/.aura/priv_validator_state.json.backup
 rm -rf $HOME/.aura/data
-curl -o - -L http://aura.snapshot.stavr.tech:5015/aura/aura-snap.tar$(date +%m%d) | lz4 -c -d - | tar -x -C $HOME/.aura --strip-components 2
+curl -o - -L http://aura.snapshot.stavr.tech:5015/aura/aura-snap.tar | lz4 -c -d - | tar -x -C $HOME/.aura --strip-components 2
 mv $HOME/.aura/priv_validator_state.json.backup $HOME/.aura/data/priv_validator_state.json
 wget -O $HOME/.aura/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Aura/addrbook.json"
 sudo systemctl restart aurad && journalctl -u aurad -f -o cat
