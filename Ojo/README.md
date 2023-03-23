@@ -176,7 +176,7 @@ sudo systemctl restart ojod && sudo journalctl -u ojod -f -o cat
 ```python
 ojod tx staking create-validator \
   --amount 1000000uojo \
-  --from STAVR1 \
+  --from WalletName \
   --commission-max-change-rate "0.1" \
   --commission-max-rate "0.2" \
   --commission-rate "0.1" \
