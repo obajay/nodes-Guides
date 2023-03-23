@@ -43,11 +43,11 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 16.02.23
+# Build 23.03.23
 ```python
 cd $HOME
 git clone https://github.com/JackalLabs/canine-chain && cd canine-chain
-git checkout v1.1.3.1
+git checkout v1.2.1
 make install
 ```
 
