@@ -6,7 +6,8 @@
 [WebSite](https://www.quasar.fi/)\
 [GitHub](https://github.com/quasar-finance)
 =
-[EXPLORER](https://explorer.stavr.tech/quasar-testnet/staking)
+[EXPLORER 1](https://explorer.stavr.tech/quasar-mainnet/staking) \
+[EXPLORER 2](https://www.mintscan.io/quasar/validators)
 =
 
 - **Minimum hardware requirements**:
