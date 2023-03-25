@@ -156,12 +156,12 @@ break
 ;;
 "UPDATE")
 cd $HOME
-wget https://github.com/hypersign-protocol/hid-node/releases/download/v0.1.6/hid-noded-0.1.6-linux-amd64.tar.gz
-tar -xvzf hid-noded-0.1.6-linux-amd64.tar.gz
-rm -rf hid-noded-0.1.6-linux-amd64.tar.gz
-chmod +x hid-noded
-mv $HOME/hid-noded $(which hid-noded)
-hid-noded version
+wget https://github.com/hypersign-protocol/hid-node/releases/download/v0.1.7/hid-noded-0.1.7-linux-amd64.tar.gz
+tar -xvzf hid-noded-0.1.7-linux-amd64.tar.gz
+rm -rf hid-noded-0.1.7-linux-amd64.tar.gz
+chmod +x hid-noded-0.1.7-linux-amd64/hid-noded
+mv $HOME/hid-noded-0.1.7-linux-amd64/hid-noded $(which hid-noded)
+rm -rf hid-noded-0.1.7-linux-amd64
 sudo systemctl restart hid-noded && sudo journalctl -u hid-noded -f -o cat
 
 break
