@@ -35,17 +35,17 @@ go version
 cd $HOME
 git clone https://github.com/UptickNetwork/uptick.git
 cd uptick
-git checkout ?????
+git checkout v0.2.4
 make install
 ```
 *******🟢UPDATE🟢******* 00.00.23
 ```python
-
+SOON
 ```
 
-`uptickd version`
-+ version: ????
-+ commit: ?????
+`uptickd version --long`
++ version: 
++ commit: 
 
 ## Initialization
 ```python
