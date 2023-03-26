@@ -9,7 +9,7 @@
 
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
-| Testnet   |   8| 16GB  | 250GB    |
+| Mainnet   |   8| 16GB  | 250GB    |
 
 ### Preparing the server
 ```python
