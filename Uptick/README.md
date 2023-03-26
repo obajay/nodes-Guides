@@ -131,7 +131,7 @@ uptickd tx staking create-validator \
 --commission-max-rate=0.2 \
 --commission-max-change-rate=0.1 \
 --min-self-delegation="1" \
---amount=1000000auptick \
+--amount=1000000000000000000auptick \
 --pubkey $(uptickd tendermint show-validator) \
 --moniker "STAVRguide" \
 --from=<name_wallet> \
