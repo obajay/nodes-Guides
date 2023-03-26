@@ -42,14 +42,13 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 13.02.23
+# Build 26.03.23
 ```python
-cd $HOME
-wget https://github.com/hypersign-protocol/hid-node/releases/download/v0.1.6/hid-noded-0.1.6-linux-amd64.tar.gz
-tar -xvzf hid-noded-0.1.6-linux-amd64.tar.gz
-rm -rf hid-noded-0.1.6-linux-amd64.tar.gz
-chmod +x hid-noded
-mv $HOME/hid-noded $HOME/go/bin/
+wget https://github.com/hypersign-protocol/hid-node/releases/download/v0.1.7/hid-noded-0.1.7-linux-amd64.tar.gz
+tar -xvzf hid-noded-0.1.7-linux-amd64.tar.gz
+rm -rf hid-noded-0.1.7-linux-amd64.tar.gz
+chmod +x hid-noded-0.1.7-linux-amd64/hid-noded
+mv $HOME/hid-noded-0.1.7-linux-amd64/hid-noded $HOME/go/bin/
 ```
 
 *******🟢UPDATE🟢******* 26.03.23
