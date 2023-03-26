@@ -55,11 +55,11 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-wget https://github.com/hypersign-protocol/hid-node/releases/download/v0.1.6/hid-noded-0.1.6-linux-amd64.tar.gz
-tar -xvzf hid-noded-0.1.6-linux-amd64.tar.gz
-rm -rf hid-noded-0.1.6-linux-amd64.tar.gz
-chmod +x hid-noded
-mv $HOME/hid-noded $HOME/go/bin/
+wget https://github.com/hypersign-protocol/hid-node/releases/download/v0.1.7/hid-noded-0.1.7-linux-amd64.tar.gz
+tar -xvzf hid-noded-0.1.7-linux-amd64.tar.gz
+rm -rf hid-noded-0.1.7-linux-amd64.tar.gz
+chmod +x hid-noded-0.1.7-linux-amd64/hid-noded
+mv $HOME/hid-noded-0.1.7-linux-amd64/hid-noded $HOME/go/bin/
 
 hid-noded init $Validator_Name --chain-id $CHAIN_ID
 
