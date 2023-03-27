@@ -9,13 +9,20 @@
 
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
-| Mainnet   |   8| 16GB  | 250GB    |
+| Mainnet   |   8| 16GB | 250GB    |
 
+# 1) Auto_install script
+```python
+wget -O uptickm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Uptick/uptickm && chmod +x uptickm && ./uptickm
+```
+
+# 2) Manual installation
 ### Preparing the server
 ```python
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
+
 
 ## GO 19.4 (one command)
 ```python
@@ -61,7 +68,7 @@ uptickd keys add <walletname> --recover
 
 ## Genesis
 ```python
-curl -o $HOME/.uptickd/config/genesis.json https://raw.githubusercontent.com/UptickNetwork/uptick-mainnet/main/uptick_117-1/genesis.json
+wget -O $HOME/.uptickd/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Uptick/genesis.json"
 ```
 
 ## Peers/Seeds/Gas
@@ -90,6 +97,11 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~
 ```python
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.uptickd/config/config.toml
+```
+
+## Download addrbook
+```python
+wget -O $HOME/.uptickd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Uptick/addrbook.json"
 ```
 
 ## SNAPSHOT
@@ -147,6 +159,6 @@ rm /etc/systemd/system/uptickd.service && \
 sudo systemctl daemon-reload && \
 cd $HOME && \
 rm -rf .uptickd && \
-rm -rf uptick-v0.2.3 && \
+rm -rf uptick && \
 rm -rf $(which uptickd)
 ```
