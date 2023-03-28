@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```Python
-wget -O nois https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nois/nois && chmod +x nois && ./nois
+wget -O nois https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nois/Noist_Testnet_004/nois && chmod +x nois && ./nois
 ```
 
 # 2) Manual installation
