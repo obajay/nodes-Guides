@@ -62,7 +62,7 @@ make install
 noisd init $Validator_Name --chain-id $CHAIN_ID
 
 curl https://anode.team/Nois/test/genesis.json > ~/.noisd/config/genesis.json
-wget -O $HOME/.noisd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nois/addrbook.json"
+wget -O $HOME/.noisd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nois/Noist_Testnet_004/addrbook.json"
 
 
 echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
