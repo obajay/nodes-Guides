@@ -114,7 +114,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.noisd/config/config.t
 
 ## Download addrbook
 ```Python
-wget -O $HOME/.noisd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nois/addrbook.json"
+wget -O $HOME/.noisd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nois/Noist_Testnet_004/addrbook.json"
 ```
 
 # StateSync
