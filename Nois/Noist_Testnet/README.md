@@ -1,4 +1,4 @@
-# Nois testnet guide V004
+# Nois testnet guide V005
 
 ![nnnoi](https://user-images.githubusercontent.com/44331529/191945004-1227fef0-a215-44f1-bcab-854acd66de00.png)
 
@@ -42,20 +42,20 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 21.03.23 
+# Build 29.03.23 
 ```Python
 cd $HOME
-git clone https://github.com/noislabs/noisd
+git clone https://github.com/noislabs/networks
 cd noisd
-git checkout v0.6.0
+git checkout v0.6.1
 make install
 ```
 `noisd version`
-- 0.6.0
+- 0.6.1
 
 ```Python
-noisd init STAVRguide --chain-id nois-testnet-004
-noisd config chain-id nois-testnet-004
+noisd init STAVRguide --chain-id nois-testnet-005
+noisd config chain-id nois-testnet-005
 ```    
 
 ## Create/recover wallet
@@ -67,33 +67,26 @@ noisd keys add <walletname> --recover
 ## Download Genesis
 
 ```Python
-curl https://anode.team/Nois/test/genesis.json > ~/.noisd/config/genesis.json
+wget -O $HOME/.noisd/config/genesis.json "https://raw.githubusercontent.com/noislabs/networks/main/nois-testnet-005/genesis.json"
 ```
 `sha256sum $HOME/.noisd/config/genesis.json`
-+ 371b29ef51a0f50f882621f3631e7210f78208635f4a1c6877fa6e75366a4d55
++ 1647cabd044110d6beda2fc4a32fb50dfbb5babff74bdf41503c58123ded3389
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```Python
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.noisd/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.noisd/config/config.toml
-peers="d3ce97769bc00a698aee0f40eb8de0b2279b6b2c@65.109.28.177:32656"
+peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.noisd/config/config.toml
-seeds=""
+seeds="bf07906c7cf0f23606c83be15624be2c67b3929c@139.59.154.47:17356"
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.noisd/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.noisd/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.noisd/config/config.toml
 export CONFIG_DIR="$HOME/.noisd/config"
 # Update app.toml
 sed -i 's/minimum-gas-prices =.*$/minimum-gas-prices = "0.05unois"/' $CONFIG_DIR/app.toml
-# Update config.toml
-sed -i 's/^timeout_propose =.*$/timeout_propose = "2000ms"/' $CONFIG_DIR/config.toml \
-  && sed -i 's/^timeout_propose_delta =.*$/timeout_propose_delta = "500ms"/' $CONFIG_DIR/config.toml \
-  && sed -i 's/^timeout_prevote =.*$/timeout_prevote = "1s"/' $CONFIG_DIR/config.toml \
-  && sed -i 's/^timeout_prevote_delta =.*$/timeout_prevote_delta = "500ms"/' $CONFIG_DIR/config.toml \
-  && sed -i 's/^timeout_precommit =.*$/timeout_precommit = "1s"/' $CONFIG_DIR/config.toml \
-  && sed -i 's/^timeout_precommit_delta =.*$/timeout_precommit_delta = "500ms"/' $CONFIG_DIR/config.toml \
-  && sed -i 's/^timeout_commit =.*$/timeout_commit = "1800ms"/' $CONFIG_DIR/config.toml
+
 ```
 ### Pruning (optional)
 ```Python
