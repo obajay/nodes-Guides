@@ -43,20 +43,20 @@ chmod +x quicksilverd-v1.2.7-amd64
 mv quicksilverd-v1.2.7-amd64 $HOME/go/bin/quicksilverd
 ```
 
-*******🟢UPDATE🟢******* 20.03.23
+*******🟢UPDATE🟢******* 31.03.23
 
 ```python
 cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.2.7/quicksilverd-v1.2.7-amd64
-chmod +x quicksilverd-v1.2.7-amd64
-mv quicksilverd-v1.2.7-amd64 $(which quicksilverd)
+wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.2.9/quicksilverd-v1.2.9-amd64
+chmod +x quicksilverd-v1.2.9-amd64
+mv quicksilverd-v1.2.9-amd64 $(which quicksilverd)
 quicksilverd version --long
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 ```
 
 `quicksilverd version`
-+ version: v1.2.7
-+ commit: ce53635a8f372398d2f5f1025cf81d3a5a36f6a8
++ version: v1.2.9
++ commit: ee5349ef0b123cd6ea4ed54769dd26c0717f7821
 
 ### Initialize the node
 ```java
