@@ -154,8 +154,11 @@ sudo systemctl restart junod && journalctl -u junod -f -o cat
 break
 ;;
 "UPDATE")
-echo -e "      \e[1m\e[32m SOOOON\e[0m"
-junod version
+cd $HOME
+wget https://github.com/CosmosContracts/juno/releases/download/v14.0.0-alpha.1/junod
+chmod +x junod
+mv junod $(wich junod)
+sudo systemctl restart junod && sudo journalctl -u junod -f -o cat
 
 break
 ;;
