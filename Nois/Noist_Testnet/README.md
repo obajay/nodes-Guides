@@ -47,11 +47,11 @@ go version
 cd $HOME
 git clone https://github.com/noislabs/networks
 cd noisd
-git checkout v0.6.1
+git checkout v1.0.0
 make install
 ```
 `noisd version`
-- 0.6.1
+- v1.0.0
 
 ```Python
 noisd init STAVRguide --chain-id nois-testnet-005
