@@ -49,9 +49,16 @@ cd juno
 git checkout v13.0.0-beta.2
 make install
 ```
-*******🟢UPDATE🟢******* 00.00.23
+*******🟢UPDATE🟢******* 30.03.23
 ```python
-SOOON
+cd $HOME
+wget https://github.com/CosmosContracts/juno/releases/download/v14.0.0-alpha.1/junod
+chmod +x junod
+./junod version --long
+#version: v14.0.0-alpha.1
+#commit: e10e3241c9ec146670f1a08540104f017bed210c
+mv junod $(wich junod)
+sudo systemctl restart junod && sudo journalctl -u junod -f -o cat
 ```
 
 `junod version --long`
