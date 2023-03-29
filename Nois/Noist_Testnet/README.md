@@ -153,7 +153,7 @@ noisd tx staking create-validator \
 --amount=99000000unois \
 --pubkey=$(noisd tendermint show-validator) \
 --moniker=STAVRguide \
---chain-id=nois-testnet-004 \
+--chain-id=nois-testnet-005 \
 --commission-rate="0.10" \
 --commission-max-rate="0.20" \
 --commission-max-change-rate="0.01" \
