@@ -45,7 +45,7 @@ go version
 # Build 29.03.23 
 ```Python
 cd $HOME
-git clone https://github.com/noislabs/networks
+git clone https://github.com/noislabs/noisd
 cd noisd
 git checkout v1.0.0
 make install
