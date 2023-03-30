@@ -35,30 +35,28 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-### Node installation 01.03.23
+### Node installation 30.03.23
 ```python
 cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.0-rc9/quicksilverd-v1.4.0-rc9-amd64
-chmod +x quicksilverd-v1.4.0-rc9-amd64
-mv $HOME/quicksilverd-v1.4.0-rc9-amd64 $HOME/go/bin/quicksilverd
-
+wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.0-rc10/quicksilverd-v1.4.0-rc10-amd64
+chmod +x quicksilverd-v1.4.0-rc10-amd64
+mv $HOME/quicksilverd-v1.4.0-rc10-amd64 $(which quicksilverd)
 ```
 
-*******🟢UPDATE🟢******* 01.03.23
-
+*******🟢UPDATE🟢******* 30.03.23
 ```python
 cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.0-rc9/quicksilverd-v1.4.0-rc9-amd64     
-chmod +x quicksilverd-v1.4.0-rc9-amd64
-mv $HOME/quicksilverd-v1.4.0-rc9-amd64 $(which quicksilverd)
+wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.0-rc10/quicksilverd-v1.4.0-rc10-amd64
+chmod +x quicksilverd-v1.4.0-rc10-amd64
+mv $HOME/quicksilverd-v1.4.0-rc10-amd64 $(which quicksilverd)
 quicksilverd version
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 
 ```
 
 `quicksilverd version --long`
-+ version: v1.4.0-rc9
-+ commit: efbc1f8ed4a82de0ebf7a9405fcb51a90867a71d
++ version: v1.4.0-rc10
++ commit: 00907dae54ad4a11c9b0795885a8a2d130de2c2e
 
 ### Initialize the node
 ```java
@@ -68,10 +66,11 @@ quicksilverd init STAVRguide --chain-id innuendo-5
 
 =
 ### Create wallet or restore
-    quicksilverd keys add <name_wallet>
-            or
-    quicksilverd keys add <name_wallet> --recover
-
+```python
+quicksilverd keys add <name_wallet>
+            OR
+quicksilverd keys add <name_wallet> --recover
+```
 ### Download Genesis
 ```python
 wget -O $HOME/.quicksilverd/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Quicksilver/Tetstnet/genesis.json"
