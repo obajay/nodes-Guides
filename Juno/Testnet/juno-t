@@ -54,10 +54,9 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-git clone https://github.com/CosmosContracts/juno juno
-cd juno
-git checkout v13.0.0-beta.2
-make install
+wget https://github.com/CosmosContracts/juno/releases/download/v14.0.0-alpha.1/junod
+chmod +x junod
+mv junod $HOME/go/bin/
 
 junod init $Validator_Name --chain-id $CHAIN_ID
 
