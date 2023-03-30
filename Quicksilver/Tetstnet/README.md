@@ -38,17 +38,17 @@ go version
 ### Node installation 30.03.23
 ```python
 cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.0-rc10/quicksilverd-v1.4.0-rc10-amd64
-chmod +x quicksilverd-v1.4.0-rc10-amd64
-mv $HOME/quicksilverd-v1.4.0-rc10-amd64 $(which quicksilverd)
+wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.0-rc10.2/quicksilverd-v1.4.0-rc10.2-amd64
+chmod +x quicksilverd-v1.4.0-rc10.2-amd64
+mv $HOME/quicksilverd-v1.4.0-rc10.2-amd64 $HOME/go/bin/quicksilverd
 ```
 
 *******🟢UPDATE🟢******* 30.03.23
 ```python
 cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.0-rc10/quicksilverd-v1.4.0-rc10-amd64
-chmod +x quicksilverd-v1.4.0-rc10-amd64
-mv $HOME/quicksilverd-v1.4.0-rc10-amd64 $(which quicksilverd)
+wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.0-rc10.2/quicksilverd-v1.4.0-rc10.2-amd64
+chmod +x quicksilverd-v1.4.0-rc10.2-amd64
+mv $HOME/quicksilverd-v1.4.0-rc10.2-amd64 $(which quicksilverd)
 quicksilverd version
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 
