@@ -46,13 +46,14 @@ go version
 # Build 27.03.23
 ```python
 cd $HOME
-git clone https://github.com/realiotech/realio-network.git && cd realio-network
-git checkout v0.8.0-rc2
+git clone https://github.com/realiotech/realio-network.git
+cd realio-network
+git checkout v0.8.0-rc3
 make install
 ```
 `realio-networkd version --long`
-- version: 0.8.0-rc2
-- commit: 4f1a74abc74a34094a67c3ef479739dacc78ae42
+- version: 0.8.0-rc3
+- commit: 5c17ee90da6d8c16739b4336b835e0193125f8df
 
 ```python
 realio-networkd init STAVRguide --chain-id realionetwork_3300-1
