@@ -38,25 +38,24 @@ go version
 ### Bunary 31.03.23
 ```python
 cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.2.9/quicksilverd-v1.2.9-amd64
-chmod +x quicksilverd-v1.2.9-amd64
-mv quicksilverd-v1.2.9-amd64 $HOME/go/bin/quicksilverd
+wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.2.9-hotfix.0/quicksilverd-v1.2.9-hotfix.0-amd64
+chmod +x quicksilverd-v1.2.9-hotfix.0-amd64
+mv quicksilverd-v1.2.9-hotfix.0-amd64 $HOME/go/bin/quicksilverd
 ```
 
 *******🟢UPDATE🟢******* 31.03.23
-
 ```python
 cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.2.9/quicksilverd-v1.2.9-amd64
-chmod +x quicksilverd-v1.2.9-amd64
-mv quicksilverd-v1.2.9-amd64 $(which quicksilverd)
+wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.2.9-hotfix.0/quicksilverd-v1.2.9-hotfix.0-amd64
+chmod +x quicksilverd-v1.2.9-hotfix.0-amd64
+mv quicksilverd-v1.2.9-hotfix.0-amd64 $(which quicksilverd)
 quicksilverd version --long
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 ```
 
 `quicksilverd version`
-+ version: v1.2.9
-+ commit: ee5349ef0b123cd6ea4ed54769dd26c0717f7821
++ version: v1.2.9-hotfix.0
++ commit: 528b54539c89f95a8fdfe5fa70d1878755f83de7
 
 ### Initialize the node
 ```java
