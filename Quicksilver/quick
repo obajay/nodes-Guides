@@ -54,9 +54,9 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.2.7/quicksilverd-v1.2.7-amd64
-chmod +x quicksilverd-v1.2.7-amd64
-mv quicksilverd-v1.2.7-amd64 $HOME/go/bin/quicksilverd
+wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.2.9/quicksilverd-v1.2.9-amd64
+chmod +x quicksilverd-v1.2.9-amd64
+mv quicksilverd-v1.2.9-amd64 $HOME/go/bin/quicksilverd
 
 quicksilverd init $Validator_Name --chain-id $CHAIN_ID
 
