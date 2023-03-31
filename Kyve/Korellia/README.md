@@ -3,8 +3,7 @@
 ![Kyve (1)](https://user-images.githubusercontent.com/44331529/180600827-c8beffd5-dcb3-4ded-a9d6-8f9aa6c0859f.png)
 
 
-[EXPLORER 1](https://explorer.stavr.tech/kyve/staking) \
-[EXPLORER 2](https://kyve.explorers.guru/validators)
+[EXPLORER](https://explorer.mcbnode.online/kyve-korellia/staking)
 =
 - **Minimum hardware requirements**:
 
