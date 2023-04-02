@@ -112,7 +112,7 @@ sudo systemctl restart umeed && journalctl -u umeed -f -o cat
 # SnapShot (~0.9 GB) updated every 5 hours
 ```python
 cd $HOME
-snap install lz4
+apt install lz4
 sudo systemctl stop umeed
 cp $HOME/.umee/data/priv_validator_state.json $HOME/.umee/priv_validator_state.json.backup
 rm -rf $HOME/.umee/data
