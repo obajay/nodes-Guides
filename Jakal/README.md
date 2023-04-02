@@ -159,7 +159,7 @@ s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.canine/config/config.toml
 canined tendermint unsafe-reset-all --home /root/.canine --keep-addr-book
 systemctl restart canined && journalctl -u canined -f -o cat
 ```
-# SnapShot (~0.3GB) updated every 5 hours
+# SnapShot (~1.3GB) updated every 5 hours
 ```python
 cd $HOME
 apt install lz4
