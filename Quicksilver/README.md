@@ -135,7 +135,7 @@ systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 # SnapShot (~0.4GB) updated every 5 hours
 ```python
 cd $HOME
-snap install lz4
+apt install lz4
 sudo systemctl stop quicksilverd
 cp $HOME/.quicksilverd/data/priv_validator_state.json $HOME/.quicksilverd/priv_validator_state.json.backup
 rm -rf $HOME/.quicksilverd/data
