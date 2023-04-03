@@ -12,10 +12,10 @@
 | Mainnet   |  16| 128GB| 2TB SSD/NVMe |
 
 ### Preparing the server
-
-    sudo apt update && sudo apt upgrade -y && \
-    sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
-    
+```python
+sudo apt update && sudo apt upgrade -y && \
+sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
+```    
 ## GO 18.1 (one command)
     wget https://golang.org/dl/go1.18.1.linux-amd64.tar.gz; \
     rm -rv /usr/local/go; \
@@ -25,28 +25,33 @@
     source ~/.bash_profile && \
     go version
     
-## Build    (03.01.23)
-```bash
+## Build    (31.03.23)
+```python
 git clone https://github.com/evmos/evmos
 cd evmos
-git checkout v10.0.1
+git checkout v12.1.0
 make install
 ```
 
 `evmosd version`
-+ v10.0.1
++ v12.1.0
 
-```bash
+```python
 evmosd init STAVRguide --chain-id evmos_9001-2
 ```
  
 ## Create/recover wallet
-    evmosd keys add <walletname>
-    evmosd keys add <walletname> --recover
+```python
+evmosd keys add <walletname>
+  OR
+evmosd keys add <walletname> --recover
+```
 ##### when creating, do not forget to write down the seed phrase    
 ## Genesis
-    wget https://archive.evmos.org/mainnet/genesis.json
-    mv genesis.json ~/.evmosd/config/    
+```python
+wget https://archive.evmos.org/mainnet/genesis.json
+mv genesis.json ~/.evmosd/config/    
+```
 ## Set up the minimum gas price $HOME/.evmosd/config/app.toml as well as seed and peers
     sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0aevmos\"/;" ~/.evmosd/config/app.toml
 
