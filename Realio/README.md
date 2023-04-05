@@ -16,7 +16,7 @@
 
 
 # 1) Auto_install script
-```bash
+```python
 soon
 ```
 
@@ -43,21 +43,21 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 27.03.23
+# Build 03.03.23
 ```python
 cd $HOME
 git clone https://github.com/realiotech/realio-network.git
 cd realio-network
-git checkout v0.8.0-rc3
+git checkout v0.8.0-rc4
 make install
 ```
 `realio-networkd version --long`
-- version: 0.8.0-rc3
-- commit: 5c17ee90da6d8c16739b4336b835e0193125f8df
+- version: 0.8.0-rc4
+- commit: 692d8ccbd4c229135445d82b51bd2dfd52224651
 
 ```python
-realio-networkd init STAVRguide --chain-id realionetwork_3300-1
-realio-networkd config chain-id realionetwork_3300-1
+realio-networkd init STAVRguide --chain-id realionetwork_3300-2
+realio-networkd config chain-id realionetwork_3300-2
 ```    
 
 ## Create/recover wallet
@@ -69,10 +69,10 @@ realio-networkd keys add <walletname> --recover
 ## Download Genesis
 
 ```python
-wget -O $HOME/.realio-network/config/genesis.json https://raw.githubusercontent.com/realiotech/testnets/main/realionetwork_3300-1/genesis.json
+wget -O $HOME/.realio-network/config/genesis.json https://raw.githubusercontent.com/realiotech/testnets/main/realionetwork_3300-2/genesis.json
 ```
 `sha256sum $HOME/.realio-network/config/genesis.json`
-+ 695c10ad99740908d6a1efb2260b51eeeb1c496ac3e515fcf18933b51633d2e8
++ 7e3fef8375567d9cbffbbc9e32907c3c87143fd79ef2b6a1f13d232d89057ddc
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
@@ -140,7 +140,7 @@ realio-networkd tx staking create-validator \
   --amount=1000000000000000000ario \
   --pubkey=$(realio-networkd tendermint show-validator) \
   --moniker="STAVRguide" \
-  --chain-id=realionetwork_3300-1 \
+  --chain-id=realionetwork_3300-2 \
   --commission-rate="0.10" \
   --commission-max-rate="0.20" \
   --commission-max-change-rate="0.1" \
