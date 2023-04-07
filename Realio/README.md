@@ -4,7 +4,7 @@
 
 [Website](https://www.realio.fund/)
 =
-[EXPLORER 1](https://explorer.stavr.tech/realio-mainnet/staking)
+[EXPLORER](https://explorer.stavr.tech/realio-mainnet/staking)
 =
 
 - **Minimum hardware requirements**:
@@ -16,7 +16,7 @@
 
 # 1) Auto_install script
 ```python
-soon
+SOON
 ```
 
 # 2) Manual installation
@@ -62,6 +62,7 @@ realio-networkd config chain-id realionetwork_3301-1
 ## Create/recover wallet
 ```python
 realio-networkd keys add <walletname>
+   OR
 realio-networkd keys add <walletname> --recover
 ```
 
