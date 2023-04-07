@@ -29,7 +29,6 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bs
 ```
 
 ## GO 18.5
-
 ```python
 cd $HOME
 ver="1.18.5"
