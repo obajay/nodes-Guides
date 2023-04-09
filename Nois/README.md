@@ -5,7 +5,8 @@
 [Website](https://nois.network/)
 =
 [EXPLORER 1](http://explorer.stavr.tech/nois-mainnet/staking) \
-[EXPLORER 2](https://nois.explorers.guru)
+[EXPLORER 2](https://exp.utsa.tech/nois/staking) \
+[EXPLORER 3](https://nois.explorers.guru)
 =
 
 - **Minimum hardware requirements**:
