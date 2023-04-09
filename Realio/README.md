@@ -68,7 +68,7 @@ realio-networkd keys add <walletname> --recover
 ## Download Genesis
 
 ```python
-wget -O $HOME/.realio-network/config/genesis.json https://raw.githubusercontent.com/realiotech/mainnet/main/realionetwork_3301-1/genesis.json
+wget -O $HOME/.realio-network/config/genesis.json https://raw.githubusercontent.com/obajay/nodes-Guides/main/Realio/genesis.json
 ```
 `sha256sum $HOME/.realio-network/config/genesis.json`
 + c255d0a493ec596b9b7c29280989b7348681e195b8b092af96631c2bf235b1c8
@@ -106,7 +106,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.realio-network/config
 
 ## Download addrbook
 ```python
-wget -O $HOME/.realio-network/config/addrbook.json "SOON"
+wget -O $HOME/.realio-network/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Realio/addrbook.json"
 ```
 # Create a service file
 ```python
