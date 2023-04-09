@@ -68,7 +68,7 @@ noisd keys add <walletname> --recover
 ## Download Genesis
 
 ```Python
-wget -O $HOME/.noisd/config/genesis.json "https://raw.githubusercontent.com/noislabs/networks/nois1.final.1/nois-1/genesis.json"
+wget -O $HOME/.noisd/config/genesis.json https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nois/genesis.json
 ```
 `sha256sum $HOME/.noisd/config/genesis.json`
 + 5332fb6477a2d273fd7e5a13bceb213e2a9d408a698c49ab34e8b78736e58cac
@@ -108,7 +108,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.noisd/config/config.t
 
 ## Download addrbook
 ```Python
-wget -O $HOME/.noisd/config/addrbook.json "SOOOOON
+wget -O $HOME/.noisd/config/addrbook.json https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nois/addrbook.json
 ```
 
 # StateSync
