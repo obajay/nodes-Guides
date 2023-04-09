@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```Python
-SOOON
+wget -O noism https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nois/noism && chmod +x noism && ./noism
 ```
 
 # 2) Manual installation
