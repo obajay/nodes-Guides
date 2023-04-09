@@ -16,7 +16,7 @@
 
 # 1) Auto_install script
 ```python
-SOON
+wget -O realio https://raw.githubusercontent.com/obajay/nodes-Guides/main/Realio/realio && chmod +x realio && ./realio
 ```
 
 # 2) Manual installation
