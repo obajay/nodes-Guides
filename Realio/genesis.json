@@ -1,0 +1,1988 @@
+{
+  "genesis_time": "2023-04-07T17:00:00Z",
+  "chain_id": "realionetwork_3301-1",
+  "initial_height": "1",
+  "consensus_params": {
+    "block": {
+      "max_bytes": "22020096",
+      "max_gas": "-1",
+      "time_iota_ms": "1000"
+    },
+    "evidence": {
+      "max_age_num_blocks": "100000",
+      "max_age_duration": "172800000000000",
+      "max_bytes": "1048576"
+    },
+    "validator": {
+      "pub_key_types": [
+        "ed25519"
+      ]
+    },
+    "version": {}
+  },
+  "app_hash": "",
+  "app_state": {
+    "asset": {
+      "params": {},
+      "tokens": [{
+        "authorizationRequired": true,
+        "authorized": [{
+          "address": "realio1cvy5tkqyx6ppe6rhduszeww6tflth4dvpan7ht",
+          "authorized": true
+        }],
+        "manager": "realio1cvy5tkqyx6ppe6rhduszeww6tflth4dvpan7ht",
+        "name": "Realio Security Token",
+        "symbol": "rst",
+        "total": "50000000"
+      }]
+    },
+    "auth": {
+      "params": {
+        "max_memo_characters": "256",
+        "tx_sig_limit": "7",
+        "tx_size_cost_per_byte": "10",
+        "sig_verify_cost_ed25519": "590",
+        "sig_verify_cost_secp256k1": "1000"
+      },
+      "accounts": [{
+        "@type": "/ethermint.types.v1.EthAccount",
+        "base_account": {
+          "address": "realio1cvy5tkqyx6ppe6rhduszeww6tflth4dvpan7ht",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+      },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio1htr8hrky90m7xx7t0n7ca0wfxf5hwu9gk5t4y3",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio15ess4lvw9hcvf4na3v2a2lnntdqhvqgtae5p57",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio1xnevqtg5uj4sd399wrmhlwz6s2hyh2eurcrtux",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio1a3vqugel6vxcaes5z800edcqas6zpa83jd6fe7",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio1chee8l82uxqfduxr8x0pfrp9psl08cy4f7vp76",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio17chr7jgcgaaavvdplyz486gcyh03qw4kj3xn8n",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio16f3qq6va04klkxcgce93leswx269c6rpagn79x",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio1q0ju3af59l2kp2vfywcjrmj07tkgkg0s3k2d7h",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio10cu8yz9vvmpllyel7gl3ggpnuyjwnnfdy6al2g",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio16y0z85wumx5yd4w7r40sxp9yw6sc6rr0skmpj8",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio1n99gv9edgtvktcpxld6x9cp6zvq7e28mkxd5en",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio1z4l6rtvhr6gzl80mcvdc2ut8ejdqxlvy3hf3w7",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio1t4dta883vhdeued85j9y0e96487tcvtv9hwgun",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio1qt6yf3fvz250uddj04rxglfd40v8nruqu4tnzn",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio1snq5f3mzw8kpvwrud50hfjsvx42jzlkamk3qvs",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio1v7ss667a0dgd50uq254qh3tqmqs42skqtcywfk",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio1eu5hjtj3l8plh7xzjp9yn3zljvyalhedz4athv",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio1q9xw5t6lsf848yylkcen5x7f6fg346g2fz6qnd",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio1uhxl5f04c5zq0v7ngxvwvs9h9647zefx29gthh",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio15w6rmc2jh7u4w78cl4mqrv5tx25f4dss92ltnf",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio1pgpx7sqfh5tnuktlhjj39u4hc85wc6jetzx30n",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio1uxj7ghl8xywks8rq6kw68lw9s5kn9dz2yh6lmg",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "address": "realio1l57e0s9906x0vjg8zpsu7p2y979qscc5dm9u36",
+            "pub_key": null,
+            "account_number": "0",
+            "sequence": "0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        }
+      ]
+    },
+    "authz": {
+      "authorization": []
+    },
+    "bank": {
+      "params": {
+        "send_enabled": [],
+        "default_send_enabled": true
+      },
+      "balances": [{
+        "address": "realio15ess4lvw9hcvf4na3v2a2lnntdqhvqgtae5p57",
+        "coins": [{
+          "denom": "ario",
+          "amount": "45000000000000000000000000"
+        }]
+      },
+        {
+          "address": "realio1htr8hrky90m7xx7t0n7ca0wfxf5hwu9gk5t4y3",
+          "coins": [{
+            "denom": "ario",
+            "amount": "10000000000000000000"
+          },
+            {
+              "denom": "arst",
+              "amount": "25000000000000000000000000"
+            }
+          ]
+        },
+        {
+          "address": "realio1cvy5tkqyx6ppe6rhduszeww6tflth4dvpan7ht",
+          "coins": [{
+            "denom": "arst",
+            "amount": "25000000000000000000000000"
+          }]
+        },
+        {
+          "address": "realio1xnevqtg5uj4sd399wrmhlwz6s2hyh2eurcrtux",
+          "coins": [{
+            "denom": "ario",
+            "amount": "1000000000000000000000"
+          }]
+        },
+        {
+          "address": "realio1a3vqugel6vxcaes5z800edcqas6zpa83jd6fe7",
+          "coins": [{
+            "denom": "ario",
+            "amount": "1000000000000000000000"
+          }]
+        },
+        {
+          "address": "realio1chee8l82uxqfduxr8x0pfrp9psl08cy4f7vp76",
+          "coins": [{
+            "denom": "ario",
+            "amount": "1000000000000000000000"
+          }]
+        },
+        {
+          "address": "realio17chr7jgcgaaavvdplyz486gcyh03qw4kj3xn8n",
+          "coins": [{
+            "denom": "ario",
+            "amount": "1000000000000000000000"
+          }]
+        },
+        {
+          "address": "realio16f3qq6va04klkxcgce93leswx269c6rpagn79x",
+          "coins": [{
+            "denom": "ario",
+            "amount": "1000000000000000000000"
+          }]
+        },
+        {
+          "address": "realio1q0ju3af59l2kp2vfywcjrmj07tkgkg0s3k2d7h",
+          "coins": [{
+            "denom": "ario",
+            "amount": "1000000000000000000000"
+          }]
+        },
+        {
+          "address": "realio10cu8yz9vvmpllyel7gl3ggpnuyjwnnfdy6al2g",
+          "coins": [{
+            "denom": "ario",
+            "amount": "1000000000000000000000"
+          }]
+        },
+        {
+          "address": "realio16y0z85wumx5yd4w7r40sxp9yw6sc6rr0skmpj8",
+          "coins": [{
+            "denom": "ario",
+            "amount": "1000000000000000000000"
+          }]
+        },
+        {
+          "address": "realio1n99gv9edgtvktcpxld6x9cp6zvq7e28mkxd5en",
+          "coins": [{
+            "denom": "ario",
+            "amount": "1000000000000000000000"
+          }]
+        },
+        {
+          "address": "realio1z4l6rtvhr6gzl80mcvdc2ut8ejdqxlvy3hf3w7",
+          "coins": [{
+            "denom": "ario",
+            "amount": "1000000000000000000000"
+          }]
+        },
+        {
+          "address": "realio1t4dta883vhdeued85j9y0e96487tcvtv9hwgun",
+          "coins": [{
+            "denom": "ario",
+            "amount": "1000000000000000000000"
+          }]
+        },
+        {
+          "address": "realio1qt6yf3fvz250uddj04rxglfd40v8nruqu4tnzn",
+          "coins": [{
+            "denom": "ario",
+            "amount": "1000000000000000000000"
+          }]
+        },
+        {
+          "address": "realio1snq5f3mzw8kpvwrud50hfjsvx42jzlkamk3qvs",
+          "coins": [{
+            "denom": "ario",
+            "amount": "1000000000000000000000"
+          }]
+        },
+        {
+          "address": "realio1v7ss667a0dgd50uq254qh3tqmqs42skqtcywfk",
+          "coins": [{
+            "denom": "ario",
+            "amount": "1000000000000000000000"
+          }]
+        },
+        {
+          "address": "realio1eu5hjtj3l8plh7xzjp9yn3zljvyalhedz4athv",
+          "coins": [{
+            "denom": "ario",
+            "amount": "1000000000000000000000"
+          }]
+        },
+        {
+          "address": "realio1q9xw5t6lsf848yylkcen5x7f6fg346g2fz6qnd",
+          "coins": [{
+            "denom": "ario",
+            "amount": "1000000000000000000000"
+          }]
+        },
+        {
+          "address": "realio1uhxl5f04c5zq0v7ngxvwvs9h9647zefx29gthh",
+          "coins": [{
+            "denom": "ario",
+            "amount": "1000000000000000000000"
+          }]
+        },
+        {
+          "address": "realio15w6rmc2jh7u4w78cl4mqrv5tx25f4dss92ltnf",
+          "coins": [{
+            "denom": "ario",
+            "amount": "1000000000000000000000"
+          }]
+        },
+        {
+          "address": "realio1pgpx7sqfh5tnuktlhjj39u4hc85wc6jetzx30n",
+          "coins": [{
+            "denom": "ario",
+            "amount": "1000000000000000000000"
+          }]
+        },
+        {
+          "address": "realio1uxj7ghl8xywks8rq6kw68lw9s5kn9dz2yh6lmg",
+          "coins": [{
+            "denom": "ario",
+            "amount": "1000000000000000000000"
+          }]
+        },
+        {
+          "address": "realio1l57e0s9906x0vjg8zpsu7p2y979qscc5dm9u36",
+          "coins": [{
+            "denom": "ario",
+            "amount": "1000000000000000000000"
+          }]
+        }
+      ],
+      "supply": [{
+        "denom": "ario",
+        "amount": "45021010000000000000000000"
+      },
+        {
+          "denom": "arst",
+          "amount": "50000000000000000000000000"
+        }
+      ],
+      "denom_metadata": [{
+        "description": "The native utility, gas, evm, governance and staking token of the Realio Network",
+        "denom_units": [{
+          "denom": "ario",
+          "exponent": 0,
+          "aliases": [
+            "attorio"
+          ]
+        },
+          {
+            "denom": "rio",
+            "exponent": 18,
+            "aliases": []
+          }
+        ],
+        "base": "ario",
+        "display": "rio",
+        "name": "Realio Network Rio",
+        "symbol": "RIO",
+        "uri": "",
+        "uri_hash": ""
+      },
+        {
+          "description": "Realio Security Token",
+          "denom_units": [{
+            "denom": "arst",
+            "exponent": 0,
+            "aliases": [
+              "attorst"
+            ]
+          },
+            {
+              "denom": "rst",
+              "exponent": 18,
+              "aliases": []
+            }
+          ],
+          "base": "arst",
+          "display": "rst",
+          "name": "Realio Security Token",
+          "symbol": "RST",
+          "uri": "",
+          "uri_hash": ""
+        }
+      ]
+    },
+    "capability": {
+      "index": "1",
+      "owners": []
+    },
+    "crisis": {
+      "constant_fee": {
+        "denom": "ario",
+        "amount": "5000000000000000000000"
+      }
+    },
+    "distribution": {
+      "params": {
+        "community_tax": "0.020000000000000000",
+        "base_proposer_reward": "0.010000000000000000",
+        "bonus_proposer_reward": "0.040000000000000000",
+        "withdraw_addr_enabled": true
+      },
+      "fee_pool": {
+        "community_pool": []
+      },
+      "delegator_withdraw_infos": [],
+      "previous_proposer": "",
+      "outstanding_rewards": [],
+      "validator_accumulated_commissions": [],
+      "validator_historical_rewards": [],
+      "validator_current_rewards": [],
+      "delegator_starting_infos": [],
+      "validator_slash_events": []
+    },
+    "evidence": {
+      "evidence": []
+    },
+    "evm": {
+      "accounts": [],
+      "params": {
+        "evm_denom": "ario",
+        "enable_create": true,
+        "enable_call": true,
+        "extra_eips": [],
+        "chain_config": {
+          "homestead_block": "0",
+          "dao_fork_block": "0",
+          "dao_fork_support": true,
+          "eip150_block": "0",
+          "eip150_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "eip155_block": "0",
+          "eip158_block": "0",
+          "byzantium_block": "0",
+          "constantinople_block": "0",
+          "petersburg_block": "0",
+          "istanbul_block": "0",
+          "muir_glacier_block": "0",
+          "berlin_block": "0",
+          "london_block": "0",
+          "arrow_glacier_block": "0",
+          "gray_glacier_block": "0",
+          "merge_netsplit_block": "0",
+          "shanghai_block": "0",
+          "cancun_block": "0"
+        },
+        "allow_unprotected_txs": false
+      }
+    },
+    "feegrant": {
+      "allowances": []
+    },
+    "feemarket": {
+      "params": {
+        "no_base_fee": false,
+        "base_fee_change_denominator": 8,
+        "elasticity_multiplier": 2,
+        "enable_height": "0",
+        "base_fee": "1000000000",
+        "min_gas_price": "0.000000000000000000",
+        "min_gas_multiplier": "0.500000000000000000"
+      },
+      "block_gas": "0"
+    },
+    "genutil": {
+      "gen_txs": [{
+        "body": {
+          "messages": [{
+            "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+            "description": {
+              "moniker": "AlxVoy ⚡ ANODE.TEAM",
+              "identity": "ABE84D0AB09AB589",
+              "website": "https://anode.team",
+              "security_contact": "alxvoy@anode.team",
+              "details": "The AlxVoy Validator Team"
+            },
+            "commission": {
+              "rate": "0.100000000000000000",
+              "max_rate": "0.200000000000000000",
+              "max_change_rate": "0.010000000000000000"
+            },
+            "min_self_delegation": "1",
+            "delegator_address": "realio1xnevqtg5uj4sd399wrmhlwz6s2hyh2eurcrtux",
+            "validator_address": "realiovaloper1xnevqtg5uj4sd399wrmhlwz6s2hyh2euhvq3dq",
+            "pubkey": {
+              "@type": "/cosmos.crypto.ed25519.PubKey",
+              "key": "bULCB2MAJtU+yWUhqcP7T+tpzXrXyLtUz4b7rBw8WII="
+            },
+            "value": {
+              "denom": "ario",
+              "amount": "1000000000000000000000"
+            }
+          }],
+          "memo": "00b261d9c9b845ce42964a3a3f6c68173875e981@65.109.28.177:26656",
+          "timeout_height": "0",
+          "extension_options": [],
+          "non_critical_extension_options": []
+        },
+        "auth_info": {
+          "signer_infos": [{
+            "public_key": {
+              "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+              "key": "A6RpluD0YRF74Wx1XYaXZNy01DH23xf631OhcwPGEoDc"
+            },
+            "mode_info": {
+              "single": {
+                "mode": "SIGN_MODE_DIRECT"
+              }
+            },
+            "sequence": "0"
+          }],
+          "fee": {
+            "amount": [],
+            "gas_limit": "200000",
+            "payer": "",
+            "granter": ""
+          },
+          "tip": null
+        },
+        "signatures": [
+          "JTjD3zCO+8wczTK1WpiCVVJgtd8CrB2+PBADGRmLMXcbIBx1lL/DOrnHdu5yTp0pbqt4kzdsFiduRXw9j3BGNQE="
+        ]
+      },
+        {
+          "body": {
+            "messages": [{
+              "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+              "description": {
+                "moniker": "Army IDs",
+                "identity": "ABE093F03831CBBA",
+                "website": "https://armyids.com",
+                "security_contact": "validator@armyids.com",
+                "details": "A Professional Validator of Various Blockchain Networks"
+              },
+              "commission": {
+                "rate": "0.050000000000000000",
+                "max_rate": "0.100000000000000000",
+                "max_change_rate": "0.010000000000000000"
+              },
+              "min_self_delegation": "1",
+              "delegator_address": "realio1a3vqugel6vxcaes5z800edcqas6zpa83jd6fe7",
+              "validator_address": "realiovaloper1a3vqugel6vxcaes5z800edcqas6zpa83xeengc",
+              "pubkey": {
+                "@type": "/cosmos.crypto.ed25519.PubKey",
+                "key": "+kbpYgHoyN/m4U8wvEd1RN6dMHusVIQAhgeShOnnfdA="
+              },
+              "value": {
+                "denom": "ario",
+                "amount": "1000000000000000000000"
+              }
+            }],
+            "memo": "a09acd01e40c94b58cb9109fa74ce53c2220fd26@161.97.182.71:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [{
+              "public_key": {
+                "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                "key": "AzyPZ6O1qbD6k33xaoNAwtMxJnuuD1h377tkxaOSqfVW"
+              },
+              "mode_info": {
+                "single": {
+                  "mode": "SIGN_MODE_DIRECT"
+                }
+              },
+              "sequence": "0"
+            }],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "5xk7pQ/BRB4i3Xy1IOpVXufVAWrI4BHkmFG1Lxao+14L+EkoTZiHdncGziT62LUTxD7QP+y9KvJvSL+UclxNdAE="
+          ]
+        },
+        {
+          "body": {
+            "messages": [{
+              "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+              "description": {
+                "moniker": "Decloud Nodes Lab",
+                "identity": "86C945B6D5F526E6",
+                "website": "https://akash.network/",
+                "security_contact": "dimokus@mail.ru",
+                "details": "Powered by Akash Network"
+              },
+              "commission": {
+                "rate": "0.100000000000000000",
+                "max_rate": "0.200000000000000000",
+                "max_change_rate": "0.100000000000000000"
+              },
+              "min_self_delegation": "1",
+              "delegator_address": "realio1chee8l82uxqfduxr8x0pfrp9psl08cy4f7vp76",
+              "validator_address": "realiovaloper1chee8l82uxqfduxr8x0pfrp9psl08cy4a20m0u",
+              "pubkey": {
+                "@type": "/cosmos.crypto.ed25519.PubKey",
+                "key": "dVs+YQNud64PnYtp3xqc/A5HwfzGv9sVpnXUfe+AYfs="
+              },
+              "value": {
+                "denom": "ario",
+                "amount": "1000000000000000000000"
+              }
+            }],
+            "memo": "5d2c9ea486a09700435ee1c0ba5291f8f1078c96@10.233.89.226:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [{
+              "public_key": {
+                "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                "key": "A1m232dCUSuwEC6yzOyHgRWdq4MLaAtwjSrVmNpJSwcq"
+              },
+              "mode_info": {
+                "single": {
+                  "mode": "SIGN_MODE_DIRECT"
+                }
+              },
+              "sequence": "0"
+            }],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "6D8bdpxMheucGJ2NGTCquauOECCi1ZW9R7h4DIglu0Fqd7H75X+GrdbnWsVI4x95Wi71vS1PaodRHX/HiKW8cQE="
+          ]
+        },
+        {
+          "body": {
+            "messages": [{
+              "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+              "description": {
+                "moniker": "KonsorTech",
+                "identity": "2DA657BCEA9489C2",
+                "website": "https://konsortech.xyz",
+                "security_contact": "konsortech@gmail.com",
+                "details": "Stake With Us ! Become Professional Stake Provider"
+              },
+              "commission": {
+                "rate": "0.100000000000000000",
+                "max_rate": "0.200000000000000000",
+                "max_change_rate": "0.100000000000000000"
+              },
+              "min_self_delegation": "1",
+              "delegator_address": "realio17chr7jgcgaaavvdplyz486gcyh03qw4kj3xn8n",
+              "validator_address": "realiovaloper17chr7jgcgaaavvdplyz486gcyh03qw4kx99fk4",
+              "pubkey": {
+                "@type": "/cosmos.crypto.ed25519.PubKey",
+                "key": "XIzx58CGCPQ9Jag9H7QiE1YOY+Bj1osEBnWv83EGjpc="
+              },
+              "value": {
+                "denom": "ario",
+                "amount": "1000000000000000000000"
+              }
+            }],
+            "memo": "271f194229b4ee9be89777daa3ef8201553865cc@65.108.232.168:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [{
+              "public_key": {
+                "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                "key": "AnTlbS0BhaYuSmj6VuGCOX7J4WNrkVuYTNCrjudUANar"
+              },
+              "mode_info": {
+                "single": {
+                  "mode": "SIGN_MODE_DIRECT"
+                }
+              },
+              "sequence": "0"
+            }],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "JFD2PSPSizZ5mzsYqZNjWFZru1Qmzb2PpDjvQe4gIWF5uUfSQsiEgOLm6polUzClWz3DP0tQ53m2JLNyUiM+LwE="
+          ]
+        },
+        {
+          "body": {
+            "messages": [{
+              "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+              "description": {
+                "moniker": "Munris",
+                "identity": "E781A7FB7A3511B4",
+                "website": "https://munris.tech",
+                "security_contact": "",
+                "details": ""
+              },
+              "commission": {
+                "rate": "0.050000000000000000",
+                "max_rate": "0.150000000000000000",
+                "max_change_rate": "0.010000000000000000"
+              },
+              "min_self_delegation": "1",
+              "delegator_address": "realio16f3qq6va04klkxcgce93leswx269c6rpagn79x",
+              "validator_address": "realiovaloper16f3qq6va04klkxcgce93leswx269c6rpfusy5q",
+              "pubkey": {
+                "@type": "/cosmos.crypto.ed25519.PubKey",
+                "key": "JzCgmrvIVRahMTx8hyvMDUfyTg26pUbZfrtkJ+Xt9zw="
+              },
+              "value": {
+                "denom": "ario",
+                "amount": "1000000000000000000000"
+              }
+            }],
+            "memo": "b2e50a471151aecedde282055a8f0e829aa2170b@65.109.29.224:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [{
+              "public_key": {
+                "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                "key": "AnZP6rzYGSgwv9KUAeRO3/nPcJzwG6Lzr3/aOqha16L3"
+              },
+              "mode_info": {
+                "single": {
+                  "mode": "SIGN_MODE_DIRECT"
+                }
+              },
+              "sequence": "0"
+            }],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "UbUs7LKdlGBbj7ESxFtvQaMDtUXxGoVIbCoNzWN0dBQ2emxlx780xuh0iwzUBL0yDhtWLA7Z4XdQmf653bmFpgE="
+          ]
+        },
+        {
+          "body": {
+            "messages": [{
+              "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+              "description": {
+                "moniker": "[NODERS]TEAM",
+                "identity": "B38EBF2F38B998F4",
+                "website": "https://noders-stake.com/",
+                "security_contact": "dudava45@gmail.com",
+                "details": "Tell me what node you set, and I will tell you who you are"
+              },
+              "commission": {
+                "rate": "0.050000000000000000",
+                "max_rate": "0.100000000000000000",
+                "max_change_rate": "0.010000000000000000"
+              },
+              "min_self_delegation": "1",
+              "delegator_address": "realio1q0ju3af59l2kp2vfywcjrmj07tkgkg0s3k2d7h",
+              "validator_address": "realiovaloper1q0ju3af59l2kp2vfywcjrmj07tkgkg0s9zfh03",
+              "pubkey": {
+                "@type": "/cosmos.crypto.ed25519.PubKey",
+                "key": "rd3S6cUH/5qgzZXniYiEUZL0N624oUAOsp1qV7HpQ2s="
+              },
+              "value": {
+                "denom": "ario",
+                "amount": "1000000000000000000000"
+              }
+            }],
+            "memo": "ebd1438f2f6e583d6e5accf749eda5e8005702e9@148.251.66.248:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [{
+              "public_key": {
+                "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                "key": "Ahn42tXu3/XyWpRJeSr/CZtTofPDLrtmbf+N8eRf1OV1"
+              },
+              "mode_info": {
+                "single": {
+                  "mode": "SIGN_MODE_DIRECT"
+                }
+              },
+              "sequence": "0"
+            }],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "OXL08Ec5YZB3eWLjP140Zs5uuDUeCAk83eaU6O8NjwVbGbHzNv98kfpwucavAWejwtnFThsLTnuSKTr+N76qkAA="
+          ]
+        },
+        {
+          "body": {
+            "messages": [{
+              "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+              "description": {
+                "moniker": "Nodeist",
+                "identity": "A2E180C6914F7F87",
+                "website": "https://nodeist.net",
+                "security_contact": "",
+                "details": "Nodeist is the trusted staking service provider for blockchain projects. 100% refund for downtime slash. Contact us at hello@nodeist.net"
+              },
+              "commission": {
+                "rate": "0.070000000000000000",
+                "max_rate": "0.200000000000000000",
+                "max_change_rate": "0.020000000000000000"
+              },
+              "min_self_delegation": "1",
+              "delegator_address": "realio10cu8yz9vvmpllyel7gl3ggpnuyjwnnfdy6al2g",
+              "validator_address": "realiovaloper10cu8yz9vvmpllyel7gl3ggpnuyjwnnfdsw79mw",
+              "pubkey": {
+                "@type": "/cosmos.crypto.ed25519.PubKey",
+                "key": "WpHbPLgBK0MNUfHrrsvabftyuD5SyVomD9G7N5DMufU="
+              },
+              "value": {
+                "denom": "ario",
+                "amount": "1000000000000000000000"
+              }
+            }],
+            "memo": "96baf5d7915569f2566a5da35697965eccf93957@95.214.55.109:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [{
+              "public_key": {
+                "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                "key": "A8ZfdHV7KwtfS7AfDUje4Hi4jUb9bs0ORMsHCg6RRnCZ"
+              },
+              "mode_info": {
+                "single": {
+                  "mode": "SIGN_MODE_DIRECT"
+                }
+              },
+              "sequence": "0"
+            }],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "Pzdtz2Bv7y+qfnbYfezDthG0YDchHLyUibNM2t64ugI3O6ZvIHIJ0svwPrrul79q3xV+HWHdc/Hud3pZ3he9AgE="
+          ]
+        },
+        {
+          "body": {
+            "messages": [{
+              "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+              "description": {
+                "moniker": "⭐️ PPNV Service ⭐️",
+                "identity": "862C5270EE4D7EB6",
+                "website": "https://ppnv.space",
+                "security_contact": "",
+                "details": "Professional team Proof of Stake Network Validators ✅"
+              },
+              "commission": {
+                "rate": "0.200000000000000000",
+                "max_rate": "1.000000000000000000",
+                "max_change_rate": "0.100000000000000000"
+              },
+              "min_self_delegation": "1",
+              "delegator_address": "realio16y0z85wumx5yd4w7r40sxp9yw6sc6rr0skmpj8",
+              "validator_address": "realiovaloper16y0z85wumx5yd4w7r40sxp9yw6sc6rr0yzcmrp",
+              "pubkey": {
+                "@type": "/cosmos.crypto.ed25519.PubKey",
+                "key": "yQR+6uyAVzhmnFUA7MYXHXAV+68i009oOujE+M+mvas="
+              },
+              "value": {
+                "denom": "ario",
+                "amount": "1000000000000000000000"
+              }
+            }],
+            "memo": "cd9d9af6b7a99af3c5c920f7a054d37e297222e4@65.108.224.156:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [{
+              "public_key": {
+                "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                "key": "A9DEn51TT+Y4BSFC6ttL5mj+Ll+5ki6h1HWItGUkhCFw"
+              },
+              "mode_info": {
+                "single": {
+                  "mode": "SIGN_MODE_DIRECT"
+                }
+              },
+              "sequence": "0"
+            }],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "35c9fOIS0cGixkSSJxpJ1ZKLBB2z8KjlqVjPSaHIc587m5E4Iv+cMM1kDZU0kW+QpsptYiH5oX7tIl5q+ONLKwA="
+          ]
+        },
+        {
+          "body": {
+            "messages": [{
+              "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+              "description": {
+                "moniker": "🔥STAVR🔥",
+                "identity": "F2F91999ECCC092F",
+                "website": "https://github.com/obajay",
+                "security_contact": "",
+                "details": "A team of professional and reliable validators. Safety first.Stake with us and profit with the mark of quality. Monitoring 25\\7"
+              },
+              "commission": {
+                "rate": "0.050000000000000000",
+                "max_rate": "0.200000000000000000",
+                "max_change_rate": "0.200000000000000000"
+              },
+              "min_self_delegation": "1",
+              "delegator_address": "realio1n99gv9edgtvktcpxld6x9cp6zvq7e28mkxd5en",
+              "validator_address": "realiovaloper1n99gv9edgtvktcpxld6x9cp6zvq7e28mzjwwg4",
+              "pubkey": {
+                "@type": "/cosmos.crypto.ed25519.PubKey",
+                "key": "Irtgsz7298m9yGFDbq/h3WykZBcYtaYA3MvgZ76ORHU="
+              },
+              "value": {
+                "denom": "ario",
+                "amount": "1000000000000000000000"
+              }
+            }],
+            "memo": "b09d477f5b59e5e99632ad3a8a11806381efa46f@65.109.92.240:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [{
+              "public_key": {
+                "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                "key": "AuEYwQXR6BPHeqDPBgKsP9T7EDn7857brCafL55sJFC5"
+              },
+              "mode_info": {
+                "single": {
+                  "mode": "SIGN_MODE_DIRECT"
+                }
+              },
+              "sequence": "0"
+            }],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "D0ey0k4V7akIGb9lhMtt2U9poYkTwan8f7sC0jiqS0RPLN+JNdaA9AW8/WBS0/ASbMtfBrSaYj7SLfUQDPaBWAE="
+          ]
+        },
+        {
+          "body": {
+            "messages": [{
+              "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+              "description": {
+                "moniker": "SerGo",
+                "identity": "B3B62EB8C84738B9",
+                "website": "https://sergo.dev",
+                "security_contact": "",
+                "details": "We validate with expertise, you earn with confidence."
+              },
+              "commission": {
+                "rate": "0.100000000000000000",
+                "max_rate": "0.200000000000000000",
+                "max_change_rate": "0.100000000000000000"
+              },
+              "min_self_delegation": "1",
+              "delegator_address": "realio1z4l6rtvhr6gzl80mcvdc2ut8ejdqxlvy3hf3w7",
+              "validator_address": "realiovaloper1z4l6rtvhr6gzl80mcvdc2ut8ejdqxlvy9r2tlc",
+              "pubkey": {
+                "@type": "/cosmos.crypto.ed25519.PubKey",
+                "key": "vetelOVLxY8ecRK7Y/6liJ0ncUzUPCImHHmUNLqQQbk="
+              },
+              "value": {
+                "denom": "ario",
+                "amount": "1000000000000000000000"
+              }
+            }],
+            "memo": "2c832dcd9e41d988fadf8d1af8d95640ce009398@realio.sergo.dev:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [{
+              "public_key": {
+                "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                "key": "A4LTRbYbfj46GK3x0Fk5XQ0m0rjZH7tzHCDu05G9gcHc"
+              },
+              "mode_info": {
+                "single": {
+                  "mode": "SIGN_MODE_DIRECT"
+                }
+              },
+              "sequence": "0"
+            }],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "VTAS8hBGueLhr0oN2ezkODhp1BXp+xuPklgYhYq7tcc2CDI8RwnNkAWDGVsjtiHwEyIGbfNCHEqUMLOXQNgzRAE="
+          ]
+        },
+        {
+          "body": {
+            "messages": [{
+              "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+              "description": {
+                "moniker": "Lefey",
+                "identity": "8D4543857099BF39",
+                "website": "https://github.com/Lefey",
+                "security_contact": "realio@lefey.tech",
+                "details": "Independent validator"
+              },
+              "commission": {
+                "rate": "0.100000000000000000",
+                "max_rate": "0.200000000000000000",
+                "max_change_rate": "0.100000000000000000"
+              },
+              "min_self_delegation": "1",
+              "delegator_address": "realio1t4dta883vhdeued85j9y0e96487tcvtv9hwgun",
+              "validator_address": "realiovaloper1t4dta883vhdeued85j9y0e96487tcvtv3rdjd4",
+              "pubkey": {
+                "@type": "/cosmos.crypto.ed25519.PubKey",
+                "key": "q9CBuASOTssMLBfwkC4Zuec/QxHcKe3U7oh8yVAfn7o="
+              },
+              "value": {
+                "denom": "ario",
+                "amount": "1000000000000000000000"
+              }
+            }],
+            "memo": "2e594b4782b7273ebebe47351885842c85abe8f5@65.108.229.93:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [{
+              "public_key": {
+                "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                "key": "AuQ8XLeSXmDYzpXkv02+SjwDZRCSJ+o8GOFLjMeVaOe7"
+              },
+              "mode_info": {
+                "single": {
+                  "mode": "SIGN_MODE_DIRECT"
+                }
+              },
+              "sequence": "0"
+            }],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "eDODzrZZGT88pc9Xg402kJe5gjZHgWL2qYk3e5ER9ellPqllAE8hdgWsTSF/MXRkavEAyXOvDrMlDxT8KwcvzgA="
+          ]
+        },
+        {
+          "body": {
+            "messages": [{
+              "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+              "description": {
+                "moniker": "NodeStake",
+                "identity": "94EFE192B2C52424",
+                "website": "https://nodestake.top",
+                "security_contact": "info@nodestake.top",
+                "details": "NodeStake is the professional validator, node service provider and IBC relayer.⚛️7*24h | https://twitter.com/Nodestake_top"
+              },
+              "commission": {
+                "rate": "0.050000000000000000",
+                "max_rate": "0.200000000000000000",
+                "max_change_rate": "0.200000000000000000"
+              },
+              "min_self_delegation": "1",
+              "delegator_address": "realio1qt6yf3fvz250uddj04rxglfd40v8nruqu4tnzn",
+              "validator_address": "realiovaloper1qt6yf3fvz250uddj04rxglfd40v8nruqgpgfn4",
+              "pubkey": {
+                "@type": "/cosmos.crypto.ed25519.PubKey",
+                "key": "ncZDvCEIc+jI2St4rSU2ppVgvaZIj/mizmrx4V1cV9Y="
+              },
+              "value": {
+                "denom": "ario",
+                "amount": "1000000000000000000000"
+              }
+            }],
+            "memo": "daea809589ac871c6c9f450ca1cdfd5ab2320e06@57.128.110.81:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [{
+              "public_key": {
+                "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                "key": "A7vaiRDl+VJyll3VpW2ZAWkkYocVgbKXq+kl2z9aKYph"
+              },
+              "mode_info": {
+                "single": {
+                  "mode": "SIGN_MODE_DIRECT"
+                }
+              },
+              "sequence": "0"
+            }],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "ZhVFZl3nPVkqngB2G4B9OF06qtXYlkXDjwhKNbnpvsw295uuTpKNkE0EPF/fTHipTppAQNcY7nbFZqsXKCjswAA="
+          ]
+        },
+        {
+          "body": {
+            "messages": [{
+              "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+              "description": {
+                "moniker": "Stigga",
+                "identity": "DC8CA5B100BC78C0",
+                "website": "https://stigga.org/",
+                "security_contact": "",
+                "details": "PoS validator in Cosmos Hub Ecosystem chains, Discord:alexmed#5188"
+              },
+              "commission": {
+                "rate": "0.100000000000000000",
+                "max_rate": "0.100000000000000000",
+                "max_change_rate": "0.010000000000000000"
+              },
+              "min_self_delegation": "1",
+              "delegator_address": "realio1snq5f3mzw8kpvwrud50hfjsvx42jzlkamk3qvs",
+              "validator_address": "realiovaloper1snq5f3mzw8kpvwrud50hfjsvx42jzlka0zj6ak",
+              "pubkey": {
+                "@type": "/cosmos.crypto.ed25519.PubKey",
+                "key": "rj8Jtkia4OBuT/MoulTlWZS/F9/CrbFtxJhhfB19Vno="
+              },
+              "value": {
+                "denom": "ario",
+                "amount": "1000000000000000000000"
+              }
+            }],
+            "memo": "bc2eaa755ddfd1495157d13070bd4be8584c2d6e@5.78.88.12:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [{
+              "public_key": {
+                "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                "key": "AuvWncqgWrGBp4vCm4i5zkg2W4WoQypxBdBYweCPdre2"
+              },
+              "mode_info": {
+                "single": {
+                  "mode": "SIGN_MODE_DIRECT"
+                }
+              },
+              "sequence": "0"
+            }],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "fJU/gvUAbEU+E84t2Uqbs/d6NweG/RSd/IT3ysfQ7bts2A5rpIpAlPU4tQjZh3faz86RJRmRLCUuGeBuL5OfuAA="
+          ]
+        },
+        {
+          "body": {
+            "messages": [{
+              "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+              "description": {
+                "moniker": "StingRay",
+                "identity": "D1A8193AF3905AAC",
+                "website": "https://github.com/MikhailRadusha",
+                "security_contact": "",
+                "details": "Reliable Proof-of-Stake Validator"
+              },
+              "commission": {
+                "rate": "0.050000000000000000",
+                "max_rate": "0.200000000000000000",
+                "max_change_rate": "0.100000000000000000"
+              },
+              "min_self_delegation": "1",
+              "delegator_address": "realio1v7ss667a0dgd50uq254qh3tqmqs42skqtcywfk",
+              "validator_address": "realiovaloper1v7ss667a0dgd50uq254qh3tqmqs42skqlv85cs",
+              "pubkey": {
+                "@type": "/cosmos.crypto.ed25519.PubKey",
+                "key": "cjQ7s2EBeRR3gbEJa51qDXQueJ7AMQMX1ylL8fRMB1Y="
+              },
+              "value": {
+                "denom": "ario",
+                "amount": "1000000000000000000000"
+              }
+            }],
+            "memo": "704eb376ec58ce6b4d1df7dfd7f0be7e79d5f200@5.9.147.22:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [{
+              "public_key": {
+                "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                "key": "A0tz+OK2PN3AlX2GFMuWBig+7vSiHGlb5X/oVJqkC9Ra"
+              },
+              "mode_info": {
+                "single": {
+                  "mode": "SIGN_MODE_DIRECT"
+                }
+              },
+              "sequence": "0"
+            }],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "ldpvJnIW+7sZUeOzw9DENwe0t6ysx8O3/tVFp1+szgBdoQZYqICxdhSwFgnhgyH4AdixR6fHpOiXOH3FPbqqdAE="
+          ]
+        },
+        {
+          "body": {
+            "messages": [{
+              "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+              "description": {
+                "moniker": "Validator.run",
+                "identity": "2CC4D67B2136C051",
+                "website": "https://www.validator.run",
+                "security_contact": "contact@validator.run",
+                "details": "Validator.run provides trusted stake service with 100% refund on downtime slashing. Enterprise grade infrastructure. High end security and 24/7 monitoring."
+              },
+              "commission": {
+                "rate": "0.100000000000000000",
+                "max_rate": "0.200000000000000000",
+                "max_change_rate": "0.100000000000000000"
+              },
+              "min_self_delegation": "1",
+              "delegator_address": "realio1eu5hjtj3l8plh7xzjp9yn3zljvyalhedz4athv",
+              "validator_address": "realiovaloper1eu5hjtj3l8plh7xzjp9yn3zljvyalhedkp73x2",
+              "pubkey": {
+                "@type": "/cosmos.crypto.ed25519.PubKey",
+                "key": "iMNfOdSQbAPSJUYx0pVIbgp7MXrLZLmzyTXUJ9y23HA="
+              },
+              "value": {
+                "denom": "ario",
+                "amount": "1000000000000000000000"
+              }
+            }],
+            "memo": "e9cfaccc92b425fc48f2671ae9fab25c3d25926c@142.132.194.157:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [{
+              "public_key": {
+                "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                "key": "AzH/sgc2obp8G/3EDv0OBoa6RHuJ5FZQof6l+iSeu81w"
+              },
+              "mode_info": {
+                "single": {
+                  "mode": "SIGN_MODE_DIRECT"
+                }
+              },
+              "sequence": "0"
+            }],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "R+FLFNZv4VTLplm+/gKMc4rYmIlgyKEN0+QuNSmbwTJBY2Woq1lXAHnLg63xFxrmFpySQagwjzxj8wmo+hLRzwA="
+          ]
+        },
+        {
+          "body": {
+            "messages": [{
+              "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+              "description": {
+                "moniker": "cryptobtcbuyer",
+                "identity": "E1A5712F01E07357",
+                "website": "https://github.com/cryptobtcbuyer",
+                "security_contact": "cryptobtcbuyer@gmail.com",
+                "details": ""
+              },
+              "commission": {
+                "rate": "0.050000000000000000",
+                "max_rate": "0.200000000000000000",
+                "max_change_rate": "0.100000000000000000"
+              },
+              "min_self_delegation": "1",
+              "delegator_address": "realio1q9xw5t6lsf848yylkcen5x7f6fg346g2fz6qnd",
+              "validator_address": "realiovaloper1q9xw5t6lsf848yylkcen5x7f6fg346g2ake6zt",
+              "pubkey": {
+                "@type": "/cosmos.crypto.ed25519.PubKey",
+                "key": "O1WTJzYSQB4isaJVrF0aWegX9TrBPtokU/meF1gDJzM="
+              },
+              "value": {
+                "denom": "ario",
+                "amount": "1000000000000000000000"
+              }
+            }],
+            "memo": "4361e0e3f73ece1e6fcb9f603f0ba4ccd8ae957b@142.132.202.50:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [{
+              "public_key": {
+                "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                "key": "A4kBZi2Bk35nxMlcescc/5qVGu/MsGi6W3t+8SKGOZKi"
+              },
+              "mode_info": {
+                "single": {
+                  "mode": "SIGN_MODE_DIRECT"
+                }
+              },
+              "sequence": "0"
+            }],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "9g2rpIs80kMa3Hm5sVFYAOQVRzJLrbwr6t/gdDqRDEohWGsbP0Yie/9JnGfY1SRbGn8MYZ1bZtsULnZ0z23y8gE="
+          ]
+        },
+        {
+          "body": {
+            "messages": [{
+              "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+              "description": {
+                "moniker": "genznodes",
+                "identity": "86D0A9427E51D239",
+                "website": "https://genznodes.dev",
+                "security_contact": "genzbit@genznodes.dev",
+                "details": "IBC Relayers \u0026 Non-Custodial Staking Service Provider with 24/7 monitoring | Stake and Earn Rewards"
+              },
+              "commission": {
+                "rate": "0.020000000000000000",
+                "max_rate": "0.200000000000000000",
+                "max_change_rate": "0.020000000000000000"
+              },
+              "min_self_delegation": "1",
+              "delegator_address": "realio1uhxl5f04c5zq0v7ngxvwvs9h9647zefx29gthh",
+              "validator_address": "realiovaloper1uhxl5f04c5zq0v7ngxvwvs9h9647zefx73t3x3",
+              "pubkey": {
+                "@type": "/cosmos.crypto.ed25519.PubKey",
+                "key": "5aggyt1XTSCag/cs1H+1yiupXNuV3uL4KUS/CnsdOfI="
+              },
+              "value": {
+                "denom": "ario",
+                "amount": "1000000000000000000000"
+              }
+            }],
+            "memo": "6e148794b697c64f54956ff18ca3d22fc9d95c96@148.113.6.169:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [{
+              "public_key": {
+                "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                "key": "AoKWrX9GC00SfkMSWROA8tKUckj2ycu6rrLUBla8kiKM"
+              },
+              "mode_info": {
+                "single": {
+                  "mode": "SIGN_MODE_DIRECT"
+                }
+              },
+              "sequence": "0"
+            }],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "P+MJVIsNuHe/AxqkgUmiESaFkh3KxUQ2xpbnzHvxxEAm15jd/6SimQaA6vkX/28uqEXTK1bbJzQGB1K+kJx6WQE="
+          ]
+        },
+        {
+          "body": {
+            "messages": [{
+              "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+              "description": {
+                "moniker": "Indonode",
+                "identity": "58527185D1DD91F8",
+                "website": "https://indonode.net/",
+                "security_contact": "",
+                "details": "Staking Provider \u0026 Cosmos Lovers"
+              },
+              "commission": {
+                "rate": "0.070000000000000000",
+                "max_rate": "1.000000000000000000",
+                "max_change_rate": "0.010000000000000000"
+              },
+              "min_self_delegation": "1",
+              "delegator_address": "realio15w6rmc2jh7u4w78cl4mqrv5tx25f4dss92ltnf",
+              "validator_address": "realiovaloper15w6rmc2jh7u4w78cl4mqrv5tx25f4dss37u3z0",
+              "pubkey": {
+                "@type": "/cosmos.crypto.ed25519.PubKey",
+                "key": "jVKhS8PeIlzCEnBy87YrGJIYmXDin522tHvVygRzJ+c="
+              },
+              "value": {
+                "denom": "ario",
+                "amount": "1000000000000000000000"
+              }
+            }],
+            "memo": "4a98ef79d9c80016766e247b10afe46f4cdb9892@95.216.114.212:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [{
+              "public_key": {
+                "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                "key": "A0ia+CodHqrVQprPn/UVkIRcIf0jnkXJOU44OpAtxH48"
+              },
+              "mode_info": {
+                "single": {
+                  "mode": "SIGN_MODE_DIRECT"
+                }
+              },
+              "sequence": "0"
+            }],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "Mvo50Q8l35csn8MszVyYWseFqyJOJ2ZNz3uNJp7jp1oidPW8ouOl4Nwx90xiEjV1mlf+71l11HW0058z+xDghAA="
+          ]
+        },
+        {
+          "body": {
+            "messages": [{
+              "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+              "description": {
+                "moniker": "lesnik_utsa",
+                "identity": "A0B5FF00B5460153",
+                "website": "https://utsa.gitbook.io/services",
+                "security_contact": "lesnik13utsa@yandex.ru",
+                "details": "Trustworthy and high performance validator!"
+              },
+              "commission": {
+                "rate": "0.050000000000000000",
+                "max_rate": "0.100000000000000000",
+                "max_change_rate": "0.010000000000000000"
+              },
+              "min_self_delegation": "1",
+              "delegator_address": "realio1pgpx7sqfh5tnuktlhjj39u4hc85wc6jetzx30n",
+              "validator_address": "realiovaloper1pgpx7sqfh5tnuktlhjj39u4hc85wc6jelk9t74",
+              "pubkey": {
+                "@type": "/cosmos.crypto.ed25519.PubKey",
+                "key": "bVOEXOpPKshrZITF6iaEEMzglc65h7mUkdx3DeEIvFE="
+              },
+              "value": {
+                "denom": "ario",
+                "amount": "1000000000000000000000"
+              }
+            }],
+            "memo": "9521958ef1eea934bba7f28376b7341e4dbb5f36@65.109.104.118:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [{
+              "public_key": {
+                "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                "key": "AoxqTdzSEK6KJcAx2GCn9Z1V1HnymlWEtY6b8G86tCrL"
+              },
+              "mode_info": {
+                "single": {
+                  "mode": "SIGN_MODE_DIRECT"
+                }
+              },
+              "sequence": "0"
+            }],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "6C/klcocpy5Gg3GgAjJoBlD/yJDrsuht1KY9eVF/SeI/VTf55Gz6wSvMStipCXGFXL/731dEiqiwSjajdsXE0gA="
+          ]
+        },
+        {
+          "body": {
+            "messages": [{
+              "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+              "description": {
+                "moniker": "moodman",
+                "identity": "AF0380BF5D4DE417",
+                "website": "https://twitter.com/BorysLifeee",
+                "security_contact": "",
+                "details": "my turn"
+              },
+              "commission": {
+                "rate": "0.100000000000000000",
+                "max_rate": "0.300000000000000000",
+                "max_change_rate": "0.010000000000000000"
+              },
+              "min_self_delegation": "1",
+              "delegator_address": "realio1uxj7ghl8xywks8rq6kw68lw9s5kn9dz2yh6lmg",
+              "validator_address": "realiovaloper1uxj7ghl8xywks8rq6kw68lw9s5kn9dz2sre92w",
+              "pubkey": {
+                "@type": "/cosmos.crypto.ed25519.PubKey",
+                "key": "r/0QbfQ9m88v3vew+IHbzl6axFdAfuOqImiDbTsnmwY="
+              },
+              "value": {
+                "denom": "ario",
+                "amount": "1000000000000000000000"
+              }
+            }],
+            "memo": "d99c807a58f876684618af016409a09186065851@173.249.59.70:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [{
+              "public_key": {
+                "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                "key": "AgyKR/y9Vd36IT/mU69NWljU7u+oMzSFq7+YNF0gxXlc"
+              },
+              "mode_info": {
+                "single": {
+                  "mode": "SIGN_MODE_DIRECT"
+                }
+              },
+              "sequence": "0"
+            }],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "fIB48E2TReM+mtQxTVnbUlrDH15LFkNTKPsg90sCMfEtBhEBkQix2nRQhKhtoiELSzLnaM4E3sESJgaykkFi+wA="
+          ]
+        },
+        {
+          "body": {
+            "messages": [{
+              "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+              "description": {
+                "moniker": "n0ok[MC]",
+                "identity": "2CCE7DDD3B53F8AB",
+                "website": "",
+                "security_contact": "n0ok0ne.Sergey@gmail.com",
+                "details": "Secure and reliable individual PoS/PoW validator. Best uptime and 24/7 support."
+              },
+              "commission": {
+                "rate": "0.100000000000000000",
+                "max_rate": "0.200000000000000000",
+                "max_change_rate": "0.100000000000000000"
+              },
+              "min_self_delegation": "1",
+              "delegator_address": "realio1l57e0s9906x0vjg8zpsu7p2y979qscc5dm9u36",
+              "validator_address": "realiovaloper1l57e0s9906x0vjg8zpsu7p2y979qscc5e0xxqu",
+              "pubkey": {
+                "@type": "/cosmos.crypto.ed25519.PubKey",
+                "key": "ZmeNB5l86JWb55b8VDj5LDL5YhsajJSaQCb3c/gLZJ0="
+              },
+              "value": {
+                "denom": "ario",
+                "amount": "1000000000000000000000"
+              }
+            }],
+            "memo": "759b796d1f7c8c8362b525aaad2531591762723a@88.198.32.17:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [{
+              "public_key": {
+                "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                "key": "AiQb2ZM87hHUZeV9L0568H1+o/FWzixwnXX/ztb+p+23"
+              },
+              "mode_info": {
+                "single": {
+                  "mode": "SIGN_MODE_DIRECT"
+                }
+              },
+              "sequence": "0"
+            }],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "1g54UbTMxF1eJDCOPjkfbAazHZHHBiVsdKs28GsLxW5gOEQOb4eLi3dHaRqHGKn3tWs58AV07dJCpc9Sc7H0MAE="
+          ]
+        },
+        {
+          "body": {
+            "messages": [{
+              "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+              "description": {
+                "moniker": "Realio",
+                "identity": "127F19AA7D366998",
+                "website": "https://www.realio.fund",
+                "security_contact": "",
+                "details": "RST PoS Validator in Realio Network"
+              },
+              "commission": {
+                "rate": "0.050000000000000000",
+                "max_rate": "0.200000000000000000",
+                "max_change_rate": "0.010000000000000000"
+              },
+              "min_self_delegation": "1",
+              "delegator_address": "realio1htr8hrky90m7xx7t0n7ca0wfxf5hwu9gk5t4y3",
+              "validator_address": "realiovaloper1htr8hrky90m7xx7t0n7ca0wfxf5hwu9gzqg04h",
+              "pubkey": {
+                "@type": "/cosmos.crypto.ed25519.PubKey",
+                "key": "d8RVo9JyZ3Ojhhw66Xs00Ra8oImgYoJq3rZlU17F33s="
+              },
+              "value": {
+                "denom": "arst",
+                "amount": "25000000000000000000000000"
+              }
+            }],
+            "memo": "f26ea549e64d8dfb2ff77bc4e7a3d048ba78b683@10.12.54.56:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [{
+              "public_key": {
+                "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                "key": "AnKwMeRPQyXdjq1YEuvnhbWxxZqiu3ipcnfUfveXXjJC"
+              },
+              "mode_info": {
+                "single": {
+                  "mode": "SIGN_MODE_DIRECT"
+                }
+              },
+              "sequence": "0"
+            }],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "sKo98nYaE6nEB24wxtT80J2TIpNeJS+bhkj+uuqnPGBfgNf59RyaXwsDSjNY2eHKqSfFzoAlHzgpYOYpKueQ6AA="
+          ]
+        }
+      ]
+    },
+    "gov": {
+      "starting_proposal_id": "1",
+      "deposits": [],
+      "votes": [],
+      "proposals": [],
+      "deposit_params": {
+        "min_deposit": [{
+          "denom": "ario",
+          "amount": "1000000000000000000000"
+        }],
+        "max_deposit_period": "259200s"
+      },
+      "voting_params": {
+        "voting_period": "259200s"
+      },
+      "tally_params": {
+        "quorum": "0.334000000000000000",
+        "threshold": "0.500000000000000000",
+        "veto_threshold": "0.334000000000000000"
+      }
+    },
+    "ibc": {
+      "client_genesis": {
+        "clients": [],
+        "clients_consensus": [],
+        "clients_metadata": [],
+        "params": {
+          "allowed_clients": [
+            "06-solomachine",
+            "07-tendermint"
+          ]
+        },
+        "create_localhost": false,
+        "next_client_sequence": "0"
+      },
+      "connection_genesis": {
+        "connections": [],
+        "client_connection_paths": [],
+        "next_connection_sequence": "0",
+        "params": {
+          "max_expected_time_per_block": "30000000000"
+        }
+      },
+      "channel_genesis": {
+        "channels": [],
+        "acknowledgements": [],
+        "commitments": [],
+        "receipts": [],
+        "send_sequences": [],
+        "recv_sequences": [],
+        "ack_sequences": [],
+        "next_channel_sequence": "0"
+      }
+    },
+    "mint": {
+      "minter": {
+        "inflation": "0.120000000000000000",
+        "annual_provisions": "0.000000000000000000"
+      },
+      "params": {
+        "mint_denom": "ario",
+        "inflation_rate": "0.120000000000000000",
+        "blocks_per_year": "6311520"
+      }
+    },
+    "params": null,
+    "slashing": {
+      "params": {
+        "signed_blocks_window": "10000",
+        "min_signed_per_window": "0.500000000000000000",
+        "downtime_jail_duration": "1800s",
+        "slash_fraction_double_sign": "0.050000000000000000",
+        "slash_fraction_downtime": "0.005000000000000000"
+      },
+      "signing_infos": [],
+      "missed_blocks": []
+    },
+    "staking": {
+      "params": {
+        "unbonding_time": "604800s",
+        "max_validators": 100,
+        "max_entries": 7,
+        "historical_entries": 10000,
+        "bond_denom": "ario,arst",
+        "min_commission_rate": "0.000000000000000000"
+      },
+      "last_total_power": "0",
+      "last_validator_powers": [],
+      "validators": [],
+      "delegations": [],
+      "unbonding_delegations": [],
+      "redelegations": [],
+      "exported": false
+    },
+    "transfer": {
+      "port_id": "transfer",
+      "denom_traces": [],
+      "params": {
+        "send_enabled": true,
+        "receive_enabled": true
+      }
+    },
+    "upgrade": {},
+    "vesting": {}
+  }
+}
