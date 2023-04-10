@@ -155,7 +155,7 @@ break
 "UPDATE")
 cd $HOME/umee
 git fetch --all
-git checkout v4.2.0
+git checkout v4.3.0
 make build
 mv $HOME/umee/build/umeed $(which umeed)
 sudo systemctl restart umeed && journalctl -u umeed -f -o cat
