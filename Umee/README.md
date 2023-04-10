@@ -41,7 +41,7 @@ cd umee
 git checkout v4.2.0
 make install
 ```
-*******🟢UPDATE🟢******* 10.04.23
+*******🟢UPDATE🟢******* 11.04.23
 
 ```python
 cd $HOME/umee
