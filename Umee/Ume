@@ -156,8 +156,7 @@ break
 cd $HOME/umee
 git fetch --all
 git checkout v4.3.0
-make build
-mv $HOME/umee/build/umeed $(which umeed)
+make install
 sudo systemctl restart umeed && journalctl -u umeed -f -o cat
 
 break
