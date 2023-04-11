@@ -157,6 +157,7 @@ wget https://github.com/chain4energy/c4e-chain/releases/download/v1.2.0/c4ed_v1.
 tar -xvf c4ed_v1.2.0_linux_amd64.tar.gz
 rm -rf c4ed_v1.2.0_linux_amd64.tar.gz
 chmod +x c4ed
+mv $HOME/c4ed $(which c4ed)
 sudo systemctl restart c4ed && sudo journalctl -u c4ed -f -o cat
 
 
