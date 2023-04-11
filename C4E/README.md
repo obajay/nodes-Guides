@@ -58,6 +58,7 @@ wget https://github.com/chain4energy/c4e-chain/releases/download/v1.2.0/c4ed_v1.
 tar -xvf c4ed_v1.2.0_linux_amd64.tar.gz
 rm -rf c4ed_v1.2.0_linux_amd64.tar.gz
 chmod +x c4ed
+mv $HOME/c4ed $(which c4ed)
 c4ed version --long
 #commit: d8f1ad9b945fecc1320a44073bdc23ae7b78fcca
 #version: 1.2.0
