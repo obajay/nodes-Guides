@@ -45,13 +45,12 @@ go version
 
 # Build 12.04.23
 ```python
-cd $HOME
-git clone https://github.com/chain4energy/c4e-chain
-wget https://github.com/chain4energy/c4e-chain/releases/download/v1.2.0/c4ed_v1.2.0_linux_amd64.tar.gz
-tar -xvf c4ed_v1.2.0_linux_amd64.tar.gz
-rm -rf c4ed_v1.2.0_linux_amd64.tar.gz
-chmod +x c4ed
-mv $HOME/c4ed $HOME/go/bin/
+cd $HOME/c4e-chain
+git fetch --all
+git checkout v1.2.0
+make install
+c4ed version
+sudo systemctl restart c4ed && sudo journalctl -u c4ed -f -o cat
 ```
 *******🟢UPDATE🟢******* 12.04.23
 ```python
