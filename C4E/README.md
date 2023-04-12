@@ -43,13 +43,15 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 02.02.23
+# Build 12.04.23
 ```python
 cd $HOME
 git clone https://github.com/chain4energy/c4e-chain
-cd c4e-chain
-git checkout v1.1.0
-make install
+wget https://github.com/chain4energy/c4e-chain/releases/download/v1.2.0/c4ed_v1.2.0_linux_amd64.tar.gz
+tar -xvf c4ed_v1.2.0_linux_amd64.tar.gz
+rm -rf c4ed_v1.2.0_linux_amd64.tar.gz
+chmod +x c4ed
+mv $HOME/c4ed $HOME/go/bin/
 ```
 *******🟢UPDATE🟢******* 12.04.23
 ```python
@@ -67,8 +69,8 @@ sudo systemctl restart c4ed && sudo journalctl -u c4ed -f -o cat
 ```
 
 `c4ed version --long`
-- version: v1.1.0
-- commit: d67fd60d07b41c52977539b9fb9c0c67de23837e
+- version: v1.2.0
+- commit: d8f1ad9b945fecc1320a44073bdc23ae7b78fcca
 
 ```python
 c4ed init STAVRguide --chain-id perun-1
