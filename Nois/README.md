@@ -114,7 +114,7 @@ wget -O $HOME/.noisd/config/addrbook.json https://raw.githubusercontent.com/obaj
 
 # StateSync Mainnet
 ```Python
-SNAP_RPC=http://nois.rpc.m.stavr.tech:40137
+SNAP_RPC=https://nois.rpc.m.stavr.tech:443
 peers="2f03f27d96d7f28de26ab38eac26fe4dbfdccfa8@nois.peer.stavr.tech:40136"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.noisd/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
