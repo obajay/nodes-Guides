@@ -71,24 +71,24 @@ terpd keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O $HOME/.althea/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Althea/genesis.json"
+curl -Ls https://snapshots.nodestake.top/terp/genesis.json > $HOME/.terp/config/genesis.json 
 
 ```
-`sha256sum $HOME/.althea/config/genesis.json`
-+ af9260b536bc83875ae335d43a1b467967616a439ac736b3d18d6167a404f0b9
+`sha256sum $HOME/.terp/config/genesis.json`
++ ab6c68c50d45cb9a145edf6b37c05cb9eefc2a0488d08498b8f827c2471ba843
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ualthea\"/;" ~/.althea/config/app.toml
-sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.althea/config/config.toml
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0uterp\"/;" ~/.terp/config/app.toml
+sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.terp/config/config.toml
 external_address=$(wget -qO- eth0.me) 
-sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.althea/config/config.toml
-peers="733e9d5f995c2866df9f2e1254551940f060a70c@51.159.159.112:26656,11e8f38e3c5601e4ab2333d5a5bbb108a39b8e1c@159.69.110.238:26656,a81cf8f7f330e2e09bec93c866214f7b3b336849@65.109.87.88:26356,83147260a704b75283ca6da218516ee0eaa82956@170.64.156.36:26656,617433cdf5411fc9241d0f77239f751a14669368@146.190.156.221:26656,856ac01afa0163c27b69e1b25464427310120924@85.25.134.23:26656,d320b861277a338daefec6e620daafe07fc5ee19@65.108.199.36:20036,8203297aacaea1d889fcf36240484c9efc217bbd@116.202.156.106:26656,c6e1ed7117cd56036cc51835945d155e9c474c01@167.235.144.3:26656"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.althea/config/config.toml
+sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.terp/config/config.toml
+peers="5c4d3ee03d080b3cb21a0b585e09da7ef56a82f3@192.81.208.147:26656,f9b67e231c59b480e1f1f9ce158f166a4b9ee829@162.19.238.161:26656,da9a83ef835387e3813bd5cd79b1b0193f522d7c@65.21.152.68:26656,439f7a680cc645d888317cd64f9b8a6949de394b@65.109.154.185:26656,297d9cf62f4414cf20c3b4150ccc7b0583ea311b@185.144.99.18:36656,c71e63b5da517984d55d36d00dc0dc2413d0ce03@143.110.219.177:26656,ed791e0800539a51efd07cfdef1f3a6809412bc1@65.109.174.30:64656"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.terp/config/config.toml
 seeds=""
-sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.althea/config/config.toml
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.althea/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.althea/config/config.toml
+sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.terp/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.terp/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.terp/config/config.toml
 
 ```
 ### Pruning (optional)
@@ -97,32 +97,32 @@ pruning="custom"
 pruning_keep_recent="100"
 pruning_keep_every="0"
 pruning_interval="10"
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.althea/config/app.toml
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.althea/config/app.toml
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.althea/config/app.toml
-sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.althea/config/app.toml
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.terp/config/app.toml
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.terp/config/app.toml
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.terp/config/app.toml
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.terp/config/app.toml
 ```
 ### Indexer (optional) 
 ```bash
 indexer="null" && \
-sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.althea/config/config.toml
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.terp/config/config.toml
 ```
 
 ## Download addrbook
 ```python
-wget -O $HOME/.althea/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Althea/addrbook.json"
+wget -O $HOME/.terp/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Terp_Network/addrbook.json"
 ```
 
 # Create a service file
 ```python
-sudo tee /etc/systemd/system/althea.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/terpd.service > /dev/null <<EOF
 [Unit]
-Description=althea
+Description=terp
 After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which althea) start
+ExecStart=$(which terpd) start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
@@ -131,88 +131,64 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-# StateSync Althea Testnet
+# StateSync Terp Mainnet
 ```python
-SNAP_RPC=http://althea.rpc.t.stavr.tech:17887
-peers="90d692d481c1c4739ba8a7045b5552fa8d410901@althea.peers.stavr.tech:17886"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.althea/config/config.toml
-LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \
-TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
-
-echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
-s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.althea/config/config.toml
-althea tendermint unsafe-reset-all --home /root/.althea
-systemctl restart althea && journalctl -u althea -f -o cat
+SOON
 ```
-# SnapShot Testnet (~0.2GB) updated every 5 hours  
+# SnapShot Mainnet (~0.2GB) updated every 5 hours  
 ```python
-cd $HOME
-apt install lz4
-sudo systemctl stop althea
-cp $HOME/.althea/data/priv_validator_state.json $HOME/.althea/priv_validator_state.json.backup
-rm -rf $HOME/.althea/data
-curl -o - -L http://althea.snapshot.stavr.tech:1020/althea/althea-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.althea --strip-components 2
-mv $HOME/.althea/priv_validator_state.json.backup $HOME/.althea/data/priv_validator_state.json
-wget -O $HOME/.althea/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Althea/addrbook.json"
-sudo systemctl restart althea && journalctl -u althea -f -o cat
+SOOON
 ```
 
 ## Start
 ```python
 sudo systemctl daemon-reload
-sudo systemctl enable althea
-sudo systemctl restart althea && sudo journalctl -u althea -f -o cat
+sudo systemctl enable terpd
+sudo systemctl restart terpd && sudo journalctl -u terpd -f -o cat
 ```
 
 ### Create validator
 ```python
-althea tx staking create-validator \
---commission-rate 0.1 \
---commission-max-rate 1 \
---commission-max-change-rate 1 \
---min-self-delegation "1" \
---amount 1000000000000000000ualthea \
---pubkey $(althea tendermint show-validator) \
---from <wallet> \
---moniker="STAVRguide" \
---chain-id althea_7357-1 \
---gas 350000 \
---identity="" \
---website="" \
---details="" -y
+terpd tx staking create-validator \
+  --amount="1000000"uterp \
+  --pubkey=$(terpd tendermint show-validator) \
+  --moniker="STAVRguide" \
+  --details="" \
+  --website="" \
+  --identity "" \
+  --chain-id="morocco-1" \
+  --commission-rate="0.05" \
+  --commission-max-rate="0.20" \
+  --commission-max-change-rate="0.1" \
+  --min-self-delegation="1" \
+  --from="wallet" -y
 ```
 
 ## Delete node
 ```python
-sudo systemctl stop althea && \
-sudo systemctl disable althea && \
-rm /etc/systemd/system/althea.service && \
+sudo systemctl stop terpd && \
+sudo systemctl disable terpd && \
+rm /etc/systemd/system/terpd.service && \
 sudo systemctl daemon-reload && \
 cd $HOME && \
-rm -rf althea-chain && \
-rm -rf .althea && \
-rm -rf $(which althea)
+rm -rf terp-core && \
+rm -rf .terp && \
+rm -rf $(which terpd)
 ```
 #
 ### Sync Info
 ```python
-althea status 2>&1 | jq .SyncInfo
+terpd status 2>&1 | jq .SyncInfo
 ```
 ### NodeINfo
 ```python
-althea status 2>&1 | jq .NodeInfo
+terpd status 2>&1 | jq .NodeInfo
 ```
 ### Check node logs
 ```python
-sudo journalctl -u althea -f -o cat
+sudo journalctl -u terpd -f -o cat
 ```
 ### Check Balance
 ```python
-althea query bank balances althea...addressjkl1yjgn7z09ua9vms259j
+terpd query bank balances terp...addressjkl1yjgn7z09ua9vms259j
 ```
