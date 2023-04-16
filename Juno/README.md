@@ -49,18 +49,21 @@ cd juno
 git checkout v13.0.0
 make install
 ```
-*******🟢UPDATE🟢******* 13.03.23
+*******🟢UPDATE🟢******* 18.04.23
 ```python
 cd $HOME
-wget https://github.com/CosmosContracts/juno/releases/download/v13.0.0/junod
+wget https://github.com/CosmosContracts/juno/releases/download/v14.0.0/junod
 chmod +x junod
+./junod version --long
+#version: v14.0.0
+#commit: cd0e46c3e590a0416465a6f6054b8ba71327608a
 mv junod $HOME/go/bin/
 sudo systemctl restart junod && sudo journalctl -u junod -f -o cat
 ```
 
 `junod version --long`
-- version: v13.0.0
-- commit: 6b69a3d2a9ef8bfca4bf9cb33fe53bf609aa63b6
+- version: v14.0.0
+- commit: cd0e46c3e590a0416465a6f6054b8ba71327608a
 
 ```python
 junod init STAVRguide --chain-id juno-1
