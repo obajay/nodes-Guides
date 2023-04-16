@@ -49,7 +49,7 @@ cd juno
 git checkout v13.0.0
 make install
 ```
-*******🟢UPDATE🟢******* 18.04.23
+*******🟢UPDATE🟢******* 17.04.23
 ```python
 cd $HOME
 wget https://github.com/CosmosContracts/juno/releases/download/v14.0.0/junod
