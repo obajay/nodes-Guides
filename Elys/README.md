@@ -49,9 +49,15 @@ git checkout v0.2.3
 make install
 ```
 
-*******🟢UPDATE🟢******* 00.00.23
+*******🟢UPDATE🟢******* 18.04.23
 ```python
-SOOON
+cd $HOME/elys
+git fetch --all
+git checkout v0.3.1
+make install
+elysd version --version
+#commit: b478e039e90e321706a0d1be6afcefb5552f9f5e
+#version: 0.3.1
 ```
 
 `elysd version --long`
