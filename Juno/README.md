@@ -41,12 +41,12 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 13.03.23
+# Build 17.03.23
 ```python
 cd $HOME
 git clone https://github.com/CosmosContracts/juno juno
 cd juno
-git checkout v13.0.0
+git checkout v14.0.0
 make install
 ```
 *******🟢UPDATE🟢******* 17.04.23
