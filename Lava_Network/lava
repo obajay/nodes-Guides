@@ -164,7 +164,7 @@ break
 "UPDATE")
 cd $HOME/lava
 git fetch --all
-git checkout v0.8.1
+git checkout v0.9.8
 make install
 sudo systemctl restart lavad && sudo journalctl -u lavad -f -o cat
 
