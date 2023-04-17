@@ -53,14 +53,16 @@ git fetch --all
 git checkout v0.8.1
 make install
 ```
-*******🟢UPDATE🟢******* 28.03.23
+*******🟢UPDATE🟢******* 18.04.23
 
 ```python
 cd $HOME/lava
 git fetch --all
-git checkout v0.8.1
+git checkout v0.9.8
 make install
-lavad version --long | head
+lavad version --long | grep -e commit -e version
+#version: 0.9.8
+#commit: 42320db47e97757d2246948d45168728a40f4834
 sudo systemctl restart lavad && sudo journalctl -u lavad -f -o cat
 ```
 
