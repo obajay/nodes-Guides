@@ -57,7 +57,7 @@ cd $HOME
 git clone https://github.com/lavanet/lava
 cd lava
 git fetch --all
-git checkout v0.8.1
+git checkout v0.9.8
 make install
 
 lavad init $Validator_Name --chain-id $CHAIN_ID
