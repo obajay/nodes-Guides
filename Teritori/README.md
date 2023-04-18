@@ -129,7 +129,7 @@ sudo systemctl restart teritorid && journalctl -u teritorid -f -o cat
 # SnapShot (~0.7 GB) updated every 5 hours
 ```python
 cd $HOME
-snap install lz4
+apt install lz4
 sudo systemctl stop teritorid
 cp $HOME/.teritorid/data/priv_validator_state.json $HOME/.teritorid/priv_validator_state.json.backup
 rm -rf $HOME/.teritorid/data
