@@ -4,7 +4,8 @@
 
 [WebSite](https://neutron.org/)
 =
-[EXPLORER](https://explorer.stavr.tech/neutron-testnet/staking)
+[EXPLORER 1](https://explorer.stavr.tech/neutron-testnet/staking)\
+[EXPLORER 2](https://testnet.mintscan.io/neutron-testnet/validators)
 =
 
 - **Minimum hardware requirements**:
