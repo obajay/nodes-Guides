@@ -42,22 +42,22 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 08.02.23
+# Build 19.04.23
 ```python
 cd $HOME
 git clone https://github.com/neutron-org/neutron
 cd neutron
-git checkout v0.2.0
+git checkout v0.4.2
 make install
 ```
-`neutrond version --head`
-- version: 0.2.0
-- commit: 4ebd7ae7ab1e614e8fbd9a18a8c86d8045ae787c
+`neutrond version --long | grep -e commit -e version`
+- version: 0.4.2
+- commit: 8e8096053db83555495e07302cd951c60c6144d3
 
 
 ```python
-neutrond init STAVRguide --chain-id baryon-1
-neutrond config chain-id baryon-1
+neutrond init STAVRguide --chain-id pion-1
+neutrond config chain-id pion-1
 ```    
 
 ## Create/recover wallet
@@ -69,10 +69,10 @@ neutrond keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-curl -s https://raw.githubusercontent.com/neutron-org/cosmos-testnets/master/replicated-security/baryon-1/baryon-1-genesis.json > ~/.neutrond/config/genesis.json
+curl -s https://raw.githubusercontent.com/cosmos/testnets/master/replicated-security/pion-1/pion-1-genesis.json > ~/.neutrond/config/genesis.json
 ```
 `sha256sum $HOME/.neutrond/config/genesis.json`
-+ eab7c27701d39e96793149d6e5feb27fd4bc260eb3df62c09517f3f61adcd72c
++ 0117fcff5c6243cb6e2dd1aa0146af53af790b43dac801810e9e53286826514c
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
@@ -80,9 +80,9 @@ sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0untrn\"/" $HOME/.n
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.neutrond/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.neutrond/config/config.toml
-peers=""
+peers="49d75c6094c006b6f2758e45457c1f3d6002ce7a@pion-banana.rs-testnet.polypore.xyz:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.neutrond/config/config.toml
-seeds="e2c07e8e6e808fb36cca0fc580e31216772841df@p2p.baryon.ntrn.info:26656"
+seeds="e2c07e8e6e808fb36cca0fc580e31216772841df@p2p-palvus.pion-1.ntrn.tech:26656"
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.neutrond/config/config.toml
 sed -i -e "s/^timeout_commit *=.*/timeout_commit = \"2s\"/" $HOME/.neutrond/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.neutrond/config/config.toml
@@ -149,7 +149,7 @@ neutrond tx staking create-validator \
   --min-self-delegation "1" \
   --pubkey  $(neutrond tendermint show-validator) \
   --moniker STAVRguide \
-  --chain-id baryon-1 \
+  --chain-id pion-1 \
   --identity="" \
   --details="" \
   --website="" -y
