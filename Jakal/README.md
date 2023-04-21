@@ -30,10 +30,10 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
-## GO 1.19
+## GO 1.20.3
 
 ```python
-ver="1.19" && \
+ver="1.20.3" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
@@ -43,29 +43,29 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 23.03.23
+# Build 21.04.23
 ```python
 cd $HOME
 git clone https://github.com/JackalLabs/canine-chain && cd canine-chain
-git checkout v1.2.1
+git checkout v1.2.2
 make install
 ```
 
-*******🟢UPDATE🟢******* 23.03.23
+*******🟢UPDATE🟢******* 21.04.23
 ```python
 cd $HOME/canine-chain
 git fetch --all
-git checkout v1.2.1
+git checkout v1.2.2
 make install
 canined version --long | head
-#dfc2d431f8f9c663b5891a399937639692ddfe87
-#1.2.1
+#448f2ec6c29b651d8f583e78f0d74302a90b327b
+#1.2.2
 systemctl restart canined && journalctl -u canined -f -o cat
 ```
 
 `canined version --long | head`
-- dfc2d431f8f9c663b5891a399937639692ddfe87
-- 1.2.1
+- 448f2ec6c29b651d8f583e78f0d74302a90b327b
+- 1.2.2
 
 ```python
 canined init STAVRguide --chain-id jackal-1
