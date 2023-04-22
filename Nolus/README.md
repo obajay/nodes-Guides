@@ -49,16 +49,16 @@ go version
 cd $HOME
 git clone https://github.com/Nolus-Protocol/nolus-core
 cd nolus-core
-git checkout v0.2.1-testnet
+git checkout v0.2.2-store-fix
 make install
 ```
-*******🟢UPDATE🟢******* 10.03.23
+*******🟢UPDATE🟢******* 22.04.23
 ```python
-cd $HOME/nolus-core
-git fetch --all
-git checkout v0.2.1-testnet
-make install
-sed -i -e "s/^pruning *=.*/pruning = \"nothing\"/" $HOME/.nolus/config/app.toml
+cd $HOME
+wget https://github.com/nolus-protocol/nolus-core/releases/download/v0.2.2-store-fix/nolusd.tar.gz
+tar xvzf nolusd.tar.gz
+chmod u+x nolusd
+mv nolusd $(which nolusd)
 sudo systemctl restart nolusd && journalctl -u nolusd -f -o cat
 ```
 
