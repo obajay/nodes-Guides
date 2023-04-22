@@ -56,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/Nolus-Protocol/nolus-core
 cd nolus-core
-git checkout v0.2.1-testnet
+git checkout v0.2.2-store-fix
 make install
 
 nolusd init $Validator_Name --chain-id $CHAIN_ID
@@ -149,7 +149,7 @@ break
 "UPDATE")
 cd $HOME/nolus-core
 git fetch --all
-git checkout v0.2.1-testnet
+git checkout v0.2.2-store-fix
 make install
 sed -i -e "s/^pruning *=.*/pruning = \"nothing\"/" $HOME/.nolus/config/app.toml
 sudo systemctl restart nolusd && sudo journalctl -u nolusd -f -o cat
