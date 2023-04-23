@@ -43,22 +43,20 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 07.12.22
+# Build 23.04.23
 ```python
 cd $HOME
 git clone https://github.com/humansdotai/humans
-cd humans
-git checkout v1
-go build -o humansd cmd/humansd/main.go
-mv humansd /root/go/bin/humansd
+cd humans && git checkout tags/v0.1.0
+make install
 ```
 `humansd version --long`
-- version:
-- commit: 
+- version: 0.1.0
+- commit: 25caa8b6324613af0a784e63c84e4fdb7b4c1000
 
 ```python
-humansd config chain-id testnet-1
-humansd init STAVRguide --chain-id testnet-1
+humansd config chain-id humans_3000-1
+humansd init STAVRguide --chain-id humans_3000-1
 ```    
 
 ## Create/recover wallet
