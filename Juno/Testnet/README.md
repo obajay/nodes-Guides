@@ -41,28 +41,28 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 30.03.23
+# Build 24.04.23
 ```python
 cd $HOME
-wget https://github.com/CosmosContracts/juno/releases/download/v14.0.0-alpha.1/junod
+wget https://github.com/CosmosContracts/juno/releases/download/v14.0.0-alpha.2/junod
 chmod +x junod
 mv junod $HOME/go/bin/
 ```
-*******🟢UPDATE🟢******* 30.03.23
+*******🟢UPDATE🟢******* 24.04.23
 ```python
 cd $HOME
-wget https://github.com/CosmosContracts/juno/releases/download/v14.0.0-alpha.1/junod
+wget https://github.com/CosmosContracts/juno/releases/download/v14.0.0-alpha.2/junod
 chmod +x junod
 ./junod version --long
-#version: v14.0.0-alpha.1
-#commit: e10e3241c9ec146670f1a08540104f017bed210c
-mv junod $(wich junod)
+#version: v14.0.0-alpha.2
+#commit: b357073b9a3bc7d8ade67a543a8b10801f969737
+mv junod $HOME/go/bin
 sudo systemctl restart junod && sudo journalctl -u junod -f -o cat
 ```
 
 `junod version --long`
-- version: v14.0.0-alpha.1
-- commit: e10e3241c9ec146670f1a08540104f017bed210c
+- version: v14.0.0-alpha.2
+- commit: b357073b9a3bc7d8ade67a543a8b10801f969737
 
 ```python
 junod init STAVRguide --chain-id uni-6
