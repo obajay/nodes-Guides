@@ -54,7 +54,7 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-wget https://github.com/CosmosContracts/juno/releases/download/v14.0.0-alpha.1/junod
+wget https://github.com/CosmosContracts/juno/releases/download/v14.0.0-alpha.2/junod
 chmod +x junod
 mv junod $HOME/go/bin/
 
@@ -154,9 +154,9 @@ break
 ;;
 "UPDATE")
 cd $HOME
-wget https://github.com/CosmosContracts/juno/releases/download/v14.0.0-alpha.1/junod
+wget https://github.com/CosmosContracts/juno/releases/download/v14.0.0-alpha.2/junod
 chmod +x junod
-mv junod $(wich junod)
+mv junod $HOME/go/bin
 sudo systemctl restart junod && sudo journalctl -u junod -f -o cat
 
 break
