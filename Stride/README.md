@@ -42,14 +42,16 @@ git clone https://github.com/Stride-Labs/stride.git && cd stride
 git checkout v8.0.0
 make install
 ```
-*******🟢UPDATE🟢******* 30.03.23
+*******🟢UPDATE🟢******* 26.04.23
 
 ```python
 cd $HOME/stride
 git fetch --all
-git checkout v8.0.0
+git checkout v9.0.0
 make install
-strided version
+strided version --long | grep -e commit -e version
+#commit: 6df1ba5787d52a34b45daef45a5a65ea8d847d8e
+#version: v9.0.0
 sudo systemctl restart strided && journalctl -u strided -f -o cat
 ```
 
