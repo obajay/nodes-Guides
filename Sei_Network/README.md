@@ -49,6 +49,7 @@ go version
 
 # Installing the binaries (24.04.23)
 ```python
+cd $HOME
 git clone https://github.com/sei-protocol/sei-chain.git
 cd sei-chain
 git checkout 2.0.45beta
