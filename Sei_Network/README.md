@@ -4,14 +4,8 @@
 
 [EXPLORER 1](https://explorer.stavr.tech/sei/staking) \
 [EXPLORER 2](https://sei.explorers.guru/validators) \
-[EXPLORER 3](https://explorer.ericet.xyz/sei/staking)
+[EXPLORER 3](https://testnet-explorer.brocha.in/sei%20atlantic%202/staking)
 =
-## Testnet details
-
-Network Chain ID: atlantic-1 \
-Denom: usei \
-official instruction: https://docs.seinetwork.io/nodes-and-validators/joining-testnets \
-Explorer: https://sei.explorers.guru/validators 
 
 - **Minimum hardware requirements**:
 
