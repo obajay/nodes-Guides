@@ -102,9 +102,11 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-# SnapSHot by NodeJumper
+## SnapSHot by NodeJumper
+
 [SnapShot](https://app.nodejumper.io/sei-testnet/sync)
-    
+=
+
 ## START
 ```python
 sudo systemctl daemon-reload &&
