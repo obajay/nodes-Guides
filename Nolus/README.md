@@ -44,21 +44,23 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 10.03.23
+# Build 25.04.23
 ```python
 cd $HOME
-git clone https://github.com/Nolus-Protocol/nolus-core
-cd nolus-core
-git checkout v0.2.2-store-fix
-make install
+tar xvzf nolus.tar.gz
+chmod u+x nolusd
+mv nolusd $HOME/go/bin
+rm nolus.tar.gz
+
 ```
-*******🟢UPDATE🟢******* 22.04.23
+*******🟢UPDATE🟢******* 25.04.23
 ```python
 cd $HOME
-wget https://github.com/nolus-protocol/nolus-core/releases/download/v0.2.2-store-fix/nolusd.tar.gz
-tar xvzf nolusd.tar.gz
+wget https://github.com/nolus-protocol/nolus-core/releases/download/v0.2.2-equalize-store-heights/nolus.tar.gz
+tar xvzf nolus.tar.gz
 chmod u+x nolusd
 mv nolusd $(which nolusd)
+rm nolus.tar.gz
 sudo systemctl restart nolusd && journalctl -u nolusd -f -o cat
 ```
 
