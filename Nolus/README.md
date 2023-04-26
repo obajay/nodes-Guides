@@ -66,8 +66,8 @@ sudo systemctl restart nolusd && journalctl -u nolusd -f -o cat
 
 
 `nolusd version --long`
-- version: 0.2.1-testnet
-- commit: b33e872e7411d86549a4a8ac1ffbf9b1f5190efa
+- version: 
+- commit: 
 
 ```python
 nolusd init STAVRguide --chain-id nolus-rila
