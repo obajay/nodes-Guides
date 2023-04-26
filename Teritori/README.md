@@ -124,6 +124,7 @@ s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.teritorid/config/config.toml
 teritorid tendermint unsafe-reset-all --home $HOME/.teritorid --keep-addr-book
+curl -o - -L http://teritori.wasm.stavr.tech:1011/wasm-teritori.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.teritorid --strip-components 2
 sudo systemctl restart teritorid && journalctl -u teritorid -f -o cat
 ```
 # SnapShot (~0.7 GB) updated every 5 hours
