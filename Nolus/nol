@@ -54,10 +54,11 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-git clone https://github.com/Nolus-Protocol/nolus-core
-cd nolus-core
-git checkout v0.2.2-store-fix
-make install
+wget https://github.com/nolus-protocol/nolus-core/releases/download/v0.2.2-equalize-store-heights/nolus.tar.gz
+tar xvzf nolus.tar.gz
+chmod u+x nolusd
+mv nolusd $HOME/go/bin/
+rm nolus.tar.gz
 
 nolusd init $Validator_Name --chain-id $CHAIN_ID
 
@@ -147,12 +148,13 @@ systemctl restart nolusd && journalctl -u nolusd -f -o cat
 break
 ;;
 "UPDATE")
-cd $HOME/nolus-core
-git fetch --all
-git checkout v0.2.2-store-fix
-make install
-sed -i -e "s/^pruning *=.*/pruning = \"nothing\"/" $HOME/.nolus/config/app.toml
-sudo systemctl restart nolusd && sudo journalctl -u nolusd -f -o cat
+cd $HOME
+wget https://github.com/nolus-protocol/nolus-core/releases/download/v0.2.2-equalize-store-heights/nolus.tar.gz
+tar xvzf nolus.tar.gz
+chmod u+x nolusd
+mv nolusd $(which nolusd)
+rm nolus.tar.gz
+sudo systemctl restart nolusd && journalctl -u nolusd -f -o cat
 
 break
 ;;
