@@ -29,12 +29,13 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bs
 ```python
 git clone https://github.com/evmos/evmos
 cd evmos
-git checkout v12.1.0
+git checkout v12.1.2
 make install
 ```
 
 `evmosd version`
-+ v12.1.0
++ version: v12.1.2
++ commit: 1c5326171ab84379b060223fb0fed37129750d5b
 
 ```python
 evmosd init STAVRguide --chain-id evmos_9001-2
