@@ -25,7 +25,7 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bs
     source ~/.bash_profile && \
     go version
     
-## Build    (31.03.23)
+## Build    (15.04.23)
 ```python
 git clone https://github.com/evmos/evmos
 cd evmos
