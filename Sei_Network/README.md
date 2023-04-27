@@ -31,27 +31,27 @@ sudo apt update && sudo apt upgrade -y
 
 ### Build GO (one command)
 ```python
-ver="1.20"
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
-sudo rm -rf /usr/local/go
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
-rm "go$ver.linux-amd64.tar.gz"
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
-source $HOME/.bash_profile
+ver="1.19" && \
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
+sudo rm -rf /usr/local/go && \
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
+rm "go$ver.linux-amd64.tar.gz" && \
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
+source $HOME/.bash_profile && \
 go version
 ```
 
-# Installing the binaries (24.04.23)
+# Installing the binaries (27.04.23)
 ```python
 cd $HOME
 git clone https://github.com/sei-protocol/sei-chain.git
 cd sei-chain
-git checkout 2.0.45beta
+git checkout 2.0.46beta
 make install
 ```
 `seid version --long | head`
-+ version: 2.0.45beta
-+ commit: 23c511f11cc424905d6ece3a724d55fae9469a80
++ version: 2.0.46beta
++ commit: 78520b7438ceb8e9d1a1565a12f70c3bdb76b4bf
 
     
 ## Initializing the node to create the necessary configuration files
