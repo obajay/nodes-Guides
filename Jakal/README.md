@@ -51,15 +51,15 @@ git checkout v1.2.2
 make install
 ```
 
-*******🟢UPDATE🟢******* 21.04.23
+*******🟢UPDATE🟢******* 05.05.23
 ```python
 cd $HOME/canine-chain
 git fetch --all
-git checkout v1.2.2
+git checkout v2.0.0
 make install
 canined version --long | head
-#448f2ec6c29b651d8f583e78f0d74302a90b327b
-#1.2.2
+#version: 2.0.0
+#commit: 2c10d62602ff9c4aa68ec977e1f6870e2441df3b
 systemctl restart canined && journalctl -u canined -f -o cat
 ```
 
