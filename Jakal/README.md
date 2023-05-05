@@ -43,11 +43,11 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 21.04.23
+# Build 05.05.23
 ```python
 cd $HOME
 git clone https://github.com/JackalLabs/canine-chain && cd canine-chain
-git checkout v1.2.2
+git checkout v2.0.0
 make install
 ```
 
@@ -64,8 +64,8 @@ systemctl restart canined && journalctl -u canined -f -o cat
 ```
 
 `canined version --long | head`
-- 448f2ec6c29b651d8f583e78f0d74302a90b327b
-- 1.2.2
+- 2c10d62602ff9c4aa68ec977e1f6870e2441df3b
+- 2.0.0
 
 ```python
 canined init STAVRguide --chain-id jackal-1
