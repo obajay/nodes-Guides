@@ -149,14 +149,16 @@ sudo journalctl -u seid -f -o cat
 break
 ;;
 "Synchronization via SnapShot")
+
 sudo systemctl stop seid
 cp $HOME/.sei/data/priv_validator_state.json $HOME/.sei/priv_validator_state.json.backup 
 rm -rf $HOME/.sei/data
 rm -rf $HOME/.sei/wasm
-curl https://snapshots2-testnet.nodejumper.io/sei-testnet/atlantic-2_2023-04-25.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.sei
+curl https://snapshots2-testnet.nodejumper.io/sei-testnet/atlantic-2_2023-05-08.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.sei
 mv $HOME/.sei/priv_validator_state.json.backup $HOME/.sei/data/priv_validator_state.json 
 sudo systemctl restart seid
 sudo journalctl -u seid -f --no-hostname -o cat
+
 
 break
 ;;
