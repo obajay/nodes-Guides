@@ -49,7 +49,7 @@ make install
 ```
 *******🟢UPDATE🟢******* 08.05.23
 ```python
-cd cascadia
+cd $HOME/cascadia
 git pull
 git checkout v0.1.2
 make install
