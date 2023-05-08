@@ -5,7 +5,8 @@
 [WEBSITE](https://app.osmosis.zone/)
 =
 [EXPLORER 1](https://www.mintscan.io/osmosis/validators) \
-[EXPLORER 2](https://ping.pub/osmosis/staking)
+[EXPLORER 2](https://explorer.stavr.tech/osmosis-mainnet/staking) \
+[EXPLORER 3](https://ping.pub/osmosis/staking)
 =
 
 - **Minimum hardware requirements**:
