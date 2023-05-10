@@ -29,7 +29,7 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-# Build 09.08.23
+# Build 09.05.23
 ```python
 cd $HOME
 wget https://github.com/KYVENetwork/chain/releases/download/v1.1.0/kyved_mainnet_linux_amd64.tar.gz
