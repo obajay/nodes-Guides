@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```bash
-wget -O gitop https://raw.githubusercontent.com/obajay/nodes-Guides/main/Gitopia/gitop && chmod +x gitop && ./gitop
+wget -O gitop https://raw.githubusercontent.com/obajay/nodes-Guides/main/Gitopia/Testnet/gitop && chmod +x gitop && ./gitop
 ```
 
 # 2) Manual installation
