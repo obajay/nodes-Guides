@@ -48,7 +48,7 @@ cd $HOME
 git clone https://github.com/gitopia/gitopia
 cd gitopia
 git checkout v2.0.0-rc.1
-make instll
+make install
 ```
 `gitopiad version --long`
 - version: 2.0.0-rc.1
