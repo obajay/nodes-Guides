@@ -29,30 +29,34 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
-## GO 1.19
+## GO 1.20
 
 ```python
-ver="1.19" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+ver="1.20"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 go version
 ```
 
 # Build 10.05.23
 ```python
-curl https://get.gitopia.com | bash
-git clone -b v1.2.0 gitopia://gitopia/gitopia
-cd gitopia && make install
+cd $HOME
+git clone https://github.com/gitopia/gitopia
+cd gitopia
+git checkout v2.0.0-rc.1
+make instll
 ```
 `gitopiad version --long`
-- version: v1.2.0
+- version: 2.0.0-rc.1
+- commit: 57c62472d1b73035ca77b7ea0e06375e726c53f2
 
 ```python
-gitopiad init STAVRguide --chain-id gitopia-janus-testnet-2 
+gitopiad init STAVRguide --chain-id gitopia
+gitopiad config chain-id gitopia
 
 ```    
 
@@ -64,25 +68,23 @@ gitopiad keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget https://server.gitopia.com/raw/gitopia/testnets/master/gitopia-janus-testnet-2/genesis.json.gz
-gunzip genesis.json.gz
-mv genesis.json $HOME/.gitopia/config/genesis.json
+SOOON
 ```
 `sha256sum $HOME/.gitopia/config/genesis.json`
-+ 038a81d821f3d8f99e782cbfed609e4853d24843c48a1469287528e632a26162
++ SOOON
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
-sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0utlore\"/" $HOME/.gitopia/config/app.toml
+sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0ulore\"/" $HOME/.gitopia/config/app.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.gitopia/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.gitopia/config/config.toml
 peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.gitopia/config/config.toml
-seeds="399d4e19186577b04c23296c4f7ecc53e61080cb@seed.gitopia.com:26656"
+seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.gitopia/config/config.toml
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.gitopia/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.gitopia/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.gitopia/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.gitopia/config/config.toml
 
 ```
 ### Pruning (optional)
@@ -141,7 +143,7 @@ sudo systemctl restart gitopiad && sudo journalctl -u gitopiad -f -o cat
 ### Create validator
 ```python
 gitopiad tx staking create-validator \
-  --amount 1000000utlore \
+  --amount 1000000ulore \
   --from <walletName> \
   --commission-max-change-rate "0.1" \
   --commission-max-rate "0.2" \
@@ -149,7 +151,7 @@ gitopiad tx staking create-validator \
   --min-self-delegation "1" \
   --pubkey  $(gitopiad tendermint show-validator) \
   --moniker STAVRguide \
-  --chain-id gitopia-janus-testnet-2 \
+  --chain-id gitopia \
   --identity="" \
   --details="" \
   --website="" -y
