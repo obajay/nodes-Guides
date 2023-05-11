@@ -1,3 +1,5 @@
+# TESTNET ENDED 11.05.23
+
 # Guide haqq
 ![haqq](https://user-images.githubusercontent.com/44331529/185350224-62b92bc1-bd4e-4ce7-a56b-0abfc631c95c.png)
 
