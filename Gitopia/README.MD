@@ -68,10 +68,13 @@ gitopiad keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-SOOON
+wget https://github.com/gitopia/mainnet/blob/master/pre-genesis.tar.gz
+tar -xvzf pre-genesis.tar.gz
+rm -rf pre-genesis.tar.gz
+cp pre-genesis.json ~/.gitopia/config/genesis.json
 ```
 `sha256sum $HOME/.gitopia/config/genesis.json`
-+ SOOON
++ af6ada838500d835743715b807c7f9b95ddc12fe880df4273fd24b1baaac6398
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
