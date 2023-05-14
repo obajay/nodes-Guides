@@ -40,20 +40,22 @@ cd umee
 git checkout v4.3.0
 make install
 ```
-*******🟢UPDATE🟢******* 11.04.23
+*******🟢UPDATE🟢******* 15.05.23
 
 ```python
 cd $HOME/umee
 git fetch --all
-git checkout v4.3.0
+git checkout v4.4.0
 make install
-umeed version
+umeed version --long | grep -e commit -e version
+#version: 3.2.0-257-gc0ddc22a
+#commit: c0ddc22a50f8193c2a8be7f20f2716be52a05135
 sudo systemctl restart umeed && journalctl -u umeed -f -o cat
 ```
 
 `umeed version --long`
-+ version: 
-+ commit: 
++ version: 3.2.0-257-gc0ddc22a
++ commit: c0ddc22a50f8193c2a8be7f20f2716be52a05135
 
 ## Init
 ```python
