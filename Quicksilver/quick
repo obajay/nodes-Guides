@@ -153,9 +153,9 @@ break
 ;;
 "UPDATE")
 cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.2.9-hotfix.0/quicksilverd-v1.2.9-hotfix.0-amd64
-chmod +x quicksilverd-v1.2.9-hotfix.0-amd64
-mv quicksilverd-v1.2.9-hotfix.0-amd64 $(which quicksilverd)
+wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.2.10/quicksilverd-v1.2.10-amd64
+chmod +x quicksilverd-v1.2.10-amd64
+mv quicksilverd-v1.2.10-amd64 $(which quicksilverd)
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 
 
