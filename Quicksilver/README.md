@@ -43,13 +43,15 @@ chmod +x quicksilverd-v1.2.9-hotfix.0-amd64
 mv quicksilverd-v1.2.9-hotfix.0-amd64 $HOME/go/bin/quicksilverd
 ```
 
-*******🟢UPDATE🟢******* 31.03.23
+*******🟢UPDATE🟢******* 15.05.23
 ```python
 cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.2.9-hotfix.0/quicksilverd-v1.2.9-hotfix.0-amd64
-chmod +x quicksilverd-v1.2.9-hotfix.0-amd64
-mv quicksilverd-v1.2.9-hotfix.0-amd64 $(which quicksilverd)
+wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.2.10/quicksilverd-v1.2.10-amd64
+chmod +x quicksilverd-v1.2.10-amd64
+mv quicksilverd-v1.2.10-amd64 $(which quicksilverd)
 quicksilverd version --long
+    #commit: 529eb4d413ac4d25034bc545ee2600376b07f5fb
+    #version: v1.2.10
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 ```
 
