@@ -42,17 +42,17 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 10.05.23
+# Build 17.05.23
 ```python
 cd $HOME
 git clone https://github.com/gitopia/gitopia
 cd gitopia
-git checkout v2.0.0-rc.1
+git checkout v2.0.0
 make install
 ```
 `gitopiad version --long`
-- version: 2.0.0-rc.1
-- commit: 57c62472d1b73035ca77b7ea0e06375e726c53f2
+- version: 2.0.0
+- commit: b707fc1bf6c5661549fbc84b0f3593bb2c8456e6
 
 ```python
 gitopiad init STAVRguide --chain-id gitopia
@@ -68,13 +68,12 @@ gitopiad keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget https://github.com/gitopia/mainnet/blob/master/pre-genesis.tar.gz
-tar -xvzf pre-genesis.tar.gz
-rm -rf pre-genesis.tar.gz
-cp pre-genesis.json ~/.gitopia/config/genesis.json
+cd && git clone https://github.com/gitopia/mainnet && cd mainnet
+tar -xzf genesis.tar.gz
+cp genesis.json ~/.gitopia/config/genesis.json
 ```
 `sha256sum $HOME/.gitopia/config/genesis.json`
-+ af6ada838500d835743715b807c7f9b95ddc12fe880df4273fd24b1baaac6398
++ 0cf5c55e6ea1fbcebccadba0f6dc0b83ac76d1b608487a06978956404ce33e66
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
@@ -82,7 +81,7 @@ sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0ulore\"/" $HOME/.g
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.gitopia/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.gitopia/config/config.toml
-peers=""
+peers="4cf66531681c92f15c95c25bd1bff524f9dca35e@65.109.154.181:26656,b2f764694d52e09793d68259d584ece0c194b6fe@65.108.229.93:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.gitopia/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.gitopia/config/config.toml
