@@ -4,7 +4,7 @@
 
 [WebSite](https://gitopia.com/home)
 =
-[EXPLORER 1](https://explorer.stavr.tech/gitopia-testnet/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/gitopia-m/staking) \
 [EXPLORER 2](https://explorer.gitopia.com/)
 =
 
