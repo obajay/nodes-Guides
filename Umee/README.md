@@ -21,7 +21,7 @@ wget -O Ume https://raw.githubusercontent.com/obajay/nodes-Guides/main/Umee/Ume 
 sudo apt update
 sudo apt install make clang pkg-config libssl-dev build-essential git jq ncdu bsdmainutils htop net-tools lsof -y < "/dev/null"
 ```
-## Go and binaries  27.10.22
+## Go
 ```
 ver="1.19" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
@@ -32,12 +32,12 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-# Binary   11.04.23
+# Binary   15.05.23
 ```python
 cd $HOME
 git clone https://github.com/umee-network/umee.git
 cd umee
-git checkout v4.3.0
+git checkout v4.4.0
 make install
 ```
 *******🟢UPDATE🟢******* 15.05.23
