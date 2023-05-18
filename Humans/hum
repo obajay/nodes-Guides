@@ -56,9 +56,8 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/humansdotai/humans
 cd humans
-git checkout v1
-go build -o humansd cmd/humansd/main.go
-mv humansd /root/go/bin/humansd
+git checkout tags/v0.2.2
+make install
 
 humansd init $Validator_Name --chain-id $CHAIN_ID
 
@@ -156,8 +155,11 @@ systemctl restart humansd && journalctl -u humansd -f -o cat
 break
 ;;
 "UPDATE")
-echo -e "      \e[1m\e[32m SOOOON\e[0m"
-humansd version
+cd $HOME/humans
+git fetch
+git checkout tags/v0.2.2
+make install
+sudo systemctl restart humansd && sudo journalctl -u humansd -f -o cat
 
 break
 ;;
