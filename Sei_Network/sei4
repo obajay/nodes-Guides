@@ -56,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/sei-protocol/sei-chain.git
 cd sei-chain
-git checkout 2.0.47beta
+git checkout 3.0.0
 make install
 
 seid init $Validator_Name --chain-id $CHAIN_ID
@@ -136,7 +136,7 @@ break
 "UPDATE")
 cd $HOME/sei-chain
 git fetch
-git checkout 2.0.47beta
+git checkout 3.0.0
 make install
 sudo systemctl restart seid && journalctl -u seid -f -o cat
 
