@@ -39,18 +39,18 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 10.05.23
+# Build 19.05.23
 ```python
 cd $HOME
 git clone https://github.com/BitCannaGlobal/bcna/tags
 cd bcna
-git checkout v2.0.1-rc9
+git checkout v2.0.1
 make install
 ```
 
 `bcnad version --long | grep -e commit -e version`
-+ version: 2.0.1-rc9
-+ commit: c831abd6fcf43543d0d759094b830a8a9ef78e8c
++ version: v2.0.1
++ commit: 433cf71621e145cc174569cd382babb456cc0960
 
 ```python
 bcnad config chain-id bitacanna-dev-1
