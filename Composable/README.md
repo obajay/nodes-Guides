@@ -132,7 +132,8 @@ RestartSec=3
 LimitNOFILE=65535
 
 [Install]
-Want
+WantedBy=multi-user.target
+EOF
 ```
 # StateSync Testnet
 ```python
