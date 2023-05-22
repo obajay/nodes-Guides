@@ -78,7 +78,6 @@ cp genesis.json ~/.gitopia/config/genesis.json
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
 sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0ulore\"/" $HOME/.gitopia/config/app.toml
-sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.gitopia/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.gitopia/config/config.toml
 peers="4cf66531681c92f15c95c25bd1bff524f9dca35e@65.109.154.181:26656,b2f764694d52e09793d68259d584ece0c194b6fe@65.108.229.93:26656"
@@ -113,7 +112,34 @@ wget -O $HOME/.gitopia/config/addrbook.json "https://raw.githubusercontent.com/o
 
 ## StateSync
 ```python
-SOOON
+SNAP_RPC=http://gitopia.rpc.m.stavr.tech:51057
+peers="c903e98ce3923865f521151d97f36510157c8bc1.peers.stavr.tech:51056"
+sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.gitopia/config/config.toml
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 300)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.gitopia/config/config.toml
+gitopiad tendermint unsafe-reset-all --home /root/.gitopia
+systemctl restart gitopiad && journalctl -u gitopiad -f -o cat
+```
+## SnapShot (~0.3GB) updated every 5 hours
+```python
+cd $HOME
+apt install lz4
+sudo systemctl stop gitopiad
+cp $HOME/.gitopia/data/priv_validator_state.json $HOME/.gitopia/priv_validator_state.json.backup
+rm -rf $HOME/.gitopia/data
+curl -o - -L http://gitopia.snapshot.stavr.tech:1030/gitopia/gitopia-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.gitopia --strip-components 2
+mv $HOME/.gitopia/priv_validator_state.json.backup $HOME/.gitopia/data/priv_validator_state.json
+wget -O $HOME/.gitopia/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Gitopia/addrbook.json"
+sudo systemctl restart gitopiad && journalctl -u gitopiad -f -o cat
 ```
 
 # Create a service file
