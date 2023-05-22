@@ -69,11 +69,11 @@ humansd keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O $HOME/.humansd/config/genesis.json "https://raw.githubusercontent.com/humansdotai/testnets/master/friction/mission-2/genesis.json"
+wget -O $HOME/.humansd/config/genesis.json "https://raw.githubusercontent.com/humansdotai/testnets/master/friction/mission-3/genesis-m3-p1.json"
 
 ```
 `sha256sum $HOME/.humansd/config/genesis.json`
-+ be45acc413ef1ff73a19c796e74b84acdeb65b14d672684dc2374889c898cd3d
++ e22373bf8687be07e2eece7a83e425b11d9a8a978e3e74f5787a90a51a5b9882
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
