@@ -43,7 +43,7 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 18.05.23
+# Build 22.05.23
 ```python
 cd $HOME
 git clone https://github.com/humansdotai/humans
@@ -55,8 +55,9 @@ make install
 - commit: a3e608e8fc45ace7055fc312b7e5f4831ca79816
 
 ```python
-humansd config chain-id humans_3000-23
-humansd init STAVRguide --chain-id humans_3000-23
+humansd config chain-id humans_3000-31
+humansd init STAVRguide --chain-id humans_3000-31
+humansd config | grep chain-id
 ```    
 
 ## Create/recover wallet
