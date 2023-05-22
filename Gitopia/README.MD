@@ -108,7 +108,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.gitopia/config/config
 
 ## Download addrbook
 ```python
-wget -O $HOME/.gitopia/config/addrbook.json "SOOON"
+wget -O $HOME/.gitopia/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Gitopia/addrbook.json"
 ```
 
 ## StateSync
