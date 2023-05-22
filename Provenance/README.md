@@ -38,17 +38,17 @@ make clean
 make install
 ```
 
-*******🟢UPDATE🟢******* 03.03.23
+*******🟢UPDATE🟢******* 23.05.23
 ```python
 export PIO_HOME=~/.provenanced
 cd provenance
 git fetch --all
-git checkout v1.14.0
+git checkout v1.15.0
 make build
 mv $HOME/provenance/build/provenanced $(which provenanced)
 provenanced version
-#version: v1.14.0
-#commit: 4fbc73b7
+#version: v1.15.0
+#commit: 64d789a4
 sudo systemctl restart provenanced && journalctl -u provenanced -f -o cat
 ```
 
