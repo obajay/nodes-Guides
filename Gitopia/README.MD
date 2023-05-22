@@ -113,7 +113,6 @@ wget -O $HOME/.gitopia/config/addrbook.json "https://raw.githubusercontent.com/o
 ## StateSync
 ```python
 SNAP_RPC=http://gitopia.rpc.m.stavr.tech:51057
-peers="c903e98ce3923865f521151d97f36510157c8bc1.peers.stavr.tech:51056"
 sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.gitopia/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 300)); \
