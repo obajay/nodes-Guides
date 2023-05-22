@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O gitopm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Gitopia/gitopm && chmod +x gitopm && ./gitopm
 ```
 
 # 2) Manual installation
