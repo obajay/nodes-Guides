@@ -129,7 +129,7 @@ s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.gitopia/config/config.tom
 gitopiad tendermint unsafe-reset-all --home /root/.gitopia
 systemctl restart gitopiad && journalctl -u gitopiad -f -o cat
 ```
-## SnapShot (~0.3GB) updated every 5 hours
+## SnapShot (~1GB) updated every 5 hours
 ```python
 cd $HOME
 apt install lz4
