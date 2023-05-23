@@ -35,33 +35,28 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-### Node installation 30.03.23
+### Node installation 23.05.23
 ```python
 cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.0-rc10.2/quicksilverd-v1.4.0-rc10.2-amd64
-chmod +x quicksilverd-v1.4.0-rc10.2-amd64
-mv $HOME/quicksilverd-v1.4.0-rc10.2-amd64 $HOME/go/bin/quicksilverd
+wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.2-rc7/quicksilverd-v1.4.2-rc7-amd64
+chmod +x quicksilverd-v1.4.2-rc7-amd64
+mv quicksilverd-v1.4.2-rc7-amd64 $HOME/go/bin/quicksilverd
+
 ```
 
-*******🟢UPDATE🟢******* 30.03.23
+*******🟢UPDATE🟢******* 00.00.23
 ```python
-cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.0-rc10.2/quicksilverd-v1.4.0-rc10.2-amd64
-chmod +x quicksilverd-v1.4.0-rc10.2-amd64
-mv $HOME/quicksilverd-v1.4.0-rc10.2-amd64 $(which quicksilverd)
-quicksilverd version
-sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
-
+SOOON
 ```
 
 `quicksilverd version --long`
-+ version: v1.4.0-rc10
-+ commit: 00907dae54ad4a11c9b0795885a8a2d130de2c2e
++ version: v1.4.2-rc7
++ commit: 5840c6c9321996505549d73ddf7adee5010e3caa
 
 ### Initialize the node
 ```java
-quicksilverd config chain-id innuendo-5
-quicksilverd init STAVRguide --chain-id innuendo-5
+quicksilverd config chain-id rhye-1
+quicksilverd init STAVRguide --chain-id rhye-1
 ```
 
 =
@@ -73,23 +68,22 @@ quicksilverd keys add <name_wallet> --recover
 ```
 ### Download Genesis
 ```python
-wget -O $HOME/.quicksilverd/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Quicksilver/Tetstnet/genesis.json"
+wget -O ~/.quicksilverd/config/genesis.json https://raw.githubusercontent.com/ingenuity-build/testnets/main/rhye/genesis.json
 ```
 `sha256sum ~/.quicksilverd/config/genesis.json`
- + fd19758d9b0b1c71e45599e52530c92442899fc4a4df650626e0659518833b65
+ + 403e5419434f53f06d089094f7d3e24114bd58a756002513d6339082762223ce
 
 ### Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0001uqck\"/;" ~/.quicksilverd/config/app.toml
-sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.quicksilverd/config/config.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.quicksilverd/config/config.toml
-peers=""
+peers="8e14e58b054248a04be96e4a40d6359e93b636ac@65.108.65.94:26656,5a3c424c19d9ab694190a7805a2b1a146460d752@65.108.2.27:26656,e6bf55bc9f08958b7518bea455423375db78d1ef@65.108.13.176:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.quicksilverd/config/config.toml
-seeds="3f472746f46493309650e5a033076689996c8881@quicksilver-testnet.rpc.kjnodes.com:11659"
+seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.quicksilverd/config/config.toml
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.quicksilverd/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.quicksilverd/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.quicksilverd/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.quicksilverd/config/config.toml
 ```
 
 
@@ -177,7 +171,7 @@ sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 ### Create a validator
 ```python
 quicksilverd tx staking create-validator \
---chain-id innuendo-5 \
+--chain-id rhye-1 \
 --commission-rate=0.1 \
 --commission-max-rate=0.2 \
 --commission-max-change-rate=0.1 \
