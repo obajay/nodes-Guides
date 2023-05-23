@@ -32,7 +32,7 @@ echo "_|-_|-_|-_|-_|-_|-_|"
 read Validator_Name
 echo "_|-_|-_|-_|-_|-_|-_|"
 echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
-echo export CHAIN_ID="innuendo-5" >> $HOME/.bash_profile
+echo export CHAIN_ID="rhye-1" >> $HOME/.bash_profile
 source ~/.bash_profile
 
 echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
@@ -54,28 +54,27 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.0-rc10.2/quicksilverd-v1.4.0-rc10.2-amd64
-chmod +x quicksilverd-v1.4.0-rc10.2-amd64
-mv $HOME/quicksilverd-v1.4.0-rc10.2-amd64 $HOME/go/bin/quicksilverd
+wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.2-rc7/quicksilverd-v1.4.2-rc7-amd64
+chmod +x quicksilverd-v1.4.2-rc7-amd64
+mv quicksilverd-v1.4.2-rc7-amd64 $HOME/go/bin/quicksilverd
 
 quicksilverd init $Validator_Name --chain-id $CHAIN_ID
 
-wget -O $HOME/.quicksilverd/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Quicksilver/Tetstnet/genesis.json"
+wget -O ~/.quicksilverd/config/genesis.json https://raw.githubusercontent.com/ingenuity-build/testnets/main/rhye/genesis.json
 wget -O $HOME/.quicksilverd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Quicksilver/Tetstnet/addrbook.json"
 
 
 echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
 
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0001uqck\"/;" ~/.quicksilverd/config/app.toml
-sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.quicksilverd/config/config.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.quicksilverd/config/config.toml
 peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.quicksilverd/config/config.toml
 seeds="3f472746f46493309650e5a033076689996c8881@quicksilver-testnet.rpc.kjnodes.com:11659"
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.quicksilverd/config/config.toml
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.quicksilverd/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.quicksilverd/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.quicksilverd/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.quicksilverd/config/config.toml
 
 
 # pruning and indexer
@@ -151,11 +150,7 @@ systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 break
 ;;
 "UPDATE")
-cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.0-rc10.2/quicksilverd-v1.4.0-rc10.2-amd64
-chmod +x quicksilverd-v1.4.0-rc10.2-amd64
-mv $HOME/quicksilverd-v1.4.0-rc10.2-amd64 $(which quicksilverd)
-sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
+echo -e "      \e[1m\e[35m SOOON\e[0m"
 
 break
 ;;
