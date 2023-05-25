@@ -155,7 +155,7 @@ break
 ;;
 "UPDATE")
 cd $HOME
-wget https://github.com/CosmosContracts/juno/releases/download/v14.0.0-alpha.2/junod
+wget https://github.com/CosmosContracts/juno/releases/download/v15.0.0-alpha.1/junod
 chmod +x junod
 mv junod $HOME/go/bin
 sudo systemctl restart junod && sudo journalctl -u junod -f -o cat
