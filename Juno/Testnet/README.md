@@ -48,14 +48,14 @@ wget https://github.com/CosmosContracts/juno/releases/download/v14.0.0-alpha.2/j
 chmod +x junod
 mv junod $HOME/go/bin/
 ```
-*******🟢UPDATE🟢******* 24.04.23
+*******🟢UPDATE🟢******* 26.05.23
 ```python
 cd $HOME
-wget https://github.com/CosmosContracts/juno/releases/download/v14.0.0-alpha.2/junod
+wget https://github.com/CosmosContracts/juno/releases/download/v15.0.0-alpha.1/junod
 chmod +x junod
-./junod version --long
-#version: v14.0.0-alpha.2
-#commit: b357073b9a3bc7d8ade67a543a8b10801f969737
+./junod version --long | grep -e commit -e version
+#version: v15.0.0-alpha.1
+#commit: b7901a7494fe5112dfa5b0b9d5f95d2c2e60c27f
 mv junod $HOME/go/bin
 sudo systemctl restart junod && sudo journalctl -u junod -f -o cat
 ```
