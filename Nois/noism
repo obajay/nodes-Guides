@@ -56,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/noislabs/noisd
 cd noisd
-git checkout v1.0.2
+git checkout v1.0.3
 make install
 
 noisd init $Validator_Name --chain-id $CHAIN_ID
@@ -155,10 +155,8 @@ break
 "UPDATE")
 cd $HOME/noisd
 git pull
-git checkout v1.0.2
+git checkout v1.0.3
 make install
-systemctl stop noisd
-rm -r ~/.noisd/wasm/wasm/cache
 systemctl restart noisd && journalctl -u noisd -f -o cat
 
 
