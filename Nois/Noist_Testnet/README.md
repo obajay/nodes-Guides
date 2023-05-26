@@ -42,16 +42,17 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 30.04.23 
+# Build 26.05.23 
 ```Python
 cd $HOME
 git clone https://github.com/noislabs/noisd
 cd noisd
-git checkout v1.0.2
+git checkout v1.0.3
 make install
 ```
 `noisd version`
-- v1.0.2
+- version: 1.0.3
+- commit: 1a805a0f89f1624cf9428ac2a9ffc1d2a9e1ac97
 
 ```Python
 noisd init STAVRguide --chain-id nois-testnet-005
