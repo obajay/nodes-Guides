@@ -31,30 +31,30 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 09.03.23
+# Build 22.05.23
 ```python
 cd $HOME
-wget https://github.com/KYVENetwork/chain/releases/download/v1.0.0-rc1/kyved_linux_amd64.tar.gz
+wget https://github.com/KYVENetwork/chain/releases/download/v1.2.0/kyved_kaon_linux_amd64.tar.gz
 tar -xvzf kyved_linux_amd64.tar.gz
 chmod +x ./kyved
 mv kyved $HOME/go/bin/
 ```
 
-*******🟢UPDATE🟢******* 09.03.23
+*******🟢UPDATE🟢******* 22.05.23
 ```python
 cd $HOME
-wget https://github.com/KYVENetwork/chain/releases/download/v1.0.0-rc1/kyved_linux_amd64.tar.gz
+wget https://github.com/KYVENetwork/chain/releases/download/v1.2.0/kyved_kaon_linux_amd64.tar.gz
 tar -xvzf kyved_linux_amd64.tar.gz
 chmod +x ./kyved
 mv kyved $(which kyved)
 kyved version --long
-#version: v1.0.0-rc1
-#commit: cedc217027c2b7e3d2b7077abe7a4fa4442a19c4
+#version: v1.2.0
+#commit: 
 systemctl restart kyved && journalctl -u kyved -f -o cat
 ```
 `kyved version --long`
-+ version: v1.0.0-rc1
-+ commit: cedc217027c2b7e3d2b7077abe7a4fa4442a19c4
++ version: v1.2.0
++ commit: 
 
 
 ```python
