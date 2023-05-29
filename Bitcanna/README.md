@@ -46,47 +46,30 @@ source $HOME/.bash_profile
 go version
 ```
 
-### 1_Previously to replace the binary or build from source you need to edit the file app.toml
-#### you should to declare and put in false this var: `iavl-disable-fastnode = false`
-#### Put this content in the main section, just before the [telemetry] section:
-```python
-# IavlCacheSize set the size of the iavl tree cache. 
-# Default cache size is 50mb.
-iavl-cache-size = 781250
-
-# IAVLDisableFastNode enables or disables the fast node feature of IAVL. 
-# Default is true.
-iavl-disable-fastnode = false  
-###############################################################################
-###                         Telemetry Configuration                         ###
-###############################################################################
-```
-
-
-# Build 10.03.23
+# Build 30.05.23
 ```python
 cd $HOME
 git clone https://github.com/BitCannaGlobal/bcna
 cd bcna
-git checkout v1.6.2
+git checkout v1.7.0
 make install
 ```
 
-*******🟢UPDATE🟢******* 16.03.23
+*******🟢UPDATE🟢******* 30.05.23
 ```python
 cd $HOME/bcna
 git fetch --all
-git checkout v1.6.2
+git checkout v1.7.0
 make install
 bcnad version --long
-#version: 1.6.2
-#commit: 8ca3c8f90aaf5a2ca553be173918ff2f4c4b3473
+#version: 1.7.0
+#commit: 5ebcdf59e2def0e8f240cc91d7984d3ed669b632
 sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 ```
 
 `bcnad version`
-- version: 1.6.2
-- commit: 8ca3c8f90aaf5a2ca553be173918ff2f4c4b3473
+- version: 1.7.0
+- commit: 5ebcdf59e2def0e8f240cc91d7984d3ed669b632
 
 ```python
 bcnad init STAVRguide --chain-id bitcanna-1
