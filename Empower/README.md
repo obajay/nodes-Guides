@@ -71,8 +71,7 @@ empowerd keys add <walletName> --recover
 ```
 # Genesis
 ```python
-cp $HOME/empowerchain/testnets/circulus-1/genesis.json ~/.empowerchain/config/genesis.json
-
+wget -O $HOME/.empowerchain/config/genesis.json "https://raw.githubusercontent.com/EmpowerPlastic/empowerchain/main/testnets/circulus-1/genesis.json"
 ```
 
 `sha256sum $HOME/.empowerchain/config/genesis.json`
