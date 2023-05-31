@@ -53,7 +53,7 @@ make install
 SOOON
 ```
 
-`empowerd version --long | head`
+`empowerd version --long
 + 0.0.3-747-g6cc06dd
 + commit: 6cc06dd568fa531685cff9b27d1256d072e4e0da
 
