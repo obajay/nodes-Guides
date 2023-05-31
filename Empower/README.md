@@ -75,7 +75,7 @@ wget -O $HOME/.empowerchain/config/genesis.json "https://raw.githubusercontent.c
 ```
 
 `sha256sum $HOME/.empowerchain/config/genesis.json`
-- ee87e0e4cb31cb53e75be8c89a11897be11a395b271b384b030a92f9873e1ccf
+- f01a9b70ac51d919091ad48465100d1f770c1c3788a322e4fa49549d5c3041de
 
 ### Pruning (optional)
 ```python
