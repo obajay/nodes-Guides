@@ -11,7 +11,7 @@
 | Testnet   |   4| 8GB  | 100GB    |
 
 # 1) Auto_install script
-```bash
+```python
 wget -O teritor https://raw.githubusercontent.com/obajay/nodes-Guides/main/Teritori/Teritori%20testnet/teritor && chmod +x teritor && ./teritor
 ```
 # 2) Manual installation
@@ -33,21 +33,24 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-## Build 10.02.23
+## Build 31.05.23
 ```python
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain
-git checkout v1.3.1
+git checkout v1.4.0
 make install
 ```
-*******🟢UPDATE🟢******* 10.02.23
+*******🟢UPDATE🟢******* 31.05.23
 ```python
 cd $HOME/teritori-chain
 git fetch --all
-git checkout v1.3.1
+git checkout v1.4.0
 make install
 sudo systemctl restart teritorid && sudo journalctl -u teritorid -f -o cat
 ```
+`teritorid version --long`
+- version: v1.4.0
+- commit: 01f60ec7fb9cb9d77dbe7fee1a9d69ff4fb0d2b9
 
 
 ```python
@@ -56,14 +59,15 @@ teritorid config chain-id teritori-testnet-v3
 ```
 
 ## Create/recover wallet
-
-    teritorid keys add <walletname>
-    teritorid keys add <walletname> --recover
-
+```python
+teritorid keys add <walletname>
+    OR
+teritorid keys add <walletname> --recover
+```
 ### when creating, do not forget to write down the seed phrase
 
 # Genesis
-```bash
+```python
 cd $HOME
 wget https://github.com/TERITORI/teritori-chain/raw/mainnet/testnet/teritori-testnet-v3/genesis.json
 mv genesis.json .teritorid/config/
