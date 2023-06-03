@@ -43,6 +43,7 @@ go version
 git clone https://github.com/EmpowerPlastic/empowerchain
 cd empowerchain
 git checkout v1.0.0-rc1
+cd chain
 make install
 
 ```
