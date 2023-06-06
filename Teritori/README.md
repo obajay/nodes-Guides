@@ -32,25 +32,25 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-## Build 23.02.23 
+## Build 06.06.23 
 ```python
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain 
-git checkout v1.3.1
+git checkout v1.4.0
 make install
 ```
 
-*******🟢UPDATE🟢******* 23.02.23
+*******🟢UPDATE🟢******* 06.06.23
 ```python
 cd $HOME/teritori-chain
 git fetch --all
-git checkout v1.3.1
+git checkout v1.4.0
 make install
 sudo systemctl restart teritorid && sudo journalctl -u teritorid -f -o cat
 ```
 `teritorid version --long`
-+ version: v1.3.1
-+ commit: 13752ae2d11f3b305add3fec90717dab21c60b1c
++ version: v1.4.0
++ commit: 01f60ec7fb9cb9d77dbe7fee1a9d69ff4fb0d2b9
 
 ```python
 teritorid init STAVRguide --chain-id teritori-1
