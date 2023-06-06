@@ -41,17 +41,17 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Installing the binaries (18.05.23)
+# Installing the binaries (06.06.23)
 ```python
 cd $HOME
 git clone https://github.com/sei-protocol/sei-chain.git
 cd sei-chain
-git checkout 3.0.0
+git checkout 3.0.3
 make install
 ```
 `seid version --long | head`
-+ version: 3.0.0
-+ commit: e805cf327d5efacd5bc8764bb1877eba20cd27d8
++ version: 3.0.3
++ commit: 8d7de6c1cb2f62e54b23af89bfd85163f77b7c62
 
     
 ## Initializing the node to create the necessary configuration files
