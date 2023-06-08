@@ -42,17 +42,17 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 26.05.23
+# Build 08.06.23
 ```python
 cd $HOME
 git clone https://github.com/gitopia/gitopia
 cd gitopia
-git checkout v2.1.0
+git checkout v2.1.1
 make install
 ```
 `gitopiad version --long`
-- version: 2.1.0
-- commit: 603877bf62c76bee7c36360cdd81a5512ab15f83
+- version: 2.1.1
+- commit: 08692dc0220a49e25be15b986cf3d4bfb990d27f
 
 ```python
 gitopiad init STAVRguide --chain-id gitopia
