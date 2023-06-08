@@ -41,22 +41,35 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 29.05.23
+# Build 08.06.23
 ```python
 cd $HOME
 git clone https://github.com/notional-labs/composable-testnet
 cd composable-testnet
-git checkout v2.3.5
-make install
+git checkout v3.0.0
+make build
+cd bin
+mv centaurid $HOME/go/bin/banksyd
 ```
-*******🟢UPDATE🟢******* 00.00.23
+*******🟢UPDATE🟢******* 08.06.23
 ```python
-SOOON
+cd $HOME/composable-testnet
+git pull
+git checkout v3.0.0
+make build
+cd bin
+mv centaurid $HOME/go/bin/banksyd
+banksyd version --long | grep -e commit -e version
+#version: 3.0.0
+#commit: 6a446b4a6f71297714827f18587f8284a0cbd673
+sudo systemctl restart banksyd && sudo journalctl -u banksyd -f -o cat
+curl -s http://localhost:26657/consensus_state  | jq '.result.round_state.height_vote_set[0].prevotes_bit_array'
+
 ```
 
 `banksyd version --long`
-- version: v2.3.5
-- commit: cd98916087ba1b327b28c4e83db7752e35ec804a
+- version: v3.0.0
+- commit: 6a446b4a6f71297714827f18587f8284a0cbd673
 
 ```python
 banksyd init STAVRguide --chain-id banksy-testnet-3
