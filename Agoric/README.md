@@ -36,7 +36,7 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 06.03.23
+# Build 08.05.23
 ```python
 cd $HOME
 git clone https://github.com/Agoric/agoric-sdk
@@ -46,9 +46,19 @@ yarn install
 yarn build
 cd packages/cosmic-swingset && make
 ```
+*******🟢UPDATE🟢******* 08.06.23
+```python
+cd agoric-sdk/
+nano go.mod
+##replace github.com/cosmos/cosmos-sdk => github.com/agoric-labs/cosmos-sdk v0.45.11-alpha.agoric.1
+##with this: replace github.com/cosmos/cosmos-sdk => github.com/agoric-labs/cosmos-sdk v0.45.11-alpha.agoric.1.1
+go mod download github.com/agoric-labs/cosmos-sdk@v0.45.11-alpha.agoric.1.1
+cd packages/cosmic-swingset && make
+sudo systemctl restart agoricd && journalctl -u agoricd -f -o cat
+
 `agd version --long`
 - version: 0.33.0
-- commit: 636c85016
+- commit: 636c85016-dirty
 
 ```python
 agd init STAVRuide --chain-id agoric-3
