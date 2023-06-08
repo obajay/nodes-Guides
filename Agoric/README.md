@@ -55,7 +55,7 @@ nano go.mod
 go mod download github.com/agoric-labs/cosmos-sdk@v0.45.11-alpha.agoric.1.1
 cd packages/cosmic-swingset && make
 sudo systemctl restart agoricd && journalctl -u agoricd -f -o cat
-
+```
 `agd version --long`
 - version: 0.33.0
 - commit: 636c85016-dirty
