@@ -29,12 +29,11 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-# Build 02.12.22
+# Build 08.06.23
 ```python
 export PIO_HOME=~/.provenanced
 git clone https://github.com/provenance-io/provenance.git && cd provenance
-git checkout tags/v1.13.0 -b v1.13.0
-make clean
+git checkout v1.15.2
 make install
 ```
 
