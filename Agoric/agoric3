@@ -157,13 +157,8 @@ sudo systemctl restart agoricd && journalctl -u agoricd -f -o cat
 break
 ;;
 "UPDATE")
-cd $HOME/agoric-sdk
-git fetch --all
-git checkout pismoC
-yarn install
-yarn build
-cd packages/cosmic-swingset && make
-systemctl restart agoricd.service && journalctl -u agoricd.service -f -o cat
+agd version --long
+
 
 break
 ;;
