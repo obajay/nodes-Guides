@@ -35,29 +35,29 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-# Binary   25.05.23
+# Binary   08.06.23
 ```python
 cd $HOME
 git clone https://github.com/Stride-Labs/stride.git && cd stride
-git checkout v9.0.1
+git checkout v9.2.1
 make install
 ```
-*******🟢UPDATE🟢******* 25.04.23
+*******🟢UPDATE🟢******* 08.06.23
 
 ```python
 cd $HOME/stride
 git fetch --all
-git checkout v9.0.1
+git checkout v9.2.1
 make install
 strided version --long | grep -e commit -e version
-#commit: 7a581f58a0842cf2c482040ba938358f124eb99d
-#version: v9.0.1
+#commit: 08a44d1a2eb9beba186e66b01109f038b7b0ec6e
+#version: v9.2.1
 sudo systemctl restart strided && journalctl -u strided -f -o cat
 ```
 
 `strided version --long | head`
-+ commit: 7a581f58a0842cf2c482040ba938358f124eb99d
-+ version: v9.0.1
++ commit: 08a44d1a2eb9beba186e66b01109f038b7b0ec6e
++ version: v9.2.1
 
 
 ## Initialisation
