@@ -8,7 +8,6 @@
 =
 
 - **Minimum hardware requirements**:
-
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
 | Mainnet   |   8| 16GB | 160GB    |
