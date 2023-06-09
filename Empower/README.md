@@ -119,7 +119,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.empow
 ```python
 wget -O $HOME/.empowerchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Empower/addrbook.json"
 ```
-# StateSync Testnet (🔴Currently not working🔴)
+# StateSync Testnet
 ```python
 SNAP_RPC=http://empw.rpc.t.stavr.tech:22057
 peers="a8f7749ee8ba55b5c2181a1591d7e291db594883@empw.peers.stavr.tech:22056"
