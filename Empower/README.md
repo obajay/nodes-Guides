@@ -140,7 +140,7 @@ wget -O $HOME/.empowerchain/config/addrbook.json "https://raw.githubusercontent.
 curl -o - -L http://empw.wasm.stavr.tech:1001/wasm-empw.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.empowerchain --strip-components 2
 systemctl restart empowerd && journalctl -u empowerd -f -o cat
 ```
-# SnapShot (~2 GB) updated every 10 hours
+# SnapShot (~0.5 GB) updated every 10 hours
 ```python
 cd $HOME
 apt install lz4
