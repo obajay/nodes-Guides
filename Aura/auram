@@ -153,8 +153,11 @@ sudo systemctl restart aurad && journalctl -u aurad -f -o cat
 break
 ;;
 "UPDATE")
-echo -e "      \e[1m\e[32m SOOOON\e[0m"
-aurad version
+cd $HOME/aura
+git fetch --all
+git checkout aura_v0.4.5
+make install
+sudo systemctl restart aurad && journalctl -u aurad -f -o cat
 
 break
 ;;
