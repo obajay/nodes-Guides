@@ -44,14 +44,21 @@ git checkout aura_v0.4.4
 make install
 ```
 
-*******🟢UPDATE🟢******* 00.00.23
+*******🟢UPDATE🟢******* 12.06.23
 ```python
-SOOON
+cd $HOME/aura
+git fetch --all
+git checkout aura_v0.4.5
+make install
+aurad version --long | head
+#version: aura_v0.4.5
+#commit: e2b4019e4cbf8dcc35323abf4fd984ebafb6f1ab
+sudo systemctl restart aurad && journalctl -u aurad -f -o cat
 ```
 
 `aurad version --long | head`
-+ version: aura_v0.4.4
-+ commit: 222d63e1aa5b6fee5aea689bcdfcb9af2dbc82a2
++ version: aura_v0.4.5
++ commit: e2b4019e4cbf8dcc35323abf4fd984ebafb6f1ab
 
 ```python
 aurad init STAVRguide --chain-id xstaxy-1
