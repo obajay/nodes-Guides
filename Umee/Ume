@@ -57,7 +57,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME 
 git clone https://github.com/umee-network/umee.git
 cd umee
-git checkout v4.4.2
+git checkout v5.0.1
 make install
 
 umeed init $Validator_Name --chain-id $CHAIN_ID
@@ -155,7 +155,7 @@ break
 "UPDATE")
 cd $HOME/umee
 git fetch --all
-git checkout v4.4.2
+git checkout v5.0.1
 make install
 sudo systemctl restart umeed && journalctl -u umeed -f -o cat
 
