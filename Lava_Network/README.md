@@ -44,31 +44,31 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 05.06.23
+# Build 14.06.23
 ```python
 cd $HOME
 git clone https://github.com/lavanet/lava
 cd lava
 git fetch --all
-git checkout v0.12.1-hf
+git checkout v0.13.1
 make install
 ```
-*******🟢UPDATE🟢******* 05.06.23
+*******🟢UPDATE🟢******* 14.06.23
 
 ```python
 cd $HOME/lava
 git fetch --all
-git checkout v0.12.1-hf
+git checkout v0.13.1
 make install
 lavad version --long | grep -e commit -e version
-#version: 0.12.1-hf
-#commit: 5eb91c871fcdfd7ea554153bceee8b13886cb114
+#version: 0.13.1
+#commit: 9a045e99d3800316b204d0bc2cc40511a9e5ee85
 sudo systemctl restart lavad && sudo journalctl -u lavad -f -o cat
 ```
 
 `lavad version --long | head`
-- version: 0.12.1-hf
-- ceee8b13886cb114
+- version: 0.13.1
+- 9a045e99d3800316b204d0bc2cc40511a9e5ee85
 
 ```python
 lavad init STAVRguide --chain-id lava-testnet-1
