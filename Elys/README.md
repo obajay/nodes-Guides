@@ -58,6 +58,7 @@ make install
 elysd version --long | grep -e commit -e version
 #commit: c33ff69cc9aaa13b7fa0e0cbf1c256eb17c58fc0
 #version: v0.7.0
+sudo systemctl restart elysd && sudo journalctl -u elysd -f -o cat
 ```
 
 `elysd version --long`
