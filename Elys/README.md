@@ -55,6 +55,7 @@ cd $HOME/elys
 git fetch --all
 git checkout v0.7.0
 make install
+sed -i.bak -e "s/^timeout_commit *=.*/timeout_commit = \"4s\"/;" ~/.elys/config/config.toml
 elysd version --long | grep -e commit -e version
 #commit: c33ff69cc9aaa13b7fa0e0cbf1c256eb17c58fc0
 #version: v0.7.0
