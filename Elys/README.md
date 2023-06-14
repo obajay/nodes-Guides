@@ -40,29 +40,29 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 02.06.23
+# Build 14.06.23
 ```python
 cd $HOME
 git clone https://github.com/elys-network/elys elys
 cd elys
-git checkout v0.6.0
+git checkout v0.7.0
 make install
 ```
 
-*******🟢UPDATE🟢******* 02.06.23
+*******🟢UPDATE🟢******* 14.06.23
 ```python
 cd $HOME/elys
 git fetch --all
-git checkout v0.6.0
+git checkout v0.7.0
 make install
 elysd version --long | grep -e commit -e version
-#commit: ece552430ef4e7dd654748f5c8a874075bea6c1e
-#version: v0.6.0
+#commit: c33ff69cc9aaa13b7fa0e0cbf1c256eb17c58fc0
+#version: v0.7.0
 ```
 
 `elysd version --long`
-- version: v0.6.0
-- commit: ece552430ef4e7dd654748f5c8a874075bea6c1e
+- version: v0.7.0
+- commit: c33ff69cc9aaa13b7fa0e0cbf1c256eb17c58fc0
 
 ```python
 elysd init STAVRguide --chain-id elystestnet-1
@@ -118,8 +118,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.elys/config/config.to
 
 ## Download addrbook
 ```python
-wget -O addrbook.json https://snapshots.polkachu.com/testnet-addrbook/elys/addrbook.json --inet4-only
-mv addrbook.json ~/.elys/config
+wget -O $HOME/.elys/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Elys/addrbook.json"
 ```
 
 # Create a service file
