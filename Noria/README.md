@@ -48,7 +48,7 @@ cd noria
 git checkout v1.2.1
 make install
 ```
-*******🟢UPDATE🟢******* 00.00.23
+*******🟢UPDATE🟢******* 16.06.23
 ```python
 cd noria
 git fetch --all
@@ -116,7 +116,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.noria/config/config.t
 
 ## Download addrbook
 ```python
-wget -O $HOME/.noria/config/addrbook.json "SOOOON"
+wget -O $HOME/.noria/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Noria/addrbook.json"
 ```
 
 # Create a service file
