@@ -55,7 +55,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 #INSTALL
 git clone https://github.com/EmpowerPlastic/empowerchain
 cd empowerchain
-git checkout v1.0.0-rc2
+git checkout v1.0.0-rc3
 cd chain
 make install
 
@@ -152,7 +152,7 @@ break
 "UPDATE")
 cd $HOME/empowerchain
 git pull
-git checkout v1.0.0-rc2
+git checkout v1.0.0-rc3
 cd chain && make build
 mv $HOME/empowerchain/chain/build/empowerd $(which empowerd)
 systemctl restart empowerd && journalctl -u empowerd -f -o cat
