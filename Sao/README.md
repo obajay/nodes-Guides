@@ -50,20 +50,20 @@ make install
 ```
 *******🟢UPDATE🟢******* 15.06.23
 ```python
-cd $HOME/sao-consensus
-git fetch
-git checkout v0.1.6
-make install
+cd $HOME
+wget https://github.com/SAONetwork/sao-consensus/releases/download/v0.1.6/saod-linux
+chmod +x saod-linux
+mv saod-linux $(which saod)
 saod version --long | grep -e commit -e version
-#version: 0.1.6
-#commit: bc5bbd96269d19fa8db403c9e1c2562e67aa4561
+#version: 0.1.6-1-g4871d46
+#commit: 4871d46f75d0df0f1971867f3b5835b5a05841b1
 sudo systemctl restart saod && sudo journalctl -u saod -f -o cat
 
 ```
 
 `saod version --long`
-- version: 0.1.6
-- commit: bc5bbd96269d19fa8db403c9e1c2562e67aa4561
+- version: 0.1.6-1-g4871d46
+- commit: 4871d46f75d0df0f1971867f3b5835b5a05841b1
 
 ```python
 saod init STAVRguide --chain-id sao-testnet1
