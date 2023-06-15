@@ -56,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/SaoNetwork/sao-consensus.git
 cd sao-consensus
-git checkout v0.1.5
+git checkout v0.1.6
 make install
 
 saod init $Validator_Name --chain-id $CHAIN_ID
@@ -152,7 +152,7 @@ break
 "UPDATE")
 cd $HOME/sao-consensus
 git fetch
-git checkout v0.1.5
+git checkout v0.1.6
 make install
 sudo systemctl restart saod && sudo journalctl -u saod -f -o cat
 
