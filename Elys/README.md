@@ -40,7 +40,7 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 14.06.23
+# Build 15.06.23
 ```python
 cd $HOME
 git clone https://github.com/elys-network/elys elys
@@ -49,7 +49,7 @@ git checkout v0.7.0
 make install
 ```
 
-*******🟢UPDATE🟢******* 14.06.23
+*******🟢UPDATE🟢******* 15.06.23
 ```python
 cd $HOME/elys
 git fetch --all
