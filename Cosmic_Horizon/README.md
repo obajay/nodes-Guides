@@ -1,6 +1,7 @@
 # Cosmic Mainnet guide
 
-![Althea_Logo-BLUE_SIGNAL](https://user-images.githubusercontent.com/44331529/218240936-c2095305-1a28-45f6-8ccd-d068a4fe5754.svg)
+![cosmic](https://github.com/obajay/nodes-Guides/assets/44331529/95976b09-b2ee-41ca-9b9d-a1a607af3888)
+
 
 [WebSite](https://cosmic-horizon.com/)\
 [GitHub](https://github.com/cosmic-horizon/QWOYN)
