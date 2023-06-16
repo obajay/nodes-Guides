@@ -44,7 +44,7 @@ go version
 # Build 16.06.23
 ```python
 cd $HOME
-git clone https://github.com/althea-net/althea-chain
+git clone https://github.com/cosmic-horizon/QWOYN
 cd QWOYN
 git checkout v5.0.2
 make install
