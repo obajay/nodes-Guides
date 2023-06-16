@@ -40,12 +40,12 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 26.05.23
+# Build 16.06.23
 ```python
 cd $HOME
 git clone https://github.com/noria-net/noria.git
 cd noria
-git checkout v1.2.1
+git checkout v1.3.3
 make install
 ```
 *******🟢UPDATE🟢******* 16.06.23
@@ -61,8 +61,8 @@ sudo systemctl restart noriad && sudo journalctl -u noriad -f -o cat
 ```
 
 `noriad version --long | grep -e commit -e version`
-- version: 1.2.1
-- commit: b37163cf939432a8a66bad883ba3dc8e1acb27b0
+- version: 1.3.0
+- commit: 1533a05c67efd5e0c36269811de3c86ecb51ab96
 
 ```python
 noriad init STAVRguide --chain-id oasis-3
