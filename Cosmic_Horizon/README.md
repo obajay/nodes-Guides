@@ -72,7 +72,7 @@ qwoynd keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O $HOME/.qwoynd/config/genesis.json "https://raw.githubusercontent.com/cosmic-horizon/mainnet/main/genesis.json"
+wget -O $HOME/.qwoynd/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Cosmic_Horizon/genesis.json"
 ```
 `sha256sum $HOME/.qwoynd/config/genesis.json`
 + 9dd858eb43729f8b53a919212eec25df6a34d02b9c45079d3341923b1f3e67bd
