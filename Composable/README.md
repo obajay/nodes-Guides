@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+SOOOON
 ```
 
 # 2) Manual installation
