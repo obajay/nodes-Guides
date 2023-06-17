@@ -109,7 +109,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.qwoynd/config/config.
 
 ## Download addrbook
 ```python
-wget -O $HOME/.qwoynd/config/addrbook.json "SOOOOOOOON"
+wget -O $HOME/.qwoynd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Cosmic_Horizon/addrbook.json"
 ```
 
 # Create a service file
