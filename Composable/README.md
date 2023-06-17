@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOOOON
+wget -O centauridm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Composable/centauridm && chmod +x centauridm && ./centauridm
 ```
 
 # 2) Manual installation
