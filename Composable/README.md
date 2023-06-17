@@ -120,6 +120,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.banksy/config/config.
 wget -O $HOME/.banksy/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Composable/addrbook.json"
 ```
 
+
 # Create a service file
 ```python
 tee /etc/systemd/system/centaurid.service > /dev/null <<EOF
