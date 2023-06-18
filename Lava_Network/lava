@@ -57,7 +57,7 @@ cd $HOME
 git clone https://github.com/lavanet/lava
 cd lava
 git fetch --all
-git checkout v0.13.1
+git checkout v0.14.0
 make install
 
 lavad init $Validator_Name --chain-id $CHAIN_ID
@@ -164,7 +164,7 @@ break
 "UPDATE")
 cd $HOME/lava
 git fetch --all
-git checkout v0.13.1
+git checkout v0.14.0
 make install
 sudo systemctl restart lavad && sudo journalctl -u lavad -f -o cat
 
