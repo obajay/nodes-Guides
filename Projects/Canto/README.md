@@ -15,7 +15,7 @@
 
 # 1)    Auto_install script
 ```bash
-wget -O canto https://raw.githubusercontent.com/obajay/nodes-Guides/main/Canto/canto && chmod +x canto && ./canto
+wget -O canto https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Canto/canto && chmod +x canto && ./canto
 ```
 # 2)    Manual installation
 
