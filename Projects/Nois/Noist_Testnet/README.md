@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```Python
-wget -O nois https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nois/Noist_Testnet/nois && chmod +x nois && ./nois
+wget -O nois https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Nois/Noist_Testnet/nois && chmod +x nois && ./nois
 ```
 
 # 2) Manual installation
@@ -108,7 +108,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.noisd/config/config.t
 
 ## Download addrbook
 ```Python
-wget -O $HOME/.noisd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nois/Noist_Testnet/addrbook.json"
+wget -O $HOME/.noisd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Nois/Noist_Testnet/addrbook.json"
 ```
 
 # StateSync
