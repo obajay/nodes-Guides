@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```bash
-wget -O gitop https://raw.githubusercontent.com/obajay/nodes-Guides/main/Gitopia/Testnet/gitop && chmod +x gitop && ./gitop
+wget -O gitop https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Gitopia/Testnet/gitop && chmod +x gitop && ./gitop
 ```
 
 # 2) Manual installation
@@ -104,7 +104,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.gitopia/config/config
 
 ## Download addrbook
 ```bash
-wget -O $HOME/.gitopia/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Gitopia/Testnet/addrbook.json"
+wget -O $HOME/.gitopia/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Gitopia/Testnet/addrbook.json"
 ```
 
 ## StateSync
