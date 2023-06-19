@@ -63,7 +63,7 @@ gaiad init $Validator_Name --chain-id $CHAIN_ID
 wget https://raw.githubusercontent.com/cosmos/mainnet/master/genesis/genesis.cosmoshub-4.json.gz
 gzip -d genesis.cosmoshub-4.json.gz
 mv genesis.cosmoshub-4.json ~/.gaia/config/genesis.json
-wget -O $HOME/.gaia/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Cosmos/addrbook.json"
+wget -O $HOME/.gaia/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Cosmos/addrbook.json"
 
 echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
 
