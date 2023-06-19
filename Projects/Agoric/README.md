@@ -15,7 +15,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O agoric3 https://raw.githubusercontent.com/obajay/nodes-Guides/main/Agoric/agoric3 && chmod +x agoric3 && ./agoric3
+wget -O agoric3 https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Agoric/agoric3 && chmod +x agoric3 && ./agoric3
 ```
 # 2) Manual installation
 
@@ -104,7 +104,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.agoric/config/config.
 
 ## Download addrbook
 ```python
-wget -O $HOME/.agoric/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Agoric/addrbook.json"
+wget -O $HOME/.agoric/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Agoric/addrbook.json"
 ```
 # StateSync
 ```python
@@ -122,7 +122,7 @@ s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.agoric/config/config.toml
 ag0 tendermint unsafe-reset-all --home $HOME/.agoric
-wget -O $HOME/.agoric/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Agoric/addrbook.json"
+wget -O $HOME/.agoric/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Agoric/addrbook.json"
 sudo systemctl restart agoricd && journalctl -u agoricd -f -o cat
 ```
 
