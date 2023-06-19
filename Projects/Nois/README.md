@@ -71,7 +71,6 @@ noisd keys add <walletname> --recover
 
 ```Python
 wget -O $HOME/.noisd/config/genesis.json https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Nois/genesis.json
-
 ```
 `sha256sum $HOME/.noisd/config/genesis.json`
 + 5332fb6477a2d273fd7e5a13bceb213e2a9d408a698c49ab34e8b78736e58cac
@@ -111,7 +110,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.noisd/config/config.t
 
 ## Download addrbook
 ```Python
-wget -O $HOME/.noisd/config/addrbook.json https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nois/addrbook.json
+wget -O $HOME/.noisd/config/addrbook.json https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Nois/addrbook.json
 ```
 
 # StateSync Mainnet
