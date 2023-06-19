@@ -15,7 +15,7 @@
 
 # 1) Auto_install script 
 ```python
-wget -O bitsongd https://raw.githubusercontent.com/obajay/nodes-Guides/main/Bitsong/bitsongd && chmod +x bitsongd && ./bitsongd
+wget -O bitsongd https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Bitsong/bitsongd && chmod +x bitsongd && ./bitsongd
 ```
 # 2) Manual installation
 
@@ -104,7 +104,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.bitsongd/config/confi
 ```
 # Download addrbook
 ```python
-wget -O $HOME/.bitsongd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Bitsong/addrbook.json"
+wget -O $HOME/.bitsongd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Bitsong/addrbook.json"
 ```
 
 # Create a service file
