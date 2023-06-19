@@ -1,0 +1,5017 @@
+{
+  "genesis_time": "2023-03-26T10:00:00Z",
+  "chain_id": "uptick_117-1",
+  "initial_height": "1",
+  "consensus_params": {
+    "block": {
+      "max_bytes": "22020096",
+      "max_gas": "40000000",
+      "time_iota_ms": "1000"
+    },
+    "evidence": {
+      "max_age_num_blocks": "100000",
+      "max_age_duration": "172800000000000",
+      "max_bytes": "1048576"
+    },
+    "validator": {
+      "pub_key_types": [
+        "ed25519"
+      ]
+    },
+    "version": {}
+  },
+  "app_hash": "",
+  "app_state": {
+    "auth": {
+      "params": {
+        "max_memo_characters": "256",
+        "tx_sig_limit": "7",
+        "tx_size_cost_per_byte": "10",
+        "sig_verify_cost_ed25519": "590",
+        "sig_verify_cost_secp256k1": "1000"
+      },
+      "accounts": [
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1qepu4jgv6kje6zvd7cn9axpmh68zxgnpyw6lc6"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1jt6jv3jges72yxrud2jgjespe623g5wz00karm"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1s2jlynh3ul6rdy45rcknxsh4ssxjzptt0syjkq"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1atk53ekrc7sn06tdvravvjcvd4s7jjaywqa8yv"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1e6kx9z0f3mzaqgs2d4zlje93725k4h8vufe6tg"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1c8se6q5rmd3nevcyj8fme0d90nlqj0a6dulue5"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1285us3m5ryzklnjv6wwn3lk9xx0cg0t0vfn5xd"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1rl20snhl4lg6gan3ntwmndsjh2j6kzeg35k7y8"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1dmymduyzhve2qlexaaatdcz26e5t7vpkgflm59"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1qt6yf3fvz250uddj04rxglfd40v8nruqxxnz8c"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1vt5zgzp4e0pq59rapf0tf5xk5pvesvxwhtca42"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1tc94c0ljexukfjrf35ukdjr0puutvxmyvf7u57"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1zk3j7ugjva7auu9vqekv23kj42e4yqqnv4epzz"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1q8gmvc05t0yq2eg0g3plkcqlhy97mvk08fyaxq"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick13vlht5avuq4w4wkvgpetnheyn04t999txkarl3"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1vzup5etng8sqlgzgpvh3hmt82gvqv7f5uanghx"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1f675a5y3sch88cyl73u2asduljn0exkq20jfde"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1p4tqcmh8tysjlxpqu5gawanre9pdxavzfl8q9u"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1x25qq5la2mkpdqpwfcw7esxju9huy65k2kgph3"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1qgquvzqdwjfgdnp95e4nupypzwpz54vng9gy9x"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1rja4j95ymc9m88ugq893uztawy5can0j3mvrfn"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1fhxvtld4u6d6a4tvnhyrguvzm53gl3tkkfcfyc"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick19h0wpcw2f079vurn2znmvheah96htfchlhzuq4"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1ssj9snlxj7up6huqj745agempqctxjkelsmyr7"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1ksw8rddty5jms65t8g8tx4mwxhgqy9pecluca2"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick19xlh468kkxkn32e3arf7cqs393dxxfr5vk0dvg"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1055jwyf0nqxkdf73m4auw9ksue7gee8ase49ym"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick144kg2rwg04klcpd3wftjyklwg96ezjl3jjtnzq"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1l5tcmuet4a4r6pvazhh78jjuqtnfwmkyvk3scc"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick146hv265eqcvg3ewwwmagr4hcjp384y2mjx29tq"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1jqpaf0vgzlxvjx5meq8huweuv2nguqe2ugvd9v"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1xk0zpxmxjgt27ujw50g79c4kzxdpx2pgu4u266"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1n9urj4d6mngtuhpfysdxu7nq72e8830w97p0sy"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1rxhgnv5gp0dsl6rq0zaj6s3xzd6qxwckvu5qe6"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1n76g0yrfc2u64ynha3mfr20qghrtt2ee29d9py"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1lk27ezwxru27wg9arlhaw7psz89hj003y96rqx"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick187yk7f6eukk88c8qvy4h0js8q6ehg6hx8644zg"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1pwjt96saucysrnwqnzng853g4v2hn6d85x2udy"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1efwlrd92tnv3zq8eq0vxvmwe4zc4lex2ygjk0a"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick18zjvymda507he068gdwc0v9jfkqdgrysqtywqr"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1qyjgneuznsn26qerlv0djqqzhvdc5djrcuthwm"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1tztp0sp047zxxj2j3pzhtr67w2nmn2a8nhcju4"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1eddj4c9uh2l76llatzdtvmpdcq07lqdn2zfa5r"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1q4vdlk6ty7g04nylnnqdws8dffxtyns4vafaf8"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1r6znjpcyqdexwu7g0prgtne774xkxfvlserrgm"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick108u3vnpyeszmeyhw5p7z3qxret3c98s7avsl20"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick107uxaex63mjfewfqkseksx3rtfhagq0daunvk0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick164r3p457uh3m36khl4tncu3guyuwvr7nv0lya3"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1mjm3cnrpu4dn92am56vvnweddvcy5llesapyr9"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1ftltqqky2eqx6rjatleur0lt9hlmqpvetq3aq5"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1864unaatp3qu60n6ug7xalp5ejjnrkytyxhapl"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1k8auvht9zdv2ta9gefaa279g7hk2h2qyfv3adt"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick13sfuc8490ffgtq5qxscaplc9sskv2wnjl0lyft"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1gxpwmys5ly25l9wayn3ueq4unmwf6xxm8tp09a"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick17jkr3whaxd9qugf82c2jawyfhrruqg92gd26qr"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1wsdflj53mlm6qqwwne5z3s930m2476j47a46pe"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1gt3adrlztf77evudyq2dfqs98srd6czjc2jphk"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick19q7hpfx9a88vdalk5evezkxfnxfm9uss4dwxs9"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1g6s0nhxcm9ve9lgdmwljc26yhx3x3t67f7v7q2"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1hg7qhxqt0l95k4yzyvnljwph8lzga9zlgeznq5"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick19yk28u3tmln8sklj2nn80sdyp464ddlylschec"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1d69fk6k86adr3zjqjvcxjkamff63h00luxstay"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1wv076zk657dvpmf7g59ewsey6dptahxn5hm0w0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick10sedvtussyf2hsftc58ca0cm7lxzhv4xp4s8z0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick14zc0dz6udeaszva80v00rw202djepsc73a8z6z"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick14luhwnxc32229yzd5xyysg8s7fa2d3m5rv6pta"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1h8qcladuqvh7m8lqvelm4l7mrpcfc039vecygj"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1h3cltqvxttn8707kk62v42cnj7gnxg2zyszze9"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1rcfvn0n9x2fgteezl20dv3c9p6nyanf7x88p4w"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1gqm28vz2arctqhcvjhee7gnp5jkdvhhl7vwqn2"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick13qfah88u6kpmwd74hqyjwmk6j062cnfhmnwfw0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1a43t2a790muh3kcwjfpqyhs0qzmrgvu9fevah6"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick198rdpmvkvvrvl7wwlvk7j3fylk7j0f9j2k3x8r"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1vy74gntwl2drdfdez9tyrr990dsjsr5qsfegje"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1xj9vnr0swa8skdzeytw2am5esvtlrhalwlgp4d"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1c65nks9tmdfestel4usu2kq6jjxkrqzjrq492n"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1z5hnta9st50gkftu05xkmcl66eeuczu5mw7t6r"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1xcjzqakym7hs8yqljwml8k5fzw6jujq6g7a465"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1tys6upm3y57szzp8pxf5w06cglxha6qnv70q8u"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1fm6s0xgxm68s3y2tefhxags0wkn5j7zdh8cmn8"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1sr374tf8uh96lfgatyc6lefr24vg5dxhrceyvf"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1ag9ga2fdrqdvqlnuhl6aphx06g9lk6asafvtfq"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1gl3muau04ulujy490ge6lfzjwpl9h6zyd6e6fq"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1qcf6299df7z5x64mw5q8npdzcwj069gfea3ncg"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick12tmn00ne92n5nljf3t5apyy2jtkfjfet70eu53"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick10qew9u4cencrex4w9kxlz5h0394enxfzrqyxgg"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1fw4zfadth2mg2zpny43y5m97ze82j4p9xzfdjj"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick16lxla2fwp3zvrduvyylz8d6s8d8vnazl5y5ue2"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1hr6jduqvkesrt0p5z8pamchg705hywcx0azlqn"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1qrrvkt79utfa5tald5uzsgtnr7deapnrve8uxa"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1glrrlx2tawzkx722l7lqln639cyxca2zpjve8q"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick12vy0re6yjmr83wvrr6jp3n648ahmsz0sszh4cg"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1w9va2g25cjzhxfgs5xzfe9g2zuy7jnsk0m0wls"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick105ak9ul4t47nd7gf0a3esfpec4vrfxykn5yuw9"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick15kgr5d4hfqv3xxwkxwnfu9gvdtkp2vlumjg9tz"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1c6cut2p5fduu2pwalpl3ycjtvqgfam7h9mn4wz"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1mtcrkg3rmkw0gj3m0jxxrej8w60yxfcsq58r0f"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1u9s3d8rz448jv74w95rququwmgqzms9zq05wyy"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1lrlc6q0zr20ltxa09takuln0rsg6n897ydg8qh"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick14vcs4wkvml48uys4q0sdjmksj7mnd88jk3pmwc"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1adydnv2yhu9dyau0z0k26ne5ex902rwmzlmdfa"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1kddkqdll9d9hs77qedtena338yf6c2ff9n7mq5"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1uykjh2sweyu5zg7ujpfq26vevrgs2ur36hk8vc"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1ln4chyv9maucwkhfdd0zh54nu93p9jw6uk3r2x"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1auxdluyylpechel23ca9w6ca22vy9x2rf0tzk4"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick10s0h68q08m75qws5ysn0mjpuac2vkpvaua7fkx"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1fl3426k0avvergm7ejzczqy6rfzxk5makfw5z7"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1lngjsefg92rpyjk9860wnm6mspkz9x2g582rym"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick16uek5unugeqw7czuya9jdc9l35quaqlw4233s8"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1dx5sfmg4ascplvmkn39stq3rgk0c3vhplz3ypr"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1t5msr8mzn2q4dgpml82xs243aw83c8uzs6g352"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick12492wecaw9g66a3drmr7rt9dwl7u88v36eq4hl"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1v4l492e0vp3z704fnt5792erwnqu04yy2hscmm"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1zn2jlgh3fp8unmv66dc7k8c00raayzcrae856y"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1rdxnus099r6k60gtdyh2wf435xtdvf0c4f5agq"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick18d9wndmldefhrnm3dhfewrw82pzx3cqqhag792"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1mc22ghxzs8f5q76xypxd0h4fdg8d28mpny9xda"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1uwtmwh09qt2xtvfne6jmjehsedgycxqqhnyj74"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1f2kazk6p0ctc64c6qgkl4ds53k4zaxnvk5648p"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1p4hynvcf2zntwld53edt8u3jste86fsq7lh0r5"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick19pz0f48cu87vptrv5a9xluyxt269d36g2xle93"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1vml25xjxfflx38my8p35vml0t50nkf3tamgdhh"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick109jpgzszcfaanwze0ht45q9afsmw6t8qvassf6"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1savps67fq9sr98uz0l9jqpstvg0nu3dr39s8gs"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1n8xlkpt5r7hvsr6g3ksvzndjrz32neqrc8y8j6"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1pq7cwgulwesuqdqwx8nqlnfe7da85nle6qs5fj"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick19hdg4ul47j97rt5xkmnmun8yt4mr3rnnmmjpyr"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1l53xghg825p0tse6swdq5lrevl95hkz8vayajp"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1ze8tqpqd4x62j6y0l8wr6y2n9kkpky7s7k6fkt"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1xrp5wphv3rw09ry28926ca3w5ryjp95glfxp0z"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick10p7dhpzr98s73zrpahl5rhx2kgau0sl64347ga"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1gqjly9pkkv3ghhnfu7yn77qgw79u3lm3j7c9zz"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1u6lc8rdv0mrthyxskjrskg4f27qlan8zszka0c"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick19dhqaj6hjxwrm558dxx4jd9s6x5z8f4dalc9hk"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1xntcx5xuquaj3ewvgvuk772cayej0lwwddgnrh"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick12p8np4q2k8096mmdx3zxrz98j3xe9svj7e94hg"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1wa7dgsw0w8gxxymg6tuclpnww77e4wf9qdq6cm"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick159kqv4gpdahdhzew7d8jmyjgzsuym8fv9z8c32"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1crn8nymeuwuu2q2h7n84xvwvfgtv680gns263z"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1meuaaphlh88mz9hqm9ca9cvdhc2ar72ea4rd0l"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1xpe5p48dhz5mxg4st4r899y0nkkkalaazhvs9l"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick14fqtncrs6e9eytufyuvtwxv7p3ledlezf3nf9r"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick13eqtwyfn74r87gqzpjertmhwzkwc3jrd50nevx"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick16yj49hs3lud8h4xwgd543723x3tv0m6dewxgtv"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1pucflery0cs9dr8k9r8yj4wxnkk0lvd9lc97n6"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick17u0xwtpaps4nh4k2gn39d0hy02fspgdfza2x00"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1yfjwhceh3lm5urw8t34g4xrz0pj8gwjtkg37p0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick13tzgs4ysfqmd59q76qxjamkce3edtnrfwrcu8j"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick163qe723t4cagkhh8xcs47nr6khh70t5q9g20tq"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1kn5wt05xvxjp5t9hpgsvptrwwgzj4uz6arf9q9"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1k577wlp4vlz85kk6w88n58pcpw665hy859eczc"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick13g0k3d7uqn9nwf940y7ck3qp33dyv9zxa5s8a0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1kf0zxm2df7qkhc7stapvla502mcqyrv63u8h0h"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1hh6jmt8rntmm00tau42st5x6g8yshlyy5xl0fx"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1m280rc5q0mkc3x89qzk2d2qz5h60y4j8h7hxup"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1ldukw65zjenu8ymgwshkckmmdrmna6lfq33yfh"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick15lxcs6dwug5v8np2dyknmyvwml5v85rqu90xw2"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1zm7uvhvd75d6x3p394gg299qgswyuefqqukz8p"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1jvu86dxnjx369yv9ku8nj282q78aydkjpawh4j"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1u0pwd7jgzr0run6u7633pg7wg0027cu3m2x4cc"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1ajk7grr7wrcvyqmr0649kg6get8933a4tnhas4"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick17xf55fr9txfgc4dreqk0s9rz6hddnky63uckp5"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1f7c5emddwqcaa39cpw9e9eg6e2flmn8v4cupmp"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1n2gkxqkk62r27h58aneavkejjc7sd2sn5tszcv"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1uqzhdgtgxzkdpxlz4sadnyv88guw2jmcrkn3h9"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1qy0z6xycctnmuu3jhlndj8z2h26t0p7sq2gtdd"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1qxm0z74pvt3pjzh44fdsh384p2yc8v0ukp4n4e"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1qc9lnl38sv2mxvjtfjs76894efjf09l2zhv0uh"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1ggcjcfkjtdkuykjey38x8pwm7cvkm9w0wr3cu0"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1t8fdqvsnyvrp06fsmujp8sjtzn8glah7zkec4u"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick15xpgkjt3euv60z2u7p4ggjslgc5zt49u0z5pth"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1h9s35hf3m54nqzm0gs302705d79l8upqem8gfg"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick177clzqjwk8tslrrmzethdk6y5fp6w2f28u6cv9"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1zuww9stnyu77666p2vu7jnu83ch280gajdp4x7"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick10dx5ss2nfytaj006fpaqmt624pprwuqghv7996"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick10jntfz55x48urpyvsnksz98pfwstg7l8sw80w4"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1ezgqtkxkke9a8z2u2qyjvwchhdzvs7l7a7u490"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1tmzdam2pd47qw8uz0k3hy7dsg6q6tfta9e2s8h"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1vhgh9yc5rx26d7gvav57h7ecef6tqz7k7t44fe"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick18xd9tj62me2qnk2xtma4vll79jj32hu3xvqdqp"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick17teweyh32daplnc06q0dqqn6j6pzm06eapvfz6"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick19qtjsmxevd6j3kw7kerqu08jlwe2awcxvsehr6"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1en047nn2afzm87407ezvj2tm2vyysu0u07x6ac"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1ac9f22nme9cfpj0uwdvdakdecayr8jkcflk3gr"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick18c3twkpmynrzg0up6ds34rm9lp3wnar9lk4rq6"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick13jldgq5fulwe3qjdw4c0hw4dld060w9eksg2fl"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1mttr3er3xg57l8gn50hw9zsz2w3tgpetkjcwyz"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1fwy6lsxjpudwrnkxpz55k878a2kg5fvxggxc0z"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1ff2rewktewkgqah30hr226n25jacnm3lz4tv64"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick128gwfuesn6a36d37f7h29paycvakhx5hgrw7cg"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1k20hpxylqj5ug9vl7ck3umxxtq2jplj7dwhvph"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1mlnraspvlfq428sfl7p9schv9wxf25mvqjsnyg"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick1eykazpqttjtlqpr78wsvvtgtgzqerdalsrvdwr"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick10xj8tc3vx3eqd7mhffmgruakvjckw0nepklgw9"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        },
+        {
+          "@type": "/ethermint.types.v1.EthAccount",
+          "base_account": {
+            "account_number": "0",
+            "sequence": "0",
+            "address": "uptick169z4cd6pxpjttpqn8fsw8naqd0k7d32uhx53uw"
+          },
+          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+        }
+      ]
+    },
+    "authz": {
+      "authorization": []
+    },
+    "bank": {
+      "params": {
+        "send_enabled": [],
+        "default_send_enabled": true
+      },
+      "balances": [
+        {
+          "address": "uptick1qepu4jgv6kje6zvd7cn9axpmh68zxgnpyw6lc6",
+          "coins": [
+            {
+              "amount": "150000000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1jt6jv3jges72yxrud2jgjespe623g5wz00karm",
+          "coins": [
+            {
+              "amount": "150000000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1s2jlynh3ul6rdy45rcknxsh4ssxjzptt0syjkq",
+          "coins": [
+            {
+              "amount": "200000000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1atk53ekrc7sn06tdvravvjcvd4s7jjaywqa8yv",
+          "coins": [
+            {
+              "amount": "475000000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1e6kx9z0f3mzaqgs2d4zlje93725k4h8vufe6tg",
+          "coins": [
+            {
+              "amount": "24282850000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1c8se6q5rmd3nevcyj8fme0d90nlqj0a6dulue5",
+          "coins": [
+            {
+              "amount": "10000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1285us3m5ryzklnjv6wwn3lk9xx0cg0t0vfn5xd",
+          "coins": [
+            {
+              "amount": "10000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1rl20snhl4lg6gan3ntwmndsjh2j6kzeg35k7y8",
+          "coins": [
+            {
+              "amount": "10000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1dmymduyzhve2qlexaaatdcz26e5t7vpkgflm59",
+          "coins": [
+            {
+              "amount": "10000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1qt6yf3fvz250uddj04rxglfd40v8nruqxxnz8c",
+          "coins": [
+            {
+              "amount": "10000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1vt5zgzp4e0pq59rapf0tf5xk5pvesvxwhtca42",
+          "coins": [
+            {
+              "amount": "10000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1tc94c0ljexukfjrf35ukdjr0puutvxmyvf7u57",
+          "coins": [
+            {
+              "amount": "10000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1q8gmvc05t0yq2eg0g3plkcqlhy97mvk08fyaxq",
+          "coins": [
+            {
+              "amount": "10000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick13vlht5avuq4w4wkvgpetnheyn04t999txkarl3",
+          "coins": [
+            {
+              "amount": "10000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1vzup5etng8sqlgzgpvh3hmt82gvqv7f5uanghx",
+          "coins": [
+            {
+              "amount": "10000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1f675a5y3sch88cyl73u2asduljn0exkq20jfde",
+          "coins": [
+            {
+              "amount": "10000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1p4tqcmh8tysjlxpqu5gawanre9pdxavzfl8q9u",
+          "coins": [
+            {
+              "amount": "10000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1x25qq5la2mkpdqpwfcw7esxju9huy65k2kgph3",
+          "coins": [
+            {
+              "amount": "10000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1qgquvzqdwjfgdnp95e4nupypzwpz54vng9gy9x",
+          "coins": [
+            {
+              "amount": "10000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1rja4j95ymc9m88ugq893uztawy5can0j3mvrfn",
+          "coins": [
+            {
+              "amount": "10000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick19h0wpcw2f079vurn2znmvheah96htfchlhzuq4",
+          "coins": [
+            {
+              "amount": "10000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1ssj9snlxj7up6huqj745agempqctxjkelsmyr7",
+          "coins": [
+            {
+              "amount": "10000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1ksw8rddty5jms65t8g8tx4mwxhgqy9pecluca2",
+          "coins": [
+            {
+              "amount": "10000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick19xlh468kkxkn32e3arf7cqs393dxxfr5vk0dvg",
+          "coins": [
+            {
+              "amount": "20075000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1055jwyf0nqxkdf73m4auw9ksue7gee8ase49ym",
+          "coins": [
+            {
+              "amount": "14485000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick144kg2rwg04klcpd3wftjyklwg96ezjl3jjtnzq",
+          "coins": [
+            {
+              "amount": "10801000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1l5tcmuet4a4r6pvazhh78jjuqtnfwmkyvk3scc",
+          "coins": [
+            {
+              "amount": "9990000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick146hv265eqcvg3ewwwmagr4hcjp384y2mjx29tq",
+          "coins": [
+            {
+              "amount": "9960000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1jqpaf0vgzlxvjx5meq8huweuv2nguqe2ugvd9v",
+          "coins": [
+            {
+              "amount": "9500000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1xk0zpxmxjgt27ujw50g79c4kzxdpx2pgu4u266",
+          "coins": [
+            {
+              "amount": "8500000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1n9urj4d6mngtuhpfysdxu7nq72e8830w97p0sy",
+          "coins": [
+            {
+              "amount": "8500000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1rxhgnv5gp0dsl6rq0zaj6s3xzd6qxwckvu5qe6",
+          "coins": [
+            {
+              "amount": "8395000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1fhxvtld4u6d6a4tvnhyrguvzm53gl3tkkfcfyc",
+          "coins": [
+            {
+              "amount": "8000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1n76g0yrfc2u64ynha3mfr20qghrtt2ee29d9py",
+          "coins": [
+            {
+              "amount": "8000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1lk27ezwxru27wg9arlhaw7psz89hj003y96rqx",
+          "coins": [
+            {
+              "amount": "8000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick187yk7f6eukk88c8qvy4h0js8q6ehg6hx8644zg",
+          "coins": [
+            {
+              "amount": "7500000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1pwjt96saucysrnwqnzng853g4v2hn6d85x2udy",
+          "coins": [
+            {
+              "amount": "7490000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1zk3j7ugjva7auu9vqekv23kj42e4yqqnv4epzz",
+          "coins": [
+            {
+              "amount": "7485000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1efwlrd92tnv3zq8eq0vxvmwe4zc4lex2ygjk0a",
+          "coins": [
+            {
+              "amount": "7450000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick18zjvymda507he068gdwc0v9jfkqdgrysqtywqr",
+          "coins": [
+            {
+              "amount": "7425000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1qyjgneuznsn26qerlv0djqqzhvdc5djrcuthwm",
+          "coins": [
+            {
+              "amount": "7000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1tztp0sp047zxxj2j3pzhtr67w2nmn2a8nhcju4",
+          "coins": [
+            {
+              "amount": "7000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1eddj4c9uh2l76llatzdtvmpdcq07lqdn2zfa5r",
+          "coins": [
+            {
+              "amount": "7000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1q4vdlk6ty7g04nylnnqdws8dffxtyns4vafaf8",
+          "coins": [
+            {
+              "amount": "6990000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1r6znjpcyqdexwu7g0prgtne774xkxfvlserrgm",
+          "coins": [
+            {
+              "amount": "6990000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick108u3vnpyeszmeyhw5p7z3qxret3c98s7avsl20",
+          "coins": [
+            {
+              "amount": "6990000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick107uxaex63mjfewfqkseksx3rtfhagq0daunvk0",
+          "coins": [
+            {
+              "amount": "6990000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick164r3p457uh3m36khl4tncu3guyuwvr7nv0lya3",
+          "coins": [
+            {
+              "amount": "6990000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1mjm3cnrpu4dn92am56vvnweddvcy5llesapyr9",
+          "coins": [
+            {
+              "amount": "6990000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1ftltqqky2eqx6rjatleur0lt9hlmqpvetq3aq5",
+          "coins": [
+            {
+              "amount": "6970000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1864unaatp3qu60n6ug7xalp5ejjnrkytyxhapl",
+          "coins": [
+            {
+              "amount": "6950000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1k8auvht9zdv2ta9gefaa279g7hk2h2qyfv3adt",
+          "coins": [
+            {
+              "amount": "6950000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick13sfuc8490ffgtq5qxscaplc9sskv2wnjl0lyft",
+          "coins": [
+            {
+              "amount": "6941000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1gxpwmys5ly25l9wayn3ueq4unmwf6xxm8tp09a",
+          "coins": [
+            {
+              "amount": "6930000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick17jkr3whaxd9qugf82c2jawyfhrruqg92gd26qr",
+          "coins": [
+            {
+              "amount": "6920000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1wsdflj53mlm6qqwwne5z3s930m2476j47a46pe",
+          "coins": [
+            {
+              "amount": "6900000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1gt3adrlztf77evudyq2dfqs98srd6czjc2jphk",
+          "coins": [
+            {
+              "amount": "6856000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick19q7hpfx9a88vdalk5evezkxfnxfm9uss4dwxs9",
+          "coins": [
+            {
+              "amount": "6851000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1g6s0nhxcm9ve9lgdmwljc26yhx3x3t67f7v7q2",
+          "coins": [
+            {
+              "amount": "6831000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1hg7qhxqt0l95k4yzyvnljwph8lzga9zlgeznq5",
+          "coins": [
+            {
+              "amount": "6822000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick19yk28u3tmln8sklj2nn80sdyp464ddlylschec",
+          "coins": [
+            {
+              "amount": "6500000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1d69fk6k86adr3zjqjvcxjkamff63h00luxstay",
+          "coins": [
+            {
+              "amount": "6500000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1wv076zk657dvpmf7g59ewsey6dptahxn5hm0w0",
+          "coins": [
+            {
+              "amount": "6500000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick10sedvtussyf2hsftc58ca0cm7lxzhv4xp4s8z0",
+          "coins": [
+            {
+              "amount": "6500000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick14zc0dz6udeaszva80v00rw202djepsc73a8z6z",
+          "coins": [
+            {
+              "amount": "6500000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick14luhwnxc32229yzd5xyysg8s7fa2d3m5rv6pta",
+          "coins": [
+            {
+              "amount": "6500000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1h8qcladuqvh7m8lqvelm4l7mrpcfc039vecygj",
+          "coins": [
+            {
+              "amount": "6500000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1h3cltqvxttn8707kk62v42cnj7gnxg2zyszze9",
+          "coins": [
+            {
+              "amount": "6500000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1rcfvn0n9x2fgteezl20dv3c9p6nyanf7x88p4w",
+          "coins": [
+            {
+              "amount": "6495000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1gqm28vz2arctqhcvjhee7gnp5jkdvhhl7vwqn2",
+          "coins": [
+            {
+              "amount": "6495000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick13qfah88u6kpmwd74hqyjwmk6j062cnfhmnwfw0",
+          "coins": [
+            {
+              "amount": "6495000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1a43t2a790muh3kcwjfpqyhs0qzmrgvu9fevah6",
+          "coins": [
+            {
+              "amount": "6495000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick198rdpmvkvvrvl7wwlvk7j3fylk7j0f9j2k3x8r",
+          "coins": [
+            {
+              "amount": "6490000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1vy74gntwl2drdfdez9tyrr990dsjsr5qsfegje",
+          "coins": [
+            {
+              "amount": "6490000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1xj9vnr0swa8skdzeytw2am5esvtlrhalwlgp4d",
+          "coins": [
+            {
+              "amount": "6480000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1c65nks9tmdfestel4usu2kq6jjxkrqzjrq492n",
+          "coins": [
+            {
+              "amount": "6480000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1z5hnta9st50gkftu05xkmcl66eeuczu5mw7t6r",
+          "coins": [
+            {
+              "amount": "6435000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1xcjzqakym7hs8yqljwml8k5fzw6jujq6g7a465",
+          "coins": [
+            {
+              "amount": "6435000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1tys6upm3y57szzp8pxf5w06cglxha6qnv70q8u",
+          "coins": [
+            {
+              "amount": "6435000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1fm6s0xgxm68s3y2tefhxags0wkn5j7zdh8cmn8",
+          "coins": [
+            {
+              "amount": "6430000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1sr374tf8uh96lfgatyc6lefr24vg5dxhrceyvf",
+          "coins": [
+            {
+              "amount": "6430000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1ag9ga2fdrqdvqlnuhl6aphx06g9lk6asafvtfq",
+          "coins": [
+            {
+              "amount": "6405000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1gl3muau04ulujy490ge6lfzjwpl9h6zyd6e6fq",
+          "coins": [
+            {
+              "amount": "6371000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1qcf6299df7z5x64mw5q8npdzcwj069gfea3ncg",
+          "coins": [
+            {
+              "amount": "6356000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick12tmn00ne92n5nljf3t5apyy2jtkfjfet70eu53",
+          "coins": [
+            {
+              "amount": "6302000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick10qew9u4cencrex4w9kxlz5h0394enxfzrqyxgg",
+          "coins": [
+            {
+              "amount": "6302000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1fw4zfadth2mg2zpny43y5m97ze82j4p9xzfdjj",
+          "coins": [
+            {
+              "amount": "6297000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick16lxla2fwp3zvrduvyylz8d6s8d8vnazl5y5ue2",
+          "coins": [
+            {
+              "amount": "6225000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1hr6jduqvkesrt0p5z8pamchg705hywcx0azlqn",
+          "coins": [
+            {
+              "amount": "6187000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1qrrvkt79utfa5tald5uzsgtnr7deapnrve8uxa",
+          "coins": [
+            {
+              "amount": "6000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1glrrlx2tawzkx722l7lqln639cyxca2zpjve8q",
+          "coins": [
+            {
+              "amount": "6000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick12vy0re6yjmr83wvrr6jp3n648ahmsz0sszh4cg",
+          "coins": [
+            {
+              "amount": "6000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1w9va2g25cjzhxfgs5xzfe9g2zuy7jnsk0m0wls",
+          "coins": [
+            {
+              "amount": "6000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick105ak9ul4t47nd7gf0a3esfpec4vrfxykn5yuw9",
+          "coins": [
+            {
+              "amount": "6000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick15kgr5d4hfqv3xxwkxwnfu9gvdtkp2vlumjg9tz",
+          "coins": [
+            {
+              "amount": "6000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1c6cut2p5fduu2pwalpl3ycjtvqgfam7h9mn4wz",
+          "coins": [
+            {
+              "amount": "6000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1mtcrkg3rmkw0gj3m0jxxrej8w60yxfcsq58r0f",
+          "coins": [
+            {
+              "amount": "6000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1u9s3d8rz448jv74w95rququwmgqzms9zq05wyy",
+          "coins": [
+            {
+              "amount": "6000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1lrlc6q0zr20ltxa09takuln0rsg6n897ydg8qh",
+          "coins": [
+            {
+              "amount": "6000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick14vcs4wkvml48uys4q0sdjmksj7mnd88jk3pmwc",
+          "coins": [
+            {
+              "amount": "5990000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1adydnv2yhu9dyau0z0k26ne5ex902rwmzlmdfa",
+          "coins": [
+            {
+              "amount": "5990000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1kddkqdll9d9hs77qedtena338yf6c2ff9n7mq5",
+          "coins": [
+            {
+              "amount": "5940000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1uykjh2sweyu5zg7ujpfq26vevrgs2ur36hk8vc",
+          "coins": [
+            {
+              "amount": "5940000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1ln4chyv9maucwkhfdd0zh54nu93p9jw6uk3r2x",
+          "coins": [
+            {
+              "amount": "5881000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1auxdluyylpechel23ca9w6ca22vy9x2rf0tzk4",
+          "coins": [
+            {
+              "amount": "5812000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick10s0h68q08m75qws5ysn0mjpuac2vkpvaua7fkx",
+          "coins": [
+            {
+              "amount": "5700000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1fl3426k0avvergm7ejzczqy6rfzxk5makfw5z7",
+          "coins": [
+            {
+              "amount": "5500000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1lngjsefg92rpyjk9860wnm6mspkz9x2g582rym",
+          "coins": [
+            {
+              "amount": "4420000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick16uek5unugeqw7czuya9jdc9l35quaqlw4233s8",
+          "coins": [
+            {
+              "amount": "3692000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1dx5sfmg4ascplvmkn39stq3rgk0c3vhplz3ypr",
+          "coins": [
+            {
+              "amount": "3500000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1t5msr8mzn2q4dgpml82xs243aw83c8uzs6g352",
+          "coins": [
+            {
+              "amount": "2940000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick12492wecaw9g66a3drmr7rt9dwl7u88v36eq4hl",
+          "coins": [
+            {
+              "amount": "2490000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1v4l492e0vp3z704fnt5792erwnqu04yy2hscmm",
+          "coins": [
+            {
+              "amount": "2401000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1zn2jlgh3fp8unmv66dc7k8c00raayzcrae856y",
+          "coins": [
+            {
+              "amount": "2000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1rdxnus099r6k60gtdyh2wf435xtdvf0c4f5agq",
+          "coins": [
+            {
+              "amount": "2000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick18d9wndmldefhrnm3dhfewrw82pzx3cqqhag792",
+          "coins": [
+            {
+              "amount": "2000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1mc22ghxzs8f5q76xypxd0h4fdg8d28mpny9xda",
+          "coins": [
+            {
+              "amount": "2000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1uwtmwh09qt2xtvfne6jmjehsedgycxqqhnyj74",
+          "coins": [
+            {
+              "amount": "2000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1f2kazk6p0ctc64c6qgkl4ds53k4zaxnvk5648p",
+          "coins": [
+            {
+              "amount": "1995000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1p4hynvcf2zntwld53edt8u3jste86fsq7lh0r5",
+          "coins": [
+            {
+              "amount": "1990000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick19pz0f48cu87vptrv5a9xluyxt269d36g2xle93",
+          "coins": [
+            {
+              "amount": "1980000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1vml25xjxfflx38my8p35vml0t50nkf3tamgdhh",
+          "coins": [
+            {
+              "amount": "1980000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick109jpgzszcfaanwze0ht45q9afsmw6t8qvassf6",
+          "coins": [
+            {
+              "amount": "1980000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1savps67fq9sr98uz0l9jqpstvg0nu3dr39s8gs",
+          "coins": [
+            {
+              "amount": "1980000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1n8xlkpt5r7hvsr6g3ksvzndjrz32neqrc8y8j6",
+          "coins": [
+            {
+              "amount": "1970000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1pq7cwgulwesuqdqwx8nqlnfe7da85nle6qs5fj",
+          "coins": [
+            {
+              "amount": "1961000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick19hdg4ul47j97rt5xkmnmun8yt4mr3rnnmmjpyr",
+          "coins": [
+            {
+              "amount": "1960000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1l53xghg825p0tse6swdq5lrevl95hkz8vayajp",
+          "coins": [
+            {
+              "amount": "1960000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1ze8tqpqd4x62j6y0l8wr6y2n9kkpky7s7k6fkt",
+          "coins": [
+            {
+              "amount": "1941000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1xrp5wphv3rw09ry28926ca3w5ryjp95glfxp0z",
+          "coins": [
+            {
+              "amount": "1931000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick10p7dhpzr98s73zrpahl5rhx2kgau0sl64347ga",
+          "coins": [
+            {
+              "amount": "1931000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1gqjly9pkkv3ghhnfu7yn77qgw79u3lm3j7c9zz",
+          "coins": [
+            {
+              "amount": "1853000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1u6lc8rdv0mrthyxskjrskg4f27qlan8zszka0c",
+          "coins": [
+            {
+              "amount": "1500000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick19dhqaj6hjxwrm558dxx4jd9s6x5z8f4dalc9hk",
+          "coins": [
+            {
+              "amount": "1495000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1xntcx5xuquaj3ewvgvuk772cayej0lwwddgnrh",
+          "coins": [
+            {
+              "amount": "1485000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick12p8np4q2k8096mmdx3zxrz98j3xe9svj7e94hg",
+          "coins": [
+            {
+              "amount": "1485000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1wa7dgsw0w8gxxymg6tuclpnww77e4wf9qdq6cm",
+          "coins": [
+            {
+              "amount": "1485000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick159kqv4gpdahdhzew7d8jmyjgzsuym8fv9z8c32",
+          "coins": [
+            {
+              "amount": "1485000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1crn8nymeuwuu2q2h7n84xvwvfgtv680gns263z",
+          "coins": [
+            {
+              "amount": "1485000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1meuaaphlh88mz9hqm9ca9cvdhc2ar72ea4rd0l",
+          "coins": [
+            {
+              "amount": "1485000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1xpe5p48dhz5mxg4st4r899y0nkkkalaazhvs9l",
+          "coins": [
+            {
+              "amount": "1480000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick14fqtncrs6e9eytufyuvtwxv7p3ledlezf3nf9r",
+          "coins": [
+            {
+              "amount": "1480000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick13eqtwyfn74r87gqzpjertmhwzkwc3jrd50nevx",
+          "coins": [
+            {
+              "amount": "1476000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick16yj49hs3lud8h4xwgd543723x3tv0m6dewxgtv",
+          "coins": [
+            {
+              "amount": "1470000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1pucflery0cs9dr8k9r8yj4wxnkk0lvd9lc97n6",
+          "coins": [
+            {
+              "amount": "1465000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick17u0xwtpaps4nh4k2gn39d0hy02fspgdfza2x00",
+          "coins": [
+            {
+              "amount": "1465000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1yfjwhceh3lm5urw8t34g4xrz0pj8gwjtkg37p0",
+          "coins": [
+            {
+              "amount": "1451000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick13tzgs4ysfqmd59q76qxjamkce3edtnrfwrcu8j",
+          "coins": [
+            {
+              "amount": "1451000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick163qe723t4cagkhh8xcs47nr6khh70t5q9g20tq",
+          "coins": [
+            {
+              "amount": "1451000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1kn5wt05xvxjp5t9hpgsvptrwwgzj4uz6arf9q9",
+          "coins": [
+            {
+              "amount": "1436000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1k577wlp4vlz85kk6w88n58pcpw665hy859eczc",
+          "coins": [
+            {
+              "amount": "1436000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick13g0k3d7uqn9nwf940y7ck3qp33dyv9zxa5s8a0",
+          "coins": [
+            {
+              "amount": "1426000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1kf0zxm2df7qkhc7stapvla502mcqyrv63u8h0h",
+          "coins": [
+            {
+              "amount": "1422000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1hh6jmt8rntmm00tau42st5x6g8yshlyy5xl0fx",
+          "coins": [
+            {
+              "amount": "1422000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1m280rc5q0mkc3x89qzk2d2qz5h60y4j8h7hxup",
+          "coins": [
+            {
+              "amount": "1408000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1ldukw65zjenu8ymgwshkckmmdrmna6lfq33yfh",
+          "coins": [
+            {
+              "amount": "1408000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick15lxcs6dwug5v8np2dyknmyvwml5v85rqu90xw2",
+          "coins": [
+            {
+              "amount": "1386000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1zm7uvhvd75d6x3p394gg299qgswyuefqqukz8p",
+          "coins": [
+            {
+              "amount": "1000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1jvu86dxnjx369yv9ku8nj282q78aydkjpawh4j",
+          "coins": [
+            {
+              "amount": "1000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1u0pwd7jgzr0run6u7633pg7wg0027cu3m2x4cc",
+          "coins": [
+            {
+              "amount": "1000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1ajk7grr7wrcvyqmr0649kg6get8933a4tnhas4",
+          "coins": [
+            {
+              "amount": "1000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick17xf55fr9txfgc4dreqk0s9rz6hddnky63uckp5",
+          "coins": [
+            {
+              "amount": "1000000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1f7c5emddwqcaa39cpw9e9eg6e2flmn8v4cupmp",
+          "coins": [
+            {
+              "amount": "990000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1n2gkxqkk62r27h58aneavkejjc7sd2sn5tszcv",
+          "coins": [
+            {
+              "amount": "990000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1uqzhdgtgxzkdpxlz4sadnyv88guw2jmcrkn3h9",
+          "coins": [
+            {
+              "amount": "990000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1qy0z6xycctnmuu3jhlndj8z2h26t0p7sq2gtdd",
+          "coins": [
+            {
+              "amount": "980000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1qxm0z74pvt3pjzh44fdsh384p2yc8v0ukp4n4e",
+          "coins": [
+            {
+              "amount": "980000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1qc9lnl38sv2mxvjtfjs76894efjf09l2zhv0uh",
+          "coins": [
+            {
+              "amount": "980000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1ggcjcfkjtdkuykjey38x8pwm7cvkm9w0wr3cu0",
+          "coins": [
+            {
+              "amount": "980000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1t8fdqvsnyvrp06fsmujp8sjtzn8glah7zkec4u",
+          "coins": [
+            {
+              "amount": "980000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick15xpgkjt3euv60z2u7p4ggjslgc5zt49u0z5pth",
+          "coins": [
+            {
+              "amount": "980000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1h9s35hf3m54nqzm0gs302705d79l8upqem8gfg",
+          "coins": [
+            {
+              "amount": "980000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick177clzqjwk8tslrrmzethdk6y5fp6w2f28u6cv9",
+          "coins": [
+            {
+              "amount": "980000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1zuww9stnyu77666p2vu7jnu83ch280gajdp4x7",
+          "coins": [
+            {
+              "amount": "970000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick10dx5ss2nfytaj006fpaqmt624pprwuqghv7996",
+          "coins": [
+            {
+              "amount": "961000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick10jntfz55x48urpyvsnksz98pfwstg7l8sw80w4",
+          "coins": [
+            {
+              "amount": "961000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1ezgqtkxkke9a8z2u2qyjvwchhdzvs7l7a7u490",
+          "coins": [
+            {
+              "amount": "942000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1tmzdam2pd47qw8uz0k3hy7dsg6q6tfta9e2s8h",
+          "coins": [
+            {
+              "amount": "941000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1vhgh9yc5rx26d7gvav57h7ecef6tqz7k7t44fe",
+          "coins": [
+            {
+              "amount": "932000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick18xd9tj62me2qnk2xtma4vll79jj32hu3xvqdqp",
+          "coins": [
+            {
+              "amount": "894000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick17teweyh32daplnc06q0dqqn6j6pzm06eapvfz6",
+          "coins": [
+            {
+              "amount": "776000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick19qtjsmxevd6j3kw7kerqu08jlwe2awcxvsehr6",
+          "coins": [
+            {
+              "amount": "500000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1en047nn2afzm87407ezvj2tm2vyysu0u07x6ac",
+          "coins": [
+            {
+              "amount": "500000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1ac9f22nme9cfpj0uwdvdakdecayr8jkcflk3gr",
+          "coins": [
+            {
+              "amount": "500000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick18c3twkpmynrzg0up6ds34rm9lp3wnar9lk4rq6",
+          "coins": [
+            {
+              "amount": "495000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick13jldgq5fulwe3qjdw4c0hw4dld060w9eksg2fl",
+          "coins": [
+            {
+              "amount": "495000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1mttr3er3xg57l8gn50hw9zsz2w3tgpetkjcwyz",
+          "coins": [
+            {
+              "amount": "495000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1fwy6lsxjpudwrnkxpz55k878a2kg5fvxggxc0z",
+          "coins": [
+            {
+              "amount": "490000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1ff2rewktewkgqah30hr226n25jacnm3lz4tv64",
+          "coins": [
+            {
+              "amount": "485000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick128gwfuesn6a36d37f7h29paycvakhx5hgrw7cg",
+          "coins": [
+            {
+              "amount": "485000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1k20hpxylqj5ug9vl7ck3umxxtq2jplj7dwhvph",
+          "coins": [
+            {
+              "amount": "475000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1mlnraspvlfq428sfl7p9schv9wxf25mvqjsnyg",
+          "coins": [
+            {
+              "amount": "452000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick1eykazpqttjtlqpr78wsvvtgtgzqerdalsrvdwr",
+          "coins": [
+            {
+              "amount": "448000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick10xj8tc3vx3eqd7mhffmgruakvjckw0nepklgw9",
+          "coins": [
+            {
+              "amount": "770000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        },
+        {
+          "address": "uptick169z4cd6pxpjttpqn8fsw8naqd0k7d32uhx53uw",
+          "coins": [
+            {
+              "amount": "200000000000000000000",
+              "denom": "auptick"
+            }
+          ]
+        }
+      ],
+      "supply": [],
+      "denom_metadata": [
+        {
+          "base": "auptick",
+          "denom_units": [
+            {
+              "aliases": [],
+              "denom": "auptick",
+              "exponent": 0
+            },
+            {
+              "aliases": [],
+              "denom": "uptick",
+              "exponent": 18
+            }
+          ],
+          "description": "The native EVM, governance and staking token of the Uptick",
+          "display": "uptick",
+          "name": "Uptick",
+          "symbol": "UPTICK"
+        }
+      ]
+    },
+    "capability": {
+      "index": "1",
+      "owners": []
+    },
+    "collection": {
+      "collections": []
+    },
+    "crisis": {
+      "constant_fee": {
+        "denom": "auptick",
+        "amount": "5000000000000000000"
+      }
+    },
+    "distribution": {
+      "params": {
+        "community_tax": "0.020000000000000000",
+        "base_proposer_reward": "0.010000000000000000",
+        "bonus_proposer_reward": "0.040000000000000000",
+        "withdraw_addr_enabled": true
+      },
+      "fee_pool": {
+        "community_pool": []
+      },
+      "delegator_withdraw_infos": [],
+      "previous_proposer": "",
+      "outstanding_rewards": [],
+      "validator_accumulated_commissions": [],
+      "validator_historical_rewards": [],
+      "validator_current_rewards": [],
+      "delegator_starting_infos": [],
+      "validator_slash_events": []
+    },
+    "erc20": {
+      "params": {
+        "enable_erc20": true,
+        "enable_evm_hook": true
+      },
+      "token_pairs": []
+    },
+    "erc721": {
+      "params": {
+        "enable_erc721": true,
+        "enable_evm_hook": true
+      },
+      "token_pairs": []
+    },
+    "evidence": {
+      "evidence": []
+    },
+    "evm": {
+      "accounts": [],
+      "params": {
+        "chain_config": {
+          "arrow_glacier_block": "0",
+          "berlin_block": "0",
+          "byzantium_block": "0",
+          "constantinople_block": "0",
+          "dao_fork_block": "0",
+          "dao_fork_support": true,
+          "eip150_block": "0",
+          "eip150_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "eip155_block": "0",
+          "eip158_block": "0",
+          "homestead_block": "0",
+          "istanbul_block": "0",
+          "london_block": "0",
+          "merge_netsplit_block": "0",
+          "muir_glacier_block": "0",
+          "petersburg_block": "0",
+          "gray_glacier_block": "0"
+        },
+        "enable_call": true,
+        "enable_create": true,
+        "evm_denom": "auptick",
+        "allow_unprotected_txs": false,
+        "extra_eips": []
+      }
+    },
+    "feegrant": {
+      "allowances": []
+    },
+    "feemarket": {
+      "params": {
+        "no_base_fee": false,
+        "base_fee_change_denominator": 8,
+        "elasticity_multiplier": 2,
+        "enable_height": "0",
+        "base_fee": "7",
+        "min_gas_price": "0.000000000000000000",
+        "min_gas_multiplier": "0.500000000000000000"
+      },
+      "block_gas": "3000000"
+    },
+    "genutil": {
+      "gen_txs": [
+        {
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "Avii7TQyfJJd4qohIPmpwnyqhlm99f/9jnfaV62r5hST"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "body": {
+            "extension_options": [],
+            "messages": [
+              {
+                "delegator_address": "uptick1c8se6q5rmd3nevcyj8fme0d90nlqj0a6dulue5",
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "validator_address": "uptickvaloper1c8se6q5rmd3nevcyj8fme0d90nlqj0a67y2g4c",
+                "description": {
+                  "website": "https://snzholding.com",
+                  "identity": "FF2019D4CF1F3185",
+                  "details": "SNZPool is a professional and reliable POS validator for a variety of projects.",
+                  "moniker": "SNZPool",
+                  "security_contact": ""
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1000000",
+                "value": {
+                  "amount": "10000000000000000000",
+                  "denom": "auptick"
+                },
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "9DfUsqwsa0H2M7skYdOXm9pRsELLpt0GxywRNujKy7Q="
+                }
+              }
+            ],
+            "memo": "bb6aaef7667af68862ee582085c2e9dd2b568d86@10.1.1.19:26656",
+            "non_critical_extension_options": [],
+            "timeout_height": "0"
+          },
+          "signatures": [
+            "/TCyhB4NwV6bkiFhAvLY7SYt4NlDCwoiNGnFSwPa84JBvja0m9Ucl1TDWNE1RGolpb3sa0kcvqDJ5eO5/UZqiwE="
+          ]
+        },
+        {
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "Ah9szkY7j3qCfCBF5R/XbdIyzdcbe8vbSbPQrxON4bav"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "body": {
+            "extension_options": [],
+            "messages": [
+              {
+                "delegator_address": "uptick1285us3m5ryzklnjv6wwn3lk9xx0cg0t0vfn5xd",
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "validator_address": "uptickvaloper1285us3m5ryzklnjv6wwn3lk9xx0cg0t0l3xq2p",
+                "description": {
+                  "website": "https://kalia.network",
+                  "identity": "3D6E2861B47F2F9F",
+                  "details": "Kalia Network validator node. Delegate your tokens and Start Earning Staking Rewards",
+                  "moniker": "Kalia Network",
+                  "security_contact": "info@kalia.network"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.200000000000000000"
+                },
+                "min_self_delegation": "1000000",
+                "value": {
+                  "amount": "10000000000000000000",
+                  "denom": "auptick"
+                },
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "60FN771z5jkTUrjDGuZHxIx4ZeuEuL1P5FEe1B+KMI4="
+                }
+              }
+            ],
+            "memo": "14ca9d73314dd519bc0b0be8511c88f85fe6873e@172.21.13.96:26656",
+            "non_critical_extension_options": [],
+            "timeout_height": "0"
+          },
+          "signatures": [
+            "p6UzjHtykjCCZO9hKXUGrR1LxLe19ZWhqOqzE1tbetMZvumTg7CnUlM461mQjZ4AsjKC2zncoO7ZNTVgtC5WJAA="
+          ]
+        },
+        {
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "ApqtCd2dgKy/khqZ9JmvFewWsdFRDAn9ZojSvjIVmtH1"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "body": {
+            "extension_options": [],
+            "messages": [
+              {
+                "delegator_address": "uptick1rl20snhl4lg6gan3ntwmndsjh2j6kzeg35k7y8",
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "validator_address": "uptickvaloper1rl20snhl4lg6gan3ntwmndsjh2j6kzegzvr2gt",
+                "description": {
+                  "website": "https://stakingcabin.com",
+                  "identity": "C0522DF992B0C407",
+                  "details": "StakingCabin",
+                  "moniker": "stakingcabin",
+                  "security_contact": "richard@stakingcabin.com"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.050000000000000000"
+                },
+                "min_self_delegation": "1000000",
+                "value": {
+                  "amount": "10000000000000000000",
+                  "denom": "auptick"
+                },
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "lcR5+N4FqheKaSHx0yQNHNeMfyeZeRfWjdWqRjl2ft0="
+                }
+              }
+            ],
+            "memo": "91c92fd4c8db525c22abf3ad005b228874cdab9e@172.31.22.102:26656",
+            "non_critical_extension_options": [],
+            "timeout_height": "0"
+          },
+          "signatures": [
+            "l0K6fQvP9xmL6HwJyq5gvVezVFP81gFDaW8b3kCB6gBGMnGA2dwRZq8o3EOF5bVnVlELarpT3xcroyzZ0sfEHwE="
+          ]
+        },
+        {
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "A/u3WMvvzrS1nFVowSMgB/nya6jLoZkLHYmpJ5NTd2Od"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "body": {
+            "extension_options": [],
+            "messages": [
+              {
+                "delegator_address": "uptick1dmymduyzhve2qlexaaatdcz26e5t7vpkgflm59",
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "validator_address": "uptickvaloper1dmymduyzhve2qlexaaatdcz26e5t7vpkm320cf",
+                "description": {
+                  "website": "https://brocha.in",
+                  "identity": "96C52B0DC1222AD6",
+                  "details": "Uptick strategic partner and trusted non-custodial validator with enterprise class security, uptime, performance and redundancy. We provide services both for delegators and other operators.",
+                  "moniker": "Brochain",
+                  "security_contact": "contact@brocha.in"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1000000",
+                "value": {
+                  "amount": "10000000000000000000",
+                  "denom": "auptick"
+                },
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "Gu4LK06ejvsWN+euzGnQLFCjj7s9UC+BIg1yUzt3efc="
+                }
+              }
+            ],
+            "memo": "d09fb21fdfd6d8f5abca61819801948af219fd23@uptick-mainnet.brocha.in:26656",
+            "non_critical_extension_options": [],
+            "timeout_height": "0"
+          },
+          "signatures": [
+            "SUNV9RiUNT5FxwLBSLPeGaf0tYOb6xP8BkNCyd8JypsvP/wXrWk5PStjQX5KV+7Odg3hsuRp8P27948znQ4DlAE="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "NodeStake",
+                  "identity": "94EFE192B2C52424",
+                  "website": "https://nodestake.top",
+                  "security_contact": "info@nodestake.top",
+                  "details": "NodeStake is the professional validator, node service provider and IBC relayer.⚛️7*24h | https://twitter.com/Nodestake_top"
+                },
+                "commission": {
+                  "rate": "0.050000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.200000000000000000"
+                },
+                "min_self_delegation": "1000000",
+                "delegator_address": "uptick1qt6yf3fvz250uddj04rxglfd40v8nruqxxnz8c",
+                "validator_address": "uptickvaloper1qt6yf3fvz250uddj04rxglfd40v8nruq47xkt5",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "sy9qba4dVIZ4cXu14a621nMdi9vPbCv+pUPOGJILgeY="
+                },
+                "value": {
+                  "denom": "auptick",
+                  "amount": "10000000000000000000"
+                }
+              }
+            ],
+            "memo": "8e924a598a06e29c9f84a0d68b6149f1524c1819@57.128.109.11:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "A7vaiRDl+VJyll3VpW2ZAWkkYocVgbKXq+kl2z9aKYph"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "4krip41iBFRXCnooT5TCF6Zq5L+pa8PXwSd0IPXs7S52aVcm2Uemhs5xbDKH31eQHHMBt78w4SCK/6yD4qKrYwE="
+          ]
+        },
+        {
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "Aowv4egc14MzS4FQR2PNJmyzFQXBMd0RLU/jPQmKufeA"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "body": {
+            "extension_options": [],
+            "messages": [
+              {
+                "delegator_address": "uptick1vt5zgzp4e0pq59rapf0tf5xk5pvesvxwhtca42",
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "validator_address": "uptickvaloper1vt5zgzp4e0pq59rapf0tf5xk5pvesvxwyndfex",
+                "description": {
+                  "website": "https://bwarelabs.com",
+                  "identity": "E83A08BEEE7A70BD",
+                  "details": "Guaranteed availability and up-time backed by a professional blockchain infrastructure team.",
+                  "moniker": "BwareLabs",
+                  "security_contact": "validators@bwarelabs.com"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1000000",
+                "value": {
+                  "amount": "10000000000000000000",
+                  "denom": "auptick"
+                },
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "SLct4bIvv4onE6aGtI6X7wI2g6WQTnpsv7fmzYHOwY4="
+                }
+              }
+            ],
+            "memo": "ef9af846dcb2d25e7ccf5f7975a6d5d51fa01477@5.9.138.213:26656",
+            "non_critical_extension_options": [],
+            "timeout_height": "0"
+          },
+          "signatures": [
+            "K72S8qfNE6s0xA429lB+LG/tzAMalAAW6uzL1dIM5F4rKbm9EWnct2qIZINOC/aS+bxkIasD5SPkvpJPX5ua6wE="
+          ]
+        },
+        {
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "Araz2CwkY5phHb4woF3yhf3wwG4MhHhoobVe5z7jDVrF"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "body": {
+            "extension_options": [],
+            "messages": [
+              {
+                "delegator_address": "uptick1tc94c0ljexukfjrf35ukdjr0puutvxmyvf7u57",
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "validator_address": "uptickvaloper1tc94c0ljexukfjrf35ukdjr0puutvxmyl3tgcj",
+                "description": {
+                  "website": "https://www.thenop.io",
+                  "identity": "B33D9BD4D9EE00AE",
+                  "details": "TheNop.io is managing nodes with long-term Enterprise level cyber security and Infrastructure experiences. Just investing high potential projects. Check out my website to know more about my chains and architecture",
+                  "moniker": "TheNOP.io",
+                  "security_contact": ""
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1000000",
+                "value": {
+                  "amount": "10000000000000000000",
+                  "denom": "auptick"
+                },
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "v2LatI5UCeghux2bP1EFACQozJWt72iUYGDdBzGdeCQ="
+                }
+              }
+            ],
+            "memo": "90c0c03d27e5b4354bffb709d28340f2657ca1c7@172.17.0.11:26656",
+            "non_critical_extension_options": [],
+            "timeout_height": "0"
+          },
+          "signatures": [
+            "uP9aTV0FZHUA4Acy+HjRaMhz5kYJCxLuUy9eOEwbIGFNiUTDxWp2mPtYeVnpBPwWNeyQyDI1snsCZjAnzxzZ0wE="
+          ]
+        },
+        {
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "Aizpw+vO3ynrhSQWTmaTknyd132AmkSn73E92ytkKpEn"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "body": {
+            "extension_options": [],
+            "messages": [
+              {
+                "delegator_address": "uptick1zk3j7ugjva7auu9vqekv23kj42e4yqqnv4epzz",
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "validator_address": "uptickvaloper1zk3j7ugjva7auu9vqekv23kj42e4yqqnldv4ww",
+                "description": {
+                  "website": "https://t.me/LC_Announcements",
+                  "identity": "216E0EE1BA80B5F8",
+                  "details": "Here to serve the Cosmoverse with validating services and community support. Check the Telegram channel on which chains we can be found and which ones are upcoming!",
+                  "moniker": "Leonoor's Cryptoman",
+                  "security_contact": ""
+                },
+                "commission": {
+                  "rate": "0.050000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.020000000000000000"
+                },
+                "min_self_delegation": "1",
+                "value": {
+                  "amount": "10000000000000000000",
+                  "denom": "auptick"
+                },
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "hPC45d/OVlyqioOnRo01rE+YBJarQEGizzBxwlW7UEQ="
+                }
+              }
+            ],
+            "memo": "453fkwpx3d963f5g6df3add435d4fer4sk911wre@127.0.0.1:26656",
+            "non_critical_extension_options": [],
+            "timeout_height": "0"
+          },
+          "signatures": [
+            "zamr2aOj/nLuQ4YVaiW3peeqmolw44y7tuP3oRJhAQldtyXxF2ytytsJR+ybNNskwnGDTgbJ9UYR8QKadCoAUwA="
+          ]
+        },
+        {
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "A3XCOYd+yMKDy8UB0RTQbV5j9TWSEnELCfIhQuSNYdNO"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "body": {
+            "extension_options": [],
+            "messages": [
+              {
+                "delegator_address": "uptick1q8gmvc05t0yq2eg0g3plkcqlhy97mvk08fyaxq",
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "validator_address": "uptickvaloper1q8gmvc05t0yq2eg0g3plkcqlhy97mvk0533f2v",
+                "description": {
+                  "website": "https://www.pops.one",
+                  "identity": "A2B9CAA088770EA6",
+                  "details": "P-OPS TEAM is a decentralized organization providing you with validation and staking services, blockchain consultation, growth acceleration and investment capital for innovative Web 3.0 projects.",
+                  "moniker": "P-OPS Team",
+                  "security_contact": ""
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1000000",
+                "value": {
+                  "amount": "10000000000000000000",
+                  "denom": "auptick"
+                },
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "JG86HzaMMsf+RFGvgllqYKAp+kISFykBKS+I5m8qW4w="
+                }
+              }
+            ],
+            "memo": "8ecd3260a19d2b112f6a84e0c091640744ec40c5@185.165.241.20:26656",
+            "non_critical_extension_options": [],
+            "timeout_height": "0"
+          },
+          "signatures": [
+            "XpVpxpkZvCaQGW2FvSCKHvF/1FFNNQH8OK0JWCbuvugIztfJ1WuEitKX1ue0w85pUuzTZEJWHSL5QChRA6QCJgA="
+          ]
+        },
+        {
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "A+Ny9RRwcRpKiqX9soP+dpsY27e6ZUBj9/+fsN0Y1BYa"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "body": {
+            "extension_options": [],
+            "messages": [
+              {
+                "delegator_address": "uptick13vlht5avuq4w4wkvgpetnheyn04t999txkarl3",
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "validator_address": "uptickvaloper13vlht5avuq4w4wkvgpetnheyn04t999t4wghna",
+                "description": {
+                  "website": "https://stake.nodes.guru",
+                  "identity": "28B672FCE6BBD562",
+                  "details": "Guru of non-custodial staking. Professional node running, low fees, best uptime and 24/7 customer support.",
+                  "moniker": "Nodes.Guru",
+                  "security_contact": "security@nodes.guru"
+                },
+                "commission": {
+                  "rate": "0.050000000000000000",
+                  "max_rate": "0.100000000000000000",
+                  "max_change_rate": "0.050000000000000000"
+                },
+                "min_self_delegation": "1",
+                "value": {
+                  "amount": "10000000000000000000",
+                  "denom": "auptick"
+                },
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "m+8a8CMmD8DghAQC70PIaRwgtESwXfVWdZijDeKY1bQ="
+                }
+              }
+            ],
+            "memo": "48e7e8ca23b636f124e70092f4ba93f98606f604@141.94.193.175:26656",
+            "non_critical_extension_options": [],
+            "timeout_height": "0"
+          },
+          "signatures": [
+            "YiqvKn+8ZKDx/mDHibncjB4w+AiafzS3lIrwUGXrQLoE4qBud34wvDZPVCuRbAhzlKUU8SNM4OR0CUAkkOPBXQA="
+          ]
+        },
+        {
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "AsF8TDswihbEaU0yunB7BflxR9+MtP4x4J2M3z/ri9mT"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "body": {
+            "extension_options": [],
+            "messages": [
+              {
+                "delegator_address": "uptick1vzup5etng8sqlgzgpvh3hmt82gvqv7f5uanghx",
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "validator_address": "uptickvaloper1vzup5etng8sqlgzgpvh3hmt82gvqv7f509xum2",
+                "description": {
+                  "website": "https://starduststaking.com",
+                  "identity": "E363414F972F17BF",
+                  "details": "Secure, low fee, and trusted non-custodial provider on POS protocols. We operate validating nodes to support functioning of various blockchains.",
+                  "moniker": "Stardust",
+                  "security_contact": ""
+                },
+                "commission": {
+                  "rate": "0.050000000000000000",
+                  "max_rate": "0.150000000000000000",
+                  "max_change_rate": "0.050000000000000000"
+                },
+                "min_self_delegation": "1000000",
+                "value": {
+                  "amount": "10000000000000000000",
+                  "denom": "auptick"
+                },
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "cpJ8Rk0vbTUUjZTKR2g0WGnMNxJ4yDYNCvwSOKDgLTE="
+                }
+              }
+            ],
+            "memo": "bd2e1f218fde74045fbcff3fe36c467e7f05d7a3@192.145.46.129:26656",
+            "non_critical_extension_options": [],
+            "timeout_height": "0"
+          },
+          "signatures": [
+            "2bQIQ82iHsqgUGEDr7UKs95VYgeGoPK+PkLuTFHOXQx2Xb2OAOBM9iycFon6ECZNglNrtDLU5gRcKp+BXbDRNAA="
+          ]
+        },
+        {
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "A4buR5wDaxhQ/rVUswAHNVaebK+Rtalm4UtMF/4DqD9k"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "body": {
+            "extension_options": [],
+            "messages": [
+              {
+                "delegator_address": "uptick1f675a5y3sch88cyl73u2asduljn0exkq20jfde",
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "validator_address": "uptickvaloper1f675a5y3sch88cyl73u2asduljn0exkqeh8ap4",
+                "description": {
+                  "website": "https://citadel.one",
+                  "identity": "EBB03EB4BB4CFCA7",
+                  "details": "Citadel.one is a multi-asset non-custodial staking platform that lets anyone become a part of decentralized infrastructure and earn passive income. Stake with our nodes or any other validator across multiple networks in a few clicks",
+                  "moniker": "Citadel.one",
+                  "security_contact": "nikita@citadel.one"
+                },
+                "commission": {
+                  "rate": "0.050000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.030000000000000000"
+                },
+                "min_self_delegation": "1",
+                "value": {
+                  "amount": "10000000000000000000",
+                  "denom": "auptick"
+                },
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "hi5UGnHME+dlO0KvhAonQcOopesPZlc8/Fpw0FrEeuw="
+                }
+              }
+            ],
+            "memo": "ed3b757ceede1b7b100cdbaf98d46eb5eecad72e@10.128.0.7:26656",
+            "non_critical_extension_options": [],
+            "timeout_height": "0"
+          },
+          "signatures": [
+            "LWE8oIb3OnKHLnwtWU/vZetUnnDnlDQV74uznTAd0VIz5URcmHU8oDMtOaSN8u+T9dgaVX6uMxyax4nf6ij2JgE="
+          ]
+        },
+        {
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "AmYz7Pl7OXgqdO9UH0vLMw3KN7iZ32tAPnqSpiiuXECn"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "body": {
+            "extension_options": [],
+            "messages": [
+              {
+                "delegator_address": "uptick1p4tqcmh8tysjlxpqu5gawanre9pdxavzfl8q9u",
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "validator_address": "uptickvaloper1p4tqcmh8tysjlxpqu5gawanre9pdxavz68j5fs",
+                "description": {
+                  "website": "https://staketab.com/",
+                  "identity": "D55266E648F3F70B",
+                  "details": "Staketab team is engaged in professional validation in various blockchain networks. Our team have experience in staking, nodes configuring, managing snapshots, managing relaying, ICO analysis, block explorers and crypto analytics tools development and many other fields in crypto.",
+                  "moniker": "Staketab",
+                  "security_contact": "support@staketab.com"
+                },
+                "commission": {
+                  "rate": "0.050000000000000000",
+                  "max_rate": "0.150000000000000000",
+                  "max_change_rate": "0.050000000000000000"
+                },
+                "min_self_delegation": "1000000",
+                "value": {
+                  "amount": "10000000000000000000",
+                  "denom": "auptick"
+                },
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "+lXrrzX3SLY2BDu6eMhd3ITkNG8Fn8OsQb/6CUUoG8c="
+                }
+              }
+            ],
+            "memo": "f05733da50967e3955e11665b1901d36291dfaee@65.108.195.30:26656",
+            "non_critical_extension_options": [],
+            "timeout_height": "0"
+          },
+          "signatures": [
+            "ikwBQNVwB46a09x6lOa5xfXG95g/noJmpaN4uhQljbhn25yAjwRLcroeu7v/uNGwPcALPjJKOzIY3I//G5z7ngE="
+          ]
+        },
+        {
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "AgQd2ulG1mvDp+WsLYTyFmQcoRv2un+y+AC8cMEwZVyT"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "body": {
+            "extension_options": [],
+            "messages": [
+              {
+                "delegator_address": "uptick1x25qq5la2mkpdqpwfcw7esxju9huy65k2kgph3",
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "validator_address": "uptickvaloper1x25qq5la2mkpdqpwfcw7esxju9huy65kewa4ma",
+                "description": {
+                  "website": "https://irisnet.org/irisnet-bianjie",
+                  "identity": "DB667A6F239969F5",
+                  "details": "Interchain Service Hub for NextGen Distributed Applications.",
+                  "moniker": "IRISnet",
+                  "security_contact": ""
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1000000",
+                "value": {
+                  "amount": "10000000000000000000",
+                  "denom": "auptick"
+                },
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "G0kExFjTwNWKBWkcbVk48JcB0BR0eKknjW68j1s1V3w="
+                }
+              }
+            ],
+            "memo": "3cc4078d11820b25a4a262c4f29f63871f8b9055@172.17.0.3:26656",
+            "non_critical_extension_options": [],
+            "timeout_height": "0"
+          },
+          "signatures": [
+            "HIBEmjM1zi1Ory4sNfR/trlAPo2+q1REsl6DZezNI/xqD5YvtLkbAuUA/fzoyB9yUwglIsnl+drUraA6yQhGxgA="
+          ]
+        },
+        {
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "Aj6HUhlAXuhdnhBTV9bUDR0nukJcBcGY6yCqAQYhbQxg"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "body": {
+            "extension_options": [],
+            "messages": [
+              {
+                "delegator_address": "uptick1qgquvzqdwjfgdnp95e4nupypzwpz54vng9gy9x",
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "validator_address": "uptickvaloper1qgquvzqdwjfgdnp95e4nupypzwpz54vnmaasf2",
+                "description": {
+                  "website": "https://stc.capital",
+                  "identity": "E6C61A93449C47DA",
+                  "details": "We are the leading venture capital firm and staking service provider for blockchain projects.",
+                  "moniker": "STC Capital",
+                  "security_contact": "security@stc.capital"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1000000",
+                "value": {
+                  "amount": "10000000000000000000",
+                  "denom": "auptick"
+                },
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "FXWGbKl1J46c5sVLQDr3b52P1yKUYDPROo69e8YVxeo="
+                }
+              }
+            ],
+            "memo": "9926eac196a3bf3eb722be3496e75db06d306a16@45.63.115.216:26656",
+            "non_critical_extension_options": [],
+            "timeout_height": "0"
+          },
+          "signatures": [
+            "SBoRkKP+c3F2aOiEq05j+9X3Yj4BVachz/kMQdhlF90AQGZXpJg6P3E8UcqZ5VDtL0wxbEe3FlnnYVJKuyzpDwE="
+          ]
+        },
+        {
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "A0MRD4qmeQ4dlH+1Jf8WmiLiHxTbN32AYKABmEWIdE7s"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "body": {
+            "extension_options": [],
+            "messages": [
+              {
+                "delegator_address": "uptick1rja4j95ymc9m88ugq893uztawy5can0j3mvrfn",
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "validator_address": "uptickvaloper1rja4j95ymc9m88ugq893uztawy5can0jzreh9l",
+                "description": {
+                  "website": "https://stakeme.pro",
+                  "identity": "5EAD753536BB995C",
+                  "details": "STAKEME helps web 3.0 projects to test their product, and provide the most efficient development support",
+                  "moniker": "STAKEME",
+                  "security_contact": ""
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1000000",
+                "value": {
+                  "amount": "10000000000000000000",
+                  "denom": "auptick"
+                },
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "h4pFQLfATgwuyKM/W7t6rel80jLm2EkYLhGzt6ehXpA="
+                }
+              }
+            ],
+            "memo": "d1e829e41b150445126e20dc91f4fc887d5be97d@172.17.0.1:26656",
+            "non_critical_extension_options": [],
+            "timeout_height": "0"
+          },
+          "signatures": [
+            "O2wjOT6U7S96kG7phaaX2gYclZmiMEDQOqgqqvnYXEZ+SeK0bv4Ghn504FX6D1gZsBzeN/9tCdlcdoqpKXFuEgA="
+          ]
+        },
+        {
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "AzHucUJh1qh6zhZsOP9CvRxisnUWBZMaogtKkX4NnitT"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "body": {
+            "extension_options": [],
+            "messages": [
+              {
+                "delegator_address": "uptick1fhxvtld4u6d6a4tvnhyrguvzm53gl3tkkfcfyc",
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "validator_address": "uptickvaloper1fhxvtld4u6d6a4tvnhyrguvzm53gl3tk93dag5",
+                "description": {
+                  "website": "https://nodejumper.io",
+                  "identity": "FFB0AA51A2DF5954",
+                  "details": "Professional POS Validator services, Cosmos contributors and supporters, RESTAKE APP compatible",
+                  "moniker": "NODEJUMPER",
+                  "security_contact": "admin@nodejumper.io"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.050000000000000000"
+                },
+                "min_self_delegation": "1000000",
+                "value": {
+                  "amount": "10000000000000000000",
+                  "denom": "auptick"
+                },
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "EMVFfqShI6cQCpkJTacX47uK7tBQQ5tq9j5vbh/w9cs="
+                }
+              }
+            ],
+            "memo": "422328ca34585c39fb1cbd5378a980c2e31d497e@65.108.99.254:26656",
+            "non_critical_extension_options": [],
+            "timeout_height": "0"
+          },
+          "signatures": [
+            "BbUynIEMP6vnITKW5ULFH7pDk1MPq12XqRvAepKAwxhfNv5BPQQBSdHX0KDWBpI3r8pwuZCyEKutotu5Q0o9mAE="
+          ]
+        },
+        {
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "AiZf78Zhs+ztQyVu9JzgxYXg4mddNXgayBg0okE79zh7"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "body": {
+            "extension_options": [],
+            "messages": [
+              {
+                "delegator_address": "uptick19h0wpcw2f079vurn2znmvheah96htfchlhzuq4",
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "validator_address": "uptickvaloper19h0wpcw2f079vurn2znmvheah96htfchv0hgve",
+                "description": {
+                  "website": "http://cryptech.com.ua",
+                  "identity": "7E643213C757C9F2",
+                  "details": "Team devops and noderunners from Ukraine",
+                  "moniker": "cryptech",
+                  "security_contact": "nodes@cryptech.com.ua"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1000000",
+                "value": {
+                  "amount": "10000000000000000000",
+                  "denom": "auptick"
+                },
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "Dr8czoFX8dZGhIMpzyfm6mVy23pc5qXMZRdAt7NcttE="
+                }
+              }
+            ],
+            "memo": "29269b318b35005b4ac39d010cbc3c41a5ab0833@185.144.99.33:26656",
+            "non_critical_extension_options": [],
+            "timeout_height": "0"
+          },
+          "signatures": [
+            "I5Xf/vDALhne2efgufrpflXG1s0MH9c6moMTcAYs5oIV5svFh3xhmKhxeY5INFzV1ccgA/QKeUyFl/4gXnfBnAA="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "cosmos-alliance",
+                  "identity": "2061E33457EF4CC5",
+                  "website": "cosmos-alliance.com",
+                  "security_contact": "",
+                  "details": "Uptick Fans Club"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1000000",
+                "delegator_address": "uptick1ssj9snlxj7up6huqj745agempqctxjkelsmyr7",
+                "validator_address": "uptickvaloper1ssj9snlxj7up6huqj745agempqctxjkevgws0j",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "lGo447Z6/OBdLrhzS8S6KnMyMFXTylCl6lhCLxKlT+Q="
+                },
+                "value": {
+                  "denom": "auptick",
+                  "amount": "10000000000000000000"
+                }
+              }
+            ],
+            "memo": "e6eb810c0495bc3c9e562f92b349458e7c5ec073@172.16.157.194:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "A5T+ymyQFm3XkGtrNByZT0a8JeHQHOipdmQTahAyMMiv"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "N6GVwOLXgxKzlpJh76Xb3Nk5taamqTDfDRb22JLjTzAZ+mpxQsmmJVNoae0UqASaiLLyLKQIn9mSmZAv1UkOWwA="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "UptickFans",
+                  "identity": "814FB1E591FF598F",
+                  "website": "www.uptickfans.com",
+                  "security_contact": "",
+                  "details": "Uptick Fans Club"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1000000",
+                "delegator_address": "uptick1ksw8rddty5jms65t8g8tx4mwxhgqy9pecluca2",
+                "validator_address": "uptickvaloper1ksw8rddty5jms65t8g8tx4mwxhgqy9pet8fv3x",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "0y8J+46SXSLrtjtfMh7WEQmn6/sY6haxT18W1kiwE0c="
+                },
+                "value": {
+                  "denom": "auptick",
+                  "amount": "10000000000000000000"
+                }
+              }
+            ],
+            "memo": "2daad11330246926e80163d58cf6dd19ef413040@172.16.157.194:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "AnbXxKGvy8/+uAgS/Ds38Ui6gHOt1VnsJCMWt09OSHqO"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "TuLxkhwY6g0IJUaAXJY+HfjYLhauELx7ihD2iUHTJis97YH3+u/jZOMhA6VB6YDVG2enPw5k28rDOKUNrjADHQA="
+          ]
+        }
+      ]
+    },
+    "gov": {
+      "starting_proposal_id": "1",
+      "deposits": [],
+      "votes": [],
+      "proposals": [],
+      "deposit_params": {
+        "min_deposit": [
+          {
+            "denom": "auptick",
+            "amount": "1000000000000000000000"
+          }
+        ],
+        "max_deposit_period": "172800s"
+      },
+      "voting_params": {
+        "voting_period": "172800s"
+      },
+      "tally_params": {
+        "quorum": "0.334000000000000000",
+        "threshold": "0.500000000000000000",
+        "veto_threshold": "0.334000000000000000"
+      }
+    },
+    "ibc": {
+      "client_genesis": {
+        "clients": [],
+        "clients_consensus": [],
+        "clients_metadata": [],
+        "params": {
+          "allowed_clients": [
+            "06-solomachine",
+            "07-tendermint"
+          ]
+        },
+        "create_localhost": false,
+        "next_client_sequence": "0"
+      },
+      "connection_genesis": {
+        "connections": [],
+        "client_connection_paths": [],
+        "next_connection_sequence": "0",
+        "params": {
+          "max_expected_time_per_block": "30000000000"
+        }
+      },
+      "channel_genesis": {
+        "channels": [],
+        "acknowledgements": [],
+        "commitments": [],
+        "receipts": [],
+        "send_sequences": [],
+        "recv_sequences": [],
+        "ack_sequences": [],
+        "next_channel_sequence": "0"
+      }
+    },
+    "mint": {
+      "minter": {
+        "inflation": "0.070000000000000000",
+        "annual_provisions": "0.000000000000000000"
+      },
+      "params": {
+        "mint_denom": "auptick",
+        "inflation_rate_change": "0.060000000000000000",
+        "inflation_max": "0.100000000000000000",
+        "inflation_min": "0.040000000000000000",
+        "goal_bonded": "0.100000000000000000",
+        "blocks_per_year": "6311520"
+      }
+    },
+    "nft": {
+      "classes": [],
+      "entries": []
+    },
+    "nonfungibletokentransfer": {
+      "port_id": "nft-transfer",
+      "traces": []
+    },
+    "params": null,
+    "slashing": {
+      "params": {
+        "signed_blocks_window": "14000",
+        "min_signed_per_window": "0.500000000000000000",
+        "downtime_jail_duration": "600s",
+        "slash_fraction_double_sign": "0.050000000000000000",
+        "slash_fraction_downtime": "0.010000000000000000"
+      },
+      "signing_infos": [],
+      "missed_blocks": []
+    },
+    "staking": {
+      "params": {
+        "unbonding_time": "1814400s",
+        "max_validators": 80,
+        "max_entries": 7,
+        "historical_entries": 10000,
+        "bond_denom": "auptick",
+        "min_commission_rate": "0.000000000000000000"
+      },
+      "last_total_power": "0",
+      "last_validator_powers": [],
+      "validators": [],
+      "delegations": [],
+      "unbonding_delegations": [],
+      "redelegations": [],
+      "exported": false
+    },
+    "transfer": {
+      "port_id": "transfer",
+      "denom_traces": [],
+      "params": {
+        "send_enabled": true,
+        "receive_enabled": true
+      }
+    },
+    "upgrade": {},
+    "vesting": {}
+  }
+}
