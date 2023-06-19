@@ -61,8 +61,8 @@ make install
 
 c4ed init $Validator_Name --chain-id $CHAIN_ID
 
-wget https://raw.githubusercontent.com/obajay/nodes-Guides/main/C4E/genesis.json -O $HOME/.c4e-chain/config/genesis.json
-wget -O $HOME/.c4e-chain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/C4E/addrbook.json"
+wget https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/C4E/genesis.json -O $HOME/.c4e-chain/config/genesis.json
+wget -O $HOME/.c4e-chain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/C4E/addrbook.json"
 
 
 echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
@@ -176,7 +176,7 @@ cp $HOME/.c4e-chain/data/priv_validator_state.json $HOME/.c4e-chain/priv_validat
 rm -rf $HOME/.c4e-chain/data
 curl -o - -L http://c4e.snapshot.stavr.tech:1018/c4e/c4e-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.c4e-chain --strip-components 2
 mv $HOME/.c4e-chain/priv_validator_state.json.backup $HOME/.c4e-chain/data/priv_validator_state.json
-wget https://raw.githubusercontent.com/obajay/nodes-Guides/main/C4E/genesis.json -O $HOME/.c4e-chain/config/genesis.json
+wget -O $HOME/.c4e-chain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/C4E/addrbook.json"
 sudo systemctl restart c4ed && journalctl -u c4ed -f -o cat
 
 break
