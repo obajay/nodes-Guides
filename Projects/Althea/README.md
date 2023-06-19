@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O althe https://raw.githubusercontent.com/obajay/nodes-Guides/main/Althea/althe && chmod +x althe && ./althe
+wget -O althe https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Althea/althe && chmod +x althe && ./althe
 ```
 
 # 2) Manual installation
@@ -71,7 +71,7 @@ althea keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O $HOME/.althea/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Althea/genesis.json"
+wget -O $HOME/.althea/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Althea/genesis.json"
 
 ```
 `sha256sum $HOME/.althea/config/genesis.json`
@@ -110,7 +110,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.althea/config/config.
 
 ## Download addrbook
 ```python
-wget -O $HOME/.althea/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Althea/addrbook.json"
+wget -O $HOME/.althea/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Althea/addrbook.json"
 ```
 
 # Create a service file
@@ -159,7 +159,7 @@ cp $HOME/.althea/data/priv_validator_state.json $HOME/.althea/priv_validator_sta
 rm -rf $HOME/.althea/data
 curl -o - -L http://althea.snapshot.stavr.tech:1020/althea/althea-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.althea --strip-components 2
 mv $HOME/.althea/priv_validator_state.json.backup $HOME/.althea/data/priv_validator_state.json
-wget -O $HOME/.althea/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Althea/addrbook.json"
+wget -O $HOME/.althea/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Althea/addrbook.json"
 sudo systemctl restart althea && journalctl -u althea -f -o cat
 ```
 
