@@ -77,7 +77,7 @@ cascadiad keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O $HOME/.cascadiad/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Cascadia/genesis.json"
+wget -O $HOME/.cascadiad/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Cascadia/genesis.json"
 
 ```
 `sha256sum $HOME/.cascadiad/config/genesis.json`
@@ -116,7 +116,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.cascadiad/config/conf
 
 ## Download addrbook
 ```python
-wget -O $HOME/.cascadiad/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Cascadia/addrbook.json"
+wget -O $HOME/.cascadiad/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Cascadia/addrbook.json"
 ```
 
 # Create a service file
