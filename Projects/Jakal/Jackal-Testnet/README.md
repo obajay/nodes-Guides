@@ -165,7 +165,7 @@ cp $HOME/.canine/data/priv_validator_state.json $HOME/.canine/priv_validator_sta
 rm -rf $HOME/.canine/data
 curl -o - -L http://jkltest.snapshot.stavr.tech:1015/jackalt/jackalt-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.canine --strip-components 2
 mv $HOME/.canine/priv_validator_state.json.backup $HOME/.canine/data/priv_validator_state.json
-wget -O $HOME/.canine/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Jakal/Jackal-Testnet/addrbook.json"
+wget -O $HOME/.canine/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Jakal/Jackal-Testnet/addrbook.json"
 sudo systemctl restart canined && journalctl -u canined -f -o cat
 ```
 
