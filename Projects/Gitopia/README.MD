@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O gitopm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Gitopia/gitopm && chmod +x gitopm && ./gitopm
+wget -O gitopm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Gitopia/gitopm && chmod +x gitopm && ./gitopm
 ```
 
 # 2) Manual installation
@@ -107,7 +107,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.gitopia/config/config
 
 ## Download addrbook
 ```python
-wget -O $HOME/.gitopia/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Gitopia/addrbook.json"
+wget -O $HOME/.gitopia/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Gitopia/addrbook.json"
 ```
 
 ## StateSync
@@ -136,7 +136,7 @@ cp $HOME/.gitopia/data/priv_validator_state.json $HOME/.gitopia/priv_validator_s
 rm -rf $HOME/.gitopia/data
 curl -o - -L http://gitopia.snapshot.stavr.tech:1030/gitopia/gitopia-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.gitopia --strip-components 2
 mv $HOME/.gitopia/priv_validator_state.json.backup $HOME/.gitopia/data/priv_validator_state.json
-wget -O $HOME/.gitopia/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Gitopia/addrbook.json"
+wget -O $HOME/.gitopia/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Gitopia/addrbook.json"
 sudo systemctl restart gitopiad && journalctl -u gitopiad -f -o cat
 ```
 
