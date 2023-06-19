@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O adprotocol https://raw.githubusercontent.com/obajay/nodes-Guides/main/AndromedaProtocol/adprotocol && chmod +x adprotocol && ./adprotocol
+wget -O adprotocol https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/AndromedaProtocol/adprotocol && chmod +x adprotocol && ./adprotocol
 ```
 
 # 2) Manual installation
@@ -73,7 +73,7 @@ andromedad keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O $HOME/.andromedad/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/AndromedaProtocol/genesis.json"
+wget -O $HOME/.andromedad/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/AndromedaProtocol/genesis.json"
 
 ```
 `sha256sum $HOME/.andromedad/config/genesis.json`
@@ -112,7 +112,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.andromedad/config/con
 
 ## Download addrbook
 ```python
-wget -O $HOME/.andromedad/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/AndromedaProtocol/addrbook.json"
+wget -O $HOME/.andromedad/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/AndromedaProtocol/addrbook.json"
 ```
 
 # Create a service file
@@ -163,7 +163,7 @@ rm -rf $HOME/.andromedad/data
 curl -o - -L http://andromedad.snapshot.stavr.tech:1021/andromedad/andromedad-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.andromedad --strip-components 2
 curl -o - -L http://andromedad.wasm.stavr.tech:1002/wasm-andromedad.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.andromedad --strip-components 2
 mv $HOME/.andromedad/priv_validator_state.json.backup $HOME/.andromedad/data/priv_validator_state.json
-wget -O $HOME/.andromedad/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/AndromedaProtocol/addrbook.json"
+wget -O $HOME/.andromedad/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/AndromedaProtocol/addrbook.json"
 sudo systemctl restart andromedad && journalctl -u andromedad -f -o cat
 ```
 
