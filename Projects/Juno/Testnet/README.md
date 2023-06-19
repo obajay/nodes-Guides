@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O juno-t https://raw.githubusercontent.com/obajay/nodes-Guides/main/Juno/Testnet/juno-t && chmod +x juno-t && ./juno-t
+wget -O juno-t https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Juno/Testnet/juno-t && chmod +x juno-t && ./juno-t
 ```
 
 # 2) Manual installation
@@ -78,7 +78,7 @@ junod keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O $HOME/.juno/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Juno/Testnet/genesis.json"
+wget -O $HOME/.juno/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Juno/Testnet/genesis.json"
 
 ```
 `sha256sum $HOME/.juno/config/genesis.json`
@@ -117,7 +117,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.juno/config/config.to
 
 ## Download addrbook
 ```python
-wget -O $HOME/.juno/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Juno/Testnet/addrbook.json"
+wget -O $HOME/.juno/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Juno/Testnet/addrbook.json"
 ```
 
 # Create a service file
@@ -168,7 +168,7 @@ rm -rf $HOME/.juno/data
 curl -o - -L http://junot.snapshot.stavr.tech:1030/junot/junot-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.juno --strip-components 2
 curl -o - -L http://juno-t.wasm.stavr.tech:1001/wasm-junot.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.juno/ --strip-components 2
 mv $HOME/.juno/priv_validator_state.json.backup $HOME/.juno/data/priv_validator_state.json
-wget -O $HOME/.juno/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Juno/Testnet/addrbook.json"
+wget -O $HOME/.juno/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Juno/Testnet/addrbook.json"
 sudo systemctl restart junod && journalctl -u junod -f -o cat
 ```
 
