@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O dym https://raw.githubusercontent.com/obajay/nodes-Guides/main/Dymension/dym && chmod +x dym && ./dym
+wget -O dym https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Dymension/dym && chmod +x dym && ./dym
 ```
 
 # 2) Manual installation
@@ -71,7 +71,7 @@ dymd keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget https://raw.githubusercontent.com/obajay/nodes-Guides/main/Dymension/genesis.json -O $HOME/.dymension/config/genesis.json
+wget https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Dymension/genesis.json -O $HOME/.dymension/config/genesis.json
 ```
 `sha256sum $HOME/.dymension/config/genesis.json`
 + cf20e3b15d089ceeaaa9bb2abcd48a50f98e9f2274f4320aeae534d6972c4ee2
@@ -109,7 +109,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.dymension/config/conf
 
 ## Download addrbook
 ```python
-wget -O $HOME/.dymension/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Dymension/addrbook.json"
+wget -O $HOME/.dymension/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Dymension/addrbook.json"
 ```
 
 # Create a service file
@@ -147,7 +147,7 @@ s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.dymension/config/config.toml
 dymd tendermint unsafe-reset-all --home /root/.dymension
-wget -O $HOME/.dymension/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Dymension/addrbook.json"
+wget -O $HOME/.dymension/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Dymension/addrbook.json"
 systemctl restart dymd && journalctl -u dymd -f -o cat
 
 ```
@@ -160,7 +160,7 @@ cp $HOME/.dymension/data/priv_validator_state.json $HOME/.dymension/priv_validat
 rm -rf $HOME/.dymension/data
 curl -o - -L http://dymension.snapshot.stavr.tech:1019/dymension/dymension-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.dymension --strip-components 2
 mv $HOME/.dymension/priv_validator_state.json.backup $HOME/.dymension/data/priv_validator_state.json
-wget -O $HOME/.dymension/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Dymension/addrbook.json"
+wget -O $HOME/.dymension/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Dymension/addrbook.json"
 sudo systemctl restart dymd && journalctl -u dymd -f -o cat
 ```
 
