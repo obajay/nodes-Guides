@@ -112,7 +112,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.c4e-chain/config/conf
 
 ## Download addrbook
 ```python
-wget -O $HOME/.c4e-chain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/C4E/C4E_Testnet/addrbook.json"
+wget -O $HOME/.c4e-chain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/C4E/C4E_Testnet/addrbook.json"
 ```
 ## StateSync (MZONDER)
 ```python
