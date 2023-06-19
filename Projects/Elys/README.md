@@ -120,7 +120,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.elys/config/config.to
 
 ## Download addrbook
 ```python
-wget -O $HOME/.elys/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Elys/addrbook.json"
+wget -O $HOME/.elys/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Elys/addrbook.json"
 ```
 
 # Create a service file
