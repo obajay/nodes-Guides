@@ -90,7 +90,6 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.juno/config/config.toml
 
-
 sudo tee /etc/systemd/system/junod.service > /dev/null <<EOF
 [Unit]
 Description=juno
