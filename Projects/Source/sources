@@ -85,7 +85,6 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.source/config/config.toml
 
-
 sudo tee /etc/systemd/system/sourced.service > /dev/null <<EOF
 [Unit]
 Description=source
