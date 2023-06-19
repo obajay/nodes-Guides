@@ -15,7 +15,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O auram https://raw.githubusercontent.com/obajay/nodes-Guides/main/Aura/auram && chmod +x auram && ./auram
+wget -O auram https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Aura/auram && chmod +x auram && ./auram
 ```
 
 # 2) Manual instruction
@@ -74,14 +74,14 @@ aurad keys add <walletname> --recover
 
 ## Genesis
 ```python
-wget -O $HOME/.aura/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Aura/genesis.json"
+wget -O $HOME/.aura/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Aura/genesis.json"
 ```
 `sha256sum ~/.aura/config/genesis.json`
 + 319943868db0397ee3b368a673cbf8758554fca879c84745bdad3e452af26696
 
 ## Download addrbook
 ```python
-wget -O $HOME/.aura/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Aura/addrbook.json"
+wget -O $HOME/.aura/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Aura/addrbook.json"
 ```
 
 ## Minimum gas price/Peers/Seeds
@@ -132,7 +132,7 @@ s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.aura/config/config.toml
 aurad tendermint unsafe-reset-all --home $HOME/.aura --keep-addr-book
 mv $HOME/.aura/priv_validator_state.json.backup $HOME/.aura/data/priv_validator_state.json
-wget -O $HOME/.aura/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Aura/addrbook.json"
+wget -O $HOME/.aura/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Aura/addrbook.json"
 curl -o - -L http://aura.wasm.stavr.tech:1001/wasm-aura.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.aura --strip-components 2
 sudo systemctl restart aurad && journalctl -u aurad -f -o cat
 ```
@@ -146,7 +146,7 @@ rm -rf $HOME/.aura/data
 curl -o - -L http://aura.snapshot.stavr.tech:5015/aura/aura-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.aura --strip-components 2
 curl -o - -L http://aura.wasm.stavr.tech:1001/wasm-aura.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.aura --strip-components 2
 mv $HOME/.aura/priv_validator_state.json.backup $HOME/.aura/data/priv_validator_state.json
-wget -O $HOME/.aura/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Aura/addrbook.json"
+wget -O $HOME/.aura/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Aura/addrbook.json"
 sudo systemctl restart aurad && journalctl -u aurad -f -o cat
 ```
 
