@@ -14,7 +14,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O uptickm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Uptick/uptickm && chmod +x uptickm && ./uptickm
+wget -O uptickm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Uptick/uptickm && chmod +x uptickm && ./uptickm
 ```
 
 # 2) Manual installation
@@ -76,7 +76,7 @@ uptickd keys add <walletname> --recover
 
 ## Genesis
 ```python
-wget -O $HOME/.uptickd/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Uptick/genesis.json"
+wget -O $HOME/.uptickd/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Uptick/genesis.json"
 ```
 
 ## Peers/Seeds/Gas
@@ -109,7 +109,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.uptickd/config/config
 
 ## Download addrbook
 ```python
-wget -O $HOME/.uptickd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Uptick/addrbook.json"
+wget -O $HOME/.uptickd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Uptick/addrbook.json"
 ```
 ## StateSync Uptick Mainnet
 ```python
@@ -139,7 +139,7 @@ cp $HOME/.uptickd/data/priv_validator_state.json $HOME/.uptickd/priv_validator_s
 rm -rf $HOME/.uptickd/data
 curl -o - -L http://uptick.snapshot.stavr.tech:1027/uptickd/uptickd-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.uptickd --strip-components 2
 mv $HOME/.uptickd/priv_validator_state.json.backup $HOME/.uptickd/data/priv_validator_state.json
-wget -O $HOME/.uptickd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Uptick/addrbook.json"
+wget -O $HOME/.uptickd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Uptick/addrbook.json"
 sudo systemctl restart uptickd && journalctl -u uptickd -f -o cat
 ```
 
