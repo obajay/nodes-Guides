@@ -14,7 +14,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O beezzeed https://raw.githubusercontent.com/obajay/nodes-Guides/main/BeeZee/beezzeed && chmod +x beezzeed && ./beezzeed
+wget -O beezzeed https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/BeeZee/beezzeed && chmod +x beezzeed && ./beezzeed
 ```
 # 2) Manual installation
 
@@ -74,9 +74,8 @@ wget https://raw.githubusercontent.com/bze-alphateam/bze/main/genesis.json -O $H
 ```python
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.bze/config/config.toml
-
-    seeds="6385d5fb198e3a793498019bb8917973325e5eb7@51.15.228.169:26656,ce25088267cef31f3be1ec03263524764c5c80bb@163.172.130.162:26656,102d28592757192ccf709e7fbb08e7dd8721feb1@51.15.138.216:26656,f238198a75e886a21cd0522b6b06aa019b9e182e@51.15.55.142:26656,2624d40b8861415e004d4532bb7d8d90dd0e6e66@51.15.115.192:26656,d36f2bc75b0e7c28f6cd3cbd5bd50dc7ed8a0d11@38.242.227.150:26656"
-    sed -i.bak -e "s/^seeds *=.*/seeds = \"$seeds\"/; s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.bze/config/config.toml
+seeds="6385d5fb198e3a793498019bb8917973325e5eb7@51.15.228.169:26656,ce25088267cef31f3be1ec03263524764c5c80bb@163.172.130.162:26656,102d28592757192ccf709e7fbb08e7dd8721feb1@51.15.138.216:26656,f238198a75e886a21cd0522b6b06aa019b9e182e@51.15.55.142:26656,2624d40b8861415e004d4532bb7d8d90dd0e6e66@51.15.115.192:26656,d36f2bc75b0e7c28f6cd3cbd5bd50dc7ed8a0d11@38.242.227.150:26656"
+sed -i.bak -e "s/^seeds *=.*/seeds = \"$seeds\"/; s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.bze/config/config.toml
 ```
 ## Pruning (optional)
 ```python
@@ -96,7 +95,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.bze/config/config.tom
 ```
 ## Download addrbook
 ```python
-wget -O $HOME/.bze/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/BeeZee/addrbook.json"
+wget -O $HOME/.bze/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/BeeZee/addrbook.json"
 ```
 
 # Create a service file
@@ -117,7 +116,7 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-# Snaphot 24.08.22 (0.1 GB) block height --> 2293057
+# Snaphot 24.08.22 (0.1 GB) block height --> 2293057 (disable)
 ```python
 # install the node as standard, but do not launch. Then we delete the .data directory and create an empty directory
 rm -rf $HOME/.bze/data/
