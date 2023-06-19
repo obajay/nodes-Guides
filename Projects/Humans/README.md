@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O hum https://raw.githubusercontent.com/obajay/nodes-Guides/main/Humans/hum && chmod +x hum && ./hum
+wget -O hum https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Humans/hum && chmod +x hum && ./hum
 ```
 
 # 2) Manual installation
@@ -108,7 +108,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.humans/config/config.
 
 ## Download addrbook
 ```python
-wget -O $HOME/.humans/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Humans/addrbook.json"
+wget -O $HOME/.humans/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Humans/addrbook.json"
 ```
 # StateSync
 ```python
