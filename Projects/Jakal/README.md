@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O jkl https://raw.githubusercontent.com/obajay/nodes-Guides/main/Jakal/jkl && chmod +x jkl && ./jkl
+wget -O jkl https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Jakal/jkl && chmod +x jkl && ./jkl
 ```
 
 # 2) Manual installation
@@ -118,7 +118,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.canine/config/config.
 
 ## Download addrbook
 ```python
-wget -O $HOME/.canine/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Jakal/addrbook.json"
+wget -O $HOME/.canine/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Jakal/addrbook.json"
 ```
 
 # Create a service file
