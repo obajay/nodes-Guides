@@ -19,7 +19,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O mars1 https://raw.githubusercontent.com/obajay/nodes-Guides/main/Mars/mars1 && chmod +x mars1 && ./mars1
+wget -O mars1 https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Mars/mars1 && chmod +x mars1 && ./mars1
 ```
 
 # 2) Manual installation
