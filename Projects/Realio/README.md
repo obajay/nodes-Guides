@@ -16,7 +16,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O realio https://raw.githubusercontent.com/obajay/nodes-Guides/main/Realio/realio && chmod +x realio && ./realio
+wget -O realio https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Realio/realio && chmod +x realio && ./realio
 ```
 
 # 2) Manual installation
@@ -67,7 +67,7 @@ realio-networkd keys add <walletname> --recover
 ## Download Genesis
 
 ```python
-wget -O $HOME/.realio-network/config/genesis.json https://raw.githubusercontent.com/obajay/nodes-Guides/main/Realio/genesis.json
+wget -O $HOME/.realio-network/config/genesis.json https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Realio/genesis.json
 ```
 `sha256sum $HOME/.realio-network/config/genesis.json`
 + c255d0a493ec596b9b7c29280989b7348681e195b8b092af96631c2bf235b1c8
@@ -121,7 +121,7 @@ s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.realio-network/config/config.toml
 realio-networkd tendermint unsafe-reset-all --home /root/.realio-network
-wget -O $HOME/.realio-network/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Realio/addrbook.json"
+wget -O $HOME/.realio-network/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Realio/addrbook.json"
 sudo systemctl restart realio-networkd && journalctl -u realio-networkd -f -o cat
 ```
 # SnapShot (~0.1 GB) updated every 5 hours
@@ -133,7 +133,7 @@ cp $HOME/.realio-network/data/priv_validator_state.json $HOME/.realio-network/pr
 rm -rf $HOME/.realio-network/data
 curl -o - -L http://realio.snapshot.stavr.tech:1029/realio/realio-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.realio-network --strip-components 2
 mv $HOME/.realio-network/priv_validator_state.json.backup $HOME/.realio-network/data/priv_validator_state.json
-wget -O $HOME/.realio-network/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Realio/addrbook.json"
+wget -O $HOME/.realio-network/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Realio/addrbook.json"
 sudo systemctl restart realio-networkd && journalctl -u realio-networkd -f -o cat
 ```
 
