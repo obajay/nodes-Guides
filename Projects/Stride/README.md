@@ -161,7 +161,7 @@ cp $HOME/.stride/data/priv_validator_state.json $HOME/.stride/priv_validator_sta
 rm -rf $HOME/.stride/data
 curl -o - -L http://stride.snapshot.stavr.tech:1008/stride/stride-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.stride --strip-components 2
 mv $HOME/.stride/priv_validator_state.json.backup $HOME/.stride/data/priv_validator_state.json
-wget -O $HOME/.stride/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Stride/addrbook.json"
+wget -O $HOME/.stride/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Stride/addrbook.json"
 sudo systemctl restart strided && journalctl -u strided -f -o cat
 ```
 
