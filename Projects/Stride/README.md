@@ -14,7 +14,7 @@
 
 # 1) Auto_install script
 ```bash
-wget -O stride-x https://raw.githubusercontent.com/obajay/nodes-Guides/main/Stride/stride-x && chmod +x stride-x && ./stride-x
+wget -O stride-x https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Stride/stride-x && chmod +x stride-x && ./stride-x
 ```
 # 2) Manual installation
 
@@ -112,7 +112,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.stri
 
 ## Download addrbook
 ```python
-wget -O $HOME/.stride/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Stride/addrbook.json"
+wget -O $HOME/.stride/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Stride/addrbook.json"
 ```
 
 # Create a service file
