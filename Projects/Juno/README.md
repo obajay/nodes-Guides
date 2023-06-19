@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O jun https://raw.githubusercontent.com/obajay/nodes-Guides/main/Juno/jun && chmod +x jun && ./jun
+wget -O jun https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Juno/jun && chmod +x jun && ./jun
 ```
 
 # 2) Manual installation
@@ -120,7 +120,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.juno/config/config.to
 
 ## Download addrbook
 ```python
-wget -O $HOME/.juno/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Juno/addrbook.json"
+wget -O $HOME/.juno/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Juno/addrbook.json"
 ```
 
 # Create a service file
@@ -172,7 +172,7 @@ rm -rf $HOME/.juno/data
 curl -o - -L http://juno.snapshot.stavr.tech:1024/juno/juno-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.juno --strip-components 2
 curl -o - -L http://juno.wasm.stavr.tech:1005/wasm-juno.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.juno/ --strip-components 2
 mv $HOME/.juno/priv_validator_state.json.backup $HOME/.juno/data/priv_validator_state.json
-wget -O $HOME/.juno/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Juno/addrbook.json"
+wget -O $HOME/.juno/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Juno/addrbook.json"
 sudo systemctl restart junod && journalctl -u junod -f -o cat
 ```
 
