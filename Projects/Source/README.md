@@ -15,7 +15,7 @@
 
 # 1) Auto_install script 
 ```python
-wget -O sources https://raw.githubusercontent.com/obajay/nodes-Guides/main/Source/sources && chmod +x sources && ./sources
+wget -O sources https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Source/sources && chmod +x sources && ./sources
 ```
 # 2) Manual installation
 
@@ -100,7 +100,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.sour
 
 ## Download addrbook
 ```python
-wget -O $HOME/.source/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Source/addrbook.json"
+wget -O $HOME/.source/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Source/addrbook.json"
 ```
 
 # Create a service file
@@ -132,7 +132,7 @@ rm -rf $HOME/.source/data
 curl -o - -L http://source.snapshot.stavr.tech:4001/source/source-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.source --strip-components 2
 curl -o - -L http://source.wasm.stavr.tech:1050/wasm-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.source/data --strip-components 3
 mv $HOME/.source/priv_validator_state.json.backup $HOME/.source/data/priv_validator_state.json
-wget -O $HOME/.source/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Source/addrbook.json"
+wget -O $HOME/.source/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Source/addrbook.json"
 sudo systemctl restart sourced && journalctl -u sourced -f -o cat
 ```
 
