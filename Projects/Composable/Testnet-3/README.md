@@ -124,7 +124,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.banksy/config/config.
 
 ## Download addrbook
 ```python
-wget -O $HOME/.banksy/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Composable/Testnet-3/addrbook.json"
+wget -O $HOME/.banksy/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Composable/Testnet-3/addrbook.json"
 ```
 
 # Create a service file
