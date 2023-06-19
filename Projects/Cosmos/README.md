@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O cosmos https://raw.githubusercontent.com/obajay/nodes-Guides/main/Cosmos/cosmos && chmod +x cosmos && ./cosmos
+wget -O cosmos https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Cosmos/cosmos && chmod +x cosmos && ./cosmos
 ```
 
 # 2) Manual installation
@@ -118,7 +118,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.gaia/config/config.to
 
 ## Download addrbook
 ```python
-wget -O $HOME/.gaia/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Cosmos/addrbook.json"
+wget -O $HOME/.gaia/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Cosmos/addrbook.json"
 ```
 
 # Create a service file
