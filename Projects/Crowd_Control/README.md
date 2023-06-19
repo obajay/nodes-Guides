@@ -13,7 +13,7 @@
 
 # 1) Auto_install script 
 ```python
-wget -O crowd https://raw.githubusercontent.com/obajay/nodes-Guides/main/Crowd%20Control/crowd && chmod +x crowd && ./crowd
+wget -O crowd https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Crowd_Control/crowd && chmod +x crowd && ./crowd
 ```
 # 2) Manual installation
 
@@ -61,7 +61,7 @@ cp $HOME/Testnet/genesis.json $HOME/.Cardchain/config/genesis.json
 
 ## Download addrbook
 ```python
-wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Crowd%20Control/addrbook.json"
+wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Crowd_Control/addrbook.json"
 ```
 
 ## Minimum gas price/Peers/Seeds
@@ -124,7 +124,7 @@ s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.Cardchain/config/config.toml; \
 Cardchaind unsafe-reset-all --home $HOME/.Cardchain
-wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Crowd%20Control/addrbook.json"
+wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Crowd_Control/addrbook.json"
 sudo systemctl restart Cardchaind && journalctl -u Cardchaind -f -o cat
 ```
 
@@ -137,7 +137,7 @@ cp $HOME/.Cardchain/data/priv_validator_state.json $HOME/.Cardchain/priv_validat
 rm -rf $HOME/.Cardchain/data
 curl -o - -L http://crowd.snapshot.stavr.tech:1013/crowd/crowd-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.Cardchain --strip-components 2
 mv $HOME/.Cardchain/priv_validator_state.json.backup $HOME/.Cardchain/data/priv_validator_state.json
-wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Crowd%20Control/addrbook.json"
+wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Crowd_Control/addrbook.json"
 sudo systemctl restart Cardchaind && journalctl -u Cardchaind -f -o cat
 ```
 
