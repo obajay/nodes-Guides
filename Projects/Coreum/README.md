@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O core https://raw.githubusercontent.com/obajay/nodes-Guides/main/Coreum/core && chmod +x core && ./core
+wget -O core https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Coreum/core && chmod +x core && ./core
 ```
 
 # 2) Manual installation
