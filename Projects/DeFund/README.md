@@ -19,7 +19,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O dfn https://raw.githubusercontent.com/obajay/nodes-Guides/main/DeFund/dfn && chmod +x dfn && ./dfn
+wget -O dfn https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/DeFund/dfn && chmod +x dfn && ./dfn
 ```
 
 # 2) Manual installation
@@ -120,7 +120,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.defund/config/config.
 
 ## Download addrbook
 ```python
-wget -O $HOME/.defund/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/DeFund/addrbook.json"
+wget -O $HOME/.defund/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/DeFund/addrbook.json"
 ```
 
 ## StateSync
