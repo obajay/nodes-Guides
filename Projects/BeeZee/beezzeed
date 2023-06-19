@@ -61,7 +61,7 @@ make install
 bzed init $Validator_Name --chain-id $CHAIN_ID
 
 wget https://raw.githubusercontent.com/bze-alphateam/bze/main/genesis.json -O $HOME/.bze/config/genesis.json
-wget -O $HOME/.bze/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/BeeZee/addrbook.json"
+wget -O $HOME/.bze/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/BeeZee/addrbook.json"
 
 echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
 
