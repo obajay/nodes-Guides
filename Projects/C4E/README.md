@@ -19,7 +19,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O c4 https://raw.githubusercontent.com/obajay/nodes-Guides/main/C4E/c4 && chmod +x c4 && ./c4
+wget -O c4 https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/C4E/c4 && chmod +x c4 && ./c4
 ```
 
 # 2) Manual installation
@@ -82,7 +82,7 @@ c4ed keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget https://raw.githubusercontent.com/obajay/nodes-Guides/main/C4E/genesis.json -O $HOME/.c4e-chain/config/genesis.json
+wget https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/C4E/genesis.json -O $HOME/.c4e-chain/config/genesis.json
 ```
 
 `sha256sum $HOME/.c4e-chain/config/genesis.json`
@@ -121,7 +121,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.c4e-chain/config/conf
 
 ## Download addrbook
 ```python
-wget -O $HOME/.c4e-chain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/C4E/addrbook.json"
+wget -O $HOME/.c4e-chain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/C4E/addrbook.json"
 ```
 ## StateSync
 ```python
@@ -151,7 +151,7 @@ cp $HOME/.c4e-chain/data/priv_validator_state.json $HOME/.c4e-chain/priv_validat
 rm -rf $HOME/.c4e-chain/data
 curl -o - -L http://c4e.snapshot.stavr.tech:1018/c4e/c4e-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.c4e-chain --strip-components 2
 mv $HOME/.c4e-chain/priv_validator_state.json.backup $HOME/.c4e-chain/data/priv_validator_state.json
-wget https://raw.githubusercontent.com/obajay/nodes-Guides/main/C4E/genesis.json -O $HOME/.c4e-chain/config/genesis.json
+wget -O $HOME/.c4e-chain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/C4E/addrbook.json"
 sudo systemctl restart c4ed && journalctl -u c4ed -f -o cat
 ```
 
