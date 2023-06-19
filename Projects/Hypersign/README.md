@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O hyper https://raw.githubusercontent.com/obajay/nodes-Guides/main/Hypersign/hyper && chmod +x hyper && ./hyper
+wget -O hyper https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Hypersign/hyper && chmod +x hyper && ./hyper
 ```
 
 # 2) Manual installation
@@ -83,7 +83,7 @@ hid-noded keys add <walletname> --recover
 ## Download Genesis 
 
 ```python
-curl -s  https://raw.githubusercontent.com/obajay/nodes-Guides/main/Hypersign/genesis.json > ~/.hid-node/config/genesis.json
+curl -s https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Hypersign/genesis.json > ~/.hid-node/config/genesis.json
 ```
 `sha256sum $HOME/.hid-node/config/genesis.json`
 + 7de2e77cff6d601387a46a760e9c0d7a573b2cfdbdaebb0f04512878543fc0a1
@@ -121,7 +121,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.hid-node/config/confi
 
 ## Download addrbook
 ```python
-wget -O $HOME/.hid-node/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Hypersign/addrbook.json"
+wget -O $HOME/.hid-node/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Hypersign/addrbook.json"
 ```
 
 # StateSync
@@ -153,7 +153,7 @@ cp $HOME/.hid-node/data/priv_validator_state.json $HOME/.hid-node/priv_validator
 rm -rf $HOME/.hid-node/data
 curl -o - -L http://hid.snapshot.stavr.tech:1023/hid/hid-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.hid-node --strip-components 2
 mv $HOME/.hid-node/priv_validator_state.json.backup $HOME/.hid-node/data/priv_validator_state.json
-wget -O $HOME/.hid-node/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Hypersign/addrbook.json"
+wget -O $HOME/.hid-node/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Hypersign/addrbook.json"
 sudo systemctl restart hid-noded && journalctl -u hid-noded -f -o cat
 ```
 
