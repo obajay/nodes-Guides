@@ -60,7 +60,7 @@ make install
 bitsongd init $Validator_Name --chain-id $CHAIN_ID
 
 wget -O $HOME/.bitsongd/config/genesis.json "https://raw.githubusercontent.com/bitsongofficial/networks/master/bitsong-2b/genesis.json"
-wget -O $HOME/.bitsongd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Bitsong/addrbook.json"
+wget -O $HOME/.bitsongd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Bitsong/addrbook.json"
 
 echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
 
