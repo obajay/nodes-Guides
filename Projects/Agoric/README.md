@@ -26,39 +26,45 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bs
 ```
 ## GO 19.5 (one command)
 ```python
-ver="1.19.5" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+ver="1.20.5"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 go version
 ```
 
-# Build 08.05.23
+# Build 19.05.23
 ```python
 cd $HOME
 git clone https://github.com/Agoric/agoric-sdk
-cd $agoric-sdk
-git checkout pismoC
+cd agoric-sdk
+git checkout mainnet1B-rc3
 yarn install
 yarn build
 cd packages/cosmic-swingset && make
 ```
-*******🟢UPDATE🟢******* 08.06.23
+*******🟢UPDATE🟢******* 19.06.23
 ```python
-cd agoric-sdk/
-nano go.mod
-##replace github.com/cosmos/cosmos-sdk => github.com/agoric-labs/cosmos-sdk v0.45.11-alpha.agoric.1
-##with this: replace github.com/cosmos/cosmos-sdk => github.com/agoric-labs/cosmos-sdk v0.45.11-alpha.agoric.1.1
-go mod download github.com/agoric-labs/cosmos-sdk@v0.45.11-alpha.agoric.1.1
+apt update -y
+apt upgrade -y
+apt install -y build-essential
+apt install -y gcc-10 g++-10 cpp-10
+update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 100 --slave /usr/bin/g++ g++ /usr/bin/g++-10 --slave /usr/bin/gcov gcov /usr/bin/gcov-10
+cd agoric-sdk
+git fetch --all
+git checkout mainnet1B-rc3
+yarn install
+yarn build
 cd packages/cosmic-swingset && make
 sudo systemctl restart agoricd && journalctl -u agoricd -f -o cat
+
 ```
 `agd version --long`
-- version: 0.33.0
-- commit: 636c85016-dirty
+- version: 0.34.1
+- commit: ba3b77644
 
 ```python
 agd init STAVRuide --chain-id agoric-3
