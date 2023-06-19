@@ -2,6 +2,7 @@
 
 ![coreum (2)](https://user-images.githubusercontent.com/44331529/218271606-8fb90d09-f25e-446d-bda6-de87595eda68.png)
 
+
 [WebSite](https://www.coreum.com/) \
 [GitHub](https://github.com/CoreumFoundation)
 =
