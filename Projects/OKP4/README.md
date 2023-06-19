@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O okp https://raw.githubusercontent.com/obajay/nodes-Guides/main/OKP4/okp && chmod +x okp && ./okp
+wget -O okp https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/OKP4/okp && chmod +x okp && ./okp
 ```
 
 # 2) Manual installation
@@ -147,13 +147,13 @@ cp $HOME/.okp4d/data/priv_validator_state.json $HOME/.okp4d/priv_validator_state
 rm -rf $HOME/.okp4d/data
 curl -o - -L http://okp.snapshot.stavr.tech:1011/okp/okp-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.okp4d --strip-components 2
 mv $HOME/.okp4d/priv_validator_state.json.backup $HOME/.okp4d/data/priv_validator_state.json
-wget -O $HOME/.okp4d/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/OKP4/addrbook.json"
+wget -O $HOME/.okp4d/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/OKP4/addrbook.json"
 sudo systemctl restart okp4d && journalctl -u okp4d -f -o cat
 ```
 
 ## Download addrbook
 ```python
-wget -O $HOME/.okp4d/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/OKP4/addrbook.json"
+wget -O $HOME/.okp4d/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/OKP4/addrbook.json"
 ```
 
 
