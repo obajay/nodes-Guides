@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```bash
-wget -O mnd https://raw.githubusercontent.com/obajay/nodes-Guides/main/Mande%20Chain/mnd && chmod +x mnd && ./mnd
+wget -O mnd https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Mande_Chain/mnd && chmod +x mnd && ./mnd
 ```
 
 # 2) Manual installation
@@ -112,7 +112,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.mande-chain/config/co
 
 ## Download addrbook
 ```python
-wget -O $HOME/.mande-chain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Mande%20Chain/addrbook.json"
+wget -O $HOME/.mande-chain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Mande_Chain/addrbook.json"
 ```
 
 # StateSync
