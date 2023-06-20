@@ -89,7 +89,7 @@ sed -i -e "s/^pruning *=.*/pruning = \"nothing\"/" $HOME/.knstld/config/app.toml
 
 ## Download addrbook
 ```python
-wget -O $HOME/.knstld/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Konstellation/addrbook.json"
+wget -O $HOME/.knstld/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Konstellation/addrbook.json"
 ```
 
 
