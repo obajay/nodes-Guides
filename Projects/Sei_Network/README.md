@@ -15,7 +15,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O sei4 https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sei_Network/sei4 && chmod +x sei4 && ./sei4
+wget -O sei4 https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Sei_Network/sei4 && chmod +x sei4 && ./sei4
 ```
 # 2) Manual installation
 
