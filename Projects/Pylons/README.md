@@ -106,7 +106,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.pylo
 
 ## Download addrbook
 ```python
-wget -O $HOME/.pylons/config/addrbook.json "SOON"
+wget -O $HOME/.pylons/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Pylons/addrbook.json"
 ```
 
 
