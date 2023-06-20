@@ -71,7 +71,7 @@ kyved keys add <walletname> --recover
 
 ## Genesis
 ```python
-wget -O $HOME/.kyve/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Kyve/Kaon/genesis.json"
+wget -O $HOME/.kyve/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Kyve/Kaon/genesis.json"
 ```
 
 ## Peers/Seeds/MaxPeers/FilterPeers
@@ -103,7 +103,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.kyve/config/config.to
 
 ## Download addrbook
 ```python
-wget -O $HOME/.kyve/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Kyve/Kaon/addrbook.json"
+wget -O $HOME/.kyve/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Kyve/Kaon/addrbook.json"
 ```
 
 
