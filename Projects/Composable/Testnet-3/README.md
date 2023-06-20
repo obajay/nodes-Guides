@@ -47,9 +47,7 @@ cd $HOME
 git clone https://github.com/notional-labs/composable-testnet
 cd composable-testnet
 git checkout v3.0.3-testnet
-make build
-cd bin
-mv centaurid $HOME/go/bin/banksyd
+make install
 ```
 *******🟢UPDATE🟢******* 15.06.23
 ```python
@@ -58,31 +56,29 @@ rm -rf composable-testnet
 git clone https://github.com/notional-labs/composable-centauri/
 cd composable-centauri
 git checkout v3.0.3-testnet
-make build
-cd bin
-mv centaurid $HOME/go/bin/banksyd
-banksyd version --long | grep -e commit -e version
+make install
+centaurid version --long | grep -e commit -e version
 #version: v3.0.3-testnet
 #commit: 1bc799bd823dae4579bc925c51ede67a7411a43f
-sudo systemctl restart banksyd && sudo journalctl -u banksyd -f -o cat
+sudo systemctl restart centaurid && sudo journalctl -u centaurid -f -o cat
 curl -s http://localhost:26657/consensus_state  | jq '.result.round_state.height_vote_set[0].prevotes_bit_array'
 
 ```
 
-`banksyd version --long`
+`centaurid version --long`
 - version: v3.0.3-testnet
 - commit: 1bc799bd823dae4579bc925c51ede67a7411a43f
 
 ```python
-banksyd init STAVRguide --chain-id banksy-testnet-3
-banksyd config chain-id banksy-testnet-3
+centaurid init STAVRguide --chain-id banksy-testnet-3
+centaurid config chain-id banksy-testnet-3
 ```    
 
 ## Create/recover wallet
 ```python
-banksyd keys add <walletname>
+centaurid keys add <walletname>
   OR
-banksyd keys add <walletname> --recover
+centaurid keys add <walletname> --recover
 ```
 
 ## Download Genesis
@@ -129,14 +125,14 @@ wget -O $HOME/.banksy/config/addrbook.json "https://raw.githubusercontent.com/ob
 
 # Create a service file
 ```python
-tee /etc/systemd/system/banksyd.service > /dev/null <<EOF
+tee /etc/systemd/system/centaurid.service > /dev/null <<EOF
 [Unit]
-Description=banksyd
+Description=centaurid
 After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which banksyd) start
+ExecStart=$(which centaurid) start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
@@ -157,19 +153,19 @@ SOOON
 ## Start
 ```python
 sudo systemctl daemon-reload
-sudo systemctl enable banksyd
-sudo systemctl restart banksyd && sudo journalctl -u banksyd -f -o cat
+sudo systemctl enable centaurid
+sudo systemctl restart centaurid && sudo journalctl -u centaurid -f -o cat
 ```
 
 ### Create validator
 ```python
-banksyd tx staking create-validator \
+centaurid tx staking create-validator \
 --commission-rate 0.1 \
 --commission-max-rate 1 \
 --commission-max-change-rate 1 \
 --min-self-delegation "1" \
 --amount 1000000upica \
---pubkey $(banksyd tendermint show-validator) \
+--pubkey $(centaurid tendermint show-validator) \
 --from <wallet> \
 --moniker="STAVRguide" \
 --chain-id banksy-testnet-3\
@@ -181,29 +177,29 @@ banksyd tx staking create-validator \
 
 ## Delete node
 ```python
-sudo systemctl stop banksyd && \
-sudo systemctl disable banksyd && \
-rm /etc/systemd/system/banksyd.service && \
+sudo systemctl stop centaurid && \
+sudo systemctl disable centaurid && \
+rm /etc/systemd/system/centaurid.service && \
 sudo systemctl daemon-reload && \
 cd $HOME && \
-rm -rf composable-testnet && \
+rm -rf composable-centauri && \
 rm -rf .banksy && \
-rm -rf $(which banksyd)
+rm -rf $(which centaurid)
 ```
 #
 ### Sync Info
 ```python
-banksyd status 2>&1 | jq .SyncInfo
+centaurid status 2>&1 | jq .SyncInfo
 ```
 ### NodeINfo
 ```python
-banksyd status 2>&1 | jq .NodeInfo
+centaurid status 2>&1 | jq .NodeInfo
 ```
 ### Check node logs
 ```python
-sudo journalctl -u banksyd -f -o cat
+sudo journalctl -u centaurid -f -o cat
 ```
 ### Check Balance
 ```python
-banksyd query bank balances banksy...addressjkl1yjgn7z09ua9vms259j
+centaurid query bank balances banksy...addressjkl1yjgn7z09ua9vms259j
 ```
