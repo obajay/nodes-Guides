@@ -1,5 +1,5 @@
 # Ollo testnet guide
-
+<h1 align="center"> 🔴 TESTNET ENDED 25.12.22🔴</h1>
 ![ollo](https://user-images.githubusercontent.com/44331529/192701380-3b4042b5-c257-4c25-b586-c806aa994761.png)
 
 
