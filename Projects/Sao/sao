@@ -61,8 +61,8 @@ make install
 
 saod init $Validator_Name --chain-id $CHAIN_ID
 
-wget -O $HOME/.sao/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sao/genesis.json"
-wget -O $HOME/.sao/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sao/addrbook.json"
+wget -O $HOME/.sao/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Sao/genesis.json"
+wget -O $HOME/.sao/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Sao/addrbook.json"
 
 echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
 
@@ -171,7 +171,7 @@ cp $HOME/.sao/data/priv_validator_state.json $HOME/.sao/priv_validator_state.jso
 rm -rf $HOME/.sao/data
 curl -o - -L http://sao.snapshot.stavr.tech:1025/sao/sao-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.sao --strip-components 2
 mv $HOME/.sao/priv_validator_state.json.backup $HOME/.sao/data/priv_validator_state.json
-wget -O $HOME/.sao/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sao/addrbook.json"
+wget -O $HOME/.sao/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Sao/addrbook.json"
 sudo systemctl restart saod && journalctl -u saod -f -o cat
 
 break
