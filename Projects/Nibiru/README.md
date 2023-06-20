@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python 
-wget -O nib https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nibiru/nib && chmod +x nib && ./nib
+wget -O nib https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Nibiru/nib && chmod +x nib && ./nib
 ```
 # 2) Manual installation
 
@@ -61,7 +61,7 @@ nibid keys add <walletName> --recover
 ```
 # Genesis
 ```python
-wget -O $HOME/.nibid/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nibiru/genesis.json"
+wget -O $HOME/.nibid/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Nibiru/genesis.json"
 ```
 
 `sha256sum $HOME/.nibid/config/genesis.json`
@@ -96,13 +96,11 @@ seeds="dd58949cab9bf75a42b556d04d3a4b1bbfadd8b5@144.76.97.251:40656"
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.nibid/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.nibid/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.nibid/config/config.toml
-
 ```
-
 
 ## Download addrbook
 ```python
-wget -O $HOME/.nibid/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nibiru/addrbook.json"
+wget -O $HOME/.nibid/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Nibiru/addrbook.json"
 ```
 
 # Create a service file
