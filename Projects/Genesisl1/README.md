@@ -15,7 +15,7 @@
 # 1) Auto_install script
 
 ```python
-wget -O genesisx https://raw.githubusercontent.com/obajay/nodes-Guides/main/Genesisl1/genesisx && chmod +x genesisx && ./genesisx
+wget -O genesisx https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Genesisl1/genesisx && chmod +x genesisx && ./genesisx
 ```
 # 2) Manual installation
 ### Preparing the server
@@ -97,7 +97,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.gene
 
 ## Download addrbook
 ```python
-wget -O $HOME/.genesisd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Genesisl1/addrbook.json"
+wget -O $HOME/.genesisd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Genesisl1/addrbook.json"
 ```
 
 # Create a service file
