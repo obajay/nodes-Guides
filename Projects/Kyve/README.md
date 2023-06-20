@@ -100,7 +100,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.kyve/config/config.to
 ```
 ## Download addrbook
 ```python
-wget -O $HOME/.kyve/config/addrbook.json "SOOON"
+wget -O $HOME/.kyve/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Kyve/addrbook.json"
 ```
 ## State Sync
 ```python
