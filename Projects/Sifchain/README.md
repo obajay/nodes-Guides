@@ -21,7 +21,7 @@ Ethereum, and soon much more
 
 # 1) Auto_install script
 ```bash
-wget -O sifchain https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sifchain/sifchain && chmod +x sifchain && ./sifchain
+wget -O sifchain https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Sifchain/sifchain && chmod +x sifchain && ./sifchain
 ```
 
 # 2) Manual installation
@@ -67,7 +67,7 @@ sifnoded keys add <walletname> --recover
 
 ## Download Genesis
 
-```bash
+```python
 cd "${HOME}"/.sifnoded/config
 wget -O genesis.json.gz https://raw.githubusercontent.com/Sifchain/networks/master/betanet/sifchain-1/genesis.json.gz
 gunzip genesis.json.gz
@@ -103,8 +103,8 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.sifn
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.sifnoded/config/config.toml
  
 ## Download addrbook
-```bash
-wget -O $HOME/.sifnoded/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sifchain/addrbook.json"
+```python
+wget -O $HOME/.sifnoded/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Sifchain/addrbook.json"
 ```
 
 # StateSync
