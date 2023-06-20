@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O osmo https://raw.githubusercontent.com/obajay/nodes-Guides/main/Osmosis/osmo && chmod +x osmo && ./osmo
+wget -O osmo https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Osmosis/osmo && chmod +x osmo && ./osmo
 ```
 
 # 2) Manual installation
@@ -113,7 +113,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.osmosisd/config/confi
 
 ## Download addrbook
 ```python
-wget -O $HOME/.osmosisd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Osmosis/addrbook.json"
+wget -O $HOME/.osmosisd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Osmosis/addrbook.json"
 ```
 
 [SNAPSHOT](https://polkachu.com/tendermint_snapshots/osmosis)
