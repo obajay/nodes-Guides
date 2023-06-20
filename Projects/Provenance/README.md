@@ -76,7 +76,7 @@ wget -O $HOME/.provenanced/config/genesis.json "https://raw.githubusercontent.co
 
 ## Download addrbook
 ```python
-wget -O $HOME/.provenanced/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Provenance/addrbook.json"
+wget -O $HOME/.provenanced/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Provenance/addrbook.json"
 ```
 
 ## Minimum gas price/Peers/Seeds
