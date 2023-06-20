@@ -48,17 +48,17 @@ memed init STAVRguide --chain-id meme-1
     wget -O $HOME/.memed/config/genesis.json "https://raw.githubusercontent.com/memecosmos/mainnet/main/meme-1/genesis.json"
 
 ## Download addrbook
-
-    wget -O $HOME/.memed/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Meme/addrbook.json"
-
+```python
+wget -O $HOME/.memed/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Meme/addrbook.json"
+```
 
 ## Minimum gas price/Peers/Seeds
-
-    external_address=$(wget -qO- eth0.me)
-    peers="fce4cbc9f8a9528fcd06948247025c3316991214@116.203.35.46:26656,8db6d048af7c3cbbded64a13e107deac0ecd4e0b@157.230.58.197:26656,0bff1a09a775f3f48125e2608e5425d9916be9ec@157.230.58.200:26656,f51b8d710dd6a556694a5bd414c0e21753027b95@188.166.97.38:26656,7f8d0d370ea72608fa74d0b6698a7979ab510449@188.166.104.46:26656,bbce4f689582db49d7a93cb2baf94d95aa72f43b@137.184.13.23:26656,81ca4565e35d3c3f9cf6cf6d8d1fe7e6c4a2e490@207.148.2.119:26656,1e2a4e7c513d1ba267fe2e689d4dfe6d6105f644@155.138.255.208:26656"
-    sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/; s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.memed/config/config.toml
-    sed -i -E 's/minimum-gas-prices = \"\"/minimum-gas-prices = \"0.025umeme\"/g' ~/.memed/config/app.toml
-
+```python
+external_address=$(wget -qO- eth0.me)
+peers="fce4cbc9f8a9528fcd06948247025c3316991214@116.203.35.46:26656,8db6d048af7c3cbbded64a13e107deac0ecd4e0b@157.230.58.197:26656,0bff1a09a775f3f48125e2608e5425d9916be9ec@157.230.58.200:26656,f51b8d710dd6a556694a5bd414c0e21753027b95@188.166.97.38:26656,7f8d0d370ea72608fa74d0b6698a7979ab510449@188.166.104.46:26656,bbce4f689582db49d7a93cb2baf94d95aa72f43b@137.184.13.23:26656,81ca4565e35d3c3f9cf6cf6d8d1fe7e6c4a2e490@207.148.2.119:26656,1e2a4e7c513d1ba267fe2e689d4dfe6d6105f644@155.138.255.208:26656"
+sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/; s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.memed/config/config.toml
+sed -i -E 's/minimum-gas-prices = \"\"/minimum-gas-prices = \"0.025umeme\"/g' ~/.memed/config/app.toml
+```
 ### Pruning (optional)
 
     pruning="custom" && \
