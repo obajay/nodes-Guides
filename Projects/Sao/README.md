@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O sao https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sao/sao && chmod +x sao && ./sao
+wget -O sao https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Sao/sao && chmod +x sao && ./sao
 ```
 
 # 2) Manual installation
@@ -79,7 +79,7 @@ saod keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O $HOME/.sao/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sao/genesis.json"
+wget -O $HOME/.sao/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Sao/genesis.json"
 
 ```
 `sha256sum $HOME/.sao/config/genesis.json`
@@ -118,7 +118,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.sao/config/config.tom
 
 ## Download addrbook
 ```python
-wget -O $HOME/.sao/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sao/addrbook.json"
+wget -O $HOME/.sao/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Sao/addrbook.json"
 ```
 
 # Create a service file
@@ -168,7 +168,7 @@ cp $HOME/.sao/data/priv_validator_state.json $HOME/.sao/priv_validator_state.jso
 rm -rf $HOME/.sao/data
 curl -o - -L http://sao.snapshot.stavr.tech:1025/sao/sao-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.sao --strip-components 2
 mv $HOME/.sao/priv_validator_state.json.backup $HOME/.sao/data/priv_validator_state.json
-wget -O $HOME/.sao/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Sao/addrbook.json"
+wget -O $HOME/.sao/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Sao/addrbook.json"
 sudo systemctl restart saod && journalctl -u saod -f -o cat
 ```
 
