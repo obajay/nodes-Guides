@@ -19,7 +19,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O lava https://raw.githubusercontent.com/obajay/nodes-Guides/main/Lava_Network/lava && chmod +x lava && ./lava
+wget -O lava https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Lava_Network/lava && chmod +x lava && ./lava
 ```
 
 # 2) Manual installation
@@ -83,7 +83,7 @@ lavad keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O ~/.lava/config/genesis.json https://raw.githubusercontent.com/obajay/nodes-Guides/main/Lava_Network/genesis.json
+wget -O ~/.lava/config/genesis.json https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Lava_Network/genesis.json
 ```
 `sha256sum $HOME/.lava/config/genesis.json`
 + 72170a8a7314cb79bc57a60c1b920e26457769667ce5c2ff0595b342c0080d78
@@ -126,7 +126,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.lava/config/config.to
 
 ## Download addrbook
 ```python
-wget -O $HOME/.lava/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Lava_Network/addrbook.json"
+wget -O $HOME/.lava/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Lava_Network/addrbook.json"
 ```
 ## StateSync
 ```python
