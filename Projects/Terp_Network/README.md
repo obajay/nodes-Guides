@@ -117,7 +117,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.terp/config/config.to
 
 ## Download addrbook
 ```python
-wget -O $HOME/.terp/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Terp_Network/addrbook.json"
+wget -O $HOME/.terp/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Terp_Network/addrbook.json"
 ```
 
 # Create a service file
