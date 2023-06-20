@@ -54,9 +54,9 @@ wget -O $HOME/.rizon/config/genesis.json "https://raw.githubusercontent.com/rizo
 + 6d5602e3746affea1096c729768bffd1f60633dfe88ae705f018d70fd3e90302
 
 ## Download addrbook (if need)
-
-    wget -O $HOME/.rizon/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Rizon/addrbook.json"
-
+```python
+wget -O $HOME/.rizon/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Rizon/addrbook.json"
+```
 
 ## Minimum gas price/Peers/Seeds
 
