@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O sgge https://raw.githubusercontent.com/obajay/nodes-Guides/main/SGE/sgge && chmod +x sgge && ./sgge
+wget -O sgge https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/SGE/sgge && chmod +x sgge && ./sgge
 ```
 
 # 2) Manual installation
@@ -109,7 +109,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.sge/config/config.tom
 
 ## Download addrbook
 ```python
-wget -O $HOME/.sge/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/SGE/addrbook.json"
+wget -O $HOME/.sge/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/SGE/addrbook.json"
 ```
 ## StateSync
 ```python
@@ -139,7 +139,7 @@ cp $HOME/.sge/data/priv_validator_state.json $HOME/.sge/priv_validator_state.jso
 rm -rf $HOME/.sge/data
 curl -o - -L http://sge.snapshot.stavr.tech:1003/sge/sge-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.sge --strip-components 2
 mv $HOME/.sge/priv_validator_state.json.backup $HOME/.sge/data/priv_validator_state.json
-wget -O $HOME/.sge/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/SGE/addrbook.json"
+wget -O $HOME/.sge/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/SGE/addrbook.json"
 sudo systemctl restart sged && journalctl -u sged -f -o cat
 ```
 
