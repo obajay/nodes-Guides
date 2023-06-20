@@ -116,7 +116,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.noria/config/config.t
 
 ## Download addrbook
 ```python
-wget -O $HOME/.noria/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Noria/addrbook.json"
+wget -O $HOME/.noria/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Noria/addrbook.json"
 ```
 
 # Create a service file
