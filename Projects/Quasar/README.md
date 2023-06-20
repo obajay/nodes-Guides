@@ -19,7 +19,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O quasar https://raw.githubusercontent.com/obajay/nodes-Guides/main/Quasar/quasar && chmod +x quasar && ./quasar
+wget -O quasar https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Quasar/quasar && chmod +x quasar && ./quasar
 ```
 
 # 2) Manual installation
