@@ -42,7 +42,7 @@ sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq bui
 
 echo -e "        \e[1m\e[32m2. Installing GO--> \e[0m" && sleep 1
 #INSTALL GO
-ver="1.19.4"
+ver="1.20"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
@@ -54,9 +54,9 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-wget https://github.com/cosmos/gaia/releases/download/v9.0.0/gaiad-v9.0.0-linux-amd64
-chmod +x gaiad-v9.0.0-linux-amd64
-mv gaiad-v9.0.0-linux-amd64 $HOME/go/bin/gaiad
+wget https://github.com/cosmos/gaia/releases/download/v10.0.0/gaiad-v10.0.0-linux-amd64
+chmod +x gaiad-v10.0.0-linux-amd64
+mv gaiad-v10.0.0-linux-amd64 $HOME/go/bin/gaiad
 
 gaiad init $Validator_Name --chain-id $CHAIN_ID
 
@@ -139,9 +139,9 @@ break
 ;;
 "UPDATE")
 cd $HOME
-wget https://github.com/cosmos/gaia/releases/download/v9.0.0/gaiad-v9.0.0-linux-amd64
-chmod +x gaiad-v9.0.0-linux-amd64
-mv gaiad-v9.0.0-linux-amd64 $HOME/go/bin/gaiad
+wget https://github.com/cosmos/gaia/releases/download/v10.0.0/gaiad-v10.0.0-linux-amd64
+chmod +x gaiad-v10.0.0-linux-amd64
+mv gaiad-v10.0.0-linux-amd64 $HOME/go/bin/gaiad
 sudo systemctl restart gaiad && journalctl -u gaiad -f -o cat
 
 break
