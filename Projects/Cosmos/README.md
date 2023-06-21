@@ -29,39 +29,39 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
-## GO 1.19
+## GO 1.20
 ```python
-ver="1.19" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+ver="1.20"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 go version
 ```
 
-# Build 15.03.23
+# Build 21.06.23
 ```python
 cd $HOME
 git clone https://github.com/cosmos/gaia cosmos
 cd gaia
-git checkout v9.0.0
+git checkout v10.0.0
 make install
 
 ```
-*******🟢UPDATE🟢******* 15.03.23
+*******🟢UPDATE🟢******* 21.06.23
 ```python
 cd $HOME
-wget https://github.com/cosmos/gaia/releases/download/v9.0.0/gaiad-v9.0.0-linux-amd64
-chmod +x gaiad-v9.0.0-linux-amd64
-mv gaiad-v9.0.0-linux-amd64 $HOME/go/bin/gaiad
+wget https://github.com/cosmos/gaia/releases/download/v10.0.0/gaiad-v10.0.0-linux-amd64
+chmod +x gaiad-v10.0.0-linux-amd64
+mv gaiad-v10.0.0-linux-amd64 $HOME/go/bin/gaiad
 sudo systemctl restart gaiad && journalctl -u gaiad -f -o cat
 ```
 
 `gaiad version --long`
-- version: v9.0.0
-- commit: 682770f2410ab0d33ac7f0c7203519d7a99fa2b6
+- version: v10.0.0
+- commit: 11129428f7c76d49f41279c1d7ca468e32bf1e0a
 
 ```python
 gaiad init STAVRguide --chain-id cosmoshub-4
