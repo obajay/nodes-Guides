@@ -15,7 +15,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O empw https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Empower/empw && chmod +x empw && ./empw
+wget -O empw https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Empower/Testnet/empw && chmod +x empw && ./empw
 ```
 # 2) Manual installation
 
@@ -79,7 +79,7 @@ empowerd keys add <walletName> --recover
 ```
 # Genesis
 ```python
-wget -O $HOME/.empowerchain/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Empower/genesis.json"
+wget -O $HOME/.empowerchain/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Empower/Testnet/genesis.json"
 ```
 
 `sha256sum $HOME/.empowerchain/config/genesis.json`
@@ -117,7 +117,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.empow
 
 ## Download addrbook
 ```python
-wget -O $HOME/.empowerchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Empower/addrbook.json"
+wget -O $HOME/.empowerchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Empower/Testnet/addrbook.json"
 ```
 # StateSync Testnet
 ```python
@@ -136,7 +136,7 @@ s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.empowerchain/config/config.toml
 empowerd tendermint unsafe-reset-all --home $HOME/.empowerchain
-wget -O $HOME/.empowerchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Empower/addrbook.json"
+wget -O $HOME/.empowerchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Empower/Testnet/addrbook.json"
 curl -o - -L http://empw.wasm.stavr.tech:1001/wasm-empw.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.empowerchain --strip-components 2
 systemctl restart empowerd && journalctl -u empowerd -f -o cat
 ```
@@ -150,7 +150,7 @@ rm -rf $HOME/.empowerchain/data
 curl -o - -L http://empw.snapshot.stavr.tech:1031/empw/empw-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.empowerchain --strip-components 2
 curl -o - -L http://empw.wasm.stavr.tech:1001/wasm-empw.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.empowerchain --strip-components 2
 mv $HOME/.empowerchain/priv_validator_state.json.backup $HOME/.empowerchain/data/priv_validator_state.json
-wget -O $HOME/.empowerchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Empower/addrbook.json"
+wget -O $HOME/.empowerchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Empower/Testnet/addrbook.json"
 sudo systemctl restart empowerd && sudo journalctl -u empowerd -f -o cat
 ```
 
