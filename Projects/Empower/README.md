@@ -37,7 +37,7 @@ go version
 ```
 
 
-# Binary   27.06.23
+# Binary   28.06.23
 ```python
 git clone https://github.com/EmpowerPlastic/empowerchain
 cd empowerchain
@@ -57,7 +57,7 @@ SOOON
 
 ## Initialisation
 ```python
-empowerd init STAVRguide --chain-id empowerchain-1 && \
+empowerd init STAVRguide --chain-id empowerchain-1
 empowerd config chain-id empowerchain-1
 
 ```
