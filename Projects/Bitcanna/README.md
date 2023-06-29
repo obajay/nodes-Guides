@@ -46,30 +46,30 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 30.05.23
+# Build 29.06.23
 ```python
 cd $HOME
 git clone https://github.com/BitCannaGlobal/bcna
 cd bcna
-git checkout v1.7.0
+git checkout v2.0.2
 make install
 ```
 
-*******🟢UPDATE🟢******* 30.05.23
+*******🟢UPDATE🟢******* 29.06.23
 ```python
 cd $HOME/bcna
 git fetch --all
-git checkout v1.7.0
+git checkout v2.0.2
 make install
 bcnad version --long
-#version: 1.7.0
-#commit: 5ebcdf59e2def0e8f240cc91d7984d3ed669b632
+#version: 2.0.2
+#commit: f09d3d7ad9ab39240f0445a9da74e70aa15379d2
 sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 ```
 
-`bcnad version`
-- version: 1.7.0
-- commit: 5ebcdf59e2def0e8f240cc91d7984d3ed669b632
+`bcnad version --long | grep -e commit -e version`
+- version: 2.0.2
+- commit: f09d3d7ad9ab39240f0445a9da74e70aa15379d2
 
 ```python
 bcnad init STAVRguide --chain-id bitcanna-1
