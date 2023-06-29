@@ -14,7 +14,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O empwm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Empower/empwm && chmod +x empwm && ./empwm
 ```
 # 2) Manual installation
 
