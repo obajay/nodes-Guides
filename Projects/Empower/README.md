@@ -39,6 +39,7 @@ go version
 
 # Binary   28.06.23
 ```python
+cd $HOME
 git clone https://github.com/EmpowerPlastic/empowerchain
 cd empowerchain
 git checkout v1.0.0
@@ -107,7 +108,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.empow
 
 ## Download addrbook
 ```python
-wget -O $HOME/.empowerchain/config/addrbook.json "SOOON"
+wget -O $HOME/.empowerchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Empower/addrbook.json"
 ```
 # StateSync
 ```python
