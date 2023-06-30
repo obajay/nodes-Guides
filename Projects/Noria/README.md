@@ -45,7 +45,7 @@ go version
 cd $HOME
 git clone https://github.com/noria-net/noria.git
 cd noria
-git checkout v1.3.3
+git checkout v1.3.0
 make install
 ```
 *******🟢UPDATE🟢******* 16.06.23
