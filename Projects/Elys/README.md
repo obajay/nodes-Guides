@@ -28,43 +28,42 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
-## GO 1.19
+## GO 1.20.5
 ```python
-ver="1.19" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+ver="1.20.5"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 go version
 ```
 
-# Build 15.06.23
+# Build 02.07.23
 ```python
 cd $HOME
 git clone https://github.com/elys-network/elys elys
 cd elys
-git checkout v0.7.0
+git checkout v0.8.0
 make install
 ```
 
-*******🟢UPDATE🟢******* 15.06.23
+*******🟢UPDATE🟢******* 02.07.23
 ```python
 cd $HOME/elys
 git fetch --all
-git checkout v0.7.0
+git checkout v0.8.0
 make install
-sed -i.bak -e "s/^timeout_commit *=.*/timeout_commit = \"4s\"/;" ~/.elys/config/config.toml
 elysd version --long | grep -e commit -e version
-#commit: c33ff69cc9aaa13b7fa0e0cbf1c256eb17c58fc0
-#version: v0.7.0
+#commit: 567574b84076abfab7c4c0276760578f9f47f875
+#version: v0.8.0
 sudo systemctl restart elysd && sudo journalctl -u elysd -f -o cat
 ```
 
 `elysd version --long`
-- version: v0.7.0
-- commit: c33ff69cc9aaa13b7fa0e0cbf1c256eb17c58fc0
+- version: v0.8.0
+- commit: 567574b84076abfab7c4c0276760578f9f47f875
 
 ```python
 elysd init STAVRguide --chain-id elystestnet-1
