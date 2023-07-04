@@ -42,33 +42,30 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 26.03.23
-```python
-wget https://github.com/hypersign-protocol/hid-node/releases/download/v0.1.7/hid-noded-0.1.7-linux-amd64.tar.gz
-tar -xvzf hid-noded-0.1.7-linux-amd64.tar.gz
-rm -rf hid-noded-0.1.7-linux-amd64.tar.gz
-chmod +x hid-noded-0.1.7-linux-amd64/hid-noded
-mv $HOME/hid-noded-0.1.7-linux-amd64/hid-noded $HOME/go/bin/
-```
-
-*******🟢UPDATE🟢******* 26.03.23
+# Build 05.07.23
 ```python
 cd $HOME
-wget https://github.com/hypersign-protocol/hid-node/releases/download/v0.1.7/hid-noded-0.1.7-linux-amd64.tar.gz
-tar -xvzf hid-noded-0.1.7-linux-amd64.tar.gz
-rm -rf hid-noded-0.1.7-linux-amd64.tar.gz
-chmod +x hid-noded-0.1.7-linux-amd64/hid-noded
-mv $HOME/hid-noded-0.1.7-linux-amd64/hid-noded $(which hid-noded)
-rm -rf hid-noded-0.1.7-linux-amd64
+git clone https://github.com/hypersign-protocol/hid-node.git
+cd $HOME/hid-node
+git checkout v0.1.8
+make install
+```
+
+*******🟢UPDATE🟢******* 05.07.23
+```python
+cd $HOME/hid-node
+git fetch --all
+git checkout v0.1.8
+make install
 hid-noded version --long
-#version: 0.1.7
-#commit: b910dd6fda612ec8b582ed09ceaa7b6291073966
+#version: v0.1.8
+#commit: 66236e5
 sudo systemctl restart hid-noded && sudo journalctl -u hid-noded -f -o cat
 ```
 
 `hid-noded version`
-- version 0.1.7
-- commit: b910dd6fda612ec8b582ed09ceaa7b6291073966
+- version 0.1.8
+- commit: 66236e5
 
 ```python
 hid-noded init STAVRguide --chain-id jagrat
