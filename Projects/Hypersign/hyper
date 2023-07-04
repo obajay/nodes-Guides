@@ -42,24 +42,22 @@ sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq bui
 
 echo -e "        \e[1m\e[32m2. Installing GO--> \e[0m" && sleep 1
 #INSTALL GO
-ver="1.18.3" && \
-cd $HOME && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+ver="1.19" &&
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" &&
+sudo rm -rf /usr/local/go &&
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" &&
+rm "go$ver.linux-amd64.tar.gz" &&
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &&
+source $HOME/.bash_profile &&
 go version
 
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-wget https://github.com/hypersign-protocol/hid-node/releases/download/v0.1.7/hid-noded-0.1.7-linux-amd64.tar.gz
-tar -xvzf hid-noded-0.1.7-linux-amd64.tar.gz
-rm -rf hid-noded-0.1.7-linux-amd64.tar.gz
-chmod +x hid-noded-0.1.7-linux-amd64/hid-noded
-mv $HOME/hid-noded-0.1.7-linux-amd64/hid-noded $HOME/go/bin/
+git clone https://github.com/hypersign-protocol/hid-node.git
+cd $HOME/hid-node
+git checkout v0.1.8
+make install
 
 hid-noded init $Validator_Name --chain-id $CHAIN_ID
 
@@ -155,13 +153,10 @@ systemctl restart hid-noded && journalctl -u hid-noded -f -o cat
 break
 ;;
 "UPDATE")
-cd $HOME
-wget https://github.com/hypersign-protocol/hid-node/releases/download/v0.1.7/hid-noded-0.1.7-linux-amd64.tar.gz
-tar -xvzf hid-noded-0.1.7-linux-amd64.tar.gz
-rm -rf hid-noded-0.1.7-linux-amd64.tar.gz
-chmod +x hid-noded-0.1.7-linux-amd64/hid-noded
-mv $HOME/hid-noded-0.1.7-linux-amd64/hid-noded $(which hid-noded)
-rm -rf hid-noded-0.1.7-linux-amd64
+cd $HOME/hid-node
+git fetch --all
+git checkout v0.1.8
+make install
 sudo systemctl restart hid-noded && sudo journalctl -u hid-noded -f -o cat
 
 break
