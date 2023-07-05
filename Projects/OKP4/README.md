@@ -43,29 +43,29 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 22.03.23
+# Build 05.07.23
 ```python
 cd $HOME
 git clone https://github.com/okp4/okp4d.git
 cd okp4d
-git checkout v4.1.0
+git checkout v5.0.0
 make install
 ```
-*******🟢UPDATE🟢******* 22.03.23
+*******🟢UPDATE🟢******* 05.07.23
 ```python
 cd $HOME/okp4d
 git fetch --all
-git checkout v4.1.0
+git checkout v5.0.0
 make install
 okp4d version --long | head
-#commit: c11c417f8d1d5ed20a74c501a4869c4d07d46747
-#version: 4.1.0
+#commit: fca7705b38e82ef58c9cc70ae9a575c630654b5e
+#version: 5.0.0
 sudo systemctl restart okp4d && sudo journalctl -u okp4d -f -o cat
 ```
 
 `okp4d version`
-- version: 4.1.0
-- commit: c11c417f8d1d5ed20a74c501a4869c4d07d46747
+- version: 5.0.0
+- commit: fca7705b38e82ef58c9cc70ae9a575c630654b5e
 
 ```python
 okp4d init STAVRguide --chain-id okp4-nemeton-1
