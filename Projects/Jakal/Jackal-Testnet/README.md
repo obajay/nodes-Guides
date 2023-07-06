@@ -41,29 +41,29 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 27.04.23
+# Build 06.07.23
 ```python
 cd $HOME
 git clone https://github.com/JackalLabs/canine-chain
 cd canine-chain
-git checkout v2.0.0-rc.0
+git checkout v2.1.0-rc.2
 make install
 ```
-*******🟢UPDATE🟢******* 27.04.23
+*******🟢UPDATE🟢******* 06.07.23
 ```python
 cd $HOME/canine-chain
 git fetch --all
-git checkout v2.0.0-rc.0
+git checkout v2.1.0-rc.2
 make install
 canined version --long | head
-#canary
-#commit: 25982076fa5ebf5b9867cf5c67721284496ae2aa
+#2.1.0-rc.2
+#commit: 18b171189b5fba890ca861a08e8774400e346a86
 sudo systemctl restart canined && sudo journalctl -u canined -f -o cat
 ```
 
 `canined version --long | head`
-- version: canary
-- commit: 25982076fa5ebf5b9867cf5c67721284496ae2aa
+- version: 2.1.0-rc.2
+- commit: 18b171189b5fba890ca861a08e8774400e346a86
 
 ```python
 canined init STAVRguide --chain-id lupulella-2
@@ -71,7 +71,7 @@ canined config chain-id lupulella-2
 ```    
 
 ## Create/recover wallet
-```bash
+```python
 canined keys add <walletname>
 canined keys add <walletname> --recover
 ```
