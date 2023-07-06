@@ -55,8 +55,7 @@ sudo systemctl restart provenanced && journalctl -u provenanced -f -o cat
 - version: v1.16.0
 - commit: 95064252
 
-```
-python
+```python
 provenanced init STAVRguide --chain-id pio-mainnet-1
 ```
 
