@@ -32,7 +32,7 @@ echo "_|-_|-_|-_|-_|-_|-_|"
 read Validator_Name
 echo "_|-_|-_|-_|-_|-_|-_|"
 echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
-echo export CHAIN_ID="althea_417834-2" >> $HOME/.bash_profile
+echo export CHAIN_ID="althea_417834-3" >> $HOME/.bash_profile
 source ~/.bash_profile
 
 echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
@@ -54,7 +54,7 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-wget https://github.com/althea-net/althea-L1/releases/download/v0.5.4/althea-linux-amd64
+wget https://github.com/althea-net/althea-L1/releases/download/v0.5.5/althea-linux-amd64
 chmod +x althea-linux-amd64
 sudo mv althea-linux-amd64 $HOME/go/bin/althea
 
@@ -70,7 +70,7 @@ echo -e "                     \e[1m\e[32m4. Node optimization and improvement-->
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0aalthea\"/;" ~/.althea/config/app.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.althea/config/config.toml
-peers="72a7e729fbb2be68a39d50d2f9de18079da175c4@chainripper-2.althea.net:23296"
+peers="bc47f3e8f9134a812462e793d8767ef7334c0119@chainripper-2.althea.net:23296"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.althea/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.althea/config/config.toml
