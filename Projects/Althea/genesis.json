@@ -1,0 +1,1840 @@
+{
+  "genesis_time": "2023-07-07T18:29:18.564520679Z",
+  "chain_id": "althea_417834-3",
+  "initial_height": "1",
+  "consensus_params": {
+    "block": {
+      "max_bytes": "22020096",
+      "max_gas": "20000000",
+      "time_iota_ms": "1000"
+    },
+    "evidence": {
+      "max_age_num_blocks": "100000",
+      "max_age_duration": "172800000000000",
+      "max_bytes": "1048576"
+    },
+    "validator": {
+      "pub_key_types": [
+        "ed25519"
+      ]
+    },
+    "version": {}
+  },
+  "app_hash": "",
+  "app_state": {
+    "auth": {
+      "params": {
+        "max_memo_characters": "256",
+        "tx_sig_limit": "7",
+        "tx_size_cost_per_byte": "10",
+        "sig_verify_cost_ed25519": "590",
+        "sig_verify_cost_secp256k1": "1000"
+      },
+      "accounts": [
+        {
+          "@type": "/cosmos.auth.v1beta1.ModuleAccount",
+          "base_account": {
+            "account_number": "0",
+            "address": "althea1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8napj96",
+            "pub_key": null,
+            "sequence": "0"
+          },
+          "name": "distribution",
+          "permissions": [
+            "basic"
+          ]
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea15np5r0cfcemug4azyewc8un8dtd7kk9kkr33c0",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1yeugq2kuwm59d2kxn8jhzghwfcn9h6qh57ha82",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea18znqhty2ftuvsg5k830dk7ts0nnujuv2cv8svu",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1uvvhgj6ecm50f2cqzsnuwduj0p40xhadlrqnak",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea17wshh5r29g40r207xxhq3lkd64hcd4d4x5a6ay",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1mk9k4k9l9fjkhamx5cr2zpqsjsy5w9y2zdus2n",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1w5tk34avm90x8p2eunk39d0fnykd2gdzsc03uh",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1k0p5h3gw3scu688g9z2uxmzp3pjucpp2kxgvaa",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea12cscvxqazghzvll6urmtff2gjz7ttgdzhrlzcz",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1sxu4way276ja26vj5tl22z3p39np2rpra28l8m",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea144faef4dfu86gsh06jczv54mxwgq4uaaghkjnc",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1dx2fvk9k5094zc5dw99vduf0987znfyf7680xt",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1ru5px3rl46v2kjhr9w5murypjvd4dfkua7wejl",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1lwl7t5rw2y46xy8tm73a4d3mudfcd4d72y264v",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1g8fcz0n5z9525klnw2pme6q68gadzlh2pgakyj",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1wfhw9dh527ay7zhm02ajyp4d5xh880ymqpcnvv",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1gu3890l33n0ff7c7235d42ynrgjwxstnhj2nwk",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1hwmt9du4vdtvc8gha4up0wc3c6m55yfkqydtrd",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1l4n8krxw9ghmjtwyte4w3u49cdlyv669sjkmfs",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1nlmz5706qrqkec394x8rtn4tz8hqxmufmzjznd",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1dn9n7hqqv0uzk7kvpfzsacp3zqd2s6aj2pld9s",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1pvvne8tj0x6j28yjqm3n3660ehlffelxyd2sy9",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1wtqg47wshv47c7eg70266rcx934c0mplxjslqy",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1mw346gnyxj0r9sxkvzj0qp5hsdxqlg30gw668m",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1r33fmyv74akfvuw05wy2v9hkgk46qevxzdnfuy",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea14w5us6huut7sl0ccrzemtwet7rm829qtnsgrmw",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea12mlarml8cgfevqp6zqlgkpgscnd85znp9ga7ql",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1n2435hw4fnzpet94658lsmkufnyfhf6gmlaenf",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1uuwd4ganp3n0e5wvthjhq6hpqwqrahwce3lxv3",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1dqekcqh2ha6d0jgrx339gvk89ax87vcy72d6uj",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1y8vj7zeh7srd95urfedhxwrm49h47n2g4cga6f",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1fqye8dyv533ryr0zwtk4rwwc0uq2dxw4993f2p",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea14szgmaq0p87vrln37hy9jqt6n57an99xezh7rh",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea19k63gukyqsrp0gmcv4djsh3gw092wvs0a7cpxc",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1h77z70yque6ezhdlmdqvkq9ntum4l5ptvhcqkl",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea172dudupvfwenrerfx6at5tfjax3cc8fpgwqgkq",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1ww25dca6dmxy25zq6vwmm0grh4f9xuf22s33am",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1sus6nklq6w5p9x7al70ku6467tlv4ng0ljxxp6",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1xeg72nqskfuy9zcux5xxy83fymkht87pwsgsg6",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1gz9lgeg78zge00gvqek8kutulz5dppnnel3ea8",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea16h4yy2pxw8e2pxwgswvv69xwgh64eg2sp4f23m",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1k8z73qlzw0xqlx477ndc4y2mthetr4laeygf5z",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1drmghqf3r4jt6jvx7yvlpd2ydumsfuhmhyyt7q",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea19fcaymvtttl265lner4sz8na70venkfgzknlf6",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1dxrrcxyr5vc2mr9q8j9f2l670kkp736d5r94dc",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1jnuhu5ca3xlmy0rywdcf6hdd5zvrsw49t2jx7s",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1z9qm0n6yxt7fg30fw3gjxlvkyh9z9c0sc6fmpv",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1d6zgw5mfj0p7ten5ws7alth0c3hzzu0zjcnx80",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1r66mlu6p95jnk4ragyyh5ayxwxxgute6xk3qfj",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea16gf9ckmg8t3jpamaadu9g2f00r5asflp8d43wx",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1fa6vwj8vf7favyalax45wy9k2ke9ka2q0cyl3v",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1mtfhwl7wwjllt05gj3dc2tesvvzvx90jx6cmwh",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1vm4cd3ufem6pr2qquufylzpws093u2h7egvc9k",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea15z32zhgwqqz3jetd7p4qplqlhw8wjzhx3fkzuy",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1auxzyyv89nlypkz29w298gagdx54v4advw8gs8",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1rfql6m8snawg00w0rxjw8669zrpsa0q2g3hw25",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1g5wgx6l7y9a0mgfszq8d8rjdm0phf9w0423y5u",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1xure8ewzgtqnv3amthy9300ag2ajydsd0as0dy",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1x2lh2vq6fflwwut50hxk0ukvtvlraupnz249dv",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1wxwtdvf42gm2sy08zqmmnt22vw5876jcpqs3xq",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1e8fvgd3pwcuxlr7r5wy0cuu38dnavxnf4s2579",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea19esypyqpyjujgr8eys7zp0vjz90e8nq2dpy40h",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea17x646044qyvfyfe8pk98629ajk5xwa5uyav74l",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1mtay7xk5aucem30nc3e48z84hklg2h50g7cdrv",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea14wma7h88xpellxd33cjpvteskllrmz8qr45uzw",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1c8pldkhamnepqmae5awrs9ngfwakla5egvhaku",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1lppaz86usdk8gf7evjrfggmw59z63cd79mhusp",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1s9t9fmzl0caynyzt0z72xyrw4nyx6xjmxxdadv",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea173y2x6g68w76e4xrat89dsyg7lrhlf6myhf3y7",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea17n8apqsvxlz9ftdl4fg2vglj45dy779ec0jumv",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "althea1ka5ep6vh8493smdn932afclda9hldcpm2wqhqw",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        }
+      ]
+    },
+    "authz": {
+      "authorization": []
+    },
+    "bank": {
+      "params": {
+        "send_enabled": [],
+        "default_send_enabled": true
+      },
+      "balances": [
+        {
+          "address": "althea1pvvne8tj0x6j28yjqm3n3660ehlffelxyd2sy9",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1z9qm0n6yxt7fg30fw3gjxlvkyh9z9c0sc6fmpv",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1rfql6m8snawg00w0rxjw8669zrpsa0q2g3hw25",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1r33fmyv74akfvuw05wy2v9hkgk46qevxzdnfuy",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1r66mlu6p95jnk4ragyyh5ayxwxxgute6xk3qfj",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1ru5px3rl46v2kjhr9w5murypjvd4dfkua7wejl",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1y8vj7zeh7srd95urfedhxwrm49h47n2g4cga6f",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1yeugq2kuwm59d2kxn8jhzghwfcn9h6qh57ha82",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea19fcaymvtttl265lner4sz8na70venkfgzknlf6",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea19k63gukyqsrp0gmcv4djsh3gw092wvs0a7cpxc",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea19esypyqpyjujgr8eys7zp0vjz90e8nq2dpy40h",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1x2lh2vq6fflwwut50hxk0ukvtvlraupnz249dv",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1xeg72nqskfuy9zcux5xxy83fymkht87pwsgsg6",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1xure8ewzgtqnv3amthy9300ag2ajydsd0as0dy",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea18znqhty2ftuvsg5k830dk7ts0nnujuv2cv8svu",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1gz9lgeg78zge00gvqek8kutulz5dppnnel3ea8",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1g8fcz0n5z9525klnw2pme6q68gadzlh2pgakyj",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1g5wgx6l7y9a0mgfszq8d8rjdm0phf9w0423y5u",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1gu3890l33n0ff7c7235d42ynrgjwxstnhj2nwk",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1fqye8dyv533ryr0zwtk4rwwc0uq2dxw4993f2p",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1fa6vwj8vf7favyalax45wy9k2ke9ka2q0cyl3v",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea12cscvxqazghzvll6urmtff2gjz7ttgdzhrlzcz",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea12mlarml8cgfevqp6zqlgkpgscnd85znp9ga7ql",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1vm4cd3ufem6pr2qquufylzpws093u2h7egvc9k",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1dqekcqh2ha6d0jgrx339gvk89ax87vcy72d6uj",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1drmghqf3r4jt6jvx7yvlpd2ydumsfuhmhyyt7q",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1dxrrcxyr5vc2mr9q8j9f2l670kkp736d5r94dc",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1dx2fvk9k5094zc5dw99vduf0987znfyf7680xt",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1dn9n7hqqv0uzk7kvpfzsacp3zqd2s6aj2pld9s",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1d6zgw5mfj0p7ten5ws7alth0c3hzzu0zjcnx80",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1wxwtdvf42gm2sy08zqmmnt22vw5876jcpqs3xq",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1wfhw9dh527ay7zhm02ajyp4d5xh880ymqpcnvv",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1wtqg47wshv47c7eg70266rcx934c0mplxjslqy",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1ww25dca6dmxy25zq6vwmm0grh4f9xuf22s33am",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1w5tk34avm90x8p2eunk39d0fnykd2gdzsc03uh",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1s9t9fmzl0caynyzt0z72xyrw4nyx6xjmxxdadv",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1sxu4way276ja26vj5tl22z3p39np2rpra28l8m",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1sus6nklq6w5p9x7al70ku6467tlv4ng0ljxxp6",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8napj96",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "6000000000000000000000000"
+            }
+          ]
+        },
+        {
+          "address": "althea1jnuhu5ca3xlmy0rywdcf6hdd5zvrsw49t2jx7s",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1n2435hw4fnzpet94658lsmkufnyfhf6gmlaenf",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1nlmz5706qrqkec394x8rtn4tz8hqxmufmzjznd",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea15z32zhgwqqz3jetd7p4qplqlhw8wjzhx3fkzuy",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea15np5r0cfcemug4azyewc8un8dtd7kk9kkr33c0",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "14000000000000000000000000"
+            },
+            {
+              "denom": "ustable",
+              "amount": "10000000000000"
+            }
+          ]
+        },
+        {
+          "address": "althea14w5us6huut7sl0ccrzemtwet7rm829qtnsgrmw",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea14wma7h88xpellxd33cjpvteskllrmz8qr45uzw",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea14szgmaq0p87vrln37hy9jqt6n57an99xezh7rh",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea144faef4dfu86gsh06jczv54mxwgq4uaaghkjnc",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1k8z73qlzw0xqlx477ndc4y2mthetr4laeygf5z",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1k0p5h3gw3scu688g9z2uxmzp3pjucpp2kxgvaa",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1ka5ep6vh8493smdn932afclda9hldcpm2wqhqw",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1hwmt9du4vdtvc8gha4up0wc3c6m55yfkqydtrd",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1h77z70yque6ezhdlmdqvkq9ntum4l5ptvhcqkl",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1c8pldkhamnepqmae5awrs9ngfwakla5egvhaku",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1e8fvgd3pwcuxlr7r5wy0cuu38dnavxnf4s2579",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea16gf9ckmg8t3jpamaadu9g2f00r5asflp8d43wx",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea16h4yy2pxw8e2pxwgswvv69xwgh64eg2sp4f23m",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1mtfhwl7wwjllt05gj3dc2tesvvzvx90jx6cmwh",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1mtay7xk5aucem30nc3e48z84hklg2h50g7cdrv",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1mw346gnyxj0r9sxkvzj0qp5hsdxqlg30gw668m",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1mk9k4k9l9fjkhamx5cr2zpqsjsy5w9y2zdus2n",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1uvvhgj6ecm50f2cqzsnuwduj0p40xhadlrqnak",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1uuwd4ganp3n0e5wvthjhq6hpqwqrahwce3lxv3",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1auxzyyv89nlypkz29w298gagdx54v4advw8gs8",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea17x646044qyvfyfe8pk98629ajk5xwa5uyav74l",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea172dudupvfwenrerfx6at5tfjax3cc8fpgwqgkq",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea17wshh5r29g40r207xxhq3lkd64hcd4d4x5a6ay",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea173y2x6g68w76e4xrat89dsyg7lrhlf6myhf3y7",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea17n8apqsvxlz9ftdl4fg2vglj45dy779ec0jumv",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1lppaz86usdk8gf7evjrfggmw59z63cd79mhusp",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1lwl7t5rw2y46xy8tm73a4d3mudfcd4d72y264v",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "address": "althea1l4n8krxw9ghmjtwyte4w3u49cdlyv669sjkmfs",
+          "coins": [
+            {
+              "denom": "aalthea",
+              "amount": "1000000000000000000000"
+            },
+            {
+              "denom": "stable",
+              "amount": "100"
+            }
+          ]
+        }
+      ],
+      "supply": [
+        {
+          "denom": "aalthea",
+          "amount": "20070000000000000000000000"
+        },
+        {
+          "denom": "stable",
+          "amount": "7000"
+        },
+        {
+          "denom": "ustable",
+          "amount": "10000000000000"
+        }
+      ],
+      "denom_metadata": [
+        {
+          "description": "The native staking token of althea-L1",
+          "denom_units": [
+            {
+              "denom": "aalthea",
+              "exponent": 0,
+              "aliases": [
+                "attoalthea",
+                "althea-wei"
+              ]
+            },
+            {
+              "denom": "nalthea",
+              "exponent": 9,
+              "aliases": [
+                "nanoalthea",
+                "althea-gwei"
+              ]
+            },
+            {
+              "denom": "althea",
+              "exponent": 18,
+              "aliases": []
+            }
+          ],
+          "base": "aalthea",
+          "display": "althea",
+          "name": "althea",
+          "symbol": "althea"
+        },
+        {
+          "description": "A fake stablecoin for testing purposes",
+          "denom_units": [
+            {
+              "denom": "ustable",
+              "exponent": 0,
+              "aliases": []
+            },
+            {
+              "denom": "stable",
+              "exponent": 6,
+              "aliases": []
+            }
+          ],
+          "base": "ustable",
+          "display": "stable",
+          "name": "stable",
+          "symbol": "stable"
+        }
+      ]
+    },
+    "capability": {
+      "index": "1",
+      "owners": []
+    },
+    "crisis": {
+      "constant_fee": {
+        "denom": "aalthea",
+        "amount": "1000"
+      }
+    },
+    "distribution": {
+      "params": {
+        "community_tax": "0.020000000000000000",
+        "base_proposer_reward": "0.010000000000000000",
+        "bonus_proposer_reward": "0.040000000000000000",
+        "withdraw_addr_enabled": true
+      },
+      "fee_pool": {
+        "community_pool": [
+          {
+            "denom": "aalthea",
+            "amount": "6000000000000000000000000"
+          }
+        ]
+      },
+      "delegator_withdraw_infos": [],
+      "previous_proposer": "",
+      "outstanding_rewards": [],
+      "validator_accumulated_commissions": [],
+      "validator_historical_rewards": [],
+      "validator_current_rewards": [],
+      "delegator_starting_infos": [],
+      "validator_slash_events": []
+    },
+    "erc20": {
+      "params": {
+        "enable_erc20": true,
+        "enable_evm_hook": true
+      },
+      "token_pairs": []
+    },
+    "evidence": {
+      "evidence": []
+    },
+    "evm": {
+      "accounts": [],
+      "params": {
+        "evm_denom": "aalthea",
+        "enable_create": true,
+        "enable_call": true,
+        "extra_eips": [],
+        "chain_config": {
+          "homestead_block": "0",
+          "dao_fork_block": "0",
+          "dao_fork_support": true,
+          "eip150_block": "0",
+          "eip150_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "eip155_block": "0",
+          "eip158_block": "0",
+          "byzantium_block": "0",
+          "constantinople_block": "0",
+          "petersburg_block": "0",
+          "istanbul_block": "0",
+          "muir_glacier_block": "0",
+          "berlin_block": "0",
+          "london_block": "0",
+          "arrow_glacier_block": "0",
+          "gray_glacier_block": "0",
+          "merge_netsplit_block": "0"
+        },
+        "allow_unprotected_txs": false
+      }
+    },
+    "feemarket": {
+      "params": {
+        "no_base_fee": false,
+        "base_fee_change_denominator": 8,
+        "elasticity_multiplier": 2,
+        "enable_height": "0",
+        "base_fee": "1000000000",
+        "min_gas_price": "0.000000000000000000",
+        "min_gas_multiplier": "0.100000000000000000"
+      },
+      "block_gas": "0"
+    },
+    "genutil": {
+      "gen_txs": [
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "hawk",
+                  "identity": "",
+                  "website": "",
+                  "security_contact": "",
+                  "details": ""
+                },
+                "commission": {
+                  "rate": "0.500000000000000000",
+                  "max_rate": "0.500000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "althea15np5r0cfcemug4azyewc8un8dtd7kk9kkr33c0",
+                "validator_address": "altheavaloper15np5r0cfcemug4azyewc8un8dtd7kk9kjrzlx2",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "3w5QJZps8HX7zneHXwed2lFKPiJLbbGlPUgHo0hFlPU="
+                },
+                "value": {
+                  "denom": "aalthea",
+                  "amount": "10000000000000000000000"
+                }
+              }
+            ],
+            "memo": "bc47f3e8f9134a812462e793d8767ef7334c0119@65.19.136.133:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "AwOdvlY3+Cph4LD3qyXh1sFy2jdynlXS3qos8DSL/ZeN"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [
+                {
+                  "denom": "aalthea",
+                  "amount": "1000000000000000000"
+                }
+              ],
+              "gas_limit": "2000000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "signatures": [
+            "cbnkuIzpjZr8G3zH6xlOFHHuLX0Jwa3N6L2/UgwiHYtYYwqF6tqwI2pJVMsm/iuc1alPqh2hpYNafkkWMnN6EgE="
+          ]
+        }
+      ]
+    },
+    "gov": {
+      "starting_proposal_id": "1",
+      "deposits": [],
+      "votes": [],
+      "proposals": [],
+      "deposit_params": {
+        "min_deposit": [
+          {
+            "denom": "aalthea",
+            "amount": "10000000"
+          }
+        ],
+        "max_deposit_period": "172800s"
+      },
+      "voting_params": {
+        "voting_period": "43200s"
+      },
+      "tally_params": {
+        "quorum": "0.334000000000000000",
+        "threshold": "0.500000000000000000",
+        "veto_threshold": "0.334000000000000000"
+      }
+    },
+    "ibc": {
+      "client_genesis": {
+        "clients": [],
+        "clients_consensus": [],
+        "clients_metadata": [],
+        "params": {
+          "allowed_clients": [
+            "06-solomachine",
+            "07-tendermint"
+          ]
+        },
+        "create_localhost": false,
+        "next_client_sequence": "0"
+      },
+      "connection_genesis": {
+        "connections": [],
+        "client_connection_paths": [],
+        "next_connection_sequence": "0",
+        "params": {
+          "max_expected_time_per_block": "30000000000"
+        }
+      },
+      "channel_genesis": {
+        "channels": [],
+        "acknowledgements": [],
+        "commitments": [],
+        "receipts": [],
+        "send_sequences": [],
+        "recv_sequences": [],
+        "ack_sequences": [],
+        "next_channel_sequence": "0"
+      }
+    },
+    "lockup": {
+      "params": {
+        "locked": false,
+        "lock_exempt": [
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "locked_message_types": [
+          "/cosmos.bank.v1beta1.MsgSend",
+          "/cosmos.bank.v1beta1.MsgMultiSend",
+          "/ibc.applications.transfer.v1.MsgTransfer",
+          "/microtx.v1.MsgMicrotx"
+        ],
+        "locked_token_denoms": [
+          "aalthea"
+        ]
+      }
+    },
+    "microtx": {
+      "params": {
+        "microtx_fee_basis_points": "1000"
+      }
+    },
+    "mint": {
+      "minter": {
+        "inflation": "0.005",
+        "annual_provisions": "0.000000000000000000"
+      },
+      "params": {
+        "mint_denom": "aalthea",
+        "inflation_rate_change": "0.130000000000000000",
+        "inflation_max": "0.01",
+        "inflation_min": "0.00",
+        "goal_bonded": "0.670000000000000000",
+        "blocks_per_year": "6311520"
+      }
+    },
+    "params": null,
+    "slashing": {
+      "params": {
+        "signed_blocks_window": "10000",
+        "min_signed_per_window": "0.500000000000000000",
+        "downtime_jail_duration": "600s",
+        "slash_fraction_double_sign": "0.050000000000000000",
+        "slash_fraction_downtime": "0.010000000000000000"
+      },
+      "signing_infos": [],
+      "missed_blocks": []
+    },
+    "staking": {
+      "params": {
+        "unbonding_time": "1814400s",
+        "max_validators": 100,
+        "max_entries": 7,
+        "historical_entries": 10000,
+        "bond_denom": "aalthea"
+      },
+      "last_total_power": "0",
+      "last_validator_powers": [],
+      "validators": [],
+      "delegations": [],
+      "unbonding_delegations": [],
+      "redelegations": [],
+      "exported": false
+    },
+    "transfer": {
+      "port_id": "transfer",
+      "denom_traces": [],
+      "params": {
+        "send_enabled": true,
+        "receive_enabled": true
+      }
+    },
+    "upgrade": {},
+    "vesting": {}
+  }
+}
