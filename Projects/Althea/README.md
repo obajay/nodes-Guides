@@ -43,7 +43,7 @@ go version
 # Build 05.07.23
 ```python
 cd $HOME
-wget https://github.com/althea-net/althea-L1/releases/download/v0.5.4/althea-linux-amd64
+wget https://github.com/althea-net/althea-L1/releases/download/v0.5.5/althea-linux-amd64
 chmod +x althea-linux-amd64
 sudo mv althea-linux-amd64 $HOME/go/bin/althea
 
@@ -53,13 +53,13 @@ sudo mv althea-linux-amd64 $HOME/go/bin/althea
 SOOON
 ```
 
-`althea version --long`
-- version: v0.5.4
-- commit: 1d70b5877ed41ba3df457cc1d7a52c03a1ec64fa
+`althea version --long | head`
+- version: v0.5.5
+- commit: 3ec8309dfd84e090af7703edc21a70c95641975c
 
 ```python
-althea init STAVRguide --chain-id althea_417834-2
-althea config chain-id althea_417834-2
+althea init STAVRguide --chain-id althea_417834-3
+althea config chain-id althea_417834-3
 ```    
 
 ## Create/recover wallet
@@ -75,14 +75,14 @@ wget -O $HOME/.althea/config/genesis.json "https://raw.githubusercontent.com/oba
 
 ```
 `sha256sum $HOME/.althea/config/genesis.json`
-+ 9144f4385d8feba8c5b4a1f4693ed852aa6edf8ff32ff3e3d1a1672d4a2cda14
++ 66401e3c2d3f2679f82bec6a53c9b9bc38737c1ecb700c0a85f0188f8840ddeb
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0aalthea\"/;" ~/.althea/config/app.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.althea/config/config.toml
-peers="72a7e729fbb2be68a39d50d2f9de18079da175c4@chainripper-2.althea.net:23296"
+peers="bc47f3e8f9134a812462e793d8767ef7334c0119@chainripper-2.althea.net:23296"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.althea/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.althea/config/config.toml
@@ -180,7 +180,7 @@ althea tx staking create-validator \
 --pubkey $(althea tendermint show-validator) \
 --from <wallet> \
 --moniker="STAVRguide" \
---chain-id althea_417834-2 \
+--chain-id althea_417834-3 \
 --gas 350000 \
 --identity="" \
 --website="" \
