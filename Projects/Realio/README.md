@@ -40,17 +40,17 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 09.06.23
+# Build 11.07.23
 ```python
 cd $HOME
 git clone https://github.com/realiotech/realio-network.git
 cd realio-network
-git checkout v0.8.2
+git checkout v0.8.3
 make install
 ```
 `realio-networkd version --long`
-- version: 0.8.2
-- commit: ed56a997ab2d9391fb7781acd6d9c4d3b73a202a
+- version: 0.8.3
+- commit: 55f63ff6ef1d98997106aab16e6accff43f40755
 
 ```python
 realio-networkd init STAVRguide --chain-id realionetwork_3301-1
