@@ -32,29 +32,29 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-# Binary   14.06.23
+# Binary   14.07.23
 ```python
 cd $HOME
 git clone https://github.com/umee-network/umee.git
 cd umee
-git checkout v5.0.1
+git checkout v5.1.0
 make install
 ```
-*******🟢UPDATE🟢******* 14.06.23
+*******🟢UPDATE🟢******* 14.07.23
 ```python
 cd $HOME/umee
 git fetch --all
-git checkout v5.0.1
+git checkout v5.1.0
 make install
 umeed version --long | grep -e commit -e version
-#version: 5.0.1
-#commit: 527b5feddc75c3f4f300bf0605f7b4cb79b249d6
+#version: 5.1.0
+#commit: 30e0320c6590ac2b4668374edaf75f3e3c0e4592
 sudo systemctl restart umeed && journalctl -u umeed -f -o cat
 ```
 
 `umeed version --long`
-+ version: 5.0.1
-+ commit: 527b5feddc75c3f4f300bf0605f7b4cb79b249d6
++ version: 5.1.0
++ commit: 30e0320c6590ac2b4668374edaf75f3e3c0e4592
 
 ## Init
 ```python
