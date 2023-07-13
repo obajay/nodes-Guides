@@ -54,7 +54,7 @@ make install
 *******🟢UPDATE🟢******* 13.07.23
 ```python
 cd $HOME
-https://github.com/osmosis-labs/osmosis/releases/download/v16.1.0/osmosisd-16.1.0-linux-amd64
+wget https://github.com/osmosis-labs/osmosis/releases/download/v16.1.0/osmosisd-16.1.0-linux-amd64
 chmod +x osmosisd-16.1.0-linux-amd64
 mv osmosisd-16.1.0-linux-amd64 $HOME/go/bin/osmosisd
 osmosisd version --long
