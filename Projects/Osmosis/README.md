@@ -2,7 +2,8 @@
 
 ![osmo](https://user-images.githubusercontent.com/44331529/195998983-0dc2ca0d-7192-471f-95fa-67ee8f467a54.png)
 
-[WEBSITE](https://app.osmosis.zone/)
+[WEBSITE](https://app.osmosis.zone/) \
+[GitHub](https://github.com/osmosis-labs/osmosis)
 =
 [EXPLORER 1](https://www.mintscan.io/osmosis/validators) \
 [EXPLORER 2](https://explorer.stavr.tech/osmosis-mainnet/staking) \
@@ -30,38 +31,41 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
-## GO 1.19
-
+## GO 1.20
 ```python
-ver="1.19" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+ver="1.20"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 go version
 ```
 
-# Build 16.03.23
+# Build 13.07.23
 ```python
 cd $HOME
 git clone https://github.com/osmosis-labs/osmosis && cd osmosis
-git checkout v15.0.0
+git checkout v16.1.0
 make install
 ```
 
-*******🟢UPDATE🟢******* 16.03.23
+*******🟢UPDATE🟢******* 13.07.23
 ```python
-cd $HOME/osmosis
-git fetch --all
-git checkout v15.0.0
-make install
-sudo systemctl restart gaiad && journalctl -u gaiad -f -o cat
+cd $HOME
+https://github.com/osmosis-labs/osmosis/releases/download/v16.1.0/osmosisd-16.1.0-linux-amd64
+chmod +x osmosisd-16.1.0-linux-amd64
+mv osmosisd-16.1.0-linux-amd64 $HOME/go/bin/osmosisd
+osmosisd version --long
+# version: 16.1.0
+# commit: 326dfb08a9af17d53ed5d5a71ac4a591e72ae4b0
+systemctl restart osmosisd && journalctl -u osmosisd -f -o cat
 ```
 
 `osmosisd version --long | head`
-- version: v15.0.0
+- version: v16.1.0
+- commit: 326dfb08a9af17d53ed5d5a71ac4a591e72ae4b0
 
 ```python
 osmosisd init STAVRguide --chain-id osmosis-1
