@@ -70,7 +70,7 @@ strided keys add <walletName> --recover
 ```
 # Genesis
 ```bash
-wget -O $HOME/.stride/config/genesis.json "https://raw.githubusercontent.com/Stride-Labs/testnet/infra-test/poolparty/infra/genesis.json"
+wget -O $HOME/.stride/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Stride/genesis.json"
 ```
 
 `sha256sum $HOME/.stride/config/genesis.json`
