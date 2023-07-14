@@ -35,23 +35,29 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-### Node installation 23.05.23
+### Node installation 14.07.23
 ```python
 cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.2-rc7/quicksilverd-v1.4.2-rc7-amd64
-chmod +x quicksilverd-v1.4.2-rc7-amd64
-mv quicksilverd-v1.4.2-rc7-amd64 $HOME/go/bin/quicksilverd
-
+wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.4-rc.0/quicksilverd-v1.4.4-rc.0-amd64
+chmod +x quicksilverd-v1.4.4-rc.0-amd64
+mv $HOME/quicksilverd-v1.4.4-rc.0-amd64 $HOME/go/bin/quicksilverd
 ```
 
-*******🟢UPDATE🟢******* 00.00.23
+*******🟢UPDATE🟢******* 14.07.23
 ```python
-SOOON
+cd $HOME
+wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.4-rc.0/quicksilverd-v1.4.4-rc.0-amd64
+chmod +x quicksilverd-v1.4.4-rc.0-amd64
+mv $HOME/quicksilverd-v1.4.4-rc.0-amd64 $HOME/go/bin/quicksilverd
+quicksilverd version --long | grep -e commit -e version
+#v1.4.4-rc.0
+#a3fea64d1490cd6bec066d10bb730f516fe81635
+sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 ```
 
 `quicksilverd version --long`
-+ version: v1.4.2-rc7
-+ commit: 5840c6c9321996505549d73ddf7adee5010e3caa
++ version: v1.4.4-rc.0
++ commit: a3fea64d1490cd6bec066d10bb730f516fe81635
 
 ### Initialize the node
 ```java
