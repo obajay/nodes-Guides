@@ -36,21 +36,30 @@ source $HOME/.bash_profile &&
 go version
 ```
 
-# Binary   14.07.23
+# Binary   20.07.23
 ```python
 git clone https://github.com/haqq-network/haqq
 cd haqq
-git checkout v1.4.0
+git checkout v1.4.1
 make install
 ```
 `haqqd version --long | grep -e version -e commit`
 
-*******🟢UPDATE🟢******* 00.00.23
+*******🟢UPDATE🟢******* 20.07.23
 ```python
-SOOOON
+cd $HOME
+wget https://github.com/haqq-network/haqq/releases/download/v1.4.1/haqq_1.4.1_Linux_x86_64.tar.gz
+tar -xvzf haqq_1.4.1_Linux_x86_64.tar.gz
+cd bin
+chmod +x haqqd
+mv haqqd $(which haqqd)
+haqqd version --long | grep -e commit -e version
+#version: 1.4.1
+#commit: af155c6952991de9289fef5cbfee102544b0b933
+sudo systemctl restart haqqd && journalctl -u haqqd -f -o cat
 ```
-- version: 1.4.0
-- commit: 4f16bbfc188b66ae44b559453c43bff78f85b6d4
+- version: 1.4.1
+- commit: af155c6952991de9289fef5cbfee102544b0b933
 
 ## Initialisation
 ```python
