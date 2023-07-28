@@ -15,7 +15,6 @@
 |-----------|----|------|----------|
 | Mainnet   |   8| 16GB | 250GB    |
 
-
 # 1) Auto_install script
 ```python
 wget -O centauridm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Composable/centauridm && chmod +x centauridm && ./centauridm
