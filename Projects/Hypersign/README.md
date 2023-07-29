@@ -42,30 +42,30 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 05.07.23
+# Build 29.07.23
 ```python
 cd $HOME
 git clone https://github.com/hypersign-protocol/hid-node.git
 cd $HOME/hid-node
-git checkout v0.1.8
+git checkout v0.1.9
 make install
 ```
 
-*******🟢UPDATE🟢******* 05.07.23
+*******🟢UPDATE🟢******* 29.07.23
 ```python
 cd $HOME/hid-node
 git fetch --all
-git checkout v0.1.8
+git checkout v0.1.9
 make install
 hid-noded version --long
-#version: v0.1.8
-#commit: 66236e5
+#version: v0.1.9
+#commit: f30a6ab
 sudo systemctl restart hid-noded && sudo journalctl -u hid-noded -f -o cat
 ```
 
 `hid-noded version`
-- version 0.1.8
-- commit: 66236e5
+- version 0.1.9
+- commit: f30a6ab
 
 ```python
 hid-noded init STAVRguide --chain-id jagrat
