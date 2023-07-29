@@ -44,15 +44,16 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 10.10.22
+# Build 29.17.23
 ```python
 cd $HOME
 git clone https://github.com/LambdaIM/lambdavm.git && cd lambdavm
-git checkout 035d5b253c1a9d9d084a0a593ebfdd7089b59c80
+git checkout v1.0.1
 make install
 ```
 `lambdavm version`
-- 1.0.0
+- version: 1.0.1
+- commit: de7a3fce6d009590fd9664a7484be4c1ef0c3171
 
 ```python
 lambdavm init STAVRguide --chain-id lambda_92000-1
