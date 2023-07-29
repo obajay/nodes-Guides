@@ -56,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 #INSTALL
 cd $HOME
 git clone https://github.com/LambdaIM/lambdavm.git && cd lambdavm
-git checkout 035d5b253c1a9d9d084a0a593ebfdd7089b59c80
+git checkout v1.0.1
 make install
 
 
@@ -152,12 +152,15 @@ lambdavm tendermint unsafe-reset-all --home $HOME/.lambdavm
 systemctl restart lambdavm && journalctl -u lambdavm -f -o cat
 
 
-
 break
 ;;
 "UPDATE")
-echo -e "        \e[1m\e[32mVERSION\e[0m"
-lambdavm version
+cd $HOME/lambdavm
+git pull
+git checkout v1.0.1
+make install
+sudo systemctl restart lambdavm && sudo journalctl -u lambdavm -f -o cat
+
 
 break
 ;;
