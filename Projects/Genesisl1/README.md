@@ -33,15 +33,15 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-# Binary   01.07.23
+# Binary   30.07.23
 ```python 
-git clone https://github.com/alpha-omega-labs/genesisd
+git clone https://github.com/alpha-omega-labs/genesisd.git
 cd genesisd
 make install
 ```
 `genesisd version --long | head`
 - version:  0.3.1
-- commit: 5278bc80caae12ff2aba4b0d9742adfc9f30df9a 
+- commit: 66b7445ffb3da8874df5426b3d9f7863e931485d 
 
 ## Initialisation
 ```python
