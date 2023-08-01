@@ -104,7 +104,7 @@ wget -O $HOME/.kyve/config/addrbook.json "https://raw.githubusercontent.com/obaj
 ```
 ## StateSync Kyve Mainnet
 ```python
-SNAP_RPC=http://kyve.rpc.m.stavr.tech:12357/
+SNAP_RPC=http://kyve.rpc.m.stavr.tech:12357
 peers="a349791af7116c82785a2939454247b03a678270@kyve.peer.stavr.tech:12356"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.kyve/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
