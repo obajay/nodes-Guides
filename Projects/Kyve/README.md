@@ -29,32 +29,32 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-# Build 09.06.23
+# Build 01.08.23
 ```python
 cd $HOME
-wget https://github.com/KYVENetwork/chain/releases/download/v1.2.2/kyved_mainnet_linux_amd64.tar.gz
+wget https://github.com/KYVENetwork/chain/releases/download/v1.3.0/kyved_mainnet_linux_amd64.tar.gz
 tar -xvzf kyved_mainnet_linux_amd64.tar.gz
 chmod +x kyved
 rm kyved_mainnet_linux_amd64.tar.gz
 sudo mv kyved $HOME/go/bin/kyved
 ```
-*******🟢UPDATE🟢******* 09.06.23
+*******🟢UPDATE🟢******* 01.08.23
 ```python
 cd $HOME
-wget https://github.com/KYVENetwork/chain/releases/download/v1.2.2/kyved_mainnet_linux_amd64.tar.gz
+wget https://github.com/KYVENetwork/chain/releases/download/v1.3.0/kyved_mainnet_linux_amd64.tar.gz
 tar -xvzf kyved_mainnet_linux_amd64.tar.gz
 chmod +x kyved
 rm kyved_mainnet_linux_amd64.tar.gz
 sudo mv kyved $HOME/go/bin/kyved
 kyved version --long | grep -e commit -e version
-#version: v1.2.2
-#commit: 489960cc1c3991d26d8d7546ccfa318a98121aa8
+#version: v1.3.0
+#commit: c40a28dcace2f3d3e690274511ce5b4b7c2a69f3
 systemctl restart kyved && journalctl -u kyved -f -o cat
 ```
 
 `kyved version --long`
-- version: v1.2.2
-- commit: 489960cc1c3991d26d8d7546ccfa318a98121aa8
+- version: v1.3.0
+- commit: c40a28dcace2f3d3e690274511ce5b4b7c2a69f3
 
 
 ```python    
