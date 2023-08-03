@@ -17,25 +17,26 @@ sudo apt update && sudo apt upgrade -y && \
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```    
 ## GO 18.1 (one command)
-    wget https://golang.org/dl/go1.18.1.linux-amd64.tar.gz; \
-    rm -rv /usr/local/go; \
-    tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz && \
-    rm -v go1.18.1.linux-amd64.tar.gz && \
-    echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile && \
-    source ~/.bash_profile && \
-    go version
-    
-## Build    (15.04.23)
+```python
+ver="1.20.5"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
+go version
+```    
+## Build    (11.07.23)
 ```python
 git clone https://github.com/evmos/evmos
 cd evmos
-git checkout v12.1.2
+git checkout v13.0.2
 make install
 ```
 
 `evmosd version`
-+ version: v12.1.2
-+ commit: 1c5326171ab84379b060223fb0fed37129750d5b
++ version: v13.0.2
 
 ```python
 evmosd init STAVRguide --chain-id evmos_9001-2
