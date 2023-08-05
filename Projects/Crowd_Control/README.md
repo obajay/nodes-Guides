@@ -56,7 +56,7 @@ Cardchaind keys add <walletname> --recover
 # Init node and download Genesis
 ```python
 Cardchaind init STAVRguide --chain-id Testnet3
-cp $HOME/Testnet/genesis.json $HOME/.Cardchain/config/genesis.json
+curl -o - -L http://crowd.genesis.stavr.tech:1901/genesis-crowd.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.Cardchain/config --strip-components 3
 ```
 
 ## Download addrbook
