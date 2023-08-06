@@ -31,41 +31,41 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bs
 
 ## GO 1.19 
 ```python
-ver="1.19" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+ver="1.19"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 go version
 ```
 
-# Build 05.06.23
+# Build 07.08.23
 ```python
 cd $HOME
 git clone https://github.com/CosmosContracts/juno juno
 cd juno
-git checkout v15.0.0
+git checkout v16.0.0
 make install
 ```
-*******🟢UPDATE🟢******* 05.06.23
+*******🟢UPDATE🟢******* 07.08.23
 ```python
 cd $HOME
 systemctl stop junod
 rm -rf $HOME/.juno/data/wasm/cache/
 cd juno
-git fetch --tags && git checkout v15.0.0
+git fetch --tags && git checkout v16.0.0
 make install
 junod version --long | grep -e version -e commit
-#version: v15.0.0
-#commit: f507f9c7856e523acb0d7b9c241b68225cb51d7c
+#version: v16.0.0
+#commit: 054796f6173a9f15d012b656e255f94a4ec1d2cd
 sudo systemctl restart junod && sudo journalctl -u junod -f -o cat
 ```
 
 `junod version --long`
-- version: v15.0.0
-- commit: f507f9c7856e523acb0d7b9c241b68225cb51d7c
+- version: v16.0.0
+- commit: 054796f6173a9f15d012b656e255f94a4ec1d2cd
 
 ```python
 junod init STAVRguide --chain-id juno-1
@@ -203,13 +203,13 @@ junod tx staking create-validator \
 
 ## Delete node
 ```python
-sudo systemctl stop junod && \
-sudo systemctl disable junod && \
-rm /etc/systemd/system/junod.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf juno && \
-rm -rf .juno && \
+sudo systemctl stop junod
+sudo systemctl disable junod
+rm /etc/systemd/system/junod.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf juno
+rm -rf .juno
 rm -rf $(which junod)
 ```
 #
