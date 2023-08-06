@@ -30,13 +30,13 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bs
 
 ## GO 1.20.3
 ```python
-ver="1.20.3" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+ver="1.20.3"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 go version
 ```
 
@@ -174,13 +174,13 @@ cascadiad tx staking create-validator \
 
 ## Delete node
 ```python
-sudo systemctl stop cascadiad && \
-sudo systemctl disable cascadiad && \
-rm /etc/systemd/system/cascadiad.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf cascadia && \
-rm -rf .cascadiad && \
+sudo systemctl stop cascadiad
+sudo systemctl disable cascadiad
+rm /etc/systemd/system/cascadiad.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf cascadia
+rm -rf .cascadiad
 rm -rf $(which cascadiad)
 ```
 #
