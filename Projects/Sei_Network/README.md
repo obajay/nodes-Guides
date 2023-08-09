@@ -31,27 +31,27 @@ sudo apt update && sudo apt upgrade -y
 
 ### Build GO (one command)
 ```python
-ver="1.19" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+ver="1.19"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 go version
 ```
 
-# Installing the binaries (03.08.23)
+# Installing the binaries (09.08.23)
 ```python
 cd $HOME
 git clone https://github.com/sei-protocol/sei-chain.git
 cd sei-chain
-git checkout 3.0.7
+git checkout 3.0.8
 make install
 ```
 `seid version --long | head`
-+ version: 3.0.7
-+ commit: 626555101fdc9dfbc9dce7f0244bd7d46b8782bb
++ version: 3.0.8
++ commit: 605ce0378a0429f04032f095e64ddca014a7128b
 
     
 ## Initializing the node to create the necessary configuration files
@@ -139,12 +139,12 @@ We take test coins in discord
     
 ## Delete Node
 ```python
-sudo systemctl stop seid && \
-sudo systemctl disable seid && \
-rm /etc/systemd/system/seid.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf .sei && \
-rm -rf sei-chain && \
+sudo systemctl stop seid
+sudo systemctl disable seid
+rm /etc/systemd/system/seid.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf .sei
+rm -rf sei-chain
 rm -rf $(which seid)
 ```
