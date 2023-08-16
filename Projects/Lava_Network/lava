@@ -32,7 +32,7 @@ echo "_|-_|-_|-_|-_|-_|-_|"
 read Validator_Name
 echo "_|-_|-_|-_|-_|-_|-_|"
 echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
-echo export CHAIN_ID="lava-testnet-1" >> $HOME/.bash_profile
+echo export CHAIN_ID="lava-testnet-2" >> $HOME/.bash_profile
 source ~/.bash_profile
 
 echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
@@ -57,36 +57,34 @@ cd $HOME
 git clone https://github.com/lavanet/lava
 cd lava
 git fetch --all
-git checkout v0.16.0
+git checkout v0.21.0
 make install
 
 lavad init $Validator_Name --chain-id $CHAIN_ID
 
-wget -O ~/.lava/config/genesis.json https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Lava_Network/genesis.json
+curl -s https://raw.githubusercontent.com/lavanet/lava-config/main/testnet-2/genesis_json/genesis.json > $HOME/.lava/config/genesis.json
 wget -O $HOME/.lava/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Lava_Network/addrbook.json"
 
 
 echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
 
 sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0ulava\"/" $HOME/.lava/config/app.toml
-sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.lava/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.lava/config/config.toml
-peers="3a445bfdbe2d0c8ee82461633aa3af31bc2b4dc0@prod-pnet-seed-node.lavanet.xyz:26656,e593c7a9ca61f5616119d6beb5bd8ef5dd28d62d@prod-pnet-seed-node2.lavanet.xyz:26656"
+peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.lava/config/config.toml
-seeds=""
-sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.lava/config/config.toml
-sed -i 's/create_empty_blocks = .*/create_empty_blocks = true/g' ~/.lava/config/config.toml
-sed -i 's/create_empty_blocks_interval = ".*s"/create_empty_blocks_interval = "60s"/g' ~/.lava/config/config.toml
-sed -i 's/timeout_propose = ".*s"/timeout_propose = "60s"/g' ~/.lava/config/config.toml
-sed -i 's/timeout_commit = ".*s"/timeout_commit = "60s"/g' ~/.lava/config/config.toml
-sed -i 's/timeout_broadcast_tx_commit = ".*s"/timeout_broadcast_tx_commit = "601s"/g' ~/.lava/config/config.toml
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.lava/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.lava/config/config.toml
-
-
-
-
+sed -i \
+  -e 's/timeout_commit = ".*"/timeout_commit = "30s"/g' \
+  -e 's/timeout_propose = ".*"/timeout_propose = "1s"/g' \
+  -e 's/timeout_precommit = ".*"/timeout_precommit = "1s"/g' \
+  -e 's/timeout_precommit_delta = ".*"/timeout_precommit_delta = "500ms"/g' \
+  -e 's/timeout_prevote = ".*"/timeout_prevote = "1s"/g' \
+  -e 's/timeout_prevote_delta = ".*"/timeout_prevote_delta = "500ms"/g' \
+  -e 's/timeout_propose_delta = ".*"/timeout_propose_delta = "500ms"/g' \
+  -e 's/skip_timeout_commit = ".*"/skip_timeout_commit = false/g' \
+  -e 's/seeds = ".*"/seeds = "3a445bfdbe2d0c8ee82461633aa3af31bc2b4dc0@testnet2-seed-node.lavanet.xyz:26656,e593c7a9ca61f5616119d6beb5bd8ef5dd28d62d@testnet2-seed-node2.lavanet.xyz:26656"/g' \
+  $HOME/.lava/config/config.toml
+sed -i -e 's/broadcast-mode = ".*"/broadcast-mode = "sync"/g' $HOME/.lava/config/client.toml
 
 # pruning and indexer
 pruning="custom" && \
@@ -162,10 +160,27 @@ systemctl restart lavad && journalctl -u lavad -f -o cat
 break
 ;;
 "UPDATE")
-cd $HOME/lava
-git fetch --all
-git checkout v0.16.0
-make install
+lavad tendermint unsafe-reset-all
+curl -s https://raw.githubusercontent.com/lavanet/lava-config/main/testnet-2/genesis_json/genesis.json > $HOME/.lava/config/genesis.json
+curl -Ls https://lava-binary-upgrades.s3.amazonaws.com/testnet-2/cosmovisor-upgrades/cosmovisor-upgrades.zip > cosmovisor-upgrades.zip
+unzip cosmovisor-upgrades.zip
+chmod +x cosmovisor-upgrades/genesis/bin/lavad
+mv cosmovisor-upgrades/genesis/bin/lavad $HOME/go/bin/lavad
+rm cosmovisor-upgrades.zip
+rm -rf cosmovisor-upgrades
+sed -i \
+  -e 's/timeout_commit = ".*"/timeout_commit = "30s"/g' \
+  -e 's/timeout_propose = ".*"/timeout_propose = "1s"/g' \
+  -e 's/timeout_precommit = ".*"/timeout_precommit = "1s"/g' \
+  -e 's/timeout_precommit_delta = ".*"/timeout_precommit_delta = "500ms"/g' \
+  -e 's/timeout_prevote = ".*"/timeout_prevote = "1s"/g' \
+  -e 's/timeout_prevote_delta = ".*"/timeout_prevote_delta = "500ms"/g' \
+  -e 's/timeout_propose_delta = ".*"/timeout_propose_delta = "500ms"/g' \
+  -e 's/skip_timeout_commit = ".*"/skip_timeout_commit = false/g' \
+  -e 's/seeds = ".*"/seeds = "3a445bfdbe2d0c8ee82461633aa3af31bc2b4dc0@testnet2-seed-node.lavanet.xyz:26656,e593c7a9ca61f5616119d6beb5bd8ef5dd28d62d@testnet2-seed-node2.lavanet.xyz:26656"/g' \
+  $HOME/.lava/config/config.toml
+sed -i -e 's/broadcast-mode = ".*"/broadcast-mode = "sync"/g' $HOME/.lava/config/client.toml
+lavad config chain-id lava-testnet-2
 sudo systemctl restart lavad && sudo journalctl -u lavad -f -o cat
 
 break
