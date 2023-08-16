@@ -25,11 +25,10 @@
 udo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
-## GO 19.4
-
+## GO 1.20.5
 ```python
 cd $HOME
-ver="1.19.4"
+ver="1.20.5"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
@@ -39,18 +38,18 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 28.07.23
+# Build 16.08.23
 ```python
 cd $HOME
 git clone https://github.com/BitCannaGlobal/bcna/tags
 cd bcna
-git checkout v2.0.3-rc1
+git checkout v2.0.3
 make install
 ```
 
 `bcnad version --long | grep -e commit -e version`
-+ version: v2.0.3-rc1
-+ commit: d0f8a4cb7a8a7ffeffccf1ef3b68de49fca78676
++ version: v2.0.3
++ commit: 787f0638f40d8d4074bf44ee5b0965f4990bc66e
 
 ```python
 bcnad config chain-id bitacanna-dev-1
