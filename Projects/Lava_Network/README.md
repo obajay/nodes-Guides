@@ -34,44 +34,36 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bs
 ## GO 1.19
 
 ```python
-ver="1.19" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+ver="1.19"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 go version
 ```
 
-# Build 10.07.23
+# Build 16.08.23
 ```python
 cd $HOME
 git clone https://github.com/lavanet/lava
 cd lava
 git fetch --all
-git checkout v0.16.0
+git checkout v0.21.0
 make install
 ```
-*******🟢UPDATE🟢******* 10.07.23
+*******🟢UPDATE🟢******* 00.00.23
 ```python
-cd $HOME/lava
-git fetch --all
-git checkout v0.16.0
-make install
-lavad version --long | grep -e commit -e version
-#version: 0.16.0
-#commit: 59404f2b265199dd7e26735cbd31fde7b3509e66
-sudo systemctl restart lavad && sudo journalctl -u lavad -f -o cat
+SOON
 ```
-
-`lavad version --long | head`
-- version: 0.16.0
-- 59404f2b265199dd7e26735cbd31fde7b3509e66
+`lavad version --long`
+- version: 0.21.0
+- 95d4fddfa63c94c9a4d98ff1d6490cc899b6b86d
 
 ```python
-lavad init STAVRguide --chain-id lava-testnet-1
-lavad config chain-id lava-testnet-1
+lavad init STAVRguide --chain-id lava-testnet-2
+lavad config chain-id lava-testnet-2
 ```    
 
 ## Create/recover wallet
@@ -83,28 +75,30 @@ lavad keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O ~/.lava/config/genesis.json https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Lava_Network/genesis.json
+curl -s https://raw.githubusercontent.com/lavanet/lava-config/main/testnet-2/genesis_json/genesis.json > $HOME/.lava/config/genesis.json
 ```
 `sha256sum $HOME/.lava/config/genesis.json`
-+ 72170a8a7314cb79bc57a60c1b920e26457769667ce5c2ff0595b342c0080d78
++ 965769a6c79b35dc0a06dede9b2f87043e96a6973c91a796b021f07096405a2c
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
 sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0ulava\"/" $HOME/.lava/config/app.toml
-sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.lava/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.lava/config/config.toml
-peers="3a445bfdbe2d0c8ee82461633aa3af31bc2b4dc0@prod-pnet-seed-node.lavanet.xyz:26656,e593c7a9ca61f5616119d6beb5bd8ef5dd28d62d@prod-pnet-seed-node2.lavanet.xyz:26656"
+peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.lava/config/config.toml
-seeds=""
-sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.lava/config/config.toml
-sed -i 's/create_empty_blocks = .*/create_empty_blocks = true/g' ~/.lava/config/config.toml
-sed -i 's/create_empty_blocks_interval = ".*s"/create_empty_blocks_interval = "60s"/g' ~/.lava/config/config.toml
-sed -i 's/timeout_propose = ".*s"/timeout_propose = "60s"/g' ~/.lava/config/config.toml
-sed -i 's/timeout_commit = ".*s"/timeout_commit = "60s"/g' ~/.lava/config/config.toml
-sed -i 's/timeout_broadcast_tx_commit = ".*s"/timeout_broadcast_tx_commit = "601s"/g' ~/.lava/config/config.toml
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.lava/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.lava/config/config.toml
+sed -i \
+  -e 's/timeout_commit = ".*"/timeout_commit = "30s"/g' \
+  -e 's/timeout_propose = ".*"/timeout_propose = "1s"/g' \
+  -e 's/timeout_precommit = ".*"/timeout_precommit = "1s"/g' \
+  -e 's/timeout_precommit_delta = ".*"/timeout_precommit_delta = "500ms"/g' \
+  -e 's/timeout_prevote = ".*"/timeout_prevote = "1s"/g' \
+  -e 's/timeout_prevote_delta = ".*"/timeout_prevote_delta = "500ms"/g' \
+  -e 's/timeout_propose_delta = ".*"/timeout_propose_delta = "500ms"/g' \
+  -e 's/skip_timeout_commit = ".*"/skip_timeout_commit = false/g' \
+  -e 's/seeds = ".*"/seeds = "3a445bfdbe2d0c8ee82461633aa3af31bc2b4dc0@testnet2-seed-node.lavanet.xyz:26656,e593c7a9ca61f5616119d6beb5bd8ef5dd28d62d@testnet2-seed-node2.lavanet.xyz:26656"/g' \
+  $HOME/.lava/config/config.toml
+sed -i -e 's/broadcast-mode = ".*"/broadcast-mode = "sync"/g' $HOME/.lava/config/client.toml
 
 ```
 ### Pruning (optional)
@@ -191,7 +185,7 @@ lavad tx staking create-validator \
   --min-self-delegation "1" \
   --pubkey  $(lavad tendermint show-validator) \
   --moniker STAVRguide \
-  --chain-id lava-testnet-1 \
+  --chain-id lava-testnet-2 \
   --identity="" \
   --details="" \
   --website="" -y
