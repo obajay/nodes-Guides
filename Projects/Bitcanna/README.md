@@ -32,11 +32,10 @@ wget -O bitcanna https://raw.githubusercontent.com/obajay/nodes-Guides/main/Proj
 udo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
-## GO 19.5
-
+## GO 1.20.5
 ```python
 cd $HOME
-ver="1.19.5"
+ver="1.20.5"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
@@ -46,30 +45,30 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 29.06.23
+# Build 16.08.23
 ```python
 cd $HOME
 git clone https://github.com/BitCannaGlobal/bcna
 cd bcna
-git checkout v2.0.2
+git checkout v2.0.3
 make install
 ```
 
-*******🟢UPDATE🟢******* 29.06.23
+*******🟢UPDATE🟢******* 16.08.23
 ```python
 cd $HOME/bcna
 git fetch --all
-git checkout v2.0.2
+git checkout v2.0.3
 make install
 bcnad version --long
-#version: 2.0.2
-#commit: f09d3d7ad9ab39240f0445a9da74e70aa15379d2
+#version: 2.0.3
+#commit: 787f0638f40d8d4074bf44ee5b0965f4990bc66e
 sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 ```
 
 `bcnad version --long | grep -e commit -e version`
-- version: 2.0.2
-- commit: f09d3d7ad9ab39240f0445a9da74e70aa15379d2
+- version: 2.0.3
+- commit: 787f0638f40d8d4074bf44ee5b0965f4990bc66e
 
 ```python
 bcnad init STAVRguide --chain-id bitcanna-1
