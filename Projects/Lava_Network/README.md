@@ -44,18 +44,21 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 16.08.23
+# Build 17.08.23
 ```python
 cd $HOME
 git clone https://github.com/lavanet/lava
 cd lava
-git fetch --all
-git checkout v0.21.0
+git checkout v0.21.1.2
 make install
 ```
-*******🟢UPDATE🟢******* 00.00.23
+*******🟢UPDATE🟢******* 17.08.23
 ```python
-SOON
+cd $HOME/lava
+git fetch --all
+git checkout v0.21.1.2
+make install
+sudo systemctl restart lavad && sudo journalctl -u lavad -f -o cat
 ```
 `lavad version --long`
 - version: 0.21.0
