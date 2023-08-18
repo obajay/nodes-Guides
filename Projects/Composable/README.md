@@ -40,30 +40,30 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 07.08.23
+# Build 18.08.23
 ```python
 cd $HOME
 git clone https://github.com/notional-labs/composable-centauri
 cd composable-centauri
-git checkout v4.5.0
+git checkout v4.5.1
 make install
 ```
-*******🟢UPDATE🟢******* 07.08.23
+*******🟢UPDATE🟢******* 18.08.23
 ```python
 cd $HOME/composable-centauri
 git pull
-git checkout v4.5.0
+git checkout v4.5.1
 make install
 centaurid version --long | grep -e commit -e version
-#version: v4.5.0
-#commit: c1c3bb81598b4c9b01c75c20952723ac2129f3ca
+#version: v4.5.1
+#commit: 19168dbdee844fc45f7690e861e43e1503ddd732
 sudo systemctl restart centaurid && sudo journalctl -u centaurid -f -o cat
 
 ```
 
 `centaurid version --long`
-- version: v4.5.0
-- commit: c1c3bb81598b4c9b01c75c20952723ac2129f3ca
+- version: v4.5.1
+- commit: 19168dbdee844fc45f7690e861e43e1503ddd732
 
 ```python
 centaurid init STAVRguide --chain-id centauri-1
