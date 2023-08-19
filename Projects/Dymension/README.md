@@ -29,22 +29,22 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
-## GO 1.19
+## GO 1.20.5
 ```python
-ver="1.19" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+ver="1.20.5"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 go version
 ```
 
-# Build 01.02.23
+# Build 22.08.23
 ```python
 cd $HOME
-git clone https://github.com/dymensionxyz/dymension.git --branch v0.2.0-beta
+git clone https://github.com/dymensionxyz/dymension.git --branch v1.0.2-beta
 cd dymension
 make install
 
@@ -54,13 +54,13 @@ make install
 SOOOON
 ```
 
-`dymd version --long | head`
-- version: v0.2.0-beta
-- commit: 987e33407911c0578251f3ace95d2382be7e661d
+`dymd version --long | grep -e commit -e version`
+- version: v1.0.2-beta
+- commit: 74457e007dc802bd9c0be979baa5d83ab4d3226e
 
 ```python
-dymd init STAVRguide --chain-id=35-C
-dymd config chain-id 35-C
+dymd init STAVRguide --chain-id=froopyland_100-1
+dymd config chain-id froopyland_100-1
 ```    
 
 ## Create/recover wallet
@@ -79,12 +79,11 @@ wget https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Dymensi
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0udym\"/;" ~/.dymension/config/app.toml
-sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.dymension/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.dymension/config/config.toml
-peers="b8d08951d68da03af8f9272bf77684811197c289@95.216.41.160:26656,5d689e09a129c03c003f05850262f03b2433a384@51.79.30.141:26656,8f84d324a2d266e612d06db4a793b0d001ee62a0@38.146.3.200:20556,43426e98064694d407b2165fb24d52980d38f1c9@88.99.3.158:20556,ee2fa87279bc626f9c979093389bd1d6568d96ff@65.109.37.228:36656,af6787b3273dd60e0f809c7e5e2a2a9fd379045e@195.201.195.61:27656,94b63fddfc78230f51aeb7ac34b9fb86bd042a77@146.19.24.43:30585,2d05753b4f5ac3bcd824afd96ea268d9c32ed84d@65.108.132.239:56656,d995d7079d975dea118a16014758838fe5cb8e2d@80.240.29.76:26656,f9d5e36ecc66b48f9fb940a778dd0c3b6b7c3d1d@65.109.106.211:26656,0d30a0790a216d01c9759ab48192d9154381e6c0@136.243.88.91:3240,cb1cc6b4c48b3e311f18b606c663c2dc0fb89b75@74.96.207.62:26656,5c2a752c9b1952dbed075c56c600c3a79b58c395@195.3.220.136:27086,e8a706e3a81a36a6dded6cc02eabaf5d355f4c1d@80.79.5.171:28656,7fc44e2651006fb2ddb4a56132e738da2845715f@65.108.6.45:61256,c6cdcc7f8e1a33f864956a8201c304741411f219@3.214.163.125:26656,55f233c7c4bea21a47d266921ca5fce657f3adf7@168.119.240.200:26656,db0264c412618949ce3a63cb07328d027e433372@146.19.24.101:26646"
+peers="e7857b8ed09bd0101af72e30425555efa8f4a242@148.251.177.108:20556,3410e9bc9c429d6f35e868840f6b7a0ccb29020b@46.4.5.45:20556"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.dymension/config/config.toml
-seeds="c6cdcc7f8e1a33f864956a8201c304741411f219@3.214.163.125:26656"
+seeds="ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@testnet-seeds.polkachu.com:20556"
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.dymension/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.dymension/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.dymension/config/config.toml
@@ -182,7 +181,7 @@ dymd tx staking create-validator \
 --pubkey $(dymd tendermint show-validator) \
 --from <wallet> \
 --moniker="STAVRguide" \
---chain-id="35-C" \
+--chain-id="froopyland_100-1" \
 --identity="" \
 --website="" \
 --details="" \
@@ -190,13 +189,13 @@ dymd tx staking create-validator \
 
 ## Delete node
 ```python
-sudo systemctl stop dymd && \
-sudo systemctl disable dymd && \
-rm /etc/systemd/system/dymd.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf dymension && \
-rm -rf .dymension && \
+sudo systemctl stop dymd
+sudo systemctl disable dymd
+rm /etc/systemd/system/dymd.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf dymension
+rm -rf .dymension
 rm -rf $(which dymd)
 ```
 #
