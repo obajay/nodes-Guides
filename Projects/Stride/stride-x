@@ -55,7 +55,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 #INSTALL
 cd $HOME
 git clone https://github.com/Stride-Labs/stride
-cd stride && git checkout v12.1.0
+cd stride && git checkout v13.1.0
 make install
 
 strided init $Validator_Name --chain-id $CHAIN_ID
@@ -133,9 +133,8 @@ break
 "UPDATE")
 cd $HOME/stride
 git fetch --all
-git checkout v12.1.0
+git checkout v13.1.0
 make install
-wget -O $HOME/.stride/config/ccv.json "https://raw.githubusercontent.com/Stride-Labs/mainnet/main/ics-instructions/ccv.json"
 sudo systemctl restart strided && journalctl -u strided -f -o cat
 
 break
