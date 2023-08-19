@@ -176,13 +176,13 @@ sudo systemctl restart strided && journalctl -u strided -f -o cat
 break
 ;;
 "Delete Node")
-sudo systemctl stop strided && \
-sudo systemctl disable strided && \
-rm /etc/systemd/system/strided.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf .stride && \
-rm -rf stride && \
+sudo systemctl stop strided
+sudo systemctl disable strided
+rm /etc/systemd/system/strided.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf .stride
+rm -rf stride
 rm -rf $(which strided)
 
 break
