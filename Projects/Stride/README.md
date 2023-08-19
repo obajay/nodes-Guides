@@ -35,29 +35,29 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-# Binary   19.07.23
+# Binary   19.08.23
 ```python
 cd $HOME
 git clone https://github.com/Stride-Labs/stride.git && cd stride
-git checkout v12.1.0
+git checkout v13.1.0
 make install
 ```
-*******🟢UPDATE🟢******* 19.07.23
+*******🟢UPDATE🟢******* 19.08.23
 ```python
 cd $HOME/stride
 git fetch --all
-git checkout v12.1.0
+git checkout v13.1.0
 make install
 strided version --long | grep -e commit -e version
-#commit: bbf0bb7f52878f3205c76bb1e96662fe7bd7af8d
-#version: v12.0.0
+#commit: 4b1c63332452b2772dc1b26b47547975b8cbd8e0
+#version: v13.1.0
 wget -O $HOME/.stride/config/ccv.json "https://raw.githubusercontent.com/Stride-Labs/mainnet/main/ics-instructions/ccv.json"
 sudo systemctl restart strided && journalctl -u strided -f -o cat
 ```
 
 `strided version --long | head`
-+ commit: bbf0bb7f52878f3205c76bb1e96662fe7bd7af8d
-+ version: v12.0.0
++ commit: 4b1c63332452b2772dc1b26b47547975b8cbd8e0
++ version: v13.1.0
 
 
 ## Initialisation
