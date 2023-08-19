@@ -74,7 +74,7 @@ dymd keys add <walletname> --recover
 wget https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Dymension/genesis.json -O $HOME/.dymension/config/genesis.json
 ```
 `sha256sum $HOME/.dymension/config/genesis.json`
-+ cf20e3b15d089ceeaaa9bb2abcd48a50f98e9f2274f4320aeae534d6972c4ee2
++ 2c39abf9fd87222fc3b8178763e1c0e250029a445a3775b3507e88140910049e
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
