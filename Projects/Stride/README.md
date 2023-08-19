@@ -51,7 +51,6 @@ make install
 strided version --long | grep -e commit -e version
 #commit: 4b1c63332452b2772dc1b26b47547975b8cbd8e0
 #version: v13.1.0
-wget -O $HOME/.stride/config/ccv.json "https://raw.githubusercontent.com/Stride-Labs/mainnet/main/ics-instructions/ccv.json"
 sudo systemctl restart strided && journalctl -u strided -f -o cat
 ```
 
