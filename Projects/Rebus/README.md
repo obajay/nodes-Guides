@@ -21,10 +21,10 @@ wget -O rebuss https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projec
 # 2) Manual installation
 
 ### Preparing the server
-
-    sudo apt update && sudo apt upgrade -y && \
-    sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
-
+```python
+sudo apt update && sudo apt upgrade -y && \
+sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
+```
 ## GO 19 (one command)
 ```python
 ver="1.19" && \
@@ -36,27 +36,29 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-# Binary   03.02.22
+# Binary   21.08.23
 ```python
 cd $HOME
 git clone https://github.com/rebuschain/rebus.core.git 
 cd rebus.core
-git checkout v0.3.0
+git checkout v0.4.0
 make install
 ```
-*******🟢UPDATE🟢******* 03.02.23
-
+*******🟢UPDATE🟢******* 21.08.23
 ```python
 cd $HOME/rebus.core
-git fetch --all
-git checkout v0.3.0
+git pull
+git checkout v0.4.0
 make install
+rebusd version --long | head
+#version: 0.4.0
+#commit: 224ecc809a96f90c034cc6b8ce36cff71e3464d5
 sudo systemctl restart rebusd && journalctl -u rebusd -f -o cat
 ```
 
 `rebusd version --long | head`
-+ version: 0.3.0
-+ commit: e415d80fd380e230ba2c508ada58db7ad20376e7
++ version: 0.4.0
++ commit: 224ecc809a96f90c034cc6b8ce36cff71e3464d5
 
 ## Initialisation
 ```python
