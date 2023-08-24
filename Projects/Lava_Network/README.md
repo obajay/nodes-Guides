@@ -19,7 +19,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O lava https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Lava_Network/lava && chmod +x lava && ./lava
+wget -O lava https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Lava_Network/lav && chmod +x lav && ./lav
 ```
 
 # 2) Manual installation
