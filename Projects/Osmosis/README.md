@@ -43,29 +43,29 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 13.07.23
+# Build 25.08.23
 ```python
 cd $HOME
 git clone https://github.com/osmosis-labs/osmosis && cd osmosis
-git checkout v16.1.0
+git checkout v18.0.0
 make install
 ```
 
-*******🟢UPDATE🟢******* 13.07.23
+*******🟢UPDATE🟢******* 25.08.23
 ```python
 cd $HOME
-wget https://github.com/osmosis-labs/osmosis/releases/download/v16.1.0/osmosisd-16.1.0-linux-amd64
-chmod +x osmosisd-16.1.0-linux-amd64
-mv osmosisd-16.1.0-linux-amd64 $HOME/go/bin/osmosisd
+wget https://github.com/osmosis-labs/osmosis/releases/download/v18.0.0/osmosisd-18.0.0-linux-amd64
+chmod +x osmosisd-18.0.0-linux-amd64
+mv osmosisd-18.0.0-linux-amd64 $HOME/go/bin/osmosisd
 osmosisd version --long
-# version: 16.1.0
-# commit: 326dfb08a9af17d53ed5d5a71ac4a591e72ae4b0
+# version: 18.0.0
+# commit: 1c5f25d04f19d6302e0bdd585ba1d7a2cc96e397
 systemctl restart osmosisd && journalctl -u osmosisd -f -o cat
 ```
 
 `osmosisd version --long | head`
-- version: v16.1.0
-- commit: 326dfb08a9af17d53ed5d5a71ac4a591e72ae4b0
+- version: v18.0.0
+- commit: 1c5f25d04f19d6302e0bdd585ba1d7a2cc96e397
 
 ```python
 osmosisd init STAVRguide --chain-id osmosis-1
