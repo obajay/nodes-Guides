@@ -78,7 +78,7 @@ lavad keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-curl -s https://raw.githubusercontent.com/lavanet/lava-config/main/testnet-2/genesis_json/genesis.json > $HOME/.lava/config/genesis.json
+curl -s https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Lava_Network/genesis.json > $HOME/.lava/config/genesis.json
 ```
 `sha256sum $HOME/.lava/config/genesis.json`
 + 965769a6c79b35dc0a06dede9b2f87043e96a6973c91a796b021f07096405a2c
