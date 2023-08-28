@@ -44,21 +44,28 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 21.05.23
+# Build 29.08.23
 ```python
 cd $HOME
 git clone https://github.com/chain4energy/c4e-chain.git
 cd c4e-chain
-git checkout tags/v1.2.0
+git checkout tags/v1.3.0
 ```
-*******🟢UPDATE🟢******* 00.00.00
+*******🟢UPDATE🟢******* 29.08.23
 ```python
-SOOOON
+cd $HOME/c4e-chain
+git fetch --all
+git checkout v1.3.0
+make install
+c4ed version --long
+#commit: 272f5bd2f5c0fa54686f3eef2a2d64bf0ad4c50f
+#version: 1.3.0
+sudo systemctl restart c4ed && sudo journalctl -u c4ed -f -o cat
 ```
 
 `c4ed version --long`
-- version: v1.2.0
-- commit: d8f1ad9b945fecc1320a44073bdc23ae7b78fcca
+- version: v1.3.0
+- commit: 272f5bd2f5c0fa54686f3eef2a2d64bf0ad4c50f
 
 ```python
 c4ed init STAVRguide --chain-id babajaga-1
