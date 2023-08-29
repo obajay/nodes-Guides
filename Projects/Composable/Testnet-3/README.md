@@ -41,31 +41,31 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 21.07.23
+# Build 30.08.23
 ```python
 cd $HOME
 git clone https://github.com/notional-labs/composable-testnet
 cd composable-testnet
-git checkout v4.0.1
+git checkout v5.0.0
 make install
 ```
-*******🟢UPDATE🟢******* 21.07.23
+*******🟢UPDATE🟢******* 30.08.23
 ```python
 cd $HOME/composable-centauri
 git pull
-git checkout v4.0.1
+git checkout v5.0.0
 make install
 centaurid version --long | grep -e commit -e version
-#version: 4.0.1
-#commit: 603ab5fc6a07d1dcdf5382dd8c012bd56dee14cd
+#version: 5.0.0
+#commit: ec0636d1b2ceeba2034699ada933f42c7d8492a6
 sudo systemctl restart centaurid && sudo journalctl -u centaurid -f -o cat
 curl -s http://localhost:26657/consensus_state  | jq '.result.round_state.height_vote_set[0].prevotes_bit_array'
 
 ```
 
 `centaurid version --long`
-- version: 4.0.1
-- commit: 603ab5fc6a07d1dcdf5382dd8c012bd56dee14cd
+- version: 5.0.0
+- commit: ec0636d1b2ceeba2034699ada933f42c7d8492a6
 
 ```python
 centaurid init STAVRguide --chain-id banksy-testnet-3
