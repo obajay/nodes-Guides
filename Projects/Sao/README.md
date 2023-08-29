@@ -40,30 +40,30 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 15.06.23
+# Build 29.08.23
 ```python
 cd $HOME
 git clone https://github.com/SaoNetwork/sao-consensus.git
 cd sao-consensus
-git checkout v0.1.6
+git checkout v0.1.7
 make install
 ```
-*******🟢UPDATE🟢******* 15.06.23
+*******🟢UPDATE🟢******* 29.08.23
 ```python
-cd $HOME
-wget https://github.com/SAONetwork/sao-consensus/releases/download/v0.1.6/saod-linux
-chmod +x saod-linux
-mv saod-linux $(which saod)
+cd $HOME/sao-consensus
+git fetch
+git checkout v0.1.7
+make install
 saod version --long | grep -e commit -e version
-#version: 0.1.6-1-g4871d46
-#commit: 4871d46f75d0df0f1971867f3b5835b5a05841b1
+#version: 0.1.7
+#commit: 1015c5ef5b83cad6fc0a808f956886505603198d
 sudo systemctl restart saod && sudo journalctl -u saod -f -o cat
 
 ```
 
 `saod version --long`
-- version: 0.1.6-1-g4871d46
-- commit: 4871d46f75d0df0f1971867f3b5835b5a05841b1
+- version: 0.1.7
+- commit: 1015c5ef5b83cad6fc0a808f956886505603198d
 
 ```python
 saod init STAVRguide --chain-id sao-testnet1
