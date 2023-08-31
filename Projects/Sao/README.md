@@ -159,7 +159,7 @@ saod tendermint unsafe-reset-all --home /root/.sao --keep-addr-book
 sed -i -e "s/^snapshot-interval *=.*/snapshot-interval = \"1500\"/" $HOME/.sao/config/app.toml
 sudo systemctl restart saod && journalctl -u saod -f -o cat
 ```
-# SnapShot Testnet (~0.2GB) updated every 5 hours  
+# SnapShot Testnet (40 gb)
 ```python
 cd $HOME
 apt install lz4
