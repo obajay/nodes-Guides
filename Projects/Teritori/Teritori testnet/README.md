@@ -12,7 +12,8 @@
 
 # 1) Auto_install script
 ```python
-wget -O teritor https://raw.githubusercontent.com/obajay/nodes-Guides/main/Teritori/Teritori%20testnet/teritor && chmod +x teritor && ./teritor
+wget -O teritor https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Teritori/Teritori%20testnet/teritor && chmod +x teritor && ./teritor
+                
 ```
 # 2) Manual installation
 
