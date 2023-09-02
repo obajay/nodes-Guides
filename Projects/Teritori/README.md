@@ -110,7 +110,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.teritorid/config/conf
 # StateSync
 ```python
 SNAP_RPC=https://teritori.rpc.m.stavr.tech:443
-peers="ad347ea1ec920d12ccda2341348bcc89687739ef@teritori.peers.stavr.tech:38026"
+peers="29c218fb6d31d2316b854c1178327157fbce8aa7@teritori.peers.stavr.tech:38026"
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.teritorid/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 300)); \
