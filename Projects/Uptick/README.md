@@ -38,29 +38,29 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 14.06.23
+# Build 04.09.23
 ```python
 cd $HOME
 git clone https://github.com/UptickNetwork/uptick.git
 cd uptick
-git checkout v0.2.8
+git checkout v0.2.11
 make install
 ```
 *******🟢UPDATE🟢******* 14.06.23
 ```python
 cd $HOME/uptick
 git fetch --all
-git checkout v0.2.8
+git checkout v0.2.11
 make install
 uptickd version --long | grep -e commit -e version
-#commit: b7ef90210c63737035f8072e084ca5731e0eb14c
-#version: v0.2.8
+#commit: a67f8c973f0b4068493b5063a3f99fa8816558cf
+#version: v0.2.11
 sudo systemctl restart uptickd && journalctl -u uptickd -f -o cat
 ```
 
 `uptickd version --long`
-+ version: v0.2.8
-+ commit: b7ef90210c63737035f8072e084ca5731e0eb14c
++ version: v0.2.11
++ commit: a67f8c973f0b4068493b5063a3f99fa8816558cf
 
 ## Initialization
 ```python
