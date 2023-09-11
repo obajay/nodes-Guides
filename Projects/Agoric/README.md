@@ -36,7 +36,7 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 19.05.23
+# Build 11.09.23
 ```python
 cd $HOME
 git clone https://github.com/Agoric/agoric-sdk
@@ -53,18 +53,17 @@ apt upgrade -y
 apt install -y build-essential
 apt install -y gcc-10 g++-10 cpp-10
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 100 --slave /usr/bin/g++ g++ /usr/bin/g++-10 --slave /usr/bin/gcov gcov /usr/bin/gcov-10
-cd agoric-sdk
+cd $HOME/agoric-sdk
 git fetch --all
-git checkout mainnet1B-rc3
+git checkout agoric-upgrade-11
 yarn install
 yarn build
-cd packages/cosmic-swingset && make
-sudo systemctl restart agoricd && journalctl -u agoricd -f -o cat
+systemctl restart agoricd.service && journalctl -u agoricd.service -f -o cat
 
 ```
 `agd version --long`
-- version: 0.34.1
-- commit: ba3b77644
+- version: 0.35.0-u11.0
+- commit: 92b6cd724
 
 ```python
 agd init STAVRuide --chain-id agoric-3
