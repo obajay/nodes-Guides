@@ -55,10 +55,9 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/Agoric/agoric-sdk
 cd $agoric-sdk
-git checkout mainnet1B-rc3
+git checkout agoric-upgrade-11
 yarn install
 yarn build
-cd packages/cosmic-swingset && make
 
 agd init $Validator_Name --chain-id $CHAIN_ID
 
@@ -162,13 +161,13 @@ apt upgrade -y
 apt install -y build-essential
 apt install -y gcc-10 g++-10 cpp-10
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 100 --slave /usr/bin/g++ g++ /usr/bin/g++-10 --slave /usr/bin/gcov gcov /usr/bin/gcov-10
-cd agoric-sdk
+cd $HOME/agoric-sdk
 git fetch --all
-git checkout mainnet1B-rc3
+git checkout agoric-upgrade-11
 yarn install
 yarn build
-cd packages/cosmic-swingset && make
-sudo systemctl restart agoricd && journalctl -u agoricd -f -o cat
+systemctl restart agoricd.service && journalctl -u agoricd.service -f -o cat
+
 
 
 break
