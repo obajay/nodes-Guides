@@ -1,4 +1,4 @@
-# BAND Mannet guide
+# BAND Mainnet guide
 
 ![band](https://github.com/obajay/nodes-Guides/assets/44331529/b42abd97-f3d7-42e0-ba0f-f4ddeb44f5cb)
 
