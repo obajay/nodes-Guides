@@ -6,7 +6,7 @@
 [WebSite](https://www.bandprotocol.com/)\
 [GitHub](https://github.com/bandprotocol/chain)
 =
-[EXPLORER](https://explorer.stavr.tech/band-mainnet/staking)
+[EXPLORER](https://explorer.stavr.tech/Band-Mainnet/staking)
 =
 
 - **Minimum hardware requirements**:
