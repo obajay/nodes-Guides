@@ -3,7 +3,7 @@
 
 [Website](https://www.pylons.tech/home/)
 =
-[EXPLORER 1](https://explorer.stavr.tech/pylons/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/Pylons/staking) \
 [EXPLORER 2](https://pylons.explorers.guru/validators) 
 =
 - **Minimum hardware requirements**:
