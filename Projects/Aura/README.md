@@ -4,7 +4,7 @@
 ![aaura](https://user-images.githubusercontent.com/44331529/180595514-1dfc72a9-b72e-477b-ab5b-54f8a5071c7d.png)
 
 
-[EXPLORER](https://explorer.stavr.tech/aura-mainnet)
+[EXPLORER](https://explorer.stavr.tech/Aura-Mainnet)
 =
 
 - **Minimum hardware requirements**:
