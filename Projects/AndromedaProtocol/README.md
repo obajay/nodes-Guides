@@ -5,7 +5,7 @@
 [WebSite](https://andromedaprotocol.io/)\
 [GitHub](https://github.com/andromedaprotocol)
 =
-[EXPLORER 1](https://explorer.stavr.tech/andromedad-testnet/staking)\
+[EXPLORER 1](https://explorer.stavr.tech/Andromedad-testnet/staking)\
 [EXPLORER 2](https://testnet-ping.wildsage.io/andromeda/staking)
 =
 
