@@ -8,7 +8,7 @@ Ethereum, and soon much more
 
 [Website](https://sifchain.network/)
 =
-[EXPLORER 1](https://explorer.stavr.tech/sifchain/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/Sifchain/staking) \
 [EXPLORER 2](https://www.mintscan.io/sifchain/validators)
 =
 
