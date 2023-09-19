@@ -2,7 +2,7 @@
 
 ![Crowd Control](https://user-images.githubusercontent.com/44331529/180597315-e25b1929-8973-4149-b2c6-b9086c1787bd.png)
 
-[EXPLORER 1](http://explorer.stavr.tech/cardchain/staking) \
+[EXPLORER 1](http://explorer.stavr.tech/CARDCHAIN/staking) \
 [EXPLORER 2](https://explorer.bccnodes.com/cardchain/staking)
 =
 - **Minimum hardware requirements**:
