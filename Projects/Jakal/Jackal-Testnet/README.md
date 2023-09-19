@@ -5,7 +5,7 @@
 
 [GitHub](https://github.com/JackalLabs/jackal-chain-assets/tree/main/testnet)
 =
-[EXPLORER 1](https://explorer.stavr.tech/jackal-testnet/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/Jackal-Testnet/staking) \
 [EXPLORER 2](https://testnet-explorer.brocha.in/jackal/staking)
 =
 
