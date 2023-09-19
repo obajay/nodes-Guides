@@ -5,7 +5,7 @@
 [WEBSITE](https://www.mande.network/) \
 [GitHub](https://github.com/mande-labs/testnet-2)
 =
-[EXPLORER 1](https://explorer.stavr.tech/mande-chain/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/Mande-Chain/staking) \
 [EXPLORER 2](https://test.anode.team/mande-network/staking)
 =
 
