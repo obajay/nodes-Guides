@@ -6,7 +6,7 @@
 [GitHub](https://github.com/osmosis-labs/osmosis)
 =
 [EXPLORER 1](https://www.mintscan.io/osmosis/validators) \
-[EXPLORER 2](https://explorer.stavr.tech/osmosis-mainnet/staking) \
+[EXPLORER 2](https://explorer.stavr.tech/Osmosis-Mainnet) \
 [EXPLORER 3](https://ping.pub/osmosis/staking)
 =
 
