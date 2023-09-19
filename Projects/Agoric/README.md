@@ -3,9 +3,8 @@
 ![AG (1)](https://user-images.githubusercontent.com/44331529/181192625-d034ab43-ba09-4636-8656-c3c6afd9975c.png)
 
 
-[EXPLORER 1](https://agoric.explorers.guru/validators) \
-[EXPLORER 2](https://explorer.postcapitalist.io/agoric/staking) \
-[EXPLORER 3](https://agoric.bigdipper.live/validators?sort=votingPower&dir=-1)
+[EXPLORER 1](https://explorer.stavr.tech/Agoric/staking) \
+[EXPLORER 2](https://agoric.explorers.guru/validators)
 =
 - **Minimum hardware requirements**:
 
