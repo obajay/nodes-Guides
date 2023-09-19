@@ -5,7 +5,7 @@
 [WEBSITE](https://hypersign.id/#home)
 =
 
-[EXPLORER 1](http://explorer.stavr.tech/hypersign/staking) \
+[EXPLORER 1](http://explorer.stavr.tech/HyperSign/staking) \
 [EXPLORER 2](https://explorer.theamsolutions.info/hypersign-test/staking)
 =
 
