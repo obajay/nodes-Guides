@@ -3,7 +3,7 @@
 
 [Website](https://islamiccoin.net/)
 =
-[EXPLORER 1](https://explorer.stavr.tech/haqq-mainnet/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/HAQQ-Mainnet/staking) \
 [EXPLORER 2](https://haqq.explorers.guru/validators)
 =
 - **Minimum hardware requirements**:
