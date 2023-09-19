@@ -2,7 +2,7 @@
 ![mm (2)](https://user-images.githubusercontent.com/44331529/180606614-565409bd-fa7e-4e50-990d-b2e47614d172.png)
 ![mm (1)](https://user-images.githubusercontent.com/44331529/180606616-069f9ce4-ffc4-4c0b-ac08-19e168054991.png)
 
-[EXPLORER 1](https://explorer.stavr.tech/meme/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/Meme/staking) \
 [EXPLORER 2](https://ping.pub/meme/staking)
 =
 - **Minimum hardware requirements**:
