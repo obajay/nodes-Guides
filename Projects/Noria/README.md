@@ -5,7 +5,7 @@
 [WebSite](https://noria.network/)\
 [GitHub](https://github.com/noria-net)
 =
-[EXPLORER](https://explorer.stavr.tech/noria-testnet)
+[EXPLORER](https://explorer.stavr.tech/Noria-testnet/staking)
 =
 
 - **Minimum hardware requirements**:
