@@ -5,7 +5,7 @@
 [WebSite](https://elys.network) \
 [GitHub](https://github.com/elys-network/elys)
 =
-[EXPLORER](https://explorer.stavr.tech/elys-testnet/staking)
+[EXPLORER](https://explorer.stavr.tech/Elys-Testnet/staking)
 =
 
 - **Minimum hardware requirements**:
