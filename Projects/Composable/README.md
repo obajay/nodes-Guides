@@ -5,7 +5,7 @@
 [WebSite](https://www.composable.finance/)\
 [GitHub](https://github.com/notional-labs/composable-networks)
 =
-[EXPLORER 1](https://explorer.stavr.tech/composable-mainnet) \
+[EXPLORER 1](https://explorer.stavr.tech/Composable-Mainnet) \
 [EXPLORER 2](https://explorer.indonode.net/composable)
 =
 
