@@ -6,7 +6,7 @@
 [WebSite](https://dymension.xyz/) \
 [GitHub](https://github.com/dymensionxyz/testnets)
 =
-[EXPLORER](https://explorer.stavr.tech/dymension-testnet/staking)
+[EXPLORER](https://explorer.stavr.tech/Dymension-testnet/staking)
 =
 
 - **Minimum hardware requirements**:
