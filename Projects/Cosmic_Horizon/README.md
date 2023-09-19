@@ -6,7 +6,7 @@
 [WebSite](https://cosmic-horizon.com/)\
 [GitHub](https://github.com/cosmic-horizon/QWOYN)
 =
-[EXPLORER](https://explorer.stavr.tech/cosmic-mainnet/staking)
+[EXPLORER](https://explorer.stavr.tech/Qwoyn-Mainnet/staking)
 =
 
 - **Minimum hardware requirements**:
