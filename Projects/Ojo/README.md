@@ -6,7 +6,7 @@
 [WebSite](https://ojo.network/)\
 [GitHub](https://github.com/ojo-network)
 =
-[EXPLORER](https://explorer.stavr.tech/ojo-devnet/staking)
+[EXPLORER](https://explorer.stavr.tech/Ojo-Devnet/staking)
 =
 
 - **Minimum hardware requirements**:
