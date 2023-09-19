@@ -5,7 +5,7 @@
 [WebSite](https://selfchain.xyz/)\
 [Docs](https://docs.selfchain.xyz/nodes-and-validators/node-setup-guide)
 =
-[EXPLORER 1](https://explorer.stavr.tech/selfchain-testnet) \
+[EXPLORER 1](https://explorer.stavr.tech/Selfchain-testnet) \
 [EXPLORER 2](https://explorer-devnet.selfchain.xyz/self/validators)
 =
 
