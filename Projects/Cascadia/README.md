@@ -5,7 +5,7 @@
 [WebSite](https://www.cascadia.foundation/)\
 [GitHub](https://github.com/cascadiafoundation/cascadia)
 =
-[EXPLORER](https://explorer.stavr.tech/cascadia-testnet/staking)
+[EXPLORER](https://explorer.stavr.tech/Cascadia-testnet/staking)
 =
 
 - **Minimum hardware requirements**:
