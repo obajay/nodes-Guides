@@ -5,7 +5,7 @@
 
 [Website](https://lambda.im/)
 =
-[EXPLORER 1](https://explorer.stavr.tech/lambda/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/Lambda/staking) \
 [EXPLORER 2](https://explorer.nodestake.top/lambda/staking)
 =
 
