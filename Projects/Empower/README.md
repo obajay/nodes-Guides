@@ -4,7 +4,7 @@
 
 [Website](https://www.empowerchain.io/)
 =
-[EXPLORER](http://explorer.stavr.tech/empower-mainnet/staking)
+[EXPLORER](http://explorer.stavr.tech/Empower-Mainnet/staking)
 =
 - **Minimum hardware requirements**:
 
