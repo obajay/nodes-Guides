@@ -5,7 +5,7 @@
 [WebSite](https://terp.network/)\
 [GitHub](https://github.com/terpnetwork/terp-core.git)
 =
-[EXPLORER](https://explorer.stavr.tech/terp-mainnet/staking)
+[EXPLORER](https://explorer.stavr.tech/Terp-Mainnet/staking)
 =
 
 - **Minimum hardware requirements**:
