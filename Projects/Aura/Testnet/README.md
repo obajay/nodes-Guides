@@ -5,7 +5,7 @@
 
 
 
-[EXPLORER](https://explorer.stavr.tech/aura-testnet/staking)
+[EXPLORER](https://explorer.stavr.tech/Aura-Testnet/staking)
 =
 
 - **Minimum hardware requirements**:
