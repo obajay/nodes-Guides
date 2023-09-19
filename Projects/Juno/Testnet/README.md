@@ -5,8 +5,7 @@
 [WebSite](https://www.junonetwork.io/)\
 [GitHub](https://github.com/CosmosContracts)
 =
-[EXPLORER 1](https://explorer.stavr.tech/juno-testnet/staking) \
-[EXPLORER 2](https://explorer.stavr.tech/juno-testnet/staking)
+[EXPLORER 1](https://explorer.stavr.tech/Juno-Testnet/staking)
 =
 
 - **Minimum hardware requirements**:
