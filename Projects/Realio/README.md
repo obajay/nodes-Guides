@@ -4,7 +4,7 @@
 
 [Website](https://www.realio.fund/)
 =
-[EXPLORER](https://explorer.stavr.tech/realio-mainnet/staking)
+[EXPLORER](https://explorer.stavr.tech/Realio-Mainnet/staking)
 =
 
 - **Minimum hardware requirements**:
