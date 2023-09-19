@@ -2,7 +2,7 @@
 
 ![Beezee](https://user-images.githubusercontent.com/44331529/180596395-845e85eb-ed01-4bca-ae94-90bdbfd6e5be.png)
 
-[EXPLORER 1](https://explorer.stavr.tech/beezee/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/BeeZee/staking) \
 [EXPLORER 2](https://explorer.thesilverfox.pro/beezee/staking)
 =
 
