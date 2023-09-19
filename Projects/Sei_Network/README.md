@@ -2,7 +2,7 @@
 
 ![sei](https://user-images.githubusercontent.com/44331529/180607309-cc8df238-af95-451b-b99d-d858361aac51.png)
 
-[EXPLORER 1](https://explorer.stavr.tech/sei/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/SEI/staking) \
 [EXPLORER 2](https://sei.explorers.guru/validators) \
 [EXPLORER 3](https://testnet-explorer.brocha.in/sei%20atlantic%202/staking)
 =
