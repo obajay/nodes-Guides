@@ -3,7 +3,7 @@
 ![Uptick](https://user-images.githubusercontent.com/44331529/180614523-9a7e76e9-9243-4f38-8938-1cdaa13e2cf6.png)
 
 [Website](https://uptick.network/ ) \
-[EXPLORER 1](https://explorer.stavr.tech/uptick-mainnet/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/Uptick-Mainnet/staking) \
 [EXPLORER 2](https://exp.utsa.tech/uptick)
 =
 - **Minimum hardware requirements**:
