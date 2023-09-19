@@ -6,7 +6,7 @@
 [WebSite](https://c4e.io/) \
 [GitHub](https://github.com/chain4energy)
 =
-[EXPLORER 1](https://explorer.stavr.tech/c4e/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/C4E/staking) \
 [EXPLORER 2](https://exp.utsa.tech/c4e/staking)
 =
 
