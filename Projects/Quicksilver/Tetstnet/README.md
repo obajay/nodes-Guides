@@ -5,7 +5,7 @@
 
 [WEBSITE](https://quicksilver.zone/)
 =
-[EXPLORER 1](https://explorer.stavr.tech/quicksilver/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/Quicksilver/staking) \
 [EXPLORER 2](https://testnet.manticore.team/quicksilver/staking)
 =
 
