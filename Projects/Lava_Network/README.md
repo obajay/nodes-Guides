@@ -6,7 +6,7 @@
 [WebSite](https://lavanet.xyz) \
 [GitHub](https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T.git)
 =
-[EXPLORER 1](https://explorer.stavr.tech/lava-testnet/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/Lava-Testnet/staking) \
 [EXPLORER 2](https://lava.explorers.guru/validators)
 =
 
