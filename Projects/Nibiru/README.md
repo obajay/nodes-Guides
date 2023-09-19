@@ -5,7 +5,7 @@
 [Website](https://nibiru.fi/) \
 [GitHub](https://github.com/NibiruChain)
 =
-[EXPLORER 1](https://explorer.stavr.tech/nibiru/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/Nibiru/staking) \
 [EXPLORER 2](https://exp.utsa.tech/nibiru-test/staking)
 =
 - **Minimum hardware requirements**:
