@@ -3,7 +3,7 @@
 
 [Website](https://canto.io/)
 =
-[EXPLORER 1](https://explorer.stavr.tech/canto/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/Canto-Mainnet/staking) \
 [EXPLORER 2](https://mainnet.manticore.team/canto/staking)
 =
 - **Minimum hardware requirements**:
