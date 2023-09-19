@@ -4,7 +4,8 @@
 
 
 [Website](https://provenance.io/) \
-[EXPLORER](https://www.mintscan.io/provenance/validators)
+[EXPLORER 1](https://explorer.stavr.tech/Provenance) \
+[EXPLORER 2](https://www.mintscan.io/provenance/validators)
 =
 - **Minimum hardware requirements**:
 
