@@ -5,7 +5,7 @@
 
 [WEBSITE](https://quicksilver.zone/)
 =
-[EXPLORER](https://explorer.stavr.tech/quicksilver-mainnet/staking)
+[EXPLORER](https://explorer.stavr.tech/Quicksilver-Mainnet/staking)
 =
 
 # 1) Auto_install script
