@@ -4,7 +4,7 @@
 
 [Website](https://www.sourceprotocol.io/)
 =
-[EXPLORER 1](https://explorer.stavr.tech/source/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/Source/staking) \
 [EXPLORER 2](https://exp.nodeist.net/Source/staking)
 =
 - **Minimum hardware requirements**:
