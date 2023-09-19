@@ -5,7 +5,7 @@
 [WebSite](https://www.sao.network/#/)\
 [GitHub]( https://github.com/SaoNetwork)
 =
-[EXPLORER 1](https://explorer.stavr.tech/sao-beta/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/Sao-Beta/staking) \
 [EXPLORER 2](https://explorer.sao.network/sao-beta/staking)
 =
 
