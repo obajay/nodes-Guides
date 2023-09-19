@@ -4,7 +4,7 @@
 
 [Website](https://nois.network/)
 =
-[EXPLORER 1](http://explorer.stavr.tech/nois/staking) \
+[EXPLORER 1](http://explorer.stavr.tech/Nois-Testnet/staking) \
 [EXPLORER 2](https://testnet.ping.pub/nois/staking)
 =
 
