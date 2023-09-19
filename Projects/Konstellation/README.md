@@ -4,7 +4,7 @@
 
 
 [Website](https://konstellation.tech/) \
-[EXPLORER 1](https://explorer.stavr.tech/konstellation/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/Konstellation/staking) \
 [EXPLORER 2](https://www.mintscan.io/konstellation/validators)
 =
 - **Minimum hardware requirements**:
