@@ -5,7 +5,7 @@
 [WebSite](https://arkeo.network/)\
 [GitHub](https://github.com/arkeonetwork/arkeo#arkeo-binary)
 =
-[EXPLORER 1](https://explorer.stavr.tech/arkeo-testnet) \
+[EXPLORER 1](https://explorer.stavr.tech/Arkeo-testnet/staking) \
 [EXPLORER 2](https://exp.utsa.tech/arkeo-test)
 =
 
