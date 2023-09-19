@@ -5,7 +5,7 @@
 [WEBSITE](https://okp4.network/) \
 [GitHub](https://github.com/okp4)
 =
-[EXPLORER 1](https://explorer.stavr.tech/okp4-testnet/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/OKP4-Testnet/staking) \
 [EXPLORER 2](https://explorer.bccnodes.com/okp4/staking)
 =
 
