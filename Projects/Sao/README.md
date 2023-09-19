@@ -5,7 +5,7 @@
 [WebSite](https://www.sao.network/#/)\
 [GitHub]( https://github.com/SaoNetwork)
 =
-[EXPLORER](https://explorer.stavr.tech/sao-testnet/staking)
+[EXPLORER](https://explorer.stavr.tech/Sao-Testnet/staking)
 =
 
 - **Minimum hardware requirements**:
