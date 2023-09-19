@@ -5,8 +5,9 @@
 [WebSite](https://www.composable.finance/)\
 [GitHub](https://github.com/notional-labs/composable-networks)
 =
-[EXPLORER 1](https://explorer.nodestake.top/banksy-testnet/staking) \
-[EXPLORER 2](https://explorer.nodexcapital.com/composable/staking)
+[EXPLORER 1](https://explorer.stavr.tech/Composable-Testnet-3) \
+[EXPLORER 2](https://explorer.nodestake.top/banksy-testnet/staking)
+
 =
 
 - **Minimum hardware requirements**:
