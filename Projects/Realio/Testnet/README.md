@@ -4,7 +4,7 @@
 
 [Website](https://www.realio.fund/)
 =
-[EXPLORER 1](https://explorer.stavr.tech/realio/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/Realio/staking) \
 [EXPLORER 2](https://exp.nodeist.net/t-realio/staking)
 =
 
