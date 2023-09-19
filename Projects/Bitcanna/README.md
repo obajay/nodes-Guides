@@ -9,7 +9,7 @@
 
 [Website](https://www.bitcanna.io/)
 =
-[EXPLORER 1](https://explorer.stavr.tech/bitcanna/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/Bitcanna/staking) \
 [EXPLORER 2](https://www.mintscan.io/bitcanna/validators)
 =
 
