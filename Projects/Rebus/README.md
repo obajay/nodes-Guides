@@ -5,7 +5,7 @@
 
 [Website](https://www.rebuschain.com/)
 =
-[EXPLORER 1](https://explorer.stavr.tech/rebus/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/Rebus/staking) \
 [EXPLORER 2](https://rebus.explorers.guru/validators)
 =
 - **Minimum hardware requirements**:
