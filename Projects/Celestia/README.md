@@ -2,7 +2,8 @@
 ![Celestia](https://user-images.githubusercontent.com/44331529/180597147-c00ebd04-de42-476e-bc8c-1142479a839b.png)
 
 
-[EXPLORER](https://celestia.explorers.guru/validators)
+[EXPLORER 1](https://explorer.stavr.tech/Celestia-Testnet/staking) \
+[EXPLORER 2](https://celestia.explorers.guru/validators)
 ===
 - **Minimum hardware requirements**:
 
