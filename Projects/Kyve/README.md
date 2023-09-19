@@ -4,7 +4,7 @@
 [WebSite](https://www.kyve.network/)
 =
 
-[EXPLORER 1](https://explorer.stavr.tech/kyve/staking) \
+[EXPLORER 1](https://explorer.stavr.tech/Kyve/staking) \
 [EXPLORER 2](https://kyve.explorers.guru/validators)
 =
 - **Minimum hardware requirements**:
