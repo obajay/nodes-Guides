@@ -37,24 +37,24 @@ go version
 cd $HOME
 git clone https://github.com/umee-network/umee.git
 cd umee
-git checkout v6.0.1
+git checkout v6.0.2
 make install
 ```
 *******🟢UPDATE🟢******* 20.09.23
 ```python
 cd $HOME/umee
 git fetch --all
-git checkout v6.0.1
+git checkout v6.0.2
 make install
 umeed version --long | grep -e commit -e version
-#version: 6.0.1
-#commit: 3de0b0c05b8016dc8b3ecc8aab9a4c183fe6b1e3
+#version: 6.0.2
+#commit: c88495ce3ed93c616ba8ae720d26568295f49186
 sudo systemctl restart umeed && journalctl -u umeed -f -o cat
 ```
 
 `umeed version --long`
-+ version: 6.0.1
-+ commit: 3de0b0c05b8016dc8b3ecc8aab9a4c183fe6b1e3
++ version: 6.0.2
++ commit: c88495ce3ed93c616ba8ae720d26568295f49186
 
 ## Init
 ```python
