@@ -36,16 +36,16 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Binary   18.07.23
+# Binary   20.09.23
 ```python 
 git clone https://github.com/Canto-Network/Canto
 cd Canto
-git checkout v6.0.0
+git checkout v7.0.0
 make install
 ```
 `cantod version --long | head`
 - version: 7.0.0
-- commit: c7c0964eec35c17b30c56516027f0ab42cc72d5f
+- commit: da939e2935d0661eb68449bfd64122efce6f6871
 
 ## Initialisation
 ```python
