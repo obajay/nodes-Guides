@@ -58,12 +58,13 @@ cd $HOME
 git clone https://github.com/Canto-Network/Canto.git
 cd Canto
 git checkout main && git pull
-git checkout v5.0.0
+git checkout v7.0.0
 make install
 
 cantod init $NODENAME --chain-id $CHAIN_ID
 
-wget -O $HOME/.cantod/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Canto/genesis.json"
+wget -O genesis.json https://snapshots.polkachu.com/genesis/canto/genesis.json --inet4-only
+mv genesis.json ~/.cantod/config
 wget -O $HOME/.cantod/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Canto/addrbook.json"
 
 echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
@@ -171,7 +172,7 @@ break
 "Update")
 cd $HOME/Canto
 git fetch --all
-git checkout v5.0.0
+git checkout v7.0.0
 make install
 sudo systemctl restart cantod && journalctl -u cantod -f -o cat
 
