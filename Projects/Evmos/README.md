@@ -28,16 +28,17 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 go version
 ```    
-## Build    (11.07.23)
+## Build    (25.09.23)
 ```python
 git clone https://github.com/evmos/evmos
 cd evmos
-git checkout v13.0.2
+git checkout v14.0.0
 make install
 ```
 
 `evmosd version`
-+ version: v13.0.2
++ version: v14.0.0
++ commit: 392d90685fa9b6408672695d4eb4a4c3e33bf34e
 
 ```python
 evmosd init STAVRguide --chain-id evmos_9001-2
@@ -56,30 +57,33 @@ wget https://archive.evmos.org/mainnet/genesis.json
 mv genesis.json ~/.evmosd/config/    
 ```
 ## Set up the minimum gas price $HOME/.evmosd/config/app.toml as well as seed and peers
-    sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0aevmos\"/;" ~/.evmosd/config/app.toml
-
-    external_address=$(wget -qO- eth0.me)
-    sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.evmosd/config/config.toml
-
-    peers="d8ac979da3dbe2f796e2344616096160dc5cfdc1@164.92.191.127:26656,d5d418256279900c3d1fbf2137ce7142d6f6c682@65.108.139.20:26656,1915b0217865b968646768e2761a8669d5e24bd5@65.108.44.149:26656,1a7bee67d6337d09380b824b952872bdc5dca86f@38.242.194.56:26656,b02259a11e4ee46b29668cfc957e530022a3fca1@62.171.142.145:26656,cc321917ce82b6c541c687420ad5ae0b4b5e055a@144.76.224.246:26656"
-    sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.evmosd/config/config.toml
-    seeds=""
-    sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.evmosd/config/config.toml 
-    
+```python
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0aevmos\"/;" ~/.evmosd/config/app.toml
+external_address=$(wget -qO- eth0.me)
+sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.evmosd/config/config.toml
+peers="d8ac979da3dbe2f796e2344616096160dc5cfdc1@164.92.191.127:26656,d5d418256279900c3d1fbf2137ce7142d6f6c682@65.108.139.20:26656,1915b0217865b968646768e2761a8669d5e24bd5@65.108.44.149:26656,1a7bee67d6337d09380b824b952872bdc5dca86f@38.242.194.56:26656,b02259a11e4ee46b29668cfc957e530022a3fca1@62.171.142.145:26656,cc321917ce82b6c541c687420ad5ae0b4b5e055a@144.76.224.246:26656"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.evmosd/config/config.toml
+seeds=""
+sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.evmosd/config/config.toml 
+```    
 ## Pruning (optional)
-    pruning="custom" && \
-    pruning_keep_recent="100" && \
-    pruning_keep_every="0" && \
-    pruning_interval="10" && \
-    sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.evmosd/config/app.toml && \
-    sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.evmosd/config/app.toml && \
-    sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.evmosd/config/app.toml && \
-    sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.evmosd/config/app.toml
+```python
+pruning="custom" && \
+pruning_keep_recent="100" && \
+pruning_keep_every="0" && \
+pruning_interval="10" && \
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.evmosd/config/app.toml && \
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.evmosd/config/app.toml && \
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.evmosd/config/app.toml && \
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.evmosd/config/app.toml
+```
 ## Indexer (optional)    
-    indexer="null" && \
-    sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.evmosd/config/config.toml    
-    
+```python
+indexer="null" && \
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.evmosd/config/config.toml    
+```    
 ## Create a service file
+```python
     sudo tee /etc/systemd/system/evmosd.service > /dev/null <<EOF
     [Unit]
     Description=evmos
@@ -95,25 +99,26 @@ mv genesis.json ~/.evmosd/config/
     [Install]
     WantedBy=multi-user.target
     EOF
-    
+```
  [Snapshot](https://polkachu.com/tendermint_snapshots/evmos)    (optional) \
     or \
  [RPC](https://nodejumper.io/evmos/sync) (optional)
  
 # Start
-    sudo systemctl daemon-reload
-    sudo systemctl enable evmosd
-    sudo systemctl restart evmosd
-    sudo journalctl -u evmosd -f -o cat
-    
+```python
+sudo systemctl daemon-reload
+sudo systemctl enable evmosd
+sudo systemctl restart evmosd && sudo journalctl -u evmosd -f -o cat
+```
     
 ## Delete node
-
-    sudo systemctl stop evmosd && \
-    sudo systemctl disable evmosd && \
-    rm /etc/systemd/system/evmosd.service && \
-    sudo systemctl daemon-reload && \
-    cd $HOME && \
-    rm -rf .evmosd && \
-    rm -rf evmos && \
-    rm -rf $(which evmosd)
+```python
+sudo systemctl stop evmosd
+sudo systemctl disable evmosd
+rm /etc/systemd/system/evmosd.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf .evmosd
+rm -rf evmos
+rm -rf $(which evmosd)
+```
