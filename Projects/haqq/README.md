@@ -36,30 +36,33 @@ source $HOME/.bash_profile &&
 go version
 ```
 
-# Binary   20.07.23
+# Binary   26.09.23
 ```python
+cd $HOME
 git clone https://github.com/haqq-network/haqq
-cd haqq
-git checkout v1.4.1
-make install
+wget https://github.com/haqq-network/haqq/releases/download/v1.5.0/haqq_1.5.0_Linux_x86_64.tar.gz
+tar -xvzf haqq_1.5.0_Linux_x86_64.tar.gz
+cd bin
+chmod +x haqqd
+mv haqqd $HOME/go/bin/
 ```
 `haqqd version --long | grep -e version -e commit`
 
-*******🟢UPDATE🟢******* 20.07.23
+*******🟢UPDATE🟢******* 26.09.23
 ```python
 cd $HOME
-wget https://github.com/haqq-network/haqq/releases/download/v1.4.1/haqq_1.4.1_Linux_x86_64.tar.gz
-tar -xvzf haqq_1.4.1_Linux_x86_64.tar.gz
+wget https://github.com/haqq-network/haqq/releases/download/v1.5.0/haqq_1.5.0_Linux_x86_64.tar.gz
+tar -xvzf haqq_1.5.0_Linux_x86_64.tar.gz
 cd bin
 chmod +x haqqd
 mv haqqd $(which haqqd)
 haqqd version --long | grep -e commit -e version
-#version: 1.4.1
-#commit: af155c6952991de9289fef5cbfee102544b0b933
+#version: 1.5.0
+#commit: 50cc9bee42d7db3f191eab823cac08d043bcc3bb
 sudo systemctl restart haqqd && journalctl -u haqqd -f -o cat
 ```
-- version: 1.4.1
-- commit: af155c6952991de9289fef5cbfee102544b0b933
+- version: 1.5.0
+- commit: 50cc9bee42d7db3f191eab823cac08d043bcc3bb
 
 ## Initialisation
 ```python
