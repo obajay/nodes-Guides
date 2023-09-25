@@ -32,7 +32,7 @@ go version
 ```python
 git clone https://github.com/evmos/evmos
 cd evmos
-git checkout v14.0.0
+git checkout v14.1.0
 make install
 ```
 
