@@ -60,7 +60,6 @@ centaurid version --long | grep -e commit -e version
 #version: 6.0.1-ics
 #commit: 8105892d0c8121629dcea2338379e5ce2e722115
 sudo systemctl restart centaurid && sudo journalctl -u centaurid -f -o cat
-curl -s http://localhost:26657/consensus_state  | jq '.result.round_state.height_vote_set[0].prevotes_bit_array'
 
 ```
 
