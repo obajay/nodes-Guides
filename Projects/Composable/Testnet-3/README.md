@@ -48,6 +48,7 @@ cd $HOME
 git clone https://github.com/notional-labs/composable-testnet
 cd composable-testnet
 git checkout v6.0.1-ics
+wget -O $HOME/.banksy/config/ccv.json https://raw.githubusercontent.com/cosmos/testnets/master/replicated-security/banksy-testnet-3/ccv.json
 make install
 ```
 *******🟢UPDATE🟢******* 27.09.23
@@ -56,6 +57,7 @@ cd $HOME/composable-centauri
 git pull
 git checkout v6.0.1-ics
 make install
+wget -O $HOME/.banksy/config/ccv.json https://raw.githubusercontent.com/cosmos/testnets/master/replicated-security/banksy-testnet-3/ccv.json
 centaurid version --long | grep -e commit -e version
 #version: 6.0.1-ics
 #commit: 8105892d0c8121629dcea2338379e5ce2e722115
