@@ -133,6 +133,7 @@ curl -o - -L http://source.snapshot.stavr.tech:4001/source/source-snap.tar.lz4 |
 curl -o - -L http://source.wasm.stavr.tech:1050/wasm-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.source/data --strip-components 3
 mv $HOME/.source/priv_validator_state.json.backup $HOME/.source/data/priv_validator_state.json
 wget -O $HOME/.source/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Source/addrbook.json"
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" ~/.source/config/config.toml
 sudo systemctl restart sourced && journalctl -u sourced -f -o cat
 ```
 
