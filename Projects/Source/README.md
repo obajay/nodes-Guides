@@ -5,7 +5,7 @@
 [Website](https://www.sourceprotocol.io/)
 =
 [EXPLORER 1](https://explorer.stavr.tech/Source/staking) \
-[EXPLORER 2](https://exp.nodeist.net/Source/staking)
+[EXPLORER 2](https://testnet.itrocket.net/source/staking)
 =
 - **Minimum hardware requirements**:
 
@@ -37,19 +37,22 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Binary   01.08.22
+# Binary   28.09.23
 ```python 
-git clone -b testnet https://github.com/Source-Protocol-Cosmos/source.git
+cd $HOME
+git clone https://github.com/Source-Protocol-Cosmos/source.git
 cd ~/source
+git checkout v3.0.0
 make install
 ```
 `sourced version --long | head`
-- version: v1.0.0-2-ge06b810
-- commit: e06b810e842e57ec8f5432c9cdd57883a69b3cee 
+- version: v3.0.0
+- commit: 39030aa705cf18819b0a439c1bd646ed9195728c 
 
 ## Initialisation
 ```python
-sourced init STAVRguide --chain-id=sourcechain-testnet
+sourced init STAVRguide --chain-id=sourcetest-1
+sourced config chain-id sourcetest-1
 ```
 ## Add wallet
 ```python
@@ -59,18 +62,18 @@ sourced keys add <walletName> --recover
 ```
 # Genesis
 ```python
-curl -s  https://raw.githubusercontent.com/Source-Protocol-Cosmos/testnets/master/sourcechain-testnet/genesis.json > ~/.source/config/genesis.json
+curl -s  https://raw.githubusercontent.com/Source-Protocol-Cosmos/testnets/master/sourcetest-1/genesis.json > ~/.source/config/genesis.json
 ```
 
 `sha256sum $HOME/.source/config/genesis.json`
-- 2bf556b50a2094f252e0aac75c8018a9d6c0a77ba64ce39811945087f6a5165d  genesis.json
+- c8b8e28f1cc2c6bb708d963146842da9e367874267d90ab99a13a6bd736d5682  genesis.json
 
 ### Pruning (optional) one command
 ```python
 pruning="custom" && \
-pruning_keep_recent="100" && \
+pruning_keep_recent="1000" && \
 pruning_keep_every="0" && \
-pruning_interval="10" && \
+pruning_interval="100" && \
 sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.source/config/app.toml && \
 sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.source/config/app.toml && \
 sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.source/config/app.toml && \
@@ -87,15 +90,12 @@ sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0usource\"/;"
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.source/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.source/config/config.toml
-
-peers="6ca675f9d949d5c9afc8849adf7b39bc7fccf74f@164.92.98.17:26656"
+peers="ace839c852739d1ea6e3675d30380fe085c1c23a@52.26.226.21:26656,8145d4d13511e7f89dbd257f51ed5d076941f12f@164.92.98.12:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.source/config/config.toml
-
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.source/config/config.toml
-
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.source/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.source/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.source/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.source/config/config.toml
 ```
 
 ## Download addrbook
@@ -148,8 +148,8 @@ sudo systemctl restart sourced && sudo journalctl -u sourced -f -o cat
 sourced tx staking create-validator \
 --amount=1000000usource \
 --pubkey=$(sourced tendermint show-validator) \
---moniker=<moniker> \
---chain-id=sourcechain-testnet \
+--moniker=STAVR_guide \
+--chain-id=sourcetest-1 \
 --commission-rate="0.10" \
 --commission-max-rate="0.20" \
 --commission-max-change-rate="0.1" \
