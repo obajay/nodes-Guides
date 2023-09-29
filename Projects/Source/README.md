@@ -86,7 +86,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.source/config/config.
 ```
 ### Set up the minimum gas price and Peers/Seeds/Filter peers
 ```python
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"1usource\"/;" ~/.source/config/app.toml
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.025usource\"/;" ~/.source/config/app.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.source/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.source/config/config.toml
@@ -159,7 +159,7 @@ sourced tx staking create-validator \
 --from=<walletName> \
 --identity="" \
 --website="" \
---fees 200000usource \
+--fees 5000usource \
 --details="" -y
 ```
 
