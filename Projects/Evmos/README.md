@@ -100,9 +100,9 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.evmosd/config/config.
     WantedBy=multi-user.target
     EOF
 ```
- [Snapshot](https://polkachu.com/tendermint_snapshots/evmos)    (optional) \
-    or \
- [RPC](https://nodejumper.io/evmos/sync) (optional)
+
+ [Snapshot Polkachu](https://polkachu.com/tendermint_snapshots/evmos)    (optional)
+ =
  
 # Start
 ```python
