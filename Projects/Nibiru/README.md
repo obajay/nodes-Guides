@@ -39,13 +39,16 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Binary   03.10.23
+# Binary   04.10.23
 ```python 
 cd $HOME
-curl -s https://get.nibiru.fi/@v0.21.10! | bash
+curl -s https://get.nibiru.fi/@v0.21.11! | bash
 mv /usr/local/bin/nibid $HOME/go/bin
-
 ```
+
+`nibid version --long | grep -e version -e commit`
+# v0.21.11
+# commit: b5fc784f8fb31628df639fcc23d80621e437f044
 
 ## Initialisation
 ```python
