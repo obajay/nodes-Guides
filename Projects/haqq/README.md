@@ -46,8 +46,6 @@ cd bin
 chmod +x haqqd
 mv haqqd $HOME/go/bin/
 ```
-`haqqd version --long | grep -e version -e commit`
-
 *******🟢UPDATE🟢******* 26.09.23
 ```python
 cd $HOME
@@ -61,6 +59,7 @@ haqqd version --long | grep -e commit -e version
 #commit: 50cc9bee42d7db3f191eab823cac08d043bcc3bb
 sudo systemctl restart haqqd && journalctl -u haqqd -f -o cat
 ```
+`haqqd version --long | grep -e version -e commit`
 - version: 1.5.0
 - commit: 50cc9bee42d7db3f191eab823cac08d043bcc3bb
 
