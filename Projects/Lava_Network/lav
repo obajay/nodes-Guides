@@ -58,7 +58,6 @@ git clone https://github.com/lavanet/lava
 wget -O lavad https://github.com/lavanet/lava/releases/download/v0.24.0/lavad-v0.24.0-linux-amd64
 chmod +x lavad
 mv lavad $HOME/go/bin/lavad
-make install
 
 lavad init $Validator_Name --chain-id $CHAIN_ID
 
