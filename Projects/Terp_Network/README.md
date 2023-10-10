@@ -40,29 +40,29 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 10.06.23
+# Build 11.10.23
 ```python
 cd $HOME
 git clone https://github.com/terpnetwork/terp-core.git
 cd terp-core
-git checkout barberry
+git checkout v2.0.0
 make install
 ```
-*******🟢UPDATE🟢******* 10.06.23
+*******🟢UPDATE🟢******* 11.10.23
 ```python
 cd $HOME/terp-core
 git fetch --all
-git checkout barberry
+git checkout v2.0.0
 make install
 terpd version --long | grep -e commit -e version
-#commit: d70c39066afda3800080a85a66ad018b63b4929c
-#version: barberry
+#commit: 4fbf792d554594fb4ed7a9927424fb6f379fc293
+#version: v2.0.0
 sudo systemctl restart terpd && journalctl -u terpd -f -o cat
 ```
 
 `terpd version --long | grep -e commit -e version`
-- version: barberry
-- commit: d70c39066afda3800080a85a66ad018b63b4929c
+- version: v2.0.0
+- commit: 4fbf792d554594fb4ed7a9927424fb6f379fc293
 
 ```python
 terpd init STAVRguide --chain-id morocco-1
