@@ -34,7 +34,8 @@ go version
 ```python
 export PIO_HOME=~/.provenanced
 git clone https://github.com/provenance-io/provenance.git && cd provenance
-git checkout v1.16.0
+git checkout tags/v1.16.0 -b v1.16.0
+make clean
 make install
 ```
 
@@ -58,6 +59,8 @@ sudo systemctl restart provenanced && journalctl -u provenanced -f -o cat
 
 ```python
 provenanced init STAVRguide --chain-id pio-mainnet-1
+provenanced config set chain-id pio-mainnet-1
+
 ```
 
 ## Create/recover wallet
@@ -69,6 +72,7 @@ provenanced keys add <walletname> --recover
 ## Genesis
 ```python
 wget -O $HOME/.provenanced/config/genesis.json "https://raw.githubusercontent.com/provenance-io/mainnet/main/pio-mainnet-1/genesis.json"
+
 ```
 `sha256sum ~/.provenanced/config/genesis.json`
 + 8b10448662a55462fb23a8f4faedae2ec8a24aefe04d2e7475400c0367948940*
@@ -82,8 +86,6 @@ wget -O $HOME/.provenanced/config/addrbook.json "https://raw.githubusercontent.c
 ## Minimum gas price/Peers/Seeds
 ```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"1905nhash\"/;" ~/.provenanced/config/app.toml
-db_backend="cleveldb" && \
-sed -i.bak -e "s/^db_backend *=.*/db_backend = \"$db_backend\"/" ~/.provenanced/config/config.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.provenanced/config/config.toml
 peers="c4ffbe7e54790ee4b65e2152b2a6f65d15aeab4e@65.108.253.58:26657,286868295b6c56257332a8aca922f898353d2575@154.53.40.114:56651,de4e97e82e5fc567e55326383d46c72ae0ad7741@65.108.12.222:26757,358c97bb55717228f585491ef4c76d563183c583@194.163.165.174:26656,feb3bdc1c6f5ec32961c8051d9afec6984a59483@51.195.176.98:26658,666fca6c8f62f28fb4ab294589ce5d62b5823c91@161.97.115.247:26657"
