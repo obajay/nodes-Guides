@@ -151,13 +151,13 @@ provenanced tx staking create-validator \
 
 ## Delete node
 ```python
-udo systemctl stop provenanced && \
-sudo systemctl disable provenanced && \
-rm /etc/systemd/system/provenanced.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf .provenanced && \
-rm -rf provenance && \
+sudo systemctl stop provenanced
+sudo systemctl disable provenanced
+rm /etc/systemd/system/provenanced.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf .provenanced
+rm -rf provenance
 rm -rf $(which provenanced)
 ```
 
