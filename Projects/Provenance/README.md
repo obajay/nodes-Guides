@@ -128,10 +128,9 @@ EOF
 ```
 ## Start
 ```python
-udo systemctl daemon-reload && \ 
-sudo systemctl enable provenanced && \
-sudo systemctl restart provenanced && \
-sudo journalctl -u provenanced -f -o cat
+udo systemctl daemon-reload &&
+sudo systemctl enable provenanced &&
+sudo systemctl restart provenanced && sudo journalctl -u provenanced -f -o cat
 ```
 ## Create validator
 ```python
@@ -145,7 +144,7 @@ provenanced tx staking create-validator \
 --details="" \
 --identity="" \
 --pubkey  $(provenanced tendermint show-validator) \
---moniker <moniker> \
+--moniker STAVR_Guide \
 --fees 555000000nhash \
 --chain-id pio-mainnet-1 -y
 ```
