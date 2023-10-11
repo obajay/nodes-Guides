@@ -128,7 +128,7 @@ EOF
 ```
 ## Start
 ```python
-udo systemctl daemon-reload &&
+sudo systemctl daemon-reload &&
 sudo systemctl enable provenanced &&
 sudo systemctl restart provenanced && sudo journalctl -u provenanced -f -o cat
 ```
