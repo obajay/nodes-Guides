@@ -14,7 +14,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O haqqm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/haqq/haqqm && chmod +x haqqm && ./haqqm
 ```
 # 2) Manual installation
 
@@ -116,7 +116,7 @@ SOOOON
 
 ## Download addrbook
 ```python
-wget -O $HOME/.haqqd/config/addrbook.json "https://raw.githubusercontent.com/haqq-network/mainnet/master/addrbook.json"
+wget -O $HOME/.haqqd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/haqq/addrbook.json"
 ```
 
 # Create a service file
