@@ -70,9 +70,8 @@ entangled keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-cd $HOME/entangle-blockchain
-cp -f config/config.toml $HOME/.entangled/config
-cp -f config/genesis.json $HOME/.entangled/config
+wget -O $HOME/.entangled/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Entangle/genesis.json"
+
 
 ```
 `sha256sum $HOME/.entangled/config/genesis.json`
