@@ -45,24 +45,24 @@ go version
 cd $HOME
 git clone https://github.com/terpnetwork/terp-core.git
 cd terp-core
-git checkout v2.0.0
+git checkout v2-pigeonfall
 make install
 ```
-*******🟢UPDATE🟢******* 11.10.23
+*******🟢UPDATE🟢******* 13.10.23
 ```python
 cd $HOME/terp-core
 git fetch --all
-git checkout v2.0.0
+git checkout v2-pigeonfall
 make install
 terpd version --long | grep -e commit -e version
-#commit: 4fbf792d554594fb4ed7a9927424fb6f379fc293
-#version: v2.0.0
+#commit: f3e764568b2fd4ff8391b3ca997c9e02d5c0b0c4
+#version: 2-pigeonfall
 sudo systemctl restart terpd && journalctl -u terpd -f -o cat
 ```
 
 `terpd version --long | grep -e commit -e version`
-- version: v2.0.0
-- commit: 4fbf792d554594fb4ed7a9927424fb6f379fc293
+- version: 2-pigeonfall
+- commit: f3e764568b2fd4ff8391b3ca997c9e02d5c0b0c4
 
 ```python
 terpd init STAVRguide --chain-id morocco-1
