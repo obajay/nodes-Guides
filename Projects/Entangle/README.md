@@ -52,7 +52,7 @@ make install
 SOOON
 ```
 
-`entangled version --long | head`
+`version --long | grep -e commit -e version`
 - version: 1.0.1
 - commit: 134d9e558aee52abe81fa825272d118f293036f6
 
@@ -75,19 +75,19 @@ wget -O $HOME/.entangled/config/genesis.json "https://raw.githubusercontent.com/
 
 ```
 `sha256sum $HOME/.entangled/config/genesis.json`
-+ 720d2df1e5c2d603dd30aefbebfd4744b5532a09c228b664bdcf965ac884af9d
++ ca032fabda646ad98f4709e1e6fd4f06b31435b4a37d62a3539793944bfda692
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0001aNGL\"/;" ~/.entangled/config/app.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.entangled/config/config.toml
-peers="76492a1356c14304bdd7ec946a6df0b57ba51fe2@json-rpc.testnet.entangle.fi:26656"
+peers="76492a1356c14304bdd7ec946a6df0b57ba51fe2@json-rpc.testnet2.entangle.fi:26656,342c1851d3ad8cc72e41c965594a0a01f190d13c@65.108.229.93:25656,1fef0cad71ccb4a002dfbdd977af319fba0c3978@207.244.253.244:29656,6147eaf50495d03e19dd09fb3610dea92bc7f89e@65.109.92.241:4156,a4138a69d236586b6d03269a8ffcf0f41d69a9b5@65.109.104.118:61556"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.entangled/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.entangled/config/config.toml
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.entangled/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.entangled/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 20/g' $HOME/.entangled/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 20/g' $HOME/.entangled/config/config.toml
 
 ```
 ### Pruning (optional)
@@ -165,7 +165,7 @@ entangled tx staking create-validator \
 --amount 1000000000000000000aNGL \
 --pubkey $(entangled tendermint show-validator) \
 --from <wallet> \
---moniker="STAVRguide" \
+--moniker="STAVR_Guide" \
 --chain-id entangle_33133-1 \
 --gas=500000 \
 --gas-prices="10aNGL" \
