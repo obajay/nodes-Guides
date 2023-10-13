@@ -15,7 +15,7 @@
 
 # 1) Auto_install script 
 ```python
-wget -O sources https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Source/sources && chmod +x sources && ./sources
+wget -O sources https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Source/Testnet/sources && chmod +x sources && ./sources
 ```
 # 2) Manual installation
 
@@ -100,7 +100,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.sourc
 
 ## Download addrbook
 ```python
-wget -O $HOME/.source/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Source/addrbook.json"
+wget -O $HOME/.source/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Source/Testnet/addrbook.json"
 ```
 
 # Create a service file
