@@ -10,7 +10,7 @@
 
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
-| Testnet   |   4| 8GB  | 160GB    |
+| Mainnet   |   8| 16GB | 260GB    |
 
 # 1) Auto_install script 
 ```python
