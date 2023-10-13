@@ -14,7 +14,7 @@
 
 # 1) Auto_install script 
 ```python
-SOON
+wget -O sourcem https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Source/sourcem && chmod +x sourcem && ./sourcem
 ```
 # 2) Manual installation
 
