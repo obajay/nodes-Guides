@@ -40,7 +40,7 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 11.10.23
+# Build 13.10.23
 ```python
 cd $HOME
 git clone https://github.com/terpnetwork/terp-core.git
