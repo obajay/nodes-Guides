@@ -121,7 +121,7 @@ EOF
 ```
 
 ## StateSync Mainnet
-```pytho
+```python
 SNAP_RPC=https://source.rpc.m.stavr.tech:443
 peers="3c729ffe80393abd430a7c723fab2e8aa60ffa46@source.peers.stavr.tech:20056"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.source/config/config.toml
