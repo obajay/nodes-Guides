@@ -120,9 +120,38 @@ WantedBy=multi-user.target
 EOF
 ```
 
-# SnapShot (~0.1 GB) updated every 6 hours
+## StateSync Mainnet
+```pytho
+SNAP_RPC=https://source.rpc.m.stavr.tech:443
+peers="3c729ffe80393abd430a7c723fab2e8aa60ffa46@source.peers.stavr.tech:20056"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.source/config/config.toml
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.source/config/config.toml
+sourced tendermint unsafe-reset-all
+systemctl restart althea && journalctl -u althea -f -o cat
+```
+
+# SnapShot (~0.2 GB) updated every 5 hours
 ```python
-SOOON
+cd $HOME
+apt install lz4
+sudo systemctl stop sourced
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" ~/.source/config/config.toml
+cp $HOME/.source/data/priv_validator_state.json $HOME/.source/priv_validator_state.json.backup
+rm -rf $HOME/.source/data
+curl -o - -L https://source-m.snapshot.stavr.tech/source/source-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.source --strip-components 2
+wget -O $HOME/.source/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Source/addrbook.json"
+mv $HOME/.source/priv_validator_state.json.backup $HOME/.source/data/priv_validator_state.json
+sudo systemctl restart sourced && journalctl -u sourced -f -o cat
 ```
 
 # Start node (one command)
