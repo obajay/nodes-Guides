@@ -38,13 +38,13 @@ go version
 # Build 13.10.23
 ```python
 git clone https://github.com/DecentralCardGame/Cardchain
-wget https://github.com/DecentralCardGame/Cardchain/releases/download/v0.9.0/Cardchaind
+wget https://github.com/DecentralCardGame/Cardchain/releases/download/v0.9.1/Cardchaind
 chmod +x Cardchaind
 mv $HOME/Cardchaind /usr/local/bin
 ```
 `Cardchaind version --long | grep -e commit -e version`
-+ version: 0.9.0
-+ commit: 96dd28d01934b3ed6ead27456313167b2cef3f76
++ version: 0.9.1
++ commit: ef6a47bc3bb6a44048987558a3ee3e73a015b8e1
     
 # Init node and download Genesis
 ```python
