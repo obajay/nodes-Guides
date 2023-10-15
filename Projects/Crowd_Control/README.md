@@ -163,3 +163,32 @@ sudo rm -rf $HOME/.Cardchain/
 sudo rm -rf Testnet
 sudo rm -rf $(which Cardchaind)
 ```
+
+# Cardchain Parameters:
+
+| Parameter:                    | Value:      | 
+|-------------------------------|-------------|
+| Voting Rights Expiration Time |  100000     |
+| Set Size                      |  5          |
+| Set Price	                    |  10000000   |
+| Active Sets Amount	        |  3          |
+| Set Creation Fee	            |  5000000000 |
+| Collateral Deposit	        |  50000000   |
+| Winner Reward	                |  1000000    |
+| Hourly Faucet	                |  50000000   |
+| Inflation Rate	            |  1.1        |
+| Rares Per Pack	            |  1          |
+| Commons Per Pack	            |  4          |
+| Un Commons Per Pack	        |  2          |
+| Trial Period	                |  168000     |
+| Game Vote Ratio	            |  20         |
+| Card Auction Price Reduction Period|  20    |
+| Air Drop Value	            |  5000000    |
+| Air Drop Max Block Height	    |  5000000    |
+| Trial Vote Reward	            |  1000000    |
+| Vote Pool Fraction	        |  1000000    |
+| Voting Reward Cap	            |  1000000    |
+| Match Worker Delay	        |  1200       |
+| Rare Drop Ratio	            |  150        |
+| Exceptional Drop Ratio	    |  50         |
+| Unique Drop Ratio	            |  1          |
