@@ -43,7 +43,8 @@ go version
 # Build 13.10.23
 ```python
 cd $HOME
-git clone https://github.com/CosmosContracts/juno juno
+git clone https://github.com/CosmosContracts/juno
+cd juno
 git checkout v17.1.1
 make build && make install
 
