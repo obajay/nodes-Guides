@@ -126,11 +126,12 @@ echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE
 break
 ;;
 "Synchronization via StateSync")
-SNAP_RPC=http://lxgr.xyz:26657
-PEERS="1ed98c796bcdd0faf5a7ad8793d229e3c7d89543@lxgr.xyz:26656"
+cd $HOME
+SNAP_RPC=http://crowd.rpc.t.stavr.tech:21207
+PEERS="b1d70944441f46e5d92e81d7d0caa0a5e64e26c7@crowd.peer.stavr.tech:21206"
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.Cardchain/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height) \
-&& BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)) \
+&& BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)) \
 && TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash); \
 echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
 sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
@@ -156,7 +157,14 @@ break
 ;;
 "Synchronization via SnapShot")
 cd $HOME
-echo -e "      \e[1m\e[32m SOOOON\e[0m"
+apt install lz4
+sudo systemctl stop Cardchaind
+cp $HOME/.Cardchain/data/priv_validator_state.json $HOME/.Cardchain/priv_validator_state.json.backup
+rm -rf $HOME/.Cardchain/data
+curl -o - -L http://crowd.snapshot.stavr.tech:1013/crowd/crowd-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.Cardchain --strip-components 2
+mv $HOME/.Cardchain/priv_validator_state.json.backup $HOME/.Cardchain/data/priv_validator_state.json
+wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Crowd_Control/addrbook.json"
+sudo systemctl restart Cardchaind && journalctl -u Cardchaind -f -o cat
 
 
 break
