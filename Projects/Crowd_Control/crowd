@@ -54,8 +54,7 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-git clone https://github.com/DecentralCardGame/Cardchain
-wget https://github.com/DecentralCardGame/Cardchain/releases/download/v0.9.0/Cardchaind
+wget https://github.com/DecentralCardGame/Cardchain/releases/download/v0.9.1/Cardchaind
 chmod +x Cardchaind
 mv $HOME/Cardchaind /usr/local/bin
 
