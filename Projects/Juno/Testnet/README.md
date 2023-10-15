@@ -142,7 +142,7 @@ EOF
 # StateSync Juno Testnet
 ```python
 SNAP_RPC=http://juno.rpc.t.stavr.tech:1067
-PEERS="518d31bf039289b6c8d8defd7e9509d8e28b7cd3@junot.peer.stavr.tech:1066"
+PEERS="eb4cbf9bfea70a9e02baffbe35df02f073c70049@junot.peer.stavr.tech:1066"
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.juno/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
