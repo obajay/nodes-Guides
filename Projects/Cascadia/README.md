@@ -40,28 +40,28 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 09.10.23
+# Build 16.10.23
 ```python
 cd $HOME
 git clone https://github.com/cascadiafoundation/cascadia && cd cascadia
-git checkout v0.1.6
+git checkout v0.1.7
 make install
 ```
-*******🟢UPDATE🟢******* 09.10.23
+*******🟢UPDATE🟢******* 16.10.23
 ```python
 cd $HOME
-wget https://github.com/CascadiaFoundation/cascadia/releases/download/v0.1.6/cascadiad
+wget https://github.com/CascadiaFoundation/cascadia/releases/download/v0.1.7/cascadiad
 chmod +x cascadiad
 mv cascadiad $(which cascadiad)
 cascadiad version --long | grep -e version -e commit
-#commit: 06ad7b0222b3d7795c25173231fb8b90ad79cdbf
-#version: 0.1.6
+#commit: 870515f649a3c6e981d77c014837d9fdfccce0a9
+#version: 0.1.7
 sudo systemctl restart cascadiad && sudo journalctl -u cascadiad -f -o cat
 ```
 
 `cascadiad version --long | grep -e version -e commit`
-- version: v0.1.6
-- commit: 06ad7b0222b3d7795c25173231fb8b90ad79cdbf
+- version: 0.1.7
+- commit: 870515f649a3c6e981d77c014837d9fdfccce0a9
 
 ```python
 cascadiad init STAVRguide --chain-id cascadia_6102-1
