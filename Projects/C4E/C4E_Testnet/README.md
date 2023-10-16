@@ -50,6 +50,7 @@ cd $HOME
 git clone https://github.com/chain4energy/c4e-chain.git
 cd c4e-chain
 git checkout tags/v1.3.0
+make install
 ```
 *******🟢UPDATE🟢******* 29.08.23
 ```python
