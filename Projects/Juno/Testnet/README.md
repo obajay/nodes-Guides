@@ -139,7 +139,7 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-# StateSync Juno Testnet
+# StateSync Juno Testnet (Temporarily stopped)
 ```python
 SNAP_RPC=http://juno.rpc.t.stavr.tech:1067
 PEERS="eb4cbf9bfea70a9e02baffbe35df02f073c70049@junot.peer.stavr.tech:1066"
@@ -159,7 +159,7 @@ sed -i -e "s/^snapshot-interval *=.*/snapshot-interval = \"1500\"/" $HOME/.juno/
 curl -o - -L http://juno-t.wasm.stavr.tech:1001/wasm-junot.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.juno/ --strip-components 2
 sudo systemctl restart junod && journalctl -u junod -f -o cat
 ```
-# SnapShot Testnet (~2GB) updated every 5 hours  
+# SnapShot Testnet (~4GB) updated every 5 hours   (Temporarily stopped)
 ```python
 cd $HOME
 snap install lz4
