@@ -6,8 +6,6 @@
 [GitHub](https://github.com/notional-labs/composable-networks)
 =
 [EXPLORER](https://explorer.stavr.tech/Composable-Testnet4/staking)
-
-
 =
 
 - **Minimum hardware requirements**:
