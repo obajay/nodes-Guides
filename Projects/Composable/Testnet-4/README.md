@@ -44,7 +44,7 @@ go version
 ```python
 cd $HOME
 git clone https://github.com/notional-labs/composable-centauri
-cd composable-testnet
+cd composable-centauri
 git checkout v5.2.4-testnet4
 make install
 ```
