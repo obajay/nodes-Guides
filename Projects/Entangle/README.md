@@ -82,7 +82,7 @@ wget -O $HOME/.entangled/config/genesis.json "https://raw.githubusercontent.com/
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0001aNGL\"/;" ~/.entangled/config/app.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.entangled/config/config.toml
-peers="76492a1356c14304bdd7ec946a6df0b57ba51fe2@json-rpc.testnet2.entangle.fi:26656,342c1851d3ad8cc72e41c965594a0a01f190d13c@65.108.229.93:25656,1fef0cad71ccb4a002dfbdd977af319fba0c3978@207.244.253.244:29656,6147eaf50495d03e19dd09fb3610dea92bc7f89e@65.109.92.241:4156,a4138a69d236586b6d03269a8ffcf0f41d69a9b5@65.109.104.118:61556"
+peers="76492a1356c14304bdd7ec946a6df0b57ba51fe2@json-rpc.testnet.entangle.fi:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.entangled/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.entangled/config/config.toml
