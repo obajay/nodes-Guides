@@ -32,7 +32,7 @@ echo "_|-_|-_|-_|-_|-_|-_|"
 read Validator_Name
 echo "_|-_|-_|-_|-_|-_|-_|"
 echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
-echo export CHAIN_ID="cardtestnet-4" >> $HOME/.bash_profile
+echo export CHAIN_ID="cardtestnet-5" >> $HOME/.bash_profile
 source ~/.bash_profile
 
 echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
@@ -54,12 +54,13 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-wget https://github.com/DecentralCardGame/Cardchain/releases/download/v0.9.1/Cardchaind
+git clone https://github.com/DecentralCardGame/Cardchain
+wget https://github.com/DecentralCardGame/Cardchain/releases/download/v0.10.0/Cardchaind
 chmod +x Cardchaind
 mv $HOME/Cardchaind /usr/local/bin
 
 Cardchaind init $Validator_Name --chain-id $CHAIN_ID
-Cardchaind config chain-id cardtestnet-4
+Cardchaind config chain-id cardtestnet-5
 
 wget http://45.136.28.158:3000/genesis.json -O $HOME/.Cardchain/config/genesis.json
 wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Crowd_Control/addrbook.json"
@@ -70,7 +71,7 @@ echo -e "                     \e[1m\e[32m4. Node optimization and improvement-->
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ubpf\"/;" ~/.Cardchain/config/app.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.Cardchain/config/config.toml
-peers="1ed98c796bcdd0faf5a7ad8793d229e3c7d89543@lxgr.xyz:26656"
+peers="109adfd1645cc1289bd2753277d6c5c2a9112b76@45.136.28.158:26656, 447a7af037dc85213d98ef3f4dc07d05191f52e7@202.61.225.157:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.Cardchain/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.Cardchain/config/config.toml
