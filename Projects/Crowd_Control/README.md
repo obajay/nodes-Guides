@@ -35,21 +35,21 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 13.10.23
+# Build 19.10.23
 ```python
 git clone https://github.com/DecentralCardGame/Cardchain
-wget https://github.com/DecentralCardGame/Cardchain/releases/download/v0.9.1/Cardchaind
+wget https://github.com/DecentralCardGame/Cardchain/releases/download/v0.10.0/Cardchaind
 chmod +x Cardchaind
 mv $HOME/Cardchaind /usr/local/bin
 ```
 `Cardchaind version --long | grep -e commit -e version`
-+ version: 0.9.1
-+ commit: ef6a47bc3bb6a44048987558a3ee3e73a015b8e1
++ version: 0.10.0
++ commit: 57e99d3b59be4e3969147fd590f65e41aae9be70
     
 # Init node and download Genesis
 ```python
-Cardchaind init STAVRguide --chain-id cardtestnet-4
-Cardchaind config chain-id cardtestnet-4
+Cardchaind init STAVRguide --chain-id cardtestnet-5
+Cardchaind config chain-id cardtestnet-5
 wget http://45.136.28.158:3000/genesis.json -O $HOME/.Cardchain/config/genesis.json
 ```
 ## Create/recover wallet
@@ -68,7 +68,7 @@ wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ubpf\"/;" ~/.Cardchain/config/app.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.Cardchain/config/config.toml
-peers="1ed98c796bcdd0faf5a7ad8793d229e3c7d89543@lxgr.xyz:26656"
+peers="109adfd1645cc1289bd2753277d6c5c2a9112b76@45.136.28.158:26656, 447a7af037dc85213d98ef3f4dc07d05191f52e7@202.61.225.157:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.Cardchain/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.Cardchain/config/config.toml
@@ -130,6 +130,7 @@ sudo systemctl restart Cardchaind && journalctl -u Cardchaind -f -o cat
 ```python
 cd $HOME
 apt install lz4
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" ~/.Cardchain/config/config.toml
 sudo systemctl stop Cardchaind
 cp $HOME/.Cardchain/data/priv_validator_state.json $HOME/.Cardchain/priv_validator_state.json.backup
 rm -rf $HOME/.Cardchain/data
@@ -160,7 +161,7 @@ Cardchaind tx staking create-validator \
 --pubkey  $(Cardchaind tendermint show-validator) \
 --moniker STAVR_Guide \
 --fees 300ubpf \
---chain-id cardtestnet-4 -y
+--chain-id cardtestnet-5 -y
 ```
 
 ## Delete node
