@@ -137,7 +137,7 @@ s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.source/config/config.toml
 sourced tendermint unsafe-reset-all
-systemctl restart althea && journalctl -u althea -f -o cat
+sudo systemctl restart sourced && journalctl -u sourced -f -o cat
 ```
 
 # SnapShot (~0.2 GB) updated every 5 hours
