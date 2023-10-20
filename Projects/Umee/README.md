@@ -59,6 +59,7 @@ sudo systemctl restart umeed && journalctl -u umeed -f -o cat
 ## Init
 ```python
 umeed init STAVRguide --chain-id umee-1
+umeed config chain-id umee-1
 ```
 
 ## Create/recover wallet
