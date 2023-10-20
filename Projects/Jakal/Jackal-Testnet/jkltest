@@ -42,13 +42,13 @@ sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq bui
 
 echo -e "        \e[1m\e[32m2. Installing GO--> \e[0m" && sleep 1
 #INSTALL GO
-ver="1.19" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+ver="1.20.5"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 go version
 
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
@@ -88,8 +88,6 @@ sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.canine/config/app.tom
 sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.canine/config/app.toml
 sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.canine/config/app.toml
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.canine/config/app.toml
-indexer="null" && \
-sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.canine/config/config.toml
 
 
 sudo tee /etc/systemd/system/canined.service > /dev/null <<EOF
@@ -135,7 +133,7 @@ break
 ;;
 "Synchronization via StateSync")
 SNAP_RPC=http://jkl.rpc.t.stavr.tech:19127
-peers="8a11570dbaa0f4d98ca2ef0ad117e9c1154d81b9@jkltest.peer.stavr.tech:19126"
+peers="80613772b20df144945801b42f327d0945a24374@jkltest.peer.stavr.tech:19126"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.canine/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \
