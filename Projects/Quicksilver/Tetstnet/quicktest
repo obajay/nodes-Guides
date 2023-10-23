@@ -132,8 +132,8 @@ echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE
 break
 ;;
 "Synchronization via StateSync")
-SNAP_RPC=http://quick.rpc.t.stavr.tech:21027
-peers="d0d0903d8c2f514c92284341d48aa422d4e37740@quickt.peers.stavr.tech:21026"
+SNAP_RPC=http://quick.rpc.t.stavr.tech:20027
+peers="c04fb8ab18c3807d5a8f07cdfedeefce846e55d1@quickt.peers.stavr.tech:20026"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.quicksilverd/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \
