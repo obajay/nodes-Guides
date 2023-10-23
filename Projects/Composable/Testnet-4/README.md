@@ -40,17 +40,27 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 17.10.23
+# Build 23.10.23
 ```python
 cd $HOME
 git clone https://github.com/notional-labs/composable-centauri
 cd composable-centauri
-git checkout v5.2.4-testnet4
-make install
+git checkout v6.2.0
+make build
+cd bin
+mv layerd $HOME/go/bin/centaurid
 ```
-*******🟢UPDATE🟢******* 27.09.23
+*******🟢UPDATE🟢******* 23.10.23
 ```python
-SOOON
+cd $HOME/composable-centauri
+git pull
+git checkout v6.2.0
+cd bin
+mv layerd $(which centaurid)
+centaurid version --long | grep -e commit -e version
+#version: v6.2.0
+#commit: 806065b1dd4b992c807e07b848dbf1d1c1ed8cc2
+sudo systemctl restart centaurid && sudo journalctl -u centaurid -f -o cat
 ```
 
 `centaurid version --long`
