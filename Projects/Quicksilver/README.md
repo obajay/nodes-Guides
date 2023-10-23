@@ -192,13 +192,13 @@ quicksilverd tx staking create-validator \
 
 ## Delete node
 ```python
-sudo systemctl stop quicksilverd && \
-sudo systemctl disable quicksilverd && \
-rm /etc/systemd/system/quicksilverd.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf quicksilver && \
-rm -rf .quicksilverd && \
+sudo systemctl stop quicksilverd
+sudo systemctl disable quicksilverd
+rm /etc/systemd/system/quicksilverd.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf quicksilver
+rm -rf .quicksilverd
 rm -rf $(which quicksilverd)
 ```
 
