@@ -60,12 +60,11 @@ sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 + commit: 4b2d4f285f7bdc209ae6e25d01c7eaed97d4c5f9
 
 ### Initialize the node
-```java
-quicksilverd config chain-id rhye-1
+```python
 quicksilverd init STAVRguide --chain-id rhye-1
+quicksilverd config chain-id rhye-1
 ```
 
-=
 ### Create wallet or restore
 ```python
 quicksilverd keys add <name_wallet>
