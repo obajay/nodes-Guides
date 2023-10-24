@@ -45,7 +45,7 @@ go version
 cd $HOME
 git clone https://github.com/notional-labs/composable-centauri
 cd composable-centauri
-git checkout v6.2.0
+git checkout v6.2.0-fixed
 make build
 cd bin
 mv layerd $HOME/go/bin/centaurid
@@ -54,11 +54,11 @@ mv layerd $HOME/go/bin/centaurid
 ```python
 cd $HOME/composable-centauri
 git pull
-git checkout v6.2.0
+git checkout v6.2.0-fixed
 cd bin
 mv layerd $(which centaurid)
 centaurid version --long | grep -e commit -e version
-#version: v6.2.0
+#version: v6.2.0-fixed
 #commit: 806065b1dd4b992c807e07b848dbf1d1c1ed8cc2
 sudo systemctl restart centaurid && sudo journalctl -u centaurid -f -o cat
 ```
