@@ -45,27 +45,27 @@ go version
 cd $HOME
 git clone https://github.com/notional-labs/composable-centauri
 cd composable-centauri
-git checkout v6.2.0-fixed
+git checkout v6.2.1-testnet
 make build
 cd bin
 mv layerd $HOME/go/bin/layerd
 ```
-*******🟢UPDATE🟢******* 23.10.23
+*******🟢UPDATE🟢******* 24.10.23
 ```python
 cd $HOME/composable-centauri
 git pull
-git checkout v6.2.0-fixed
+git checkout v6.2.1-testnet
 cd bin
 mv layerd $(which layerd)
-centaurid version --long | grep -e commit -e version
-#version: v6.2.0-fixed
-#commit: 806065b1dd4b992c807e07b848dbf1d1c1ed8cc2
+layerd version --long | grep -e commit -e version
+#version: v6.2.1-testnet
+#commit: c97f29294a1b778e4b44f94808f0f2cd7566fff5
 sudo systemctl restart layerd && sudo journalctl -u layerd -f -o cat
 ```
 
 `layerd version --long`
-- version: v6.2.0-fixed
-- commit: 806065b1dd4b992c807e07b848dbf1d1c1ed8cc2
+- version: v6.2.1-testnet
+- commit: c97f29294a1b778e4b44f94808f0f2cd7566fff5
 
 ```python
 layerd init STAVRguide --chain-id banksy-testnet-4
