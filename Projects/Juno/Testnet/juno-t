@@ -56,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/CosmosContracts/juno 
 cd juno
-git checkout v17.1.1
+git checkout v18.0.0-alpha.1
 make build && make install
 
 junod init $Validator_Name --chain-id $CHAIN_ID
@@ -157,7 +157,7 @@ break
 "UPDATE")
 cd $HOME/juno
 git pull
-git checkout v17.1.1
+git checkout v18.0.0-alpha.1
 make build && make install
 sudo systemctl restart junod && sudo journalctl -u junod -f -o cat
 
