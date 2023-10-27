@@ -54,9 +54,9 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.4-rc.2/quicksilverd-v1.4.4-rc.2-amd64
-chmod +x quicksilverd-v1.4.4-rc.2-amd64
-mv $HOME/quicksilverd-v1.4.4-rc.2-amd64 $HOME/go/bin/quicksilverd
+wget -O quicksilverd https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.4-rc.3/quicksilverd-v1.4.4-rc.3-amd64
+chmod +x quicksilverd
+mv $HOME/quicksilverd $HOME/go/bin/quicksilverd
 
 quicksilverd init $Validator_Name --chain-id $CHAIN_ID
 
@@ -150,9 +150,9 @@ systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 break
 ;;
 "UPDATE")
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.4-rc.2/quicksilverd-v1.4.4-rc.2-amd64
-chmod +x quicksilverd-v1.4.4-rc.2-amd64
-mv $HOME/quicksilverd-v1.4.4-rc.2-amd64 $HOME/go/bin/quicksilverd
+wget -O quicksilverd https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.4-rc.3/quicksilverd-v1.4.4-rc.3-amd64
+chmod +x quicksilverd
+mv $HOME/quicksilverd $HOME/go/bin/quicksilverd
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 
 
