@@ -49,7 +49,7 @@ cd canine-chain
 git checkout v3.0.2-rc.1
 make install
 ```
-*******🟢UPDATE🟢******* 04.08.23
+*******🟢UPDATE🟢******* 28.10.23
 ```python
 cd $HOME/canine-chain
 git fetch --all
