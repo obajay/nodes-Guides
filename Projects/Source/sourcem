@@ -142,13 +142,13 @@ sudo systemctl restart sourced && journalctl -u sourced -f -o cat
 break
 ;;
 "Check node logs")
-sudo journalctl -u canined -f -o cat
+sudo journalctl -u sourced -f -o cat
 
 break
 ;;
 "UPDATE")
 echo -e "      \e[1m\e[32m SOOOON\e[0m"
-canined version
+sourced version
 
 break
 ;;
