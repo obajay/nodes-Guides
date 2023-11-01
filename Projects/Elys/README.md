@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-SOOOON
+wget -O elyss https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Elys/elyss && chmod +x elyss && ./elyss
 ```
 
 # 2) Manual installation
@@ -103,7 +103,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.elys/
 ### Pruning (optional)
 ```python
 pruning="custom"
-pruning_keep_recent="100"
+pruning_keep_recent="1000"
 pruning_keep_every="0"
 pruning_interval="10"
 sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.elys/config/app.toml
@@ -165,7 +165,7 @@ elysd tx staking create-validator \
   --commission-rate "0.1" \
   --min-self-delegation "1" \
   --pubkey=$(elysd tendermint show-validator) \
-  --moniker 'STAVRguide' \
+  --moniker 'STAVR_guide' \
   --website "" \
   --identity "" \
   --details "" \
@@ -175,13 +175,13 @@ elysd tx staking create-validator \
 
 ## Delete node
 ```python
-sudo systemctl stop elysd && \
-sudo systemctl disable elysd && \
-rm /etc/systemd/system/elysd.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf elys && \
-rm -rf .elys && \
+sudo systemctl stop elysd
+sudo systemctl disable elysd
+rm /etc/systemd/system/elysd.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf elys
+rm -rf .elys
 rm -rf $(which elysd)
 ```
 #
