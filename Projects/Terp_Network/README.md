@@ -40,29 +40,29 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 23.10.23
+# Build 01.11.23
 ```python
 cd $HOME
 git clone https://github.com/terpnetwork/terp-core.git
 cd terp-core
-git checkout v3-pigeonfall
+git checkout v3.1.0
 make install
 ```
-*******🟢UPDATE🟢******* 23.10.23
+*******🟢UPDATE🟢******* 01.11.23
 ```python
 cd $HOME/terp-core
 git fetch --all
-git checkout v3-pigeonfall
+git checkout v3.1.0
 make install
 terpd version --long | grep -e commit -e version
-#commit: 5e9e22ede4f13f467ea890b612cffeb5fc2a6cd6
-#version: 3-pigeonfall
+#commit: d6b51bdb4276949241bf6bd2c388b1ddf3dd2c54
+#version: 3.1.0
 sudo systemctl restart terpd && journalctl -u terpd -f -o cat
 ```
 
 `terpd version --long | grep -e commit -e version`
-- version: 3-pigeonfall
-- commit: 5e9e22ede4f13f467ea890b612cffeb5fc2a6cd6
+- version: 3.1.0
+- commit: d6b51bdb4276949241bf6bd2c388b1ddf3dd2c54
 
 ```python
 terpd init STAVRguide --chain-id morocco-1
