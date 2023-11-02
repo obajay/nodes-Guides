@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O sao https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Sao/sao && chmod +x sao && ./sao
+wget -O sao https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Sao/Testnet/sao && chmod +x sao && ./sao
 ```
 
 # 2) Manual installation
@@ -79,7 +79,7 @@ saod keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O $HOME/.sao/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Sao/genesis.json"
+wget -O $HOME/.sao/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Sao/Testnet/genesis.json"
 
 ```
 `sha256sum $HOME/.sao/config/genesis.json`
@@ -118,7 +118,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.sao/config/config.tom
 
 ## Download addrbook
 ```python
-wget -O $HOME/.sao/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Sao/addrbook.json"
+wget -O $HOME/.sao/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Sao/Testnet/addrbook.json"
 ```
 
 # Create a service file
