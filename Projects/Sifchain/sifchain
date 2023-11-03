@@ -55,10 +55,10 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-wget https://github.com/Sifchain/sifnode/releases/download/v1.1.0-beta/sifnoded-v1.1.0-beta-linux-amd64.zip
-unzip sifnoded-v1.1.0-beta-linux-amd64.zip
-rm -rf sifnoded-v1.1.0-beta-linux-amd64.zip
-mv ~/sifnoded /usr/local/bin/
+git clone https://github.com/Sifchain/sifnode
+cd $HOME/sifnode
+git checkout v1.2.0-beta
+make install
 
 sifnoded init $Validator_Name --chain-id $CHAIN_ID
 
@@ -82,16 +82,13 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.sifn
 
 # pruning and indexer
 pruning="custom" && \
-pruning_keep_recent="100" && \
+pruning_keep_recent="1000" && \
 pruning_keep_every="0" && \
 pruning_interval="10" && \
 sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" ~/.sifnoded/config/app.toml && \
 sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" ~/.sifnoded/config/app.toml && \
 sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" ~/.sifnoded/config/app.toml && \
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.sifnoded/config/app.toml
-indexer="null" && \
-sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.sifnoded/config/config.toml
-
 
 sudo tee /etc/systemd/system/sifnoded.service > /dev/null <<EOF
 [Unit]
