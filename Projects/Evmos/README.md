@@ -28,17 +28,17 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 go version
 ```    
-## Build    (25.09.23)
+## Build    (06.10.23)
 ```python
 git clone https://github.com/evmos/evmos
 cd evmos
-git checkout v14.1.0
+git checkout v15.0.0
 make install
 ```
 
 `evmosd version`
-+ version: v14.0.0
-+ commit: 392d90685fa9b6408672695d4eb4a4c3e33bf34e
++ version: v15.0.0
++ commit: ba5b8a3091bcf2d73601b29d7d7cb86a507bdcf9
 
 ```python
 evmosd init STAVRguide --chain-id evmos_9001-2
