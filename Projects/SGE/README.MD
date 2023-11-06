@@ -4,8 +4,7 @@
 
 [WebSite](https://sgenetwork.io/)
 =
-[EXPLORER 1](https://explorer.stavr.tech/sge-testnet/staking) \
-[EXPLORER 2](https://exp.nodeist.net/t-sge/staking)
+[EXPLORER](https://explorer.stavr.tech/Sge-Mainnet)
 =
 
 - **Minimum hardware requirements**:
