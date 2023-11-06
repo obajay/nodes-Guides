@@ -1,6 +1,3 @@
-<h1 align="center"> 🔴TESTNET END 24.07.23🔴</h1>
-
-
 # Sge Testnet guide
 
 ![sge](https://user-images.githubusercontent.com/44331529/203624604-ec312821-11cd-404e-8647-bbbcfddcaf8a.png)
