@@ -16,7 +16,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O sgge https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/SGE/sgge && chmod +x sgge && ./sgge
+wget -O sggem https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/SGE/sggem && chmod +x sggem && ./sggem
 ```
 
 # 2) Manual installation
