@@ -66,8 +66,7 @@ sged keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-curl -s https://ss.nodeist.net/sge/genesis.json > $HOME/.sge/config/genesis.json
-
+wget -O $HOME/.sge/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/SGE/genesis.json"
 ```
 `sha256sum $HOME/.sge/config/genesis.json`
 + 3beb0662ade1ad80d41d992bb196770d53a939863c1fed12fa01411dfb981e0b
