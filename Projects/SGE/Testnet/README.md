@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O sgge https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/SGE/sgge && chmod +x sgge && ./sgge
+wget -O sgge https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/SGE/Testnet/sgge && chmod +x sgge && ./sgge
 ```
 
 # 2) Manual installation
@@ -109,7 +109,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.sge/config/config.tom
 
 ## Download addrbook
 ```python
-wget -O $HOME/.sge/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/SGE/addrbook.json"
+wget -O $HOME/.sge/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/SGE/Testnet/addrbook.json"
 ```
 ## StateSync
 ```python
