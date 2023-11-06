@@ -29,37 +29,34 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
-## GO 1.18
+## GO 1.19
 
 ```python
-ver="1.18" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+ver="1.19" &&
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" &&
+sudo rm -rf /usr/local/go &&
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" &&
+rm "go$ver.linux-amd64.tar.gz" &&
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &&
+source $HOME/.bash_profile &&
 go version
 ```
 
-# Build 16.03.23
+# Build 01.09.23
 ```python
+cd $HOME
 git clone https://github.com/sge-network/sge
-git clone https://github.com/sge-network/networks
 cd sge
-git fetch --tags
-git checkout v0.0.5
-cd sge
-go mod tidy
+git checkout v1.1.0
 make install
 ```
 `sged version --long`
-- version: v0.0.5
-- commit: 462ff3ad9721a1fcfd6edc63654b4b13569a6f9a
+- version: v1.1.0
+- commit: 031b1b16abcc8025b96d3df260f31819b19c68ed
 
 ```python
-sged init STAVRguide --chain-id sge-network-2
-sged config chain-id sge-network-2
+sged init STAVR_guide --chain-id sgenet-1
+sged config chain-id sgenet-1
 ```    
 
 ## Create/recover wallet
@@ -70,11 +67,11 @@ sged keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O $HOME/.sge/config/genesis.json "https://raw.githubusercontent.com/sge-network/networks/master/sge-network-2/genesis.json"
+curl -s https://ss.nodeist.net/sge/genesis.json > $HOME/.sge/config/genesis.json
 
 ```
 `sha256sum $HOME/.sge/config/genesis.json`
-+ d5e51eeb2e4eab83bb7272525ff7d1f605561c6b5cab0465807866149e3a1fc4
++ 3beb0662ade1ad80d41d992bb196770d53a939863c1fed12fa01411dfb981e0b
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
@@ -82,12 +79,12 @@ sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0usge\"/" $HOME/.sg
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.sge/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.sge/config/config.toml
-peers="62b76a24869829fb3be53c25891ba37eca5994bd@95.217.224.252:26656,b29612454715a6dc0d1f0c42b426bf30f1d27738@78.46.99.50:24656,14823c9230ac2eb50fd48b7313e8ddd4c13207c6@94.130.219.37:26000,cfa86646e5eb05e111e7dde27750ff8ebe67d165@89.117.56.126:23956,43b05a6bab7ca735397e9fae2cb0ad99977cf482@34.83.191.67:26656,ddcd5fda167e6b45208faed8fd7e2f0640b4185c@52.44.14.245:26656,a05353fe9ae39dd0edbfa6341634dec781d84a5c@65.108.105.48:17756,1168931936c638e92ea6d93e2271b3fe5faee6d1@135.125.247.228:26656,27f0b281ea7f4c3db01fdb9f4cf7cc910ad240a6@209.34.205.57:26656,b4f800aa8ff11d0d7ab3f5ce19230f049dfebe4b@38.242.199.160:26656,8c74885d4310f606986c88e9613f5e48c9e154dd@65.108.2.41:56656,a13512dbb3def06f91aef81afb397db63d78b25c@51.195.89.114:20656,bbf84e77c0defea82d389e1bd0940d7718f0ee34@103.230.84.4:26656,3e644c24129e14d457e82bab3b5a16c510b12927@50.19.180.153:26656,d200a21e2b3edab24679d4544fea48471515098f@65.108.225.158:17756,dc831d440c18c4a4f72250806cd03e5b240f8935@3.15.209.96:26656"
+peers="05628e99f42eb2fbacfd1f0402f96f46b88dfe6b@146.59.52.137:17756,fe527359b6b6c5ad9cc6e2f6ed3af46018b29e15@136.243.36.60:17756,7258d8c7880167fca502592b8d64110d60e99a6b@65.108.232.180:17756,752bc8c7508affd7e2af494a6bf44bcb66cf84ea@65.108.39.140:17756,88f341a9670494c3d529934dc578eec1b00f4aa1@141.94.168.85:26656,59c71e1ae0267da913d8460c10bbbb86f8003d12@85.10.201.125:36656,6c1cbeb621f04886029c7b222041f7fdb307c579@94.130.14.54:17756,0aa028990c5a135e89447e88daf65a8a590257f4@136.243.67.44:17756,4078d8f702a2ee25c8da93938940748276652696@94.130.13.186:17756,304535618b71c2fe217fe771c745443ea3d7815e@65.108.0.94:17756,ad1dce877d93f9de0d3a5c0b0f28d114242c1d3b@64.185.227.122:17756,8f4ca666d56fc883328b1aa0796342c1c1602099@64.185.226.202:17756,401a4986e78fe74dd7ead9363463ba4c704d8759@38.146.3.183:17756,a6a3ef121282dbf6d9ac70a83cba02780a6b4a5c@67.209.54.93:17756,ba0a167567c7e08f4bb1e25ec24e42a85b07a0c5@148.113.20.208:17756,8fb88c54a8175908bab4dc4122652e7480988d97@3.37.63.177:26656,cca02db11dd1c59c91d355a72c702ccb26a9f99f@3.39.189.46:26656,3fc703341935b9356addfe7b3aad8991d9c8a923@148.113.20.207:17756,e55fe14a534f8cb9a8b8fb1b4a626d867bf642bb@162.19.69.49:52656,bf01fb9d4eab9e007a47c0c3d3b423c5fb426207@65.109.108.47:17756,11a44cfe807274df4ddbce7ee61c111bcecba6f0@65.109.82.87:17756"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.sge/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.sge/config/config.toml
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.sge/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.sge/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 10/g' $HOME/.sge/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 40/g' $HOME/.sge/config/config.toml
 
 ```
 ### Pruning (optional)
@@ -179,8 +176,8 @@ sged tx staking create-validator \
   --commission-rate "0.1" \
   --min-self-delegation "1" \
   --pubkey  $(sged tendermint show-validator) \
-  --moniker STAVRguide \
-  --chain-id sge-network-2 \
+  --moniker STAVR_guide \
+  --chain-id sgenet-1 \
   --identity="" \
   --details="" \
   --website="" -y
@@ -188,13 +185,13 @@ sged tx staking create-validator \
 
 ## Delete node
 ```bash
-sudo systemctl stop sged && \
-sudo systemctl disable sged && \
-rm /etc/systemd/system/sged.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf sge && \
-rm -rf .sge && \
+sudo systemctl stop sged
+sudo systemctl disable sged
+rm /etc/systemd/system/sged.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf sge
+rm -rf .sge
 rm -rf $(which sged)
 ```
 #
