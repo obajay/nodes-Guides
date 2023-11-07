@@ -45,25 +45,25 @@ go version
 cd $HOME
 git clone https://github.com/notional-labs/composable-centauri
 cd composable-centauri
-git checkout v6.3.0
+git checkout v6.3.1
 make install
 ```
 *******🟢UPDATE🟢******* 06.10.23
 ```python
 cd $HOME/composable-centauri
 git pull
-git checkout v6.3.0
+git checkout v6.3.1
 make install
 centaurid version --long | grep -e commit -e version
 #version: v6.3.0
-#commit: 9480c5e72ac78533ac7f583e53e82e4ee4851fb1
+#commit: e3de1f4d8a5330bc4273b0459690cb102e0760e4
 sudo systemctl restart centaurid && sudo journalctl -u centaurid -f -o cat
 
 ```
 
 `centaurid version --long`
-- version: v6.3.0
-- commit: 9480c5e72ac78533ac7f583e53e82e4ee4851fb1
+- version: v6.3.1
+- commit: e3de1f4d8a5330bc4273b0459690cb102e0760e4
 
 ```python
 centaurid init STAVRguide --chain-id centauri-1
