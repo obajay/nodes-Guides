@@ -45,20 +45,9 @@ yarn install
 yarn build
 cd packages/cosmic-swingset && make
 ```
-*******🟢UPDATE🟢******* 19.06.23
+*******🟢UPDATE🟢******* 00.00.23
 ```python
-apt update -y
-apt upgrade -y
-apt install -y build-essential
-apt install -y gcc-10 g++-10 cpp-10
-update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 100 --slave /usr/bin/g++ g++ /usr/bin/g++-10 --slave /usr/bin/gcov gcov /usr/bin/gcov-10
-cd $HOME/agoric-sdk
-git fetch --all
-git checkout agoric-upgrade-11
-yarn install
-yarn build
-systemctl restart agoricd.service && journalctl -u agoricd.service -f -o cat
-
+SOOON
 ```
 `agd version --long`
 - version: 0.35.0-u11.0
