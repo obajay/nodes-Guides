@@ -43,7 +43,7 @@ chmod +x quicksilverd
 mv $HOME/quicksilverd $HOME/go/bin/quicksilverd
 ```
 
-*******🟢UPDATE🟢******* 09.08.23
+*******🟢UPDATE🟢******* 09.11.23
 ```python
 cd $HOME
 wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.2.17/quicksilverd-v1.2.17-amd64
