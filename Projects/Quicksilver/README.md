@@ -35,29 +35,29 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-### Bunary 09.08.23
+### Bunary 09.11.23
 ```python
 cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.2.16/quicksilverd-v1.2.16-amd64
-chmod +x quicksilverd-v1.2.16-amd64
-mv $HOME/quicksilverd-v1.2.16-amd64 $HOME/go/bin/quicksilverd
+wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.2.17/quicksilverd-v1.2.17-amd64
+chmod +x quicksilverd
+mv $HOME/quicksilverd $HOME/go/bin/quicksilverd
 ```
 
 *******🟢UPDATE🟢******* 09.08.23
 ```python
 cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.2.16/quicksilverd-v1.2.16-amd64
-chmod +x quicksilverd-v1.2.16-amd64
-mv $HOME/quicksilverd-v1.2.16-amd64 $HOME/go/bin/quicksilverd
+wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.2.17/quicksilverd-v1.2.17-amd64
+chmod +x quicksilverd
+mv $HOME/quicksilverd $(which quicksilverd)
 quicksilverd version --long | grep -e commit -e version
-#commit: 4241c477d5464074aa9dd2e55cf7d6ae20463431
-#version: v1.2.16
+#version v1.2.17
+#commit 91a55484e8582906bbacf4ece739e9a03f6d4bd3
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 ```
 
 `quicksilverd version`
-+ version: v1.2.16
-+ commit: 4241c477d5464074aa9dd2e55cf7d6ae20463431
++ version: v1.2.17
++ commit: 91a55484e8582906bbacf4ece739e9a03f6d4bd3
 
 ### Initialize the node
 ```java
