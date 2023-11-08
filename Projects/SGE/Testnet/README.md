@@ -4,8 +4,7 @@
 
 [WebSite](https://sgenetwork.io/)
 =
-[EXPLORER 1](https://explorer.stavr.tech/sge-testnet/staking) \
-[EXPLORER 2](https://exp.nodeist.net/t-sge/staking)
+[EXPLORER](https://explorer.stavr.tech/Sge-Testnet/staking)
 =
 
 - **Minimum hardware requirements**:
@@ -29,37 +28,35 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
-## GO 1.18
+## GO 1.19.4
 
 ```python
-ver="1.18" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+GO 19.4
+ver="1.19.4"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 go version
 ```
 
-# Build 16.03.23
+# Build 08.11.23
 ```python
+cd $HOME
 git clone https://github.com/sge-network/sge
-git clone https://github.com/sge-network/networks
 cd sge
-git fetch --tags
-git checkout v0.0.5
-cd sge
-go mod tidy
+git checkout v1.1.1
 make install
 ```
 `sged version --long`
-- version: v0.0.5
-- commit: 462ff3ad9721a1fcfd6edc63654b4b13569a6f9a
+- version: v1.1.1
+- commit: 1a74c2a9d936002b1195035fe0ce8e6d76ed8d2c
 
 ```python
-sged init STAVRguide --chain-id sge-network-2
-sged config chain-id sge-network-2
+sged init STAVR_guide --chain-id sge-network-4
+sged config chain-id sge-network-4
 ```    
 
 ## Create/recover wallet
@@ -70,11 +67,11 @@ sged keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O $HOME/.sge/config/genesis.json "https://raw.githubusercontent.com/sge-network/networks/master/sge-network-2/genesis.json"
+wget -O $HOME/.sge/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/SGE/Testnet/genesis.json"
 
 ```
 `sha256sum $HOME/.sge/config/genesis.json`
-+ d5e51eeb2e4eab83bb7272525ff7d1f605561c6b5cab0465807866149e3a1fc4
++ 08f37f99e33fe2521ff1d1128b437f6351018bad871aedb942c9167d2d83964b
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
@@ -82,28 +79,28 @@ sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0usge\"/" $HOME/.sg
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.sge/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.sge/config/config.toml
-peers="62b76a24869829fb3be53c25891ba37eca5994bd@95.217.224.252:26656,b29612454715a6dc0d1f0c42b426bf30f1d27738@78.46.99.50:24656,14823c9230ac2eb50fd48b7313e8ddd4c13207c6@94.130.219.37:26000,cfa86646e5eb05e111e7dde27750ff8ebe67d165@89.117.56.126:23956,43b05a6bab7ca735397e9fae2cb0ad99977cf482@34.83.191.67:26656,ddcd5fda167e6b45208faed8fd7e2f0640b4185c@52.44.14.245:26656,a05353fe9ae39dd0edbfa6341634dec781d84a5c@65.108.105.48:17756,1168931936c638e92ea6d93e2271b3fe5faee6d1@135.125.247.228:26656,27f0b281ea7f4c3db01fdb9f4cf7cc910ad240a6@209.34.205.57:26656,b4f800aa8ff11d0d7ab3f5ce19230f049dfebe4b@38.242.199.160:26656,8c74885d4310f606986c88e9613f5e48c9e154dd@65.108.2.41:56656,a13512dbb3def06f91aef81afb397db63d78b25c@51.195.89.114:20656,bbf84e77c0defea82d389e1bd0940d7718f0ee34@103.230.84.4:26656,3e644c24129e14d457e82bab3b5a16c510b12927@50.19.180.153:26656,d200a21e2b3edab24679d4544fea48471515098f@65.108.225.158:17756,dc831d440c18c4a4f72250806cd03e5b240f8935@3.15.209.96:26656"
+peers="145d0f311ef1485f5b95eebecbc758fce01b4bb6@38.146.3.184:17756,6caabc35628a51bbf9c80ead303f13b3dfae8674@50.19.180.153:26656,51e4e7b04d2f669f5efa53e8d95891fa04e4c5b9@206.125.33.62:26656,2b4efc999c6aaad3cb2456fa5385f16f90e2c3d2@95.217.106.215:11156,31bda14eacbc1c1c537c4b7c2e8d338a06c8c5fd@57.128.37.47:26656,ef9ac611d9ca1c3a9fae22199f449d7c1082a0d9@65.108.233.109:17756"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.sge/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.sge/config/config.toml
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.sge/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.sge/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 10/g' $HOME/.sge/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 40/g' $HOME/.sge/config/config.toml
 
 ```
 ### Pruning (optional)
 ```python
-pruning="custom" && \
-pruning_keep_recent="100" && \
-pruning_keep_every="0" && \
-pruning_interval="10" && \
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" ~/.sge/config/app.toml && \
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" ~/.sge/config/app.toml && \
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" ~/.sge/config/app.toml && \
+pruning="custom" &&
+pruning_keep_recent="1000" &&
+pruning_keep_every="0" &&
+pruning_interval="10" &&
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" ~/.sge/config/app.toml &&
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" ~/.sge/config/app.toml &&
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" ~/.sge/config/app.toml &&
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.sge/config/app.toml
 ```
 ### Indexer (optional) 
 ```python
-indexer="null" && \
+indexer="null" &&
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.sge/config/config.toml
 ```
 
@@ -179,8 +176,8 @@ sged tx staking create-validator \
   --commission-rate "0.1" \
   --min-self-delegation "1" \
   --pubkey  $(sged tendermint show-validator) \
-  --moniker STAVRguide \
-  --chain-id sge-network-2 \
+  --moniker STAVR_guide \
+  --chain-id sge-network-4 \
   --identity="" \
   --details="" \
   --website="" -y
@@ -188,13 +185,13 @@ sged tx staking create-validator \
 
 ## Delete node
 ```bash
-sudo systemctl stop sged && \
-sudo systemctl disable sged && \
-rm /etc/systemd/system/sged.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf sge && \
-rm -rf .sge && \
+sudo systemctl stop sged
+sudo systemctl disable sged
+rm /etc/systemd/system/sged.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf sge
+rm -rf .sge
 rm -rf $(which sged)
 ```
 #
