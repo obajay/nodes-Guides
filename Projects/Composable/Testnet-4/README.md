@@ -40,32 +40,32 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 23.10.23
+# Build 08.11.23
 ```python
 cd $HOME
 git clone https://github.com/notional-labs/composable-centauri
 cd composable-centauri
-git checkout v6.2.1-testnet
+git checkout v6.2.3-testnet
 make build
 cd bin
 mv layerd $HOME/go/bin/layerd
 ```
-*******🟢UPDATE🟢******* 24.10.23
+
+*******🟢UPDATE🟢******* 08.11.23
 ```python
 cd $HOME/composable-centauri
 git pull
-git checkout v6.2.1-testnet
-cd bin
-mv layerd $(which layerd)
+git checkout v6.2.3-testnet
+make install
 layerd version --long | grep -e commit -e version
-#version: v6.2.1-testnet
-#commit: c97f29294a1b778e4b44f94808f0f2cd7566fff5
+#version: v6.2.3-testnet
+#commit: cfcb45d31d0b88e876117cf329588f84e0f346f1
 sudo systemctl restart layerd && sudo journalctl -u layerd -f -o cat
 ```
 
 `layerd version --long`
-- version: v6.2.1-testnet
-- commit: c97f29294a1b778e4b44f94808f0f2cd7566fff5
+- version: v6.2.3-testnet
+- commit: cfcb45d31d0b88e876117cf329588f84e0f346f1
 
 ```python
 layerd init STAVRguide --chain-id banksy-testnet-4
