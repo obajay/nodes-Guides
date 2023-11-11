@@ -58,6 +58,7 @@ make install
 elysd version --long | grep -e commit -e version
 #commit: 60858e3a7f8701d462e2d05257650b6a8ad284f6
 #version: v0.14.0
+sed -i -e "s/^timeout_commit *=.*/timeout_commit = \"3s\"/" $HOME/.elys/config/config.toml
 sudo systemctl restart elysd && sudo journalctl -u elysd -f -o cat
 ```
 
