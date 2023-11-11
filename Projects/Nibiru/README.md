@@ -1,3 +1,5 @@
+<h1 align="center"> 🔴TESTNET END 10.11.23🔴</h1>
+
 # Nibiru testnet  guide
 
 ![nibiru](https://user-images.githubusercontent.com/44331529/199216266-6b0da979-44a2-43e4-b9ef-de3a7c361b17.png)
