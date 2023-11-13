@@ -1,6 +1,5 @@
 # Mantra Testnet guide
 
-=
 [EXPLORER](https://explorer.stavr.tech/Mantra-Testnet/staking)
 =
 
@@ -169,7 +168,6 @@ sudo systemctl disable mantrachaind
 rm /etc/systemd/system/mantrachaind.service
 sudo systemctl daemon-reload
 cd $HOME
-rm -rf althea-chain
 rm -rf .mantrachain
 rm -rf $(which mantrachaind)
 ```
