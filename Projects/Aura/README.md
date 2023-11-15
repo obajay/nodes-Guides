@@ -35,30 +35,30 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-# Build 12.06.23
+# Build 16.11.23
 ```python
 cd $HOME
 git clone https://github.com/aura-nw/aura
 cd aura
-git checkout aura_v0.4.5
+git checkout v0.7.1
 make install
 ```
 
-*******🟢UPDATE🟢******* 12.06.23
+*******🟢UPDATE🟢******* 16.11.23
 ```python
 cd $HOME/aura
 git fetch --all
-git checkout aura_v0.4.5
+git checkout v0.7.1
 make install
 aurad version --long | head
-#version: aura_v0.4.5
-#commit: e2b4019e4cbf8dcc35323abf4fd984ebafb6f1ab
+#version: v0.7.1
+#commit: fdf7ce2bd703d75ce8a6d581d93d8051ebce2e03
 sudo systemctl restart aurad && journalctl -u aurad -f -o cat
 ```
 
 `aurad version --long | head`
-+ version: aura_v0.4.5
-+ commit: e2b4019e4cbf8dcc35323abf4fd984ebafb6f1ab
++ version: v0.7.1
++ commit: fdf7ce2bd703d75ce8a6d581d93d8051ebce2e03
 
 ```python
 aurad init STAVRguide --chain-id xstaxy-1
