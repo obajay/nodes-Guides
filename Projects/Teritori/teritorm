@@ -129,7 +129,7 @@ break
 ;;
 "Synchronization via StateSync")
 SNAP_RPC=https://teritori.rpc.m.stavr.tech:443
-peers="29c218fb6d31d2316b854c1178327157fbce8aa7@teritori.peers.stavr.tech:38026"
+peers="ab77fecd8c58d89a1bd28bc198449aa2d7fb8740@teritori.peers.stavr.tech:38026"
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.teritorid/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 300)); \
