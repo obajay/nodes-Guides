@@ -135,7 +135,7 @@ EOF
 # StateSync Ojo Testnet
 ```python
 SNAP_RPC=http://ojo.rpc.t.stavr.tech:37097
-peers="d18abe07d27a732e913a782d31b691087a76078d@ojo.peer.stavr.tech:37096"
+peers="1f091cf9567c0d72a0f93877007379e0298b8860@ojo.peer.stavr.tech:37096"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.ojo/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \
