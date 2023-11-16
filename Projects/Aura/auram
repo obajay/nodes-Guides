@@ -131,7 +131,7 @@ break
 "Synchronization via StateSync")
 sudo systemctl stop aurad
 SNAP_RPC=http://aura.rpc.m.stavr.tech:11047
-SEEDS="57406c041d38af3bac9acdcb2b4bdc90dc7a8852@aura.peers.stavr.tech:21056"
+SEEDS="7cefc9a64cd34f6de30e0289d16ee83978f309cc@aura.peers.stavr.tech:21056"
 cp $HOME/.aura/data/priv_validator_state.json $HOME/.aura/priv_validator_state.json.backup
 sed -i -e "/seeds =/ s/= .*/= \"$SEEDS\"/"  $HOME/.aura/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
