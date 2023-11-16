@@ -114,7 +114,7 @@ wget -O $HOME/.lambdavm/config/addrbook.json "https://raw.githubusercontent.com/
 # StateSync
 ```python
 SNAP_RPC=http://lambda.rpc.m.stavr.tech:31327
-peers="4573d28b7bf5cfb0a1b79e796efb388a1db8d046@lambda.peer.stavr.tech:31326" 
+peers="ebdd47f7babb184240258d2fc6fba61bd994edaa@lambda.peer.stavr.tech:31326" 
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.lambdavm/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \
