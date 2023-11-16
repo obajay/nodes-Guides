@@ -118,7 +118,7 @@ wget -O $HOME/.rebusd/config/addrbook.json "https://raw.githubusercontent.com/ob
 # StateSync
 ```python
 SNAP_RPC="http://rebus.rpc.m.stavr.tech:40107"
-peers="0863966356f6532377aeba663415258d44ddbd13@rebus.peer.stavr.tech:40106"
+peers="629adb3c3c5331a562a978bc093238ae1b0b6720@rebus.peer.stavr.tech:40106"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.rebusd/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
