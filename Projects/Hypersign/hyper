@@ -90,8 +90,7 @@ sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" ~/.hid-node/config/app.toml 
 sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" ~/.hid-node/config/app.toml && \
 sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" ~/.hid-node/config/app.toml && \
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.hid-node/config/app.toml
-indexer="null" && \
-sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.hid-node/config/config.toml
+
 
 
 sudo tee /etc/systemd/system/hid-noded.service > /dev/null <<EOF
