@@ -81,7 +81,7 @@ junod keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O $HOME/.juno/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Juno/genesis.json"
+wget -O $HOME/.juno/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Juno/genesis.json"
 
 ```
 `sha256sum $HOME/.juno/config/genesis.json`
