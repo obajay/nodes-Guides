@@ -123,7 +123,7 @@ EOF
 ## StateSync Mainnet
 ```python
 SNAP_RPC=https://source.rpc.m.stavr.tech:443
-peers="3c729ffe80393abd430a7c723fab2e8aa60ffa46@source.peers.stavr.tech:20056"
+peers="9751bfbbb3303db1898ef5c601d8522938623262@source.peers.stavr.tech:20056"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.source/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \
