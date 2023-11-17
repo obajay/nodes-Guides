@@ -40,31 +40,31 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 11.11.23
+# Build 18.11.23
 ```python
 cd $HOME
 git clone https://github.com/elys-network/elys elys
 cd elys
-git checkout v0.14.0
+git checkout v0.15.0
 make install
 ```
 
-*******🟢UPDATE🟢******* 11.11.23
+*******🟢UPDATE🟢******* 18.11.23
 ```python
 cd $HOME/elys
 git fetch --all
-git checkout v0.14.0
+git checkout v0.15.0
 make install
 elysd version --long | grep -e commit -e version
-#commit: 60858e3a7f8701d462e2d05257650b6a8ad284f6
-#version: v0.14.0
+#commit: df718f5391eca419aca1d6ebfea76fe1cd264a63
+#version: v0.15.0
 sed -i -e "s/^timeout_commit *=.*/timeout_commit = \"3s\"/" $HOME/.elys/config/config.toml
 sudo systemctl restart elysd && sudo journalctl -u elysd -f -o cat
 ```
 
 `elysd version --long`
-- version: v0.14.0
-- commit: 60858e3a7f8701d462e2d05257650b6a8ad284f6
+- version: v0.15.0
+- commit: df718f5391eca419aca1d6ebfea76fe1cd264a63
 
 ```python
 elysd init STAVRguide --chain-id elystestnet-1
