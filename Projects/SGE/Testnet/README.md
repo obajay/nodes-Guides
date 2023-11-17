@@ -108,10 +108,10 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.sge/config/config.tom
 ```python
 wget -O $HOME/.sge/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/SGE/Testnet/addrbook.json"
 ```
-## StateSync
+## StateSync Testnet
 ```python
-SNAP_RPC=sge.rpc.t.stavr.tech:1157
-peers="fc616f3e9dc79997e60bd915a9233b6cc81bcd0f@sge.peers.stavr.tech:1156"
+SNAP_RPC=http://sge.rpc.t.stavr.tech:1147
+peers="e2c5f2a902b7e6b8c006008e962ab4ddd70cdd78@sge.peers-t.stavr.tech:1146"
 sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.sge/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \
@@ -124,20 +124,22 @@ s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.sge/config/config.toml
-sged tendermint unsafe-reset-all --home /root/.sge --keep-addr-book
+sged tendermint unsafe-reset-all --home /root/.sge
+wget -O $HOME/.sge/config/addrbook.json "wget -O $HOME/.sge/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/SGE/Testnet/genesis.json"
 systemctl restart sged && journalctl -u sged -f -o cat
 ```
 ## SnapShot (~0.2 GB) updated every 5 hours
 ```python
 cd $HOME
-snap install lz4
+apt install lz4
 sudo systemctl stop sged
 cp $HOME/.sge/data/priv_validator_state.json $HOME/.sge/priv_validator_state.json.backup
 rm -rf $HOME/.sge/data
-curl -o - -L http://sge.snapshot.stavr.tech:1003/sge/sge-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.sge --strip-components 2
+curl -o - -L http://sge-t.snapshot.stavr.tech:1017/sget/sget-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.sge --strip-components 2
 mv $HOME/.sge/priv_validator_state.json.backup $HOME/.sge/data/priv_validator_state.json
-wget -O $HOME/.sge/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/SGE/addrbook.json"
+wget -O $HOME/.sge/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/SGE/addrbook.json"
 sudo systemctl restart sged && journalctl -u sged -f -o cat
+
 ```
 
 # Create a service file
