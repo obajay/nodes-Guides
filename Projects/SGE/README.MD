@@ -51,7 +51,7 @@ make install
 ```
 `sged version --long`
 - version: v1.1.1
-- commit: 2cb274e1c3795cb94550f5dac683f9ea44382a6d
+- commit: 1a74c2a9d936002b1195035fe0ce8e6d76ed8d2c
 
 ```python
 sged init STAVR_guide --chain-id sgenet-1
