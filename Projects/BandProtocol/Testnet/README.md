@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O bandt https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/BandProtocol/Testnet/bandt && chmod +x bandt && ./bandt
 ```
 
 # 2) Manual installation
