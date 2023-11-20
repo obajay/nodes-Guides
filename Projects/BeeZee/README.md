@@ -23,37 +23,37 @@ wget -O beezzeed https://raw.githubusercontent.com/obajay/nodes-Guides/main/Proj
 sudo apt update && sudo apt upgrade -y && \
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
-## GO 19 (one command)
+## GO 1.20.5 (one command)
 ```python
-ver="1.19" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+ver="1.20.5"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 go version
  ```
-## Build (17.02.23)
+## Build (21.11.23)
 ```python
 git clone https://github.com/bze-alphateam/bze
 cd bze
-git checkout v6.0.0
+git checkout v6.1.0
 make install
 ```
-*******🟢UPDATE🟢******* 17.02.23
+*******🟢UPDATE🟢******* 21.11.23
 ```python
 cd $HOME/bze
 git fetch --all
-git checkout v6.0.0
+git checkout v6.1.0
 make install
 bzed version --long
 systemctl restart bzed && journalctl -u bzed -f -o cat
 ```
 
 `bzed version --long`
-+ version: 6.0.0
-+ commit: bd386e7d3ef540fb9343a70b13ac818c32c0d817
++ version: 6.1.0
++ commit: e8157ad95fffb2c7429b7f5619dea888a36bcdb0
 ```pytohn
 bzed init STAVRguide --chain-id beezee-1
 bzed config chain-id beezee-1
