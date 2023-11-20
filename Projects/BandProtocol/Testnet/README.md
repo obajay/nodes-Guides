@@ -149,6 +149,7 @@ s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.band/config/config.toml
 sudo systemctl stop bandd && bandd tendermint unsafe-reset-all --keep-addr-book
+curl -o - -L http://band-t.files.stavr.tech:1103/files-bandt.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.band --strip-components 2
 sudo systemctl restart bandd && journalctl -u bandd -f -o cat
 ```
 # SnapShot Testnet (~2GB) updated every 5 hours  
@@ -159,6 +160,7 @@ sudo systemctl stop bandd
 cp $HOME/.band/data/priv_validator_state.json $HOME/.band/priv_validator_state.json.backup
 rm -rf $HOME/.band/data
 curl -o - -L http://band-t.snapshot.stavr.tech:1025/bandt/bandt-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.band --strip-components 2
+curl -o - -L http://band-t.files.stavr.tech:1103/files-bandt.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.band --strip-components 2
 mv $HOME/.band/priv_validator_state.json.backup $HOME/.band/data/priv_validator_state.json
 wget -O $HOME/.band/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/BandProtocol/Testnet/addrbook.json"
 sudo systemctl restart bandd && journalctl -u bandd -f -o cat
