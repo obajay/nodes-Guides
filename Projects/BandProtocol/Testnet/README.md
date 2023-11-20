@@ -61,7 +61,7 @@ SOOON
 - commit: e6548bbf4793829bb8e711e5ed89ba4afc710ded
 
 ```python
-bandd init STAVRguide --chain-id band-laozi-testnet6
+bandd init STAVR_guide --chain-id band-laozi-testnet6
 bandd config chain-id band-laozi-testnet6
 ```    
 
@@ -86,10 +86,10 @@ external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.band/config/config.toml
 peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.band/config/config.toml
-seeds="ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:22956"
+seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.band/config/config.toml
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.band/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.band/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 10/g' $HOME/.band/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 40/g' $HOME/.band/config/config.toml
 
 ```
 ### Pruning (optional)
@@ -132,36 +132,13 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-# StateSync Band Mainnet
+# StateSync Band Testnet
 ```python
-RPC=http://band.rpc.m.stavr.tech:11067
-peers=0bfd5d7355ebf38e35af619ae0cab70aa21675a5@band-m.peer.stavr.tech:11026
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.band/config/config.toml
-LATEST_HEIGHT=$(curl -s $RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 1500)); \
-TRUST_HASH=$(curl -s "$RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
-
-echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$RPC,$RPC\"| ; \
-s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.band/config/config.toml
-sudo systemctl stop bandd && bandd tendermint unsafe-reset-all --keep-addr-book
-sudo systemctl restart bandd && journalctl -u bandd -f -o cat
+SOOM
 ```
-# SnapShot Mainnet (~15GB) updated every 10 hours  
+# SnapShot Testnet (~2GB) updated every 10 hours  
 ```python
-cd $HOME
-apt install lz4
-sudo systemctl stop bandd
-cp $HOME/.band/data/priv_validator_state.json $HOME/.band/priv_validator_state.json.backup
-rm -rf $HOME/.band/data
-curl -o - -L http://band.snapshot.stavr.tech:1022/band/band-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.band --strip-components 2
-mv $HOME/.band/priv_validator_state.json.backup $HOME/.band/data/priv_validator_state.json
-wget -O $HOME/.band/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/BandProtocol/addrbook.json"
-sudo systemctl restart bandd && journalctl -u bandd -f -o cat
+SOON
 ```
 
 ## Start
@@ -180,7 +157,7 @@ bandd tx staking create-validator \
   --identity="" \
   --details="" \
   --website="" \
-  --chain-id="laozi-mainnet" \
+  --chain-id="band-laozi-testnet6" \
   --commission-rate="0.10" \
   --commission-max-rate="0.20" \
   --commission-max-change-rate="0.2" \
