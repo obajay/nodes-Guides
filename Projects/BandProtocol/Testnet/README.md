@@ -118,7 +118,7 @@ wget -O $HOME/.band/config/addrbook.json "https://raw.githubusercontent.com/obaj
 ```python
 sudo tee /etc/systemd/system/bandd.service > /dev/null <<EOF
 [Unit]
-Description=band
+Description=band test
 After=network-online.target
 
 [Service]
