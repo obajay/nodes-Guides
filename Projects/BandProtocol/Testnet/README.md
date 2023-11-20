@@ -81,7 +81,7 @@ wget -O $HOME/.band/config/genesis.json "https://raw.githubusercontent.com/obaja
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0uband\"/;" ~/.band/config/app.toml
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0025uband\"/;" ~/.band/config/app.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.band/config/config.toml
 peers=""
@@ -187,6 +187,7 @@ bandd tx staking create-validator \
   --commission-max-rate="0.20" \
   --commission-max-change-rate="0.2" \
   --min-self-delegation="1" \
+  --fees 500uband \
   --from=YourWallet -y
 ```
 
