@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O bandm https://github.com/obajay/nodes-Guides/edit/main/Projects/BandProtocol/bandm && chmod +x bandm && ./bandm
+wget -O bandm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/BandProtocol/bandm && chmod +x bandm && ./bandm
 ```
 
 # 2) Manual installation
