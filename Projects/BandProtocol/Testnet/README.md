@@ -74,10 +74,7 @@ bandd keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-curl -Ls https://snapshots.kjnodes.com/band-testnet/genesis.json > $HOME/.band/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/band-testnet/addrbook.json > $HOME/.band/config/addrbook.json
-
-
+wget -O $HOME/.band/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/BandProtocol/Testnet/genesis.json"
 ```
 `sha256sum $HOME/.band/config/genesis.json`
 + c776e2a5fac6ce3214845db52da6beef95fada49717eac55b0b81ad3767db7de
@@ -114,7 +111,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.band/config/config.to
 
 ## Download addrbook
 ```python
-wget -O $HOME/.band/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/BandProtocol/addrbook.json"
+wget -O $HOME/.band/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/BandProtocol/Testnet/addrbook.json"
 ```
 
 # Create a service file
