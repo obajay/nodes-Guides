@@ -166,8 +166,8 @@ sudo systemctl restart strided && journalctl -u strided -f -o cat
 
 # Start node (one command)
 ```python
-sudo systemctl daemon-reload && \
-sudo systemctl enable strided && \
+sudo systemctl daemon-reload &&
+sudo systemctl enable strided &&
 sudo systemctl restart strided && sudo journalctl -u strided -f -o cat
 ```
 
@@ -190,11 +190,11 @@ sudo systemctl restart strided && sudo journalctl -u strided -f -o cat
 
 
 ### Delete node (one command)
-    sudo systemctl stop strided && \
-    sudo systemctl disable strided && \
-    rm /etc/systemd/system/strided.service && \
-    sudo systemctl daemon-reload && \
-    cd $HOME && \
-    rm -rf .stride && \
-    rm -rf stride && \
+    sudo systemctl stop strided &&
+    sudo systemctl disable strided &&
+    rm /etc/systemd/system/strided.service &&
+    sudo systemctl daemon-reload &&
+    cd $HOME &&
+    rm -rf .stride &&
+    rm -rf stride &&
     rm -rf $(which strided)
