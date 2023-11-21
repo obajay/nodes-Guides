@@ -13,26 +13,26 @@
 | Mainnet   |   8| 16GB | 250GB    |
 
 # 1) Auto_install script
-```bash
+```python
 wget -O stride-x https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Stride/stride-x && chmod +x stride-x && ./stride-x
 ```
 # 2) Manual installation
 
 ### Preparing the server
-```bash
+```python
 sudo apt update && sudo apt upgrade -y && \
 sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
 ```
 
 ## GO 19 (one command) 
-```
-ver="1.19" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+```python
+ver="1.19" &&
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" &&
+sudo rm -rf /usr/local/go &&
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" &&
+rm "go$ver.linux-amd64.tar.gz" &&
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &&
+source $HOME/.bash_profile &&
 go version
 ```
 # Binary   18.10.23
@@ -69,7 +69,7 @@ strided keys add <walletName>
 strided keys add <walletName> --recover
 ```
 # Genesis
-```bash
+```python
 wget -O $HOME/.stride/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Stride/genesis.json"
 ```
 
@@ -132,7 +132,7 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-# StateSync STRIDE
+# StateSync STRIDE (Temporarily suspended)
 ```python
 SNAP_RPC=http://stride.rpc.m.stavr.tech:21017
 peers="a7b4cf6f65138ba61518c2c45402da32dc8e28b7@stride.peer.stavr.tech:21016"
@@ -151,7 +151,7 @@ s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.stride/config/config.toml
 strided tendermint unsafe-reset-all --home /root/.stride --keep-addr-book
 sudo systemctl restart strided && journalctl -u strided -f -o cat
 ```
-# SnapShot (~0.8GB) updated every 5 hours
+# SnapShot (~0.8GB) updated every 5 hours  (Temporarily suspended)
 ```python
 cd $HOME
 apt install lz4
