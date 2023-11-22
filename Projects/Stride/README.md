@@ -94,7 +94,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.stride/config/config.
 ```
 ### Set up the minimum gas price and Peers/Seeds/Filter peers
 ```python
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0ustrd\"/;" ~/.stride/config/app.toml
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.01ustrd\"/;" ~/.stride/config/app.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.stride/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.stride/config/config.toml
