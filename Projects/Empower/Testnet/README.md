@@ -38,32 +38,32 @@ go version
 ```
 
 
-# Binary   15.06.23
+# Binary   24.11.23
 ```python
 git clone https://github.com/EmpowerPlastic/empowerchain
 cd empowerchain
-git checkout v1.0.0-rc3
+git checkout v2.0.0-rc1
 cd chain
 make install
 
 ```
-*******🟢UPDATE🟢******* 15.06.23
+*******🟢UPDATE🟢******* 24.11.23
 ```python
 cd $HOME/empowerchain
 git pull
-git checkout v1.0.0-rc3
+git checkout v2.0.0-rc1
 cd chain && make build
 $HOME/empowerchain/chain/build/empowerd version --long | grep -e version -e commit
-# 1.0.0-rc3
-# Commit: b0de742c7ea925b0190cfd6fac72f4b443860283
+# version 2.0.0-rc1
+# Commit: 70ad47fc878d1854fe279ebf99e3a9260b78099c
 mv $HOME/empowerchain/chain/build/empowerd $(which empowerd)
 systemctl restart empowerd && journalctl -u empowerd -f -o cat
 
 ```
 
 `empowerd version --long`
-+ 1.0.0-rc3
-+ commit: b0de742c7ea925b0190cfd6fac72f4b443860283
++ version 2.0.0-rc1
++ commit: 70ad47fc878d1854fe279ebf99e3a9260b78099c
 
 
 ## Initialisation
