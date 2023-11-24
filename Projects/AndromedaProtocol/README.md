@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O androm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/AndromedaProtocol/androm && chmod +x androm && ./androm
 ```
 
 # 2) Manual installation
