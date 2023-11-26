@@ -43,7 +43,7 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 23.10.23
+# Build 26.11.23
 ```python
 cd $HOME
 git clone https://github.com/osmosis-labs/osmosis && cd osmosis
@@ -51,7 +51,7 @@ git checkout v20.5.0
 make install
 ```
 
-*******🟢UPDATE🟢******* 23.10.23
+*******🟢UPDATE🟢******* 26.11.23
 ```python
 cd $HOME
 wget -O osmosisd https://github.com/osmosis-labs/osmosis/releases/download/v20.5.0/osmosisd-20.5.0-linux-amd64
