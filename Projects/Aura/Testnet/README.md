@@ -69,7 +69,7 @@ aurad init STAVR_guide --chain-id euphoria-2
 aurad keys add <walletname>
     OR
 aurad keys add <walletname> --recover
-
+```
 ## Genesis
 ```python
 wget https://github.com/aura-nw/testnets/raw/main/euphoria-2/euphoria-2-genesis.tar.gz
