@@ -81,7 +81,7 @@ mv euphoria-2-genesis.json $HOME/.aura/config/genesis.json
 
 ## Download addrbook
 ```python
-wget -O $HOME/.aura/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Aura/Testnet/addrbook.json"
+wget -O $HOME/.aura/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Aura/Testnet/addrbook.json"
 ```
 
 ## Minimum gas price/Peers/Seeds
