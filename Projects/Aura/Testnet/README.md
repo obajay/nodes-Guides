@@ -98,8 +98,7 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.aura
 ```
 
 ### Pruning (optional)
-```
-python
+```python
 pruning="custom" &&
 pruning_keep_recent="100" &&
 pruning_keep_every="0" &&
