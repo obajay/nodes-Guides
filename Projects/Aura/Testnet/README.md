@@ -139,7 +139,7 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 EOF
-
+```
 ## Start
 ```python
 sudo systemctl daemon-reload && sudo systemctl enable aurad
