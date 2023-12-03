@@ -42,16 +42,16 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 31.01.23
+# Build 08.06.23
 ```python
 git clone https://github.com/mars-protocol/hub.git
 cd hub
-git checkout v1.0.0
+git checkout v1.0.2
 make install
 ```
-`marsd version`
-- version: 1.0.0
-- commit: 413005a135e40bf3f5ae4c197d58bd96d4d3aa9a
+`marsd version --long`
+- version: 1.0.2
+- commit: ffbe9c28a6070abbbc7cf4be2f80d6a728715d62
 
 ```python
 marsd init STAVRguide --chain-id mars-1
