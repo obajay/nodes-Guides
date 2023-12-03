@@ -38,17 +38,17 @@ chmod +x kyved
 rm kyved_mainnet_linux_amd64.tar.gz
 sudo mv kyved $HOME/go/bin/kyved
 ```
-*******🟢UPDATE🟢******* 01.08.23
+*******🟢UPDATE🟢******* 05.12.23
 ```python
 cd $HOME
-wget https://github.com/KYVENetwork/chain/releases/download/v1.3.0/kyved_mainnet_linux_amd64.tar.gz
+wget https://github.com/KYVENetwork/chain/releases/download/v1.4.0/kyved_mainnet_linux_amd64.tar.gz
 tar -xvzf kyved_mainnet_linux_amd64.tar.gz
 chmod +x kyved
 rm kyved_mainnet_linux_amd64.tar.gz
 sudo mv kyved $HOME/go/bin/kyved
 kyved version --long | grep -e commit -e version
-#version: v1.3.0
-#commit: c40a28dcace2f3d3e690274511ce5b4b7c2a69f3
+#version: v1.4.0
+#commit: 68e5ff7a8d97f21e2aede9341ba22df9d81bb264
 systemctl restart kyved && journalctl -u kyved -f -o cat
 ```
 
