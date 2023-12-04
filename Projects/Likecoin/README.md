@@ -66,7 +66,7 @@ liked config chain-id likecoin-mainnet-2
 ## Create/recover wallet
 ```python
 liked keys add <walletname>
-  OR
+            OR
 liked keys add <walletname> --recover
 ```
 
