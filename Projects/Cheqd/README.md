@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-SOON
+wget -O cheqdm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Cheqd/cheqdm && chmod +x cheqdm && ./cheqdm
 ```
 
 # 2) Manual installation
