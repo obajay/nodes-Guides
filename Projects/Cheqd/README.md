@@ -40,7 +40,7 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 17.11.23
+# Build 09.06.23
 ```python
 cd $HOME
 git clone https://github.com/cheqd/cheqd-node
