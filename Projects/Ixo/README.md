@@ -132,11 +132,37 @@ EOF
 ```
 # StateSync Ixo Mainnet
 ```python
-SOON
+SNAP_RPC=http://ixo.rpc.m.stavr.tech:1017
+SEEDS=d4448c5b10b43d444034533ede7d2e66cbf9e519@ixo.peer.stavr.tech:1016
+cp $HOME/.ixod/data/priv_validator_state.json $HOME/.ixod/priv_validator_state.json.backup
+sed -i -e "/seeds =/ s/= .*/= \"$SEEDS\"/"  $HOME/.ixod/config/config.toml
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.ixod/config/config.toml
+ixod tendermint unsafe-reset-all --home $HOME/.ixod --keep-addr-book
+mv $HOME/.ixod/priv_validator_state.json.backup $HOME/.ixod/data/priv_validator_state.json
+sudo systemctl restart ixod && journalctl -u ixod -f -o cat
 ```
-# SnapShot Mainnet (~3GB) updated every 5 hours  
+# SnapShot Mainnet (~0.2 GB) updated every 5 hours  
 ```python
-SOON
+cd $HOME
+apt install lz4
+sudo systemctl stop ixod
+cp $HOME/.ixod/data/priv_validator_state.json $HOME/.ixod/priv_validator_state.json.backup
+rm -rf $HOME/.ixod/data
+curl -o - -L http://ixo.snapshot.stavr.tech:5/ixod/ixod-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.ixod --strip-components 2
+curl -o - -L http://ixo.wasm.stavr.tech:11/wasm-ixod.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.ixod --strip-components 2
+mv $HOME/.ixod/priv_validator_state.json.backup $HOME/.ixod/data/priv_validator_state.json
+wget -O $HOME/.ixod/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Ixo/addrbook.json"
+sudo systemctl restart ixod && journalctl -u ixod -f -o cat
 ```
 
 ## Start
