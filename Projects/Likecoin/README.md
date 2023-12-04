@@ -133,7 +133,25 @@ EOF
 ```
 # StateSync Likecoin Mainnet
 ```python
-SOON
+SNAP_RPC=http://like.rpc.m.stavr.tech:1007
+SEEDS=fd7589625f4ad41bb93f96f4c962ed6638426497@like.peer.stavr.tech:1006
+cp $HOME/.liked/data/priv_validator_state.json $HOME/.liked/priv_validator_state.json.backup
+sed -i -e "/seeds =/ s/= .*/= \"$SEEDS\"/"  $HOME/.liked/config/config.toml
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.liked/config/config.toml
+liked tendermint unsafe-reset-all --home $HOME/.liked --keep-addr-book
+mv $HOME/.liked/priv_validator_state.json.backup $HOME/.liked/data/priv_validator_state.json
+wget -O $HOME/.liked/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Likecoin/addrbook.json"
+sudo systemctl restart liked && journalctl -u liked -f -o cat
 ```
 # SnapShot Mainnet (~0.2GB) updated every 5 hours  
 ```python
