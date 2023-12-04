@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-SOOOON
+wget -O ixom https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Ixo/ixom && chmod +x ixom && ./ixom
 ```
 
 # 2) Manual installation
