@@ -135,11 +135,36 @@ EOF
 ```
 # StateSync Point Mainnet
 ```python
-SOON
+SNAP_RPC=http://point.rpc.m.stavr.tech:1057
+SEEDS=f675d544f5e6b8bc7ef9923d6f594dd0a3570190@point.peer.stavr.tech:1056
+cp $HOME/.pointd/data/priv_validator_state.json $HOME/.pointd/priv_validator_state.json.backup
+sed -i -e "/seeds =/ s/= .*/= \"$SEEDS\"/"  $HOME/.pointd/config/config.toml
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.pointd/config/config.toml
+pointd tendermint unsafe-reset-all --home $HOME/.pointd --keep-addr-book
+mv $HOME/.pointd/priv_validator_state.json.backup $HOME/.pointd/data/priv_validator_state.json
+sudo systemctl restart pointd && journalctl -u pointd -f -o cat
 ```
-# SnapShot Mainnet (~3GB) updated every 5 hours  
+# SnapShot Mainnet (~0.2GB) updated every 5 hours  
 ```python
-SOON
+cd $HOME
+apt install lz4
+sudo systemctl stop pointd
+cp $HOME/.pointd/data/priv_validator_state.json $HOME/.pointd/priv_validator_state.json.backup
+rm -rf $HOME/.pointd/data
+curl -o - -L http://point.snapshot.stavr.tech:3/pointd/pointd-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.pointd --strip-components 2
+mv $HOME/.pointd/priv_validator_state.json.backup $HOME/.pointd/data/priv_validator_state.json
+wget -O $HOME/.pointd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Point/addrbook.json"
+sudo systemctl restart pointd && journalctl -u pointd -f -o cat
 ```
 
 ## Start
