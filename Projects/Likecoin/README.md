@@ -1,6 +1,6 @@
-# Althea Mainnet guide
+# Likecoin Mainnet guide
 
-![Althea_Logo-BLUE_SIGNAL](https://user-images.githubusercontent.com/44331529/218240936-c2095305-1a28-45f6-8ccd-d068a4fe5754.svg)
+![liked](https://github.com/obajay/nodes-Guides/assets/44331529/93c6794e-ca4d-4c89-832b-c89fdca918f2)
 
 [WebSite](https://about.like.co/)\
 [GitHub](https://github.com/likecoin)
@@ -72,23 +72,23 @@ liked keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O $HOME/.althea/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Althea/genesis.json"
+wget -O $HOME/.liked/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Likecoin/genesis.json"
 
 ```
-`sha256sum $HOME/.althea/config/genesis.json`
-+ 66401e3c2d3f2679f82bec6a53c9b9bc38737c1ecb700c0a85f0188f8840ddeb
+`sha256sum $HOME/.liked/config/genesis.json`
++ f42e1d49ca30f69ace60f5eb61416e9393d318083849e83d1fc33df4085462c0
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0aalthea\"/;" ~/.althea/config/app.toml
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"1nanolike\"/;" ~/.liked/config/app.toml
 external_address=$(wget -qO- eth0.me) 
-sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.althea/config/config.toml
-peers="bc47f3e8f9134a812462e793d8767ef7334c0119@chainripper-2.althea.net:23296"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.althea/config/config.toml
-seeds=""
-sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.althea/config/config.toml
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.althea/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.althea/config/config.toml
+sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.liked/config/config.toml
+peers="d8eaf867e1ec1d1c3bc872a93bf0f060701d10be@65.109.28.177:29696"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.liked/config/config.toml
+seeds="7a38dfc59eb43b27cf2cc87b46a43e76aeaaf012@20.205.224.107:26656,49976c3bd43da9271f226cbedf02d4b6b8fc880c@35.233.143.230:26656"
+sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.liked/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.liked/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.liked/config/config.toml
 
 ```
 ### Pruning (optional)
@@ -97,32 +97,32 @@ pruning="custom"
 pruning_keep_recent="1000"
 pruning_keep_every="0"
 pruning_interval="10"
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.althea/config/app.toml
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.althea/config/app.toml
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.althea/config/app.toml
-sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.althea/config/app.toml
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.liked/config/app.toml
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.liked/config/app.toml
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.liked/config/app.toml
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.liked/config/app.toml
 ```
 ### Indexer (optional) 
 ```bash
 indexer="null" && \
-sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.althea/config/config.toml
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.liked/config/config.toml
 ```
 
 ## Download addrbook
 ```python
-wget -O $HOME/.althea/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Althea/addrbook.json"
+wget -O $HOME/.liked/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Likecoin/addrbook.json"
 ```
 
 # Create a service file
 ```python
-sudo tee /etc/systemd/system/althea.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/liked.service > /dev/null <<EOF
 [Unit]
-Description=althea
+Description=liked
 After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which althea) start
+ExecStart=$(which liked) start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
@@ -131,58 +131,35 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-# StateSync Althea Testnet
+# StateSync Likecoin Mainnet
 ```python
-SNAP_RPC=http://althea.rpc.t.stavr.tech:17887
-peers="a1ef55814e2b9aa6c75fbdda52a0ce3d10aebfec@althea.peers.stavr.tech:17886"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.althea/config/config.toml
-LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \
-TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
-
-echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
-s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.althea/config/config.toml
-althea tendermint unsafe-reset-all --home /root/.althea
-systemctl restart althea && journalctl -u althea -f -o cat
+SOON
 ```
-# SnapShot Testnet (~0.2GB) updated every 5 hours  
+# SnapShot Mainnet (~0.2GB) updated every 5 hours  
 ```python
-cd $HOME
-apt install lz4
-sudo systemctl stop althea
-cp $HOME/.althea/data/priv_validator_state.json $HOME/.althea/priv_validator_state.json.backup
-rm -rf $HOME/.althea/data
-curl -o - -L http://althea.snapshot.stavr.tech:1020/althea/althea-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.althea --strip-components 2
-mv $HOME/.althea/priv_validator_state.json.backup $HOME/.althea/data/priv_validator_state.json
-wget -O $HOME/.althea/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Althea/addrbook.json"
-sudo systemctl restart althea && journalctl -u althea -f -o cat
+SOOON
 ```
 
 ## Start
 ```python
 sudo systemctl daemon-reload
-sudo systemctl enable althea
-sudo systemctl restart althea && sudo journalctl -u althea -f -o cat
+sudo systemctl enable liked
+sudo systemctl restart liked && sudo journalctl -u liked -f -o cat
 ```
 
 ### Create validator
 ```python
-althea tx staking create-validator \
+liked tx staking create-validator \
 --commission-rate 0.1 \
---commission-max-rate 1 \
---commission-max-change-rate 1 \
+--commission-max-rate 0.2 \
+--commission-max-change-rate 0.1 \
 --min-self-delegation "1" \
---amount 1000000000000000000aalthea \
---pubkey $(althea tendermint show-validator) \
+--amount 1000000nanolike \
+--pubkey $(liked tendermint show-validator) \
 --from <wallet> \
---moniker="STAVRguide" \
---chain-id althea_417834-3 \
---gas 350000 \
+--moniker="STAVR_guide" \
+--chain-id likecoin-mainnet-2 \
+--fees="200000nanolike" \
 --identity="" \
 --website="" \
 --details="" -y
@@ -190,29 +167,29 @@ althea tx staking create-validator \
 
 ## Delete node
 ```python
-sudo systemctl stop althea
-sudo systemctl disable althea
-rm /etc/systemd/system/althea.service
+sudo systemctl stop liked
+sudo systemctl disable liked
+rm /etc/systemd/system/liked.service
 sudo systemctl daemon-reload
 cd $HOME
-rm -rf althea-chain
-rm -rf .althea
-rm -rf $(which althea)
+rm -rf likecoin-chain
+rm -rf .liked
+rm -rf $(which liked)
 ```
 #
 ### Sync Info
 ```python
-althea status 2>&1 | jq .SyncInfo
+liked status 2>&1 | jq .SyncInfo
 ```
 ### NodeINfo
 ```python
-althea status 2>&1 | jq .NodeInfo
+liked status 2>&1 | jq .NodeInfo
 ```
 ### Check node logs
 ```python
-sudo journalctl -u althea -f -o cat
+sudo journalctl -u liked -f -o cat
 ```
 ### Check Balance
 ```python
-althea query bank balances althea...addressjkl1yjgn7z09ua9vms259j
+liked query bank balances like...addressjkl1yjgn7z09ua9vms259j
 ```
