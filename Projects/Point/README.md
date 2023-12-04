@@ -19,7 +19,7 @@
 
 # 1) Auto_install script
 ```python
-SOON
+wget -O pointm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Point/pointm && chmod +x pointm && ./pointm
 ```
 
 # 2) Manual installation
