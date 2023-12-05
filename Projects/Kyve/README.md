@@ -29,10 +29,10 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-# Build 01.08.23
+# Build 05.12.23
 ```python
 cd $HOME
-wget https://github.com/KYVENetwork/chain/releases/download/v1.3.0/kyved_mainnet_linux_amd64.tar.gz
+wget https://github.com/KYVENetwork/chain/releases/download/v1.4.0/kyved_mainnet_linux_amd64.tar.gz
 tar -xvzf kyved_mainnet_linux_amd64.tar.gz
 chmod +x kyved
 rm kyved_mainnet_linux_amd64.tar.gz
@@ -53,8 +53,8 @@ systemctl restart kyved && journalctl -u kyved -f -o cat
 ```
 
 `kyved version --long`
-- version: v1.3.0
-- commit: c40a28dcace2f3d3e690274511ce5b4b7c2a69f3
+- version: v1.4.0
+- commit: 68e5ff7a8d97f21e2aede9341ba22df9d81bb264
 
 
 ```python    
