@@ -19,7 +19,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O firmam https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Firmachain/firmam && chmod +x firmam && ./firmam
 ```
 
 # 2) Manual installation
