@@ -135,11 +135,36 @@ EOF
 ```
 # StateSync Planq Mainnet
 ```python
-SOON
+SNAP_RPC=http://planq.rpc.m.stavr.tech:1077
+SEEDS=192ff55d15d7ad9fc9ded5c5a9f4393beba9b222@planq.peer.stavr.tech:1076
+cp $HOME/.planqd/data/priv_validator_state.json $HOME/.planqd/priv_validator_state.json.backup
+sed -i -e "/seeds =/ s/= .*/= \"$SEEDS\"/"  $HOME/.planqd/config/config.toml
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.planqd/config/config.toml
+planqd tendermint unsafe-reset-all --home $HOME/.planqd --keep-addr-book
+mv $HOME/.planqd/priv_validator_state.json.backup $HOME/.planqd/data/priv_validator_state.json
+sudo systemctl restart planqd && journalctl -u planqd -f -o cat
 ```
-# SnapShot Mainnet (~0.9 GB) updated every 5 hours  
+# SnapShot Mainnet (~0.3 GB) updated every 5 hours  
 ```python
-SOON
+cd $HOME
+apt install lz4
+sudo systemctl stop planqd
+cp $HOME/.planqd/data/priv_validator_state.json $HOME/.planqd/priv_validator_state.json.backup
+rm -rf $HOME/.planqd/data
+curl -o - -L http://planq.snapshot.stavr.tech:8/planqd/planqd-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.planqd --strip-components 2
+mv $HOME/.planqd/priv_validator_state.json.backup $HOME/.planqd/data/priv_validator_state.json
+wget -O $HOME/.planqd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Planq/addrbook.json"
+sudo systemctl restart planqd && journalctl -u planqd -f -o cat
 ```
 
 ## Start
