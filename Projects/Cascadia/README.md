@@ -40,32 +40,33 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 21.11.23
+# Build 05.12.23
 ```python
 cd $HOME
-git clone https://github.com/cascadiafoundation/cascadia && cd cascadia
-git checkout v0.1.8
+git clone https://github.com/CascadiaFoundation/cascadia
+cd cascadia
+git checkout v0.1.9
 make install
+
 ```
-*******🟢UPDATE🟢******* 21.11.23
+*******🟢UPDATE🟢******* 05.12.23
 ```python
-cd $HOME
-wget https://github.com/CascadiaFoundation/cascadia/releases/download/v0.1.8/cascadiad
-chmod +x cascadiad
-mv cascadiad $(which cascadiad)
+cd $HOME/cascadia
+git pull
+git checkout v0.1.9
 cascadiad version --long | grep -e version -e commit
-#commit: 11e193abc81e4890a9686849c0e5d2dfedf5f4a6
-#version: 0.1.8
+#commit: 1ff47d96d12d272fbb2330e601a6a0642b8d9f16
+#version: 0.1.9
 sudo systemctl restart cascadiad && sudo journalctl -u cascadiad -f -o cat
 ```
 
 `cascadiad version --long | grep -e version -e commit`
-- version: 0.1.8
-- commit: 11e193abc81e4890a9686849c0e5d2dfedf5f4a6
+- version: 0.1.9
+- commit: 1ff47d96d12d272fbb2330e601a6a0642b8d9f16
 
 ```python
-cascadiad init STAVRguide --chain-id cascadia_6102-1
-cascadiad config chain-id cascadia_6102-1
+cascadiad init STAVR_guide --chain-id cascadia_11029-1
+cascadiad config chain-id cascadia_11029-1
 ```    
 
 ## Create/recover wallet
@@ -81,7 +82,7 @@ wget -O $HOME/.cascadiad/config/genesis.json "https://raw.githubusercontent.com/
 
 ```
 `sha256sum $HOME/.cascadiad/config/genesis.json`
-+ 74ea3c84182028300d0c101c5cf017a055782c595ed91e4be3638380f0169582
++ 9e7a698f532042cb966c4cda3ed6eb0aab5ce4882ebfb8d334b27dd84fa497bd
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
@@ -89,7 +90,7 @@ sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.025aCC\"/;" ~
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.cascadiad/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.cascadiad/config/config.toml
-peers="1d61222b7b8e180aacebfd57fbd2d8ab95ebdc4c@65.109.93.152:35656"
+peers="d1ed80e232fc2f3742637daacab454e345bbe475@54.204.246.120:26656,0c96a6c328eb58d1467afff4130ab446c294108c@34.239.67.55:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.cascadiad/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.cascadiad/config/config.toml
@@ -163,8 +164,8 @@ cascadiad tx staking create-validator \
   --commission-rate "0.1" \
   --min-self-delegation "1" \
   --pubkey  $(cascadiad tendermint show-validator) \
-  --moniker "STAVRguide" \
-  --chain-id cascadia_6102-1 \
+  --moniker "STAVR_guide" \
+  --chain-id cascadia_11029-1 \
   --details="" \
   --identity="" \
   --gas-prices 7aCC \
