@@ -133,7 +133,7 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-# StateSync Shentu Mainnet
+# StateSync Firmachain Mainnet
 ```python
 SOOON
 ```
