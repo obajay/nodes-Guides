@@ -19,7 +19,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O planqm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Planq/planqm && chmod +x planqm && ./planqm
 ```
 
 # 2) Manual installation
