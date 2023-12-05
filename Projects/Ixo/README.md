@@ -149,6 +149,7 @@ s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.ixod/config/config.toml
 ixod tendermint unsafe-reset-all --home $HOME/.ixod --keep-addr-book
 mv $HOME/.ixod/priv_validator_state.json.backup $HOME/.ixod/data/priv_validator_state.json
+curl -o - -L http://ixo.wasm.stavr.tech:11/wasm-ixod.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.ixod --strip-components 2
 sudo systemctl restart ixod && journalctl -u ixod -f -o cat
 ```
 # SnapShot Mainnet (~0.2 GB) updated every 5 hours  
