@@ -74,23 +74,23 @@ firmachaind keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O $HOME/.shentud/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Shentu/genesis.json"
+wget -O $HOME/.firmachain/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Firmachain/genesis.json"
 
 ```
-`sha256sum $HOME/.shentud/config/genesis.json`
-+ f42e1d49ca30f69ace60f5eb61416e9393d318083849e83d1fc33df4085462c0
+`sha256sum $HOME/.firmachain/config/genesis.json`
++ d03edc3362a677f4a0c2f605c7f848f9516fd4f55432fda63625398c52419954
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.025uctk\"/;" ~/.shentud/config/app.toml
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.1ufct\"/;" ~/.firmachain/config/app.toml
 external_address=$(wget -qO- eth0.me) 
-sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.shentud/config/config.toml
-peers="31a3436fa45d0c0b6df1275783be405d5ca71850@65.108.199.222:26556"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.shentud/config/config.toml
-seeds="b3192e1ab0cbb9f439b15c82605379018d96b4f2@3.209.12.186:26656,23419a3d9deedabce1a3cbfa0d1a3e55ef2364a7@34.229.203.57:26656"
-sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.shentud/config/config.toml
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.shentud/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.shentud/config/config.toml
+sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.firmachain/config/config.toml
+peers="a94f70e215a429f4b479ff463183703c0b315d01@144.76.97.251:26116"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.firmachain/config/config.toml
+seeds="f89dcc15241e30323ae6f491011779d53f9a5487@mainnet-seed1.firmachain.dev:26656,04cce0da4cf5ceb5ffc04d158faddfc5dc419154@mainnet-seed2.firmachain.dev:26656,940977bdc070422b3a62e4985f2fe79b7ee737f7@mainnet-seed3.firmachain.dev:26656"
+sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.firmachain/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.firmachain/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.firmachain/config/config.toml
 
 ```
 ### Pruning (optional)
@@ -99,32 +99,32 @@ pruning="custom"
 pruning_keep_recent="1000"
 pruning_keep_every="0"
 pruning_interval="10"
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.shentud/config/app.toml
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.shentud/config/app.toml
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.shentud/config/app.toml
-sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.shentud/config/app.toml
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.firmachain/config/app.toml
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.firmachain/config/app.toml
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.firmachain/config/app.toml
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.firmachain/config/app.toml
 ```
 ### Indexer (optional) 
 ```bash
 indexer="null" && \
-sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.shentud/config/config.toml
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.firmachain/config/config.toml
 ```
 
 ## Download addrbook
 ```python
-wget -O $HOME/.shentud/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Shentu/addrbook.json"
+wget -O $HOME/.firmachain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Firmachain/addrbook.json"
 ```
 
 # Create a service file
 ```python
-sudo tee /etc/systemd/system/shentud.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/firmachaind.service > /dev/null <<EOF
 [Unit]
-Description=shentud
+Description=firmachaind
 After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which shentud) start
+ExecStart=$(which firmachaind) start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
@@ -135,58 +135,33 @@ EOF
 ```
 # StateSync Shentu Mainnet
 ```python
-SNAP_RPC=http://shentu.rpc.m.stavr.tech:20017
-SEEDS=060027d3bc10ff7ebc1ec315ae5671c541e1568c@shentu.peer.stavr.tech:20016
-cp $HOME/.shentud/data/priv_validator_state.json $HOME/.shentud/priv_validator_state.json.backup
-sed -i -e "/seeds =/ s/= .*/= \"$SEEDS\"/"  $HOME/.shentud/config/config.toml
-LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
-TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
-
-echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
-s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.shentud/config/config.toml
-shentud tendermint unsafe-reset-all --home $HOME/.shentud --keep-addr-book
-mv $HOME/.shentud/priv_validator_state.json.backup $HOME/.shentud/data/priv_validator_state.json
-sudo systemctl restart shentud && journalctl -u shentud -f -o cat
+SOOON
 ```
 # SnapShot Mainnet (~3GB) updated every 5 hours  
 ```python
-cd $HOME
-apt install lz4
-sudo systemctl stop shentud
-cp $HOME/.shentud/data/priv_validator_state.json $HOME/.shentud/priv_validator_state.json.backup
-rm -rf $HOME/.shentud/data
-curl -o - -L http://shentu.snapshot.stavr.tech:2/shentud/shentud-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.shentud --strip-components 2
-mv $HOME/.shentud/priv_validator_state.json.backup $HOME/.shentud/data/priv_validator_state.json
-wget -O $HOME/.shentud/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Shentu/addrbook.json"
-sudo systemctl restart shentud && journalctl -u shentud -f -o cat
+SOON
 ```
 
 ## Start
 ```python
 sudo systemctl daemon-reload
-sudo systemctl enable shentud
-sudo systemctl restart shentud && sudo journalctl -u shentud -f -o cat
+sudo systemctl enable firmachaind
+sudo systemctl restart firmachaind && sudo journalctl -u firmachaind -f -o cat
 ```
 
 ### Create validator
 ```python
-shentud tx staking create-validator \
+firmachaind tx staking create-validator \
 --commission-rate 0.1 \
 --commission-max-rate 0.2 \
 --commission-max-change-rate 0.1 \
 --min-self-delegation "1" \
---amount 1000000uctk \
---pubkey $(shentud tendermint show-validator) \
+--amount=1000000ufct \
+--pubkey $(firmachaind tendermint show-validator) \
 --from <wallet> \
 --moniker="STAVR_guide" \
---chain-id shentu-2.2 \
---fees="5000uctk" \
+--chain-id colosseum-1 \
+--fees="20000ufct" \
 --identity="" \
 --website="" \
 --details="" -y
@@ -194,29 +169,29 @@ shentud tx staking create-validator \
 
 ## Delete node
 ```python
-sudo systemctl stop shentud
-sudo systemctl disable shentud
-rm /etc/systemd/system/shentud.service
+sudo systemctl stop firmachaind
+sudo systemctl disable firmachaind
+rm /etc/systemd/system/firmachaind.service
 sudo systemctl daemon-reload
 cd $HOME
-rm -rf shentu
-rm -rf .shentud
-rm -rf $(which shentud)
+rm -rf firmachain
+rm -rf .firmachain
+rm -rf $(which firmachaind)
 ```
 #
 ### Sync Info
 ```python
-shentud status 2>&1 | jq .SyncInfo
+firmachaind status 2>&1 | jq .SyncInfo
 ```
 ### NodeINfo
 ```python
-shentud status 2>&1 | jq .NodeInfo
+firmachaind status 2>&1 | jq .NodeInfo
 ```
 ### Check node logs
 ```python
-sudo journalctl -u shentud -f -o cat
+sudo journalctl -u firmachaind -f -o cat
 ```
 ### Check Balance
 ```python
-shentud query bank balances shentu...addressjkl1yjgn7z09ua9vms259j
+firmachaind query bank balances firma...addressjkl1yjgn7z09ua9vms259j
 ```
