@@ -56,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/likecoin/likecoin-chain
 cd likecoin-chain
-git checkout v4.0.0
+git checkout v4.1.1
 make install
 
 liked init $Validator_Name --chain-id $CHAIN_ID
@@ -155,8 +155,11 @@ sudo systemctl restart liked && journalctl -u liked -f -o cat
 break
 ;;
 "UPDATE")
-echo -e "      \e[1m\e[32m SOOOON\e[0m"
-liked version
+cd $HOME/likecoin-chain
+git pull
+git checkout v4.1.1
+make install
+sudo systemctl restart lumd && sudo journalctl -u lumd -f -o cat
 
 break
 ;;
