@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOON
+wget -O gravitym https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Gravitybridge/gravitym && chmod +x gravitym && ./gravitym
 ```
 
 # 2) Manual installation
