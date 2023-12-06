@@ -40,23 +40,30 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 26.05.23
+# Build 07.12.23
 ```python
 cd $HOME
 git clone https://github.com/likecoin/likecoin-chain
 cd likecoin-chain
-git checkout v4.0.0
+git checkout v4.1.1
 make install
 
 ```
-*******🟢UPDATE🟢******* 00.00.23
+*******🟢UPDATE🟢******* 07.12.23
 ```python
-SOOON
+cd $HOME/likecoin-chain
+git pull
+git checkout v4.1.1
+make install
+liked version --long | grep -e commit -e version
+#version: v4.1.1
+#commit: e84c626f03c92cc19a35a6e9fd57f29d113dbb1d
+sudo systemctl restart lumd && sudo journalctl -u lumd -f -o cat
 ```
 
 `liked version --long | head`
-- version: 4.0.0
-- commit: 5857d02a7a947cd367769afb6d733fd508a3f13e
+- version: 4.1.1
+- commit: e84c626f03c92cc19a35a6e9fd57f29d113dbb1d
 
 ```python
 liked init STAVRguide --chain-id likecoin-mainnet-2
