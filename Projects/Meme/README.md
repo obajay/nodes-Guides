@@ -11,21 +11,29 @@
 |-----------|----|------|----------|
 | Mainnet   |   4| 8GB  | 200GB    |
 
-### Preparing the server
+# 1) Auto_install script
+```python
+wget -O memem https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Meme/memem && chmod +x memem && ./memem
+```
 
-    sudo apt update && sudo apt upgrade -y
-    sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
+# 2) Manual installation
+
+### Preparing the server
+```python
+sudo apt update && sudo apt upgrade -y
+apt install curl iptables build-essential git wget jq make gcc nano tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
+```
 
 ## GO 18.1 (one command)
-
-    wget https://golang.org/dl/go1.18.1.linux-amd64.tar.gz; \
-    rm -rv /usr/local/go; \
-    tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz && \
-    rm -v go1.18.1.linux-amd64.tar.gz && \
-    echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile && \
-    source ~/.bash_profile && \
-    go version
-
+```python
+wget https://golang.org/dl/go1.18.1.linux-amd64.tar.gz; \
+rm -rv /usr/local/go; \
+tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz && \
+rm -v go1.18.1.linux-amd64.tar.gz && \
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile && \
+source ~/.bash_profile && \
+go version
+```
 # Build 15.10.22
 ```python
 cd $HOME
@@ -39,14 +47,15 @@ memed init STAVRguide --chain-id meme-1
 ```
 
 ## Create/recover wallet
-
-    memed keys add <walletname>
-    memed keys add <walletname> --recover
-
+```python
+memed keys add <walletname>
+        OR
+memed keys add <walletname> --recover
+```
 ## Genesis
-
-    wget -O $HOME/.memed/config/genesis.json "https://raw.githubusercontent.com/memecosmos/mainnet/main/meme-1/genesis.json"
-
+```python
+wget -O $HOME/.memed/config/genesis.json "https://raw.githubusercontent.com/memecosmos/mainnet/main/meme-1/genesis.json"
+```
 ## Download addrbook
 ```python
 wget -O $HOME/.memed/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Meme/addrbook.json"
@@ -98,9 +107,9 @@ sed -i -E 's/minimum-gas-prices = \"\"/minimum-gas-prices = \"0.025umeme\"/g' ~/
 
 ## Start
 
-    sudo systemctl daemon-reload && \ 
-    sudo systemctl enable memed && \
-    sudo systemctl restart memed && \
+    sudo systemctl daemon-reload &&
+    sudo systemctl enable memed &&
+    sudo systemctl restart memed &&
     sudo journalctl -u memed -f -o cat
 
 ## Create validator
@@ -123,12 +132,12 @@ sed -i -E 's/minimum-gas-prices = \"\"/minimum-gas-prices = \"0.025umeme\"/g' ~/
 
 
 ## Delete node
-    sudo systemctl stop memed && \
-    sudo systemctl disable memed && \
-    rm /etc/systemd/system/memed.service && \
-    sudo systemctl daemon-reload && \
-    cd $HOME && \
-    rm -rf .memed && \
-    rm -rf meme && \
+    sudo systemctl stop memed
+    sudo systemctl disable memed
+    rm /etc/systemd/system/memed.service
+    sudo systemctl daemon-reload
+    cd $HOME
+    rm -rf .memed
+    rm -rf meme
     rm -rf $(which memed)
 
