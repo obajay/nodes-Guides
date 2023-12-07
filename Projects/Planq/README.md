@@ -135,7 +135,7 @@ EOF
 ```
 # StateSync Planq Mainnet
 ```python
-SNAP_RPC=http://planq.rpc.m.stavr.tech:1077
+SNAP_RPC=https://planq.rpc.m.stavr.tech:443
 SEEDS=192ff55d15d7ad9fc9ded5c5a9f4393beba9b222@planq.peer.stavr.tech:1076
 cp $HOME/.planqd/data/priv_validator_state.json $HOME/.planqd/priv_validator_state.json.backup
 sed -i -e "/seeds =/ s/= .*/= \"$SEEDS\"/"  $HOME/.planqd/config/config.toml
