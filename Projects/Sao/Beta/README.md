@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O saom https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Sao/Beta/saom && chmod +x saom && ./saom
 ```
 
 # 2) Manual installation
@@ -174,13 +174,13 @@ saod tx staking create-validator \
 
 ## Delete node
 ```python
-sudo systemctl stop saod && \
-sudo systemctl disable saod && \
-rm /etc/systemd/system/saod.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf sao-consensus && \
-rm -rf .sao && \
+sudo systemctl stop saod
+sudo systemctl disable saod
+rm /etc/systemd/system/saod.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf sao-consensus
+rm -rf .sao
 rm -rf $(which saod)
 ```
 #
