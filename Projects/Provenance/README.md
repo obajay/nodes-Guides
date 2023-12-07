@@ -11,12 +11,19 @@
 
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
-| Mainnet   |   4| 8GB  | 250GB    |
+| Mainnet   |   8| 16GB | 250GB    |
+
+# 1) Auto_install script
+```python
+wget -O provenancem https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Provenance/provenancem && chmod +x provenancem && ./provenancem
+```
+
+# 2) Manual installation
 
 ### Preparing the server
 ```python
 sudo apt update && sudo apt upgrade -y
-sudo apt install curl build-essential git wget jq make gcc tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip fail2ban libleveldb-dev -y
+apt install curl iptables build-essential git wget jq make gcc nano tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
 ```
 
 ## GO 1.20 (one command)
