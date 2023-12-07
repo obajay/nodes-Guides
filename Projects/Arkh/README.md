@@ -15,7 +15,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O arkhm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Arkh/arkhm && chmod +x arkhm && ./arkhm
 ```
 
 # 2) Manual installation
