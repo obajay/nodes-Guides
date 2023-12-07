@@ -40,7 +40,7 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-# Build 05.12.23
+# Build 08.12.23
 ```python
 cd $HOME
 git clone https://github.com/Sifchain/sifnode
