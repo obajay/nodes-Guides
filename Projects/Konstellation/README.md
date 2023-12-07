@@ -13,10 +13,18 @@
 |-----------|----|------|----------|
 | Mainnet   |  4 | 8GB  |  160GB   |
 
-### Preparing the server
+# 1) Auto_install script
+```python
+wget -O konstm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Konstellation/konstm && chmod +x konstm && ./konstm
+```
 
-    sudo apt update && sudo apt upgrade -y
-    sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
+# 2) Manual installation
+
+### Preparing the server
+```python
+sudo apt update && sudo apt upgrade -y
+apt install curl iptables build-essential git wget jq make gcc nano tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
+```
 
 ## GO 18.1 (one command)
 
@@ -72,7 +80,7 @@ knstld init STAVRguide --chain-id darchub
     sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.knstld/config/config.toml
 
 
-## Pruning (optional)
+## Pruning
 ```python
 sed -i -e "s/^pruning *=.*/pruning = \"nothing\"/" $HOME/.knstld/config/app.toml 
 ```
@@ -139,13 +147,13 @@ wget -O $HOME/.knstld/config/addrbook.json "https://raw.githubusercontent.com/ob
 
 ### Delete node
 
-    sudo systemctl stop knstld && \
-    sudo systemctl disable knstld && \
-    rm /etc/systemd/system/knstld.service && \
-    sudo systemctl daemon-reload && \
-    cd $HOME && \
-    rm -rf .knstld && \
-    rm -rf konstellation && \
+    sudo systemctl stop knstld
+    sudo systemctl disable knstld
+    rm /etc/systemd/system/knstld.service
+    sudo systemctl daemon-reload
+    cd $HOME
+    rm -rf .knstld
+    rm -rf konstellation
     rm -rf $(which knstld)
 
 
