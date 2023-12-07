@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O terpm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Terp_Network/terpm && chmod +x terpm && ./terpm
 ```
 
 # 2) Manual installation
@@ -173,13 +173,13 @@ terpd tx staking create-validator \
 
 ## Delete node
 ```python
-sudo systemctl stop terpd && \
-sudo systemctl disable terpd && \
-rm /etc/systemd/system/terpd.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf terp-core && \
-rm -rf .terp && \
+sudo systemctl stop terpd
+sudo systemctl disable terpd
+rm /etc/systemd/system/terpd.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf terp-core
+rm -rf .terp
 rm -rf $(which terpd)
 ```
 #
