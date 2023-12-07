@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O vdlm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Vidulum/vdlm && chmod +x vdlm && ./vdlm
 ```
 
 # 2) Manual installation
