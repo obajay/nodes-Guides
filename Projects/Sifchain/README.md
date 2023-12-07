@@ -45,12 +45,12 @@ source $HOME/.bash_profile
 cd $HOME
 git clone https://github.com/Sifchain/sifnode
 cd $HOME/sifnode
-git checkout v1.3.0-beta
+git checkout v1.3.1-beta
 make install
 ```
 `sifnoded version --long`
-- version: 1.3.0-beta
-- commit: ee20587b3486c681dad5a38c85e83c323b72637b
+- version: 1.3.1-beta
+- commit: cbfba9425556880dcb6eaedf868dca91cea8e746
 
 ```python
 sifnoded init STAVR_guide --chain-id sifchain-1
