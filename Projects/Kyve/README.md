@@ -13,20 +13,29 @@
 |-----------|----|------|----------|
 | Mainnet   |   8| 16GB | 260GB    |
 
+
+# 1) Auto_install script
+```python
+wget -O kyvem https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Kyve/kyvem && chmod +x kyvem && ./kyvem
+```
+
+# 2) Manual installation
+
 ### Preparing the server
 ```python
 sudo apt update && sudo apt upgrade -y
-sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
+apt install curl iptables build-essential git wget jq make gcc nano tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
 ```
+
 ## GO 19 (one command)
 ```python
-ver="1.19" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+ver="1.19" &&
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" &&
+sudo rm -rf /usr/local/go &&
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" &&
+rm "go$ver.linux-amd64.tar.gz" &&
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &&
+source $HOME/.bash_profile &&
 go version
 ```
 # Build 05.12.23
@@ -72,9 +81,8 @@ kyved keys add <walletname> --recover
 curl https://files.kyve.network/mainnet/genesis.json > ~/.kyve/config/genesis.json
 ```
 
-## Peers/Seeds/MaxPeers/FilterPeers
+## Peers/Seeds/MaxPeers
 ```python
-sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.kyve/config/config.toml
 seeds=""
 peers="b950b6b08f7a6d5c3e068fcd263802b336ffe047@18.198.182.214:26656,25da6253fc8740893277630461eb34c2e4daf545@3.76.244.30:26656"
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$seeds\"/; s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.kyve/config/config.toml
@@ -84,13 +92,13 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.kyve/
 
 ### Pruning (optional)
 ```python
-pruning="custom" && \
-pruning_keep_recent="1000" && \
-pruning_keep_every="0" && \
-pruning_interval="10" && \
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" ~/.kyve/config/app.toml && \
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" ~/.kyve/config/app.toml && \
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" ~/.kyve/config/app.toml && \
+pruning="custom" &&
+pruning_keep_recent="1000" &&
+pruning_keep_every="0" &&
+pruning_interval="10" &&
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" ~/.kyve/config/app.toml &&
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" ~/.kyve/config/app.toml &&
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" ~/.kyve/config/app.toml &&
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.kyve/config/app.toml
 ```
 ### Indexer (optional)
@@ -155,10 +163,9 @@ EOF
 ```
 ## Start
 ```python
-sudo systemctl daemon-reload && \
-sudo systemctl enable kyved && \
-sudo systemctl restart kyved && \
-sudo journalctl -u kyved -f -o cat
+sudo systemctl daemon-reload &&
+sudo systemctl enable kyved &&
+sudo systemctl restart kyved && sudo journalctl -u kyved -f -o cat
 ```
 ## Create validator
 
@@ -182,13 +189,13 @@ kyved tx staking create-validator \
 
 ## Delete node
 ```python
-sudo systemctl stop kyved && \
-sudo systemctl disable kyved && \
-rm /etc/systemd/system/kyved.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf chain $$ \
-rm -rf .kyve && \
+sudo systemctl stop kyved
+sudo systemctl disable kyved
+rm /etc/systemd/system/kyved.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf chain
+rm -rf .kyve
 rm -rf $(which kyved)
 ```
 
