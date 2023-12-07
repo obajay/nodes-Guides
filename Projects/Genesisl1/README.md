@@ -125,9 +125,9 @@ SOOON
 
 # Start node (one command)
 ```python
-sudo systemctl daemon-reload && \
-sudo systemctl enable genesisd && \
-sudo systemctl restart genesisd && \
+sudo systemctl daemon-reload &&
+sudo systemctl enable genesisd &&
+sudo systemctl restart genesisd &&
 sudo journalctl -u genesisd -f -o cat
 ```
 
@@ -152,12 +152,12 @@ genesisd tx staking create-validator \
 
 ### Delete node (one command)
 ```python
-sudo systemctl stop genesisd && \
-sudo systemctl disable genesisd && \
-rm /etc/systemd/system/genesisd.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf .genesisd && \
-rm -rf genesisd && \
+sudo systemctl stop genesisd
+sudo systemctl disable genesisd
+rm /etc/systemd/system/genesisd.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf .genesisd
+rm -rf genesisd
 rm -rf $(which genesisd)
 ```
