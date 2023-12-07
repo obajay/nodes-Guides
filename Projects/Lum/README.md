@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O lumm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Lum/lumm && chmod +x lumm && ./lumm
 ```
 
 # 2) Manual installation
