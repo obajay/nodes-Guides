@@ -11,7 +11,7 @@
 | Mainnet   |   8| 16GB  | 500GB    |
 
 # 1) Auto_install script
-```bash
+```python
 wget -O Ume https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Umee/Ume && chmod +x Ume && ./Ume
 ```
 # 2) Manual installation
