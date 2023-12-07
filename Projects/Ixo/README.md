@@ -132,7 +132,7 @@ EOF
 ```
 # StateSync Ixo Mainnet
 ```python
-SNAP_RPC=http://ixo.rpc.m.stavr.tech:1017
+SNAP_RPC=https://ixo.rpc.m.stavr.tech:443
 SEEDS=d4448c5b10b43d444034533ede7d2e66cbf9e519@ixo.peer.stavr.tech:1016
 cp $HOME/.ixod/data/priv_validator_state.json $HOME/.ixod/priv_validator_state.json.backup
 sed -i -e "/seeds =/ s/= .*/= \"$SEEDS\"/"  $HOME/.ixod/config/config.toml
