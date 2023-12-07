@@ -13,11 +13,21 @@
 |-----------|----|------|----------|
 | Mainnet   |   4| 8GB  | 200GB    |
 
+
+
+# 1) Auto_install script
+```python
+wget -O rizonm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Rizon/rizonm && chmod +x rizonm && ./rizonm
+```
+
+# 2) Manual installation
+
 ### Preparing the server
 ```python
 sudo apt update && sudo apt upgrade -y
-sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
+apt install curl iptables build-essential git wget jq make gcc nano tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
 ```
+
 ## GO 1.20.5 (one command)
 ```python
 ver="1.20.5"
@@ -31,6 +41,7 @@ go version
 ```
 # Build 20.07.23
 ```python
+cd $HOME
 git clone https://github.com/rizon-world/rizon
 cd rizon
 git checkout v0.5.1
@@ -150,12 +161,13 @@ sudo systemctl restart rizond && sudo journalctl -u rizond -f -o cat
 
 
 ## Delete node
-    sudo systemctl stop rizond
-    sudo systemctl disable rizond
-    rm /etc/systemd/system/rizond.service
-    sudo systemctl daemon-reload
-    cd $HOME
-    rm -rf .rizon
-    rm -rf rizon
-    rm -rf $(which rizond)
-
+```python
+sudo systemctl stop rizond
+sudo systemctl disable rizond
+rm /etc/systemd/system/rizond.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf .rizon
+rm -rf rizon
+rm -rf $(which rizond)
+```
