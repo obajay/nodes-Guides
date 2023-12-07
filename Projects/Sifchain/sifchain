@@ -57,7 +57,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/Sifchain/sifnode
 cd $HOME/sifnode
-git checkout v1.2.0-beta
+git checkout v1.3.1-beta
 make install
 
 sifnoded init $Validator_Name --chain-id $CHAIN_ID
@@ -150,9 +150,8 @@ break
 ;;
 "UPDATE")
 cd $HOME
-wget https://github.com/Sifchain/sifnode/releases/download/v1.1.0-beta/sifnoded-v1.1.0-beta-linux-amd64.zip
-unzip sifnoded-v1.1.0-beta-linux-amd64.zip
-rm -rf sifnoded-v1.1.0-beta-linux-amd64.zip
+wget -O sifnoded https://github.com/Sifchain/sifnode/releases/download/v1.3.1-beta/sifnoded-v1.3.1-beta-linux-amd64
+chmod +x sifnoded
 mv sifnoded $(which sifnoded)
 systemctl restart sifnoded && journalctl -u sifnoded -f -o cat
 
