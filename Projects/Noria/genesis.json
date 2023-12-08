@@ -1,0 +1,734 @@
+{
+  "genesis_time": "2023-03-21T19:03:00.666702735Z",
+  "chain_id": "oasis-3",
+  "initial_height": "1",
+  "consensus_params": {
+    "block": {
+      "max_bytes": "22020096",
+      "max_gas": "1000000000",
+      "time_iota_ms": "1000"
+    },
+    "evidence": {
+      "max_age_num_blocks": "100000",
+      "max_age_duration": "172800000000000",
+      "max_bytes": "1048576"
+    },
+    "validator": {
+      "pub_key_types": [
+        "ed25519"
+      ]
+    },
+    "version": {}
+  },
+  "app_hash": "",
+  "app_state": {
+    "auth": {
+      "params": {
+        "max_memo_characters": "256",
+        "tx_sig_limit": "7",
+        "tx_size_cost_per_byte": "10",
+        "sig_verify_cost_ed25519": "590",
+        "sig_verify_cost_secp256k1": "1000"
+      },
+      "accounts": [
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "noria1heyrp6y4q8p8z706nv4payx0f8xpqytulqaf6q",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "noria1g76c54v855ekemsktmdlhdewx4yez7wpqa83an",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "noria1v6fah02wy4ynruspm2pqyptaphn8p3gjqa95jz",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "noria1jll90s3hvm9nc06huvymv5q9a088l3f40f220u",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "noria1cqa782cjft74v3tmxr785tuw5awpl9ufkdpfw6",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "noria1zm4s4m5yrshmwngwknn7dusfssge7587a02zjq",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "noria1xf26mydy7597wt5vx86p7j0gmmwzdv5chan75m",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        }
+      ]
+    },
+    "authz": {
+      "authorization": []
+    },
+    "bank": {
+      "params": {
+        "send_enabled": [],
+        "default_send_enabled": true
+      },
+      "balances": [
+        {
+          "address": "noria1zm4s4m5yrshmwngwknn7dusfssge7587a02zjq",
+          "coins": [
+            {
+              "denom": "ucrd",
+              "amount": "5000000"
+            },
+            {
+              "denom": "unoria",
+              "amount": "100000000000"
+            }
+          ]
+        },
+        {
+          "address": "noria1xf26mydy7597wt5vx86p7j0gmmwzdv5chan75m",
+          "coins": [
+            {
+              "denom": "ucrd",
+              "amount": "5000000"
+            },
+            {
+              "denom": "unoria",
+              "amount": "100000000000"
+            }
+          ]
+        },
+        {
+          "address": "noria1g76c54v855ekemsktmdlhdewx4yez7wpqa83an",
+          "coins": [
+            {
+              "denom": "ucrd",
+              "amount": "247999975000000"
+            },
+            {
+              "denom": "unoria",
+              "amount": "247500000000000"
+            }
+          ]
+        },
+        {
+          "address": "noria1v6fah02wy4ynruspm2pqyptaphn8p3gjqa95jz",
+          "coins": [
+            {
+              "denom": "ucrd",
+              "amount": "5000000"
+            },
+            {
+              "denom": "unoria",
+              "amount": "100000000000"
+            }
+          ]
+        },
+        {
+          "address": "noria1jll90s3hvm9nc06huvymv5q9a088l3f40f220u",
+          "coins": [
+            {
+              "denom": "ucrd",
+              "amount": "5000000"
+            },
+            {
+              "denom": "unoria",
+              "amount": "100000000000"
+            }
+          ]
+        },
+        {
+          "address": "noria1heyrp6y4q8p8z706nv4payx0f8xpqytulqaf6q",
+          "coins": [
+            {
+              "denom": "ucrd",
+              "amount": "2000000000000"
+            },
+            {
+              "denom": "unoria",
+              "amount": "2000000000000"
+            }
+          ]
+        },
+        {
+          "address": "noria1cqa782cjft74v3tmxr785tuw5awpl9ufkdpfw6",
+          "coins": [
+            {
+              "denom": "ucrd",
+              "amount": "5000000"
+            },
+            {
+              "denom": "unoria",
+              "amount": "100000000000"
+            }
+          ]
+        }
+      ],
+      "supply": [
+        {
+          "denom": "ucrd",
+          "amount": "250000000000000"
+        },
+        {
+          "denom": "unoria",
+          "amount": "250000000000000"
+        }
+      ],
+      "denom_metadata": [
+        {
+          "description": "The native staking token of Noria",
+          "denom_units": [
+            {
+              "denom": "unoria",
+              "exponent": 0,
+              "aliases": [
+                "micronoria"
+              ]
+            },
+            {
+              "denom": "noria",
+              "exponent": 6,
+              "aliases": []
+            }
+          ],
+          "base": "unoria",
+          "display": "noria",
+          "name": "NORIA",
+          "symbol": "NORIA"
+        },
+        {
+          "description": "The Cooperative Denom token",
+          "denom_units": [
+            {
+              "denom": "ucrd",
+              "exponent": 0,
+              "aliases": [
+                "microcrd"
+              ]
+            },
+            {
+              "denom": "crd",
+              "exponent": 6,
+              "aliases": []
+            }
+          ],
+          "base": "ucrd",
+          "display": "crd",
+          "name": "CRD",
+          "symbol": "CRD"
+        }
+      ]
+    },
+    "capability": {
+      "index": "1",
+      "owners": []
+    },
+    "coinmaster": {
+      "params": {
+        "minters": "noria1heyrp6y4q8p8z706nv4payx0f8xpqytulqaf6q",
+        "denoms": "ucrd,unoria"
+      }
+    },
+    "crisis": {
+      "constant_fee": {
+        "denom": "unoria",
+        "amount": "1000"
+      }
+    },
+    "distribution": {
+      "params": {
+        "community_tax": "0.000000000000000000",
+        "base_proposer_reward": "0.010000000000000000",
+        "bonus_proposer_reward": "0.040000000000000000",
+        "withdraw_addr_enabled": true
+      },
+      "fee_pool": {
+        "community_pool": []
+      },
+      "delegator_withdraw_infos": [],
+      "previous_proposer": "",
+      "outstanding_rewards": [],
+      "validator_accumulated_commissions": [],
+      "validator_historical_rewards": [],
+      "validator_current_rewards": [],
+      "delegator_starting_infos": [],
+      "validator_slash_events": []
+    },
+    "evidence": {
+      "evidence": []
+    },
+    "feegrant": {
+      "allowances": []
+    },
+    "genutil": {
+      "gen_txs": [
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "av_noria_1",
+                  "identity": "",
+                  "website": "",
+                  "security_contact": "",
+                  "details": ""
+                },
+                "commission": {
+                  "rate": "0.050000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "noria1xf26mydy7597wt5vx86p7j0gmmwzdv5chan75m",
+                "validator_address": "noriavaloper1xf26mydy7597wt5vx86p7j0gmmwzdv5cjwwy96",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "bpbnN3yvkP6N0BUNxk0FaRV1Lk+B8WGGSxs1WUO6mpM="
+                },
+                "value": {
+                  "denom": "unoria",
+                  "amount": "100000000000"
+                }
+              }
+            ],
+            "memo": "31df60c419e4e5ab122ca17d95419a654729cbb7@102.130.121.211:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "A2Yl0015icPBPymUuIquKmUg/7PAEODYf8oYherkQh7y"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "signatures": [
+            "CgxoW7x1Z/uN+w19uYHuuGPv3js0w7RTtzkjMhtfXcJ+bIgfjbd2tWQc2yKcDs5Ef/N3r3xokUuoHWggentRkA=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "NextNet.Works",
+                  "identity": "",
+                  "website": "",
+                  "security_contact": "",
+                  "details": "NextNet.Works"
+                },
+                "commission": {
+                  "rate": "0.050000000000000000",
+                  "max_rate": "0.100000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "noria1v6fah02wy4ynruspm2pqyptaphn8p3gjqa95jz",
+                "validator_address": "noriavaloper1v6fah02wy4ynruspm2pqyptaphn8p3gj9wcwrr",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "GslkGqg4hS3rVQYmKc15x+pmv8Ti6KeEsYnKQ3lTEW4="
+                },
+                "value": {
+                  "denom": "unoria",
+                  "amount": "100000000000"
+                }
+              }
+            ],
+            "memo": "4d8147a80c46ba21a8a276d55e6993353e03a734@165.22.42.220:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "AmZ6E8hqIvNRBqKSrvD7twaSVAfFKDHWBiYORpQJ1Wgn"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "signatures": [
+            "D4/hwTZS5A15b+f7xrKJadoTGuxf0TmPfZiitmjgToFbjCGPGi9LpZKJ/Gv+41uZzH8IaAtJO9O0c5HJ4nKeiQ=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "NextNet.Works-3",
+                  "identity": "",
+                  "website": "",
+                  "security_contact": "",
+                  "details": "NextNet.Works"
+                },
+                "commission": {
+                  "rate": "0.050000000000000000",
+                  "max_rate": "0.100000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "noria1cqa782cjft74v3tmxr785tuw5awpl9ufkdpfw6",
+                "validator_address": "noriavaloper1cqa782cjft74v3tmxr785tuw5awpl9ufn7unlm",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "tVgtd1+Avn6VM2yzmRLemBoW5V3QIC8BjXN8l4ueOHs="
+                },
+                "value": {
+                  "denom": "unoria",
+                  "amount": "100000000000"
+                }
+              }
+            ],
+            "memo": "6b00a46b8c79deab378a8c1d5c2a63123b799e46@10.128.0.22:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "Am8E7T0bE+wjAwg4ZENod216IbTgRyPchnTjZ68g0qaR"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "signatures": [
+            "aNqrhwJy+LSOam1YE1nhuEzaXBjsaQhzz40rIIYwB6ZB8/ev/grTIXAqRll+7Q1Da9QYJeTsfGpqAJwR1PJlxQ=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "cryptech",
+                  "identity": "",
+                  "website": "",
+                  "security_contact": "",
+                  "details": ""
+                },
+                "commission": {
+                  "rate": "0.050000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "noria1zm4s4m5yrshmwngwknn7dusfssge7587a02zjq",
+                "validator_address": "noriavaloper1zm4s4m5yrshmwngwknn7dusfssge7587cuhcrp",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "52U3XwyC6HLadPOrr4MgbnOmOBwZPBUE5gtGRPEWNLQ="
+                },
+                "value": {
+                  "denom": "unoria",
+                  "amount": "100000000000"
+                }
+              }
+            ],
+            "memo": "bb04cbb3b917efce76a8296a8411f211bad14352@159.203.5.100:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "A06OXy9Bpdk5nj/iSsZr2ScclXm77Krx2CCCEC9XnDmS"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "signatures": [
+            "VmQlUEAlSUE5qVylaj3GUTZ2ch0ClYe6RA1OfATS94JzN9t/yx2p0mnKgvCCBdiI5aQfp+vF93xRiYOHucMGMQ=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "NextNet.Works-2",
+                  "identity": "",
+                  "website": "",
+                  "security_contact": "",
+                  "details": "NextNet.Works"
+                },
+                "commission": {
+                  "rate": "0.050000000000000000",
+                  "max_rate": "0.100000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "noria1jll90s3hvm9nc06huvymv5q9a088l3f40f220u",
+                "validator_address": "noriavaloper1jll90s3hvm9nc06huvymv5q9a088l3f426hs7a",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "dW0L/YYURfELUnykp8UZPeXXaR8LOpzyo991FeK00Lk="
+                },
+                "value": {
+                  "denom": "unoria",
+                  "amount": "100000000000"
+                }
+              }
+            ],
+            "memo": "c166422d24413f0661b006af29f7545890a9a1f0@172.31.44.176:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "ArsuWoctOMhmNPkMF2ufmOejl3rsE3z3QRWUI65NdYki"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "signatures": [
+            "rtTmeTA08FetXn7mSNxBMfQyGhsRoCbL64gWmj1O5OZLSnAQt41fJWWX9Zm2TZzb+LvCzwdkXDs3y6k2TasuBA=="
+          ]
+        }
+      ]
+    },
+    "gov": {
+      "starting_proposal_id": "1",
+      "deposits": [],
+      "votes": [],
+      "proposals": [],
+      "deposit_params": {
+        "min_deposit": [
+          {
+            "denom": "unoria",
+            "amount": "10000000"
+          }
+        ],
+        "max_deposit_period": "3600s"
+      },
+      "voting_params": {
+        "voting_period": "172800s"
+      },
+      "tally_params": {
+        "quorum": "0.334000000000000000",
+        "threshold": "0.500000000000000000",
+        "veto_threshold": "0.334000000000000000"
+      }
+    },
+    "ibc": {
+      "client_genesis": {
+        "clients": [],
+        "clients_consensus": [],
+        "clients_metadata": [],
+        "params": {
+          "allowed_clients": [
+            "06-solomachine",
+            "07-tendermint"
+          ]
+        },
+        "create_localhost": false,
+        "next_client_sequence": "0"
+      },
+      "connection_genesis": {
+        "connections": [],
+        "client_connection_paths": [],
+        "next_connection_sequence": "0",
+        "params": {
+          "max_expected_time_per_block": "30000000000"
+        }
+      },
+      "channel_genesis": {
+        "channels": [],
+        "acknowledgements": [],
+        "commitments": [],
+        "receipts": [],
+        "send_sequences": [],
+        "recv_sequences": [],
+        "ack_sequences": [],
+        "next_channel_sequence": "0"
+      }
+    },
+    "interchainaccounts": {
+      "controller_genesis_state": {
+        "active_channels": [],
+        "interchain_accounts": [],
+        "ports": [],
+        "params": {
+          "controller_enabled": true
+        }
+      },
+      "host_genesis_state": {
+        "active_channels": [],
+        "interchain_accounts": [],
+        "port": "icahost",
+        "params": {
+          "host_enabled": true,
+          "allow_messages": []
+        }
+      }
+    },
+    "intertx": null,
+    "mint": {
+      "minter": {
+        "inflation": "0.0",
+        "annual_provisions": "0.000000000000000000"
+      },
+      "params": {
+        "mint_denom": "unoria",
+        "inflation_rate_change": "0.0",
+        "inflation_max": "0.200000000000000000",
+        "inflation_min": "0.0",
+        "goal_bonded": "0.670000000000000000",
+        "blocks_per_year": "6311520"
+      }
+    },
+    "params": null,
+    "slashing": {
+      "params": {
+        "signed_blocks_window": "10000",
+        "min_signed_per_window": "0.500000000000000000",
+        "downtime_jail_duration": "600s",
+        "slash_fraction_double_sign": "0.050000000000000000",
+        "slash_fraction_downtime": "0.010000000000000000"
+      },
+      "signing_infos": [],
+      "missed_blocks": []
+    },
+    "staking": {
+      "params": {
+        "unbonding_time": "1814400s",
+        "max_validators": 100,
+        "max_entries": 7,
+        "historical_entries": 10000,
+        "bond_denom": "unoria"
+      },
+      "last_total_power": "0",
+      "last_validator_powers": [],
+      "validators": [],
+      "delegations": [],
+      "unbonding_delegations": [],
+      "redelegations": [],
+      "exported": false
+    },
+    "transfer": {
+      "port_id": "transfer",
+      "denom_traces": [],
+      "params": {
+        "send_enabled": true,
+        "receive_enabled": true
+      }
+    },
+    "upgrade": {},
+    "vesting": {},
+    "wasm": {
+      "params": {
+        "code_upload_access": {
+          "permission": "Everybody",
+          "address": "",
+          "addresses": []
+        },
+        "instantiate_default_permission": "Everybody"
+      },
+      "codes": [],
+      "contracts": [],
+      "sequences": [],
+      "gen_msgs": []
+    }
+  }
+}
