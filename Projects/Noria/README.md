@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-SOOOOOOOON
+wget -O noriat https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Noria/noriat && chmod +x noriat && ./noriat
 ```
 
 # 2) Manual installation
