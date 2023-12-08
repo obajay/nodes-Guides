@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O entryt https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Entrypoint/entryt && chmod +x entryt && ./entryt
 ```
 
 # 2) Manual installation
