@@ -1,0 +1,166 @@
+#!/bin/bash
+
+while true
+do
+
+# Logo
+
+curl -s https://raw.githubusercontent.com/obajay/nodes-Guides/main/logo_1 | bash
+
+# Menu
+
+PS3='Select an action: '
+options=(
+"Install Node"
+"Create wallet"
+"Check node logs"
+"Synchronization via StateSync"
+"Synchronization via SnapShot"
+"UPDATE"
+"Delete Node"
+"Exit")
+select opt in "${options[@]}"
+do
+case $opt in
+
+"Install Node")
+echo "*********************"
+echo -e "\e[1m\e[35m		Lets's begin\e[0m"
+echo "*********************"
+echo -e "\e[1m\e[32m	Enter your Validator_Name:\e[0m"
+echo "_|-_|-_|-_|-_|-_|-_|"
+read Validator_Name
+echo "_|-_|-_|-_|-_|-_|-_|"
+echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
+echo export CHAIN_ID="union-testnet-4" >> $HOME/.bash_profile
+source ~/.bash_profile
+
+echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
+#UPDATE APT
+sudo apt update && sudo apt upgrade -y
+sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
+
+echo -e "        \e[1m\e[32m2. Installing GO--> \e[0m" && sleep 1
+#INSTALL GO
+ver="1.20.5"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
+go version
+
+echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
+#INSTALL
+cd $HOME
+wget http://uniont.binary.stavr.tech:15/union/uniond
+chmod +x uniond
+mv uniond $HOME/go/bin/
+
+uniond init $Validator_Name --chain-id $CHAIN_ID
+
+wget -O $HOME/.union/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Union/genesis.json"
+wget -O $HOME/.union/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Union/addrbook.json"
+
+echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
+
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0muno\"/;" ~/.union/config/app.toml
+external_address=$(wget -qO- eth0.me) 
+sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.union/config/config.toml
+peers="b2f2c6ba26958a1daf5838dee130fe0f0d75518d@34.171.89.160:26656,728ec2b975df5d9afc7bc98f8b74ba7161d2955b@65.109.29.23:26656,7c743b507ec3b67bc790c826ec471d2635c992f7@88.99.3.158:24656,8b13facd07099883a2275db870834390109ded62@92.243.27.215:27656,821eade3cdada32cd15bfc7bd941e5bfad173d35@5.9.115.189:26656,b82b7b8d739c0869b0c2c369770a3adf66a126cb@198.244.179.173:26656,65d3fbc95488503554d554f6332db4dbd68accb0@65.109.69.239:15007"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.union/config/config.toml
+seeds=""
+sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.union/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.union/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.union/config/config.toml
+
+# pruning
+pruning="custom"
+pruning_keep_recent="1000"
+pruning_keep_every="0"
+pruning_interval="10"
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.union/config/app.toml
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.union/config/app.toml
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.union/config/app.toml
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.union/config/app.toml
+
+
+sudo tee /etc/systemd/system/uniond.service > /dev/null <<EOF
+[Unit]
+Description=uniond
+After=network-online.target
+
+[Service]
+User=$USER
+ExecStart=$(which uniond) start
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+# start service
+sudo systemctl daemon-reload
+sudo systemctl enable uniond
+sudo systemctl restart uniond
+
+echo '=============== SETUP FINISHED ==================='
+echo -e 'Congratulations:        \e[1m\e[32mSUCCESSFUL NODE INSTALLATION\e[0m'
+echo -e 'To check logs:        \e[1m\e[33mjournalctl -u uniond -f -o cat\e[0m'
+echo -e "To check sync status: \e[1m\e[35mcurl -s localhost:26657/status\e[0m"
+
+break
+;;
+"Create wallet")
+echo "_|-_|-_|-_|-_|-_|-_|"
+echo -e "      \e[1m\e[35m Your WalletName:\e[0m"
+echo "_|-_|-_|-_|-_|-_|-_|"
+read Wallet
+echo export Wallet=${Wallet} >> $HOME/.bash_profile
+source ~/.bash_profile
+uniond keys add $Wallet
+echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE!!!!!!!!!SAVE!!!!!!!!!!!!!!!!\e[0m'"
+
+break
+;;
+"Synchronization via StateSync")
+echo -e "      \e[1m\e[32m SOOOON\e[0m"
+
+
+break
+;;
+"UPDATE")
+echo -e "      \e[1m\e[32m SOOOON\e[0m"
+
+
+break
+;;
+"Check node logs")
+sudo journalctl -u uniond -f -o cat
+
+break
+;;
+"Synchronization via SnapShot")
+echo -e "      \e[1m\e[32m SOOOON\e[0m"
+
+break
+;;
+"Delete Node")
+sudo systemctl stop uniond
+sudo systemctl disable uniond
+rm /etc/systemd/system/uniond.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf .union
+rm -rf $(which uniond)
+
+break
+;;
+"Exit")
+exit
+esac
+done
+done
