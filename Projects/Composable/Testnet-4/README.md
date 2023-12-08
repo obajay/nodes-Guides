@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O compost4 https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Composable/Testnet-4/compost4 && chmod +x compost4 && ./compost4
 ```
 
 # 2) Manual installation
