@@ -19,7 +19,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O c4et https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/C4E/C4E_Testnet/c4et && chmod +x c4et && ./c4et
 ```
 
 # 2) Manual installation
