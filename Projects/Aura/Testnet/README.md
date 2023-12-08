@@ -16,7 +16,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O aurat https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Aura/Testnet/aurat && chmod +x aurat && ./aurat
 ```
 
 # 2) Manual instruction
