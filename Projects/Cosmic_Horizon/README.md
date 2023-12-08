@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O qwoynm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Cosmic_Horizon/qwoynm && chmod +x qwoynm && ./qwoynm
 ```
 
 # 2) Manual installation
