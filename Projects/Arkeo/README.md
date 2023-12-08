@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOON
+wget -O arkeot https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Arkeo/arkeot && chmod +x arkeot && ./arkeot
 ```
 
 # 2) Manual installation
