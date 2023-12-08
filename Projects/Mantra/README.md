@@ -12,7 +12,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O mantrat https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Mantra/mantrat && chmod +x mantrat && ./mantrat
 ```
 
 # 2) Manual installation
