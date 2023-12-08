@@ -1,9 +1,8 @@
 # Union Testnet guide
 
-![shentu](https://github.com/obajay/nodes-Guides/assets/44331529/c0ac1938-4fc2-4275-b11c-5b2dc4cd1710)
+![union](https://github.com/obajay/nodes-Guides/assets/44331529/ce76083b-17e7-4928-bffc-60f989b47ef3)
 
-[WebSite](https://www.shentu.technology/)\
-[GitHub](https://github.com/shentufoundation)
+[WebSite](https://union.build/)
 =
 [EXPLORER](https://explorer.stavr.tech/Shentu-Mainnet)
 =
