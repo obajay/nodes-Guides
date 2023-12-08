@@ -39,10 +39,10 @@ go version
 ```python
 cd $HOME
 sudo wget -O /usr/lib/libwasmvm.x86_64.so https://github.com/CosmWasm/wasmvm/releases/download/v1.3.0/libwasmvm.x86_64.so
+wget https://testnet-files.itrocket.net/mantra/mantrachaind-linux-amd64.zip
 unzip mantrachaind-linux-amd64.zip
 rm mantrachaind-linux-amd64.zip
 mv mantrachaind $HOME/go/bin
-
 
 ```
 *******🟢UPDATE🟢******* 00.00.23
