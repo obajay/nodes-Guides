@@ -16,7 +16,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O uniont https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Union/uniont && chmod +x uniont && ./uniont
 ```
 
 # 2) Manual installation
@@ -27,7 +27,7 @@ sudo apt update && sudo apt upgrade -y
 apt install curl iptables build-essential git wget jq make gcc nano tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
 ```
 
-## GO 1.20.
+## GO 1.20.5
 ```python
 ver="1.20.5"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
