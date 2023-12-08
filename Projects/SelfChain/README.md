@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O selft https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/SelfChain/selft && chmod +x selft && ./selft
 ```
 
 # 2) Manual installation
