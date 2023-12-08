@@ -1,10 +1,10 @@
-# Cosmic Mainnet guide
+# Qwoyn Mainnet guide
 
-![cosmic](https://github.com/obajay/nodes-Guides/assets/44331529/95976b09-b2ee-41ca-9b9d-a1a607af3888)
+![qwoyn](https://github.com/obajay/nodes-Guides/assets/44331529/5c7c0782-b480-4873-9648-1e4e6962a2d9)
 
 
-[WebSite](https://cosmic-horizon.com/)\
-[GitHub](https://github.com/cosmic-horizon/QWOYN)
+[WebSite](https://qwoyn.studio/)\
+[GitHub](https://github.com/cosmic-horizon/QWOYN.git)
 =
 [EXPLORER](https://explorer.stavr.tech/Qwoyn-Mainnet/staking)
 =
@@ -13,7 +13,7 @@
 
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
-| Testnet   |   8| 16GB | 150GB    |
+| Mainnet   |   8| 16GB | 150GB    |
 
 
 # 1) Auto_install script
@@ -29,24 +29,24 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
-## GO 1.19
+## GO 1.20.5
 ```python
-ver="1.19" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+ver="1.20.5"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 go version
 ```
 
-# Build 16.06.23
+# Build 06.12.23
 ```python
 cd $HOME
-git clone https://github.com/cosmic-horizon/QWOYN
+git clone https://github.com/cosmic-horizon/QWOYN.git
 cd QWOYN
-git checkout v5.0.2
+git checkout v5.3.0
 make install
 ```
 *******🟢UPDATE🟢******* 00.00.23
@@ -55,11 +55,11 @@ SOOON
 ```
 
 `qwoynd version --long`
-- version: 5.0.2
-- commit: b1608d57401d4d498e39737446206ce062385b4f
+- version: 5.3.0
+- commit: b69361af730fb6fea391ed22aa39a73bb4fd3a99
 
 ```python
-qwoynd init STAVRguide --chain-id qwoyn-1
+qwoynd init STAVR_guide --chain-id qwoyn-1
 qwoynd config chain-id qwoyn-1
 ```    
 
@@ -84,7 +84,7 @@ external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.qwoynd/config/config.toml
 peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.qwoynd/config/config.toml
-seeds="3ba8858372b8b6314b29d43f8fc344cc54f4ffe0@45.77.126.244:26656"
+seeds="400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@qwoyn.rpc.kjnodes.com:16359"
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.qwoynd/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.qwoynd/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.qwoynd/config/config.toml
@@ -160,7 +160,7 @@ qwoynd tx staking create-validator \
   --identity="" \
   --website="" \
   --min-self-delegation="1" \
-  --gas="400000" \
+  --fees 2000uqwoyn \
   --from=wallet \
   --fees="1000uqwoyn" -y
 ```
