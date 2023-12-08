@@ -20,10 +20,19 @@
 | Devnet    |   4|  8GB | 260GB    |
 
 
+# 1) Auto_install script
+```python
+wget -O bitcannat https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Bitcanna/Bitcanna_DEV/bitcannat && chmod +x bitcannat && ./bitcannat
+```
+
+# 2) Manual installation
+
 ### Preparing the server
 ```python
-udo apt update && sudo apt upgrade -y
-sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
+sudo apt update && sudo apt upgrade -y
+apt install curl iptables build-essential git wget jq make gcc nano tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
+```
+
 ```
 ## GO 1.20.5
 ```python
