@@ -1,6 +1,6 @@
 # Namada Testnet guide
 
-![namada](https://github.com/obajay/nodes-Guides/assets/44331529/e1ae776c-13fb-40a5-9aaa-111d2d1fe84a)
+![namada](https://github.com/obajay/nodes-Guides/assets/44331529/50d63960-23bc-4530-a103-04b2c13f48e4)
 # Namada is a LAYER 1 BLOCKCHAIN solution that redefines Asset-Agnostic, Multichain Privacy
 
 [WebSite](https://namada.net/)\
@@ -55,4 +55,32 @@ namadac utils init-genesis-validator --address $ESTABLISHED_ACCOUNT_ADDRESS --al
 
 namadac utils sign-genesis-txs --path $TX_FILE_PATH --output $HOME/.local/share/namada/pre-genesis/signed-transactions.toml --alias $ALIAS
 ```
+## 🟢backup this folder🟢
+```python
+$HOME/.local/share/namada/pre-genesis/
+```
+
+<h1 align="center"> 🚀 Next Step - We send all our work to github and wait for the merge</h1>
+
+
+## ✨Follow the link to [Github](https://github.com/anoma/namada-testnets) and make a fork
+![изображение](https://github.com/obajay/nodes-Guides/assets/44331529/ca89dee5-e38f-4dbb-839a-80f1ba727f02)
+![изображение](https://github.com/obajay/nodes-Guides/assets/44331529/bb73eed0-87c3-419e-a8e0-9f1adcb92501)
+## ✨In our fork we go to the `namada-public-testnet-15` repository
+![изображение](https://github.com/obajay/nodes-Guides/assets/44331529/a2cd4536-ccfe-4b93-ab82-5cbcd5be205f)
+## ✨then create a new file
+![изображение](https://github.com/obajay/nodes-Guides/assets/44331529/15aed3c8-8f8d-493d-9981-de61626fd995)
+## ✨we call it (we use our nickname, which we entered at the very beginning -> `ALIAS="your_moniker"`) and add the ending `.toml`
+![изображение](https://github.com/obajay/nodes-Guides/assets/44331529/0550ec18-3a0e-4f18-9090-0a8e11acf8f8)
+### ✨ Next on our server we go to the repository `$HOME/.local/share/namada/pre-genesis/`
+find the `signed-transactions.toml` file. from there we copy all the data and paste it into our github
+add `discord` `twitter` `telegram`. Let’s check again to see if everything is correct, and then click `Commit changes`
+![изображение](https://github.com/obajay/nodes-Guides/assets/44331529/6ea4282a-18d8-4f29-aa9d-9759508d9930)
+## ✨Since we are trying to take part in the testnet for the first time, it is important to specify `Create`
+For those who are just updating their PR (they took part in previous testnets), they write `Update`
+![изображение](https://github.com/obajay/nodes-Guides/assets/44331529/20970651-45f8-4043-9311-2df7e4454e65)
+## ✨Next step -Pull Requests
+![1212](https://github.com/obajay/nodes-Guides/assets/44331529/05fd6576-99ec-4b34-9ef8-1211b7de6ec4)
+![изображение](https://github.com/obajay/nodes-Guides/assets/44331529/b90941b2-788a-4bdc-956e-c1fad110212d)
+![изображение](https://github.com/obajay/nodes-Guides/assets/44331529/be430df3-0a29-43cd-a89a-172f74b30a05)
 
