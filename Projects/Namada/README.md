@@ -83,4 +83,7 @@ For those who are just updating their PR (they took part in previous testnets), 
 ![1212](https://github.com/obajay/nodes-Guides/assets/44331529/05fd6576-99ec-4b34-9ef8-1211b7de6ec4)
 ![изображение](https://github.com/obajay/nodes-Guides/assets/44331529/b90941b2-788a-4bdc-956e-c1fad110212d)
 ![изображение](https://github.com/obajay/nodes-Guides/assets/44331529/be430df3-0a29-43cd-a89a-172f74b30a05)
+![изображение](https://github.com/obajay/nodes-Guides/assets/44331529/7a4e0cb3-7117-4792-9fc4-9ab3540b9c50)
 
+
+<h1 align="center"> 🏆Congratulations. You have submitted your Pull Request🏆</h1>
