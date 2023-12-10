@@ -34,6 +34,31 @@ rm -rf namada-${NAMADA_TAG}-Linux-x86_64 namada.tar.gz
 `namada --version`
 - Namada v0.28.0
 
+# 💻 Protocol Buffers
+```python
+PROTOBUF_TAG="v24.4"
+curl -L -o protobuf.zip "https://github.com/protocolbuffers/protobuf/releases/download/$PROTOBUF_TAG/protoc-${PROTOBUF_TAG#v}-linux-x86_64.zip"
+mkdir protobuf_temp && unzip protobuf.zip -d protobuf_temp/
+sudo cp protobuf_temp/bin/protoc /usr/local/bin/
+sudo cp -r protobuf_temp/include/* /usr/local/include/
+rm -rf protobuf_temp protobuf.zip
+```
+
+`protoc --version`
+- libprotoc 24.4
+
+# 💻 CometBFT
+```python
+COMETBFT_TAG="v0.37.2"
+curl -L -o cometbft.tar.gz "https://github.com/cometbft/cometbft/releases/download/$COMETBFT_TAG/cometbft_${COMETBFT_TAG#v}_linux_amd64.tar.gz"
+mkdir cometbft_temp && tar -xvf cometbft.tar.gz -C cometbft_temp/
+sudo mv cometbft_temp/cometbft /usr/local/bin/
+rm -rf cometbft_temp cometbft.tar.gz
+```
+`cometbft version`
+- 0.37.2
+
+
 # 💡Preparing a validator for pre-genesis  
 - [DOCS](https://docs.namada.net/operators/networks/genesis-flow/participants#generating-transactions)
 ```python
@@ -87,3 +112,14 @@ For those who are just updating their PR (they took part in previous testnets), 
 
 
 <h1 align="center"> 🏆Congratulations. You have submitted your Pull Request🏆</h1>
+
+
+## 🔌 Delete Namada Node🔌
+```python
+cd $HOME && mkdir $HOME/namada_backup
+cp -r $HOME/.local/share/namada/pre-genesis $HOME/namada_backup/
+systemctl stop namadad && systemctl disable namadad
+rm /usr/local/bin/namada /usr/local/bin/namadac /usr/local/bin/namadan /usr/local/bin/namadaw /usr/local/bin/namadar -rf
+rm $HOME/.local/share/namada -rf
+rm -rf $HOME/.masp-params
+```
