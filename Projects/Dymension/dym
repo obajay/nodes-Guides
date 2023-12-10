@@ -54,8 +54,9 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-git clone https://github.com/dymensionxyz/dymension.git --branch v1.0.2-beta
+git clone https://github.com/dymensionxyz/dymension.git
 cd dymension
+git checkout v2.0.0-alpha.3
 make install
 
 dymd init $Validator_Name --chain-id $CHAIN_ID
@@ -148,8 +149,11 @@ systemctl restart dymd && journalctl -u dymd -f -o cat
 break
 ;;
 "UPDATE")
-echo -e "      \e[1m\e[32m SOOOON\e[0m"
-dymd version
+cd $HOME/dymension
+git pull
+git checkout v2.0.0-alpha.3
+make install
+systemctl restart dymd && journalctl -u dymd -f -o cat
 
 break
 ;;
