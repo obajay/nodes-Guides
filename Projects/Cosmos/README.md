@@ -41,27 +41,27 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 12.10.23
+# Build 13.12.23
 ```python
 cd $HOME
 git clone https://github.com/cosmos/gaia cosmos
 cd gaia
-git checkout v13.0.0
+git checkout v14.1.0
 make install
 
 ```
-*******🟢UPDATE🟢******* 12.10.23
+*******🟢UPDATE🟢******* 13.12.23
 ```python
 cd $HOME
-wget -O gaiad https://github.com/cosmos/gaia/releases/download/v13.0.0/gaiad-v13.0.0-linux-amd64
+wget -O gaiad https://github.com/cosmos/gaia/releases/download/v14.1.0/gaiad-v14.1.0-linux-amd64
 chmod +x gaiad
 mv gaiad $HOME/go/bin/gaiad
 sudo systemctl restart gaiad && journalctl -u gaiad -f -o cat
 ```
 
 `gaiad version --long`
-- version: v13.0.0
-- commit: 04ea8da5a1257a855e307ed61d245a2af2719757
+- version: v14.1.0
+- commit: 0d9408e9169488707f1ad423e87d0df84a30431f
 
 ```python
 gaiad init STAVRguide --chain-id cosmoshub-4
