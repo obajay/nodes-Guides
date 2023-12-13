@@ -61,14 +61,14 @@ SOOON
 - commit: 583b9fd
 
 ```python
-hid-noded init STAVRguide --chain-id prajna-1
-    OR
+hid-noded init STAVR_guide --chain-id prajna-1
 hid-noded config chain-id prajna-1
 ```    
 
 ## Create/recover wallet
 ```python
 hid-noded keys add <walletname>
+    OR
 hid-noded keys add <walletname> --recover
 ```
 
