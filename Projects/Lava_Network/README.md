@@ -44,7 +44,7 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 13.12.23
+# Build 14.12.23
 ```python
 cd $HOME
 git clone https://github.com/lavanet/lava
@@ -52,7 +52,7 @@ wget -O lavad https://github.com/lavanet/lava/releases/download/v0.31.1/lavad-v0
 chmod +x lavad
 mv lavad $HOME/go/bin/lavad
 ```
-*******🟢UPDATE🟢******* 13.12.23
+*******🟢UPDATE🟢******* 14.12.23
 ```python
 cd $HOME
 wget -O lavad https://github.com/lavanet/lava/releases/download/v0.31.1/lavad-v0.31.1-linux-amd64
