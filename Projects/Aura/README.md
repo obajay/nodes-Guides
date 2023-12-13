@@ -35,29 +35,29 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-# Build 16.11.23
+# Build 13.12.23
 ```python
 cd $HOME
 git clone https://github.com/aura-nw/aura
 cd aura
-git checkout v0.7.1
+git checkout v0.7.2
 make install
 ```
 
-*******🟢UPDATE🟢******* 16.11.23
+*******🟢UPDATE🟢******* 13.12.23
 ```python
 cd $HOME/aura
 git fetch --all
-git checkout v0.7.1
+git checkout v0.7.2
 make install
 aurad version --long | head
-#version: v0.7.1
+#version: v0.7.2
 #commit: fdf7ce2bd703d75ce8a6d581d93d8051ebce2e03
 sudo systemctl restart aurad && journalctl -u aurad -f -o cat
 ```
 
 `aurad version --long | head`
-+ version: v0.7.1
++ version: v0.7.2
 + commit: fdf7ce2bd703d75ce8a6d581d93d8051ebce2e03
 
 ```python
