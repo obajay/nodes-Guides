@@ -41,33 +41,33 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 11.12.23
+# Build 14.12.23
 ```python
 cd $HOME
 git clone https://github.com/dymensionxyz/dymension.git
 cd dymension
-git checkout v2.0.0-alpha.3
+git checkout v2.0.0-alpha.7
 make install
 
 ```
-*******🟢UPDATE🟢******* 11.12.23
+*******🟢UPDATE🟢******* 14.12.23
 ```python
 cd $HOME/dymension
 git pull
-git checkout v2.0.0-alpha.3
+git checkout v2.0.0-alpha.7
 make install
 dymd version --long | grep -e commit -e version
-#commit: 7a74c08a5667fd783a2cece352066363c5bb347e
-#version: v2.0.0-alpha.3
+#commit: 4b6f8d13e553d6316a3d1978f939848068042976
+#version: v2.0.0-alpha.7
 systemctl restart dymd && journalctl -u dymd -f -o cat
 ```
 
 `dymd version --long | grep -e commit -e version`
-- version: v2.0.0-alpha.3
-- commit: 7a74c08a5667fd783a2cece352066363c5bb347e
+- version: v2.0.0-alpha.7
+- commit: 4b6f8d13e553d6316a3d1978f939848068042976
 
 ```python
-dymd init STAVRguide --chain-id=froopyland_100-1
+dymd init STAVR_guide --chain-id=froopyland_100-1
 dymd config chain-id froopyland_100-1
 ```    
 
