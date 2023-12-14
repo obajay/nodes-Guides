@@ -60,7 +60,7 @@ mv $HOME/quicksilverd $HOME/go/bin/quicksilverd
 
 quicksilverd init $Validator_Name --chain-id $CHAIN_ID
 
-wget -O ~/.quicksilverd/config/genesis.json https://raw.githubusercontent.com/ingenuity-build/testnets/main/rhye/genesis.json
+wget -O ~/.quicksilverd/config/genesis.json https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Quicksilver/Tetstnet/genesis.json
 wget -O $HOME/.quicksilverd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Quicksilver/Tetstnet/addrbook.json"
 
 
