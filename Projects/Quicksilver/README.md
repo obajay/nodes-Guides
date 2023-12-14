@@ -74,7 +74,7 @@ quicksilverd keys add <name_wallet> --recover
 ```
 ### Download Genesis
 ```python
-wget -O $HOME/.quicksilverd/config/genesis.json https://raw.githubusercontent.com/ingenuity-build/mainnet/main/genesis.json
+wget -O $HOME/.quicksilverd/config/genesis.json https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Quicksilver/genesis.json
 ```
 `sha256sum ~/.quicksilverd/config/genesis.json`
  + 4398a681c600c9ed9ef736356c0bdede618d7d2f709ed74172e5e5e48c9f8d6c
