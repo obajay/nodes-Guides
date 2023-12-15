@@ -41,7 +41,7 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 06.12.23
+# Build 16.12.23
 ```python
 cd $HOME
 git clone https://github.com/cosmic-horizon/QWOYN.git
@@ -49,9 +49,15 @@ cd QWOYN
 git checkout v5.3.0
 make install
 ```
-*******🟢UPDATE🟢******* 00.00.23
+*******🟢UPDATE🟢******* 16.12.23
 ```python
-SOOON
+cd $HOME/QWOYN && git pull
+git checkout v5.3.0
+make install
+qwoynd version --long | grep -e commit -e version
+#version: 5.3.0
+#commit: b69361af730fb6fea391ed22aa39a73bb4fd3a99
+sudo systemctl restart qwoynd && sudo journalctl -u qwoynd -f -o cat
 ```
 
 `qwoynd version --long`
