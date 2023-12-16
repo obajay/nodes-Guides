@@ -20,7 +20,7 @@ sudo apt update && sudo apt upgrade -y
 apt install curl iptables build-essential git wget jq make gcc nano tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
 ```
 
-# Build 09.12.23
+# Build 16.12.23
 # 💻 Testnet 15
 ```python
 cd $HOME
@@ -59,7 +59,9 @@ rm -rf cometbft_temp cometbft.tar.gz
 - 0.37.2
 
 
-# 💡Preparing a validator for pre-genesis  
+<details>
+<summary>💡Preparing a validator for pre-genesis</summary>
+
 - [DOCS](https://docs.namada.net/operators/networks/genesis-flow/participants#generating-transactions)
 ```python
 mkdir $HOME/.local/share/namada
@@ -112,6 +114,64 @@ For those who are just updating their PR (they took part in previous testnets), 
 
 
 <h1 align="center"> 🏆Congratulations. You have submitted your Pull Request🏆</h1>
+
+</details>
+
+# 🔥Launch full-node validator
+
+## 💻 Join network (choose 1 of 2 options, depending on who your validator is --> Genesis or NOT)
+- pre-genesis
+```python
+ALIAS=$(basename $(ls -d $HOME/.local/share/namada/pre-genesis/*/) | head -n 1)
+echo "export ALIAS=$ALIAS" >> ~/.bashrc
+namada client utils join-network --chain-id public-testnet-15.0dacadb8d663 --genesis-validator $ALIAS
+```
+- post-genesis
+```python
+namada client utils join-network --chain-id public-testnet-15.0dacadb8d663
+```
+
+## 💻 Service file
+```python
+sudo tee /etc/systemd/system/namadad.service > /dev/null <<EOF
+[Unit]
+Description=namada
+After=network-online.target
+[Service]
+User=$USER
+WorkingDirectory=$HOME/.local/share/namada
+Environment=TM_LOG_LEVEL=p2p:none,pex:error
+Environment=NAMADA_CMT_STDOUT=true
+ExecStart=/usr/local/bin/namada node ledger run 
+StandardOutput=syslog
+StandardError=syslog
+Restart=always
+RestartSec=10
+LimitNOFILE=65535
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl daemon-reload
+sudo systemctl enable namadad
+```
+
+## 💻 Start Node
+```python
+sudo systemctl restart namadad && sudo journalctl -u namadad -f -o cat
+```
+- check "catching_up": false  --- is OK  (when the node will be synchronized)
+```python
+curl -s localhost:26657/status
+```
+
+<details>
+<summary>Pre-genesis logs</summary>
+
+![изображение](https://github.com/obajay/nodes-Guides/assets/44331529/a2d6f370-ac38-4abf-b555-cb19a30ca8aa)
+![изображение](https://github.com/obajay/nodes-Guides/assets/44331529/c5cae5e6-d658-423e-b40f-54789cbd0621)
+
+</details>
 
 
 ## 🔌 Delete Namada Node🔌
