@@ -35,26 +35,27 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 19.10.23
+# Build 16.12.23
 ```python
 git clone https://github.com/DecentralCardGame/Cardchain
-wget https://github.com/DecentralCardGame/Cardchain/releases/download/v0.10.0/Cardchaind
+wget https://github.com/DecentralCardGame/Cardchain/releases/download/v0.11.0/Cardchaind
 chmod +x Cardchaind
 mv $HOME/Cardchaind /usr/local/bin
 ```
 `Cardchaind version --long | grep -e commit -e version`
-+ version: 0.10.0
-+ commit: 57e99d3b59be4e3969147fd590f65e41aae9be70
++ version: 0.11.0
++ commit: 135971283493b6580f40aec8fe22947dbb34e8e8
     
 # Init node and download Genesis
 ```python
-Cardchaind init STAVRguide --chain-id cardtestnet-5
-Cardchaind config chain-id cardtestnet-5
+Cardchaind init STAVRguide --chain-id cardtestnet-6
+Cardchaind config chain-id cardtestnet-6
 wget http://45.136.28.158:3000/genesis.json -O $HOME/.Cardchain/config/genesis.json
 ```
 ## Create/recover wallet
 ```python
 Cardchaind keys add <walletname>
+        OR
 Cardchaind keys add <walletname> --recover
 ```
 
@@ -77,13 +78,13 @@ sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.Cardchain/config/config.
 
 ### Pruning (optional)
 ```python
-pruning="custom" && \
-pruning_keep_recent="1000" && \
-pruning_keep_every="0" && \
-pruning_interval="10" && \
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.Cardchain/config/app.toml && \
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.Cardchain/config/app.toml && \
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.Cardchain/config/app.toml && \
+pruning="custom" &&
+pruning_keep_recent="1000" &&
+pruning_keep_every="0" &&
+pruning_interval="10" &&
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.Cardchain/config/app.toml &&
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.Cardchain/config/app.toml &&
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.Cardchain/config/app.toml &&
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.Cardchain/config/app.toml
 ```
 ### Indexer (optional)
@@ -161,7 +162,7 @@ Cardchaind tx staking create-validator \
 --pubkey  $(Cardchaind tendermint show-validator) \
 --moniker STAVR_Guide \
 --fees 300ubpf \
---chain-id cardtestnet-5 -y
+--chain-id cardtestnet-6 -y
 ```
 
 ## Delete node
