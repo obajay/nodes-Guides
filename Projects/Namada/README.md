@@ -64,7 +64,7 @@ rm -rf cometbft_temp cometbft.tar.gz
 
 - [DOCS](https://docs.namada.net/operators/networks/genesis-flow/participants#generating-transactions)
 ```python
-mkdir $HOME/.local/share/namada
+mkdir -p $HOME/.local/share/namada
 ALIAS="your_moniker"
 namadaw --pre-genesis key gen --alias $ALIAS
 #enter and confirm password
