@@ -120,13 +120,13 @@ For those who are just updating their PR (they took part in previous testnets), 
 # 🔥Launch full-node validator
 
 ## 💻 Join network (choose 1 of 2 options, depending on who your validator is --> Genesis or NOT)
-- pre-genesis
+- 1) pre-genesis
 ```python
 ALIAS=$(basename $(ls -d $HOME/.local/share/namada/pre-genesis/*/) | head -n 1)
 echo "export ALIAS=$ALIAS" >> ~/.bashrc
 namada client utils join-network --chain-id public-testnet-15.0dacadb8d663 --genesis-validator $ALIAS
 ```
-- post-genesis
+- 2) post-genesis
 ```python
 namada client utils join-network --chain-id public-testnet-15.0dacadb8d663
 ```
