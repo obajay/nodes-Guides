@@ -47,25 +47,25 @@ go version
 ```python
 cd $HOME
 git clone https://github.com/osmosis-labs/osmosis && cd osmosis
-git checkout v20.5.0
+git checkout v21.0.0
 make install
 ```
 
 *******🟢UPDATE🟢******* 26.11.23
 ```python
 cd $HOME
-wget -O osmosisd https://github.com/osmosis-labs/osmosis/releases/download/v20.5.0/osmosisd-20.5.0-linux-amd64
+wget -O osmosisd https://github.com/osmosis-labs/osmosis/releases/download/v21.0.0/osmosisd-21.0.0-linux-amd64
 chmod +x osmosisd
 mv osmosisd $HOME/go/bin/osmosisd
 osmosisd version --long
-# version: 20.5.0
-# commit: 7f2097863f7a0a02f4a0758fc0a600aecf63e1f4
+# version: 21.0.0
+# commit: b0aee0006ce55d0851773084bd7880db7e32ad70
 systemctl restart osmosisd && journalctl -u osmosisd -f -o cat
 ```
 
 `osmosisd version --long | head`
-- version: 20.5.0
-- commit: 7f2097863f7a0a02f4a0758fc0a600aecf63e1f4
+- version: 21.0.0
+- commit: b0aee0006ce55d0851773084bd7880db7e32ad70
 
 ```python
 osmosisd init STAVRguide --chain-id osmosis-1
