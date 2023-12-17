@@ -43,8 +43,8 @@ chmod +x Cardchaind
 mv $HOME/Cardchaind /usr/local/bin
 ```
 `Cardchaind version --long | grep -e commit -e version`
-+ version: 0.11.0
-+ commit: 135971283493b6580f40aec8fe22947dbb34e8e8
++ version: 
++ commit: 
     
 # Init node and download Genesis
 ```python
@@ -69,7 +69,7 @@ wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ubpf\"/;" ~/.Cardchain/config/app.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.Cardchain/config/config.toml
-peers="109adfd1645cc1289bd2753277d6c5c2a9112b76@45.136.28.158:26656, 447a7af037dc85213d98ef3f4dc07d05191f52e7@202.61.225.157:26656"
+peers="5ed5398d201c0d40400055beceb4a9a93506d26a@202.61.225.157:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.Cardchain/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.Cardchain/config/config.toml
