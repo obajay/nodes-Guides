@@ -24,7 +24,7 @@ apt install curl iptables build-essential git wget jq make gcc nano tmux htop nv
 # 💻 Testnet 15
 ```python
 cd $HOME
-NAMADA_TAG="v0.28.0"
+NAMADA_TAG="v0.28.1"
 curl -L -o namada.tar.gz "https://github.com/anoma/namada/releases/download/$NAMADA_TAG/namada-${NAMADA_TAG}-Linux-x86_64.tar.gz"
 tar -xvf namada.tar.gz
 sudo mv namada-${NAMADA_TAG}-Linux-x86_64/* /usr/local/bin/
