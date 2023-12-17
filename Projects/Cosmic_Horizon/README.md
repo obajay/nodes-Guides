@@ -56,13 +56,13 @@ git checkout v5.3.0
 make install
 qwoynd version --long | grep -e commit -e version
 #version: 5.3.0
-#commit: b69361af730fb6fea391ed22aa39a73bb4fd3a99
+#commit: 2cbe65fc82dd8f1b80467fc9634bc517ad6e1e42
 sudo systemctl restart qwoynd && sudo journalctl -u qwoynd -f -o cat
 ```
 
 `qwoynd version --long`
 - version: 5.3.0
-- commit: b69361af730fb6fea391ed22aa39a73bb4fd3a99
+- commit: 2cbe65fc82dd8f1b80467fc9634bc517ad6e1e42
 
 ```python
 qwoynd init STAVR_guide --chain-id qwoyn-1
