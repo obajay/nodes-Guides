@@ -40,17 +40,17 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-# Build 08.12.23
+# Build 18.12.23
 ```python
 cd $HOME
 git clone https://github.com/Sifchain/sifnode
 cd $HOME/sifnode
-git checkout v1.3.1-beta
+git checkout v1.4.0
 make install
 ```
 `sifnoded version --long`
-- version: 1.3.1-beta
-- commit: cbfba9425556880dcb6eaedf868dca91cea8e746
+- version: v1.4.0
+- commit: 191a7e41d0bd0ab50e1535b3951ce16697dd0090
 
 ```python
 sifnoded init STAVR_guide --chain-id sifchain-1
