@@ -112,7 +112,7 @@ wget -O $HOME/.empowerchain/config/addrbook.json "https://raw.githubusercontent.
 ```
 # StateSync
 ```python
-SNAP_RPC=http://empw.rpc.m.stavr.tech:22057
+SNAP_RPC=https://empw.rpc.m.stavr.tech:443
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.empowerchain/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
