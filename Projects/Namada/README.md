@@ -214,7 +214,34 @@ namada client bond --source <walletName> --validator $ALIAS  --amount 1000
 ## Waiting more than 2 epoch and check your status: (one epoch = 1 hour)
 ```python
 namada client bonds --owner $ALIAS
+namada client bonded-stake 
+namada client slashes
+namadac validator-state --validator $ALIAS
 ```
+
+## 🔴Jailed? 
+```python
+namada client slashes
+namada client validator-state --validator $ALIAS
+```
+- Validator <address> is jailed
+
+## Jailing lasts for ~2 epochs after you submit your un-jail transaction. 
+```python
+namadac epoch --node
+```
+## Submit unjail txn
+```python
+namadac unjail-validator --validator $ALIAS
+```
+`Make sure the transaction is accepted by the network(must use a synced node), if the node you are using is not synced, use --node <ip&port of synced node>`
+`Wait 2 epochs`
+```python
+namada client validator-state --validator $ALIAS
+```
+`And it should be unjailed!`
+- Validator <address> is in the consensus set
+
 
 
 
