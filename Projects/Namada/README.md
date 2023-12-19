@@ -232,12 +232,12 @@ namadac epoch --node
 ```
 ## Submit unjail txn
 ```python
-namadac unjail-validator --validator validator address
+namadac unjail-validator --validator <validator address>
 ```
 `Make sure the transaction is accepted by the network(must use a synced node), if the node you are using is not synced, use --node <ip&port of synced node>`
 `Wait 2 epochs`
 ```python
-namada client validator-state --validator validator address
+namada client validator-state --validator <validator address>
 ```
 `And it should be unjailed!`
 - Validator <validator address> is in the consensus set
