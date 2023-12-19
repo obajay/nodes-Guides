@@ -221,8 +221,8 @@ namadac validator-state --validator $ALIAS
 
 ## 🔴Jailed? 
 ```python
-namada client slashes
-namada client validator-state --validator $ALIAS
+namadac find-validator --tm-address=$(curl -s localhost:26657/status | jq -r .result.validator_info.address)
+namada client validator-state --validator <validator address>
 ```
 - Validator <address> is jailed
 
@@ -232,15 +232,15 @@ namadac epoch --node
 ```
 ## Submit unjail txn
 ```python
-namadac unjail-validator --validator $ALIAS
+namadac unjail-validator --validator validator address
 ```
 `Make sure the transaction is accepted by the network(must use a synced node), if the node you are using is not synced, use --node <ip&port of synced node>`
 `Wait 2 epochs`
 ```python
-namada client validator-state --validator $ALIAS
+namada client validator-state --validator validator address
 ```
 `And it should be unjailed!`
-- Validator <address> is in the consensus set
+- Validator <validator address> is in the consensus set
 
 
 
