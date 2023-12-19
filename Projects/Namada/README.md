@@ -230,7 +230,9 @@ namada client validator-state --validator <validator address>
 
 ## Jailing lasts for ~2 epochs after you submit your un-jail transaction. 
 ```python
-namadac epoch --node
+namadac epoch --node tcp://127.0.0.1:26657
+            OR
+namadac epoch --node <working RPC> 
 ```
 ## Submit unjail txn
 ```python
