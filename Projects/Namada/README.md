@@ -163,6 +163,9 @@ sudo systemctl restart namadad && sudo journalctl -u namadad -f -o cat
 - check "catching_up": false  --- is OK  (when the node will be synchronized)
 ```python
 curl -s localhost:26657/status
+curl -s localhost:26657/status | jq .result.sync_info
+curl -s localhost:26657/status | jq .result.node_info
+curl -s $(wget -qO- eth0.me):26657/status | jq
 ```
 
 <details>
@@ -172,6 +175,47 @@ curl -s localhost:26657/status
 ![изображение](https://github.com/obajay/nodes-Guides/assets/44331529/c5cae5e6-d658-423e-b40f-54789cbd0621)
 
 </details>
+
+# 💡 Create Post-Genesis Validator 
+## Create wallet:
+```python
+namada wallet address gen --alias <walletName>
+      OR
+namada wallet key derive --alias <walletName> --hd-path default
+```
+
+## Check wallet list:
+```python
+namada wallet key list
+```
+[FAUCET](https://faucet.heliax.click/)
+=
+
+## Check your balance: (the node must be synchronized)
+```python
+namada client balance --owner $ALIAS
+```
+
+## Init validator:
+```python
+namada client init-validator \
+ --alias $ALIAS \
+ --account-keys <walletName> \
+ --signing-keys <walletName> \
+ --commission-rate 0.1 \
+ --max-commission-rate-change 0.1
+```
+
+## Stake your funds:
+```python
+namada client bond --source <walletName> --validator $ALIAS  --amount 1000
+```
+
+## Waiting more than 2 epoch and check your status: (one epoch = 1 hour)
+```python
+namada client bonds --owner $ALIAS
+```
+
 
 
 ## 🔌 Delete Namada Node🔌
