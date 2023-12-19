@@ -216,7 +216,9 @@ namada client bond --source <walletName> --validator $ALIAS  --amount 1000
 namada client bonds --owner $ALIAS
 namada client bonded-stake 
 namada client slashes
-namadac validator-state --validator $ALIAS
+
+namadac find-validator --tm-address=$(curl -s localhost:26657/status | jq -r .result.validator_info.address)
+namadac validator-state --validator <validator address>
 ```
 
 ## 🔴Jailed? 
