@@ -24,7 +24,7 @@ sudo apt update && sudo apt upgrade -y && \
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
-## GO 20 (one command)
+## GO 1.20 (one command)
 ```python
 ver="1.20"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
@@ -37,23 +37,30 @@ go version
 ```
 
 
-# Binary   28.06.23
+# Binary 20.12.23
 ```python
 cd $HOME
-git clone https://github.com/EmpowerPlastic/empowerchain
-cd empowerchain
-git checkout v1.0.0
-cd chain
-make install
+wget https://github.com/EmpowerPlastic/empowerchain/releases/download/v2.0.0/empowerd-v2.0.0-linux-amd64.zip
+unzip empowerd-v2.0.0-linux-amd64.zip && rm -rf empowerd-v2.0.0-linux-amd64.zip
+chmod +x empowerd
+mv empowerd $HOME/go/bin/
 ```
-*******🟢UPDATE🟢******* 00.00.23
+*******🟢UPDATE🟢******* 20.12.23
 ```python
-SOOON
+cd $HOME && wget https://github.com/EmpowerPlastic/empowerchain/releases/download/v2.0.0/empowerd-v2.0.0-linux-amd64.zip
+unzip empowerd-v2.0.0-linux-amd64.zip
+rm -rf empowerd-v2.0.0-linux-amd64.zip
+chmod +x empowerd
+mv empowerd $(which empowerd)
+empowerd version --long | grep -e version -e commit
+#commit: 70ad47fc878d1854fe279ebf99e3a9260b78099c
+#version: v2.0.0
+systemctl restart empowerd && journalctl -u empowerd -f -o cat
 ```
 
 `empowerd version --long`
-+ 1.0.0
-+ commit: 5d80d3c26256d9809cbd0b4dacfd0a8dbcaacc95
+- version: v2.0.0
+- commit: 70ad47fc878d1854fe279ebf99e3a9260b78099c
 
 
 ## Initialisation
