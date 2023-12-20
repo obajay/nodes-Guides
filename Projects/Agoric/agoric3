@@ -55,7 +55,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/Agoric/agoric-sdk
 cd agoric-sdk
-git checkout agoric-upgrade-12
+git checkout agoric-upgrade-13
 yarn install
 yarn build
 cd packages/cosmic-swingset && make
@@ -159,7 +159,7 @@ break
 "UPDATE")
 cd $HOME/agoric-sdk
 git fetch --all
-git checkout agoric-upgrade-12
+git checkout agoric-upgrade-13
 yarn install
 yarn build
 cd packages/cosmic-swingset && make
