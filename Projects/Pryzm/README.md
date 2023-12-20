@@ -147,6 +147,9 @@ sudo systemctl enable pryzmd
 sudo systemctl restart pryzmd && sudo journalctl -u pryzmd -f -o cat
 ```
 
+[FAUCET](https://testnet.pryzm.zone/faucet)
+=
+
 ### Create validator
 ```python
 pryzmd tx staking create-validator \
