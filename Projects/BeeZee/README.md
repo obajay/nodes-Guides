@@ -54,13 +54,14 @@ systemctl restart bzed && journalctl -u bzed -f -o cat
 `bzed version --long`
 + version: 6.1.0
 + commit: e8157ad95fffb2c7429b7f5619dea888a36bcdb0
-```pytohn
-bzed init STAVRguide --chain-id beezee-1
+```python
+bzed init STAVR_guide --chain-id beezee-1
 bzed config chain-id beezee-1
 ```    
 ## Create/recover wallet
 ```python
 bzed keys add <walletname>
+   OR
 bzed keys add <walletname> --recover
 ```
 
@@ -170,13 +171,13 @@ bzed tx staking create-validator \
 ```
 
 # Delete node
-```    
-sudo systemctl stop bzed && \
-sudo systemctl disable bzed && \
-rm /etc/systemd/system/bzed.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf .bze && \
-rm -rf bze && \
+```python
+sudo systemctl stop bzed
+sudo systemctl disable bzed
+rm /etc/systemd/system/bzed.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf .bze
+rm -rf bze
 rm -rf $(which bzed)
 ```
