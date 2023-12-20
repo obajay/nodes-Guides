@@ -134,11 +134,36 @@ EOF
 ```
 # StateSync Vidulum Mainnet
 ```python
-SOOON
+SNAP_RPC=https://vidulum.rpc.m.stavr.tech:443
+SEEDS=197f4d559555de6b7fe360c6a926ca8812a749be@vidulum.peer.stavr.tech:1046
+cp $HOME/.vidulum/data/priv_validator_state.json $HOME/.vidulum/priv_validator_state.json.backup
+sed -i -e "/seeds =/ s/= .*/= \"$SEEDS\"/"  $HOME/.vidulum/config/config.toml
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.vidulum/config/config.toml
+vidulumd tendermint unsafe-reset-all --home $HOME/.vidulum --keep-addr-book
+mv $HOME/.vidulum/priv_validator_state.json.backup $HOME/.vidulum/data/priv_validator_state.json
+sudo systemctl restart vidulumd && journalctl -u vidulumd -f -o cat
 ```
-# SnapShot Mainnet (~3GB) updated every 7 hours  
+# SnapShot Mainnet (~0.2 GB) updated every 5 hours  
 ```python
-SOOON
+cd $HOME
+apt install lz4
+sudo systemctl stop vidulumd
+cp $HOME/.vidulum/data/priv_validator_state.json $HOME/.vidulum/priv_validator_state.json.backup
+rm -rf $HOME/.vidulum/data
+curl -o - -L https://vidulum.snapshot.stavr.tech/vidulum/vidulum-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.vidulum --strip-components 2
+mv $HOME/.vidulum/priv_validator_state.json.backup $HOME/.vidulum/data/priv_validator_state.json
+wget -O $HOME/.vidulum/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Vidulum/addrbook.json"
+sudo systemctl restart vidulumd && journalctl -u vidulumd -f -o cat
 ```
 
 ## Start
