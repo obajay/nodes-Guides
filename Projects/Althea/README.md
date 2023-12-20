@@ -58,7 +58,7 @@ SOOON
 - commit: 3ec8309dfd84e090af7703edc21a70c95641975c
 
 ```python
-althea init STAVRguide --chain-id althea_417834-3
+althea init STAVR_guide --chain-id althea_417834-3
 althea config chain-id althea_417834-3
 ```    
 
@@ -179,7 +179,7 @@ althea tx staking create-validator \
 --amount 1000000000000000000aalthea \
 --pubkey $(althea tendermint show-validator) \
 --from <wallet> \
---moniker="STAVRguide" \
+--moniker="STAVR_guide" \
 --chain-id althea_417834-3 \
 --gas 350000 \
 --identity="" \
