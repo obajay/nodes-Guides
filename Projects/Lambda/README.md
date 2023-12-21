@@ -188,6 +188,9 @@ lambdavm tx staking create-validator \
   -y
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Lambda)
+=
+
 ## Delete node
 ```python
 sudo systemctl stop lambdavm && \
