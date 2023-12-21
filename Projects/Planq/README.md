@@ -191,6 +191,9 @@ planqd tx staking create-validator \
 --details="" -y
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Planq)
+=
+
 ## Delete node
 ```python
 sudo systemctl stop planqd
