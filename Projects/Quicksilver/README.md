@@ -190,6 +190,9 @@ quicksilverd tx staking create-validator \
 --fees 555uqck -y
 ```    
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Quicksilver)
+=
+
 ## Delete node
 ```python
 sudo systemctl stop quicksilverd
@@ -201,8 +204,6 @@ rm -rf quicksilver
 rm -rf .quicksilverd
 rm -rf $(which quicksilverd)
 ```
-
-#
 
 `Sync Info`
 ```python
