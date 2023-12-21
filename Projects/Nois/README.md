@@ -198,6 +198,9 @@ noisd tx staking create-validator \
 -y
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Nois)
+=
+
 ## Delete node
 ```Python
 sudo systemctl stop noisd && \
