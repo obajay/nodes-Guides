@@ -184,7 +184,7 @@ dorad tx staking create-validator \
 --from <wallet> \
 --moniker="STAVR_guide" \
 --chain-id vota-vk \
---gas 350000 \
+--fees 20000000000000000peaka \
 --identity="" \
 --website="" \
 --details="" -y
