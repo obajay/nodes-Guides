@@ -150,6 +150,9 @@ realio-networkd tx staking create-validator \
   --from=<walletName>
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Realio)
+=
+
 ## Delete node
 ```python
 sudo systemctl stop realio-networkd && \
