@@ -199,6 +199,8 @@ okp4d tx staking create-validator \
   --details="" \
   --website="" -y
 ```
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/OKP4)
+=
 
 ## Delete node
 ```python
