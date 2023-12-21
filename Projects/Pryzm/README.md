@@ -41,7 +41,7 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 05.07.23
+# Build 20.12.23
 ```python
 cd $HOME
 wget https://storage.googleapis.com/pryzm-resources/pryzmd-0.9.0-linux-amd64.tar.gz
