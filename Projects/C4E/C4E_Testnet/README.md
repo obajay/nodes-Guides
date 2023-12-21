@@ -187,6 +187,9 @@ c4ed tx staking create-validator \
   --website="" -y
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/C4E)
+=
+
 ## Delete node
 ```python
 sudo systemctl stop c4ed && \
