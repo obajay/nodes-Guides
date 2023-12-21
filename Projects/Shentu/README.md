@@ -189,6 +189,8 @@ shentud tx staking create-validator \
 --website="" \
 --details="" -y
 ```
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Shentu)
+=
 
 ## Delete node
 ```python
