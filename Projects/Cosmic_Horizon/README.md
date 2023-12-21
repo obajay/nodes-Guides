@@ -196,6 +196,9 @@ qwoynd tx staking create-validator \
   --fees="1000uqwoyn" -y
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Qwoyn)
+=
+
 ## Delete node
 ```python
 sudo systemctl stop qwoynd
