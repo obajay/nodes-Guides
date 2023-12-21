@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O pryzmt https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Pryzm/pryzmt && chmod +x pryzmt && ./pryzmt
 ```
 
 # 2) Manual installation
