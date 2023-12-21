@@ -180,6 +180,9 @@ sourced tx staking create-validator \
 --details="" -y
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Source)
+=
+
 ### Delete node (one command)
 ```python
 sudo systemctl stop sourced
