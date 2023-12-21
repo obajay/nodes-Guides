@@ -187,6 +187,9 @@ teritorid tx staking create-validator \
 --from=<walletname> -y
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Teritori)
+=
+
 # Delete node 
 ```python
 sudo systemctl stop teritorid && \
