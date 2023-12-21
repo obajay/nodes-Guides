@@ -192,6 +192,10 @@ aurad tx staking create-validator \
 --chain-id xstaxy-1 -y
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Aura)
+=
+
+
 ## Delete node
 ```python
 sudo systemctl stop aurad && \
