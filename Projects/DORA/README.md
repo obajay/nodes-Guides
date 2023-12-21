@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOOONNN
+wget -O dorat https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/DORA/dorat && chmod +x dorat && ./dorat
 ```
 
 # 2) Manual installation
