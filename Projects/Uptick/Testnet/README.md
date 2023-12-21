@@ -146,6 +146,9 @@ uptickd tx staking create-validator \
 --fees 555auptick
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Uptick)
+=
+
 ## Delete node
 ```python
 sudo systemctl stop uptickd && \
