@@ -190,6 +190,9 @@ decentrd tx staking create-validator \
 --details="" -y
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Decentr)
+=
+
 ## Delete node
 ```python
 sudo systemctl stop decentrd
