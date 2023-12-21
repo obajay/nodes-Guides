@@ -107,7 +107,7 @@ wget -O $HOME/.teritorid/config/addrbook.json "https://raw.githubusercontent.com
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.teritorid/config/config.toml
 
 ## StateSync
-```bash
+```python
 peers="https://rpc-t.teritori.nodestake.top:443"
 sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.teritorid/config/config.toml
 SNAP_RPC=https://rpc-t.teritori.nodestake.top:443
@@ -124,7 +124,7 @@ s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" ~/.teritorid/config/config.toml
 teritorid tendermint unsafe-reset-all --home $HOME/.teritorid
 sudo systemctl restart teritorid && journalctl -u teritorid -f -o cat
-
+```
 # Create a service file
 
     sudo tee /etc/systemd/system/teritorid.service > /dev/null <<EOF
