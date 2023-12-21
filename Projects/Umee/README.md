@@ -150,9 +150,12 @@ EOF
 sudo systemctl restart systemd-journald
 sudo systemctl daemon-reload
 sudo systemctl enable umeed
-sudo systemctl restart umeed
-journalctl -u umeed -f -o cat
-```  
+sudo systemctl restart umeed && journalctl -u umeed -f -o cat
+```
+
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Umee)
+=
+
 ### Delete node
 ```python
 sudo systemctl stop umeed && \
