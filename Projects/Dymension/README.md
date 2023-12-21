@@ -195,6 +195,9 @@ dymd tx staking create-validator \
 --details="" \
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Dymension)
+=
+
 ## Delete node
 ```python
 sudo systemctl stop dymd
