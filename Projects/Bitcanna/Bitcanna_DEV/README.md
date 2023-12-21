@@ -156,6 +156,9 @@ bcnad tx staking create-validator \
 --gas=auto -y
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Bitcanna)
+=
+
 ## Delete node
 ```python
 sudo systemctl stop bcnad && \
