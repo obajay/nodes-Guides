@@ -190,6 +190,9 @@ ixod tx staking create-validator \
 --details="" -y
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Ixo)
+=
+
 ## Delete node
 ```python
 sudo systemctl stop ixod
