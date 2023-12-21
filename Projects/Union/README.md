@@ -39,7 +39,7 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 08.12.23
+# Build 21.12.23
 ```python
 cd $HOME
 wget http://uniont.binary.stavr.tech:15/union/uniond
@@ -53,8 +53,8 @@ SOOON
 ```
 
 `uniond version --long`
-- version: 
-- commit: 
+- version: v0.17.0
+- commit: fa6dfecb6cfd89b6827c2992efb37675f8a147ab
 
 ```python
 uniond init STAVR_guide --chain-id union-testnet-4
