@@ -190,6 +190,9 @@ hid-noded tx staking create-validator \
 --website="" -y
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Hypersign)
+=
+
 ## Delete node
 ```python
 sudo systemctl stop hid-noded
