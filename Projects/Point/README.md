@@ -191,6 +191,9 @@ pointd tx staking create-validator \
 --details="" -y
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Point)
+=
+
 ## Delete node
 ```python
 sudo systemctl stop pointd
