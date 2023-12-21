@@ -200,6 +200,9 @@ junod tx staking create-validator \
 --details="" -y
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Juno)
+=
+
 ## Delete node
 ```python
 sudo systemctl stop junod
