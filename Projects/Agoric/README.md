@@ -57,8 +57,8 @@ systemctl restart agoricd.service && journalctl -u agoricd.service -f -o cat
 
 ```
 `agd version --long`
-- version: 
-- commit: 
+- version: 0.35.0-u13.0
+- commit: 5a6cdeb0c
 
 ```python
 agd init STAVRuide --chain-id agoric-3
