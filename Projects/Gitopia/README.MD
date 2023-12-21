@@ -182,6 +182,8 @@ gitopiad tx staking create-validator \
   --details="" \
   --website="" -y
 ```
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Gitopia)
+=
 
 ## Delete node
 ```python
