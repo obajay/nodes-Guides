@@ -188,6 +188,8 @@ quicksilverd tx staking create-validator \
 --gas="auto" \
 --fees 555uqck -y
 ```    
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Quicksilver)
+=
 
 ## Delete node
 ```python
@@ -200,8 +202,6 @@ rm -rf quicksilver && \
 rm -rf .quicksilverd && \
 rm -rf $(which quicksilverd)
 ```
-
-#
 
 `Sync Info`
 ```python
