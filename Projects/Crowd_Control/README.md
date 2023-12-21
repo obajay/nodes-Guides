@@ -164,6 +164,9 @@ Cardchaind tx staking create-validator \
 --fees 300ubpf \
 --chain-id cardtestnet-6 -y
 ```
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Crowd_Control)
+=
+
 
 ## Delete node
 ```python
