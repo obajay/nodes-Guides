@@ -193,6 +193,9 @@ canined tx staking create-validator \
 --fees 500ujkl
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Jackal)
+=
+
 ## Delete node
 ```python
 sudo systemctl stop canined && \
