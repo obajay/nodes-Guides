@@ -206,6 +206,9 @@ lavad tx staking create-validator \
   --website="" -y
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Lava)
+=
+
 ## Delete node
 ```bash
 sudo systemctl stop lavad && \
