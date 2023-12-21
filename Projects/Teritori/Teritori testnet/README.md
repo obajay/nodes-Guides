@@ -169,16 +169,19 @@ sudo systemctl restart teritorid && sudo journalctl -u teritorid -f -o cat
     --fees 500utori \
     --from=<walletname> -y
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Teritori)
+=
 
 # Delete node
-    sudo systemctl stop teritorid && \
-    sudo systemctl disable teritorid && \
-    rm /etc/systemd/system/teritorid.service && \
-    sudo systemctl daemon-reload && \
-    cd $HOME && \
-    rm -rf .teritorid && \
-    rm -rf teritori-chain && \
-    rm -rf $(which teritorid)
-
+```python
+sudo systemctl stop teritorid
+sudo systemctl disable teritorid
+rm /etc/systemd/system/teritorid.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf .teritorid
+rm -rf teritori-chain
+rm -rf $(which teritorid)
+```
 
 
