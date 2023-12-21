@@ -81,7 +81,7 @@ wget -O $HOME/.dora/config/genesis.json "https://raw.githubusercontent.com/obaja
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0peaka\"/;" ~/.dora/config/app.toml
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"100000000000peaka\"/;" ~/.dora/config/app.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.dora/config/config.toml
 peers="2011dfc8a30cf14ffb7207764c2549c210d4c598@136.243.69.100:56096,cdf3cb078183967cff3a638713384de2c5594ba3@65.108.72.253:42656"
