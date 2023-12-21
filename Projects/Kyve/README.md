@@ -187,6 +187,9 @@ kyved tx staking create-validator \
 --chain-id kyve-1
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Kyve)
+=
+
 ## Delete node
 ```python
 sudo systemctl stop kyved
