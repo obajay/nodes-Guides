@@ -160,7 +160,7 @@ apt install lz4
 sudo systemctl stop vidulumd
 cp $HOME/.vidulum/data/priv_validator_state.json $HOME/.vidulum/priv_validator_state.json.backup
 rm -rf $HOME/.vidulum/data
-curl -o - -L https://vidulum.snapshot.stavr.tech/vidulum/vidulum-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.vidulum --strip-components 2
+curl -o - -L https://vidulum.snapshot.stavr.tech/vidulum-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.vidulum --strip-components 2
 mv $HOME/.vidulum/priv_validator_state.json.backup $HOME/.vidulum/data/priv_validator_state.json
 wget -O $HOME/.vidulum/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Vidulum/addrbook.json"
 sudo systemctl restart vidulumd && journalctl -u vidulumd -f -o cat
