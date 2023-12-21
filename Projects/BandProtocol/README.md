@@ -192,6 +192,9 @@ bandd tx staking create-validator \
   --from=YourWallet -y
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/BandProtocol)
+=
+
 ## Delete node
 ```python
 sudo systemctl stop bandd
