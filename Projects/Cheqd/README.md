@@ -81,7 +81,9 @@ wget -O $HOME/.cheqdnode/config/genesis.json "https://raw.githubusercontent.com/
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"25ncheq\"/;" ~/.cheqdnode/config/app.toml
-external_address=$(wget -qO- eth0.me) 
+external_address=$(wget -qO- eth0.me)
+sed -i 's/log_level =.*/log_level = "info"/g' $HOME/.cheqdnode/config/config.toml
+sed -i 's/log_format =.*/log_format = "plain"/g' $HOME/.cheqdnode/config/config.toml
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.cheqdnode/config/config.toml
 peers="fc6f7914e4beb4b5278e7ba32ec2abde97cd8082@65.109.28.177:26336"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.cheqdnode/config/config.toml
