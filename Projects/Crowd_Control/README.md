@@ -38,7 +38,7 @@ go version
 # Build 23.12.23
 ```python
 git clone https://github.com/DecentralCardGame/Cardchain
-wget https://github.com/DecentralCardGame/Cardchain/releases/download/v0.11.0/Cardchaind
+wget -O Cardchaind https://github.com/DecentralCardGame/Cardchain/releases/download/v0.12.0/Cardchaind
 chmod +x Cardchaind
 mv $HOME/Cardchaind /usr/local/bin
 ```
