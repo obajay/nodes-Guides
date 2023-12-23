@@ -35,7 +35,7 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 16.12.23
+# Build 23.12.23
 ```python
 git clone https://github.com/DecentralCardGame/Cardchain
 wget https://github.com/DecentralCardGame/Cardchain/releases/download/v0.11.0/Cardchaind
@@ -48,8 +48,8 @@ mv $HOME/Cardchaind /usr/local/bin
     
 # Init node and download Genesis
 ```python
-Cardchaind init STAVRguide --chain-id cardtestnet-6
-Cardchaind config chain-id cardtestnet-6
+Cardchaind init STAVR_guide --chain-id cardtestnet-7
+Cardchaind config chain-id cardtestnet-7
 wget http://45.136.28.158:3000/genesis.json -O $HOME/.Cardchain/config/genesis.json
 ```
 ## Create/recover wallet
@@ -69,7 +69,7 @@ wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ubpf\"/;" ~/.Cardchain/config/app.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.Cardchain/config/config.toml
-peers="5ed5398d201c0d40400055beceb4a9a93506d26a@202.61.225.157:26656"
+peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.Cardchain/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.Cardchain/config/config.toml
@@ -162,7 +162,7 @@ Cardchaind tx staking create-validator \
 --pubkey  $(Cardchaind tendermint show-validator) \
 --moniker STAVR_Guide \
 --fees 300ubpf \
---chain-id cardtestnet-6 -y
+--chain-id cardtestnet-7 -y
 ```
 [🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Crowd_Control)
 =
