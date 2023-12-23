@@ -36,34 +36,34 @@ source $HOME/.bash_profile &&
 go version
 ```
 
-# Binary   31.10.23
+# Binary   24.12.23
 ```python
 cd $HOME
 git clone https://github.com/haqq-network/haqq
-wget https://github.com/haqq-network/haqq/releases/download/v1.6.3/haqq_1.6.3_Linux_x86_64.tar.gz
-tar -xvzf haqq_1.6.3_Linux_x86_64.tar.gz
+wget https://github.com/haqq-network/haqq/releases/download/v1.6.4/haqq_1.6.4_Linux_x86_64.tar.gz
+tar -xvzf haqq_1.6.4_Linux_x86_64.tar.gz
 cd bin
 chmod +x haqqd
 mv haqqd $HOME/go/bin/
-cd $HOME && rm -rf haqq_1.6.3_Linux_x86_64.tar.gz
+cd $HOME && rm -rf haqq_1.6.4_Linux_x86_64.tar.gz
 ```
-*******🟢UPDATE🟢******* 31.10.23
+*******🟢UPDATE🟢******* 24.12.23
 ```python
 cd $HOME
-wget https://github.com/haqq-network/haqq/releases/download/v1.6.3/haqq_1.6.3_Linux_x86_64.tar.gz
-tar -xvzf haqq_1.6.3_Linux_x86_64.tar.gz
+wget https://github.com/haqq-network/haqq/releases/download/v1.6.4/haqq_1.6.4_Linux_x86_64.tar.gz
+tar -xvzf haqq_1.6.4_Linux_x86_64.tar.gz
 cd bin
 chmod +x haqqd
 mv haqqd $(which haqqd)
 haqqd version --long | grep -e commit -e version
-cd $HOME && rm -rf haqq_1.6.3_Linux_x86_64.tar.gz
-#version: 1.6.3
-#commit: b6e7768ee492e7fc55da560e8128981b55f5e6e8
+cd $HOME && rm -rf haqq_1.6.4_Linux_x86_64.tar.gz
+#version: 1.6.4
+#commit: 174a99b3dd8d6b0e089cb1e54dc3e628bb90c0f5
 sudo systemctl restart haqqd && journalctl -u haqqd -f -o cat
 ```
 `haqqd version --long | grep -e version -e commit`
-- version: 1.6.3
-- commit: b6e7768ee492e7fc55da560e8128981b55f5e6e8
+- version: 1.6.4
+- commit: 174a99b3dd8d6b0e089cb1e54dc3e628bb90c0f5
 
 ## Initialisation
 ```python
