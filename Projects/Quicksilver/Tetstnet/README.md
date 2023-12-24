@@ -169,7 +169,7 @@ sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 ### Create a validator
 ```python
 quicksilverd tx staking create-validator \
---chain-id rhye-1 \
+--chain-id rhye-2 \
 --commission-rate=0.1 \
 --commission-max-rate=0.2 \
 --commission-max-change-rate=0.1 \
@@ -186,13 +186,13 @@ quicksilverd tx staking create-validator \
 
 ## Delete node
 ```python
-sudo systemctl stop quicksilverd && \
-sudo systemctl disable quicksilverd && \
-rm /etc/systemd/system/quicksilverd.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf quicksilver && \
-rm -rf .quicksilverd && \
+sudo systemctl stop quicksilverd
+sudo systemctl disable quicksilverd
+rm /etc/systemd/system/quicksilverd.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf quicksilver
+rm -rf .quicksilverd
 rm -rf $(which quicksilverd)
 ```
 
