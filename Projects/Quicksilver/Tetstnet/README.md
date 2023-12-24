@@ -26,43 +26,36 @@ udo apt install curl build-essential git wget jq make gcc tmux nvme-cli -y
 ```    
 ### GO 1.19.5 (one command)
 ```python
-ver="1.19.5" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+ver="1.19.5" &&
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" &&
+sudo rm -rf /usr/local/go &&
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" &&
+rm "go$ver.linux-amd64.tar.gz" &&
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &&
+source $HOME/.bash_profile &&
 go version
 ```
-### Node installation 18.08.23
+### Node installation 24.12.23
 ```python
 cd $HOME
-wget -O quicksilverd https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.4-rc.3/quicksilverd-v1.4.4-rc.3-amd64
+wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.4.5-rc1/quicksilverd-v1.4.5-rc1-amd64
 chmod +x quicksilverd
 mv $HOME/quicksilverd $HOME/go/bin/quicksilverd
 ```
 
-*******🟢UPDATE🟢******* 18.08.23
+*******🟢UPDATE🟢******* 00.00.24
 ```python
-cd $HOME
-wget -O quicksilverd https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.4-rc.3/quicksilverd-v1.4.4-rc.3-amd64
-chmod +x quicksilverd
-mv $HOME/quicksilverd $HOME/go/bin/quicksilverd
-quicksilverd version --long | grep -e commit -e version
-#v1.4.4-rc.3
-#4b2d4f285f7bdc209ae6e25d01c7eaed97d4c5f9
-sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
+SOOON
 ```
 
 `quicksilverd version --long`
-+ version: v1.4.4-rc.3
-+ commit: 4b2d4f285f7bdc209ae6e25d01c7eaed97d4c5f9
++ version: v1.4.5-rc1
++ commit: 1dcfda999e5d14c65db18dba26fe5fc79457b48a
 
 ### Initialize the node
 ```python
-quicksilverd init STAVRguide --chain-id rhye-1
-quicksilverd config chain-id rhye-1
+quicksilverd init STAVRguide --chain-id rhye-2
+quicksilverd config chain-id rhye-2
 ```
 
 ### Create wallet or restore
@@ -73,17 +66,17 @@ quicksilverd keys add <name_wallet> --recover
 ```
 ### Download Genesis
 ```python
-wget -O ~/.quicksilverd/config/genesis.json https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Quicksilver/Tetstnet/genesis.json
+wget -O ~/.quicksilverd/config/genesis.json https://raw.githubusercontent.com/ingenuity-build/testnets/main/rhye-2/genesis.json
 ```
 `sha256sum ~/.quicksilverd/config/genesis.json`
- + 403e5419434f53f06d089094f7d3e24114bd58a756002513d6339082762223ce
+ + d37084260efd67a3e57f5ffd87399cfcd445590408cefa67eb8bd42719c20c5e
 
 ### Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0001uqck\"/;" ~/.quicksilverd/config/app.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.quicksilverd/config/config.toml
-peers="8e14e58b054248a04be96e4a40d6359e93b636ac@65.108.65.94:26656,5a3c424c19d9ab694190a7805a2b1a146460d752@65.108.2.27:26656,e6bf55bc9f08958b7518bea455423375db78d1ef@65.108.13.176:26656"
+peers="e6bf55bc9f08958b7518bea455423375db78d1ef@65.108.13.176:26656,8e14e58b054248a04be96e4a40d6359e93b636ac@65.108.65.94:26656,5a3c424c19d9ab694190a7805a2b1a146460d752@65.108.2.27:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.quicksilverd/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.quicksilverd/config/config.toml
@@ -94,18 +87,18 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.quick
 
 ### Setting up pruning with one command (optional)
 ```python
-pruning="custom" && \
-pruning_keep_recent="100" && \
-pruning_keep_every="0" && \
-pruning_interval="50" && \
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.quicksilverd/config/app.toml && \
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.quicksilverd/config/app.toml && \
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.quicksilverd/config/app.toml && \
+pruning="custom" &&
+pruning_keep_recent="100" &&
+pruning_keep_every="0" &&
+pruning_interval="50" &&
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.quicksilverd/config/app.toml &&
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.quicksilverd/config/app.toml &&
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.quicksilverd/config/app.toml &&
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.quicksilverd/config/app.toml
 ```
 ### Disable indexing (optional)
 ```python
-indexer="null" && \
+indexer="null" &&
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.quicksilverd/config/config.toml
 ```
 
