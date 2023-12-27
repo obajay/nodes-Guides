@@ -35,10 +35,10 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile &&
 go version
 ```
-### Node installation 24.12.23
+### Node installation 27.12.23
 ```python
 cd $HOME
-wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.4.5-rc1/quicksilverd-v1.4.5-rc1-amd64
+wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.4.5-rc2/quicksilverd-v1.4.5-rc2-amd64
 chmod +x quicksilverd
 mv $HOME/quicksilverd $HOME/go/bin/quicksilverd
 ```
@@ -49,8 +49,8 @@ SOOON
 ```
 
 `quicksilverd version --long`
-+ version: v1.4.5-rc1
-+ commit: 1dcfda999e5d14c65db18dba26fe5fc79457b48a
++ version: v1.4.5-rc2
++ commit: 082475fbe4f5f0bc6201e5b4920086ae561680e6
 
 ### Initialize the node
 ```python
