@@ -41,22 +41,31 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 20.12.23
+# Build 28.12.23
 ```python
 cd $HOME
-wget https://storage.googleapis.com/pryzm-resources/pryzmd-0.9.0-linux-amd64.tar.gz
-tar -xzvf pryzmd-0.9.0-linux-amd64.tar.gz
-mv pryzmd /root/go/bin
+wget https://storage.googleapis.com/pryzm-zone/core/0.10.0/pryzmd-0.10.0-linux-amd64.tar.gz
+tar -xzvf pryzmd-0.10.0-linux-amd64.tar.gz && chmod +x pryzmd
+rm -rf pryzmd-0.10.0-linux-amd64.tar.gz
+mv pryzmd /root/go/bin/
 
 ```
-*******🟢UPDATE🟢******* 00.00.23
+*******🟢UPDATE🟢******* 28.12.23
 ```python
-SOOON
+cd $HOME
+wget https://storage.googleapis.com/pryzm-zone/core/0.10.0/pryzmd-0.10.0-linux-amd64.tar.gz
+tar -xzvf pryzmd-0.10.0-linux-amd64.tar.gz && chmod +x pryzmd
+rm -rf pryzmd-0.10.0-linux-amd64.tar.gz
+mv pryzmd $(which pryzmd)
+pryzmd version --long | grep -e version -e commit
+#commit: 52f5366c4813bdd6299660c5d1645c70f2bbc4f5
+#version: 0.10.0
+sudo systemctl restart pryzmd && sudo journalctl -u pryzmd -f -o cat
 ```
 
 `pryzmd version --long | grep -e version -e commit`
-- version: 0.9.0
-- commit: 0f131895c2165f9421c422b472541fc73285e3cf
+- version: 0.10.0
+- commit: 52f5366c4813bdd6299660c5d1645c70f2bbc4f5
 
 ```python
 pryzmd init STAVR_guide --chain-id indigo-1
