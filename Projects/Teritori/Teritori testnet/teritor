@@ -32,7 +32,7 @@ echo "_|-_|-_|-_|-_|-_|-_|"
 read Validator_Name
 echo "_|-_|-_|-_|-_|-_|-_|"
 echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
-echo export CHAIN_ID="teritori-testnet-v3" >> $HOME/.bash_profile
+echo export CHAIN_ID="teritori-test-4" >> $HOME/.bash_profile
 source ~/.bash_profile
 
 echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
@@ -56,14 +56,13 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain
-git checkout v1.4.0
+git checkout v1.4.1
 make install
 
 cd $HOME
 teritorid init $Validator_Name --chain-id $CHAIN_ID
 
-wget https://github.com/TERITORI/teritori-chain/raw/mainnet/testnet/teritori-testnet-v3/genesis.json
-mv genesis.json .teritorid/config/
+wget -O $HOME/.teritorid/config/genesis.json "https://raw.githubusercontent.com/TERITORI/teritori-chain/main/testnet/teritori-test-4/genesis.json"
 wget -O $HOME/.teritorid/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Teritori/Teritori%20testnet/addrbook.json"
 
 echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
@@ -72,15 +71,12 @@ sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0utori\"/;" ~
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.teritorid/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.teritorid/config/config.toml
-
-peers="ccc59b8a55f9c6e7a24bd693e2796f781ea3a670@65.108.227.133:27656,5ae1012f9b0f4672d8152de903d115dd2f1a3ee3@65.21.170.3:27656,22101a61b235e607d5d0ad51b698d7511ebf87e2@65.108.43.227:26796,15dd94f68c450da2c3b7c60b6364e3dce6f0cbf2@185.193.66.68:26641"
+peers="0d3cebbae24d9362334b0ed6b1910d6ec106ac4f@51.159.14.164:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.teritorid/config/config.toml
-
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.teritorid/config/config.toml
-
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.teritorid/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.teritorid/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.teritorid/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.teritorid/config/config.toml
 
 # pruning and indexer
 pruning="custom" && \
@@ -91,9 +87,6 @@ sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.teritorid/config/app.
 sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.teritorid/config/app.toml && \
 sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.teritorid/config/app.toml && \
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.teritorid/config/app.toml
-indexer="null" && \
-sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.teritorid/config/config.toml
-
 
 sudo tee /etc/systemd/system/teritorid.service > /dev/null <<EOF
 [Unit]
@@ -159,7 +152,7 @@ cd $HOME
 rm -rf teritori-chain
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain
-git checkout v1.4.0
+git checkout v1.4.1
 make install
 sudo systemctl restart teritorid && sudo journalctl -u teritorid -f -o cat
 
@@ -176,13 +169,13 @@ echo -e "      \e[1m\e[32m SOOOOON\e[0m"
 break
 ;;
 "Delete Node")
-sudo systemctl stop teritorid && \
-sudo systemctl disable teritorid && \
-rm /etc/systemd/system/teritorid.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf .teritorid && \
-rm -rf teritori-chain && \
+sudo systemctl stop teritorid
+sudo systemctl disable teritorid
+rm /etc/systemd/system/teritorid.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf .teritorid
+rm -rf teritori-chain
 rm -rf $(which teritorid)
 
 break
