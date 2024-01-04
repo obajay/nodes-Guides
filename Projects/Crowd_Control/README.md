@@ -35,10 +35,10 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 23.12.23
+# Build 04.01.24
 ```python
 git clone https://github.com/DecentralCardGame/Cardchain
-wget -O Cardchaind https://github.com/DecentralCardGame/Cardchain/releases/download/v0.12.0/Cardchaind
+wget -O Cardchaind https://github.com/DecentralCardGame/Cardchain/releases/download/v0.13.0/Cardchaind
 chmod +x Cardchaind
 mv $HOME/Cardchaind /usr/local/bin
 ```
@@ -48,8 +48,8 @@ mv $HOME/Cardchaind /usr/local/bin
     
 # Init node and download Genesis
 ```python
-Cardchaind init STAVR_guide --chain-id cardtestnet-7
-Cardchaind config chain-id cardtestnet-7
+Cardchaind init STAVR_guide --chain-id cardtestnet-8
+Cardchaind config chain-id cardtestnet-8
 wget http://45.136.28.158:3000/genesis.json -O $HOME/.Cardchain/config/genesis.json
 ```
 ## Create/recover wallet
@@ -69,7 +69,7 @@ wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ubpf\"/;" ~/.Cardchain/config/app.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.Cardchain/config/config.toml
-peers="6a41c6269637733220857a021c8454fa2204987e@202.61.225.157:26656"
+peers="58bb9f1dcde0408fe4c3e7f8c6ccb7f8e410ca9c@202.61.225.157:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.Cardchain/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.Cardchain/config/config.toml
