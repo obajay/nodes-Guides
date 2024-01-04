@@ -38,16 +38,12 @@ go version
 ```python
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain
-git checkout v1.4.0
+git checkout v1.4.1
 make install
 ```
-*******🟢UPDATE🟢******* 31.05.23
+*******🟢UPDATE🟢******* 00.00.24
 ```python
-cd $HOME/teritori-chain
-git fetch --all
-git checkout v1.4.0
-make install
-sudo systemctl restart teritorid && sudo journalctl -u teritorid -f -o cat
+SOOOOOOOOOOOOOON
 ```
 `teritorid version --long`
 - version: v1.4.0
@@ -55,8 +51,8 @@ sudo systemctl restart teritorid && sudo journalctl -u teritorid -f -o cat
 
 
 ```python
-teritorid init STAVRguide --chain-id teritori-testnet-v3
-teritorid config chain-id teritori-testnet-v3
+teritorid init STAVR_guide --chain-id teritori-test-4
+teritorid config chain-id teritori-test-4
 ```
 
 ## Create/recover wallet
@@ -70,20 +66,18 @@ teritorid keys add <walletname> --recover
 # Genesis
 ```python
 cd $HOME
-wget https://github.com/TERITORI/teritori-chain/raw/mainnet/testnet/teritori-testnet-v3/genesis.json
-mv genesis.json .teritorid/config/
+wget -O $HOME/.teritorid/config/genesis.json "https://raw.githubusercontent.com/TERITORI/teritori-chain/main/testnet/teritori-test-4/genesis.json"
 ```
 
 ## Seeds,peers and gas price
-```
-    sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0utori\"/;" ~/.teritorid/config/app.toml
-    external_address=$(wget -qO- eth0.me)
-    sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.teritorid/config/config.toml
-
-    peers="ccc59b8a55f9c6e7a24bd693e2796f781ea3a670@65.108.227.133:27656,5ae1012f9b0f4672d8152de903d115dd2f1a3ee3@65.21.170.3:27656,22101a61b235e607d5d0ad51b698d7511ebf87e2@65.108.43.227:26796,15dd94f68c450da2c3b7c60b6364e3dce6f0cbf2@185.193.66.68:26641"
-    sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.teritorid/config/config.toml
-    seeds=""
-    sed -i.bak -e "s/^seeds *=.*/seeds = \"$seeds\"/; s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.teritorid/config/config.toml
+```python
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0utori\"/;" ~/.teritorid/config/app.toml
+external_address=$(wget -qO- eth0.me)
+sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.teritorid/config/config.toml
+peers="0d3cebbae24d9362334b0ed6b1910d6ec106ac4f@51.159.14.164:26656"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.teritorid/config/config.toml
+seeds=""
+sed -i.bak -e "s/^seeds *=.*/seeds = \"$seeds\"/; s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.teritorid/config/config.toml
 ```
 ## Download addrbook
 ```python
@@ -91,21 +85,21 @@ wget -O $HOME/.teritorid/config/addrbook.json "https://raw.githubusercontent.com
 ```
 
 ## Pruning (optional)
-
-    pruning="custom" && \
-    pruning_keep_recent="100" && \
-    pruning_keep_every="0" && \
-    pruning_interval="10" && \
-    sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.teritorid/config/app.toml && \
-    sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.teritorid/config/app.toml && \
-    sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.teritorid/config/app.toml && \
-    sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.teritorid/config/app.toml
-
+```python
+pruning="custom" &&
+pruning_keep_recent="100" &&
+pruning_keep_every="0" &&
+pruning_interval="10" &&
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.teritorid/config/app.toml &&
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.teritorid/config/app.toml &&
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.teritorid/config/app.toml &&
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.teritorid/config/app.toml
+```
 ## Indexer (optional)
-
-    indexer="null" && \
-    sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.teritorid/config/config.toml
-
+```python
+indexer="null" &&
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.teritorid/config/config.toml
+```
 ## StateSync
 ```python
 peers="https://rpc-t.teritori.nodestake.top:443"
@@ -126,27 +120,27 @@ teritorid tendermint unsafe-reset-all --home $HOME/.teritorid
 sudo systemctl restart teritorid && journalctl -u teritorid -f -o cat
 ```
 # Create a service file
+```python
+sudo tee /etc/systemd/system/teritorid.service > /dev/null <<EOF
+[Unit]
+Description=Teritorid
+After=network-online.target
 
-    sudo tee /etc/systemd/system/teritorid.service > /dev/null <<EOF
-    [Unit]
-    Description=Teritorid
-    After=network-online.target
+[Service]
+User=$USER
+ExecStart=$(which teritorid) start
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=65535
 
-    [Service]
-    User=$USER
-    ExecStart=$(which teritorid) start
-    Restart=on-failure
-    RestartSec=3
-    LimitNOFILE=65535
-
-    [Install]
-    WantedBy=multi-user.target
-    EOF
-
+[Install]
+WantedBy=multi-user.target
+EOF
+```
 
     
 # Start
-```bash
+```python
 sudo systemctl daemon-reload
 sudo systemctl enable teritorid
 sudo systemctl restart teritorid && sudo journalctl -u teritorid -f -o cat
@@ -155,20 +149,21 @@ sudo systemctl restart teritorid && sudo journalctl -u teritorid -f -o cat
 [DISCORD FAUCET](https://discord.gg/zzJEmR8nhr)
 
 ## Create validator
-    teritorid tx staking create-validator \
-    --amount=1000000utori \
-    --pubkey=$(teritorid tendermint show-validator) \
-    --moniker="STAVRguide" \
-    --identity="" \
-    --details="" \
-    --website="" \
-    --chain-id="teritori-testnet-v3" \
-    --commission-rate="0.10" \
-    --commission-max-rate="0.20" \
-    --commission-max-change-rate="0.1" \
-    --min-self-delegation="1" \
-    --fees 500utori \
-    --from=<walletname> -y
+```python
+teritorid tx staking create-validator \
+--amount=1000000utori \
+--pubkey=$(teritorid tendermint show-validator) \
+--moniker="STAVR_guide" \
+--identity="" \
+--details="" \
+--website="" \
+--chain-id="teritori-test-4" \
+--commission-rate="0.10" \
+--commission-max-rate="0.20" \
+--commission-max-change-rate="0.1" \
+--min-self-delegation="1" \
+--fees 500utori \
+--from=<walletname> -y
 
 [🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Teritori)
 =
