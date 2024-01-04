@@ -43,8 +43,8 @@ chmod +x Cardchaind
 mv $HOME/Cardchaind /usr/local/bin
 ```
 `Cardchaind version --long | grep -e commit -e version`
-+ version: 0.12.0
-+ commit: 1d5cca45533f9044d2cbcde843b23a52df7283ad
++ version: 0.13.0
++ commit: c42ac40f7d96cda491bee605f6678236313219fd
     
 # Init node and download Genesis
 ```python
