@@ -118,7 +118,7 @@ wget -O $HOME/.quicksilverd/config/addrbook.json "https://raw.githubusercontent.
 ```
 # StateSync
 ```python
-SNAP_RPC=http://quick.rpc.m.stavr.tech:21027
+SNAP_RPC=https://quick.rpc.m.stavr.tech:443
 peers="f2846ba84070d3fdc21c09ef44bac4eeed2f8722@quick.peers.stavr.tech:21026"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.quicksilverd/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
