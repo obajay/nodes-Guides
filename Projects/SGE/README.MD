@@ -108,7 +108,7 @@ wget -O $HOME/.sge/config/addrbook.json "https://raw.githubusercontent.com/obaja
 ```
 ## StateSync Mainnet
 ```python
-SNAP_RPC=sge.rpc.m.stavr.tech:1157
+SNAP_RPC=https://sge.rpc.m.stavr.tech:443
 peers="58a458a7136da7e8cc55357999aa89f5fd262588@sge.peers.stavr.tech:1156"
 sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.sge/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
