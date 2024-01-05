@@ -134,7 +134,7 @@ echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE
 break
 ;;
 "Synchronization via StateSync")
-RPC=http://band.rpc.m.stavr.tech:11067
+RPC=https://band.rpc.m.stavr.tech:443
 peers=0bfd5d7355ebf38e35af619ae0cab70aa21675a5@band-m.peer.stavr.tech:11026
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.band/config/config.toml
 LATEST_HEIGHT=$(curl -s $RPC/block | jq -r .result.block.header.height); \
