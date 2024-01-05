@@ -34,11 +34,11 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-## Build 31.05.23
+## Build 05.01.24
 ```python
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain
-git checkout v1.4.1
+git checkout v1.4.2
 make install
 ```
 *******🟢UPDATE🟢******* 00.00.24
@@ -46,13 +46,12 @@ make install
 SOOOOOOOOOOOOOON
 ```
 `teritorid version --long`
-- version: v1.4.0
-- commit: 01f60ec7fb9cb9d77dbe7fee1a9d69ff4fb0d2b9
-
+- version: v1.4.2
+- commit: b72093d3252f6e58595dd4e4be1353573e997cad
 
 ```python
-teritorid init STAVR_guide --chain-id teritori-test-4
-teritorid config chain-id teritori-test-4
+teritorid init STAVR_guide --chain-id teritori-test-5
+teritorid config chain-id teritori-test-5
 ```
 
 ## Create/recover wallet
@@ -66,7 +65,7 @@ teritorid keys add <walletname> --recover
 # Genesis
 ```python
 cd $HOME
-wget -O $HOME/.teritorid/config/genesis.json "https://raw.githubusercontent.com/TERITORI/teritori-chain/main/testnet/teritori-test-4/genesis.json"
+wget -O ~/.teritorid/config/genesis.json https://raw.githubusercontent.com/TERITORI/teritori-chain/main/testnet/teritori-test-5/genesis.json
 ```
 
 ## Seeds,peers and gas price
@@ -157,7 +156,7 @@ teritorid tx staking create-validator \
 --identity="" \
 --details="" \
 --website="" \
---chain-id="teritori-test-4" \
+--chain-id="teritori-test-5" \
 --commission-rate="0.10" \
 --commission-max-rate="0.20" \
 --commission-max-change-rate="0.1" \
