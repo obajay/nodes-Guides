@@ -134,7 +134,7 @@ EOF
 ```
 # StateSync Band Testnet
 ```python
-RPC=http://band.rpc.t.stavr.tech:14057
+RPC=https://band.rpc.t.stavr.tech:443
 peers=7f03c7f4a41300348afce4b51774ab3fab8ae3c2@band-t.peer.stavr.tech:11016
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.band/config/config.toml
 LATEST_HEIGHT=$(curl -s $RPC/block | jq -r .result.block.header.height); \
