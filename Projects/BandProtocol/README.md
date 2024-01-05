@@ -154,7 +154,7 @@ sudo systemctl stop bandd && bandd tendermint unsafe-reset-all --keep-addr-book
 curl -o - -L http://band.files.stavr.tech:1103/files-band.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.band --strip-components 2
 sudo systemctl restart bandd && journalctl -u bandd -f -o cat
 ```
-# SnapShot Mainnet (~12GB) updated every 12 hours  
+# SnapShot Mainnet (~12GB) updated every 14 hours  
 ```python
 cd $HOME
 apt install lz4
