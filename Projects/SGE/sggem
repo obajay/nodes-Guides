@@ -133,7 +133,7 @@ echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE
 break
 ;;
 "Synchronization via StateSync")
-SNAP_RPC=sge.rpc.m.stavr.tech:1157
+SNAP_RPC=https://sge.rpc.m.stavr.tech:443
 peers="58a458a7136da7e8cc55357999aa89f5fd262588@sge.peers.stavr.tech:1156"
 sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.sge/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
