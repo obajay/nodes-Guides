@@ -41,22 +41,29 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 21.12.23
+# Build 07.01.24
 ```python
 cd $HOME
 git clone https://github.com/DoraFactory/doravota.git
 cd doravota
-git checkout 0.2.0
+git checkout 0.3.0
 make install
 
 ```
-*******🟢UPDATE🟢******* 00.00.23
+*******🟢UPDATE🟢******* 07.01.24
 ```python
-SOOON
+cd $HOME/doravota
+git pull
+git checkout 0.3.0
+make install
+dorad version --long | grep -e commit -e version
+#commit: 
+#version: 0.3.0
+systemctl restart dorad && journalctl -fu dorad -o cat
 ```
 
 `dorad version --long | grep -e version -e commit`
-- version: 0.2.0
+- version: 0.3.0
 - commit: 
 
 ```python
