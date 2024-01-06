@@ -32,7 +32,7 @@ rm -rf namada-${NAMADA_TAG}-Linux-x86_64 namada.tar.gz
 ```
 
 `namada --version`
-- Namada v0.28.0
+- Namada v0.28.1
 
 # 💻 Protocol Buffers
 ```python
