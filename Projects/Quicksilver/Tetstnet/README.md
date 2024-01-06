@@ -35,30 +35,30 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile &&
 go version
 ```
-### Node installation 04.01.24
+### Node installation 06.01.24
 ```python
 cd $HOME
-wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.4.5-rc5/quicksilverd-v1.4.5-rc5-amd64
+wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.4.5-rc7/quicksilverd-v1.4.5-rc7-amd64
 chmod +x quicksilverd
 mv $HOME/quicksilverd $HOME/go/bin/quicksilverd
 ```
 
-*******🟢UPDATE🟢******* 04.01.24
+*******🟢UPDATE🟢******* 06.01.24
 ```python
 cd $HOME
-wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.4.5-rc5/quicksilverd-v1.4.5-rc5-amd64
+wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.4.5-rc7/quicksilverd-v1.4.5-rc7-amd64
 chmod +x quicksilverd
 mv $HOME/quicksilverd $HOME/go/bin/
 quicksilverd version --long | grep -e commit -e version
-#v1.4.5-rc5
-#26da5f63960aa6046c1173d33f06910328214003
+#v1.4.5-rc7
+#0be04a2f05b294a4c121a867c7c4f1bce34b5118
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 
 ```
 
 `quicksilverd version --long`
-+ version: v1.4.5-rc5
-+ commit: 26da5f63960aa6046c1173d33f06910328214003
++ version: v1.4.5-rc7
++ commit: 0be04a2f05b294a4c121a867c7c4f1bce34b5118
 
 ### Initialize the node
 ```python
