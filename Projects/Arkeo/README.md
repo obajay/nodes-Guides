@@ -31,19 +31,20 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bs
 
 ## GO 1.19
 ```python
-ver="1.19" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+ver="1.19" &&
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" &&
+sudo rm -rf /usr/local/go &&
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" &&
+rm "go$ver.linux-amd64.tar.gz" &&
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &&
+source $HOME/.bash_profile &&
 go version
 ```
 
 # Build 06.09.23
 ```python
 cd $HOME
+mkdir -p go/bin/
 git clone https://github.com/arkeonetwork/arkeo && cd arkeo
 wget https://share101.utsa.tech/arkeo/arkeod
 chmod +x arkeod
