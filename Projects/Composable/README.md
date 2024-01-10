@@ -48,7 +48,7 @@ cd composable-centauri
 git checkout v6.3.6
 make install
 ```
-*******🟢UPDATE🟢******* 06.10.23
+*******🟢UPDATE🟢******* 10.01.24
 ```python
 cd $HOME/composable-centauri
 git pull
