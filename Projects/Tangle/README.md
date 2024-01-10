@@ -87,7 +87,7 @@ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method":
 🟢 save the located keys in `$HOME/.tangle/node-key` and `$HOME/.tangle/data/validator/YOURNAME/chains/tangle-testnet/keystore/`
 
 ## Creating a validator
-- Go to the [website](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftestnet-rpc.tangle.tools#/staking/actions) and first create a wallet
+- Go to the [website](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftestnet-rpc.tangle.tools#/accounts) and first create a wallet
 - We create a validator. To do this, select `Network - Staking - Accounts - Validator`
 
 `logs`
