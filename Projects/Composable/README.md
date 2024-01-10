@@ -30,40 +30,40 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bs
 
 ## GO 1.19
 ```python
-ver="1.19" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+ver="1.19" &&
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" &&
+sudo rm -rf /usr/local/go &&
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" &&
+rm "go$ver.linux-amd64.tar.gz" &&
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &&
+source $HOME/.bash_profile &&
 go version
 ```
 
-# Build 06.10.23
+# Build 10.01.24
 ```python
 cd $HOME
 git clone https://github.com/notional-labs/composable-centauri
 cd composable-centauri
-git checkout v6.3.1
+git checkout v6.3.6
 make install
 ```
 *******🟢UPDATE🟢******* 06.10.23
 ```python
 cd $HOME/composable-centauri
 git pull
-git checkout v6.3.1
+git checkout v6.3.6
 make install
 centaurid version --long | grep -e commit -e version
-#version: v6.3.0
-#commit: e3de1f4d8a5330bc4273b0459690cb102e0760e4
+#version: v6.3.6
+#commit: 9f766b20c8f8c4803ace3ef3436d0a533523a18f
 sudo systemctl restart centaurid && sudo journalctl -u centaurid -f -o cat
 
 ```
 
 `centaurid version --long`
-- version: v6.3.1
-- commit: e3de1f4d8a5330bc4273b0459690cb102e0760e4
+- version: v6.3.6
+- commit: 9f766b20c8f8c4803ace3ef3436d0a533523a18f
 
 ```python
 centaurid init STAVRguide --chain-id centauri-1
