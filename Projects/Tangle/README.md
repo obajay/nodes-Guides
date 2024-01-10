@@ -8,7 +8,7 @@
 =
 [EXPLORER](https://explorer.tangle.tools/?ref=blog.webb.tools) \
 [TELEMETRY](https://telemetry.polkadot.io/#list/0x3d22af97d919611e03bbcbda96f65988758865423e89b2d99547a6bb61452db3) \
-[CHAIN](https://polkadot.js.org/apps/?rpc=wss%253A%252F%252Frpc.tangle.tools&ref=blog.webb.tools#/staking)
+[CHAIN](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftestnet-rpc.tangle.tools#/staking)
 =
 
 - **Minimum hardware requirements**:
