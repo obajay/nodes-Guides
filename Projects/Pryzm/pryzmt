@@ -54,10 +54,9 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-wget https://storage.googleapis.com/pryzm-zone/core/0.10.0/pryzmd-0.10.0-linux-amd64.tar.gz
-tar -xzvf pryzmd-0.10.0-linux-amd64.tar.gz && chmod +x pryzmd
-rm -rf pryzmd-0.10.0-linux-amd64.tar.gz
-mv pryzmd /root/go/bin
+wget -O pryzmd https://storage.googleapis.com/pryzm-zone/core/0.11.1/pryzmd-0.11.1-linux-amd64
+chmod +x $HOME/pryzmd
+mv pryzmd /root/go/bin/
 
 pryzmd init $Validator_Name --chain-id $CHAIN_ID
 
@@ -136,9 +135,8 @@ break
 ;;
 "UPDATE")
 cd $HOME
-wget https://storage.googleapis.com/pryzm-zone/core/0.10.0/pryzmd-0.10.0-linux-amd64.tar.gz
-tar -xzvf pryzmd-0.10.0-linux-amd64.tar.gz && chmod +x pryzmd
-rm -rf pryzmd-0.10.0-linux-amd64.tar.gz
+wget -O pryzmd https://storage.googleapis.com/pryzm-zone/core/0.11.1/pryzmd-0.11.1-linux-amd64
+chmod +x $HOME/pryzmd
 mv pryzmd $(which pryzmd)
 sudo systemctl restart pryzmd && sudo journalctl -u pryzmd -f -o cat
 
