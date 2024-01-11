@@ -81,7 +81,7 @@ curl -Ls https://raw.githubusercontent.com/notional-labs/composable-networks/mai
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0ppica\"/;" ~/.banksy/config/app.toml
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.1ppica\"/;" ~/.banksy/config/app.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.banksy/config/config.toml
 peers=""
@@ -173,7 +173,7 @@ centaurid tx staking create-validator \
 --from <wallet> \
 --moniker="STAVR_guide" \
 --chain-id banksy-testnet-5 \
---gas 350000 \
+--fees 2000000000ppica \
 --identity="" \
 --website="" \
 --details="" -y
