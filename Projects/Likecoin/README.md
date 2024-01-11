@@ -87,7 +87,7 @@ wget -O $HOME/.liked/config/genesis.json "https://raw.githubusercontent.com/obaj
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"1nanolike\"/;" ~/.liked/config/app.toml
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"10000nanolike\"/;" ~/.liked/config/app.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.liked/config/config.toml
 peers="d8eaf867e1ec1d1c3bc872a93bf0f060701d10be@65.109.28.177:29696"
