@@ -143,9 +143,6 @@ cd $HOME/terp-core
 git fetch --all
 git checkout v4.1.1
 make install
-terpd version --long | grep -e commit -e version
-#commit: 786a50ce8440abc3dbae17e79c1b3a74e523f6c0
-#version: 4.1.1
 sudo systemctl restart terpd && journalctl -u terpd -f -o cat
 
 break
