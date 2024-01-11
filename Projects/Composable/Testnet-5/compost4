@@ -32,7 +32,7 @@ echo "_|-_|-_|-_|-_|-_|-_|"
 read Validator_Name
 echo "_|-_|-_|-_|-_|-_|-_|"
 echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
-echo export CHAIN_ID="banksy-testnet-4" >> $HOME/.bash_profile
+echo export CHAIN_ID="banksy-testnet-5" >> $HOME/.bash_profile
 source ~/.bash_profile
 
 echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
@@ -56,15 +56,15 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/notional-labs/composable-centauri
 cd composable-centauri
-git checkout v6.2.3-testnet
+git checkout v6.3.6
 make build
 cd bin
-mv layerd $HOME/go/bin/layerd
+mv centaurid $HOME/go/bin/centaurid
 
-layerd init $Validator_Name --chain-id $CHAIN_ID
+centaurid init $Validator_Name --chain-id $CHAIN_ID
 
-wget https://raw.githubusercontent.com/notional-labs/composable-networks/main/banksy-testnet-4/genesis.json -O $HOME/.banksy/config/genesis.json
-wget -O $HOME/.banksy/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Composable/Testnet-4/addrbook.json"
+curl -Ls https://raw.githubusercontent.com/notional-labs/composable-networks/main/banksy-testnet-5/genesis.json > ~/.banksy/config/genesis.json
+wget -O $HOME/.banksy/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Composable/Testnet-5/addrbook.json"
 
 
 echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
@@ -91,14 +91,14 @@ sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.banksy/config/app.toml
 
 
-tee /etc/systemd/system/layerd.service > /dev/null <<EOF
+tee /etc/systemd/system/centaurid.service > /dev/null <<EOF
 [Unit]
-Description=layerd
+Description=centaurid
 After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which layerd) start
+ExecStart=$(which centaurid) start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
@@ -110,12 +110,12 @@ EOF
 
 # start service
 sudo systemctl daemon-reload
-sudo systemctl enable layerd
-sudo systemctl restart layerd
+sudo systemctl enable centaurid
+sudo systemctl restart centaurid
 
 echo '=============== SETUP FINISHED ==================='
 echo -e 'Congratulations:        \e[1m\e[32mSUCCESSFUL NODE INSTALLATION\e[0m'
-echo -e 'To check logs:        \e[1m\e[33mjournalctl -u layerd -f -o cat\e[0m'
+echo -e 'To check logs:        \e[1m\e[33mjournalctl -u centaurid -f -o cat\e[0m'
 echo -e "To check sync status: \e[1m\e[35mcurl -s localhost:26657/status\e[0m"
 
 break
@@ -127,7 +127,7 @@ echo "_|-_|-_|-_|-_|-_|-_|"
 read Wallet
 echo export Wallet=${Wallet} >> $HOME/.bash_profile
 source ~/.bash_profile
-layerd keys add $Wallet
+centaurid keys add $Wallet
 echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE!!!!!!!!!SAVE!!!!!!!!!!!!!!!!\e[0m'"
 
 break
@@ -140,12 +140,12 @@ break
 ;;
 "UPDATE")
 echo -e "      \e[1m\e[32m SOOOON\e[0m"
-layerd version
+centaurid version
 
 break
 ;;
 "Check node logs")
-sudo journalctl -u layerd -f -o cat
+sudo journalctl -u centaurid -f -o cat
 
 break
 ;;
@@ -155,14 +155,14 @@ echo -e "      \e[1m\e[32m SOOOON\e[0m"
 break
 ;;
 "Delete Node")
-sudo systemctl stop layerd
-sudo systemctl disable layerd
-rm /etc/systemd/system/layerd.service
+sudo systemctl stop centaurid
+sudo systemctl disable centaurid
+rm /etc/systemd/system/centaurid.service
 sudo systemctl daemon-reload
 cd $HOME
 rm -rf composable-centauri
 rm -rf .banksy
-rm -rf $(which layerd)
+rm -rf $(which centaurid)
 
 break
 ;;
