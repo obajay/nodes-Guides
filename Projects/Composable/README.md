@@ -86,7 +86,7 @@ wget -O ~/.banksy/config/genesis.json https://raw.githubusercontent.com/notional
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0ppica\"/;" ~/.banksy/config/app.toml
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.1ppica\"/;" ~/.banksy/config/app.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.banksy/config/config.toml
 peers="4cb008db9c8ae2eb5c751006b977d6910e990c5d@65.108.71.163:2630,63559b939442512ed82d2ded46d02ab1021ea29a@95.214.55.138:53656"
@@ -166,7 +166,7 @@ centaurid tx staking create-validator \
 --from <wallet> \
 --moniker="STAVRguide" \
 --chain-id centauri-1\
---gas 350000 \
+--fees 2000000000ppica \
 --identity="" \
 --website="" \
 --details="" -y
