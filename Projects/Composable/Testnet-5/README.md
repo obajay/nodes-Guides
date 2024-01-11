@@ -1,11 +1,11 @@
-# Composable Testnet-4 guide
+# Composable Testnet-5 guide
 
 ![compo](https://github.com/obajay/nodes-Guides/assets/44331529/49502f93-cb03-461e-b788-78a391456f72)
 
 [WebSite](https://www.composable.finance/)\
 [GitHub](https://github.com/notional-labs/composable-networks)
 =
-[EXPLORER](https://explorer.stavr.tech/Composable-Testnet4/staking)
+[EXPLORER](https://explorer.stavr.tech/Composable-Testnet/staking)
 =
 
 - **Minimum hardware requirements**:
@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O compost4 https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Composable/Testnet-4/compost4 && chmod +x compost4 && ./compost4
+wget -O compost4 https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Composable/Testnet-5/compost4 && chmod +x compost4 && ./compost4
 ```
 
 # 2) Manual installation
@@ -40,51 +40,44 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 08.11.23
+# Build 11.01.24
 ```python
 cd $HOME
 git clone https://github.com/notional-labs/composable-centauri
 cd composable-centauri
-git checkout v6.2.3-testnet
+git checkout v6.3.6
 make build
 cd bin
-mv layerd $HOME/go/bin/layerd
+mv centaurid $HOME/go/bin/centaurid
 ```
 
-*******🟢UPDATE🟢******* 08.11.23
+*******🟢UPDATE🟢******* 00.00.24
 ```python
-cd $HOME/composable-centauri
-git pull
-git checkout v6.2.3-testnet
-make install
-layerd version --long | grep -e commit -e version
-#version: v6.2.3-testnet
-#commit: cfcb45d31d0b88e876117cf329588f84e0f346f1
-sudo systemctl restart layerd && sudo journalctl -u layerd -f -o cat
+SOOOON
 ```
 
-`layerd version --long`
-- version: v6.2.3-testnet
-- commit: cfcb45d31d0b88e876117cf329588f84e0f346f1
+`centaurid version --long`
+- version: vv6.3.6
+- commit: 9f766b20c8f8c4803ace3ef3436d0a533523a18f
 
 ```python
-layerd init STAVRguide --chain-id banksy-testnet-4
-layerd config chain-id banksy-testnet-4
+centaurid init STAVR_guide --chain-id banksy-testnet-5
+centaurid config chain-id banksy-testnet-5
 ```    
 
 ## Create/recover wallet
 ```python
-layerd keys add <walletname>
+centaurid keys add <walletname>
   OR
-layerd keys add <walletname> --recover
+centaurid keys add <walletname> --recover
 ```
 
 ## Download Genesis
 ```python
-wget https://raw.githubusercontent.com/notional-labs/composable-networks/main/banksy-testnet-4/genesis.json -O $HOME/.banksy/config/genesis.json
+curl -Ls https://raw.githubusercontent.com/notional-labs/composable-networks/main/banksy-testnet-5/genesis.json > ~/.banksy/config/genesis.json
 ```
 `sha256sum $HOME/.banksy/config/genesis.json`
-+ be35609a0ed8a77e6e40c4721a74103d5d5f1fb9b93a1e7dff6e415ee7fb71c2
++ 5fbcc1a2d40de313977d8861e3f775d290ec013d7a63cc73432139950f0c4ce7
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
@@ -123,14 +116,14 @@ wget -O $HOME/.banksy/config/addrbook.json "https://raw.githubusercontent.com/ob
 
 # Create a service file
 ```python
-tee /etc/systemd/system/layerd.service > /dev/null <<EOF
+tee /etc/systemd/system/centaurid.service > /dev/null <<EOF
 [Unit]
 Description=layerd
 After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which layerd) start
+ExecStart=$(which centaurid) start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
@@ -161,17 +154,16 @@ sudo systemctl restart layerd && journalctl -u layerd -f -o cat
 curl -o - -L http://composable.wasmT4.stavr.tech:3102/wasm-composable.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.banksy --strip-components 2
 ```
 
-
 ## Start
 ```python
 sudo systemctl daemon-reload
-sudo systemctl enable layerd
-sudo systemctl restart layerd && sudo journalctl -u layerd -f -o cat
+sudo systemctl enable centaurid
+sudo systemctl restart centaurid && sudo journalctl -u centaurid -f -o cat
 ```
 
 ### Create validator
 ```python
-layerd tx staking create-validator \
+centaurid tx staking create-validator \
 --commission-rate 0.1 \
 --commission-max-rate 1 \
 --commission-max-change-rate 1 \
@@ -180,7 +172,7 @@ layerd tx staking create-validator \
 --pubkey $(layerd tendermint show-validator) \
 --from <wallet> \
 --moniker="STAVR_guide" \
---chain-id banksy-testnet-4\
+--chain-id banksy-testnet-5 \
 --gas 350000 \
 --identity="" \
 --website="" \
@@ -189,27 +181,27 @@ layerd tx staking create-validator \
 
 ## Delete node
 ```python
-sudo systemctl stop layerd
-sudo systemctl disable layerd
-rm /etc/systemd/system/layerd.service
+sudo systemctl stop centaurid
+sudo systemctl disable centaurid
+rm /etc/systemd/system/centaurid.service
 sudo systemctl daemon-reload
 cd $HOME
 rm -rf composable-centauri
 rm -rf .banksy
-rm -rf $(which layerd)
+rm -rf $(which centaurid)
 ```
 #
 ### Sync Info
 ```python
-layerd status 2>&1 | jq .SyncInfo
+centaurid status 2>&1 | jq .SyncInfo
 ```
 ### NodeINfo
 ```python
-layerd status 2>&1 | jq .NodeInfo
+centaurid status 2>&1 | jq .NodeInfo
 ```
 ### Check node logs
 ```python
-sudo journalctl -u layerd -f -o cat
+sudo journalctl -u centaurid -f -o cat
 ```
 ### Check Balance
 ```python
