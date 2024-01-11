@@ -67,7 +67,7 @@ wget -O $HOME/.liked/config/addrbook.json "https://raw.githubusercontent.com/oba
 
 echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
 
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"1nanolike\"/;" ~/.liked/config/app.toml
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"10000nanolike\"/;" ~/.liked/config/app.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.liked/config/config.toml
 peers="d8eaf867e1ec1d1c3bc872a93bf0f060701d10be@65.109.28.177:29696"
