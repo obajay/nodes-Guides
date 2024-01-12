@@ -51,7 +51,7 @@ cd noisd
 git checkout v1.0.5
 make install
 ```
-`noisd version --long`
+`noisd version --long | grep -e commit -e version`
 - version: 1.0.5
 - commit: 1e7b65f785b43e9b389ff7be058d935677fdaf78
 
