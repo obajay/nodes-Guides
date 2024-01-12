@@ -42,20 +42,20 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 14.08.23 
+# Build 12.01.24 
 ```Python
 cd $HOME
 git clone https://github.com/noislabs/noisd
 cd noisd
-git checkout v1.0.4
+git checkout v1.0.5
 make install
 ```
-`noisd version`
-- version: 1.0.4
-- commit: 1d5905dbbe6fcf757026abe8110786fd9746c1ec
+`noisd version --long | grep -e commit -e version`
+- version: 1.0.5
+- commit: 1e7b65f785b43e9b389ff7be058d935677fdaf78
 
 ```Python
-noisd init STAVRguide --chain-id nois-testnet-005
+noisd init STAVR_guide --chain-id nois-testnet-005
 noisd config chain-id nois-testnet-005
 ```    
 
@@ -153,7 +153,7 @@ sudo systemctl restart noisd && sudo journalctl -u noisd -f -o cat
 noisd tx staking create-validator \
 --amount=99000000unois \
 --pubkey=$(noisd tendermint show-validator) \
---moniker=STAVRguide \
+--moniker=STAVR_guide \
 --chain-id=nois-testnet-005 \
 --commission-rate="0.10" \
 --commission-max-rate="0.20" \
@@ -172,13 +172,13 @@ noisd tx staking create-validator \
 
 ## Delete node
 ```Python
-sudo systemctl stop noisd && \
-sudo systemctl disable noisd && \
-rm /etc/systemd/system/noisd.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf full-node && \
-rm -rf .noisd && \
+sudo systemctl stop noisd
+sudo systemctl disable noisd
+rm /etc/systemd/system/noisd.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf full-node
+rm -rf .noisd
 rm -rf $(which noisd)
 ```
 
