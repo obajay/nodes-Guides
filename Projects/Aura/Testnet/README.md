@@ -1,8 +1,3 @@
-<!-- START_TABLE -->| Delegations | Token price | Result in USD |
-|-------------|---------|---------------|
-| 2031504.303 | 0.04188837 | 85096.40392826 |
-<!-- END_TABLE -->
-
 # Aura testnet guide
 
 ![Aura](https://user-images.githubusercontent.com/44331529/180595364-72b306db-c60b-463e-877c-57ee5acc126e.png)
