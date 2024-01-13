@@ -41,17 +41,17 @@ source $HOME/.bash_profile &&
 go version
 ```
 
-# Build 12.01.24
+# Build 14.01.24
 ```python
 cd $HOME
 git clone https://github.com/sge-network/sge
 cd sge
-git checkout v1.3.0
+git checkout v1.3.1
 make install
 ```
 `sged version --long`
-- version: v1.3.0
-- commit: a8eff2487ed1017e440b7a645e6b1d4807fcebb6 
+- version: v1.3.1
+- commit: 4a96c146cbd06454806e04ad826601597f15ccb3 
 
 ```python
 sged init STAVR_guide --chain-id sgenet-1
