@@ -5,6 +5,8 @@
 
 <!-- END_TABLE -->
 
+
+
 [🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Aura-Mainnet/staking/auravaloper1ucp33srru7g45ku6w207kc4hy6xd6psvmxw3xf)
 =
 
