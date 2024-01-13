@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| Delegations | Token price | Result in USD |
+|-------------|---------|---------------|
+| 2031504.303 | 0.04188837 | 85096.40392826 |
+
+<!-- END_TABLE -->
+
 
 # Aura testnet guide
 
