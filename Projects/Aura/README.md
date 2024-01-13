@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| Trusted Delegations | Token price | Result in USD |
+|-------------|---------|---------------|
+| 2031504.303 | 0.04150458 | 84316.73289155 |
+
+<!-- END_TABLE -->
+
 # Aura Mainnet guide
 
 ![Aura](https://user-images.githubusercontent.com/44331529/180595364-72b306db-c60b-463e-877c-57ee5acc126e.png)
