@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
-| Aura Delegations | Token price | Result in USD |
+| Trusted Delegations | Token price | Result in USD |
 |-------------|---------|---------------|
 | 2031504.303 | 0.04145163 | 84209.16473868 |
 
 <!-- END_TABLE -->
+
+
 
 
 
