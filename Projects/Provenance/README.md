@@ -37,32 +37,32 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 go version
 ```
-# Build 16.11.23
+# Build 13.01.24
 ```python
 export PIO_HOME=~/.provenanced
 git clone https://github.com/provenance-io/provenance.git && cd provenance
-git checkout v1.17.0
+git checkout v1.17.1
 make clean
 make install
 ```
 
-*******🟢UPDATE🟢******* 16.11.23
+*******🟢UPDATE🟢******* 13.01.24
 ```python
 export PIO_HOME=~/.provenanced
 cd provenance
 git fetch --all
-git checkout v1.17.0
+git checkout v1.17.1
 make build
 mv $HOME/provenance/build/provenanced $(which provenanced)
 provenanced version
-#version: v1.17.0
-#commit: 91b0813d
+#version: v1.17.1
+#commit: 7b165708
 sudo systemctl restart provenanced && journalctl -u provenanced -f -o cat
 ```
 
 `provenanced version`
-- version: v1.17.0
-- commit: 91b0813d
+- version: v1.17.1
+- commit: 7b165708
 
 ```python
 provenanced init STAVRguide --chain-id pio-mainnet-1
