@@ -195,11 +195,3 @@ rm -rf .aura
 rm -rf aura
 rm -rf $(which aurad)
 ```
-
-
-<!-- START_TABLE -->
-| Delegations | Token price | Result in USD |
-|-------------|---------|---------------|
-|  | 0.04188837 | 85096.40392826 |
-
-<!-- END_TABLE -->
