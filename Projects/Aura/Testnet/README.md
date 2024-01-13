@@ -12,6 +12,8 @@
 
 
 
+
+
 # Aura testnet guide
 
 ![Aura](https://user-images.githubusercontent.com/44331529/180595364-72b306db-c60b-463e-877c-57ee5acc126e.png)
