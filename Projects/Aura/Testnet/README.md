@@ -177,7 +177,7 @@ rm -rf $(which aurad)
 
 
 <!-- START_TABLE -->
-| Delegations_to_our_Validator | Token price | Result in USD |
+| Delegations | Token price | Result in USD |
 |-------------|---------|---------------|
 |  | 0.04188837 | 85096.40392826 |
 
