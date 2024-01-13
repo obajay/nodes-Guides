@@ -7,6 +7,8 @@
 
 
 
+
+
 <!-- START_TABLE -->
 | Delegations | Token price | Result in USD |
 |-------------|---------|---------------|
