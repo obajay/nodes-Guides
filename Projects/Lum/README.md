@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 10323.479 | 0.00075141 | 7.757165868 |
+
+<!-- END_TABLE -->
+
 # Lum Mainnet guide
 
 ![lum](https://github.com/obajay/nodes-Guides/assets/44331529/13f47aa0-4c25-4d2e-b016-63900a303acc)
