@@ -5,8 +5,10 @@
 
 <!-- END_TABLE -->
 
-# Shentu Mainnet guide
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Shentu-Mainnet/staking/shentuvaloper1u05xu47w2hemqrpejn3dsxg7nqywx068q34y9z)
+=
 
+# Shentu Mainnet guide
 ![shentu](https://github.com/obajay/nodes-Guides/assets/44331529/c0ac1938-4fc2-4275-b11c-5b2dc4cd1710)
 
 [WebSite](https://www.shentu.technology/)\
