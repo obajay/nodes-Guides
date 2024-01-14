@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 536189.777 | 0.02235863 | 11988.468839449 |
+| 536189.7 | 0.02235863 | 11988.468839449 |
 
 <!-- END_TABLE -->
+
+
 
 # Vidulum Mainnet guide
 
