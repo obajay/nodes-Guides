@@ -5,6 +5,9 @@
 
 <!-- END_TABLE -->
 
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Konstellation/staking/darcvaloper1krlfcngvstzxdy84v0vsfydefmju9wuhdnq03j)
+=
+
 # Konstellation Mainnet guide
 ![Konstel (1)](https://user-images.githubusercontent.com/44331529/180598012-bab9dd14-99d9-4db4-b6ca-45644f0ee50a.png)
 ![Konstel (2)](https://user-images.githubusercontent.com/44331529/180598013-4f5b4103-c7cb-4bf4-892f-ff88ff0034af.png)
