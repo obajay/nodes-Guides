@@ -38,42 +38,42 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
-## GO 1.20.3
+## GO 1.21.4
 
 ```python
-ver="1.20.3" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+ver="1.21.4"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 go version
 ```
 
-# Build 11.01.24
+# Build 16.01.24
 ```python
 cd $HOME
 git clone https://github.com/JackalLabs/canine-chain && cd canine-chain
-git checkout v3.0.5
+git checkout v3.1.1
 make install
 ```
 
-*******🟢UPDATE🟢******* 15.12.23
+*******🟢UPDATE🟢******* 16.01.24
 ```python
 cd $HOME/canine-chain
 git fetch --all
-git checkout v3.0.5
+git checkout v3.1.1
 make install
 canined version --long | head
-#version: 3.0.5
-#commit: 1b50f4988ba639bc11d3322bc5d36b3261b38d37
+#version: 3.1.1
+#commit: 95003c675864c8d75084bf80d969542e5bcef978
 systemctl restart canined && journalctl -u canined -f -o cat
 ```
 
 `canined version --long | head`
-- 1b50f4988ba639bc11d3322bc5d36b3261b38d37
-- 3.0.5
+- 95003c675864c8d75084bf80d969542e5bcef978
+- 3.1.1
 
 ```python
 canined init STAVRguide --chain-id jackal-1
