@@ -5,8 +5,10 @@
 
 <!-- END_TABLE -->
 
-# Sge Mainnet guide
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Sge-Mainnet/staking/sgevaloper105xysdmvy6xyz3ytyk62fgkwyczx2n4vzkyp6g)
+=
 
+# Sge Mainnet guide
 ![sge](https://user-images.githubusercontent.com/44331529/203624604-ec312821-11cd-404e-8647-bbbcfddcaf8a.png)
 
 [WebSite](https://sgenetwork.io/)
