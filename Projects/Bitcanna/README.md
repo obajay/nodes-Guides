@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 1658697.890 | 0.01469071 | 24367.44968040 |
+
+<!-- END_TABLE -->
+
 # Bitcanna mainnet guide
 
 
