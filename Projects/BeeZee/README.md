@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 3655012.445 | 0.0006459 | 2360.7725383 |
+
+<!-- END_TABLE -->
+
 # BeeZee Mainnet guide
 
 ![Beezee](https://user-images.githubusercontent.com/44331529/180596395-845e85eb-ed01-4bca-ae94-90bdbfd6e5be.png)
