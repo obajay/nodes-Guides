@@ -5,6 +5,10 @@
 
 <!-- END_TABLE -->
 
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/evmos/staking/evmosvaloper1v3q2kuups8gzjk2930haevwn08gl9vfld69m9g)
+=
+
+
 # Evmos Mainnet guide
 ![Evmos (1)](https://user-images.githubusercontent.com/44331529/180597649-e0fdcf22-9c86-4c7a-9133-af576fc7631d.png)
 ![Evmos (2)](https://user-images.githubusercontent.com/44331529/180597656-9b765fb8-ef2c-41cc-977f-cdc7c51a6c3a.png)
