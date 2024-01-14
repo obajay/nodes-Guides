@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 225.274 | 0.711015 | 160.173234348 |
+
+<!-- END_TABLE -->
+
 # Shentu Mainnet guide
 
 ![shentu](https://github.com/obajay/nodes-Guides/assets/44331529/c0ac1938-4fc2-4275-b11c-5b2dc4cd1710)
