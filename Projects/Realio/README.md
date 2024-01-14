@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 2969913.2 | 0.677548 | 2012258.760457145571452326 |
+
+<!-- END_TABLE -->
+
 # Realio MAINNET guide
 
 ![realio](https://user-images.githubusercontent.com/44331529/194716535-b96b71ad-b191-4c28-a112-1e71e0859e0a.png)
