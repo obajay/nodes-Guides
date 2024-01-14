@@ -5,6 +5,9 @@
 
 <!-- END_TABLE -->
 
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Source-Mainnet/staking/sourcevaloper13l78szv3mxcru9mhh2ndv58xla2arfzhv045cx)
+=
+
 # Guide Source MAINNET
 ![sour (2)](https://user-images.githubusercontent.com/44331529/183239082-09722b8d-9cc7-49a1-9d93-15ce3ab8d752.png)
 ![sour (1)](https://user-images.githubusercontent.com/44331529/183239083-d3ac3a34-0cc4-4e8b-aafc-42a5e7a3f7f5.png)
