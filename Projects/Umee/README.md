@@ -5,6 +5,9 @@
 
 <!-- END_TABLE -->
 
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Umee/staking/umeevaloper1dkjcas3j43u3v6l94jhhhnjxhlnwxt3m02p4c3)
+=
+
 # Umee mainnet guide
 ![изображение](https://user-images.githubusercontent.com/44331529/180614842-60138156-dcfd-4dce-9ff2-c89fcc5c38dc.png)
 
