@@ -5,8 +5,11 @@
 
 <!-- END_TABLE -->
 
-# GravityBridge Mainnet guide
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/GravityBridge/staking/gravityvaloper1qz50nzevfjqaftt67twfr2tzajc27uv7n5ttfv)
+=
 
+
+# GravityBridge Mainnet guide
 ![grav](https://github.com/obajay/nodes-Guides/assets/44331529/1a4043f1-c011-49e2-a778-a30bbd543635)
 
 [WebSite](https://www.gravitybridge.net/)\
