@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 102076.620 | 0.068764 | 7019.196710 |
+
+<!-- END_TABLE -->
+
 # CHEQD Mainnet guide
 
 ![ceqd](https://github.com/obajay/nodes-Guides/assets/44331529/ddd2b6c7-cf35-4c26-bf0c-fd47be08c9bd)
