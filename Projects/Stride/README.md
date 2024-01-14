@@ -5,6 +5,9 @@
 
 <!-- END_TABLE -->
 
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Stride/staking/stridevaloper1n94ndmxqf7vke553lr3ewwt4edtc4g6mdyx9qn)
+=
+
 # Guide Stride 
 ![stride](https://user-images.githubusercontent.com/44331529/180614293-57dff376-2d34-4480-803a-e8262bf37fdd.png)
 
