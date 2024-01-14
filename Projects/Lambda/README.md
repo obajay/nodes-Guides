@@ -5,9 +5,10 @@
 
 <!-- END_TABLE -->
 
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Lambda/staking/lambvaloper1pkldxj2cnrhajx0fms2gxlzhh6k2gcg5k88a83)
+=
+
 # Lambda Mainnet guide
-
-
 [<img src='https://user-images.githubusercontent.com/44331529/195008212-3489c979-2416-4df7-bedc-fc351956ea85.png'>](https://explorer.lambda.im/)
 
 [Website](https://lambda.im/)
