@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 500066.4 | 0.052974 | 26490.519591322623248921 |
+
+<!-- END_TABLE -->
+
 # PlanQ Mainnet guide
 
 
