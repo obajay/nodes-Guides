@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 9.139 | 1.71 | 15.627881 |
+
+<!-- END_TABLE -->
+
 # BAND Mainnet guide
 
 ![band](https://github.com/obajay/nodes-Guides/assets/44331529/b42abd97-f3d7-42e0-ba0f-f4ddeb44f5cb)
