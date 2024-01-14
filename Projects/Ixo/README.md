@@ -5,8 +5,10 @@
 
 <!-- END_TABLE -->
 
-# IXO Mainnet guide
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/IXO-Mainnet/staking/ixovaloper1htcnjafe94aqyxfapw2dlqz242g2n2tqp9lulh)
+=
 
+# IXO Mainnet guide
 ![ixo](https://github.com/obajay/nodes-Guides/assets/44331529/3a2a43fc-d642-4696-a0d6-7e2161d44442)
 
 [WebSite]( https://ixo.world/)\
