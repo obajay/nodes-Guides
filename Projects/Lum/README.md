@@ -5,8 +5,10 @@
 
 <!-- END_TABLE -->
 
-# Lum Mainnet guide
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/LumNetwork-Mainnet/staking/lumvaloper1rs6733nm675q3hzx85dl75t3q893tfukyz22he)
+=
 
+# Lum Mainnet guide
 ![lum](https://github.com/obajay/nodes-Guides/assets/44331529/13f47aa0-4c25-4d2e-b016-63900a303acc)
 
 [WebSite](https://lum.network/)\
