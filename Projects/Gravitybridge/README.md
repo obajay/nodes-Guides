@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 1521961.0 | 0.00570436 | 8681.81392599 |
+
+<!-- END_TABLE -->
+
 # GravityBridge Mainnet guide
 
 ![grav](https://github.com/obajay/nodes-Guides/assets/44331529/1a4043f1-c011-49e2-a778-a30bbd543635)
