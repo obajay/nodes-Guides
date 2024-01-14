@@ -5,9 +5,10 @@
 
 <!-- END_TABLE -->
 
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Planq-Mainnet/staking/plqvaloper1htduzp9w4u3nmjjdtwmctvqsx9z74xecc34vnl)
+=
+
 # PlanQ Mainnet guide
-
-
 ![planq](https://github.com/obajay/nodes-Guides/assets/44331529/6af6fccb-5aa5-4b44-bb20-6f2e722fd2f7)
 
 
