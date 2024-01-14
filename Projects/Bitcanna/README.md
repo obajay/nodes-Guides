@@ -5,8 +5,10 @@
 
 <!-- END_TABLE -->
 
-# Bitcanna mainnet guide
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Bitcanna/staking/bcnavaloper19tyve4e8nf0twd8z02a2eatrls7tuecy0ef098)
+=
 
+# Bitcanna mainnet guide
 
 <img src='https://user-images.githubusercontent.com/44331529/190848563-484255a3-60cc-4259-a6ba-e49adf48ebeb.gif' alt='Bitcanna'  width='50%'>
 
