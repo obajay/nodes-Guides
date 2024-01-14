@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 1003506.5 | 0.01922815 | 19295.57477741 |
+
+<!-- END_TABLE -->
+
 # IXO Mainnet guide
 
 ![ixo](https://github.com/obajay/nodes-Guides/assets/44331529/3a2a43fc-d642-4696-a0d6-7e2161d44442)
