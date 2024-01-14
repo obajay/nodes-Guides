@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 1135.460 | 0.0034614 | 3.930281397 |
+
+<!-- END_TABLE -->
+
 # Likecoin Mainnet guide
 
 ![liked](https://github.com/obajay/nodes-Guides/assets/44331529/93c6794e-ca4d-4c89-832b-c89fdca918f2)
