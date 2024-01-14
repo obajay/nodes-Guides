@@ -5,8 +5,10 @@
 
 <!-- END_TABLE -->
 
-# Likecoin Mainnet guide
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Likecoin-M/staking/likevaloper1pxvegy2m8u3v4c20p5p4v0wre4ggd5luumku9w)
+=
 
+# Likecoin Mainnet guide
 ![liked](https://github.com/obajay/nodes-Guides/assets/44331529/93c6794e-ca4d-4c89-832b-c89fdca918f2)
 
 [WebSite](https://about.like.co/)\
