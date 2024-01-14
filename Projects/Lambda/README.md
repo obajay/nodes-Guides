@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 1781518.9 | 0.00182756 | 3255.832804745001088109 |
+
+<!-- END_TABLE -->
+
 # Lambda Mainnet guide
 
 
