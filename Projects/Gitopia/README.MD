@@ -5,10 +5,12 @@
 
 <!-- END_TABLE -->
 
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Gitopia-M/staking/gitopiavaloper1ztlnz9v3qqmq828dp6rj3ndu7gvju63m3az0ym)
+=
+
+
 # Gitopia Mainnet guide
-
 ![gitopia](https://user-images.githubusercontent.com/44331529/200920964-90530a1f-8225-4021-923c-43712c00bb21.png)
-
 [WebSite](https://gitopia.com/home)
 =
 [EXPLORER 1](https://explorer.stavr.tech/Gitopia-M/staking) \
