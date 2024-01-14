@@ -5,6 +5,9 @@
 
 <!-- END_TABLE -->
 
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Rebus/staking/rebusvaloper18yh3xfp43tpla6hd6wzdxu5lhwfcf3f54gnhey)
+=
+
 # Guide Rebus 
 ![reb (1)](https://user-images.githubusercontent.com/44331529/182308882-ede61e24-d692-43b9-b49f-ddb283d0711e.png)
 ![reb (2)](https://user-images.githubusercontent.com/44331529/182308884-d53eae18-c1d0-4a5a-8d75-8518eb30eb73.png)
