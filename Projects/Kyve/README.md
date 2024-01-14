@@ -5,6 +5,9 @@
 
 <!-- END_TABLE -->
 
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Kyve/staking/kyvevaloper16qwtkeadppy3u9z6pu9tuy8zq02u3vecun3s0d)
+=
+
 # Kyve Mainnet guide
 ![kyve](https://user-images.githubusercontent.com/44331529/224901192-a4fd240c-be4d-497b-b61f-11d8531aa13d.png)
 
