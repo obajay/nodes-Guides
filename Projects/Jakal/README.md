@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Band-Mainnet/staking/bandvaloper1e2ksk2qw5wk4a996kj0mp9gucpr96ljnf3r358)
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Jackal/staking/jklvaloper1us3q2ytkn9zyn99gvf66u6nsn3wnq0n3kxpyvm)
 =
 
 # Jaсkal Mainnet guide
