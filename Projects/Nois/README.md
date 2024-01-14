@@ -5,8 +5,10 @@
 
 <!-- END_TABLE -->
 
-# Nois MAINNET
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Nois-Mainnet/staking/noisvaloper1enwhnv85g4n99a2kzg8gey22xu6u43l4cxj824)
+=
 
+# Nois MAINNET
 ![nnnoi](https://user-images.githubusercontent.com/44331529/191945004-1227fef0-a215-44f1-bcab-854acd66de00.png)
 
 [Website](https://nois.network/)
