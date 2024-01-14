@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 1735351.4 | 0.03910535 | 67861.52659336 |
+
+<!-- END_TABLE -->
+
 # Gitopia Mainnet guide
 
 ![gitopia](https://user-images.githubusercontent.com/44331529/200920964-90530a1f-8225-4021-923c-43712c00bb21.png)
