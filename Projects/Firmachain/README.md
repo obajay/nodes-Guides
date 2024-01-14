@@ -5,9 +5,11 @@
 
 <!-- END_TABLE -->
 
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Firmachain-M/staking/firmavaloper1xf9fakfwjhq6enq27w3zrpwzav3h2savcs6clh)
+=
+
+
 # FirmaChain Mainnet guide
-
-
 ![firma](https://github.com/obajay/nodes-Guides/assets/44331529/e0755438-89cb-4f1e-bed3-5ca72365b61d)
 
 
