@@ -5,8 +5,10 @@
 
 <!-- END_TABLE -->
 
-# Juno Mainnet guide
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Juno/staking/junovaloper177svs8gyz28pupaj6amgls6rahcmwmwq06fukv)
+=
 
+# Juno Mainnet guide
 ![juno](https://user-images.githubusercontent.com/44331529/222464046-d33e1e1f-ac42-4f9c-8c34-7f978772d5ed.png)
 
 [WebSite](https://www.junonetwork.io/)\
