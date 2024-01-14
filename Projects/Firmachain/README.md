@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 71.910 | 0.060961 | 4.383705 |
+
+<!-- END_TABLE -->
+
 # FirmaChain Mainnet guide
 
 
