@@ -5,8 +5,10 @@
 
 <!-- END_TABLE -->
 
-# Realio MAINNET guide
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Realio-Mainnet/staking/realiovaloper1n99gv9edgtvktcpxld6x9cp6zvq7e28mzjwwg4)
+=
 
+# Realio MAINNET guide
 ![realio](https://user-images.githubusercontent.com/44331529/194716535-b96b71ad-b191-4c28-a112-1e71e0859e0a.png)
 
 [Website](https://www.realio.fund/)
