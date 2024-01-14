@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 53239.640 | 0.01836759 | 977.88389576 |
+
+<!-- END_TABLE -->
+
 # Decentr Mainnet guide
 
 ![deventr](https://github.com/obajay/nodes-Guides/assets/44331529/0e5a41fa-99fd-414e-b8a0-a09faa2257fd)
