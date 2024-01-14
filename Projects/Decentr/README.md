@@ -5,8 +5,11 @@
 
 <!-- END_TABLE -->
 
-# Decentr Mainnet guide
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Decentr-Mainnet/staking/decentrvaloper1yv2ndyf63nk65gqhhrfep5pselghrwvveaa5d4)
+=
 
+
+# Decentr Mainnet guide
 ![deventr](https://github.com/obajay/nodes-Guides/assets/44331529/0e5a41fa-99fd-414e-b8a0-a09faa2257fd)
 
 
