@@ -5,6 +5,10 @@
 
 <!-- END_TABLE -->
 
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Canto-Mainnet/staking/cantovaloper1tav4ldqxyjhcymdhswxrjrmy69un2yh4vpfhtt)
+=
+
+
 # Guide Canto Mainnet
 ![canto](https://user-images.githubusercontent.com/44331529/185346490-c8f643a2-8465-432a-90dd-950b0e26957c.png)
 
