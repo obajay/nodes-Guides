@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 18188208.0 | 0.00051958 | 9450.229119726864758438 |
+
+<!-- END_TABLE -->
+
 # Sifchain mainnet guide
 
 
