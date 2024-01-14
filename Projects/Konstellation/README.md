@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 276139.0 | 0.00163989 | 452.83761888 |
+
+<!-- END_TABLE -->
+
 # Konstellation Mainnet guide
 ![Konstel (1)](https://user-images.githubusercontent.com/44331529/180598012-bab9dd14-99d9-4db4-b6ca-45644f0ee50a.png)
 ![Konstel (2)](https://user-images.githubusercontent.com/44331529/180598013-4f5b4103-c7cb-4bf4-892f-ff88ff0034af.png)
