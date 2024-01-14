@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 536189.777 | 0.02235863 | 11988.468839449 |
+
+<!-- END_TABLE -->
+
 # Vidulum Mainnet guide
 
 ![vidulum](https://github.com/obajay/nodes-Guides/assets/44331529/b9a11d68-57da-47db-88ab-95f21593ca54)
