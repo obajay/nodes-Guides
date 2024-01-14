@@ -5,9 +5,10 @@
 
 <!-- END_TABLE -->
 
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Sifchain/staking/sifvaloper1k5ypsesvvfga6pxjdxggaph97ywwf4l4mw0mqp)
+=
+
 # Sifchain mainnet guide
-
-
 ![sifchain](https://user-images.githubusercontent.com/44331529/190616339-2de8f67c-4818-4a99-8b5b-6b6e713fd023.png)
 
 [Website](https://sifchain.network/)
