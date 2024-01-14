@@ -5,10 +5,11 @@
 
 <!-- END_TABLE -->
 
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Band-Mainnet/staking/bandvaloper1e2ksk2qw5wk4a996kj0mp9gucpr96ljnf3r358)
+=
+
 # Jaсkal Mainnet guide
-
 ![jackal](https://user-images.githubusercontent.com/44331529/198365498-60a1a986-70e8-419d-a35c-b4d9780c0e7a.png)
-
 
 [GitHub](https://github.com/JackalLabs)
 =
