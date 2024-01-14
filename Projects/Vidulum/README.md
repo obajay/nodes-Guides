@@ -5,10 +5,10 @@
 
 <!-- END_TABLE -->
 
-
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Vidulum-Mainnet/staking/vdlvaloper1ad4n75v6wu4n39frrryfya9mw77h4qz4j6gv6r)
+=
 
 # Vidulum Mainnet guide
-
 ![vidulum](https://github.com/obajay/nodes-Guides/assets/44331529/b9a11d68-57da-47db-88ab-95f21593ca54)
 
 
