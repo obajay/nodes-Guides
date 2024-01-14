@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 45.847 | 0.356198 | 16.330726981070289506 |
+
+<!-- END_TABLE -->
+
 # Guide Canto Mainnet
 ![canto](https://user-images.githubusercontent.com/44331529/185346490-c8f643a2-8465-432a-90dd-950b0e26957c.png)
 
