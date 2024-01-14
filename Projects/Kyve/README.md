@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 13523.5 | 0.120063 | 1623.680569 |
+
+<!-- END_TABLE -->
+
 # Kyve Mainnet guide
 ![kyve](https://user-images.githubusercontent.com/44331529/224901192-a4fd240c-be4d-497b-b61f-11d8531aa13d.png)
 
