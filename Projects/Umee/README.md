@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 20501618.6 | 0.00518087 | 106216.221078344 |
+
+<!-- END_TABLE -->
+
 # Umee mainnet guide
 ![изображение](https://user-images.githubusercontent.com/44331529/180614842-60138156-dcfd-4dce-9ff2-c89fcc5c38dc.png)
 
