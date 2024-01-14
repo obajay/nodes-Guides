@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 347667.620 | 0.02275976 | 7912.83159697 |
+
+<!-- END_TABLE -->
+
 # Bitsong Mainnet guide
 ![bitsong (1)](https://user-images.githubusercontent.com/44331529/180596926-fde4ee88-930f-402c-a349-c0576bf38448.png)
 ![bitsong (2)](https://user-images.githubusercontent.com/44331529/180596927-397fc2a5-5d1c-4d52-9f51-a9fe800f8977.png)
