@@ -5,6 +5,8 @@
 
 <!-- END_TABLE -->
 
+
+
 [🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Gitopia-M/staking/gitopiavaloper1ztlnz9v3qqmq828dp6rj3ndu7gvju63m3az0ym)
 =
 
