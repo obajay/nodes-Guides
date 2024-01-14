@@ -5,8 +5,11 @@
 
 <!-- END_TABLE -->
 
-# BeeZee Mainnet guide
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/BeeZee/staking/bzevaloper16zk776px8ef00hmd59vgnueegyrkk3lja0nhy4)
+=
 
+
+# BeeZee Mainnet guide
 ![Beezee](https://user-images.githubusercontent.com/44331529/180596395-845e85eb-ed01-4bca-ae94-90bdbfd6e5be.png)
 
 [EXPLORER 1](https://explorer.stavr.tech/BeeZee/staking) \
