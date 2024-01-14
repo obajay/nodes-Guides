@@ -95,6 +95,7 @@ wget -O $HOME/.provenanced/config/addrbook.json "https://raw.githubusercontent.c
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"1905nhash\"/;" ~/.provenanced/config/app.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.provenanced/config/config.toml
+sed -i.bak -e "s/^timeout_commit *=.*/timeout_commit = \"1s\"/" $HOME/.provenanced/config/config.toml
 peers="c4ffbe7e54790ee4b65e2152b2a6f65d15aeab4e@65.108.253.58:26657,286868295b6c56257332a8aca922f898353d2575@154.53.40.114:56651,de4e97e82e5fc567e55326383d46c72ae0ad7741@65.108.12.222:26757,358c97bb55717228f585491ef4c76d563183c583@194.163.165.174:26656,feb3bdc1c6f5ec32961c8051d9afec6984a59483@51.195.176.98:26658,666fca6c8f62f28fb4ab294589ce5d62b5823c91@161.97.115.247:26657"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.provenanced/config/config.toml
 seeds="4bd2fb0ae5a123f1db325960836004f980ee09b4@seed-0.provenance.io:26656,048b991204d7aac7209229cbe457f622eed96e5d@seed-1.provenance.io:26656"
