@@ -5,10 +5,11 @@
 
 <!-- END_TABLE -->
 
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Band-Mainnet/staking/bandvaloper1e2ksk2qw5wk4a996kj0mp9gucpr96ljnf3r358)
+=
+
 # BAND Mainnet guide
-
 ![band](https://github.com/obajay/nodes-Guides/assets/44331529/b42abd97-f3d7-42e0-ba0f-f4ddeb44f5cb)
-
 
 [WebSite](https://www.bandprotocol.com/)\
 [GitHub](https://github.com/bandprotocol/chain)
