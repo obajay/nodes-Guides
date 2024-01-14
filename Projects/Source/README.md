@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 1070977.406 | 0.02269636 | 24307.288766317 |
+
+<!-- END_TABLE -->
+
 # Guide Source MAINNET
 ![sour (2)](https://user-images.githubusercontent.com/44331529/183239082-09722b8d-9cc7-49a1-9d93-15ce3ab8d752.png)
 ![sour (1)](https://user-images.githubusercontent.com/44331529/183239083-d3ac3a34-0cc4-4e8b-aafc-42a5e7a3f7f5.png)
