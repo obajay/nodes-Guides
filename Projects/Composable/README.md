@@ -5,8 +5,11 @@
 
 <!-- END_TABLE -->
 
-# Composable MAINNET guide
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Composable-Mainnet/staking/centaurivaloper180wngzau7jzdw9xdqp0a4mm7740y5rfzar2p69)
+=
 
+
+# Composable MAINNET guide
 ![compo](https://github.com/obajay/nodes-Guides/assets/44331529/49502f93-cb03-461e-b788-78a391456f72)
 
 [WebSite](https://www.composable.finance/)\
