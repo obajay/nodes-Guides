@@ -1,4 +1,4 @@
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Canto-Mainnet/staking/cantovaloper1tav4ldqxyjhcymdhswxrjrmy69un2yh4vpfhtt)
+[🔥OUR VALIDATOR🔥](https://restake.app/qwoyn/qwoynvaloper1d8mhdkf2tzdszt59hvl2uq65h9l6r68y0usvc0)
 =
 
 # Qwoyn Mainnet guide
