@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Stride/staking/stridevaloper1n94ndmxqf7vke553lr3ewwt4edtc4g6mdyx9qn)
+[🔥OUR VALIDATOR🔥](https://restake.app/stride/stridevaloper1n94ndmxqf7vke553lr3ewwt4edtc4g6mdyx9qn)
 =
 
 # Guide Stride 
