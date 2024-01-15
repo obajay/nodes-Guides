@@ -1,3 +1,6 @@
+[🔥OUR VALIDATOR🔥](https://restake.app/haqq/haqqvaloper1yj2hjxsu7gxcdje86hgnm9gn7z09ua9vhjx6pn)
+=
+
 # Guide Mainnet haqq
 ![haqq](https://user-images.githubusercontent.com/44331529/185350224-62b92bc1-bd4e-4ce7-a56b-0abfc631c95c.png)
 
