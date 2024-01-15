@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Likecoin-M/staking/likevaloper1pxvegy2m8u3v4c20p5p4v0wre4ggd5luumku9w)
+[🔥OUR VALIDATOR🔥](https://restake.app/likecoin/likevaloper1pxvegy2m8u3v4c20p5p4v0wre4ggd5luumku9w)
 =
 
 # Likecoin Mainnet guide
