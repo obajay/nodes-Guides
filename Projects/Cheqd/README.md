@@ -145,7 +145,7 @@ EOF
 ```
 # StateSync Cheqd Mainnet
 ```python
-SNAP_RPC=http://cheqd.rpc.m.stavr.tech:26337
+SNAP_RPC=https://cheqd.rpc.m.stavr.tech:443
 SEEDS=46bb1e68fcc2750ecdc4253986d653f4bd7228ef@cheqd.peer.stavr.tech:21016
 cp $HOME/.cheqdnode/data/priv_validator_state.json $HOME/.cheqdnode/priv_validator_state.json.backup
 sed -i -e "/seeds =/ s/= .*/= \"$SEEDS\"/"  $HOME/.cheqdnode/config/config.toml
