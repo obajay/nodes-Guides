@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Sifchain/staking/sifvaloper1k5ypsesvvfga6pxjdxggaph97ywwf4l4mw0mqp)
+[🔥OUR VALIDATOR🔥](https://restake.app/sifchain/sifvaloper1k5ypsesvvfga6pxjdxggaph97ywwf4l4mw0mqp)
 =
 
 # Sifchain mainnet guide
