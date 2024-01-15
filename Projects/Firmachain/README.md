@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Firmachain-M/staking/firmavaloper1xf9fakfwjhq6enq27w3zrpwzav3h2savcs6clh)
+[🔥OUR VALIDATOR🔥](https://restake.app/firmachain/firmavaloper1xf9fakfwjhq6enq27w3zrpwzav3h2savcs6clh)
 =
 
 
