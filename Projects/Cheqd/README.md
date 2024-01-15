@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 102076.620 | 0.068764 | 7019.196710 |
+| 102076.620 | 0.074348 | 7589.192557 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/cheqd/cheqdvaloper167t2yzx24s0n92esd9xd6zwmy2ya92teac7evx)
 =
