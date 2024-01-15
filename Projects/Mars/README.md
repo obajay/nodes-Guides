@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 111.009 | 0.236554 | 26.259740316 |
+| 111.009 | 0.229634 | 25.491554604 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/mars/marsvaloper1pc3ahwcurfedenmmndtk6w4nv7yj08ywfyenqf)
 =
