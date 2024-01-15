@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Rebus/staking/rebusvaloper18yh3xfp43tpla6hd6wzdxu5lhwfcf3f54gnhey)
+[🔥OUR VALIDATOR🔥](https://restake.app/rebus/rebusvaloper18yh3xfp43tpla6hd6wzdxu5lhwfcf3f54gnhey)
 =
 
 # Guide Rebus 
