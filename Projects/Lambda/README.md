@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Lambda/staking/lambvaloper1pkldxj2cnrhajx0fms2gxlzhh6k2gcg5k88a83)
+[🔥OUR VALIDATOR🔥](https://restake.app/lambda/lambvaloper1pkldxj2cnrhajx0fms2gxlzhh6k2gcg5k88a83)
 =
 
 # Lambda Mainnet guide
