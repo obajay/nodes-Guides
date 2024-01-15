@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/BeeZee/staking/bzevaloper16zk776px8ef00hmd59vgnueegyrkk3lja0nhy4)
+[🔥OUR VALIDATOR🔥](https://restake.app/beezee/bzevaloper16zk776px8ef00hmd59vgnueegyrkk3lja0nhy4)
 =
 
 
