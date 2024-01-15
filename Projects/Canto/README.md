@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Canto-Mainnet/staking/cantovaloper1tav4ldqxyjhcymdhswxrjrmy69un2yh4vpfhtt)
+[🔥OUR VALIDATOR🔥](https://restake.app/canto/cantovaloper1tav4ldqxyjhcymdhswxrjrmy69un2yh4vpfhtt)
 =
 
 
