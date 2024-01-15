@@ -1,3 +1,6 @@
+[🔥OUR VALIDATOR🔥](https://restake.app/meme/memevaloper1hjd7mxw0lvvu6vqkcpglte2f4u8gy4r5lkxqcs)
+=
+
 # MEME mainnet guide
 ![mm (2)](https://user-images.githubusercontent.com/44331529/180606614-565409bd-fa7e-4e50-990d-b2e47614d172.png)
 ![mm (1)](https://user-images.githubusercontent.com/44331529/180606616-069f9ce4-ffc4-4c0b-ac08-19e168054991.png)
