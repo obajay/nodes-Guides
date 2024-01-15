@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Konstellation/staking/darcvaloper1krlfcngvstzxdy84v0vsfydefmju9wuhdnq03j)
+[🔥OUR VALIDATOR🔥](https://restake.app/konstellation/darcvaloper1krlfcngvstzxdy84v0vsfydefmju9wuhdnq03j)
 =
 
 # Konstellation Mainnet guide
