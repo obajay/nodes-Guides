@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Source-Mainnet/staking/sourcevaloper13l78szv3mxcru9mhh2ndv58xla2arfzhv045cx)
+[🔥OUR VALIDATOR🔥](https://restake.app/source/sourcevaloper13l78szv3mxcru9mhh2ndv58xla2arfzhv045cx)
 =
 
 # Guide Source MAINNET
