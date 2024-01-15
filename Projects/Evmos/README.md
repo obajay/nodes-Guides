@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/evmos/staking/evmosvaloper1v3q2kuups8gzjk2930haevwn08gl9vfld69m9g)
+[🔥OUR VALIDATOR🔥](https://restake.app/evmos/evmosvaloper1v3q2kuups8gzjk2930haevwn08gl9vfld69m9g)
 =
 
 
