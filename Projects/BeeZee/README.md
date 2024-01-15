@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 3655012.445 | 0.0006459 | 2360.7725383 |
+| 3655129.591 | 0.00063836 | 2333.28852599 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/beezee/bzevaloper16zk776px8ef00hmd59vgnueegyrkk3lja0nhy4)
 =
