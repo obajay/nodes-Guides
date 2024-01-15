@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 32290.8 | 0.103982 | 3357.671641887805338988 |
+| 32805.2 | 0.097884 | 3211.106222609180399613 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/evmos/evmosvaloper1v3q2kuups8gzjk2930haevwn08gl9vfld69m9g)
 =
