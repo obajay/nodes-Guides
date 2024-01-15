@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Kyve/staking/kyvevaloper16qwtkeadppy3u9z6pu9tuy8zq02u3vecun3s0d)
+[🔥OUR VALIDATOR🔥](https://restake.app/kyve/kyvevaloper16qwtkeadppy3u9z6pu9tuy8zq02u3vecun3s0d)
 =
 
 # Kyve Mainnet guide
