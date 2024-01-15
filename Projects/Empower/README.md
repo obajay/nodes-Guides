@@ -1,5 +1,7 @@
-# Empower MAINNET Guide
+[🔥OUR VALIDATOR🔥](https://restake.app/empowerchain/empowervaloper1c4jqjpjxm55hhxvssyuahd3zs3h567x0jyzmx0)
+=
 
+# Empower MAINNET Guide
 ![empower](https://user-images.githubusercontent.com/44331529/193969092-38e7ec7f-bca0-4bd9-a31d-5ba52b71ec81.png)
 
 [Website](https://www.empowerchain.io/)
