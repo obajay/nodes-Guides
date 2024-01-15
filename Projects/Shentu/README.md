@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Shentu-Mainnet/staking/shentuvaloper1u05xu47w2hemqrpejn3dsxg7nqywx068q34y9z)
+[🔥OUR VALIDATOR🔥](https://restake.app/shentu/shentuvaloper1u05xu47w2hemqrpejn3dsxg7nqywx068q34y9z)
 =
 
 # Shentu Mainnet guide
