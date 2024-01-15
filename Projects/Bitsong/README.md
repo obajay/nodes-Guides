@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Bitsong/staking/bitsongvaloper1c5p4sqgz5jslpywsk5c0nasqqjfucv9lvjlnry)
+[🔥OUR VALIDATOR🔥](https://restake.app/bitsong/bitsongvaloper1c5p4sqgz5jslpywsk5c0nasqqjfucv9lvjlnry)
 =
 
 # Bitsong Mainnet guide
