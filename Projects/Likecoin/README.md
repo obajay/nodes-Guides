@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 1135.460 | 0.0034614 | 3.930281397 |
+| 1135.460 | 0.00345992 | 3.928600916 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/likecoin/likevaloper1pxvegy2m8u3v4c20p5p4v0wre4ggd5luumku9w)
 =
