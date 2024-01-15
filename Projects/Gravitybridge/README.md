@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 1521961.0 | 0.00570436 | 8681.81392599 |
+| 1522954.1 | 0.0056117 | 8546.3620223 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/gravitybridge/gravityvaloper1qz50nzevfjqaftt67twfr2tzajc27uv7n5ttfv)
 =
