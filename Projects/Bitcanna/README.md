@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 1658697.890 | 0.01469071 | 24367.44968040 |
+| 1658697.997 | 0.01475514 | 24474.32117702 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/bitcanna/bcnavaloper19tyve4e8nf0twd8z02a2eatrls7tuecy0ef098)
 =
