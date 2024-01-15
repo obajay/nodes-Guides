@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 276139.0 | 0.00163989 | 452.83761888 |
+| 276488.9 | 0.00171832 | 475.09655415 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/konstellation/darcvaloper1krlfcngvstzxdy84v0vsfydefmju9wuhdnq03j)
 =
