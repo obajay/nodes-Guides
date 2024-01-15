@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 1781518.9 | 0.00182756 | 3255.832804745001088109 |
+| 1781522.7 | 0.00181249 | 3228.992244824424005684 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/lambda/lambvaloper1pkldxj2cnrhajx0fms2gxlzhh6k2gcg5k88a83)
 =
