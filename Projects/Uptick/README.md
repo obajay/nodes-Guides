@@ -1,5 +1,7 @@
-# Uptick Mainnet guide
+[🔥OUR VALIDATOR🔥](https://restake.app/uptick/uptickvaloper1n9urj4d6mngtuhpfysdxu7nq72e8830wkx5mug)
+=
 
+# Uptick Mainnet guide
 ![Uptick](https://user-images.githubusercontent.com/44331529/180614523-9a7e76e9-9243-4f38-8938-1cdaa13e2cf6.png)
 
 [Website](https://uptick.network/ ) \
