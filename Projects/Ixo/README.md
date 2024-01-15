@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/IXO-Mainnet/staking/ixovaloper1htcnjafe94aqyxfapw2dlqz242g2n2tqp9lulh)
+[🔥OUR VALIDATOR🔥](https://restake.app/impacthub/ixovaloper1htcnjafe94aqyxfapw2dlqz242g2n2tqp9lulh)
 =
 
 # IXO Mainnet guide
