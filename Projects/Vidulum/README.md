@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Vidulum-Mainnet/staking/vdlvaloper1ad4n75v6wu4n39frrryfya9mw77h4qz4j6gv6r)
+[🔥OUR VALIDATOR🔥](https://restake.app/vidulum/vdlvaloper1ad4n75v6wu4n39frrryfya9mw77h4qz4j6gv6r)
 =
 
 # Vidulum Mainnet guide
