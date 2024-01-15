@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Nois-Mainnet/staking/noisvaloper1enwhnv85g4n99a2kzg8gey22xu6u43l4cxj824)
+[🔥OUR VALIDATOR🔥](https://restake.app/nois/noisvaloper1enwhnv85g4n99a2kzg8gey22xu6u43l4cxj824)
 =
 
 # Nois MAINNET
