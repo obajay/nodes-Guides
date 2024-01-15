@@ -1,6 +1,7 @@
+[🔥OUR VALIDATOR🔥](https://restake.app/point/pointvaloper1kxrjwh009nhg8ddqrr8hwrj7nenr4zp0sj4j25)
+=
+
 # Point Network Mainnet guide
-
-
 ![point](https://github.com/obajay/nodes-Guides/assets/44331529/91c46183-f77c-4e6b-8a23-68232c5cb081)
 
 
