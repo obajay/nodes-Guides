@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 1065451.8 | 0.00471539 | 5024.020967900061564992 |
+| 1065453.9 | 0.00449134 | 4785.315903866693963252 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/rebus/rebusvaloper18yh3xfp43tpla6hd6wzdxu5lhwfcf3f54gnhey)
 =
