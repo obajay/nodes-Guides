@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Agoric/staking/agoricvaloper16w8w9l89av0vey6gdreatkuh43n69u7je2t7l2)
+[🔥OUR VALIDATOR🔥](https://restake.app/agoric/agoricvaloper16w8w9l89av0vey6gdreatkuh43n69u7je2t7l2)
 =
 
 # Agoric mainnet guide
