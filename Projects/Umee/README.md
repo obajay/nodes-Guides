@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Umee/staking/umeevaloper1dkjcas3j43u3v6l94jhhhnjxhlnwxt3m02p4c3)
+[🔥OUR VALIDATOR🔥](https://restake.app/umee/umeevaloper1dkjcas3j43u3v6l94jhhhnjxhlnwxt3m02p4c3)
 =
 
 # Umee mainnet guide
