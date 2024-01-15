@@ -1,3 +1,6 @@
+[🔥OUR VALIDATOR🔥](https://restake.app/kichain/kivaloper1pmg8tvea6acfdy2ucjpvqvy9vmye6zmfrvhzty)
+=
+
 # KiChain Mainnet guide
 
 ![Kic](https://github.com/obajay/nodes-Guides/assets/44331529/c98292e9-3c46-446c-82eb-aa6ffd4c8a75)
