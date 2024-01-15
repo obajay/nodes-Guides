@@ -1,5 +1,7 @@
-# Terp Mainnet guide
+[🔥OUR VALIDATOR🔥](https://restake.app/terpnetwork/terpvaloper1eff25w2su9zxhe9lzea65l9xyptv8saxj6r2c8)
+=
 
+# Terp Mainnet guide
 ![terp](https://user-images.githubusercontent.com/44331529/232221589-beeb5e24-82b8-4eaf-ad51-9e3c7fecd79b.png)
 
 [WebSite](https://terp.network/)\
