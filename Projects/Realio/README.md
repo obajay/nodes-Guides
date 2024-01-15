@@ -5,9 +5,7 @@
 
 <!-- END_TABLE -->
 
-
-
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Realio-Mainnet/staking/realiovaloper1n99gv9edgtvktcpxld6x9cp6zvq7e28mzjwwg4)
+[🔥OUR VALIDATOR🔥](https://restake.app/realio/realiovaloper1n99gv9edgtvktcpxld6x9cp6zvq7e28mzjwwg4)
 =
 
 # Realio MAINNET guide
