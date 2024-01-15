@@ -1,5 +1,7 @@
-# Qwoyn Mainnet guide
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Canto-Mainnet/staking/cantovaloper1tav4ldqxyjhcymdhswxrjrmy69un2yh4vpfhtt)
+=
 
+# Qwoyn Mainnet guide
 ![qwoyn](https://github.com/obajay/nodes-Guides/assets/44331529/5c7c0782-b480-4873-9648-1e4e6962a2d9)
 
 
