@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 18188208.0 | 0.00051958 | 9450.229119726864758438 |
+| 18189927.2 | 0.00050219 | 9134.799586904997658035 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/sifchain/sifvaloper1k5ypsesvvfga6pxjdxggaph97ywwf4l4mw0mqp)
 =
