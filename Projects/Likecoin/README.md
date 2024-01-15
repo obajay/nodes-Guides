@@ -149,7 +149,7 @@ EOF
 ```
 # StateSync Likecoin Mainnet
 ```python
-SNAP_RPC=http://like.rpc.m.stavr.tech:1007
+SNAP_RPC=https://like.rpc.m.stavr.tech:443
 SEEDS=fd7589625f4ad41bb93f96f4c962ed6638426497@like.peer.stavr.tech:1006
 cp $HOME/.liked/data/priv_validator_state.json $HOME/.liked/priv_validator_state.json.backup
 sed -i -e "/seeds =/ s/= .*/= \"$SEEDS\"/"  $HOME/.liked/config/config.toml
