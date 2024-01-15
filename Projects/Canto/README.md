@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 45.847 | 0.356198 | 16.330726981070289506 |
+| 45.847 | 0.341431 | 15.653699470164936402 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/canto/cantovaloper1tav4ldqxyjhcymdhswxrjrmy69un2yh4vpfhtt)
 =
