@@ -1,4 +1,4 @@
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Canto-Mainnet/staking/cantovaloper1tav4ldqxyjhcymdhswxrjrmy69un2yh4vpfhtt)
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Pylons/staking/pylovaloper1ug6vwrspderzxg2wjgpsnenlkvj8jj5v72s9um)
 =
 
 # Guide Pylons Mainnet
