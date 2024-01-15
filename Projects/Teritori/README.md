@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Teritori-Main/staking/torivaloper1sqk72uwf6tg867ssuu7whxfu9pfcyrpeqwa92c)
+[🔥OUR VALIDATOR🔥](https://restake.app/teritori/torivaloper1sqk72uwf6tg867ssuu7whxfu9pfcyrpeqwa92c)
 =
 
 # Teritori Mainnet guide
