@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Bitcanna/staking/bcnavaloper19tyve4e8nf0twd8z02a2eatrls7tuecy0ef098)
+[🔥OUR VALIDATOR🔥](https://restake.app/bitcanna/bcnavaloper19tyve4e8nf0twd8z02a2eatrls7tuecy0ef098)
 =
 
 # Bitcanna mainnet guide
