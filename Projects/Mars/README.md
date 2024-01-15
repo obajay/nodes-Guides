@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Mars-Mainnet/staking/marsvaloper1pc3ahwcurfedenmmndtk6w4nv7yj08ywfyenqf)
+[🔥OUR VALIDATOR🔥](https://restake.app/mars/marsvaloper1pc3ahwcurfedenmmndtk6w4nv7yj08ywfyenqf)
 =
 
 <h1 align="center"> 🔥Mars MAINNET guide🔥</h1>
