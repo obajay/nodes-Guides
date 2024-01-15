@@ -1,3 +1,6 @@
+[🔥OUR VALIDATOR🔥](https://restake.app/provenance/pbvaloper1vclg6sh22dcnr3klslqfux6jpsr4dl5nkwx4zm)
+=
+
 # Provenance mainnet guide
 ![ppr (2)](https://user-images.githubusercontent.com/44331529/180606866-29524746-c733-43da-9af1-b6acf2a97eb3.png)
 ![ppr (1)](https://user-images.githubusercontent.com/44331529/180606868-07bdcdb1-ba8d-4b84-9cf0-23db6b13916c.png)
