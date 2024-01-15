@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 2031504.303 | 0.0416392 | 84590.2140009 |
+| 2037506.348 | 0.04212679 | 85833.60208011 |
 
 <!-- END_TABLE -->
+
+
 
 
 [🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Aura-Mainnet/staking/auravaloper1ucp33srru7g45ku6w207kc4hy6xd6psvmxw3xf)
