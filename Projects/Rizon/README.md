@@ -1,5 +1,7 @@
-# Rizon mainnet guide
+[🔥OUR VALIDATOR🔥](https://restake.app/rizon/rizonvaloper1w7ayxavsjahthtkfdzs8gp75htn30gxru4pmzk)
+=
 
+# Rizon mainnet guide
 ![rizon (2)](https://user-images.githubusercontent.com/44331529/180607172-a7f5cf1f-d1e7-4e9c-b3a0-a51871c2992d.png)
 ![rizon (1)](https://user-images.githubusercontent.com/44331529/180607173-f918aff4-499b-4996-bc2c-3f1fd5bc3d6f.png)
 
