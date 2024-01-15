@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 71.910 | 0.060961 | 4.383705 |
+| 71.910 | 0.061483 | 4.421242 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/firmachain/firmavaloper1xf9fakfwjhq6enq27w3zrpwzav3h2savcs6clh)
 =
