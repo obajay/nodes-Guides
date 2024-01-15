@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 536189.7 | 0.02235863 | 11988.468839449 |
+| 536189.7 | 0.02383366 | 12779.364846595 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/vidulum/vdlvaloper1ad4n75v6wu4n39frrryfya9mw77h4qz4j6gv6r)
 =
