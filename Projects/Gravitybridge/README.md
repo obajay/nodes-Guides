@@ -5,7 +5,7 @@
 
 <!-- END_TABLE -->
 
-[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/GravityBridge/staking/gravityvaloper1qz50nzevfjqaftt67twfr2tzajc27uv7n5ttfv)
+[🔥OUR VALIDATOR🔥](https://restake.app/gravitybridge/gravityvaloper1qz50nzevfjqaftt67twfr2tzajc27uv7n5ttfv)
 =
 
 
