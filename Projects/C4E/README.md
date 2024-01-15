@@ -1,3 +1,6 @@
+[🔥OUR VALIDATOR🔥](https://restake.app/chain4energy/c4evaloper1gc6vs2j3g2jpy2mzrwpmmwju9eafhn0gwx8lv8)
+=
+
 <h1 align="center"> 🔥C4E MAINNET guide🔥</h1>
 
 ![c4e (2)](https://user-images.githubusercontent.com/44331529/216780015-d723d176-ae86-403e-aab6-7d7e6254a144.png)
