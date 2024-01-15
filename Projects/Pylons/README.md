@@ -1,3 +1,6 @@
+[🔥OUR VALIDATOR🔥](https://explorer.stavr.tech/Canto-Mainnet/staking/cantovaloper1tav4ldqxyjhcymdhswxrjrmy69un2yh4vpfhtt)
+=
+
 # Guide Pylons Mainnet
 ![pylo](https://user-images.githubusercontent.com/44331529/182419013-c3e5e07d-08de-4459-aa1c-88af51d6f340.png)
 
