@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 347667.620 | 0.02275976 | 7912.83159697 |
+| 347667.620 | 0.02253829 | 7835.83364911 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/bitsong/bitsongvaloper1c5p4sqgz5jslpywsk5c0nasqqjfucv9lvjlnry)
 =
