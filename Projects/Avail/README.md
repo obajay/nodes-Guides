@@ -24,16 +24,29 @@ sudo apt update && sudo apt upgrade -y
 apt install curl iptables build-essential git wget jq make gcc nano tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
 ```
 
-# Build 04.10.23
+# Build 16.01.24
 ```python
-mkdir -p $HOME/.avail && cd $HOME/.avail
-wget https://github.com/availproject/avail/releases/download/v1.8.0.2/data-avail-linux-amd64.tar.gz
-tar -xvf data-avail-linux-amd64.tar.gz
-mv data-avail-linux-amd64 /usr/bin/avail
+wget https://github.com/availproject/avail/releases/download/v1.9.0.0/x86_64-ubuntu-2204-data-avail.tar.gz
+tar xvzf x86_64-ubuntu-2204-data-avail.tar.gz
+rm -rf x86_64-ubuntu-2204-data-avail.tar.gz
+mv data-avail /usr/bin/avail
+```
+
+
+# UPDATE 16.01.24
+```python
+cd $HOME
+wget https://github.com/availproject/avail/releases/download/v1.9.0.0/x86_64-ubuntu-2204-data-avail.tar.gz
+tar xvzf x86_64-ubuntu-2204-data-avail.tar.gz
+rm -rf x86_64-ubuntu-2204-data-avail.tar.gz
+mv data-avail $(which avail)
+avail --version
+#avail 1.9.0-unknown
+systemctl restart avail && journalctl -u avail -f -o cat
 ```
 
 `avail --version`
-- avail 1.8.2-d517e727f6a
+- avail 1.9.0-unknown
 
 ## Download json
 ```python
