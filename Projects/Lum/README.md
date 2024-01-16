@@ -175,6 +175,9 @@ lumd tx staking create-validator \
 --details="" -y
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Lum)
+=
+
 ## Delete node
 ```python
 sudo systemctl stop lumd
