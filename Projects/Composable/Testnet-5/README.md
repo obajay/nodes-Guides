@@ -125,7 +125,7 @@ wget -O $HOME/.banksy/config/addrbook.json "https://raw.githubusercontent.com/ob
 ```python
 tee /etc/systemd/system/centaurid.service > /dev/null <<EOF
 [Unit]
-Description=layerd
+Description=centaurid
 After=network-online.target
 
 [Service]
