@@ -13,6 +13,7 @@ PS3='Select an action: '
 options=(
 "Install Node"
 "Create wallet"
+"Update"
 "Check node logs"
 "Synchronize node via snapshot"
 "Delete Node"
@@ -54,7 +55,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/Source-Protocol-Cosmos/source.git
 cd ~/source
-git checkout v3.0.0
+git checkout v3.0.1
 make install
 
 sourced init $Validator_Name --chain-id $CHAIN_ID
@@ -125,6 +126,15 @@ echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE
 
 break
 ;;
+"Update")
+cd $HOME/source 
+git pull
+git checkout v3.0.1
+make install 
+sudo systemctl restart sourced && journalctl -u sourced -f -o cat
+
+break
+;;
 "Synchronize node via snapshot")
 cd $HOME
 apt install lz4
@@ -146,13 +156,13 @@ sudo journalctl -u sourced -f -o cat
 break
 ;;
 "Delete Node")
-sudo systemctl stop sourced && \
-sudo systemctl disable sourced && \
-rm /etc/systemd/system/sourced.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf .source && \
-rm -rf source && \
+sudo systemctl stop sourced
+sudo systemctl disable sourced
+rm /etc/systemd/system/sourced.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf .source
+rm -rf source
 rm -rf $(which sourced)
 
 break
