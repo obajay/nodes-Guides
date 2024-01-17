@@ -43,37 +43,38 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 18.12.23
+# Build 18.01.24
 ```python
 cd $HOME
 git clone https://github.com/osmosis-labs/osmosis && cd osmosis
-git checkout v21.0.0
+git checkout v22.0.0
 make install
 ```
 
-*******🟢UPDATE🟢******* 18.12.23
+*******🟢UPDATE🟢******* 18.01.24
 ```python
 cd $HOME
-wget -O osmosisd https://github.com/osmosis-labs/osmosis/releases/download/v21.0.0/osmosisd-21.0.0-linux-amd64
+wget -O osmosisd https://github.com/osmosis-labs/osmosis/releases/download/v22.0.0/osmosisd-22.0.0-linux-amd64
 chmod +x osmosisd
-mv osmosisd $HOME/go/bin/osmosisd
+mv osmosisd $(which osmosisd)
 osmosisd version --long
-# version: 21.0.0
-# commit: b0aee0006ce55d0851773084bd7880db7e32ad70
+# version: 22.0.0
+# commit: 60ee947d50408a4273013422bce5acba19deb63f
 systemctl restart osmosisd && journalctl -u osmosisd -f -o cat
 ```
 
 `osmosisd version --long | head`
-- version: 21.0.0
-- commit: b0aee0006ce55d0851773084bd7880db7e32ad70
+- version: 22.0.0
+- commit: 60ee947d50408a4273013422bce5acba19deb63f
 
 ```python
-osmosisd init STAVRguide --chain-id osmosis-1
+osmosisd init STAVR_guide --chain-id osmosis-1
 ```    
 
 ## Create/recover wallet
 ```python
 osmosisd keys add <walletname>
+      OR
 osmosisd keys add <walletname> --recover
 ```
 
@@ -100,18 +101,18 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.osmos
 ```
 ### Pruning (optional)
 ```bash
-pruning="custom" && \
-pruning_keep_recent="100" && \
-pruning_keep_every="0" && \
-pruning_interval="10" && \
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" ~/.osmosisd/config/app.toml && \
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" ~/.osmosisd/config/app.toml && \
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" ~/.osmosisd/config/app.toml && \
+pruning="custom" &&
+pruning_keep_recent="100" &&
+pruning_keep_every="0" &&
+pruning_interval="10" &&
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" ~/.osmosisd/config/app.toml &&
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" ~/.osmosisd/config/app.toml &&
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" ~/.osmosisd/config/app.toml &&
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.osmosisd/config/app.toml
 ```
 ### Indexer (optional) 
 ```python
-indexer="null" && \
+indexer="null" &&
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.osmosisd/config/config.toml
 ```
 
@@ -156,11 +157,11 @@ SOON
 
 ## Delete node
 ```python
-systemctl stop osmosisd && \
-systemctl disable osmosisd && \
-rm /etc/systemd/system/osmosisd.service && \
-systemctl daemon-reload && \
-cd $HOME && \
-rm -rf .osmosisd osmosis && \
+systemctl stop osmosisd
+systemctl disable osmosisd
+rm /etc/systemd/system/osmosisd.service
+systemctl daemon-reload
+cd $HOME
+rm -rf .osmosisd osmosis
 rm -rf $(which osmosisd)
 ```
