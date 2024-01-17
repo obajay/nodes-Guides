@@ -38,24 +38,24 @@ go version
 ```python
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain
-git checkout v2.0.0
+git checkout v2.0.3
 make install
 ```
 *******🟢UPDATE🟢******* 17.01.24
 ```python
 cd $HOME/teritori-chain
 git fetch --all
-git checkout v2.0.0
+git checkout v2.0.3
 make install
 teritorid version --long
-#version: v2.0.0
-#commit: b72093d3252f6e58595dd4e4be1353573e997cad
+#version: v2.0.3
+#commit: d043d740eba5837b4a1b6fd26b5fcfd725217276
 sudo systemctl restart teritorid && sudo journalctl -u teritorid -f -o cat
 ```
 
 `teritorid version --long`
-- version: v2.0.0
-- commit: b72093d3252f6e58595dd4e4be1353573e997cad
+- version: v2.0.3
+- commit: d043d740eba5837b4a1b6fd26b5fcfd725217276
 
 ```python
 teritorid init STAVR_guide --chain-id teritori-test-5
