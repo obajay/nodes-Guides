@@ -217,13 +217,13 @@ bcnad tx staking create-validator \
 
 ## Delete node
 ```python
-sudo systemctl stop bcnad && \
-sudo systemctl disable bcnad && \
-rm /etc/systemd/system/bcnad.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf bcna && \
-rm -rf .bcna && \
+sudo systemctl stop bcnad
+sudo systemctl disable bcnad
+rm /etc/systemd/system/bcnad.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf bcna
+rm -rf .bcna
 rm -rf $(which bcnad)
 ```
 
