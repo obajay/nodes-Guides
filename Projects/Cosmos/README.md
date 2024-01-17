@@ -175,13 +175,13 @@ gaiad tx staking create-validator \
 
 ## Delete node
 ```python
-sudo systemctl stop gaiad && \
-sudo systemctl disable gaiad && \
-rm /etc/systemd/system/gaiad.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf gaia && \
-rm -rf .gaia && \
+sudo systemctl stop gaiad
+sudo systemctl disable gaiad
+rm /etc/systemd/system/gaiad.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf gaia
+rm -rf .gaia
 rm -rf $(which gaiad)
 ```
 #
