@@ -34,19 +34,27 @@ source $HOME/.bash_profile &&
 go version
 ```
 
-## Build 05.01.24
+## Build 17.01.24
 ```python
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain
-git checkout v1.4.2
+git checkout v2.0.0
 make install
 ```
-*******🟢UPDATE🟢******* 00.00.24
+*******🟢UPDATE🟢******* 17.01.24
 ```python
-SOOOOOOOOOOOOOON
+cd $HOME/teritori-chain
+git fetch --all
+git checkout v2.0.0
+make install
+teritorid version --long
+#version: v2.0.0
+#commit: b72093d3252f6e58595dd4e4be1353573e997cad
+sudo systemctl restart teritorid && sudo journalctl -u teritorid -f -o cat
 ```
+
 `teritorid version --long`
-- version: v1.4.2
+- version: v2.0.0
 - commit: b72093d3252f6e58595dd4e4be1353573e997cad
 
 ```python
