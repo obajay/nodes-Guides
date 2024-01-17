@@ -5,10 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/source/sourcevaloper13l78szv3mxcru9mhh2ndv58xla2arfzhv045cx)
 =
 
@@ -50,21 +46,21 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Binary   13.10.23
+# Binary   17.01.24
 ```python 
 cd $HOME
 git clone https://github.com/Source-Protocol-Cosmos/source.git
 cd ~/source
-git checkout v3.0.0
+git checkout v3.0.1
 make install
 ```
 `sourced version --long | head`
-- version: v3.0.0
-- commit: 39030aa705cf18819b0a439c1bd646ed9195728c 
+- version: v3.0.1
+- commit: 2aae45f6e2d23f6c81c02075b74ee9f5b7598e3e
 
 ## Initialisation
 ```python
-sourced init STAVRguide --chain-id=source-1
+sourced init STAVR_guide --chain-id=source-1
 sourced config chain-id source-1
 ```
 ## Add wallet
