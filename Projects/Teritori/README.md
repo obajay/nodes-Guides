@@ -206,13 +206,13 @@ teritorid tx staking create-validator \
 
 # Delete node 
 ```python
-sudo systemctl stop teritorid && \
-sudo systemctl disable teritorid && \
-rm /etc/systemd/system/teritorid.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf .teritorid && \
-rm -rf teritori-chain && \
+sudo systemctl stop teritorid
+sudo systemctl disable teritorid
+rm /etc/systemd/system/teritorid.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf .teritorid
+rm -rf teritori-chain
 rm -rf $(which teritorid)
 ```
 
