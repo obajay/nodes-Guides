@@ -39,7 +39,7 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 21.12.23
+# Build 18.01.24
 ```python
 cd $HOME
 wget http://uniont.binary.stavr.tech:15/union/uniond
@@ -53,12 +53,12 @@ SOOON
 ```
 
 `uniond version --long`
-- version: v0.17.0
-- commit: fa6dfecb6cfd89b6827c2992efb37675f8a147ab
+- version: v0.18.0
+- commit: a9a0df3e7dfe45bb0e2faea013fafdfd849eec1a
 
 ```python
-uniond init STAVR_guide --chain-id union-testnet-4
-uniond config chain-id union-testnet-4
+uniond init STAVR_guide --chain-id union-testnet-5
+uniond config chain-id union-testnet-5
 ```    
 
 ## Create/recover wallet
@@ -74,19 +74,19 @@ wget -O $HOME/.union/config/genesis.json "https://raw.githubusercontent.com/obaj
 
 ```
 `sha256sum $HOME/.union/config/genesis.json`
-+ 93d05b1e71007e2d5c82676418b4ca632834b45e10e1ef9129d4d8a54275a0cb
++ 60cd5b53f08a9652f936a80314ae2d765df2f35b24fd551abb4feffb83c895ab
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0muno\"/;" ~/.union/config/app.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.union/config/config.toml
-peers="b2f2c6ba26958a1daf5838dee130fe0f0d75518d@34.171.89.160:26656,728ec2b975df5d9afc7bc98f8b74ba7161d2955b@65.109.29.23:26656,7c743b507ec3b67bc790c826ec471d2635c992f7@88.99.3.158:24656,8b13facd07099883a2275db870834390109ded62@92.243.27.215:27656,821eade3cdada32cd15bfc7bd941e5bfad173d35@5.9.115.189:26656,b82b7b8d739c0869b0c2c369770a3adf66a126cb@198.244.179.173:26656,65d3fbc95488503554d554f6332db4dbd68accb0@65.109.69.239:15007"
+peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.union/config/config.toml
-seeds=""
+seeds="3f472746f46493309650e5a033076689996c8881@union-testnet.rpc.kjnodes.com:17159"
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.union/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.union/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.union/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 10/g' $HOME/.union/config/config.toml
 
 ```
 ### Pruning (optional)
@@ -120,7 +120,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which uniond) start
+ExecStart=$(which uniond) start --home /root/.union
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
@@ -156,7 +156,7 @@ uniond tx staking create-validator \
 --pubkey $(uniond tendermint show-validator) \
 --from <wallet> \
 --moniker="STAVR_guide" \
---chain-id union-testnet-4 \
+--chain-id union-testnet-5 \
 --identity="" \
 --website="" \
 --details="" -y
