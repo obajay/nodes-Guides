@@ -159,7 +159,7 @@ uniond tx staking create-validator \
 --chain-id union-testnet-5 \
 --identity="" \
 --website="" \
---details="" -y
+--details=""  --home /.union -y
 ```
 
 ## Delete node
@@ -187,5 +187,5 @@ sudo journalctl -u uniond -f -o cat
 ```
 ### Check Balance
 ```python
-uniond query bank balances union...addressjkl1yjgn7z09ua9vms259j
+uniond query bank balances union...addressjkl1yjgn7z09ua9vms259j --home /.union
 ```
