@@ -4,7 +4,7 @@
 
 [WebSite](https://union.build/)
 =
-[EXPLORER](https://explorer.stavr.tech/Shentu-Mainnet)
+[EXPLORER](https://explorer.stavr.tech/Union-Testnet)
 =
 
 - **Minimum hardware requirements**:
