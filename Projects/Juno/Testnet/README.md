@@ -28,45 +28,45 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
-## GO 1.19
+## GO 1.21.4
 ```python
-ver="1.19" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+ver="1.21.4"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 go version
 ```
 
-# Build 10.01.24
+# Build 19.01.24
 ```python
 cd $HOME
 git clone https://github.com/CosmosContracts/juno
 cd juno
-git checkout v18.1.0
+git checkout v19.0.0-alpha.1
 make build && make install
 
 ```
-*******🟢UPDATE🟢******* 10.01.24
+*******🟢UPDATE🟢******* 19.01.24
 ```python
 cd $HOME
-wget https://github.com/CosmosContracts/juno/releases/download/v18.1.0/junod
+wget https://github.com/CosmosContracts/juno/releases/download/v19.0.0-alpha.1/junod
 chmod +x junod
 ./junod version --long | grep -e commit -e version
-#version: v18.1.0
-#commit: 3df36b2020088de1f89046feda10b7ec1dd8f3da
+#version: v19.0.0-alpha.1
+#commit: 55ec22a51f95f773f91ab06e2a64b305728ef35b
 mv junod $(which junod)
 sudo systemctl restart junod && sudo journalctl -u junod -f -o cat
 ```
 
 `junod version --long`
-- version: v18.1.0
-- commit: 3df36b2020088de1f89046feda10b7ec1dd8f3da
+- version: v19.0.0-alpha.1
+- commit: 55ec22a51f95f773f91ab06e2a64b305728ef35b
 
 ```python
-junod init STAVRguide --chain-id uni-6
+junod init STAVR_guide --chain-id uni-6
 junod config chain-id uni-6
 ```    
 
@@ -190,7 +190,7 @@ junod tx staking create-validator \
 --amount 1000000ujunox \
 --pubkey $(junod tendermint show-validator) \
 --from <wallet> \
---moniker="STAVRguide" \
+--moniker="STAVR_guide" \
 --chain-id juno-1 \
 --gas 350000 \
 --identity="" \
@@ -202,13 +202,13 @@ junod tx staking create-validator \
 
 ## Delete node
 ```python
-sudo systemctl stop junod && \
-sudo systemctl disable junod && \
-rm /etc/systemd/system/junod.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf juno && \
-rm -rf .juno && \
+sudo systemctl stop junod
+sudo systemctl disable junod
+rm /etc/systemd/system/junod.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf juno
+rm -rf .juno
 rm -rf $(which junod)
 ```
 #
