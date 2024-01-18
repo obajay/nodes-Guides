@@ -147,19 +147,25 @@ sudo systemctl restart uniond && sudo journalctl -u uniond -f -o cat
 
 ### Create validator
 ```python
-uniond tx staking create-validator \
---commission-rate 0.1 \
---commission-max-rate 0.2 \
---commission-max-change-rate 0.1 \
---min-self-delegation "1" \
---amount="1000000"muno \
---pubkey $(uniond tendermint show-validator) \
---from <wallet> \
---moniker="STAVR_guide" \
---chain-id union-testnet-5 \
---identity="" \
---website="" \
---details=""  --home /.union -y
+#pubkey
+uniond tendermint show-validator --home /root/.union
+cd $HOME
+nano validator.json
+{
+  "pubkey": {#pubkey},
+  "amount": "1000000muno",
+  "moniker": "STAVR_Guide",
+  "identity": "",
+  "website": "",
+  "security": "",
+  "details": "",
+  "commission-rate": "0.1",
+  "commission-max-rate": "0.2",
+  "commission-max-change-rate": "0.01",
+  "min-self-delegation": "1"
+}
+
+uniond --home /root/.union tx staking create-validator /root/validator.json --from Wallet_name  --chain-id union-testnet-5
 ```
 
 ## Delete node
