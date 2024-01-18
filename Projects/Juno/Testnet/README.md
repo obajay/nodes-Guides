@@ -61,7 +61,7 @@ mv junod $(which junod)
 sudo systemctl restart junod && sudo journalctl -u junod -f -o cat
 ```
 
-`junod version --long`
+`junod version --long | grep -e commit -e version`
 - version: v19.0.0-alpha.1
 - commit: 55ec22a51f95f773f91ab06e2a64b305728ef35b
 
