@@ -39,43 +39,43 @@ source $HOME/.bash_profile &&
 go version
 ```
 
-# Binary   24.12.23
+# Binary   19.01.24
 ```python
 cd $HOME
-git clone https://github.com/haqq-network/haqq
-wget https://github.com/haqq-network/haqq/releases/download/v1.6.4/haqq_1.6.4_Linux_x86_64.tar.gz
-tar -xvzf haqq_1.6.4_Linux_x86_64.tar.gz
+wget https://github.com/haqq-network/haqq/releases/download/v1.7.0/haqq_1.7.0_Linux_x86_64.tar.gz
+tar -xvzf haqq_1.7.0_Linux_x86_64.tar.gz
+cd bin && chmod +x haqqd
 cd bin
 chmod +x haqqd
 mv haqqd $HOME/go/bin/
-cd $HOME && rm -rf haqq_1.6.4_Linux_x86_64.tar.gz
+cd $HOME && rm -rf haqq_1.7.0_Linux_x86_64.tar.gz
 ```
-*******🟢UPDATE🟢******* 24.12.23
+*******🟢UPDATE🟢******* 19.01.24
 ```python
 cd $HOME
-wget https://github.com/haqq-network/haqq/releases/download/v1.6.4/haqq_1.6.4_Linux_x86_64.tar.gz
-tar -xvzf haqq_1.6.4_Linux_x86_64.tar.gz
-cd bin
-chmod +x haqqd
+wget https://github.com/haqq-network/haqq/releases/download/v1.7.0/haqq_1.7.0_Linux_x86_64.tar.gz
+tar -xvzf haqq_1.7.0_Linux_x86_64.tar.gz
+cd bin && chmod +x haqqd
 mv haqqd $(which haqqd)
+cd $HOME && rm -rf haqq_1.7.0_Linux_x86_64.tar.gz
 haqqd version --long | grep -e commit -e version
-cd $HOME && rm -rf haqq_1.6.4_Linux_x86_64.tar.gz
-#version: 1.6.4
-#commit: 174a99b3dd8d6b0e089cb1e54dc3e628bb90c0f5
+#version: 1.7.0
+#commit: 1cdd044523cffd0a2428b139f611a48a60045a1b
 sudo systemctl restart haqqd && journalctl -u haqqd -f -o cat
 ```
 `haqqd version --long | grep -e version -e commit`
-- version: 1.6.4
-- commit: 174a99b3dd8d6b0e089cb1e54dc3e628bb90c0f5
+- version: 1.7.0
+- commit: 1cdd044523cffd0a2428b139f611a48a60045a1b
 
 ## Initialisation
 ```python
-haqqd init STAVRguide --chain-id=haqq_11235-1
+haqqd init STAVR_guide --chain-id=haqq_11235-1
 haqqd config chain-id haqq_11235-1
 ```
 ## Add wallet
 ```python
 haqqd keys add <walletName>
+        OR
 haqqd keys add <walletName> --recover
 ```
 # Genesis
@@ -164,7 +164,7 @@ haqqd tx staking create-validator \
 --details="" \
 --website="" \
 --pubkey $(haqqd tendermint show-validator) \
---moniker "STAVRGuide" \
+--moniker "STAVR_Guide" \
 --chain-id haqq_11235-1 \
 --gas 300000 -y
 ```
