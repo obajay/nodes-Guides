@@ -45,25 +45,25 @@ go version
 cd $HOME
 git clone https://github.com/CosmosContracts/juno
 cd juno
-git checkout v19.0.0-alpha.1
+git checkout v19.0.0-alpha.2
 make build && make install
 
 ```
 *******🟢UPDATE🟢******* 19.01.24
 ```python
 cd $HOME
-wget https://github.com/CosmosContracts/juno/releases/download/v19.0.0-alpha.1/junod
+wget https://github.com/CosmosContracts/juno/releases/download/v19.0.0-alpha.2/junod
 chmod +x junod
 ./junod version --long | grep -e commit -e version
-#version: v19.0.0-alpha.1
-#commit: 55ec22a51f95f773f91ab06e2a64b305728ef35b
+#version: v19.0.0-alpha.2
+#commit: 2c8b1c71f3aac7cf2f82f4663c8e496b7d782e7b
 mv junod $(which junod)
 sudo systemctl restart junod && sudo journalctl -u junod -f -o cat
 ```
 
 `junod version --long | grep -e commit -e version`
-- version: v19.0.0-alpha.1
-- commit: 55ec22a51f95f773f91ab06e2a64b305728ef35b
+- version: v19.0.0-alpha.2
+- commit: 2c8b1c71f3aac7cf2f82f4663c8e496b7d782e7b
 
 ```python
 junod init STAVR_guide --chain-id uni-6
