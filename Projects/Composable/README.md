@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 12952842.613 | 0.01484713 | 192312.538146229670 |
+| 12962950.668 | 0.01296316 | 168040.803588933500 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/composable/centaurivaloper180wngzau7jzdw9xdqp0a4mm7740y5rfzar2p69)
 =
