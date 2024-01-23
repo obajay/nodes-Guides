@@ -5,25 +5,8 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/composable/centaurivaloper180wngzau7jzdw9xdqp0a4mm7740y5rfzar2p69)
 =
-
 
 # Composable MAINNET guide
 ![compo](https://github.com/obajay/nodes-Guides/assets/44331529/49502f93-cb03-461e-b788-78a391456f72)
@@ -66,33 +49,33 @@ source $HOME/.bash_profile &&
 go version
 ```
 
-# Build 10.01.24
+# Build 24.01.24
 ```python
 cd $HOME
 git clone https://github.com/notional-labs/composable-centauri
 cd composable-centauri
-git checkout v6.3.6
+git checkout v6.4.2
 make install
 ```
-*******🟢UPDATE🟢******* 10.01.24
+*******🟢UPDATE🟢******* 24.01.24
 ```python
 cd $HOME/composable-centauri
 git pull
-git checkout v6.3.6
+git checkout v6.4.2
 make install
 centaurid version --long | grep -e commit -e version
-#version: v6.3.6
-#commit: 9f766b20c8f8c4803ace3ef3436d0a533523a18f
+#version: v6.4.2
+#commit: 1dc4c25c5f61176ae9ea49043ee39d6101962254
 sudo systemctl restart centaurid && sudo journalctl -u centaurid -f -o cat
 
 ```
 
 `centaurid version --long`
-- version: v6.3.6
-- commit: 9f766b20c8f8c4803ace3ef3436d0a533523a18f
+- version: v6.4.2
+- commit: 1dc4c25c5f61176ae9ea49043ee39d6101962254
 
 ```python
-centaurid init STAVRguide --chain-id centauri-1
+centaurid init STAVR_guide --chain-id centauri-1
 centaurid config chain-id centauri-1
 ```    
 
@@ -190,7 +173,7 @@ centaurid tx staking create-validator \
 --amount 1000000ppica \
 --pubkey $(centaurid tendermint show-validator) \
 --from <wallet> \
---moniker="STAVRguide" \
+--moniker="STAVR_guide" \
 --chain-id centauri-1\
 --gas 350000 \
 --identity="" \
