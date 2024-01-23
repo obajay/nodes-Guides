@@ -5,24 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/agoric/agoricvaloper16w8w9l89av0vey6gdreatkuh43n69u7je2t7l2)
 =
 
@@ -199,12 +181,12 @@ agd tx staking create-validator \
 
 ## Delete node
 ```pytohn
-sudo systemctl stop agoricd.service && \
-sudo systemctl disable agoricd.service && \
-rm /etc/systemd/system/agoricd.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf agoric-sdk && \
-rm -rf .agoric && \
+sudo systemctl stop agoricd.service
+sudo systemctl disable agoricd.service
+rm /etc/systemd/system/agoricd.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf agoric-sdk
+rm -rf .agoric
 rm -rf $(which agd)
 ```
