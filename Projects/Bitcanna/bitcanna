@@ -42,7 +42,7 @@ sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq bui
 
 echo -e "        \e[1m\e[32m2. Installing GO--> \e[0m" && sleep 1
 #INSTALL GO
-ver="1.20.5"
+ver="1.21.4"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
@@ -56,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/BitCannaGlobal/bcna
 cd bcna
-git checkout v2.0.3
+git checkout v3.0.0
 make install
 
 bcnad init $Validator_Name --chain-id $CHAIN_ID
@@ -153,7 +153,7 @@ break
 "UPDATE")
 cd $HOME/bcna
 git fetch --all
-git checkout v2.0.3
+git checkout v3.0.0
 make install
 sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 
@@ -180,13 +180,13 @@ sudo systemctl restart bcnad && journalctl -u bcnad -f -o cat
 break
 ;;
 "Delete Node")
-sudo systemctl stop bcnad && \
-sudo systemctl disable bcnad && \
-rm /etc/systemd/system/bcnad.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf bcna && \
-rm -rf .bcna && \
+sudo systemctl stop bcnad
+sudo systemctl disable bcnad
+rm /etc/systemd/system/bcnad.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf bcna
+rm -rf .bcna
 rm -rf $(which bcnad)
 
 break
