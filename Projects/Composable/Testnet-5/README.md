@@ -147,14 +147,14 @@ SOON
 ```python
 cd $HOME
 apt install lz4
-sudo systemctl stop layerd
+sudo systemctl stop centaurid
 cp $HOME/.banksy/data/priv_validator_state.json $HOME/.banksy/priv_validator_state.json.backup
 rm -rf $HOME/.banksy/data
 curl -o - -L https://composable-t4.snapshot.stavr.tech/composable/composable-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.banksy --strip-components 2
 curl -o - -L https://composable.wasmt4.stavr.tech/wasm-composable.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.banksy --strip-components 2
 mv $HOME/.banksy/priv_validator_state.json.backup $HOME/.banksy/data/priv_validator_state.json
 wget -O $HOME/.banksy/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Composable/Testnet-5/addrbook.json"
-sudo systemctl restart layerd && journalctl -u layerd -f -o cat
+sudo systemctl restart centaurid && journalctl -u centaurid -f -o cat
 ```
 # WASM FOLDER
 ```python
@@ -176,7 +176,7 @@ centaurid tx staking create-validator \
 --commission-max-change-rate 1 \
 --min-self-delegation "1" \
 --amount 1000000000000000000ppica \
---pubkey $(layerd tendermint show-validator) \
+--pubkey $(centaurid tendermint show-validator) \
 --from <wallet> \
 --moniker="STAVR_guide" \
 --chain-id banksy-testnet-5 \
@@ -212,5 +212,5 @@ sudo journalctl -u centaurid -f -o cat
 ```
 ### Check Balance
 ```python
-layerd query bank balances centaurid...addressjkl1yjgn7z09ua9vms259j
+centaurid query bank balances centaurid...addressjkl1yjgn7z09ua9vms259j
 ```
