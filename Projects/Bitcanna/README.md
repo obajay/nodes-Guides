@@ -5,24 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/bitcanna/bcnavaloper19tyve4e8nf0twd8z02a2eatrls7tuecy0ef098)
 =
 
@@ -59,10 +41,10 @@ wget -O bitcanna https://raw.githubusercontent.com/obajay/nodes-Guides/main/Proj
 udo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
-## GO 1.20.5
+## GO 1.21.4
 ```python
 cd $HOME
-ver="1.20.5"
+ver="1.21.4"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
@@ -72,33 +54,33 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 16.08.23
+# Build 25.01.24
 ```python
 cd $HOME
 git clone https://github.com/BitCannaGlobal/bcna
 cd bcna
-git checkout v2.0.3
+git checkout v3.0.0
 make install
 ```
 
-*******🟢UPDATE🟢******* 16.08.23
+*******🟢UPDATE🟢******* 25.01.24
 ```python
 cd $HOME/bcna
 git fetch --all
-git checkout v2.0.3
+git checkout v3.0.0
 make install
 bcnad version --long
-#version: 2.0.3
-#commit: 787f0638f40d8d4074bf44ee5b0965f4990bc66e
+#version: 3.0.0
+#commit: 70ed42fd9d475466245628d7dce1b1f551a46292
 sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 ```
 
 `bcnad version --long | grep -e commit -e version`
-- version: 2.0.3
-- commit: 787f0638f40d8d4074bf44ee5b0965f4990bc66e
+- version: 3.0.0
+- commit: 70ed42fd9d475466245628d7dce1b1f551a46292
 
 ```python
-bcnad init STAVRguide --chain-id bitcanna-1
+bcnad init STAVR_guide --chain-id bitcanna-1
 ```    
 
 ## Create/recover wallet
@@ -131,18 +113,18 @@ sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.bcna
 ```
 ### Pruning (optional)
 ```python
-pruning="custom" && \
-pruning_keep_recent="100" && \
-pruning_keep_every="0" && \
-pruning_interval="10" && \
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" ~/.bcna/config/app.toml && \
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" ~/.bcna/config/app.toml && \
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" ~/.bcna/config/app.toml && \
+pruning="custom" &&
+pruning_keep_recent="100" &&
+pruning_keep_every="0" &&
+pruning_interval="10" &&
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" ~/.bcna/config/app.toml &&
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" ~/.bcna/config/app.toml &&
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" ~/.bcna/config/app.toml &&
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~/.bcna/config/app.toml
 ```
 ### Indexer (optional) 
 ```python
-indexer="null" && \
+indexer="null" &&
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.bcna/config/config.toml
 ```
 
@@ -216,7 +198,7 @@ bcnad tx staking create-validator \
 --amount=1000000ubcna \
 --broadcast-mode=block \
 --pubkey=`bcnad tendermint show-validator` \
---moniker=STAVRguide \
+--moniker=STAVR_guide \
 --commission-rate="0.1" \
 --commission-max-rate="0.20" \
 --commission-max-change-rate="0.1" \
