@@ -133,7 +133,7 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-# StateSync Medibloc Mainnet
+# StateSync Oraichain Mainnet
 ```python
 SOOON
 ```
