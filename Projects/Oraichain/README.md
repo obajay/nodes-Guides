@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOON
+wget -O oraim https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Oraichain/oraim && chmod +x oraim && ./oraim
 ```
 
 # 2) Manual installation
