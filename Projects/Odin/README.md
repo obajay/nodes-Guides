@@ -114,7 +114,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.odin/config/config.to
 
 ## Download addrbook
 ```python
-wget -O $HOME/.odin/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/odin/addrbook.json"
+wget -O $HOME/.odin/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Odin/addrbook.json"
 ```
 
 # Create a service file
