@@ -19,7 +19,7 @@
 
 # 1) Auto_install script
 ```python
-SOON
+wget -O emoneym https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/eMoney/emoneym && chmod +x emoneym && ./emoneym
 ```
 
 # 2) Manual installation
