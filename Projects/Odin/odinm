@@ -65,7 +65,7 @@ odind config chain-id $CHAIN_ID
 
 wget -O genesis.json https://snapshots.polkachu.com/genesis/odin/genesis.json --inet4-only
 mv genesis.json ~/.odin/config
-wget -O $HOME/.odin/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/odin/addrbook.json"
+wget -O $HOME/.odin/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Odin/addrbook.json"
 
 echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
 
