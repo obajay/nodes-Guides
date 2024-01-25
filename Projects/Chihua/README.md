@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOON
+wget -O chihuam https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Chihua/chihuam && chmod +x chihuam && ./chihuam
 ```
 
 # 2) Manual installation
