@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOON
+wget -O crescentm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Crescent/crescentm && chmod +x crescentm && ./crescentm
 ```
 
 # 2) Manual installation
