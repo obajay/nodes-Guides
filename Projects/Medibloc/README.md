@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O mediblocm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Medibloc/mediblocm && chmod +x mediblocm && ./mediblocm
 ```
 
 # 2) Manual installation
