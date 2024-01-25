@@ -137,7 +137,7 @@ EOF
 ```python
 SOOON
 ```
-# SnapShot Testnet (~0.2GB) updated every 5 hours  
+# SnapShot Mainnet (~0.2GB) updated every 5 hours  
 ```python
 SOOON
 ```
