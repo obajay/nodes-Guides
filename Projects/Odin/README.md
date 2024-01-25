@@ -19,7 +19,7 @@
 
 # 1) Auto_install script
 ```python
-SOON
+wget -O odinm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Odin/odinm && chmod +x odinm && ./odinm
 ```
 
 # 2) Manual installation
