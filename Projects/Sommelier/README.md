@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOON
+wget -O sommm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Sommelier/sommm && chmod +x sommm && ./sommm
 ```
 
 # 2) Manual installation
