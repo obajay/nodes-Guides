@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOON
+wget -O desmosm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Desmos/desmosm && chmod +x desmosm && ./desmosm
 ```
 
 # 2) Manual installation
