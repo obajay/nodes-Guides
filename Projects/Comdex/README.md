@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOON
+wget -O comdexm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Comdex/comdexm && chmod +x comdexm && ./comdexm
 ```
 
 # 2) Manual installation
