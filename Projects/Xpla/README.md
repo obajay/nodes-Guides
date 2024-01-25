@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOON
+wget -O xplam https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Xpla/xplam && chmod +x xplam && ./xplam
 ```
 
 # 2) Manual installation
