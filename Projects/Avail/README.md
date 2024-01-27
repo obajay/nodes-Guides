@@ -48,16 +48,6 @@ systemctl restart avail && journalctl -u avail -f -o cat
 `avail --version`
 - avail 1.9.0-unknown
 
-## Download json
-```python
-wget -O $HOME/.avail/chainspec.raw.json "https://goldberg.avail.tools/chainspec.raw.json"
-chmod 744 ~/.avail/chainspec.raw.json
-
-```
-`sha256sum $HOME/.avail/chainspec.raw.json`
-+ 45d239c0e00575dda6a2c04baccd48c4eeab83127e901d792306f0a079b5fe61
-
-
 # Create a service file
 ```python
 yourname=<name>
@@ -75,7 +65,7 @@ RestartSec=3
 LimitNOFILE=65535
 ExecStart=/usr/bin/avail \
   --base-path $HOME/.avail/data/ \
-  --chain $HOME/.avail/chainspec.raw.json \
+  --chain goldberg \
   --port 30333 \
   --rpc-port 9933 \
   --prometheus-port 9615 \
