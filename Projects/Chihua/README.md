@@ -134,11 +134,34 @@ EOF
 ```
 # StateSync Chihuahua Mainnet
 ```python
-SOOON
+SNAP_RPC=https://chihua.rpc.m.stavr.tech:443
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.chihuahuad/config/config.toml
+chihuahuad tendermint unsafe-reset-all
+wget -O $HOME/.chihuahuad/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Chihua/addrbook.json"
+curl -o - -L https://chihua.wasm.stavr.tech/wasm-chihua.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.chihuahuad --strip-components 2
+sudo systemctl restart chihuahuad && sudo journalctl -u chihuahuad -f -o cat
 ```
-# SnapShot Testnet (~0.2GB) updated every 5 hours  
+# SnapShot Mainnet (~3GB) updated every 5 hours  
 ```python
-SOOON
+cd $HOME
+apt install lz4
+sudo systemctl stop chihuahuad
+cp $HOME/.chihuahuad/data/priv_validator_state.json $HOME/.chihuahuad/priv_validator_state.json.backup
+rm -rf $HOME/.chihuahuad/data
+curl -o - -L https://chihua.snapshot.stavr.tech/chihua/chihua-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.chihuahuad --strip-components 2
+mv $HOME/.chihuahuad/priv_validator_state.json.backup $HOME/.chihuahuad/data/priv_validator_state.json
+wget -O $HOME/.chihuahuad/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Chihua/addrbook.json"
+sudo systemctl restart chihuahuad && journalctl -u chihuahuad -f -o cat
 ```
 
 ## Start
