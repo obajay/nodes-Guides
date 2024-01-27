@@ -1,0 +1,1015 @@
+{
+  "genesis_time": "2022-08-19T09:30:00Z",
+  "chain_id": "dimension_37-1",
+  "initial_height": "1",
+  "consensus_params": {
+    "block": {
+      "max_bytes": "1000000",
+      "max_gas": "100000000",
+      "time_iota_ms": "1000"
+    },
+    "evidence": {
+      "max_age_num_blocks": "100000",
+      "max_age_duration": "172800000000000",
+      "max_bytes": "1000000"
+    },
+    "validator": {
+      "pub_key_types": [
+        "ed25519"
+      ]
+    },
+    "version": {}
+  },
+  "app_hash": "",
+  "app_state": {
+    "auth": {
+      "accounts": [
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "0",
+          "address": "xpla16nj2apcvata6efka92q69849cqjg2fr8zs6p5s",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "0",
+          "address": "xpla14jv9xaegvvx4pt9qk0yr4h893lqq32eeppslwt",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "0",
+          "address": "xpla173guv8jvjcn5facu0zu97mww6730mnh5gpn86n",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "0",
+          "address": "xpla1hn6tn3n5kks0j5vf349m8qq3t67hwerj6vg7ef",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "0",
+          "address": "xpla1fvv6xx4ghnrkqnmurr6dpjqmcxt0lf3ccg68ve",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "0",
+          "address": "xpla1tple283l3vcaac7x0mqrwtvm3kfe8hlcmsk4tz",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "0",
+          "address": "xpla1642m4qamrdfm0jgj0cl4f0ns4k3guqm7jk8spr",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "0",
+          "address": "xpla10n40v9ukkxehejyg2crd47xldjmw0gsupa748r",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "0",
+          "address": "xpla1vnzz7xyqjaayljtdrug845tdlw33k2pnh47k4e",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "0",
+          "address": "xpla1j0rc0uraryz205ulycxv7t8a05q35rvpncz3jw",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "0",
+          "address": "xpla1e8xzemhx36xp7qu2gtllgpcde2z8y498j2zyrk",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "0",
+          "address": "xpla1qxfrqlf8tpz532w0t5gz76ud4qg398xrr29r65",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "0",
+          "address": "xpla1vdqljayz7rm04xj9p4du2cgmf3jzfsa0ka9f7l",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "0",
+          "address": "xpla1vrget09sfejz8l8q0jwucva7pl93at9x5hp8qg",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "0",
+          "address": "xpla19dacf8gzsvuj9txzw0wmtfpdg8swpd4jxl3ks2",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "0",
+          "address": "xpla1mfe4yrwkyarsrvncnhw9unfqkjzwcyrj9dt72u",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "0",
+          "address": "xpla10ksn9528f82uwnmz3sgr4n42l0nucmzntjrg00",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "0",
+          "address": "xpla1pv47264pa8aq5h0hx5758e7dus42sg7v5x4edl",
+          "pub_key": null,
+          "sequence": "0"
+        }
+      ],
+      "params": {
+        "max_memo_characters": "256",
+        "sig_verify_cost_ed25519": "590",
+        "sig_verify_cost_secp256k1": "1000",
+        "tx_sig_limit": "7",
+        "tx_size_cost_per_byte": "10"
+      }
+    },
+    "authz": {
+      "authorization": []
+    },
+    "bank": {
+      "balances": [
+        {
+          "address": "xpla16nj2apcvata6efka92q69849cqjg2fr8zs6p5s",
+          "coins": [
+            {
+              "amount": "501000000000000000000000",
+              "denom": "axpla"
+            }
+          ]
+        },
+        {
+          "address": "xpla14jv9xaegvvx4pt9qk0yr4h893lqq32eeppslwt",
+          "coins": [
+            {
+              "amount": "501000000000000000000000",
+              "denom": "axpla"
+            }
+          ]
+        },
+        {
+          "address": "xpla173guv8jvjcn5facu0zu97mww6730mnh5gpn86n",
+          "coins": [
+            {
+              "amount": "501000000000000000000000",
+              "denom": "axpla"
+            }
+          ]
+        },
+        {
+          "address": "xpla1hn6tn3n5kks0j5vf349m8qq3t67hwerj6vg7ef",
+          "coins": [
+            {
+              "amount": "501000000000000000000000",
+              "denom": "axpla"
+            }
+          ]
+        },
+        {
+          "address": "xpla1fvv6xx4ghnrkqnmurr6dpjqmcxt0lf3ccg68ve",
+          "coins": [
+            {
+              "amount": "501000000000000000000000",
+              "denom": "axpla"
+            }
+          ]
+        },
+        {
+          "address": "xpla1tple283l3vcaac7x0mqrwtvm3kfe8hlcmsk4tz",
+          "coins": [
+            {
+              "amount": "501000000000000000000000",
+              "denom": "axpla"
+            }
+          ]
+        },
+        {
+          "address": "xpla1642m4qamrdfm0jgj0cl4f0ns4k3guqm7jk8spr",
+          "coins": [
+            {
+              "amount": "501000000000000000000000",
+              "denom": "axpla"
+            }
+          ]
+        },
+        {
+          "address": "xpla10n40v9ukkxehejyg2crd47xldjmw0gsupa748r",
+          "coins": [
+            {
+              "amount": "501000000000000000000000",
+              "denom": "axpla"
+            }
+          ]
+        },
+        {
+          "address": "xpla1vnzz7xyqjaayljtdrug845tdlw33k2pnh47k4e",
+          "coins": [
+            {
+              "amount": "747249890000000000000000000",
+              "denom": "axpla"
+            }
+          ]
+        },
+        {
+          "address": "xpla1j0rc0uraryz205ulycxv7t8a05q35rvpncz3jw",
+          "coins": [
+            {
+              "amount": "60000000000000000000000000",
+              "denom": "axpla"
+            }
+          ]
+        },
+        {
+          "address": "xpla1e8xzemhx36xp7qu2gtllgpcde2z8y498j2zyrk",
+          "coins": [
+            {
+              "amount": "300000000000000000000000000",
+              "denom": "axpla"
+            }
+          ]
+        },
+        {
+          "address": "xpla1qxfrqlf8tpz532w0t5gz76ud4qg398xrr29r65",
+          "coins": [
+            {
+              "amount": "300000000000000000000000000",
+              "denom": "axpla"
+            }
+          ]
+        },
+        {
+          "address": "xpla1vdqljayz7rm04xj9p4du2cgmf3jzfsa0ka9f7l",
+          "coins": [
+            {
+              "amount": "53137610000000000000000000",
+              "denom": "axpla"
+            }
+          ]
+        },
+        {
+          "address": "xpla1vrget09sfejz8l8q0jwucva7pl93at9x5hp8qg",
+          "coins": [
+            {
+              "amount": "300000000000000000000000000",
+              "denom": "axpla"
+            }
+          ]
+        },
+        {
+          "address": "xpla19dacf8gzsvuj9txzw0wmtfpdg8swpd4jxl3ks2",
+          "coins": [
+            {
+              "amount": "60000000000000000000000000",
+              "denom": "axpla"
+            }
+          ]
+        },
+        {
+          "address": "xpla1mfe4yrwkyarsrvncnhw9unfqkjzwcyrj9dt72u",
+          "coins": [
+            {
+              "amount": "40000000000000000000000000",
+              "denom": "axpla"
+            }
+          ]
+        },
+        {
+          "address": "xpla10ksn9528f82uwnmz3sgr4n42l0nucmzntjrg00",
+          "coins": [
+            {
+              "amount": "20000000000000000000000000",
+              "denom": "axpla"
+            }
+          ]
+        },
+        {
+          "address": "xpla1pv47264pa8aq5h0hx5758e7dus42sg7v5x4edl",
+          "coins": [
+            {
+              "amount": "115604500000000000000000000",
+              "denom": "axpla"
+            }
+          ]
+        }
+      ],
+      "denom_metadata": [],
+      "params": {
+        "default_send_enabled": true,
+        "send_enabled": []
+      },
+      "supply": [
+        {
+          "amount": "2000000000000000000000000000",
+          "denom": "axpla"
+        }
+      ]
+    },
+    "capability": {
+      "index": "1",
+      "owners": []
+    },
+    "crisis": {
+      "constant_fee": {
+        "amount": "1000000000000000",
+        "denom": "axpla"
+      }
+    },
+    "distribution": {
+      "delegator_starting_infos": [],
+      "delegator_withdraw_infos": [],
+      "fee_pool": {
+        "community_pool": []
+      },
+      "outstanding_rewards": [],
+      "params": {
+        "base_proposer_reward": "0.010000000000000000",
+        "bonus_proposer_reward": "0.040000000000000000",
+        "community_tax": "0.000000000000000000",
+        "withdraw_addr_enabled": true
+      },
+      "previous_proposer": "",
+      "validator_accumulated_commissions": [],
+      "validator_current_rewards": [],
+      "validator_historical_rewards": [],
+      "validator_slash_events": []
+    },
+    "evidence": {
+      "evidence": []
+    },
+    "feegrant": {
+      "allowances": []
+    },
+    "genutil": {
+      "gen_txs": [
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "DELIGHT",
+                  "identity": "3F5BD795E6AB49AC",
+                  "website": "https://delightlabs.io",
+                  "security_contact": "validator@delightlabs.io",
+                  "details": ""
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "xpla1tple283l3vcaac7x0mqrwtvm3kfe8hlcmsk4tz",
+                "validator_address": "xplavaloper1tple283l3vcaac7x0mqrwtvm3kfe8hlc2d40yl",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "yfQV8d2mhYA+nQzRvkcgcPE6n49tHNPFc6W9Ui86Xjo="
+                },
+                "value": {
+                  "denom": "axpla",
+                  "amount": "500000000000000000000000"
+                }
+              }
+            ],
+            "memo": "ed57e0f4b9eef413cc452d01cce6a7c0fb93eccf@10.3.1.133:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "A75UYbJMco9eMEcJFtNFA5cUBpfKzIqaeQvoBegUvzQ9"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "signatures": [
+            "SmjZtjEMRIQOQLZsaP8p885GRyiRnZIglLQnTjceXVY4C7j9eswJPHA5KFobOQxasLM7HNF5P4MdvWTcIVxhGgA="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "COM2US",
+                  "identity": "BB11085FBD378894",
+                  "website": "",
+                  "security_contact": "",
+                  "details": ""
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "xpla173guv8jvjcn5facu0zu97mww6730mnh5gpn86n",
+                "validator_address": "xplavaloper173guv8jvjcn5facu0zu97mww6730mnh5eusa4w",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "pxMPKE+Avt6eZnKZlHqQauCeDoDbTQ9JvAx2xEtMkDw="
+                },
+                "value": {
+                  "denom": "axpla",
+                  "amount": "500000000000000000000000"
+                }
+              }
+            ],
+            "memo": "e2a6bced7f22103980e1d3f63de439d96700bb1e@172.22.1.11:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "AzAxINtLTqnz1UuKGyG6exnmAB4hzxLg5hFKjRk8PKCe"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "signatures": [
+            "yukpsO41sKb4l777hRYLDc8ugZUn91XfkKPvXHLGHJB1CgawIShHeAtj3CNO/gFDdVwQKM36EQHJjzgyHLCjlg=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "COM2VERSE",
+                  "identity": "D9D0E70D9D936887",
+                  "website": "",
+                  "security_contact": "",
+                  "details": ""
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "xpla1hn6tn3n5kks0j5vf349m8qq3t67hwerj6vg7ef",
+                "validator_address": "xplavaloper1hn6tn3n5kks0j5vf349m8qq3t67hwerjt3tyk5",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "72TE1zhTXz79LNqiLF73lNUnub1b8rVSund0jtBVpiY="
+                },
+                "value": {
+                  "denom": "axpla",
+                  "amount": "500000000000000000000000"
+                }
+              }
+            ],
+            "memo": "44e0345a492a98371c0d592582ee2f9108d6b6f1@172.26.1.11:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "AqPB7mC556fmj94x4UhSWExnwAKNL3U1dQqE0C+PmLOE"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "signatures": [
+            "foa+Hz4EcPZK0oGp3r0Y60B0EU2HvtUc5nTTRriskDkNDdHl05xxyPAsGNIkBwhhtLuBVFM9TB/iFl/Vi2psQA=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "HOLDINGS",
+                  "identity": "6AAB2FCC6483CF3B",
+                  "website": "",
+                  "security_contact": "",
+                  "details": ""
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "xpla14jv9xaegvvx4pt9qk0yr4h893lqq32eeppslwt",
+                "validator_address": "xplavaloper14jv9xaegvvx4pt9qk0yr4h893lqq32eesun9pk",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "g4+Ve9qajK2smca6M5M0Zifg+4YYuunI28Ynr1pSeBA="
+                },
+                "value": {
+                  "denom": "axpla",
+                  "amount": "500000000000000000000000"
+                }
+              }
+            ],
+            "memo": "717ca4bdf35ec3c9bdc54311b691f2c80053d451@172.20.2.11:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "An/OmPL88hhQYoTai84L+vbq9SgY/RMS6sFfMsu/P8iG"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "signatures": [
+            "AjQWbCSQ2zWwguigcfHoZVdYMXSWVZvlrCYDkRdP/UgRkUpWiaBAXis8WtcXlJmSRPI/Ch1Jf5li5aKofpN/fw=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "METAMAGNET",
+                  "identity": "2781AB1F43F63ECA",
+                  "website": "",
+                  "security_contact": "",
+                  "details": ""
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "xpla16nj2apcvata6efka92q69849cqjg2fr8zs6p5s",
+                "validator_address": "xplavaloper16nj2apcvata6efka92q69849cqjg2fr8ndemmd",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "CUVGo254vTlvcqvOOLRrPFTG0rI66fO2BNUZWZbdyc8="
+                },
+                "value": {
+                  "denom": "axpla",
+                  "amount": "500000000000000000000000"
+                }
+              }
+            ],
+            "memo": "d484eb88394115d91518fec3fa1238e369347800@172.20.1.11:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "Apt25ZLXztXY9f4tbSxtAUCTPBUzP+GZ5dMMupHLKP4Y"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "signatures": [
+            "6dtKZeLgMatTMi1SfFlhaGd1t5mZqMDFIgYnwZCtCXkUnUeYBm/mGE60fibWTXyhcXx7FCi0dLcQ+QZewb6ZmA=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "Ozys",
+                  "identity": "",
+                  "website": "",
+                  "security_contact": "",
+                  "details": ""
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "xpla10n40v9ukkxehejyg2crd47xldjmw0gsupa748r",
+                "validator_address": "xplavaloper10n40v9ukkxehejyg2crd47xldjmw0gsusqa0g7",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "/tqP2rcak9Kp1jQW5dvCDonVe9DoxXOcURDQSf5PxxU="
+                },
+                "value": {
+                  "denom": "axpla",
+                  "amount": "500000000000000000000000"
+                }
+              }
+            ],
+            "memo": "52aa241ceda8283a785fd4eba0585f0158e1cbaf@10.200.1.24:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "Az3K/i+L6YITuwEBms+R0RRybMSTidFzmUxJdDMHNw1m"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "signatures": [
+            "l09vzTTnrQARSNyswpIC9Vn8lH8A0iT73PDgjXNFrLIXU1SJW+Rhnq4ksUl7w0qQn6mO/mHQhSyh3lGYoF96SAA="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "PLATFORM",
+                  "identity": "53814B2D565BC51F",
+                  "website": "",
+                  "security_contact": "",
+                  "details": ""
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "xpla1fvv6xx4ghnrkqnmurr6dpjqmcxt0lf3ccg68ve",
+                "validator_address": "xplavaloper1fvv6xx4ghnrkqnmurr6dpjqmcxt0lf3cf4eary",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "JEVsO3xo9TV1qP2b+WeRM4qkPXlyZF69sZUN2kyoL7A="
+                },
+                "value": {
+                  "denom": "axpla",
+                  "amount": "500000000000000000000000"
+                }
+              }
+            ],
+            "memo": "2e0d183130333449ace57ec301b323d5c93abefd@172.24.1.11:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "AhXa8HxtVtH8HYCZwmtqU7o4SWsMjZ3u35VrHKMWg28J"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "signatures": [
+            "WIdJyXvI52IY1XPDLjuhNtQZX/F+fsuZeZn/O7ufqMQxjq5AjMueUxz0X5ybxdqg3PKONheIgA6QNfQCS45HiA=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "ZenaAD",
+                  "identity": "",
+                  "website": "",
+                  "security_contact": "",
+                  "details": ""
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "xpla1642m4qamrdfm0jgj0cl4f0ns4k3guqm7jk8spr",
+                "validator_address": "xplavaloper1642m4qamrdfm0jgj0cl4f0ns4k3guqm7rty2w7",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "qIWL9U2xf5eE81ZROcup+nQBX4PEc1aI9E/4p+rfiYc="
+                },
+                "value": {
+                  "denom": "axpla",
+                  "amount": "500000000000000000000000"
+                }
+              }
+            ],
+            "memo": "b49743808ede24eed49f7dff9181061cf6dc7185@172.31.34.119:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+                  "key": "ApJYok4JpM3YUwtto9zJaa0lqmFZj1XPcSSO9U27tXpb"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "signatures": [
+            "SDwzcihrK1LGloE2la7Xe0OlNJKFQgfQw70pD0ysC6VoRTF7TK4r3qRkWnw2dfjpKOG7lduTvFYIT7L1TMkycwA="
+          ]
+        }
+      ]
+    },
+    "gov": {
+      "deposit_params": {
+        "max_deposit_period": "172800s",
+        "min_deposit": [
+          {
+            "amount": "10000000000000000000",
+            "denom": "axpla"
+          }
+        ]
+      },
+      "deposits": [],
+      "proposals": [],
+      "starting_proposal_id": "1",
+      "tally_params": {
+        "quorum": "0.334000000000000000",
+        "threshold": "0.500000000000000000",
+        "veto_threshold": "0.334000000000000000"
+      },
+      "votes": [],
+      "voting_params": {
+        "voting_period": "604800s"
+      }
+    },
+    "ibc": {
+      "channel_genesis": {
+        "ack_sequences": [],
+        "acknowledgements": [],
+        "channels": [],
+        "commitments": [],
+        "next_channel_sequence": "0",
+        "receipts": [],
+        "recv_sequences": [],
+        "send_sequences": []
+      },
+      "client_genesis": {
+        "clients": [],
+        "clients_consensus": [],
+        "clients_metadata": [],
+        "create_localhost": false,
+        "next_client_sequence": "0",
+        "params": {
+          "allowed_clients": [
+            "06-solomachine",
+            "07-tendermint"
+          ]
+        }
+      },
+      "connection_genesis": {
+        "client_connection_paths": [],
+        "connections": [],
+        "next_connection_sequence": "0",
+        "params": {
+          "max_expected_time_per_block": "30000000000"
+        }
+      }
+    },
+    "interchainaccounts": {
+      "controller_genesis_state": {
+        "active_channels": [],
+        "interchain_accounts": [],
+        "params": {
+          "controller_enabled": true
+        },
+        "ports": []
+      },
+      "host_genesis_state": {
+        "active_channels": [],
+        "interchain_accounts": [],
+        "params": {
+          "allow_messages": [],
+          "host_enabled": true
+        },
+        "port": "icahost"
+      }
+    },
+    "mint": {
+      "minter": {
+        "annual_provisions": "0.000000000000000000",
+        "inflation": "0.000000000000000000"
+      },
+      "params": {
+        "blocks_per_year": "6311520",
+        "goal_bonded": "0.670000000000000000",
+        "inflation_max": "0.000000000000000000",
+        "inflation_min": "0.000000000000000000",
+        "inflation_rate_change": "0.000000000000000000",
+        "mint_denom": "axpla"
+      }
+    },
+    "packetfowardmiddleware": {
+      "params": {
+        "fee_percentage": "0.000000000000000000"
+      }
+    },
+    "params": null,
+    "slashing": {
+      "missed_blocks": [],
+      "params": {
+        "downtime_jail_duration": "600s",
+        "min_signed_per_window": "0.005000000000000000",
+        "signed_blocks_window": "10000",
+        "slash_fraction_double_sign": "0.050000000000000000",
+        "slash_fraction_downtime": "0.000100000000000000"
+      },
+      "signing_infos": []
+    },
+    "staking": {
+      "delegations": [],
+      "exported": false,
+      "last_total_power": "0",
+      "last_validator_powers": [],
+      "params": {
+        "bond_denom": "axpla",
+        "historical_entries": 10000,
+        "max_entries": 7,
+        "max_validators": 8,
+        "unbonding_time": "1814400s"
+      },
+      "redelegations": [],
+      "unbonding_delegations": [],
+      "validators": []
+    },
+    "transfer": {
+      "denom_traces": [],
+      "params": {
+        "receive_enabled": true,
+        "send_enabled": true
+      },
+      "port_id": "transfer"
+    },
+    "upgrade": {},
+    "vesting": {},
+    "wasm": {
+      "codes": [],
+      "contracts": [],
+      "gen_msgs": [],
+      "params": {
+        "code_upload_access": {
+          "address": "",
+          "permission": "Everybody"
+        },
+        "instantiate_default_permission": "Everybody"
+      },
+      "sequences": []
+    }
+  }
+}

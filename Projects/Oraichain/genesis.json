@@ -1,0 +1,871 @@
+{
+    "genesis_time": "2021-02-23T17:06:00.124468946Z",
+    "chain_id": "Oraichain",
+    "initial_height": "1",
+    "consensus_params": {
+        "block": {
+            "max_bytes": "22020096",
+            "max_gas": "-1",
+            "time_iota_ms": "1000"
+        },
+        "evidence": {
+            "max_age_num_blocks": "100000",
+            "max_age_duration": "172800000000000",
+            "max_bytes": "1048576"
+        },
+        "validator": {
+            "pub_key_types": [
+                "ed25519"
+            ]
+        },
+        "version": {}
+    },
+    "app_hash": "",
+    "app_state": {
+        "airequest": {
+            "ai_requests": [],
+            "params": {
+                "maximum_request_bytes": "1048576"
+            }
+        },
+        "airesult": {
+            "ai_request_results": [],
+            "params": {
+                "expiration_count": "10",
+                "total_reports": "70"
+            }
+        },
+        "auth": {
+            "params": {
+                "max_memo_characters": "256",
+                "tx_sig_limit": "7",
+                "tx_size_cost_per_byte": "5",
+                "sig_verify_cost_ed25519": "590",
+                "sig_verify_cost_secp256k1": "1000"
+            },
+            "accounts": [
+                {
+                    "@type": "/cosmos.auth.v1beta1.BaseAccount",
+                    "address": "orai1mxqeldsxg60t2y6gngpdm5jf3k96dnjuanyv3w",
+                    "pub_key": null,
+                    "account_number": "0",
+                    "sequence": "0"
+                },
+                {
+                    "@type": "/cosmos.auth.v1beta1.BaseAccount",
+                    "address": "orai1rqq57xt5r5pnuguffcrltnvkul7n0jdx08ns0g",
+                    "pub_key": null,
+                    "account_number": "0",
+                    "sequence": "0"
+                },
+                {
+                    "@type": "/cosmos.auth.v1beta1.BaseAccount",
+                    "address": "orai18g6e9vej5vpg5jqsf4kmuya0ur0vyp667zzw2h",
+                    "pub_key": null,
+                    "account_number": "0",
+                    "sequence": "0"
+                },
+                {
+                    "@type": "/cosmos.auth.v1beta1.BaseAccount",
+                    "address": "orai1znlxtk32ya99tsvgmclqk0q56a86606lehlklp",
+                    "pub_key": null,
+                    "account_number": "0",
+                    "sequence": "0"
+                },
+                {
+                    "@type": "/cosmos.auth.v1beta1.BaseAccount",
+                    "address": "orai10dzr3yks2jrtgqjnpt6hdgf73mnset024k2lzy",
+                    "pub_key": null,
+                    "account_number": "0",
+                    "sequence": "0"
+                },
+                {
+                    "@type": "/cosmos.auth.v1beta1.BaseAccount",
+                    "address": "orai1lwsq3768lunk78wdsj836svlfpfs09m3jfzc93",
+                    "pub_key": null,
+                    "account_number": "0",
+                    "sequence": "0"
+                },
+                {
+                    "@type": "/cosmos.auth.v1beta1.BaseAccount",
+                    "address": "orai130jsl66rgss6eq7qur02yfr6tzppdvxgkg9640",
+                    "pub_key": null,
+                    "account_number": "0",
+                    "sequence": "0"
+                },
+                {
+                    "@type": "/cosmos.auth.v1beta1.BaseAccount",
+                    "address": "orai1p926xnuet2xd7rajsahsghzeg8sg0tp2s0trp9",
+                    "pub_key": null,
+                    "account_number": "0",
+                    "sequence": "0"
+                }
+            ]
+        },
+        "bank": {
+            "params": {
+                "send_enabled": [],
+                "default_send_enabled": true
+            },
+            "balances": [
+                {
+                    "address": "orai1mxqeldsxg60t2y6gngpdm5jf3k96dnjuanyv3w",
+                    "coins": [
+                        {
+                            "denom": "orai",
+                            "amount": "17268270000000"
+                        }
+                    ]
+                },
+                {
+                    "address": "orai1rqq57xt5r5pnuguffcrltnvkul7n0jdx08ns0g",
+                    "coins": [
+                        {
+                            "denom": "orai",
+                            "amount": "3000000"
+                        }
+                    ]
+                },
+                {
+                    "address": "orai18g6e9vej5vpg5jqsf4kmuya0ur0vyp667zzw2h",
+                    "coins": [
+                        {
+                            "denom": "orai",
+                            "amount": "3000000"
+                        }
+                    ]
+                },
+                {
+                    "address": "orai1znlxtk32ya99tsvgmclqk0q56a86606lehlklp",
+                    "coins": [
+                        {
+                            "denom": "orai",
+                            "amount": "3000000"
+                        }
+                    ]
+                },
+                {
+                    "address": "orai10dzr3yks2jrtgqjnpt6hdgf73mnset024k2lzy",
+                    "coins": [
+                        {
+                            "denom": "orai",
+                            "amount": "3000000"
+                        }
+                    ]
+                },
+                {
+                    "address": "orai1lwsq3768lunk78wdsj836svlfpfs09m3jfzc93",
+                    "coins": [
+                        {
+                            "denom": "orai",
+                            "amount": "3000000"
+                        }
+                    ]
+                },
+                {
+                    "address": "orai130jsl66rgss6eq7qur02yfr6tzppdvxgkg9640",
+                    "coins": [
+                        {
+                            "denom": "orai",
+                            "amount": "3000000"
+                        }
+                    ]
+                },
+                {
+                    "address": "orai1p926xnuet2xd7rajsahsghzeg8sg0tp2s0trp9",
+                    "coins": [
+                        {
+                            "denom": "orai",
+                            "amount": "3000000"
+                        }
+                    ]
+                }
+            ],
+            "supply": [],
+            "denom_metadata": []
+        },
+        "capability": {
+            "index": "1",
+            "owners": []
+        },
+        "crisis": {
+            "constant_fee": {
+                "denom": "orai",
+                "amount": "10000000"
+            }
+        },
+        "distribution": {
+            "params": {
+                "community_tax": "0.020000000000000000",
+                "base_proposer_reward": "0.010000000000000000",
+                "bonus_proposer_reward": "0.040000000000000000",
+                "withdraw_addr_enabled": true
+            },
+            "fee_pool": {
+                "community_pool": []
+            },
+            "delegator_withdraw_infos": [],
+            "previous_proposer": "",
+            "outstanding_rewards": [],
+            "validator_accumulated_commissions": [],
+            "validator_historical_rewards": [],
+            "validator_current_rewards": [],
+            "delegator_starting_infos": [],
+            "validator_slash_events": []
+        },
+        "evidence": {
+            "evidence": []
+        },
+        "genutil": {
+            "gen_txs": [
+                {
+                    "body": {
+                        "messages": [
+                            {
+                                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                                "description": {
+                                    "moniker": "g2_moniker",
+                                    "identity": "Chung Dao - CEO; Diep Nguyen - AI Lead; Thao Nguyen - CEO Vietnam; Tu Pham - CTO; Duc Pham - CPO; Binh-Minh Nguyen - Blockchain Scientist; Ba-Lam Do - AI and Blockchain Scientist; Linh Phan - Head of BD; Toan Nguyen - AI and Blockchain Scientist; PHUNG THE QUAN; NGUYEN QUANG THANG; TRAN CANH TUAN; NGUYEN TUNG DUONG; PHAN KIM HAI; QUYEN QUANG HUY; LY TRUNG KIEN; MAI HOANG NAM; NGUYEN TUAN ANH; TRAN QUANG HUY; NGUYEN DUC NHAT; NGUYEN DUC THANG; DINH HUU HAI QUAN; NGUYEN PHUONG LINH; LE KHAC MANH; DAO THI THU HUONG; DO ANH TUNG; VU QUANG THINH; Lucas; Soy; MK; Jane; Rick; Hank, and all Supportive and Loyal Samorais.",
+                                    "website": "https://orai.io",
+                                    "security_contact": "orai.io",
+                                    "details": "Oraichain: AI-powered Oracle and Ecosystem for Blockchains."
+                                },
+                                "commission": {
+                                    "rate": "0.100000000000000000",
+                                    "max_rate": "0.200000000000000000",
+                                    "max_change_rate": "0.010000000000000000"
+                                },
+                                "min_self_delegation": "100",
+                                "delegator_address": "orai1rqq57xt5r5pnuguffcrltnvkul7n0jdx08ns0g",
+                                "validator_address": "oraivaloper1rqq57xt5r5pnuguffcrltnvkul7n0jdxxdgey0",
+                                "pubkey": {
+                                    "@type": "/cosmos.crypto.ed25519.PubKey",
+                                    "key": "Fnu5TVF9wY/Z3lHlt0rTZ6Q6NCnNToKnspzMdEGEJO8="
+                                },
+                                "value": {
+                                    "denom": "orai",
+                                    "amount": "2000000"
+                                }
+                            }
+                        ],
+                        "memo": "27862ff8d67c963c87ac357e1aa6c64366d38588@172.19.0.2:26656",
+                        "timeout_height": "0",
+                        "extension_options": [],
+                        "non_critical_extension_options": []
+                    },
+                    "auth_info": {
+                        "signer_infos": [
+                            {
+                                "public_key": {
+                                    "@type": "/cosmos.crypto.secp256k1.PubKey",
+                                    "key": "AtJTKaPI31AS5PvqpvBz67/tuFlVrjZrENSYTl/W5L+w"
+                                },
+                                "mode_info": {
+                                    "single": {
+                                        "mode": "SIGN_MODE_DIRECT"
+                                    }
+                                },
+                                "sequence": "0"
+                            }
+                        ],
+                        "fee": {
+                            "amount": [],
+                            "gas_limit": "200000",
+                            "payer": "",
+                            "granter": ""
+                        }
+                    },
+                    "signatures": [
+                        "k4YZyJUgT71S6Jemy7H3ASFrndrG8vMpBLpE+hoY5UwNHkVSBpX5Hd04/ZFh+mTRhd9diLcVViBQ/R5PV2IznA=="
+                    ]
+                },
+                {
+                    "body": {
+                        "messages": [
+                            {
+                                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                                "description": {
+                                    "moniker": "g1_moniker",
+                                    "identity": "Chung Dao - CEO; Diep Nguyen - AI Lead; Thao Nguyen - CEO Vietnam; Tu Pham - CTO; Duc Pham - CPO; Binh-Minh Nguyen - Blockchain Scientist; Ba-Lam Do - AI a\nnd Blockchain Scientist; Linh Phan - Head of BD; Toan Nguyen - AI and Blockchain Scientist; PHUNG THE QUAN; NGUYEN QUANG THANG; TRAN CANH TUAN; NGUYEN TUNG DUONG; PHAN KIM HAI; QUYEN\n QUANG HUY; LY TRUNG KIEN; MAI HOANG NAM; NGUYEN TUAN ANH; TRAN QUANG HUY; NGUYEN DUC NHAT; NGUYEN DUC THANG; DINH HUU HAI QUAN; NGUYEN PHUONG LINH; LE KHAC MANH; DAO THI THU HUONG; \nDO ANH TUNG; VU QUANG THINH; Lucas; Soy; MK; Jane; Rick; Hank, and all Supportive and Loyal Samorais.",
+                                    "website": "3.139.240.126",
+                                    "security_contact": "orai.io",
+                                    "details": "Oraichain: AI-powered Oracle and Ecosystem for Blockchains."
+                                },
+                                "commission": {
+                                    "rate": "0.100000000000000000",
+                                    "max_rate": "0.200000000000000000",
+                                    "max_change_rate": "0.010000000000000000"
+                                },
+                                "min_self_delegation": "100",
+                                "delegator_address": "orai1mxqeldsxg60t2y6gngpdm5jf3k96dnjuanyv3w",
+                                "validator_address": "oraivaloper1mxqeldsxg60t2y6gngpdm5jf3k96dnju5el96f",
+                                "pubkey": {
+                                    "@type": "/cosmos.crypto.ed25519.PubKey",
+                                    "key": "jLunee++7+9tO0vVIBG59POGwkbShGiOWbtggTZMjMM="
+                                },
+                                "value": {
+                                    "denom": "orai",
+                                    "amount": "200000000"
+                                }
+                            }
+                        ],
+                        "memo": "4bd1653082db72f7fca70aeb41658659e2d82dea@172.18.0.2:26656",
+                        "timeout_height": "0",
+                        "extension_options": [],
+                        "non_critical_extension_options": []
+                    },
+                    "auth_info": {
+                        "signer_infos": [
+                            {
+                                "public_key": {
+                                    "@type": "/cosmos.crypto.secp256k1.PubKey",
+                                    "key": "Ajbm00MUAcGd2XvC34ssABO4WKEKfhmJBTsMB+m6vg8f"
+                                },
+                                "mode_info": {
+                                    "single": {
+                                        "mode": "SIGN_MODE_DIRECT"
+                                    }
+                                },
+                                "sequence": "0"
+                            }
+                        ],
+                        "fee": {
+                            "amount": [],
+                            "gas_limit": "200000",
+                            "payer": "",
+                            "granter": ""
+                        }
+                    },
+                    "signatures": [
+                        "OlPkjojtZoR+MbOzB410trvE8rHa0o0NVLxBp9FOxnZ8aDeIHbroM1T/kUL/jxHeC3CTtJaR2uaqn/suJH+S7g=="
+                    ]
+                },
+                {
+                    "body": {
+                        "messages": [
+                            {
+                                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                                "description": {
+                                    "moniker": "KardiaChain",
+                                    "identity": "node",
+                                    "website": "kardiachain.io",
+                                    "security_contact": "efg",
+                                    "details": "helloworld"
+                                },
+                                "commission": {
+                                    "rate": "0.100000000000000000",
+                                    "max_rate": "0.200000000000000000",
+                                    "max_change_rate": "0.010000000000000000"
+                                },
+                                "min_self_delegation": "100",
+                                "delegator_address": "orai18g6e9vej5vpg5jqsf4kmuya0ur0vyp667zzw2h",
+                                "validator_address": "oraivaloper18g6e9vej5vpg5jqsf4kmuya0ur0vyp66hge8ps",
+                                "pubkey": {
+                                    "@type": "/cosmos.crypto.ed25519.PubKey",
+                                    "key": "w8cGC01n/3SDiUgCTq8aFQgAp5lsjlOqOIhsm/s4jOs="
+                                },
+                                "value": {
+                                    "denom": "orai",
+                                    "amount": "2000000"
+                                }
+                            }
+                        ],
+                        "memo": "1e558bf9b22f721c7ec2c9bc364f31233a4c6816@172.19.0.2:26656",
+                        "timeout_height": "0",
+                        "extension_options": [],
+                        "non_critical_extension_options": []
+                    },
+                    "auth_info": {
+                        "signer_infos": [
+                            {
+                                "public_key": {
+                                    "@type": "/cosmos.crypto.secp256k1.PubKey",
+                                    "key": "AyeC/kcdh+jpw4js4L0JYd2xIMbQs9pQQ0E015lo1U7v"
+                                },
+                                "mode_info": {
+                                    "single": {
+                                        "mode": "SIGN_MODE_DIRECT"
+                                    }
+                                },
+                                "sequence": "0"
+                            }
+                        ],
+                        "fee": {
+                            "amount": [
+                                {
+                                    "denom": "orai",
+                                    "amount": "1"
+                                }
+                            ],
+                            "gas_limit": "200000",
+                            "payer": "",
+                            "granter": ""
+                        }
+                    },
+                    "signatures": [
+                        "9W5N1JIonO94xzgS70Xyz74XyxmxJLS7yf3Bhp8zerhJVAIMTCzzJb7xYBpM61iOWnDrcCHpb2lCvSLnc2vnCg=="
+                    ]
+                },
+                {
+                    "body": {
+                        "messages": [
+                            {
+                                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                                "description": {
+                                    "moniker": "QuantumSamORAI",
+                                    "identity": "node",
+                                    "website": "45.76.9.180,149.28.36.149",
+                                    "security_contact": "efg",
+                                    "details": "QuantumAI"
+                                },
+                                "commission": {
+                                    "rate": "0.000000000000000000",
+                                    "max_rate": "0.200000000000000000",
+                                    "max_change_rate": "0.010000000000000000"
+                                },
+                                "min_self_delegation": "100",
+                                "delegator_address": "orai1znlxtk32ya99tsvgmclqk0q56a86606lehlklp",
+                                "validator_address": "oraivaloper1znlxtk32ya99tsvgmclqk0q56a86606lsayl5x",
+                                "pubkey": {
+                                    "@type": "/cosmos.crypto.ed25519.PubKey",
+                                    "key": "iHea1XlBnUpjaE5wDBBD9XJ+I9lQj7YUMr1wJYxiSpk="
+                                },
+                                "value": {
+                                    "denom": "orai",
+                                    "amount": "2000000"
+                                }
+                            }
+                        ],
+                        "memo": "6c3cc4c5a2161e2987595c9a3fe0136c6e6ea35e@172.19.0.2:26656",
+                        "timeout_height": "0",
+                        "extension_options": [],
+                        "non_critical_extension_options": []
+                    },
+                    "auth_info": {
+                        "signer_infos": [
+                            {
+                                "public_key": {
+                                    "@type": "/cosmos.crypto.secp256k1.PubKey",
+                                    "key": "Aivs670HupsCkDDRzu92hfHcVKldOYzArQQbTQVx+9Rz"
+                                },
+                                "mode_info": {
+                                    "single": {
+                                        "mode": "SIGN_MODE_DIRECT"
+                                    }
+                                },
+                                "sequence": "0"
+                            }
+                        ],
+                        "fee": {
+                            "amount": [
+                                {
+                                    "denom": "orai",
+                                    "amount": "1"
+                                }
+                            ],
+                            "gas_limit": "200000",
+                            "payer": "",
+                            "granter": ""
+                        }
+                    },
+                    "signatures": [
+                        "8ao4l13zvo+BkN24Pf6uHw3ouwzurf2xRjgUKh0Gaksxeud2Grfz4XscAp/kOQShFMIue7ygJbiyxYHJdbiU/w=="
+                    ]
+                },
+                {
+                    "body": {
+                        "messages": [
+                            {
+                                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                                "description": {
+                                    "moniker": "The_Firm_Community_Cookiefactory",
+                                    "identity": "node",
+                                    "website": "35.242.253.96",
+                                    "security_contact": "jackie",
+                                    "details": "The_Firm_Community_Cookiefactory"
+                                },
+                                "commission": {
+                                    "rate": "0.100000000000000000",
+                                    "max_rate": "0.200000000000000000",
+                                    "max_change_rate": "0.010000000000000000"
+                                },
+                                "min_self_delegation": "100",
+                                "delegator_address": "orai10dzr3yks2jrtgqjnpt6hdgf73mnset024k2lzy",
+                                "validator_address": "oraivaloper10dzr3yks2jrtgqjnpt6hdgf73mnset02uu3kfr",
+                                "pubkey": {
+                                    "@type": "/cosmos.crypto.ed25519.PubKey",
+                                    "key": "0uDyc0WNK6VW98XHCYCXgyetK863YIyP31pikPp8jiU="
+                                },
+                                "value": {
+                                    "denom": "orai",
+                                    "amount": "2000000"
+                                }
+                            }
+                        ],
+                        "memo": "0f638f84bf116039fec4fe42b9fb2d1e7bbaba06@172.18.0.2:26656",
+                        "timeout_height": "0",
+                        "extension_options": [],
+                        "non_critical_extension_options": []
+                    },
+                    "auth_info": {
+                        "signer_infos": [
+                            {
+                                "public_key": {
+                                    "@type": "/cosmos.crypto.secp256k1.PubKey",
+                                    "key": "A3mwSRE609YKNeFiwrpQfxy/P44PDthwTDG7ArVEF31A"
+                                },
+                                "mode_info": {
+                                    "single": {
+                                        "mode": "SIGN_MODE_DIRECT"
+                                    }
+                                },
+                                "sequence": "0"
+                            }
+                        ],
+                        "fee": {
+                            "amount": [
+                                {
+                                    "denom": "orai",
+                                    "amount": "1"
+                                }
+                            ],
+                            "gas_limit": "200000",
+                            "payer": "",
+                            "granter": ""
+                        }
+                    },
+                    "signatures": [
+                        "Akz4OeqmvElYbLtVeG2ThfjP7sTryO+U2DMEVMKONnFZOg+M83A2BqmFB0uhTRZBsk6oP3mDfxm8g4Oza2j2xA=="
+                    ]
+                },
+                {
+                    "body": {
+                        "messages": [
+                            {
+                                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                                "description": {
+                                    "moniker": "rikkei_moniker",
+                                    "identity": "node",
+                                    "website": "192.46.225.205",
+                                    "security_contact": "efg",
+                                    "details": "Rikkei"
+                                },
+                                "commission": {
+                                    "rate": "0.100000000000000000",
+                                    "max_rate": "0.200000000000000000",
+                                    "max_change_rate": "0.010000000000000000"
+                                },
+                                "min_self_delegation": "100",
+                                "delegator_address": "orai1lwsq3768lunk78wdsj836svlfpfs09m3jfzc93",
+                                "validator_address": "oraivaloper1lwsq3768lunk78wdsj836svlfpfs09m3mre3wk",
+                                "pubkey": {
+                                    "@type": "/cosmos.crypto.ed25519.PubKey",
+                                    "key": "Og7coQxbSm4cMWbgpLqJrNPTbZi3TZBqr2CT9rPrz+E="
+                                },
+                                "value": {
+                                    "denom": "orai",
+                                    "amount": "2000000"
+                                }
+                            }
+                        ],
+                        "memo": "ae3af4a6bf1d61702818ae2b0b337fc720e5d090@172.20.0.2:26656",
+                        "timeout_height": "0",
+                        "extension_options": [],
+                        "non_critical_extension_options": []
+                    },
+                    "auth_info": {
+                        "signer_infos": [
+                            {
+                                "public_key": {
+                                    "@type": "/cosmos.crypto.secp256k1.PubKey",
+                                    "key": "AqK3Q6uUc2QJCm0gpMPOUe4NlTbNJrwqy9ehBOaht3nJ"
+                                },
+                                "mode_info": {
+                                    "single": {
+                                        "mode": "SIGN_MODE_DIRECT"
+                                    }
+                                },
+                                "sequence": "0"
+                            }
+                        ],
+                        "fee": {
+                            "amount": [
+                                {
+                                    "denom": "orai",
+                                    "amount": "1"
+                                }
+                            ],
+                            "gas_limit": "200000",
+                            "payer": "",
+                            "granter": ""
+                        }
+                    },
+                    "signatures": [
+                        "kb/O6HIzqwUznmduqiIeuz5oZ2b/uRv9CIal8+UXvYYFpV35xWBc4kjwf2vWfWbo4q1YZV9WnDrfQ7PlwtyyBw=="
+                    ]
+                },
+                {
+                    "body": {
+                        "messages": [
+                            {
+                                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                                "description": {
+                                    "moniker": "vaiot-validator",
+                                    "identity": "node",
+                                    "website": "13.79.247.74,13.94.107.13",
+                                    "security_contact": "efg",
+                                    "details": "vaiot-validator"
+                                },
+                                "commission": {
+                                    "rate": "0.100000000000000000",
+                                    "max_rate": "0.200000000000000000",
+                                    "max_change_rate": "0.010000000000000000"
+                                },
+                                "min_self_delegation": "100",
+                                "delegator_address": "orai130jsl66rgss6eq7qur02yfr6tzppdvxgkg9640",
+                                "validator_address": "oraivaloper130jsl66rgss6eq7qur02yfr6tzppdvxglz7n7g",
+                                "pubkey": {
+                                    "@type": "/cosmos.crypto.ed25519.PubKey",
+                                    "key": "zYJafIuidhsS9dIkl0u1empVdoTKShG3LvIG18fwif4="
+                                },
+                                "value": {
+                                    "denom": "orai",
+                                    "amount": "2000000"
+                                }
+                            }
+                        ],
+                        "memo": "f61215bae612a6361958002d9f4a7d6170afe84b@172.19.0.2:26656",
+                        "timeout_height": "0",
+                        "extension_options": [],
+                        "non_critical_extension_options": []
+                    },
+                    "auth_info": {
+                        "signer_infos": [
+                            {
+                                "public_key": {
+                                    "@type": "/cosmos.crypto.secp256k1.PubKey",
+                                    "key": "AonOhR2jqQWXJStO05CA0Dr81j66VB4kYNzp4HjYVsOY"
+                                },
+                                "mode_info": {
+                                    "single": {
+                                        "mode": "SIGN_MODE_DIRECT"
+                                    }
+                                },
+                                "sequence": "0"
+                            }
+                        ],
+                        "fee": {
+                            "amount": [
+                                {
+                                    "denom": "orai",
+                                    "amount": "1"
+                                }
+                            ],
+                            "gas_limit": "200000",
+                            "payer": "",
+                            "granter": ""
+                        }
+                    },
+                    "signatures": [
+                        "YvrwleOTXH/Mft52K33iD/St7rcAQgHi3gy+9HMVGgEc4LMlb3ZQ2iyvGpJuIwgigBaUT5Rm0oht+v85zDtxGw=="
+                    ]
+                },
+                {
+                    "body": {
+                        "messages": [
+                            {
+                                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                                "description": {
+                                    "moniker": "ORAI_Vanguard",
+                                    "identity": "ORAI_Vanguard",
+                                    "website": "161.97.102.0",
+                                    "security_contact": "https://t.me/ORAI_Vanguard",
+                                    "details": "Welcome to ORAI_Vanguard!"
+                                },
+                                "commission": {
+                                    "rate": "0.100000000000000000",
+                                    "max_rate": "0.200000000000000000",
+                                    "max_change_rate": "0.010000000000000000"
+                                },
+                                "min_self_delegation": "100",
+                                "delegator_address": "orai1p926xnuet2xd7rajsahsghzeg8sg0tp2s0trp9",
+                                "validator_address": "oraivaloper1p926xnuet2xd7rajsahsghzeg8sg0tp2e9s22z",
+                                "pubkey": {
+                                    "@type": "/cosmos.crypto.ed25519.PubKey",
+                                    "key": "l9PY/oC7El5N7BmHIhn2Rw1n+BBSKxwPKAjnh6JCQbc="
+                                },
+                                "value": {
+                                    "denom": "orai",
+                                    "amount": "2000000"
+                                }
+                            }
+                        ],
+                        "memo": "3b5f0ec1d7295c1efb59c44b2bae6e6ee6a5d22a@172.19.0.2:26656",
+                        "timeout_height": "0",
+                        "extension_options": [],
+                        "non_critical_extension_options": []
+                    },
+                    "auth_info": {
+                        "signer_infos": [
+                            {
+                                "public_key": {
+                                    "@type": "/cosmos.crypto.secp256k1.PubKey",
+                                    "key": "AqC3dC0SQrW29n7Ojhj4/n6L7ZBya7XZNiBjfcyg/AkC"
+                                },
+                                "mode_info": {
+                                    "single": {
+                                        "mode": "SIGN_MODE_DIRECT"
+                                    }
+                                },
+                                "sequence": "0"
+                            }
+                        ],
+                        "fee": {
+                            "amount": [
+                                {
+                                    "denom": "orai",
+                                    "amount": "1"
+                                }
+                            ],
+                            "gas_limit": "200000",
+                            "payer": "",
+                            "granter": ""
+                        }
+                    },
+                    "signatures": [
+                        "FcmksQ8guLWLtyx9ZeuXm23ZYwt0cfHdrFasUp9NF6Yd5bNptxam+rYauckEnFT2lhmWCzwuGGbA7aR13NP5Fg=="
+                    ]
+                }
+            ]
+        },
+        "gov": {
+            "starting_proposal_id": "1",
+            "deposits": [],
+            "votes": [],
+            "proposals": [],
+            "deposit_params": {
+                "min_deposit": [
+                    {
+                        "denom": "orai",
+                        "amount": "10000000"
+                    }
+                ],
+                "max_deposit_period": "604800s"
+            },
+            "voting_params": {
+                "voting_period": "604800s"
+            },
+            "tally_params": {
+                "quorum": "0.334000000000000000",
+                "threshold": "0.500000000000000000",
+                "veto_threshold": "0.334000000000000000"
+            }
+        },
+        "ibc": {
+            "client_genesis": {
+                "clients": [],
+                "clients_consensus": [],
+                "clients_metadata": [],
+                "params": {
+                    "allowed_clients": [
+                        "06-solomachine",
+                        "07-tendermint"
+                    ]
+                },
+                "create_localhost": false,
+                "next_client_sequence": "0"
+            },
+            "connection_genesis": {
+                "connections": [],
+                "client_connection_paths": [],
+                "next_connection_sequence": "0"
+            },
+            "channel_genesis": {
+                "channels": [],
+                "acknowledgements": [],
+                "commitments": [],
+                "receipts": [],
+                "send_sequences": [],
+                "recv_sequences": [],
+                "ack_sequences": [],
+                "next_channel_sequence": "0"
+            }
+        },
+        "mint": {
+            "minter": {
+                "inflation": "0.130000000000000000",
+                "annual_provisions": "0.000000000000000000"
+            },
+            "params": {
+                "mint_denom": "orai",
+                "inflation_rate_change": "0.130000000000000000",
+                "inflation_max": "0.200000000000000000",
+                "inflation_min": "0.070000000000000000",
+                "goal_bonded": "0.670000000000000000",
+                "blocks_per_year": "6311200"
+            }
+        },
+        "provider": {
+            "AIDataSources": [],
+            "OracleScripts": [],
+            "TestCases": [],
+            "params": {
+                "oracle_script_reward_percentage": "60",
+                "maximum_code_bytes": "1048576"
+            }
+        },
+        "slashing": {
+            "params": {
+                "signed_blocks_window": "30000",
+                "min_signed_per_window": "0.050000000000000000",
+                "downtime_jail_duration": "600s",
+                "slash_fraction_double_sign": "0.050000000000000000",
+                "slash_fraction_downtime": "0.000100000000000000"
+            },
+            "signing_infos": [],
+            "missed_blocks": []
+        },
+        "staking": {
+            "params": {
+                "unbonding_time": "1814400s",
+                "max_validators": 100,
+                "max_entries": 7,
+                "historical_entries": 1000,
+                "bond_denom": "orai"
+            },
+            "last_total_power": "0",
+            "last_validator_powers": [],
+            "validators": [],
+            "delegations": [],
+            "unbonding_delegations": [],
+            "redelegations": [],
+            "exported": false
+        },
+        "transfer": {
+            "port_id": "transfer",
+            "denom_traces": [],
+            "params": {
+                "send_enabled": true,
+                "receive_enabled": true
+            }
+        },
+        "wasm": {
+            "params": {
+                "code_upload_access": {
+                    "permission": "Everybody",
+                    "address": ""
+                },
+                "instantiate_default_permission": "Everybody",
+                "max_wasm_code_size": "614400"
+            },
+            "codes": [],
+            "contracts": [],
+            "sequences": [],
+            "gen_msgs": []
+        },
+        "websocket": {
+            "Reports": [],
+            "Reporters": []
+        }
+    }
+}

@@ -1,9 +1,15 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 12988841.491 | 0.01536382 | 199558.222676348030 |
+| 13048039.120 | 0.01818448 | 237271.806419896801 |
 
 <!-- END_TABLE -->
+
+
+
+
+
+
 
 
 
@@ -58,25 +64,25 @@ go version
 cd $HOME
 git clone https://github.com/notional-labs/composable-centauri
 cd composable-centauri
-git checkout v6.4.2
+git checkout v6.4.3
 make install
 ```
 *******🟢UPDATE🟢******* 24.01.24
 ```python
 cd $HOME/composable-centauri
 git pull
-git checkout v6.4.2
+git checkout v6.4.3
 make install
 centaurid version --long | grep -e commit -e version
-#version: v6.4.2
-#commit: 1dc4c25c5f61176ae9ea49043ee39d6101962254
+#version: v6.4.3
+#commit: 4c36a88a43b5e788788c45392d4ebcadce228ee6
 sudo systemctl restart centaurid && sudo journalctl -u centaurid -f -o cat
 
 ```
 
 `centaurid version --long`
-- version: v6.4.2
-- commit: 1dc4c25c5f61176ae9ea49043ee39d6101962254
+- version: v6.4.3
+- commit: 4c36a88a43b5e788788c45392d4ebcadce228ee6
 
 ```python
 centaurid init STAVR_guide --chain-id centauri-1

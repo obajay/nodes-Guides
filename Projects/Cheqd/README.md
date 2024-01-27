@@ -1,7 +1,7 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 102076.620 | 0.062442 | 6373.868317 |
+| 153076.620 | 0.066134 | 10123.569199 |
 
 <!-- END_TABLE -->
 
@@ -9,25 +9,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/cheqd/cheqdvaloper167t2yzx24s0n92esd9xd6zwmy2ya92teac7evx)
 =
-
 
 # CHEQD Mainnet guide
 ![ceqd](https://github.com/obajay/nodes-Guides/assets/44331529/ddd2b6c7-cf35-4c26-bf0c-fd47be08c9bd)
