@@ -65,7 +65,7 @@ wget -O $HOME/.pryzm/config/addrbook.json "https://raw.githubusercontent.com/oba
 
 echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
 
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.015upryzm\"/;" ~/.pryzm/config/app.toml
+sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "0.015upryzm, 0.01factory/pryzm15k9s9p0ar0cx27nayrgk6vmhyec3lj7vkry7rx/uusdsim,0.001ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2,0.001ibc/265435C653FE85CD659E88CD51D4A735BDD4D3804871400378A488C71D68C72B,0.001ibc/92E0120F15D037353CFB73C14651FC8930ADC05B93100FD7754D3A689E53B333,0.001ibc/1704820C9E1F4A9925E0F23D3B92ED0E53DEE28726257E39FABD444BFC6B6AE3"|g' $HOME/.pryzm/config/app.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.pryzm/config/config.toml
 peers=""
