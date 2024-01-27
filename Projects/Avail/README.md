@@ -93,9 +93,6 @@ systemctl restart avail && journalctl -u avail -f -o cat
 curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9933
 ```
 
-## BACKUP
-🟢 save the located keys in `$HOME/.tangle/node-key` and `$HOME/.tangle/data/chains/tangle-standalone-testnet/keystore/`
-
 ## Creating a validator
 - Go to the [website](https://goldberg.avail.tools/#/explorer) and first create a wallet
 - We create a validator. To do this, select `Network - Staking - Accounts - Validator`
