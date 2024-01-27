@@ -136,11 +136,33 @@ EOF
 ```
 # StateSync Carbon Mainnet
 ```python
-SOOON
+SNAP_RPC=https://carbon.rpc.m.stavr.tech:443
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.carbon/config/config.toml
+carbond tendermint unsafe-reset-all
+wget -O $HOME/.carbon/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Carbon/addrbook.json"
+sudo systemctl restart carbond && sudo journalctl -u carbond -f -o cat
 ```
-# SnapShot Testnet (~0.2GB) updated every 5 hours  
+# SnapShot Mainnet (~0.2GB) updated every 5 hours  
 ```python
-SOOON
+cd $HOME
+apt install lz4
+sudo systemctl stop carbond
+cp $HOME/.carbon/data/priv_validator_state.json $HOME/.carbon/priv_validator_state.json.backup
+rm -rf $HOME/.carbon/data
+curl -o - -L https://carbon.snapshot.stavr.tech/carbon/carbon-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.carbon --strip-components 2
+mv $HOME/.carbon/priv_validator_state.json.backup $HOME/.carbon/data/priv_validator_state.json
+wget -O $HOME/.carbon/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Carbon/addrbook.json"
+sudo systemctl restart carbond && journalctl -u carbond -f -o cat
 ```
 
 ## Start
