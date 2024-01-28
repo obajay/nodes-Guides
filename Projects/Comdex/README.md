@@ -151,7 +151,7 @@ wget -O $HOME/.comdex/config/addrbook.json "https://raw.githubusercontent.com/ob
 curl -o - -L https://comdex.wasm.stavr.tech/wasm-comdex.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.comdex --strip-components 2
 sudo systemctl restart comdex && sudo journalctl -u comdex -f -o cat
 ```
-# SnapShot Mainnet updated every 5 hours  
+# SnapShot Mainnet (~2 GB) updated every 5 hours  
 ```python
 cd $HOME
 apt install lz4
