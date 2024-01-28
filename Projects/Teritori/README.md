@@ -5,32 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/teritori/torivaloper1sqk72uwf6tg867ssuu7whxfu9pfcyrpeqwa92c)
 =
 
@@ -68,28 +42,28 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-## Build 06.06.23 
+## Build 29.01.24
 ```python
 git clone https://github.com/TERITORI/teritori-chain
 cd teritori-chain 
-git checkout v1.4.0
+git checkout v2.0.6
 make install
 ```
 
-*******🟢UPDATE🟢******* 06.06.23
+*******🟢UPDATE🟢******* 29.01.24
 ```python
 cd $HOME/teritori-chain
 git fetch --all
-git checkout v1.4.0
+git checkout v2.0.6
 make install
 sudo systemctl restart teritorid && sudo journalctl -u teritorid -f -o cat
 ```
 `teritorid version --long`
-+ version: v1.4.0
-+ commit: 01f60ec7fb9cb9d77dbe7fee1a9d69ff4fb0d2b9
++ version: 2.0.6
++ commit: 99fa787ee24ccf82c005da8e369e00afd938874a
 
 ```python
-teritorid init STAVRguide --chain-id teritori-1
+teritorid init STAVR_guide --chain-id teritori-1
 teritorid config chain-id teritori-1
 ```
 
@@ -210,7 +184,7 @@ sudo journalctl -u teritorid -f -o cat
 teritorid tx staking create-validator \
 --amount=1000000utori \
 --pubkey=$(teritorid tendermint show-validator) \
---moniker="STAVRguide" \
+--moniker="STAVR_guide" \
 --identity="" \
 --details="" \
 --website="" \
@@ -237,5 +211,3 @@ rm -rf .teritorid
 rm -rf teritori-chain
 rm -rf $(which teritorid)
 ```
-
-
