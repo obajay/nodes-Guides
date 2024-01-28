@@ -135,11 +135,34 @@ EOF
 ```
 # StateSync Crescent Mainnet
 ```python
-SOOON
+cd $HOME
+SNAP_RPC=https://crescent.rpc.m.stavr.tech:443
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.crescent/config/config.toml
+crescentd tendermint unsafe-reset-all
+wget -O $HOME/.crescent/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Crescent/addrbook.json"
+sudo systemctl restart crescentd && sudo journalctl -u crescentd -f -o cat
 ```
-# SnapShot Testnet (~0.2GB) updated every 5 hours  
+# SnapShot Mainnet (~0.9GB) updated every 5 hours  
 ```python
-SOOON
+cd $HOME
+apt install lz4
+sudo systemctl stop crescentd
+cp $HOME/.crescent/data/priv_validator_state.json $HOME/.crescent/priv_validator_state.json.backup
+rm -rf $HOME/.crescent/data
+curl -o - -L https://crescent.snapshot.stavr.tech/crescent/crescent-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.crescent --strip-components 2
+mv $HOME/.crescent/priv_validator_state.json.backup $HOME/.crescent/data/priv_validator_state.json
+wget -O $HOME/.crescent/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Crescent/addrbook.json"
+sudo systemctl restart crescentd && journalctl -u crescentd -f -o cat
 ```
 
 ## Start
