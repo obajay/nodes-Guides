@@ -56,16 +56,14 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/UptickNetwork/uptick.git
 cd uptick
-git checkout v0.2.11
+git checkout v0.2.17
 make install
 
 uptickd init $Validator_Name --chain-id $CHAIN_ID
 
 wget -O $HOME/.uptickd/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Uptick/genesis.json"
 wget -O $HOME/.uptickd/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Uptick/addrbook.json"
-
 echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
-
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0auptick\"/;" ~/.uptickd/config/app.toml
 external_address=$(wget -qO- eth0.me)
 peers="170397e75ca2b0f4e9f3b1bb5d0d23f9b10f01c7@uptick-sentry-1.p2p.brocha.in:30597,c0b33353fb70d8d71dcb9c8848b3b4207bd56951@uptick-sentry-2.p2p.brocha.in:30598,23e76540bea9b6851b92e280d7e0c123a0d49521@uptick-sentry-3.p2p.brocha.in:30599,94b63fddfc78230f51aeb7ac34b9fb86bd042a77@uptick-rpc.p2p.brocha.in:30601,f97a75fb69d3a5fe893dca7c8d238ccc0bd66a8f@uptick.seed.brocha.in:30600,48e7e8ca23b636f124e70092f4ba93f98606f604@54.37.129.164:55056"
@@ -145,7 +143,7 @@ break
 "UPDATE")
 cd $HOME/uptick
 git fetch --all
-git checkout v0.2.11
+git checkout v0.2.17
 make install
 sudo systemctl restart uptickd && journalctl -u uptickd -f -o cat
 
@@ -171,13 +169,13 @@ sudo systemctl restart uptickd && journalctl -u uptickd -f -o cat
 break
 ;;
 "Delete Node")
-sudo systemctl stop uptickd && \
-sudo systemctl disable uptickd && \
-rm /etc/systemd/system/uptickd.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf .uptickd && \
-rm -rf uptick && \
+sudo systemctl stop uptickd
+sudo systemctl disable uptickd
+rm /etc/systemd/system/uptickd.service 
+sudo systemctl daemon-reload 
+cd $HOME
+rm -rf .uptickd
+rm -rf uptick
 rm -rf $(which uptickd)
 
 break
