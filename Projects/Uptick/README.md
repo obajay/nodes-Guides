@@ -40,33 +40,33 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 04.09.23
+# Build 29.01.24
 ```python
 cd $HOME
 git clone https://github.com/UptickNetwork/uptick.git
 cd uptick
-git checkout v0.2.11
+git checkout v0.2.17
 make install
 ```
-*******🟢UPDATE🟢******* 14.06.23
+*******🟢UPDATE🟢******* 29.01.24
 ```python
 cd $HOME/uptick
 git fetch --all
-git checkout v0.2.11
+git checkout v0.2.17
 make install
 uptickd version --long | grep -e commit -e version
-#commit: a67f8c973f0b4068493b5063a3f99fa8816558cf
-#version: v0.2.11
+#commit: b4b58f20eb48234ba3996456158f380419da11cf
+#version: v0.2.17
 sudo systemctl restart uptickd && journalctl -u uptickd -f -o cat
 ```
 
 `uptickd version --long`
-+ version: v0.2.11
-+ commit: a67f8c973f0b4068493b5063a3f99fa8816558cf
++ version: v0.2.17
++ commit: b4b58f20eb48234ba3996456158f380419da11cf
 
 ## Initialization
 ```python
-uptickd init STAVRguide --chain-id uptick_117-1
+uptickd init STAVR_guide --chain-id uptick_117-1
 uptickd config chain-id uptick_117-1
 ```
 
@@ -181,7 +181,7 @@ uptickd tx staking create-validator \
 --min-self-delegation="1" \
 --amount=1000000000000000000auptick \
 --pubkey $(uptickd tendermint show-validator) \
---moniker "STAVRguide" \
+--moniker "STAVR_guide" \
 --from=<name_wallet> \
 --gas="auto" \
 --fees 555auptick
@@ -192,12 +192,12 @@ uptickd tx staking create-validator \
 
 ## Delete node
 ```python
-sudo systemctl stop uptickd && \
-sudo systemctl disable uptickd && \
-rm /etc/systemd/system/uptickd.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf .uptickd && \
-rm -rf uptick && \
+sudo systemctl stop uptickd
+sudo systemctl disable uptickd
+rm /etc/systemd/system/uptickd.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf .uptickd
+rm -rf uptick
 rm -rf $(which uptickd)
 ```
