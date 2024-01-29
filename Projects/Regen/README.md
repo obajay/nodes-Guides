@@ -134,11 +134,33 @@ EOF
 ```
 # StateSync Regen Network Mainnet
 ```python
-SOOON
+SNAP_RPC=https://regen.rpc.m.stavr.tech:443
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.regen/config/config.toml
+regen tendermint unsafe-reset-all
+wget -O $HOME/.regen/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Regen/addrbook.json"
+sudo systemctl restart regen && sudo journalctl -u regen -f -o cat
 ```
-# SnapShot Mainnet (~0.2GB) updated every 5 hours  
+# SnapShot Mainnet (~0.5GB) updated every 5 hours  
 ```python
-SOOON
+cd $HOME
+apt install lz4
+sudo systemctl stop regen
+cp $HOME/.regen/data/priv_validator_state.json $HOME/.regen/priv_validator_state.json.backup
+rm -rf $HOME/.regen/data
+curl -o - -L https://regen.snapshot.stavr.tech/regen/regen-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.regen --strip-components 2
+mv $HOME/.regen/priv_validator_state.json.backup $HOME/.regen/data/priv_validator_state.json
+wget -O $HOME/.regen/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Regen/addrbook.json"
+sudo systemctl restart regen && journalctl -u regen -f -o cat
 ```
 
 ## Start
