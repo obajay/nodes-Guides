@@ -166,8 +166,8 @@ EOF
 
 ## Start
 ```python
-sudo systemctl daemon-reload && \
-sudo systemctl enable uptickd && \
+sudo systemctl daemon-reload
+sudo systemctl enable uptickd
 sudo systemctl restart uptickd && sudo journalctl -u uptickd -f -o cat
 ```
 
