@@ -41,32 +41,32 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 10.01.24
+# Build 30.01.24
 ```python
 cd $HOME
 git clone https://github.com/JackalLabs/canine-chain
 cd canine-chain
-git checkout v3.1.1
+git checkout v3.1.2-rc.1
 make install
 ```
-*******🟢UPDATE🟢******* 10.01.24
+*******🟢UPDATE🟢******* 30.01.24
 ```python
 cd $HOME/canine-chain
 git fetch --all
-git checkout v3.1.1
+git checkout v3.1.2-rc.1
 make install
 canined version --long | head
-#3.1.1
-#commit: 95003c675864c8d75084bf80d969542e5bcef978
+#version: 3.1.2
+#commit: 9a88bf707fb3c114edb8f69f6f3f0a2487aba0e6
 sudo systemctl restart canined && sudo journalctl -u canined -f -o cat
 ```
 
 `canined version --long | head`
-- version: 3.1.1
-- commit: 95003c675864c8d75084bf80d969542e5bcef978
+- version: 3.1.2
+- commit: 9a88bf707fb3c114edb8f69f6f3f0a2487aba0e6
 
 ```python
-canined init STAVRguide --chain-id lupulella-2
+canined init STAVR_guide --chain-id lupulella-2
 canined config chain-id lupulella-2
 ```    
 
