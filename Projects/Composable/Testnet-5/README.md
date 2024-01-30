@@ -143,7 +143,7 @@ EOF
 ```python
 SOON
 ```
-# SnapShot Testnet (~4GB) updated every 5 hours  
+# SnapShot Testnet 
 ```python
 cd $HOME
 apt install lz4
