@@ -201,11 +201,13 @@ sudo systemctl restart strided && sudo journalctl -u strided -f -o cat
 
 
 ### Delete node (one command)
-    sudo systemctl stop strided &&
-    sudo systemctl disable strided &&
-    rm /etc/systemd/system/strided.service &&
-    sudo systemctl daemon-reload &&
-    cd $HOME &&
-    rm -rf .stride &&
-    rm -rf stride &&
-    rm -rf $(which strided)
+```python
+sudo systemctl stop strided
+sudo systemctl disable strided
+rm /etc/systemd/system/strided.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf .stride
+rm -rf stride
+rm -rf $(which strided)
+```
