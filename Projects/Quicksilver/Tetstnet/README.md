@@ -43,22 +43,22 @@ chmod +x quicksilverd
 mv $HOME/quicksilverd $HOME/go/bin/quicksilverd
 ```
 
-*******🟢UPDATE🟢******* 29.01.24
+*******🟢UPDATE🟢******* 30.01.24
 ```python
 cd $HOME
-wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.4.7-rc0/quicksilverd-v1.4.7-rc0-amd64
+wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.4.7-rc1/quicksilverd-v1.4.7-rc1-amd64
 chmod +x quicksilverd
 mv $HOME/quicksilverd $HOME/go/bin/
 quicksilverd version --long | grep -e commit -e version
-#v1.4.7-rc0
-#543bcd963cde821cd448630d51bdcee63b7af053
+#v1.4.7-rc1
+#cbe90eb5fd88d11c8b1dbdcc9694ba23a3642a96
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 
 ```
 
 `quicksilverd version --long`
-+ version: v1.4.7-rc0
-+ commit: 543bcd963cde821cd448630d51bdcee63b7af053
++ version: v1.4.7-rc1
++ commit: cbe90eb5fd88d11c8b1dbdcc9694ba23a3642a96
 
 ### Initialize the node
 ```python
