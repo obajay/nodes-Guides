@@ -44,33 +44,33 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 15.01.24
+# Build 31.01.24
 ```python
 cd $HOME
 git clone https://github.com/lavanet/lava
-wget -O lavad https://github.com/lavanet/lava/releases/download/v0.33.0/lavad-v0.33.0-linux-amd64
+wget -O lavad https://github.com/lavanet/lava/releases/download/v0.34.0/lavad-v0.34.0-linux-amd64
 chmod +x lavad
 mv lavad $HOME/go/bin/lavad
 ```
-*******🟢UPDATE🟢******* 15.01.24
+*******🟢UPDATE🟢******* 31.01.24
 ```python
 cd $HOME
-wget -O lavad https://github.com/lavanet/lava/releases/download/v0.33.0/lavad-v0.33.0-linux-amd64
+wget -O lavad https://github.com/lavanet/lava/releases/download/v0.34.0/lavad-v0.34.0-linux-amd64
 chmod +x lavad
 mv lavad $(which lavad)
 lavad version --long | grep -e commit -e version
 lavap version
-#version: 0.33.0
-#commit: cabb51cc9d73af1fcc16e82463a9350a239f23fb
+#version: 0.34.0
+#commit: 5f2d89e5ca338b52024760e6edf7a6a18ddfe52f
 sudo systemctl restart lavad && sudo journalctl -u lavad -f -o cat
 
 ```
 `lavad version --long`
-- version: 0.33.0
-- commit:  cabb51cc9d73af1fcc16e82463a9350a239f23fb
+- version: 0.34.0
+- commit:  5f2d89e5ca338b52024760e6edf7a6a18ddfe52f
 
 ```python
-lavad init STAVRguide --chain-id lava-testnet-2
+lavad init STAVR_guide --chain-id lava-testnet-2
 lavad config chain-id lava-testnet-2
 ```    
 
@@ -211,13 +211,13 @@ lavad tx staking create-validator \
 
 ## Delete node
 ```bash
-sudo systemctl stop lavad && \
-sudo systemctl disable lavad && \
-rm /etc/systemd/system/lavad.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf GHFkqmTzpdNLDd6T && \
-rm -rf .lava && \
+sudo systemctl stop lavad
+sudo systemctl disable lavad
+rm /etc/systemd/system/lavad.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf GHFkqmTzpdNLDd6T
+rm -rf .lava
 rm -rf $(which lavad)
 ```
 #
