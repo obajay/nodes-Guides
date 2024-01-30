@@ -35,10 +35,10 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile &&
 go version
 ```
-### Node installation 29.01.24
+### Node installation 30.01.24
 ```python
 cd $HOME
-wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.4.7-rc0/quicksilverd-v1.4.7-rc0-amd64
+wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.4.7-rc1/quicksilverd-v1.4.7-rc1-amd64
 chmod +x quicksilverd
 mv $HOME/quicksilverd $HOME/go/bin/quicksilverd
 ```
