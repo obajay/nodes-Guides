@@ -56,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/JackalLabs/canine-chain
 cd canine-chain
-git checkout v3.1.1
+git checkout v3.1.2-rc.1
 make install
 
 canined init $Validator_Name --chain-id $CHAIN_ID
@@ -152,7 +152,7 @@ break
 "UPDATE")
 cd $HOME/canine-chain
 git fetch --all
-git checkout v3.1.1
+git checkout v3.1.2-rc.1
 make install
 sudo systemctl restart canined && sudo journalctl -u canined -f -o cat
 
