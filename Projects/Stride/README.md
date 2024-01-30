@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 25475.1 | 3.69 | 94003.174645200 |
+| 25475.1 | 3.93 | 100117.218687870 |
 
 <!-- END_TABLE -->
+
+
 
 
 [🔥OUR VALIDATOR🔥](https://restake.app/stride/stridevaloper1n94ndmxqf7vke553lr3ewwt4edtc4g6mdyx9qn)
