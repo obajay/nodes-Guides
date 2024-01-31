@@ -57,7 +57,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/BitCannaGlobal/bcna/tags
 cd bcna
-git checkout v3.0.1-rc1
+git checkout v3.0.1-rc2
 make install
 
 bcnad init $Validator_Name --chain-id $CHAIN_ID
@@ -138,7 +138,7 @@ break
 "UPDATE")
 cd $HOME/bcna
 git fetch
-git checkout v3.0.1-rc1
+git checkout v3.0.1-rc2
 make install
 sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 
