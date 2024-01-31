@@ -47,20 +47,21 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 30.01.24
+# Build 31.01.24
 ```python
 cd $HOME
 git clone https://github.com/BitCannaGlobal/bcna/tags
 cd bcna
-git checkout v3.0.1-rc1
+git checkout v3.0.1-rc2
 make install
 ```
 
 `bcnad version --long | grep -e commit -e version`
-+ version: v3.0.1-rc1
-+ commit: 573b58902eb617005d7b0bb891ad25ba230cddb8
++ version: v3.0.1-rc2
++ commit: da869d694bcfc130a8e35925c157879a35de11b7
 
 ```python
+bcnad init STAVR_guide --chain-id bitacanna-dev-1
 bcnad config chain-id bitacanna-dev-1
 ```    
 
