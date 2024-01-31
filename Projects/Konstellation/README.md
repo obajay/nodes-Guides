@@ -5,39 +5,7 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<h1 align="center"> 🔴TEMPORARILY STOPPED 31.01.24🔴</h1>
 
 [🔥OUR VALIDATOR🔥](https://restake.app/konstellation/darcvaloper1krlfcngvstzxdy84v0vsfydefmju9wuhdnq03j)
 =
