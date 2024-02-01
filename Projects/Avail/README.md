@@ -24,29 +24,29 @@ sudo apt update && sudo apt upgrade -y
 apt install curl iptables build-essential git wget jq make gcc nano tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
 ```
 
-# Build 16.01.24
+# Build 01.02.24
 ```python
-wget https://github.com/availproject/avail/releases/download/v1.9.0.0/x86_64-ubuntu-2204-data-avail.tar.gz
+wget https://github.com/availproject/avail/releases/download/v1.10.0.0/x86_64-ubuntu-2204-data-avail.tar.gz
 tar xvzf x86_64-ubuntu-2204-data-avail.tar.gz
 rm -rf x86_64-ubuntu-2204-data-avail.tar.gz
 mv data-avail /usr/bin/avail
 ```
 
 
-# UPDATE 16.01.24
+# UPDATE 01.02.24
 ```python
 cd $HOME
-wget https://github.com/availproject/avail/releases/download/v1.9.0.0/x86_64-ubuntu-2204-data-avail.tar.gz
+wget https://github.com/availproject/avail/releases/download/v1.10.0.0/x86_64-ubuntu-2204-data-avail.tar.gz
 tar xvzf x86_64-ubuntu-2204-data-avail.tar.gz
 rm -rf x86_64-ubuntu-2204-data-avail.tar.gz
 mv data-avail $(which avail)
 avail --version
-#avail 1.9.0-unknown
+#avail 1.10.0-b514ad4ea43
 systemctl restart avail && journalctl -u avail -f -o cat
 ```
 
 `avail --version`
-- avail 1.9.0-unknown
+- avail 1.10.0-b514ad4ea43
 
 # Create a service file
 ```python
