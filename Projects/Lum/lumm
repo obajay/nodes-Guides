@@ -56,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/lum-network/chain.git lum
 cd lum
-git checkout v1.6.3
+git checkout v1.6.4
 make install
 
 
@@ -152,8 +152,11 @@ sudo systemctl restart lumd && journalctl -u lumd -f -o cat
 break
 ;;
 "UPDATE")
-echo -e "      \e[1m\e[32m SOOOON\e[0m"
-lumd version
+cd $HOME/lum
+git pull
+git checkout v1.6.4
+make install
+sudo systemctl restart lumd && sudo journalctl -u lumd -f -o cat
 
 break
 ;;
