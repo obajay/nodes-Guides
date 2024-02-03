@@ -5,46 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/lambda/lambvaloper1pkldxj2cnrhajx0fms2gxlzhh6k2gcg5k88a83)
 =
 
@@ -161,7 +121,7 @@ wget -O $HOME/.lambdavm/config/addrbook.json "https://raw.githubusercontent.com/
 
 # StateSync
 ```python
-SNAP_RPC=http://lambda.rpc.m.stavr.tech:31327
+SNAP_RPC=https://lambda.rpc.m.stavr.tech:443
 peers="ebdd47f7babb184240258d2fc6fba61bd994edaa@lambda.peer.stavr.tech:31326" 
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.lambdavm/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
