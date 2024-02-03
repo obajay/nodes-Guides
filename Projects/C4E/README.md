@@ -130,7 +130,7 @@ wget -O $HOME/.c4e-chain/config/addrbook.json "https://raw.githubusercontent.com
 ```
 ## StateSync
 ```python
-SNAP_RPC=http://c4e.rpc.m.stavr.tech:17097
+SNAP_RPC=https://c4e.rpc.m.stavr.tech:443
 peers="5ed0b8f7989d34438f71ccc74b0ab0fbf763a475@c4e.peer.stavr.tech:17096"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.c4e-chain/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
