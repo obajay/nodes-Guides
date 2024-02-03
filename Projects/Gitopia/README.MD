@@ -6,50 +6,8 @@
 <!-- END_TABLE -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/gitopia/gitopiavaloper1ztlnz9v3qqmq828dp6rj3ndu7gvju63m3az0ym)
 =
-
 
 # Gitopia Mainnet guide
 ![gitopia](https://user-images.githubusercontent.com/44331529/200920964-90530a1f-8225-4021-923c-43712c00bb21.png)
@@ -163,7 +121,7 @@ wget -O $HOME/.gitopia/config/addrbook.json "https://raw.githubusercontent.com/o
 
 ## StateSync
 ```python
-SNAP_RPC=http://gitopia.rpc.m.stavr.tech:51057
+SNAP_RPC=https://gitopia.rpc.m.stavr.tech:443
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 300)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
