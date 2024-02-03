@@ -139,7 +139,7 @@ EOF
 ```
 # StateSync Jackal Testnet
 ```python
-SNAP_RPC=http://jkl.rpc.t.stavr.tech:19127
+SNAP_RPC=https://jkl.rpc.t.stavr.tech:443
 peers="80613772b20df144945801b42f327d0945a24374@jkltest.peer.stavr.tech:19126"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.canine/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
