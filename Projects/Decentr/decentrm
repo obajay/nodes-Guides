@@ -130,7 +130,7 @@ echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE
 break
 ;;
 "Synchronization via StateSync")
-SNAP_RPC=http://decentr.rpc.m.stavr.tech:1067
+SNAP_RPC=https://decentr.rpc.m.stavr.tech:443
 SEEDS=1f5497f2b4f6adb3b803c17c3b005f637fcaec2d@decentr.peer.stavr.tech:1066
 cp $HOME/.decentr/data/priv_validator_state.json $HOME/.decentr/priv_validator_state.json.backup
 sed -i -e "/seeds =/ s/= .*/= \"$SEEDS\"/"  $HOME/.decentr/config/config.toml
