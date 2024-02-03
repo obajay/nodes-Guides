@@ -5,49 +5,8 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/decentr/decentrvaloper1yv2ndyf63nk65gqhhrfep5pselghrwvveaa5d4)
 =
-
 
 # Decentr Mainnet guide
 ![deventr](https://github.com/obajay/nodes-Guides/assets/44331529/0e5a41fa-99fd-414e-b8a0-a09faa2257fd)
@@ -184,7 +143,7 @@ EOF
 ```
 # StateSync Decentr Mainnet
 ```python
-SNAP_RPC=http://decentr.rpc.m.stavr.tech:1067
+SNAP_RPC=https://decentr.rpc.m.stavr.tech:443
 SEEDS=1f5497f2b4f6adb3b803c17c3b005f637fcaec2d@decentr.peer.stavr.tech:1066
 cp $HOME/.decentr/data/priv_validator_state.json $HOME/.decentr/priv_validator_state.json.backup
 sed -i -e "/seeds =/ s/= .*/= \"$SEEDS\"/"  $HOME/.decentr/config/config.toml
