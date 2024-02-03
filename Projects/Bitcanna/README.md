@@ -6,27 +6,6 @@
 <!-- END_TABLE -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/bitcanna/bcnavaloper19tyve4e8nf0twd8z02a2eatrls7tuecy0ef098)
 =
 
@@ -158,7 +137,7 @@ wget -O $HOME/.bcna/config/addrbook.json "https://raw.githubusercontent.com/obaj
 
 # StateSync
 ```python
-RPC="http://bitcanna.rpc.m.stavr.tech:21327"
+RPC="https://bitcanna.rpc.m.stavr.tech:443"
 peers="644ac886e7f2fe082b3556dc694076e71a4e959a@bitcanna.peers.stavr.tech:21326"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.bcna/config/config.toml
 LATEST_HEIGHT=$(curl -s $RPC/block | jq -r .result.block.header.height); \
