@@ -111,7 +111,7 @@ EOF
 ```
 ## StateSync 
 ```python
-SNAP_RPC=http://crowd.rpc.t.stavr.tech:21207
+SNAP_RPC=https://crowd.rpc.t.stavr.tech:443
 PEERS="ec585d7fb38b67619dcb79aad90722f0eaf0faa3@crowd.peer.stavr.tech:21206"
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.Cardchain/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height) \
