@@ -5,16 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/juno/junovaloper177svs8gyz28pupaj6amgls6rahcmwmwq06fukv)
 =
 
@@ -161,7 +151,7 @@ EOF
 ```
 # StateSync Juno Mainnet
 ```python
-SNAP_RPC=http://juno.rpc.m.stavr.tech:1067
+SNAP_RPC=https://juno.rpc.m.stavr.tech:443
 PEERS="9ec270e1b4cdd38557da9d374ae4333145ee9300@juno.peer.stavr.tech:1066"
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.juno/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
