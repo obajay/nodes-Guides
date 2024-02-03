@@ -6,41 +6,6 @@
 <!-- END_TABLE -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/aura/auravaloper1ucp33srru7g45ku6w207kc4hy6xd6psvmxw3xf)
 =
 
@@ -161,7 +126,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.aura/config/config.to
 ```
 ## State Sync
 ```python
-SNAP_RPC=http://aura.rpc.m.stavr.tech:11047
+SNAP_RPC=https://aura.rpc.m.stavr.tech:443
 SEEDS="7cefc9a64cd34f6de30e0289d16ee83978f309cc@aura.peers.stavr.tech:21056"
 cp $HOME/.aura/data/priv_validator_state.json $HOME/.aura/priv_validator_state.json.backup
 sed -i -e "/seeds =/ s/= .*/= \"$SEEDS\"/"  $HOME/.aura/config/config.toml
