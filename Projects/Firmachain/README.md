@@ -5,53 +5,11 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/firmachain/firmavaloper1xf9fakfwjhq6enq27w3zrpwzav3h2savcs6clh)
 =
 
-
 # FirmaChain Mainnet guide
 ![firma](https://github.com/obajay/nodes-Guides/assets/44331529/e0755438-89cb-4f1e-bed3-5ca72365b61d)
-
 
 [WebSite](https://firmachain.org/)\
 [GitHub](https://github.com/FirmaChain)
@@ -184,7 +142,7 @@ EOF
 ```
 # StateSync Firmachain Mainnet
 ```python
-SNAP_RPC=http://firma.rpc.m.stavr.tech:1037
+SNAP_RPC=https://firma.rpc.m.stavr.tech:443
 SEEDS=35b9e0a0818d2c5e9ef187984872c0ad2dbd447c@firma.peer.stavr.tech:1036
 cp $HOME/.firmachain/data/priv_validator_state.json $HOME/.firmachain/priv_validator_state.json.backup
 sed -i -e "/seeds =/ s/= .*/= \"$SEEDS\"/"  $HOME/.firmachain/config/config.toml
