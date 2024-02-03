@@ -5,46 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/realio/realiovaloper1n99gv9edgtvktcpxld6x9cp6zvq7e28mzjwwg4)
 =
 
@@ -158,7 +118,7 @@ wget -O $HOME/.realio-network/config/addrbook.json "https://raw.githubuserconten
 
 # StateSync Mainnet
 ```python
-SNAP_RPC=http://realio.rpc.m.stavr.tech:21097
+SNAP_RPC=https://realio.rpc.m.stavr.tech:443
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
