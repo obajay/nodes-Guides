@@ -136,7 +136,7 @@ EOF
 ```
 # StateSync Point Mainnet
 ```python
-SNAP_RPC=http://point.rpc.m.stavr.tech:1057
+SNAP_RPC=https://point.rpc.m.stavr.tech:443
 SEEDS=f675d544f5e6b8bc7ef9923d6f594dd0a3570190@point.peer.stavr.tech:1056
 cp $HOME/.pointd/data/priv_validator_state.json $HOME/.pointd/priv_validator_state.json.backup
 sed -i -e "/seeds =/ s/= .*/= \"$SEEDS\"/"  $HOME/.pointd/config/config.toml
