@@ -118,7 +118,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.okp4d/config/config.t
 
 ## StateSync
 ```python
-SNAP_RPC=http://okp.rpc.t.stavr.tech:10097
+SNAP_RPC=https://okp.rpc.t.stavr.tech:443
 peers="3301c449cf9706c35a0fafb7b97d20e40cdb96df@okp.peer.stavr.tech:10096"
 sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.okp4d/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
