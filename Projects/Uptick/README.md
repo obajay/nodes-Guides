@@ -115,7 +115,7 @@ wget -O $HOME/.uptickd/config/addrbook.json "https://raw.githubusercontent.com/o
 ```
 ## StateSync Uptick Mainnet
 ```python
-SNAP_RPC=http://uptick.rpc.m.stavr.tech:3157
+SNAP_RPC=https://uptick.rpc.m.stavr.tech:443
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
