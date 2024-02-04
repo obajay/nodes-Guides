@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 3024778.0 | 0.600756 | 1817153.574343707313022015 |
+| 3026567.8 | 0.633718 | 1917990.522488758033447890 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/realio/realiovaloper1n99gv9edgtvktcpxld6x9cp6zvq7e28mzjwwg4)
 =
