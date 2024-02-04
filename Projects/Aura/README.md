@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 2034577.070 | 0.03883532 | 79013.45160366 |
+| 2034579.555 | 0.0384481 | 78225.7182129 |
 
 <!-- END_TABLE -->
+
+
 
 
 [🔥OUR VALIDATOR🔥](https://restake.app/aura/auravaloper1ucp33srru7g45ku6w207kc4hy6xd6psvmxw3xf)
