@@ -5,23 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/umee/umeevaloper1dkjcas3j43u3v6l94jhhhnjxhlnwxt3m02p4c3)
 =
 
@@ -120,7 +103,7 @@ wget -O $HOME/.umee/config/addrbook.json "https://raw.githubusercontent.com/obaj
 ## StateSync
 
 ```python
-SNAP_RPC=http://umee.rpc.m.stavr.tech:10457
+SNAP_RPC=https://umee.rpc.m.stavr.tech:443
 peers="c014463cb2de618bef420e40f503c5e57decade4@umee.peers.m.stavr.tech:10456"
 sed -i -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" ~/.umee/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
