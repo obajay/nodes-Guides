@@ -5,46 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/quicksilver/quickvaloper198arckkz24ag0c32pnhmxpfe2hyu7gkvp9tnmn)
 =
 
@@ -84,34 +44,34 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-### Bunary 13.01.24
+### Bunary 06.02.24
 ```python
 cd $HOME
-wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.4.6/quicksilverd-v1.4.6-amd64
+wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.4.7/quicksilverd-v1.4.7-amd64
 chmod +x quicksilverd
 mv $HOME/quicksilverd $HOME/go/bin/quicksilverd
 ```
 
-*******🟢UPDATE🟢******* 13.01.24
+*******🟢UPDATE🟢******* 06.02.24
 ```python
 cd $HOME
-wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.4.6/quicksilverd-v1.4.6-amd64
+wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.4.7/quicksilverd-v1.4.7-amd64
 chmod +x quicksilverd
 mv $HOME/quicksilverd $(which quicksilverd)
 quicksilverd version --long | grep -e commit -e version
-#version v1.4.6
-#commit a153a25ba4c98bdbdb3c58b4b34de09901a2adbf
+#version v1.4.7
+#commit 356e18826d3c1a84dc88398e8a4a5b6fe45f2a63
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 ```
 
 `quicksilverd version`
-+ version: v1.4.6
-+ commit: a153a25ba4c98bdbdb3c58b4b34de09901a2adbf
++ version: v1.4.7
++ commit: 356e18826d3c1a84dc88398e8a4a5b6fe45f2a63
 
 ### Initialize the node
 ```python
 quicksilverd config chain-id quicksilver-2
-quicksilverd init STAVRguide --chain-id quicksilver-2
+quicksilverd init STAVR_guide --chain-id quicksilver-2
 ```
 
 =
