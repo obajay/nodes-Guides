@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 1002.274 | 0.646821 | 648.291908469 |
+| 1540.309 | 0.640179 | 986.073902950 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/shentu/shentuvaloper1u05xu47w2hemqrpejn3dsxg7nqywx068q34y9z)
 =
