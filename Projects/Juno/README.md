@@ -50,30 +50,30 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 10.01.24
+# Build 05.02.24
 ```python
 cd $HOME
 git clone https://github.com/CosmosContracts/juno juno
 cd juno
-git checkout v18.1.0
+git checkout v19.0.0
 make install
 ```
-*******🟢UPDATE🟢******* 11.12.23
+*******🟢UPDATE🟢******* 05.02.24
 ```python
 cd $HOME
 systemctl stop junod
-wget https://github.com/CosmosContracts/juno/releases/download/v18.0.0/junod
+wget https://github.com/CosmosContracts/juno/releases/download/v19.0.0/junod
 chmod +x junod
 mv junod $(which junod)
 junod version --long | grep -e version -e commit
-#version: v18.1.0
-#commit: 3df36b2020088de1f89046feda10b7ec1dd8f3da
+#version: v19.0.0
+#commit: 46bc071f91225d2dcf06897d7b71f668f5508087
 sudo systemctl restart junod && sudo journalctl -u junod -f -o cat
 ```
 
 `junod version --long`
-- version: v18.1.0
-- commit: 3df36b2020088de1f89046feda10b7ec1dd8f3da
+- version: v19.0.0
+- commit: 46bc071f91225d2dcf06897d7b71f668f5508087
 
 ```python
 junod init STAVRguide --chain-id juno-1
