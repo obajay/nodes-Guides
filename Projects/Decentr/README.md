@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 67552.258 | 0.01052793 | 711.18545237 |
+| 67552.258 | 0.01032371 | 697.38993007 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/decentr/decentrvaloper1yv2ndyf63nk65gqhhrfep5pselghrwvveaa5d4)
 =
