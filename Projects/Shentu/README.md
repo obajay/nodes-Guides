@@ -5,46 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/shentu/shentuvaloper1u05xu47w2hemqrpejn3dsxg7nqywx068q34y9z)
 =
 
@@ -182,7 +142,7 @@ EOF
 ```
 # StateSync Shentu Mainnet
 ```python
-SNAP_RPC=http://shentu.rpc.m.stavr.tech:20017
+SNAP_RPC=https://shentu.rpc.m.stavr.tech:443
 SEEDS=060027d3bc10ff7ebc1ec315ae5671c541e1568c@shentu.peer.stavr.tech:20016
 cp $HOME/.shentud/data/priv_validator_state.json $HOME/.shentud/priv_validator_state.json.backup
 sed -i -e "/seeds =/ s/= .*/= \"$SEEDS\"/"  $HOME/.shentud/config/config.toml
