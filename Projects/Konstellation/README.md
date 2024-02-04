@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| DARC | 0.00135767 | USD |
+| DARC | 0.00144859 | USD |
 
 <!-- END_TABLE -->
+
+
 
 
 
