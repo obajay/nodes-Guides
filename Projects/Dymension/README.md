@@ -79,7 +79,7 @@ wget https://github.com/dymensionxyz/networks/raw/main/mainnet/dymension/genesis
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0adym\"/;" ~/.dymension/config/app.toml
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"20000000000adym\"/;" ~/.dymension/config/app.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.dymension/config/config.toml
 peers="a53c0884c5225f13a99e0af9ef04cd50facee668@84.203.117.234:26691,879aca1f688346ca7a3901aa1e9fc62f48112f01@65.109.124.111:26656"
