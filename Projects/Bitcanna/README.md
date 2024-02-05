@@ -6,10 +6,6 @@
 <!-- END_TABLE -->
 
 
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/bitcanna/bcnavaloper19tyve4e8nf0twd8z02a2eatrls7tuecy0ef098)
 =
 
@@ -59,30 +55,30 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 25.01.24
+# Build 05.02.24
 ```python
 cd $HOME
 git clone https://github.com/BitCannaGlobal/bcna
 cd bcna
-git checkout v3.0.0
+git checkout v3.0.1
 make install
 ```
 
-*******🟢UPDATE🟢******* 25.01.24
+*******🟢UPDATE🟢******* 05.02.24
 ```python
 cd $HOME/bcna
 git fetch --all
-git checkout v3.0.0
+git checkout v3.0.1
 make install
 bcnad version --long
-#version: 3.0.0
-#commit: 70ed42fd9d475466245628d7dce1b1f551a46292
+#version: 3.0.1
+#commit: 9b60e5fcbbaceef18116be4272abc1ee25c5a1a2
 sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 ```
 
 `bcnad version --long | grep -e commit -e version`
-- version: 3.0.0
-- commit: 70ed42fd9d475466245628d7dce1b1f551a46292
+- version: 3.0.1
+- commit: 9b60e5fcbbaceef18116be4272abc1ee25c5a1a2
 
 ```python
 bcnad init STAVR_guide --chain-id bitcanna-1
