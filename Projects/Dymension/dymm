@@ -1,0 +1,170 @@
+#!/bin/bash
+
+while true
+do
+
+# Logo
+
+curl -s https://raw.githubusercontent.com/obajay/nodes-Guides/main/logo_1 | bash
+
+# Menu
+
+PS3='Select an action: '
+options=(
+"Install Node"
+"Create wallet"
+"Check node logs"
+"Synchronization via StateSync"
+"Synchronization via SnapShot"
+"UPDATE"
+"Delete Node"
+"Exit")
+select opt in "${options[@]}"
+do
+case $opt in
+
+"Install Node")
+echo "*********************"
+echo -e "\e[1m\e[35m		Lets's begin\e[0m"
+echo "*********************"
+echo -e "\e[1m\e[32m	Enter your Validator_Name:\e[0m"
+echo "_|-_|-_|-_|-_|-_|-_|"
+read Validator_Name
+echo "_|-_|-_|-_|-_|-_|-_|"
+echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
+echo export CHAIN_ID="dymension_1100-1" >> $HOME/.bash_profile
+source ~/.bash_profile
+
+echo -e "\e[1m\e[32m1. Updating packages and dependencies--> \e[0m" && sleep 1
+#UPDATE APT
+sudo apt update && sudo apt upgrade -y
+sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
+
+echo -e "        \e[1m\e[32m2. Installing GO--> \e[0m" && sleep 1
+#INSTALL GO
+ver="1.20.5"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
+go version
+
+echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
+#INSTALL
+cd $HOME && mkdir -p go/bin/
+git clone https://github.com/dymensionxyz/dymension.git
+cd dymension
+git checkout v3.0.0
+make install
+
+dymd init $Validator_Name --chain-id $CHAIN_ID
+dymd config chain-id $CHAIN_ID
+
+wget https://github.com/dymensionxyz/networks/raw/main/mainnet/dymension/genesis.json -O $HOME/.dymension/config/genesis.json
+wget -O $HOME/.dymension/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Dymension/addrbook.json"
+
+echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
+
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0adym\"/;" ~/.dymension/config/app.toml
+external_address=$(wget -qO- eth0.me) 
+sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.dymension/config/config.toml
+peers="a53c0884c5225f13a99e0af9ef04cd50facee668@84.203.117.234:26691,879aca1f688346ca7a3901aa1e9fc62f48112f01@65.109.124.111:26656"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.dymension/config/config.toml
+seeds="284313184f63d9f06b218a67a0e2de126b64258d@seeds.silknodes.io:25155,2031373ae11f2ce79a5e61fb15308c860559cc64@tenderseed.ccvalidators.com:29202,20e1000e88125698264454a884812746c2eb4807@seeds.lavenderfive.com:20556,b02a7c844834bc06ffa7ed3a4e51e3c37462872b@seeds.bh.rocks:40656,baeaf56bca434dd5e0dea3900a9368110b4971f8@seed.hoodrun.io:26656,400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@dymension.rpc.kjnodes.com:14659"
+sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.dymension/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.dymension/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.dymension/config/config.toml
+
+
+# pruning
+pruning="custom"
+pruning_keep_recent="1000"
+pruning_keep_every="0"
+pruning_interval="10"
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.dymension/config/app.toml
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.dymension/config/app.toml
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.dymension/config/app.toml
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.dymension/config/app.toml
+
+sudo tee /etc/systemd/system/dymd.service > /dev/null <<EOF
+[Unit]
+Description=dymd
+After=network-online.target
+
+[Service]
+User=$USER
+ExecStart=$(which dymd) start
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+
+# start service
+sudo systemctl daemon-reload
+sudo systemctl enable dymd
+sudo systemctl restart dymd
+
+echo '=============== SETUP FINISHED ==================='
+echo -e 'Congratulations:        \e[1m\e[32mSUCCESSFUL NODE INSTALLATION\e[0m'
+echo -e 'To check logs:        \e[1m\e[33mjournalctl -u dymd -f -o cat\e[0m'
+echo -e "To check sync status: \e[1m\e[35mcurl -s localhost:26657/status\e[0m"
+
+break
+;;
+"Create wallet")
+echo "_|-_|-_|-_|-_|-_|-_|"
+echo -e "      \e[1m\e[35m Your WalletName:\e[0m"
+echo "_|-_|-_|-_|-_|-_|-_|"
+read Wallet
+echo export Wallet=${Wallet} >> $HOME/.bash_profile
+source ~/.bash_profile
+dymd keys add $Wallet
+echo -e "      \e[1m\e[32m!!!!!!!!!SAVE!!!!!!!!!!!!!!!!SAVE YOUR MNEMONIC PHRASE!!!!!!!!!SAVE!!!!!!!!!!!!!!!!\e[0m'"
+
+break
+;;
+"Synchronization via StateSync")
+echo -e "      \e[1m\e[32m SOOOON\e[0m"
+
+
+break
+;;
+"UPDATE")
+echo -e "      \e[1m\e[32m SOOOON\e[0m"
+dymd version
+
+break
+;;
+"Check node logs")
+sudo journalctl -u dymd -f -o cat
+
+break
+;;
+"Synchronization via SnapShot")
+echo -e "      \e[1m\e[32m SOOOON\e[0m"
+
+break
+;;
+"Delete Node")
+sudo systemctl stop dymd
+sudo systemctl disable dymd
+rm /etc/systemd/system/dymd.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf dymension
+rm -rf .dymension
+rm -rf $(which dymd)
+
+break
+;;
+"Exit")
+exit
+esac
+done
+done
