@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O dym https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Dymension/dym && chmod +x dym && ./dym
+wget -O dym https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Dymension/Testnet/dym && chmod +x dym && ./dym
 ```
 
 # 2) Manual installation
@@ -79,7 +79,7 @@ dymd keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Dymension/genesis.json -O $HOME/.dymension/config/genesis.json
+wget https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Dymension/Testnet/genesis.json -O $HOME/.dymension/config/genesis.json
 ```
 `sha256sum $HOME/.dymension/config/genesis.json`
 + 2c39abf9fd87222fc3b8178763e1c0e250029a445a3775b3507e88140910049e
@@ -116,7 +116,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.dymension/config/conf
 
 ## Download addrbook
 ```python
-wget -O $HOME/.dymension/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Dymension/addrbook.json"
+wget -O $HOME/.dymension/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Dymension/Testnet/addrbook.json"
 ```
 
 # Create a service file
