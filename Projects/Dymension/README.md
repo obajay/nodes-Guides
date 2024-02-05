@@ -18,7 +18,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O dymm https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Dymension/dymm && chmod +x dymm && ./dymm
 ```
 
 # 2) Manual installation
