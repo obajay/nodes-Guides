@@ -5,52 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/planq/plqvaloper1htduzp9w4u3nmjjdtwmctvqsx9z74xecc34vnl)
 =
 
@@ -96,26 +50,33 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 27.10.23
+# Build 06.02.24
 ```python
 cd $HOME
 git clone https://github.com/planq-network/planq.git
 cd planq
-git checkout v1.0.8
+git checkout v1.1.0
 make install
 
 ```
-*******🟢UPDATE🟢******* 00.00.23
+*******🟢UPDATE🟢******* 06.02.24
 ```python
-SOOON
+cd $HOME/planq
+git pull
+git checkout v1.1.0
+make install
+planqd version --long | grep -e commit -e version
+#version: 1.1.0
+#commit: 226bd3624e139fb71ba5f4fd7c523e5965f4c176
+sudo systemctl restart planqd && sudo journalctl -u planqd -f -o cat
 ```
 
 `planqd version --long | grep -e commit -e version`
-- version: 1.0.8
-- commit: cf716b883551c3ecb789901ac08232d08b50f4bb
+- version: 1.1.0
+- commit: 226bd3624e139fb71ba5f4fd7c523e5965f4c176
 
 ```python
-planqd init STAVRguide --chain-id planq_7070-2
+planqd init STAVR_guide --chain-id planq_7070-2
 planqd config chain-id planq_7070-2
 ```    
 
