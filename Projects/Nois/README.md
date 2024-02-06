@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 806658.275 | null | 0 |
+| 806686.043 | null | 0 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/nois/noisvaloper1enwhnv85g4n99a2kzg8gey22xu6u43l4cxj824)
 =
