@@ -55,7 +55,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 #INSTALL
 cd $HOME
 git clone https://github.com/aura-nw/aura && cd aura
-git checkout v0.7.2-euphoria
+git checkout v0.7.3-euphoria
 make install
 
 aurad init $Validator_Name --chain-id $CHAIN_ID
@@ -141,7 +141,7 @@ break
 "UPDATE")
 cd $HOME/aura
 git fetch --all
-git checkout v0.7.2-euphoria
+git checkout v0.7.3-euphoria
 make install
 sudo systemctl restart aurad && journalctl -u aurad -f -o cat
 
