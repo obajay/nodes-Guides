@@ -5,50 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/nois/noisvaloper1enwhnv85g4n99a2kzg8gey22xu6u43l4cxj824)
 =
 
@@ -190,7 +146,7 @@ systemctl restart noisd && journalctl -u noisd -f -o cat
 
 ```
 
-# SnapShot Mainnet (~0.2GB) updated every 5 hours 
+# SnapShot Mainnet updated every 5 hours 
 ```Python
 cd $HOME
 apt install lz4
