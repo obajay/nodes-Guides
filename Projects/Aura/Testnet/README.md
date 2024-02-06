@@ -5,31 +5,10 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Aura testnet guide
 
 ![Aura](https://user-images.githubusercontent.com/44331529/180595364-72b306db-c60b-463e-877c-57ee5acc126e.png)
 ![aaura](https://user-images.githubusercontent.com/44331529/180595514-1dfc72a9-b72e-477b-ab5b-54f8a5071c7d.png)
-
-
 
 [EXPLORER](https://explorer.stavr.tech/Aura-Testnet/staking)
 =
@@ -62,29 +41,29 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile &&
 go version
 ```
-# Build 22.11.23
+# Build 07.02.24
 ```python
 cd $HOME
 git clone https://github.com/aura-nw/aura && cd aura
-git checkout v0.7.2-euphoria
+git checkout v0.7.3-euphoria
 make install
 ```
 
-*******🟢UPDATE🟢******* 22.11.23
+*******🟢UPDATE🟢******* 07.02.24
 ```python
 cd $HOME/aura
 git fetch --all
-git checkout v0.7.2-euphoria
+git checkout v0.7.3-euphoria
 make install
 aurad version --long
-#version: v0.7.2-euphoria
-#commit: 2ea683f1f536e3db2931ef28d8401d6bc552b12b
+#version: v0.7.3-euphoria
+#commit: 210c446899494ff34552fd4d0c7041c703c1ccbd
 sudo systemctl restart aurad && journalctl -u aurad -f -o cat
 ```
 
 `aurad version --long | grep -e commit -e version`
-+ version: v0.7.2-euphoria
-+ commit: 2ea683f1f536e3db2931ef28d8401d6bc552b12b
++ version: v0.7.3-euphoria
++ commit: 210c446899494ff34552fd4d0c7041c703c1ccbd
 
 ```python
 aurad init STAVR_guide --chain-id euphoria-2
