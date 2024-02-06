@@ -58,9 +58,9 @@ SOOON
 
 ## Create/recover wallet
 ```python
-uniond --home /root/.union keys add <walletname>
+uniond --home $HOME/.union keys add <walletname>
             OR
-uniond --home /root/.union keys add <walletname> --recover
+uniond --home $HOME/.union keys add <walletname> --recover
 ```
 
 ## Download Genesis
