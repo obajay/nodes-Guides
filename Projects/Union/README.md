@@ -56,16 +56,11 @@ SOOON
 - version: v0.18.0
 - commit: a9a0df3e7dfe45bb0e2faea013fafdfd849eec1a
 
-```python
-uniond init STAVR_guide --chain-id union-testnet-5
-uniond config chain-id union-testnet-5
-```    
-
 ## Create/recover wallet
 ```python
-uniond keys add <walletname>
+uniond --home /root/.union keys add <walletname>
             OR
-uniond keys add <walletname> --recover
+uniond --home /root/.union keys add <walletname> --recover
 ```
 
 ## Download Genesis
