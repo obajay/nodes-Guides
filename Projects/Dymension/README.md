@@ -75,16 +75,16 @@ dymd keys add <walletname> --recover
 wget https://github.com/dymensionxyz/networks/raw/main/mainnet/dymension/genesis.json -O $HOME/.dymension/config/genesis.json
 ```
 `sha256sum $HOME/.dymension/config/genesis.json`
-+ 44a4440d7515cd3b7245bc8ed0ccb1e9ecadd8f24da5508f325f9df0509f916b
++ c25f362084db5c1480aaee93bfcb97c5328cabeda94f11ddcc74a8e183838491
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"20000000000adym\"/;" ~/.dymension/config/app.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.dymension/config/config.toml
-peers="a53c0884c5225f13a99e0af9ef04cd50facee668@84.203.117.234:26691,879aca1f688346ca7a3901aa1e9fc62f48112f01@65.109.124.111:26656"
+peers="09b1a88148c16a3cc629b7cfc12fb369d7a3399a@65.108.233.90:26656,39c335604e9e9323eb177ef8c33f8ab4a4317498@85.215.125.37:26656,fb7a8f69270a7de8a3c1b1e79e194a407d305c63@84.203.117.234:26691"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.dymension/config/config.toml
-seeds="284313184f63d9f06b218a67a0e2de126b64258d@seeds.silknodes.io:25155,2031373ae11f2ce79a5e61fb15308c860559cc64@tenderseed.ccvalidators.com:29202,20e1000e88125698264454a884812746c2eb4807@seeds.lavenderfive.com:20556,b02a7c844834bc06ffa7ed3a4e51e3c37462872b@seeds.bh.rocks:40656,baeaf56bca434dd5e0dea3900a9368110b4971f8@seed.hoodrun.io:26656,400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@dymension.rpc.kjnodes.com:14659"
+seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.dymension/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.dymension/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.dymension/config/config.toml
@@ -181,6 +181,8 @@ dymd tx staking create-validator \
 --amount 1000000000000000000adym \
 --pubkey $(dymd tendermint show-validator) \
 --from <wallet> \
+--gas 350000 \
+--fees 7000000000000000adym \
 --moniker="STAVR_guide" \
 --chain-id="dymension_1100-1" \
 --identity="" \
