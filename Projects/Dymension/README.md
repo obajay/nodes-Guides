@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 123684.7 | 5.21 | 644397.739121078341035234 |
+
+<!-- END_TABLE -->
+
 # Dymension Mainnet guide
 
 ![dymension](https://user-images.githubusercontent.com/44331529/216242184-e602001a-8794-495a-81fc-b0d10589963e.png)
