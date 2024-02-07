@@ -7,13 +7,6 @@
 
 
 
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/aura/auravaloper1ucp33srru7g45ku6w207kc4hy6xd6psvmxw3xf)
 =
 
