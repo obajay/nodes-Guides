@@ -5,10 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/dymension/dymvaloper1amxp0k0hg4edrxg85v07t9ka2tfuhamhldgf8e)
 =
 
