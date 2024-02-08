@@ -6,10 +6,6 @@
 <!-- END_TABLE -->
 
 
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/juno/junovaloper177svs8gyz28pupaj6amgls6rahcmwmwq06fukv)
 =
 
@@ -55,31 +51,31 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 05.02.24
+# Build 08.02.24
 ```python
 cd $HOME
 git clone https://github.com/CosmosContracts/juno juno
 cd juno
-git checkout v19.1.0
+git checkout v20.0.0
 make install
 ```
-*******🟢UPDATE🟢******* 05.02.24
+*******🟢UPDATE🟢******* 08.02.24
 ```python
 cd $HOME/juno
-git checkout v19.1.0
+git checkout v20.0.0
 make install
 junod version --long | grep -e version -e commit
-#version: v19.1.0
-#commit: fc06bf48c5e420db1c9eb6efd1797cc16e5a020f
+#version: v20.0.0
+#commit: 6f27cf8883fbbbcc2ff9f6ae6662816fae616278
 sudo systemctl restart junod && sudo journalctl -u junod -f -o cat
 ```
 
 `junod version --long`
-- version: v19.1.0
-- commit: fc06bf48c5e420db1c9eb6efd1797cc16e5a020f
+- version: v20.0.0
+- commit: 6f27cf8883fbbbcc2ff9f6ae6662816fae616278
 
 ```python
-junod init STAVRguide --chain-id juno-1
+junod init STAVR_guide --chain-id juno-1
 junod config chain-id juno-1
 ```    
 
