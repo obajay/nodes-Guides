@@ -144,6 +144,7 @@ s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.empowerchain/config/config.toml
 empowerd tendermint unsafe-reset-all --home $HOME/.empowerchain
+curl -o - -L https://empw.wasm.stavr.tech/wasm-empw.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.empowerchain --strip-compo
 wget -O $HOME/.empowerchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Empower/addrbook.json"
 systemctl restart empowerd && journalctl -u empowerd -f -o cat
 
@@ -170,7 +171,8 @@ apt install lz4
 sudo systemctl stop empowerd
 cp $HOME/.empowerchain/data/priv_validator_state.json $HOME/.empowerchain/priv_validator_state.json.backup
 rm -rf $HOME/.empowerchain/data
-curl -o - -L http://empw-m.snapshot.stavr.tech:1032/empw/empw-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.empowerchain --strip-components 2
+curl -o - -L https://empw-m.snapshot.stavr.tech/empw-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.empowerchain --strip-components 2
+curl -o - -L https://empw.wasm.stavr.tech/wasm-empw.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.empowerchain --strip-compo
 mv $HOME/.empowerchain/priv_validator_state.json.backup $HOME/.empowerchain/data/priv_validator_state.json
 wget -O $HOME/.empowerchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Empower/addrbook.json"
 sudo systemctl restart empowerd && sudo journalctl -u empowerd -f -o cat
