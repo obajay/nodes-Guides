@@ -41,30 +41,30 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 07.02.24
+# Build 09.02.24
 ```python
 cd $HOME && mkdir -p go/bin/
 git clone https://github.com/PeggyJV/sommelier
 cd sommelier
-git checkout v7.0.0
+git checkout v7.0.1
 make install
 
 ```
-*******🟢UPDATE🟢******* 07.02.24
+*******🟢UPDATE🟢******* 09.02.24
 ```python
 cd $HOME/sommelier
 git fetch --all
-git checkout v7.0.0
+git checkout v7.0.1
 make install
 sommelier version --long | grep -e commit -e version
-#commit: edbad9df7421e21a020106b3e35e3ac6a949a48a
-#version: v7.0.0
+#commit: 25bf250b9f9b2819f81f78bd856f60871d5139bd
+#version: v7.0.1
 sudo systemctl restart sommelier && sudo journalctl -u sommelier -f -o cat
 ```
 
 `sommelier version --long | grep -e commit -e version`
-- version: v7.0.0
-- commit: edbad9df7421e21a020106b3e35e3ac6a949a48a
+- version: v7.0.1
+- commit: 25bf250b9f9b2819f81f78bd856f60871d5139bd
 
 ```python
 sommelier init STAVR_guide --chain-id sommelier-3
