@@ -56,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME && mkdir -p go/bin/
 git clone https://github.com/PeggyJV/sommelier
 cd sommelier
-git checkout v7.0.0
+git checkout v7.0.1
 make install
 
 sommelier init $Validator_Name --chain-id $CHAIN_ID
@@ -155,7 +155,7 @@ break
 "UPDATE")
 cd $HOME/sommelier
 git fetch --all
-git checkout v7.0.0
+git checkout v7.0.1
 make install
 sudo systemctl restart sommelier && sudo journalctl -u sommelier -f -o cat
 
