@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 25512175.1 | 0.00378749 | 96627.108219292 |
+| 25512176.3 | 0.00383297 | 97787.406410098 |
 
 <!-- END_TABLE -->
+
+
 
 
 [🔥OUR VALIDATOR🔥](https://restake.app/umee/umeevaloper1dkjcas3j43u3v6l94jhhhnjxhlnwxt3m02p4c3)
