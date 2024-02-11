@@ -401,5 +401,5 @@ dymd tx gov vote 1 no_with_veto --from Wallet_Name --gas 350000 --fees 700000000
 # 📡IBC  transfer 
 - for exapmle - DYM -> Osmosis
 ```python
-dymd tx ibc-transfer transfer transfer channel-2 Your_OSMOaddress............ "100000"adym --from Wallet_Name ---gas 350000 --fees 7000000000000000adym --chain-id=dymension_1100-1 -y
+dymd tx ibc-transfer transfer transfer channel-2 Your_OSMOaddress............ "100000"adym --from Your_DYM_Wallet_Name ---gas 350000 --fees 7000000000000000adym --chain-id=dymension_1100-1 -y
 ```
