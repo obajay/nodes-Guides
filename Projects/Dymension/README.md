@@ -5,10 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/dymension/dymvaloper1amxp0k0hg4edrxg85v07t9ka2tfuhamhldgf8e)
 =
 
@@ -218,20 +214,192 @@ rm -rf dymension
 rm -rf .dymension
 rm -rf $(which dymd)
 ```
-#
-### Sync Info
-```python
-dymd status 2>&1 | jq .SyncInfo
-```
-### NodeINfo
+
+<h1 align="center"> 📚Useful commands📚 </h1>
+
+# ⚙️Service
+
+#### Info
 ```python
 dymd status 2>&1 | jq .NodeInfo
+dymd status 2>&1 | jq .SyncInfo
+dymd status 2>&1 | jq .ValidatorInfo
 ```
-### Check node logs
+#### Check node logs
 ```python
-sudo journalctl -u dymd -f -o cat
+sudo journalctl -fu dymd -o cat
 ```
-### Check Balance
+#### Check service status
+```python
+sudo systemctl status dymd
+```
+#### Restart service
+```python
+sudo systemctl restart dymd
+```
+#### Stop service
+```python
+sudo systemctl stop dymd
+```
+#### Start service
+```python
+sudo systemctl start dymd
+```
+#### reload/disable/enable
+```python
+sudo systemctl daemon-reload
+sudo systemctl disable dymd
+sudo systemctl enable dymd
+```
+#### Your Peer
+```python
+echo $(dymd tendermint show-node-id)'@'$(wget -qO- eth0.me)':'$(cat $HOME/.dymension/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
+```
+
+# 🥅Working with keys
+
+#### New Key or Recover Key
+```python
+dymd keys add Wallet_Name
+      OR
+dymd keys add Wallet_Name --recover
+```
+#### Check all keys
+```python
+dymd keys list
+```
+#### Check Balance
 ```python
 dymd query bank balances dym...addressjkl1yjgn7z09ua9vms259j
+```
+#### Delete Key
+```python
+dymd keys delete Wallet_Name
+```
+#### Export Key
+```python
+dymd keys export wallet
+```
+#### Import Key
+```python
+dymd keys import wallet wallet.backup
+```
+
+# 🚀Validator Management
+
+#### Edit Validator
+```python
+dymd tx staking edit-validator \
+--new-moniker "Your_Moniker" \
+--identity "Keybase_ID" \
+--details "Your_Description" \
+--website "Your_Website" \
+--security-contact "Your_Email" \
+--chain-id dymension_1100-1 \
+--commission-rate 0.05 \
+--from Wallet_Name \
+--gas 350000 \
+--fees 7000000000000000adym -y
+```
+
+#### Your Valoper-Address
+```python
+dymd keys show Wallet_Name --bech val
+```
+#### Your Valcons-Address
+```python
+dymd tendermint show-address
+```
+#### Your Validator-Info
+```python
+dymd query staking validator dymdvaloperaddress......
+```
+#### Jail Info
+```python
+dymd query slashing signing-info $(dymd tendermint show-validator)
+```
+#### Unjail
+```python
+dymd tx slashing unjail --from Wallet_name --chain-id dymension_1100-1 --gas 350000 --fees 7000000000000000adym -y
+```
+#### Active Validators List
+```python
+dymd q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
+```
+#### Inactive Validators List
+```python
+dymd q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
+```
+#### Check that your key matches the validator  (Win - Good.  Lose - Bad)
+```python
+VALOPER=Enter_Your_valoper_Here
+[[ $(dymd  q staking validator $VALOPER -oj | jq -r .consensus_pubkey.key) = $(dymd status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "\nYou win\n" || echo -e "\nYou lose\n"
+```
+
+#### Withdraw all rewards from all validators
+```python
+dymd tx distribution withdraw-all-rewards --from Wallet_Name --chain-id dymension_1100-1 --gas 350000 --fees 7000000000000000adym -y
+```
+#### Withdraw and commission from your Validator
+```python
+dymd tx distribution withdraw-rewards dymvaloper1amxp0k0hg4edrxg85v07t9ka2tfuhamhldgf8e --from Wallet_Name --gas 350000 --fees 7000000000000000adym --chain-id=dymension_1100-1 --commission -y
+```
+#### Delegate tokens to your validator
+```python
+dymd tx staking delegate Your_dymvalpoer........ "100000000"adym --from Wallet_Name --gas 350000 --fees 7000000000000000adym --chain-id=dymension_1100-1 -y
+```
+#### Delegate tokens to different validator
+```python
+dymd tx staking delegate dymvalpoer........ "100000000"adym --from Wallet_Name --gas 350000 --fees 7000000000000000adym --chain-id=dymension_1100-1 -y
+```
+#### Redelegate tokens to another validator
+```python
+dymd tx staking redelegate Your_dymvalpoer........ dymvalpoer........ "100000000"adym --from Wallet_Name --gas 350000 --fees 7000000000000000adym --chain-id=dymension_1100-1 -y
+```
+
+#### Unbond tokens from your validator or different validator
+```python
+dymd tx staking unbond Your_dymvalpoer........ "100000000"adym --from Wallet_Name --gas 350000 --fees 7000000000000000adym --chain-id=dymension_1100-1 -y
+dymd tx staking unbond dymvalpoer........ "100000000"adym --from Wallet_Name --gas 350000 --fees 7000000000000000adym --chain-id=dymension_1100-1 -y
+```
+
+#### Transfer tokens from wallet to wallet
+```python
+dymd tx bank send Your_dymaddress............ dymaddress........... "1000000000000000000"adym --gas 350000 --fees 7000000000000000adym --chain-id=dymension_1100-1 -y
+```
+
+# 📝Governance
+
+#### View all proposals
+```python
+dymd query gov proposals
+```
+
+#### View specific proposal
+```python
+dymd query gov proposal 1
+```
+
+#### Vote yes
+```python
+dymd tx gov vote 1 yes --from Wallet_Name --gas 350000 --fees 7000000000000000adym --chain-id=dymension_1100-1 -y
+```
+#### Vote no
+```python
+dymd tx gov vote 1 no --from Wallet_Name --gas 350000 --fees 7000000000000000adym --chain-id=dymension_1100-1 -y
+```
+#### Vote abstain
+```python
+dymd tx gov vote 1 abstain --from Wallet_Name --gas 350000 --fees 7000000000000000adym --chain-id=dymension_1100-1 -y
+```
+#### Vote no_with_veto
+```python
+dymd tx gov vote 1 no_with_veto --from Wallet_Name --gas 350000 --fees 7000000000000000adym --chain-id=dymension_1100-1 -y
+```
+
+
+# 📡IBC  transfer 
+- for exapmle - DYM -> Osmosis
+```python
+dymd tx ibc-transfer transfer transfer channel-2 Your_OSMOaddress............ "100000"adym --from Wallet_Name ---gas 350000 --fees 7000000000000000adym --chain-id=dymension_1100-1 -y
 ```
