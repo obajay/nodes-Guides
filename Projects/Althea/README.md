@@ -219,3 +219,185 @@ sudo journalctl -u althea -f -o cat
 ```python
 althea query bank balances althea...addressjkl1yjgn7z09ua9vms259j
 ```
+
+
+<h1 align="center"> 📚Useful commands📚 </h1>
+
+# ⚙️Service
+
+#### Info
+```python
+althea status 2>&1 | jq .NodeInfo
+althea status 2>&1 | jq .SyncInfo
+althea status 2>&1 | jq .ValidatorInfo
+```
+#### Check node logs
+```python
+sudo journalctl -fu althea -o cat
+```
+#### Check service status
+```python
+sudo systemctl status althea
+```
+#### Restart service
+```python
+sudo systemctl restart althea
+```
+#### Stop service
+```python
+sudo systemctl stop althea
+```
+#### Start service
+```python
+sudo systemctl start althea
+```
+#### reload/disable/enable
+```python
+sudo systemctl daemon-reload
+sudo systemctl disable althea
+sudo systemctl enable althea
+```
+#### Your Peer
+```python
+echo $(althea tendermint show-node-id)'@'$(wget -qO- eth0.me)':'$(cat $HOME/.althea/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
+```
+
+# 🥅Working with keys
+
+#### New Key or Recover Key
+```python
+althea keys add Wallet_Name
+      OR
+althea keys add Wallet_Name --recover
+```
+#### Check all keys
+```python
+althea keys list
+```
+#### Check Balance
+```python
+althea query bank balances althea...addressjkl1yjgn7z09ua9vms259j
+```
+#### Delete Key
+```python
+althea keys delete Wallet_Name
+```
+#### Export Key
+```python
+althea keys export wallet
+```
+#### Import Key
+```python
+althea keys import wallet wallet.backup
+```
+
+# 🚀Validator Management
+
+#### Edit Validator
+```python
+althea tx staking edit-validator \
+--new-moniker "Your_Moniker" \
+--identity "Keybase_ID" \
+--details "Your_Description" \
+--website "Your_Website" \
+--security-contact "Your_Email" \
+--chain-id althea_417834-3 \
+--commission-rate 0.05 \
+--from Wallet_Name \
+--gas 350000 -y
+```
+
+#### Your Valoper-Address
+```python
+althea keys show Wallet_Name --bech val
+```
+#### Your Valcons-Address
+```python
+althea tendermint show-address
+```
+#### Your Validator-Info
+```python
+althea query staking validator altheavaloperaddress......
+```
+#### Jail Info
+```python
+althea query slashing signing-info $(althea tendermint show-validator)
+```
+#### Unjail
+```python
+althea tx slashing unjail --from Wallet_name --chain-id althea_417834-3 --gas 350000 -y
+```
+#### Active Validators List
+```python
+althea q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
+```
+#### Inactive Validators List
+```python
+althea q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
+```
+#### Check that your key matches the validator  (Win - Good.  Lose - Bad)
+```python
+VALOPER=Enter_Your_valoper_Here
+[[ $(althea  q staking validator $VALOPER -oj | jq -r .consensus_pubkey.key) = $(althea status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "\nYou win\n" || echo -e "\nYou lose\n"
+```
+
+#### Withdraw all rewards from all validators
+```python
+althea tx distribution withdraw-all-rewards --from Wallet_Name --chain-id althea_417834-3 --gas 350000 -y
+```
+#### Withdraw and commission from your Validator
+```python
+althea tx distribution withdraw-rewards altheavaloper1amxp0k0hg4edrxg85v07t9ka2tfuhamhldgf8e --from Wallet_Name --gas 350000 --chain-id=althea_417834-3 --commission -y
+```
+#### Delegate tokens to your validator
+```python
+althea tx staking delegate Your_altheavalpoer........ "100000000"aalthea --from Wallet_Name --gas 350000 --chain-id=althea_417834-3 -y
+```
+#### Delegate tokens to different validator
+```python
+althea tx staking delegate altheavalpoer........ "100000000"aalthea --from Wallet_Name --gas 350000 --chain-id=althea_417834-3 -y
+```
+#### Redelegate tokens to another validator
+```python
+althea tx staking redelegate Your_altheavalpoer........ altheavalpoer........ "100000000"aalthea --from Wallet_Name --gas 350000  --chain-id=althea_417834-3 -y
+```
+
+#### Unbond tokens from your validator or different validator
+```python
+althea tx staking unbond Your_altheavalpoer........ "100000000"aalthea --from Wallet_Name --gas 350000 --chain-id=althea_417834-3 -y
+althea tx staking unbond altheavalpoer........ "100000000"aalthea --from Wallet_Name --gas 350000 --chain-id=althea_417834-3 -y
+```
+
+#### Transfer tokens from wallet to wallet
+```python
+althea tx bank send Your_altheaaddress............ altheaaddress........... "1000000000000000000"aalthea --gas 350000 --chain-id=althea_417834-3 -y
+```
+
+# 📝Governance
+
+#### View all proposals
+```python
+althea query gov proposals
+```
+
+#### View specific proposal
+```python
+althea query gov proposal 1
+```
+
+#### Vote yes
+```python
+althea tx gov vote 1 yes --from Wallet_Name --gas 350000  --chain-id=althea_417834-3 -y
+```
+#### Vote no
+```python
+althea tx gov vote 1 no --from Wallet_Name --gas 350000  --chain-id=althea_417834-3 -y
+```
+#### Vote abstain
+```python
+althea tx gov vote 1 abstain --from Wallet_Name --gas 350000  --chain-id=althea_417834-3 -y
+```
+#### Vote no_with_veto
+```python
+althea tx gov vote 1 no_with_veto --from Wallet_Name --gas 350000  --chain-id=althea_417834-3 -y
+```
