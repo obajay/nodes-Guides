@@ -1,3 +1,6 @@
+[🔥OUR VALIDATOR🔥](https://restake.app/regen/regenvaloper1adzpsnvegat0mdcd2yn3hpy8hly9t20cwzjmj6)
+=
+
 # Regen Network Mainnet guide
 
 ![regen](https://github.com/obajay/nodes-Guides/assets/44331529/8a3f6180-81b5-46ff-aedf-62546514087a)
