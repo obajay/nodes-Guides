@@ -44,7 +44,7 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 13.01.24
+# Build 13.02.24
 ```python
 cd $HOME
 git clone https://github.com/lavanet/lava
