@@ -52,9 +52,9 @@ mv uniond $HOME/go/bin/
 SOOON
 ```
 
-`uniond version --long`
+`uniond --home $HOME/.union version --long`
 - version: v0.19.0
-- commit: a9a0df3e7dfe45bb0e2faea013fafdfd849eec1a
+- commit: d2a204a0b8d86b82a1bdeefbaeda90dc59b67673
 
 ## Create/recover wallet
 ```python
@@ -69,7 +69,7 @@ wget -O $HOME/.union/config/genesis.json "https://raw.githubusercontent.com/obaj
 
 ```
 `sha256sum $HOME/.union/config/genesis.json`
-+ 60cd5b53f08a9652f936a80314ae2d765df2f35b24fd551abb4feffb83c895ab
++ 1ab6b66403f9ae3b298ab68d4cac51e33d4c43a5b21fbe5d15b7bf2ac12a74b6
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
