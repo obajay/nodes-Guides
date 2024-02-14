@@ -58,6 +58,8 @@ wget http://uniont.binary.stavr.tech:15/union/uniond
 chmod +x uniond
 mv uniond $HOME/go/bin/
 
+uniond --home $HOME/.union init $Validator_Name --chain-id $CHAIN_ID
+
 wget -O $HOME/.union/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Union/genesis.json"
 wget -O $HOME/.union/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Union/addrbook.json"
 
