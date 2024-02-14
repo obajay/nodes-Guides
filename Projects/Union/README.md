@@ -39,7 +39,7 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 18.01.24
+# Build 14.02.24
 ```python
 cd $HOME
 wget http://uniont.binary.stavr.tech:15/union/uniond
@@ -53,7 +53,7 @@ SOOON
 ```
 
 `uniond version --long`
-- version: v0.18.0
+- version: v0.19.0
 - commit: a9a0df3e7dfe45bb0e2faea013fafdfd849eec1a
 
 ## Create/recover wallet
@@ -78,7 +78,7 @@ external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.union/config/config.toml
 peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.union/config/config.toml
-seeds="3f472746f46493309650e5a033076689996c8881@union-testnet.rpc.kjnodes.com:17159"
+seeds="b37de4c50e26f7cde4c7b6ce06046a6693ffef2c@union.testnet.4.seed.poisonphang.com:26656"
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.union/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.union/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 10/g' $HOME/.union/config/config.toml
@@ -160,7 +160,7 @@ nano validator.json
   "min-self-delegation": "1"
 }
 
-uniond --home /root/.union tx staking create-validator /root/validator.json --from Wallet_name  --chain-id union-testnet-5
+uniond --home /root/.union tx staking create-validator /root/validator.json --from Wallet_name  --chain-id union-testnet-6
 ```
 
 ## Delete node
