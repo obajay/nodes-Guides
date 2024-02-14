@@ -62,10 +62,13 @@ uniond --home $HOME/.union keys add <walletname>
             OR
 uniond --home $HOME/.union keys add <walletname> --recover
 ```
+## Init
+```python
+uniond --home $HOME/.union init STAVR_guide --chain-id union-testnet-6
+```
 
 ## Download Genesis
 ```python
-mkdir -p $HOME/.union/config
 wget -O $HOME/.union/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Union/genesis.json"
 
 ```
