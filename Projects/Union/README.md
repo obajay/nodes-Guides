@@ -65,6 +65,7 @@ uniond --home $HOME/.union keys add <walletname> --recover
 
 ## Download Genesis
 ```python
+mkdir -p $HOME/.union/config
 wget -O $HOME/.union/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Union/genesis.json"
 
 ```
