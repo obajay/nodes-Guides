@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 11377.4 | 0.214606 | 2441.662941391 |
+| 11377.4 | 0.212952 | 2422.844687544 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/sommelier/sommvaloper1fes322u0x7422ugc05xkxeav2zzd3kfgf898f4)
 =
