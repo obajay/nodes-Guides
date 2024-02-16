@@ -35,16 +35,16 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-# Binary   30.11.23
+# Binary 17.02.24
 ```python 
-git clone https://github.com/alpha-omega-labs/genesisd
-cd genesisd
-go mod tidy
+git clone https://github.com/alpha-omega-labs/genesis-crypto
+cd genesis-crypto
+git checkout v1.0.0
 make install
 ```
-`genesisd version --long | head`
-- version:  0.3.1
-- commit: 36f022fb6f6bf8c2a66e43c303982f072a4db614 
+`genesisd version --long | grep -e version -e commit`
+- version:  1.0.0
+- commit: 7cb02ad35442e00b7eb24dc06868577223d48141
 
 ## Initialisation
 ```python
@@ -65,18 +65,18 @@ wget -O $HOME/.genesisd/config/genesis.json "https://github.com/alpha-omega-labs
 
 ### Pruning (optional)
 ```python
-pruning="custom" && \
-pruning_keep_recent="100" && \
-pruning_keep_every="0" && \
-pruning_interval="10" && \
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.genesisd/config/app.toml && \
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.genesisd/config/app.toml && \
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.genesisd/config/app.toml && \
+pruning="custom" &&
+pruning_keep_recent="100" &&
+pruning_keep_every="0" &&
+pruning_interval="10" &&
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.genesisd/config/app.toml &&
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.genesisd/config/app.toml &&
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.genesisd/config/app.toml &&
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.genesisd/config/app.toml
 ```
 ### Indexer (optional)
 ```python
-indexer="null" && \
+indexer="null" &&
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.genesisd/config/config.toml
 ```
 ### Set up the minimum gas price and Peers/Seeds/Filter peers
@@ -127,10 +127,8 @@ SOOON
 
 # Start node (one command)
 ```python
-sudo systemctl daemon-reload &&
-sudo systemctl enable genesisd &&
-sudo systemctl restart genesisd &&
-sudo journalctl -u genesisd -f -o cat
+sudo systemctl daemon-reload && sudo systemctl enable genesisd &&
+sudo systemctl restart genesisd && sudo journalctl -u genesisd -f -o cat
 ```
 
 ## Create validator
