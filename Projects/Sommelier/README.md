@@ -5,7 +5,8 @@
 
 <!-- END_TABLE -->
 
-
+[🔥OUR VALIDATOR🔥](https://restake.app/sommelier/sommvaloper1fes322u0x7422ugc05xkxeav2zzd3kfgf898f4)
+=
 
 # Sommelier Mainnet guide
 
