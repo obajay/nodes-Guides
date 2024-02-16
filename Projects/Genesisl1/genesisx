@@ -53,9 +53,9 @@ go version
 
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
-cd $HOME
-git clone https://github.com/alpha-omega-labs/genesisd && cd genesisd
-go mod tidy
+git clone https://github.com/alpha-omega-labs/genesis-crypto
+cd genesis-crypto
+git checkout v1.0.0
 make install
 
 genesisd init $Validator_Name --chain-id $CHAIN_ID
@@ -130,12 +130,13 @@ break
 "Synchronization via StateSync")
 echo -e "      \e[1m\e[35m SOOOOON\e[0m"
 
-
 break
 ;;
 "UPDATE")
-echo -e "        \e[1m\e[32mVERSION\e[0m"
-genesisd version
+cd $HOME/genesis-crypto
+git checkout v1.0.0
+make install
+sudo systemctl restart genesisd && sudo journalctl -u genesisd -f -o cat
 
 break
 ;;
