@@ -42,7 +42,7 @@ go version
 # Build 14.02.24
 ```python
 cd $HOME
-wget http://uniont.binary.stavr.tech:15/union/uniond
+wget https://uniont.binary.stavr.tech/union/uniond
 chmod +x uniond
 mv uniond $HOME/go/bin/
 
