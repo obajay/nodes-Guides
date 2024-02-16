@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 11377.4 | 0.214606 | 2441.662941391 |
+
+<!-- END_TABLE -->
+
 # Sommelier Mainnet guide
 
 ![somm](https://github.com/obajay/nodes-Guides/assets/44331529/f060644e-ca9f-4772-ae00-0afa987c4bf8)
