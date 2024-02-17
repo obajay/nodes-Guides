@@ -159,7 +159,7 @@ sudo systemctl disable genesisd
 rm /etc/systemd/system/genesisd.service
 sudo systemctl daemon-reload
 cd $HOME
-rm -rf .genesisd
+rm -rf .genesis
 rm -rf genesisd
 rm -rf $(which genesisd)
 ```
