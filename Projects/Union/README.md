@@ -181,11 +181,11 @@ rm -rf $(which uniond)
 #
 ### Sync Info
 ```python
-uniond status 2>&1 | jq .SyncInfo
+curl -s localhost:26657/status
 ```
 ### NodeINfo
 ```python
-uniond status 2>&1 | jq .NodeInfo
+uniond --home $HOME/.union query staking validator unionvaloper155.........
 ```
 ### Check node logs
 ```python
