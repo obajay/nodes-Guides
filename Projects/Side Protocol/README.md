@@ -110,7 +110,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.side/config/config.to
 
 ## Download addrbook
 ```python
-wget -O $HOME/.side/config/addrbook.json "SOON"
+wget -O $HOME/.side/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Side%20Protocol/addrbook.json"
 ```
 
 # Create a service file
