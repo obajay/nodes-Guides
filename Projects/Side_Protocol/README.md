@@ -45,7 +45,7 @@ go version
 cd $HOME && mkdir -p go/bin/
 git clone -b dev https://github.com/sideprotocol/sidechain.git
 cd sidechain
-git checkout v0.0.3
+git checkout 0.0.1-75-gbd63479
 make install
 
 ```
@@ -55,8 +55,8 @@ SOOON
 ```
 
 `sided version --long | grep -e commit -e version`
-- version: 0.0.3
-- commit: c364426fb41dacf2cdd05ca4d95e713a7292a93c
+- version: 0.0.1-75-gbd63479
+- commit: bd634795bb37ec1e9d810c46098fc521b8e033c3
 
 ```python
 sided init STAVR_guide --chain-id side-testnet-1
@@ -72,23 +72,23 @@ sided keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget https://raw.githubusercontent.com/sideprotocol/testnet/main/shambhala/genesis.json -O $HOME/.side/config/genesis.json
+wget https://raw.githubusercontent.com/sideprotocol/testnet/main/shambhala/genesis.json -O $HOME/.sidechain/config/genesis.json
 
 ```
-`sha256sum $HOME/.side/config/genesis.json`
+`sha256sum $HOME/.sidechain/config/genesis.json`
 + 69bb55baeed046704d09f7590d8969dfafcc5f6afbd00d9479bd17ced44b7708
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.005uside\"/;" ~/.side/config/app.toml
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.005uside\"/;" ~/.sidechain/config/app.toml
 external_address=$(wget -qO- eth0.me) 
-sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.side/config/config.toml
+sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.sidechain/config/config.toml
 peers="2eba9c8e6fb9d56bbdd10d007a598541c37f6493@13.212.61.41:26656"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.side/config/config.toml
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.sidechain/config/config.toml
 seeds=""
-sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.side/config/config.toml
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.side/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.side/config/config.toml
+sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.sidechain/config/config.toml
+sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.sidechain/config/config.toml
+sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.sidechain/config/config.toml
 
 ```
 ### Pruning (optional)
@@ -97,20 +97,20 @@ pruning="custom"
 pruning_keep_recent="1000"
 pruning_keep_every="0"
 pruning_interval="10"
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.side/config/app.toml
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.side/config/app.toml
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.side/config/app.toml
-sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.side/config/app.toml
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.sidechain/config/app.toml
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.sidechain/config/app.toml
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.sidechain/config/app.toml
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.sidechain/config/app.toml
 ```
 ### Indexer (optional) 
 ```bash
 indexer="null" && \
-sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.side/config/config.toml
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.sidechain/config/config.toml
 ```
 
 ## Download addrbook
 ```python
-wget -O $HOME/.side/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Side_Protocol/addrbook.json"
+wget -O $HOME/.sidechain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Side_Protocol/addrbook.json"
 ```
 
 # Create a service file
@@ -177,7 +177,7 @@ rm /etc/systemd/system/sided.service
 sudo systemctl daemon-reload
 cd $HOME
 rm -rf sidechain
-rm -rf .side
+rm -rf .sidechain
 rm -rf $(which sided)
 ```
 #
@@ -237,7 +237,7 @@ sudo systemctl enable sided
 ```
 #### Your Peer
 ```python
-echo $(sided tendermint show-node-id)'@'$(wget -qO- eth0.me)':'$(cat $HOME/.side/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
+echo $(sided tendermint show-node-id)'@'$(wget -qO- eth0.me)':'$(cat $HOME/.sidechain/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
 ```
 
 # 🥅Working with keys
