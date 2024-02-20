@@ -34,10 +34,10 @@ apt install curl iptables build-essential git wget jq make gcc nano tmux htop nv
 ```
 
 ```
-## GO 1.20.5
+## GO 1.21.4
 ```python
 cd $HOME
-ver="1.20.5"
+ver="1.21.4"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
@@ -52,13 +52,13 @@ go version
 cd $HOME
 git clone https://github.com/BitCannaGlobal/bcna/tags
 cd bcna
-git checkout v3.0.1-rc2
+git checkout v3.0.2-rc1
 make install
 ```
 
 `bcnad version --long | grep -e commit -e version`
-+ version: v3.0.1-rc2
-+ commit: da869d694bcfc130a8e35925c157879a35de11b7
++ version: v3.0.2-rc1
++ commit: 071838392ec3eb62b66860df5c74cedb32ec7475
 
 ```python
 bcnad init STAVR_guide --chain-id bitacanna-dev-1
