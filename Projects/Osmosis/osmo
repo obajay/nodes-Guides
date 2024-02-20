@@ -55,7 +55,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 #INSTALL
 cd $HOME
 git clone https://github.com/osmosis-labs/osmosis && cd osmosis
-git checkout v22.0.0
+git checkout v23.0.0
 make install
 
 osmosisd init $Validator_Name --chain-id $CHAIN_ID
@@ -137,7 +137,7 @@ break
 "UPDATE")
 cd $HOME/osmosis
 git pull
-git checkout v22.0.0
+git checkout v23.0.0
 make install
 systemctl restart osmosisd && journalctl -u osmosisd -f -o cat
 
