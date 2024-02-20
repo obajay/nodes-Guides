@@ -33,7 +33,6 @@ sudo apt update && sudo apt upgrade -y
 apt install curl iptables build-essential git wget jq make gcc nano tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
 ```
 
-```
 ## GO 1.21.4
 ```python
 cd $HOME
@@ -50,7 +49,7 @@ go version
 # Build 31.01.24
 ```python
 cd $HOME
-git clone https://github.com/BitCannaGlobal/bcna/tags
+git clone https://github.com/BitCannaGlobal/bcna/
 cd bcna
 git checkout v3.0.2-rc1
 make install
