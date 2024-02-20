@@ -56,7 +56,7 @@ make install
 ```
 
 `bcnad version --long | grep -e commit -e version`
-+ version: v3.0.2-rc1
++ version: 3.0.2-rc1
 + commit: 071838392ec3eb62b66860df5c74cedb32ec7475
 
 ```python
