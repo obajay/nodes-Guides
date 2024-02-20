@@ -43,29 +43,29 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 18.01.24
+# Build 20.02.24
 ```python
 cd $HOME
 git clone https://github.com/osmosis-labs/osmosis && cd osmosis
-git checkout v22.0.0
+git checkout v23.0.0
 make install
 ```
 
-*******🟢UPDATE🟢******* 18.01.24
+*******🟢UPDATE🟢******* 20.02.24
 ```python
 cd $HOME
-wget -O osmosisd https://github.com/osmosis-labs/osmosis/releases/download/v22.0.0/osmosisd-22.0.0-linux-amd64
+wget -O osmosisd https://github.com/osmosis-labs/osmosis/releases/download/v23.0.0/osmosisd-23.0.0-linux-amd64
 chmod +x osmosisd
 mv osmosisd $(which osmosisd)
 osmosisd version --long
-# version: 22.0.0
-# commit: 60ee947d50408a4273013422bce5acba19deb63f
+# version: 23.0.0
+# commit: 8627f019be5ebb7292282a35a41acc51c5948dd8
 systemctl restart osmosisd && journalctl -u osmosisd -f -o cat
 ```
 
 `osmosisd version --long | head`
-- version: 22.0.0
-- commit: 60ee947d50408a4273013422bce5acba19deb63f
+- version: 23.0.0
+- commit: 8627f019be5ebb7292282a35a41acc51c5948dd8
 
 ```python
 osmosisd init STAVR_guide --chain-id osmosis-1
