@@ -45,25 +45,28 @@ go version
 cd $HOME
 git clone https://github.com/elys-network/elys elys
 cd elys
-git checkout v0.29.13
+git checkout fix/v0.29.13-issue
+git tag v0.29.13 -d
+git tag v0.29.13
 make install
 ```
 
 *******🟢UPDATE🟢******* 20.02.24
 ```python
 cd $HOME/elys
-git fetch --all
-git checkout v0.29.13
+git checkout fix/v0.29.13-issue
+git tag v0.29.13 -d
+git tag v0.29.13
 make install
 elysd version --long | grep -e commit -e version
-#commit: e1c933b77fca8550fb83497dfe191e4e2486f075
+#commit: 5f406ceb080f11e0108c680c509719bfcca88448
 #version: v0.29.13
 sudo systemctl restart elysd && sudo journalctl -u elysd -f -o cat
 ```
 
 `elysd version --long`
 - version: v0.29.13
-- commit: e1c933b77fca8550fb83497dfe191e4e2486f075
+- commit: 5f406ceb080f11e0108c680c509719bfcca88448
 
 ```python
 elysd init STAVR_guide --chain-id elystestnet-1
