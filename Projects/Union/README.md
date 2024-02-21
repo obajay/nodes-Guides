@@ -52,15 +52,14 @@ mv uniond $HOME/go/bin/
 ```python
 SOOON
 ```
-
-`uniond --home $HOME/.union version --long`
-- version: v0.19.0
-- commit: d2a204a0b8d86b82a1bdeefbaeda90dc59b67673
-
 ## Init
 ```python
 uniond --home $HOME/.union init STAVR_guide --chain-id union-testnet-6
 ```
+
+`uniond --home $HOME/.union version --long`
+- version: v0.19.0
+- commit: d2a204a0b8d86b82a1bdeefbaeda90dc59b67673
 
 ## Create/recover wallet
 ```python
