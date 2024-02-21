@@ -5,39 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/bitcanna/bcnavaloper19tyve4e8nf0twd8z02a2eatrls7tuecy0ef098)
 =
 
@@ -46,8 +13,6 @@
 <img src='https://user-images.githubusercontent.com/44331529/190848563-484255a3-60cc-4259-a6ba-e49adf48ebeb.gif' alt='Bitcanna'  width='50%'>
 
 [<img src='https://user-images.githubusercontent.com/44331529/190849033-ceade049-eb11-47de-93a0-38d96caed8b8.png' alt='Bitcanna'  width='100%'>](https://medium.com/@BitCannaGlobal/introducing-bitcanna-buddheads-nft-45f2e05fd191)
-
-
 
 [Website](https://www.bitcanna.io/)
 =
@@ -87,30 +52,30 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 05.02.24
+# Build 21.02.24
 ```python
 cd $HOME
 git clone https://github.com/BitCannaGlobal/bcna
 cd bcna
-git checkout v3.0.1
+git checkout v3.0.2
 make install
 ```
 
-*******🟢UPDATE🟢******* 05.02.24
+*******🟢UPDATE🟢******* 21.02.24
 ```python
 cd $HOME/bcna
 git fetch --all
 git checkout v3.0.1
 make install
 bcnad version --long
-#version: 3.0.1
-#commit: 9b60e5fcbbaceef18116be4272abc1ee25c5a1a2
+#version: 3.0.2
+#commit: 9a5beee5930688759129a57772a2cf2eb11ec9fd
 sudo systemctl restart bcnad && sudo journalctl -u bcnad -f -o cat
 ```
 
 `bcnad version --long | grep -e commit -e version`
-- version: 3.0.1
-- commit: 9b60e5fcbbaceef18116be4272abc1ee25c5a1a2
+- version: 3.0.2
+- commit: 9a5beee5930688759129a57772a2cf2eb11ec9fd
 
 ```python
 bcnad init STAVR_guide --chain-id bitcanna-1
