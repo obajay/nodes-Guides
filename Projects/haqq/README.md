@@ -5,20 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/haqq/haqqvaloper1yj2hjxsu7gxcdje86hgnm9gn7z09ua9vhjx6pn)
 =
 
@@ -60,33 +46,33 @@ source $HOME/.bash_profile &&
 go version
 ```
 
-# Binary   16.02.24
+# Binary   22.02.24
 ```python
 cd $HOME
-wget https://github.com/haqq-network/haqq/releases/download/v1.7.2/haqq_1.7.2_Linux_x86_64.tar.gz
-tar -xvzf haqq_1.7.2_Linux_x86_64.tar.gz
+wget https://github.com/haqq-network/haqq/releases/download/v1.7.3/haqq_1.7.3_Linux_x86_64.tar.gz
+tar -xvzf haqq_1.7.3_Linux_x86_64.tar.gz
 cd bin && chmod +x haqqd
 cd bin
 chmod +x haqqd
 mv haqqd $HOME/go/bin/
-cd $HOME && rm -rf haqq_1.7.2_Linux_x86_64.tar.gz
+cd $HOME && rm -rf haqq_1.7.3_Linux_x86_64.tar.gz
 ```
-*******🟢UPDATE🟢******* 16.02.24
+*******🟢UPDATE🟢******* 22.02.24
 ```python
 cd $HOME
-wget https://github.com/haqq-network/haqq/releases/download/v1.7.2/haqq_1.7.2_Linux_x86_64.tar.gz
-tar -xvzf haqq_1.7.2_Linux_x86_64.tar.gz
+wget https://github.com/haqq-network/haqq/releases/download/v1.7.3/haqq_1.7.3_Linux_x86_64.tar.gz
+tar -xvzf haqq_1.7.3_Linux_x86_64.tar.gz
 cd bin && chmod +x haqqd
 mv haqqd $(which haqqd)
-cd $HOME && rm -rf haqq_1.7.2_Linux_x86_64.tar.gz
+cd $HOME && rm -rf haqq_1.7.3_Linux_x86_64.tar.gz
 haqqd version --long | grep -e commit -e version
 #version: 1.7.2
 #commit: 1e0f366008f31688952720c98eebdc552d1a6d72
 sudo systemctl restart haqqd && journalctl -u haqqd -f -o cat
 ```
 `haqqd version --long | grep -e version -e commit`
-- version: 1.7.2
-- commit: 1e0f366008f31688952720c98eebdc552d1a6d72
+- version: 1.7.3
+- commit: a4acbbe8b771e6d0ad36040197558d7ff30179b2
 
 ## Initialisation
 ```python
