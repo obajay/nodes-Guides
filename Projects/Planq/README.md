@@ -5,33 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/planq/plqvaloper1htduzp9w4u3nmjjdtwmctvqsx9z74xecc34vnl)
 =
 
