@@ -41,24 +41,33 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 22.01.23
+# Build 22.02.23
 ```python
 cd $HOME && mkdir -p go/bin/
-wget https://github.com/Switcheo/carbon-bootstrap/releases/download/v2.37.0/carbond2.37.0-mainnet.linux-amd64.tar.gz
-tar -xvzf carbond2.37.0-mainnet.linux-amd64.tar.gz
-rm -rf carbond2.37.0-mainnet.linux-amd64.tar.gz
+wget https://github.com/Switcheo/carbon-bootstrap/releases/download/v2.38.0/carbond2.38.0-mainnet.linux-amd64.tar.gz
+tar -xvzf carbond2.38.0-mainnet.linux-amd64.tar.gz
+rm -rf carbond2.38.0-mainnet.linux-amd64.tar.gz
 chmod +x carbond
 mv carbond /root/go/bin/
 
 ```
-*******🟢UPDATE🟢******* 00.00.23
+*******🟢UPDATE🟢******* 22.02.24
 ```python
-SOOON
+cd $HOME
+wget https://github.com/Switcheo/carbon-bootstrap/releases/download/v2.38.0/carbond2.38.0-mainnet.linux-amd64.tar.gz
+tar -xvzf carbond2.38.0-mainnet.linux-amd64.tar.gz
+rm -rf carbond2.38.0-mainnet.linux-amd64.tar.gz
+chmod +x carbond
+mv carbond $(which carbond)
+carbond version --long | grep -e version -e commit
+#commit: 798addea68d8ed5477fa6a1a5799b002a044c36e
+#version: 2.38.0
+sudo systemctl restart carbond && sudo journalctl -u carbond -f -o cat
 ```
 
 `carbond version --long | head`
-- version: 2.37.0
-- commit: 14b9e8105b00b94faca280b9f99f104bf2c1d5dd
+- version: 2.38.0
+- commit: 798addea68d8ed5477fa6a1a5799b002a044c36e
 
 ```python
 carbond init STAVR_guide --chain-id carbon-1
