@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 500359.6 | 0.077436 | 38745.848256065405660907 |
+| 500359.6 | 0.076304 | 38179.441155674553354381 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/planq/plqvaloper1htduzp9w4u3nmjjdtwmctvqsx9z74xecc34vnl)
 =
