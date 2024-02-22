@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 107354.472 | 0.988547 | 106124.941468 |
+| 107354.472 | 0.874321 | 93862.269522 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/andromeda/andrvaloper1xsm4dvmh5txrcteyv3yq5z8pm58mu35365tpzq)
 =
