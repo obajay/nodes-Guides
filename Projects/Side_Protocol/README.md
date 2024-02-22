@@ -176,8 +176,8 @@ sudo systemctl disable sided
 rm /etc/systemd/system/sided.service
 sudo systemctl daemon-reload
 cd $HOME
-rm -rf sidechain
-rm -rf .sidechain
+rm -rf side
+rm -rf .side
 rm -rf $(which sided)
 ```
 #
@@ -237,7 +237,7 @@ sudo systemctl enable sided
 ```
 #### Your Peer
 ```python
-echo $(sided tendermint show-node-id)'@'$(wget -qO- eth0.me)':'$(cat $HOME/.sidechain/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
+echo $(sided tendermint show-node-id)'@'$(wget -qO- eth0.me)':'$(cat $HOME/.side/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
 ```
 
 # 🥅Working with keys
