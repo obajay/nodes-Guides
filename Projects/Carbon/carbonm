@@ -54,9 +54,9 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME && mkdir -p go/bin/
-wget https://github.com/Switcheo/carbon-bootstrap/releases/download/v2.37.0/carbond2.37.0-mainnet.linux-amd64.tar.gz
-tar -xvzf carbond2.37.0-mainnet.linux-amd64.tar.gz
-rm -rf carbond2.37.0-mainnet.linux-amd64.tar.gz
+wget https://github.com/Switcheo/carbon-bootstrap/releases/download/v2.38.0/carbond2.38.0-mainnet.linux-amd64.tar.gz
+tar -xvzf carbond2.38.0-mainnet.linux-amd64.tar.gz
+rm -rf carbond2.38.0-mainnet.linux-amd64.tar.gz
 chmod +x carbond
 mv carbond /root/go/bin/
 
@@ -152,8 +152,13 @@ sudo systemctl restart carbond && sudo journalctl -u carbond -f -o cat
 break
 ;;
 "UPDATE")
-echo -e "      \e[1m\e[32m SOOOON\e[0m"
-carbond version
+cd $HOME
+wget https://github.com/Switcheo/carbon-bootstrap/releases/download/v2.38.0/carbond2.38.0-mainnet.linux-amd64.tar.gz
+tar -xvzf carbond2.38.0-mainnet.linux-amd64.tar.gz
+rm -rf carbond2.38.0-mainnet.linux-amd64.tar.gz
+chmod +x carbond
+mv carbond $(which carbond)
+sudo systemctl restart carbond && sudo journalctl -u carbond -f -o cat
 
 break
 ;;
