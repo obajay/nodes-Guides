@@ -40,12 +40,12 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 18.02.24
+# Build 22.02.24
 ```python
 cd $HOME && mkdir -p go/bin/
-git clone -b dev https://github.com/sideprotocol/sidechain.git
-cd sidechain
-git checkout 0.0.1-75-gbd63479
+git clone https://github.com/sideprotocol/side.git
+cd side
+git checkout v0.6.0
 make install
 
 ```
@@ -59,8 +59,8 @@ SOOON
 - commit: bd634795bb37ec1e9d810c46098fc521b8e033c3
 
 ```python
-sided init STAVR_guide --chain-id side-testnet-1
-sided config chain-id side-testnet-1
+sided init STAVR_guide --chain-id side-testnet-2
+sided config chain-id side-testnet-2
 ```    
 
 ## Create/recover wallet
@@ -72,7 +72,7 @@ sided keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget https://raw.githubusercontent.com/sideprotocol/testnet/main/shambhala/genesis.json -O $HOME/.sidechain/config/genesis.json
+wget https://raw.githubusercontent.com/sideprotocol/testnet/main/side-testnet-2/genesis.json -O $HOME/.sidechain/config/genesis.json
 
 ```
 `sha256sum $HOME/.sidechain/config/genesis.json`
@@ -83,9 +83,9 @@ wget https://raw.githubusercontent.com/sideprotocol/testnet/main/shambhala/genes
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.005uside\"/;" ~/.sidechain/config/app.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.sidechain/config/config.toml
-peers="2eba9c8e6fb9d56bbdd10d007a598541c37f6493@13.212.61.41:26656"
+peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.sidechain/config/config.toml
-seeds=""
+seeds="d9911bd0eef9029e8ce3263f61680ef4f71a87c413.230.121.124:26656,693bdfec73a81abddf6f758aa49321de48456a96@13.231.67.192:26656"
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.sidechain/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.sidechain/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.sidechain/config/config.toml
@@ -158,7 +158,7 @@ sided tx staking create-validator \
 --pubkey $(sided tendermint show-validator) \
 --from <wallet> \
 --moniker="STAVR_guide" \
---chain-id side-testnet-1 \
+--chain-id side-testnet-2 \
 --gas 350000 \
 --identity="" \
 --website="" \
