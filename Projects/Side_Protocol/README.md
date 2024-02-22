@@ -55,8 +55,8 @@ SOOON
 ```
 
 `sided version --long | grep -e commit -e version`
-- version: 0.0.1-75-gbd63479
-- commit: bd634795bb37ec1e9d810c46098fc521b8e033c3
+- version: 0.6.0
+- commit: 5bfe2591a69f6376a83cf9cb3c0124c73b81319d
 
 ```python
 sided init STAVR_guide --chain-id side-testnet-2
