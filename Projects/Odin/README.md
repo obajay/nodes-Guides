@@ -5,10 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/odin/odinvaloper1qy8ydw4vxpvlkxfkk8lqtpffwpqk0d8th2v9ly)
 =
 
@@ -150,11 +146,37 @@ EOF
 ```
 # StateSync ODIN Mainnet
 ```python
-SOOON
+SNAP_RPC=https://odin.rpc.m.stavr.tech:443
+SEEDS=9a5b281c2d627cdf362f86721ced61a6228b87d1@odin.seed.stavr.tech:1116
+cp $HOME/.odin/data/priv_validator_state.json $HOME/.odin/priv_validator_state.json.backup
+sed -i -e "/seeds =/ s/= .*/= \"$SEEDS\"/"  $HOME/.odin/config/config.toml
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.odin/config/config.toml
+odind tendermint unsafe-reset-all --home $HOME/.odin --keep-addr-book
+mv $HOME/.odin/priv_validator_state.json.backup $HOME/.odin/data/priv_validator_state.json
+sudo systemctl restart odind && journalctl -u odind -f -o cat
 ```
-# SnapShot Mainnet (~0.2GB) updated every 5 hours  
+
+# SnapShot Mainnet (~0.3GB) updated every 5 hours  
 ```python
-SOOON
+cd $HOME
+apt install lz4
+sudo systemctl stop odind
+cp $HOME/.odin/data/priv_validator_state.json $HOME/.odin/priv_validator_state.json.backup
+rm -rf $HOME/.odin/data
+curl -o - -L https://odin.snapshot.stavr.tech/odin-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.odin --strip-components 2
+mv $HOME/.odin/priv_validator_state.json.backup $HOME/.odin/data/priv_validator_state.json
+wget -O $HOME/.odin/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Odin/addrbook.json"
+sudo systemctl restart odind && journalctl -u odind -f -o cat
 ```
 
 ## Start
