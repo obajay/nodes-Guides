@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O sidem https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Side_Protocol/sidem && chmod +x sidem && ./sidem
 ```
 
 # 2) Manual installation
