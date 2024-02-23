@@ -303,7 +303,7 @@ sided tx staking edit-validator \
 --details "Your_Description" \
 --website "Your_Website" \
 --security-contact "Your_Email" \
---chain-id side-testnet-1 \
+--chain-id side-testnet-2 \
 --commission-rate 0.05 \
 --from Wallet_Name \
 --gas 350000 -y
@@ -327,7 +327,7 @@ sided query slashing signing-info $(sided tendermint show-validator)
 ```
 #### Unjail
 ```python
-sided tx slashing unjail --from Wallet_name --chain-id side-testnet-1 --gas 350000 -y
+sided tx slashing unjail --from Wallet_name --chain-id side-testnet-2 --gas 350000 -y
 ```
 #### Active Validators List
 ```python
@@ -345,34 +345,34 @@ VALOPER=Enter_Your_valoper_Here
 
 #### Withdraw all rewards from all validators
 ```python
-sided tx distribution withdraw-all-rewards --from Wallet_Name --chain-id side-testnet-1 --gas 350000 -y
+sided tx distribution withdraw-all-rewards --from Wallet_Name --chain-id side-testnet-2 --gas 350000 -y
 ```
 #### Withdraw and commission from your Validator
 ```python
-sided tx distribution withdraw-rewards sidedvaloper1a........ --from Wallet_Name --gas 350000 --chain-id=side-testnet-1 --commission -y
+sided tx distribution withdraw-rewards sidedvaloper1a........ --from Wallet_Name --gas 350000 --chain-id=side-testnet-2 --commission -y
 ```
 #### Delegate tokens to your validator
 ```python
-sided tx staking delegate Your_sidedvalpoer........ "100000000"uside --from Wallet_Name --gas 350000 --chain-id=side-testnet-1 -y
+sided tx staking delegate Your_sidedvalpoer........ "100000000"uside --from Wallet_Name --gas 350000 --chain-id=side-testnet-2 -y
 ```
 #### Delegate tokens to different validator
 ```python
-sided tx staking delegate sidedvalpoer........ "100000000"uside --from Wallet_Name --gas 350000 --chain-id=side-testnet-1 -y
+sided tx staking delegate sidedvalpoer........ "100000000"uside --from Wallet_Name --gas 350000 --chain-id=side-testnet-2 -y
 ```
 #### Redelegate tokens to another validator
 ```python
-sided tx staking redelegate Your_sidedvalpoer........ sidedvalpoer........ "100000000"uside --from Wallet_Name --gas 350000  --chain-id=side-testnet-1 -y
+sided tx staking redelegate Your_sidedvalpoer........ sidedvalpoer........ "100000000"uside --from Wallet_Name --gas 350000  --chain-id=side-testnet-2 -y
 ```
 
 #### Unbond tokens from your validator or different validator
 ```python
-sided tx staking unbond Your_sidedvalpoer........ "100000000"uside --from Wallet_Name --gas 350000 --chain-id=side-testnet-1 -y
-sided tx staking unbond sidedvalpoer........ "100000000"uside --from Wallet_Name --gas 350000 --chain-id=side-testnet-1 -y
+sided tx staking unbond Your_sidedvalpoer........ "100000000"uside --from Wallet_Name --gas 350000 --chain-id=side-testnet-2 -y
+sided tx staking unbond sidedvalpoer........ "100000000"uside --from Wallet_Name --gas 350000 --chain-id=side-testnet-2 -y
 ```
 
 #### Transfer tokens from wallet to wallet
 ```python
-sided tx bank send Your_sidedaddress............ sidedaddress........... "1000000000000000000"uside --gas 350000 --chain-id=side-testnet-1 -y
+sided tx bank send Your_sidedaddress............ sidedaddress........... "1000000000000000000"uside --gas 350000 --chain-id=side-testnet-2 -y
 ```
 
 # 📝Governance
@@ -389,17 +389,17 @@ sided query gov proposal 1
 
 #### Vote yes
 ```python
-sided tx gov vote 1 yes --from Wallet_Name --gas 350000  --chain-id=side-testnet-1 -y
+sided tx gov vote 1 yes --from Wallet_Name --gas 350000  --chain-id=side-testnet-2 -y
 ```
 #### Vote no
 ```python
-sided tx gov vote 1 no --from Wallet_Name --gas 350000  --chain-id=side-testnet-1 -y
+sided tx gov vote 1 no --from Wallet_Name --gas 350000  --chain-id=side-testnet-2 -y
 ```
 #### Vote abstain
 ```python
-sided tx gov vote 1 abstain --from Wallet_Name --gas 350000  --chain-id=side-testnet-1 -y
+sided tx gov vote 1 abstain --from Wallet_Name --gas 350000  --chain-id=side-testnet-2 -y
 ```
 #### Vote no_with_veto
 ```python
-sided tx gov vote 1 no_with_veto --from Wallet_Name --gas 350000  --chain-id=side-testnet-1 -y
+sided tx gov vote 1 no_with_veto --from Wallet_Name --gas 350000  --chain-id=side-testnet-2 -y
 ```
