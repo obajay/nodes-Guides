@@ -167,6 +167,7 @@ sudo systemctl stop uniond
 cp $HOME/.union/data/priv_validator_state.json $HOME/.union/priv_validator_state.json.backup
 rm -rf $HOME/.union/data
 curl -o - -L https://union-t.snapshot.stavr.tech/union-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.union --strip-components 2
+curl -o - -L https://union-t.wasm.stavr.tech/wasm-union.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.union --strip-components 2
 mv $HOME/.union/priv_validator_state.json.backup $HOME/.union/data/priv_validator_state.json
 wget -O $HOME/.union/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Union/addrbook.json"
 sudo systemctl restart uniond && journalctl -u uniond -f -o cat
