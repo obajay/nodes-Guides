@@ -168,6 +168,9 @@ nano validator.json
 uniond --home /root/.union tx staking create-validator /root/validator.json --from Wallet_name  --chain-id union-testnet-6
 ```
 
+[🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Union)
+=
+
 ## Delete node
 ```python
 sudo systemctl stop uniond
