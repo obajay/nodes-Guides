@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 51556.364 | 0.00053464 | 27.564094961 |
+| 51558.682 | 0.00054234 | 27.962335717 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/lumnetwork/lumvaloper1rs6733nm675q3hzx85dl75t3q893tfukyz22he)
 =
