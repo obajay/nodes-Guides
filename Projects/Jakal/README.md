@@ -88,7 +88,8 @@ canined keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O $HOME/.canine/config/genesis.json "https://cdn.discordapp.com/attachments/1002389406650466405/1034968352591986859/updated_genesis2.json"
+wget https://jackal-m.genesis.stavr.tech/genesis.json
+mv genesis.json $HOME/.canine/config/genesis.json
 ```
 `sha256sum $HOME/.canine/config/genesis.json`
 + b6a0e67fbdf21b929d9080ac546db080790bc18c4931bea60fec8fb18559ad39
