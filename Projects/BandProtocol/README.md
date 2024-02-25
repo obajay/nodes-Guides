@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 25.300 | 2.02 | 51.107771 |
+| 25.300 | 2.06 | 52.119806 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/bandchain/bandvaloper1e2ksk2qw5wk4a996kj0mp9gucpr96ljnf3r358)
 =
