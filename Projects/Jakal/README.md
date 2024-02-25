@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 367473.8 | 0.711594 | 261492.176269 |
+| 367474.1 | 0.71082 | 261207.970042 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/jackal/jklvaloper1us3q2ytkn9zyn99gvf66u6nsn3wnq0n3kxpyvm)
 =
