@@ -54,7 +54,7 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.4.7-rc2/quicksilverd-v1.4.7-rc2-amd64
+wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.5.0-rc0/quicksilverd-v1.5.0-rc0-amd64
 chmod +x quicksilverd
 mv $HOME/quicksilverd $HOME/go/bin/quicksilverd
 
@@ -148,7 +148,7 @@ systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 break
 ;;
 "UPDATE")
-wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.4.7-rc2/quicksilverd-v1.4.7-rc2-amd64
+wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.5.0-rc0/quicksilverd-v1.5.0-rc0-amd64
 chmod +x quicksilverd
 mv $HOME/quicksilverd $HOME/go/bin/quicksilverd
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
