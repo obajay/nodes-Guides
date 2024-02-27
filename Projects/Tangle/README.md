@@ -60,6 +60,7 @@ ExecStart=/usr/bin/tangle \
   --prometheus-port 9515 \
   --telemetry-url "wss://telemetry.polkadot.io/submit/ 0" \
   --validator \
+  --pruning archive \
   --no-mdns
 [Install]
 WantedBy=multi-user.target
