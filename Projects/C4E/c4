@@ -56,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/chain4energy/c4e-chain
 cd c4e-chain
-git checkout v1.3.0
+git checkout v1.3.1
 make install
 
 c4ed init $Validator_Name --chain-id $CHAIN_ID
@@ -151,9 +151,9 @@ break
 ;;
 "UPDATE")
 cd $HOME
-wget https://github.com/chain4energy/c4e-chain/releases/download/v1.3.0/c4ed_v1.3.0_linux_amd64.tar.gz
-tar -xvf c4ed_v1.3.0_linux_amd64.tar.gz
-rm -rf c4ed_v1.3.0_linux_amd64.tar.gz
+wget https://github.com/chain4energy/c4e-chain/releases/download/v1.3.1/c4ed_v1.3.1_linux_amd64.tar.gz
+tar -xvf c4ed_v1.3.1_linux_amd64.tar.gz
+rm -rf c4ed_v1.3.1_linux_amd64.tar.gz
 chmod +x c4ed
 mv $HOME/c4ed $(which c4ed)
 sudo systemctl restart c4ed && sudo journalctl -u c4ed -f -o cat
