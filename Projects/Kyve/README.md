@@ -52,6 +52,7 @@ go version
 # Build 05.12.23
 ```python
 cd $HOME
+mkdir -p /root/go/bin/
 wget https://github.com/KYVENetwork/chain/releases/download/v1.4.0/kyved_mainnet_linux_amd64.tar.gz
 tar -xvzf kyved_mainnet_linux_amd64.tar.gz
 chmod +x kyved
