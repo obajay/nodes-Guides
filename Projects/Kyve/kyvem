@@ -54,6 +54,7 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
+mkdir -p /root/go/bin/
 wget https://github.com/KYVENetwork/chain/releases/download/v1.4.0/kyved_mainnet_linux_amd64.tar.gz
 tar -xvzf kyved_mainnet_linux_amd64.tar.gz
 chmod +x kyved
