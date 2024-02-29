@@ -35,22 +35,22 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 04.01.24
+# Build 29.02.24
 ```python
 git clone https://github.com/DecentralCardGame/Cardchain
-wget -O Cardchaind https://github.com/DecentralCardGame/Cardchain/releases/download/v0.13.0/Cardchaind
+wget -O Cardchaind https://github.com/DecentralCardGame/Cardchain/releases/download/v0.14.1/Cardchaind
 chmod +x Cardchaind
 mv $HOME/Cardchaind /usr/local/bin
 ```
 `Cardchaind version --long | grep -e commit -e version`
-+ version: 0.13.0
-+ commit: c42ac40f7d96cda491bee605f6678236313219fd
++ version: 0.14.1
++ commit: 5cf6a3d0b725e20d0ab0d71bd0868cfa5d94f9a1
     
 # Init node and download Genesis
 ```python
-Cardchaind init STAVR_guide --chain-id cardtestnet-8
-Cardchaind config chain-id cardtestnet-8
-wget http://45.136.28.158:3000/genesis.json -O $HOME/.Cardchain/config/genesis.json
+Cardchaind init STAVR_guide --chain-id cardtestnet-9
+Cardchaind config chain-id cardtestnet-9
+wget http://45.136.28.158:3000/genesis.json -O $HOME/.cardchaind/config/genesis.json
 ```
 ## Create/recover wallet
 ```python
@@ -61,18 +61,18 @@ Cardchaind keys add <walletname> --recover
 
 ## Download addrbook
 ```python
-wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Crowd_Control/addrbook.json"
+wget -O $HOME/.cardchaind/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Crowd_Control/addrbook.json"
 ```
 
 ## Minimum gas price/Peers/Seeds
 ```python
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ubpf\"/;" ~/.Cardchain/config/app.toml
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ubpf\"/;" ~/.cardchaind/config/app.toml
 external_address=$(wget -qO- eth0.me)
-sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.Cardchain/config/config.toml
-peers="58bb9f1dcde0408fe4c3e7f8c6ccb7f8e410ca9c@202.61.225.157:26656"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.Cardchain/config/config.toml
+sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.cardchaind/config/config.toml
+peers="2aa407243c982ce2d9ee607b15418cf45b5002f7@202.61.225.157:20056"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.cardchaind/config/config.toml
 seeds=""
-sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.Cardchain/config/config.toml
+sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.cardchaind/config/config.toml
 ```
 
 
@@ -82,15 +82,15 @@ pruning="custom" &&
 pruning_keep_recent="1000" &&
 pruning_keep_every="0" &&
 pruning_interval="10" &&
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.Cardchain/config/app.toml &&
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.Cardchain/config/app.toml &&
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.Cardchain/config/app.toml &&
-sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.Cardchain/config/app.toml
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.cardchaind/config/app.toml &&
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.cardchaind/config/app.toml &&
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.cardchaind/config/app.toml &&
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.cardchaind/config/app.toml
 ```
 ### Indexer (optional)
 ```python
 ndexer="null" && \
-sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.Cardchain/config/config.toml
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.cardchaind/config/config.toml
 ```
 
 # Service file
@@ -113,7 +113,7 @@ EOF
 ```python
 SNAP_RPC=https://crowd.rpc.t.stavr.tech:443
 PEERS="ec585d7fb38b67619dcb79aad90722f0eaf0faa3@crowd.peer.stavr.tech:21206"
-sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.Cardchain/config/config.toml
+sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.cardchaind/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height) \
 && BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)) \
 && TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash); \
@@ -121,9 +121,9 @@ echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
 sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
 s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.Cardchain/config/config.toml; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.cardchaind/config/config.toml; \
 Cardchaind tendermint unsafe-reset-all
-wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Crowd_Control/addrbook.json"
+wget -O $HOME/.cardchaind/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Crowd_Control/addrbook.json"
 sudo systemctl restart Cardchaind && journalctl -u Cardchaind -f -o cat
 ```
 
@@ -131,13 +131,13 @@ sudo systemctl restart Cardchaind && journalctl -u Cardchaind -f -o cat
 ```python
 cd $HOME
 apt install lz4
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" ~/.Cardchain/config/config.toml
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" ~/.cardchaind/config/config.toml
 sudo systemctl stop Cardchaind
-cp $HOME/.Cardchain/data/priv_validator_state.json $HOME/.Cardchain/priv_validator_state.json.backup
-rm -rf $HOME/.Cardchain/data
-curl -o - -L http://crowd.snapshot.stavr.tech:1013/crowd/crowd-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.Cardchain --strip-components 2
-mv $HOME/.Cardchain/priv_validator_state.json.backup $HOME/.Cardchain/data/priv_validator_state.json
-wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Crowd_Control/addrbook.json"
+cp $HOME/.cardchaind/data/priv_validator_state.json $HOME/.cardchaind/priv_validator_state.json.backup
+rm -rf $HOME/.cardchaind/data
+curl -o - -L http://crowd.snapshot.stavr.tech:1013/crowd/crowd-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.cardchaind --strip-components 2
+mv $HOME/.cardchaind/priv_validator_state.json.backup $HOME/.cardchaind/data/priv_validator_state.json
+wget -O $HOME/.cardchaind/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Crowd_Control/addrbook.json"
 sudo systemctl restart Cardchaind && journalctl -u Cardchaind -f -o cat
 ```
 
@@ -162,7 +162,7 @@ Cardchaind tx staking create-validator \
 --pubkey  $(Cardchaind tendermint show-validator) \
 --moniker STAVR_Guide \
 --fees 300ubpf \
---chain-id cardtestnet-8 -y
+--chain-id cardtestnet-9 -y
 ```
 [🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Crowd_Control)
 =
@@ -172,7 +172,7 @@ Cardchaind tx staking create-validator \
 ```python
 sudo systemctl stop Cardchaind
 sudo rm /etc/systemd/system/Cardchaind.service
-sudo rm -rf $HOME/.Cardchain/
+sudo rm -rf $HOME/.cardchaind/
 sudo rm -rf Testnet
 sudo rm -rf $(which Cardchaind)
 ```
