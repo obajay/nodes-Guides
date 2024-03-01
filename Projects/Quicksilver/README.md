@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 875504.350 | 0.070295 | 61543.578339767 |
+| QCK | 0.0704 | USD |
 
 <!-- END_TABLE -->
+
+
 
 
 
