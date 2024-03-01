@@ -162,7 +162,7 @@ Cardchaind tx staking create-validator \
 --pubkey  $(Cardchaind tendermint show-validator) \
 --moniker STAVR_Guide \
 --fees 300ubpf \
---chain-id cardtestnet-9 -y
+--chain-id cardtestnet-10 -y
 ```
 [🧩Services and Tools🧩](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Crowd_Control)
 =
