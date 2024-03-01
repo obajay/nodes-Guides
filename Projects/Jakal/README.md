@@ -6,15 +6,6 @@
 <!-- END_TABLE -->
 
 
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/jackal/jklvaloper1us3q2ytkn9zyn99gvf66u6nsn3wnq0n3kxpyvm)
 =
 
