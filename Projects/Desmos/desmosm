@@ -57,7 +57,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME && mkdir -p go/bin/
 git clone https://github.com/desmos-labs/desmos.git
 cd desmos
-git checkout v6.2.0
+git checkout v7.0.1
 make install
 
 desmos init $Validator_Name --chain-id $CHAIN_ID
@@ -150,8 +150,11 @@ sudo systemctl restart desmos && sudo journalctl -u desmos -f -o cat
 break
 ;;
 "UPDATE")
-echo -e "      \e[1m\e[32m SOOOON\e[0m"
-desmos version
+cd $HOME/desmos
+git pull
+git checkout v7.0.1
+make install
+sudo systemctl restart desmos && sudo journalctl -u desmos -f -o cat
 
 break
 ;;
