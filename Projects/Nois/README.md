@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 818680.907 | null | 0 |
+| 818953.557 | null | 0 |
 
 <!-- END_TABLE -->
+
+
 
 
 
