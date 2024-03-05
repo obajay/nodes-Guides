@@ -41,23 +41,29 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 19.12.23
+# Build 06.03.24
 ```python
 cd $HOME && mkdir -p go/bin/
 git clone https://github.com/oraichain/orai
 cd orai/orai
-git checkout v0.41.5
+git checkout v0.41.7
 make install
 
 ```
-*******🟢UPDATE🟢******* 00.00.23
+*******🟢UPDATE🟢******* 06.03.24
 ```python
-SOOON
+cd $HOME/orai/orai
+git checkout v0.41.7
+make install
+oraid version --long | grep -e commit -e version
+#commit: 493537ddfe11ca9f022cb2880fe27f01a306aa77
+#version: v0.41.7
+sudo systemctl restart oraid && sudo journalctl -u oraid -f -o cat
 ```
 
 `oraid version --long | grep -e commit -e version`
-- version: v0.41.5
-- commit: 8e7bec57573e5648cadb66c8500d9b546a2b1b81
+- version: v0.41.7
+- commit: 493537ddfe11ca9f022cb2880fe27f01a306aa77
 
 ```python
 oraid init STAVR_guide --chain-id Oraichain
