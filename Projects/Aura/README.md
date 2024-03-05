@@ -5,62 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/aura/auravaloper1ucp33srru7g45ku6w207kc4hy6xd6psvmxw3xf)
 =
 
@@ -101,30 +45,30 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-# Build 13.12.23
+# Build 05.03.24
 ```python
 cd $HOME
 git clone https://github.com/aura-nw/aura
 cd aura
-git checkout v0.7.2
+git checkout v0.7.3
 make install
 ```
 
-*******🟢UPDATE🟢******* 13.12.23
+*******🟢UPDATE🟢******* 07.03.24
 ```python
 cd $HOME/aura
 git fetch --all
-git checkout v0.7.2
+git checkout v0.7.3
 make install
 aurad version --long | head
-#version: v0.7.2
-#commit: fdf7ce2bd703d75ce8a6d581d93d8051ebce2e03
+#version: v0.7.3
+#commit: abe5d816db0bb03397f7063ab51250d8053f99e4
 sudo systemctl restart aurad && journalctl -u aurad -f -o cat
 ```
 
 `aurad version --long | head`
-+ version: v0.7.2
-+ commit: fdf7ce2bd703d75ce8a6d581d93d8051ebce2e03
++ version: v0.7.3
++ commit: abe5d816db0bb03397f7063ab51250d8053f99e4
 
 ```python
 aurad init STAVRguide --chain-id xstaxy-1
