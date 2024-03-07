@@ -301,7 +301,7 @@ althea tx staking edit-validator \
 --details "Your_Description" \
 --website "Your_Website" \
 --security-contact "Your_Email" \
---chain-id althea_417834-3 \
+--chain-id althea_417834-4 \
 --commission-rate 0.05 \
 --from Wallet_Name \
 --gas 350000 -y
@@ -325,7 +325,7 @@ althea query slashing signing-info $(althea tendermint show-validator)
 ```
 #### Unjail
 ```python
-althea tx slashing unjail --from Wallet_name --chain-id althea_417834-3 --gas 350000 -y
+althea tx slashing unjail --from Wallet_name --chain-id althea_417834-4 --gas 350000 -y
 ```
 #### Active Validators List
 ```python
@@ -343,34 +343,34 @@ VALOPER=Enter_Your_valoper_Here
 
 #### Withdraw all rewards from all validators
 ```python
-althea tx distribution withdraw-all-rewards --from Wallet_Name --chain-id althea_417834-3 --gas 350000 -y
+althea tx distribution withdraw-all-rewards --from Wallet_Name --chain-id althea_417834-4 --gas 350000 -y
 ```
 #### Withdraw and commission from your Validator
 ```python
-althea tx distribution withdraw-rewards altheavaloper1amxp0k0hg4edrxg85v07t9ka2tfuhamhldgf8e --from Wallet_Name --gas 350000 --chain-id=althea_417834-3 --commission -y
+althea tx distribution withdraw-rewards altheavaloper1amxp0k0hg4edrxg85v07t9ka2tfuhamhldgf8e --from Wallet_Name --gas 350000 --chain-id=althea_417834-4 --commission -y
 ```
 #### Delegate tokens to your validator
 ```python
-althea tx staking delegate Your_altheavalpoer........ "100000000"aalthea --from Wallet_Name --gas 350000 --chain-id=althea_417834-3 -y
+althea tx staking delegate Your_altheavalpoer........ "100000000"aalthea --from Wallet_Name --gas 350000 --chain-id=althea_417834-4 -y
 ```
 #### Delegate tokens to different validator
 ```python
-althea tx staking delegate altheavalpoer........ "100000000"aalthea --from Wallet_Name --gas 350000 --chain-id=althea_417834-3 -y
+althea tx staking delegate altheavalpoer........ "100000000"aalthea --from Wallet_Name --gas 350000 --chain-id=althea_417834-4 -y
 ```
 #### Redelegate tokens to another validator
 ```python
-althea tx staking redelegate Your_altheavalpoer........ altheavalpoer........ "100000000"aalthea --from Wallet_Name --gas 350000  --chain-id=althea_417834-3 -y
+althea tx staking redelegate Your_altheavalpoer........ altheavalpoer........ "100000000"aalthea --from Wallet_Name --gas 350000  --chain-id=althea_417834-4 -y
 ```
 
 #### Unbond tokens from your validator or different validator
 ```python
-althea tx staking unbond Your_altheavalpoer........ "100000000"aalthea --from Wallet_Name --gas 350000 --chain-id=althea_417834-3 -y
-althea tx staking unbond altheavalpoer........ "100000000"aalthea --from Wallet_Name --gas 350000 --chain-id=althea_417834-3 -y
+althea tx staking unbond Your_altheavalpoer........ "100000000"aalthea --from Wallet_Name --gas 350000 --chain-id=althea_417834-4 -y
+althea tx staking unbond altheavalpoer........ "100000000"aalthea --from Wallet_Name --gas 350000 --chain-id=althea_417834-4 -y
 ```
 
 #### Transfer tokens from wallet to wallet
 ```python
-althea tx bank send Your_altheaaddress............ altheaaddress........... "1000000000000000000"aalthea --gas 350000 --chain-id=althea_417834-3 -y
+althea tx bank send Your_altheaaddress............ altheaaddress........... "1000000000000000000"aalthea --gas 350000 --chain-id=althea_417834-4 -y
 ```
 
 # 📝Governance
@@ -387,15 +387,15 @@ althea query gov proposal 1
 
 #### Vote yes
 ```python
-althea tx gov vote 1 yes --from Wallet_Name --gas 350000  --chain-id=althea_417834-3 -y
+althea tx gov vote 1 yes --from Wallet_Name --gas 350000  --chain-id=althea_417834-4 -y
 ```
 #### Vote no
 ```python
-althea tx gov vote 1 no --from Wallet_Name --gas 350000  --chain-id=althea_417834-3 -y
+althea tx gov vote 1 no --from Wallet_Name --gas 350000  --chain-id=althea_417834-4 -y
 ```
 #### Vote abstain
 ```python
-althea tx gov vote 1 abstain --from Wallet_Name --gas 350000  --chain-id=althea_417834-3 -y
+althea tx gov vote 1 abstain --from Wallet_Name --gas 350000  --chain-id=althea_417834-4 -y
 ```
 #### Vote no_with_veto
 ```python
