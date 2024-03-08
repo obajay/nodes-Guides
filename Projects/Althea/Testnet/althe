@@ -62,7 +62,7 @@ sudo mv althea-linux-amd64 $HOME/go/bin/althea
 althea init $Validator_Name --chain-id $CHAIN_ID
 
 wget -O $HOME/.althea/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Althea/Testnet/genesis.json"
-wget -O $HOME/.althea/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Althea/addrbook.json"
+wget -O $HOME/.althea/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Althea/Testnet/addrbook.json"
 
 
 
