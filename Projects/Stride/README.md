@@ -5,83 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/stride/stridevaloper1n94ndmxqf7vke553lr3ewwt4edtc4g6mdyx9qn)
 =
 
@@ -122,28 +45,28 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 go version
 ```
-# Binary   30.01.24
+# Binary   11.03.24
 ```python
 cd $HOME
 git clone https://github.com/Stride-Labs/stride.git && cd stride
-git checkout v18.0.0
+git checkout v19.0.0
 make install
 ```
-*******🟢UPDATE🟢******* 30.01.24
+*******🟢UPDATE🟢******* 11.03.24
 ```python
 cd $HOME/stride
 git fetch --all
-git checkout v18.0.0
+git checkout v19.0.0
 make install
 strided version --long | grep -e commit -e version
-#commit: 4913e1dd1a9b0e6e55678d3eede25f7c8a5b43a2
-#version: v18.0.0
+#commit: 531aaa3bf639f1425f61d186b83d1e114fa55255
+#version: v19.0.0
 sudo systemctl restart strided && journalctl -u strided -f -o cat
 ```
 
 `strided version`
-+ commit: 4913e1dd1a9b0e6e55678d3eede25f7c8a5b43a2
-+ version: v18.0.0
++ commit: 531aaa3bf639f1425f61d186b83d1e114fa55255
++ version: v19.0.0
 
 
 ## Initialisation
