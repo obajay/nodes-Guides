@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-wget -O althe https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Althea/althe && chmod +x althe && ./althe
+wget -O althe https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Althea/Testnet/althe && chmod +x althe && ./althe
 ```
 
 # 2) Manual installation
@@ -71,7 +71,7 @@ althea keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O $HOME/.althea/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Althea/genesis.json"
+wget -O $HOME/.althea/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Althea/Testnet/genesis.json"
 
 ```
 `sha256sum $HOME/.althea/config/genesis.json`
@@ -109,7 +109,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.althea/config/config.
 
 ## Download addrbook
 ```python
-wget -O $HOME/.althea/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Althea/addrbook.json"
+wget -O $HOME/.althea/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Althea/Testnet/addrbook.json"
 ```
 
 # Create a service file
