@@ -130,7 +130,7 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-# StateSync Althea Testnet
+# StateSync Althea Mainnet
 ```python
 SNAP_RPC=https://althea.rpc.m.stavr.tech:443
 peers="a1ef55814e2b9aa6c75fbdda52a0ce3d10aebfec@althea.peers.stavr.tech:17886"
@@ -149,14 +149,14 @@ s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.althea/config/config.toml
 althea tendermint unsafe-reset-all --home /root/.althea
 systemctl restart althea && journalctl -u althea -f -o cat
 ```
-# SnapShot Testnet (~0.2GB) updated every 5 hours  
+# SnapShot Mainnet updated every 5 hours  
 ```python
 cd $HOME
 apt install lz4
 sudo systemctl stop althea
 cp $HOME/.althea/data/priv_validator_state.json $HOME/.althea/priv_validator_state.json.backup
 rm -rf $HOME/.althea/data
-curl -o - -L http://althea.snapshot.stavr.tech:1020/althea/althea-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.althea --strip-components 2
+curl -o - -L https://althea.snapshot.stavr.tech/althea-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.althea --strip-components 2
 mv $HOME/.althea/priv_validator_state.json.backup $HOME/.althea/data/priv_validator_state.json
 wget -O $HOME/.althea/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Althea/addrbook.json"
 sudo systemctl restart althea && journalctl -u althea -f -o cat
@@ -181,7 +181,8 @@ althea tx staking create-validator \
 --from <wallet> \
 --moniker="STAVR_guide" \
 --chain-id althea_417834-4 \
---gas 350000 \
+--gas 300000 \
+--fees 30000000000000000aalthea \
 --identity="" \
 --website="" \
 --details="" -y
