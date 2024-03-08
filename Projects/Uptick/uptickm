@@ -56,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/UptickNetwork/uptick.git
 cd uptick
-git checkout v0.2.18
+git checkout v0.2.19
 make install
 
 uptickd init $Validator_Name --chain-id $CHAIN_ID
@@ -143,7 +143,7 @@ break
 "UPDATE")
 cd $HOME/uptick
 git fetch --all
-git checkout v0.2.18
+git checkout v0.2.19
 make install
 sudo systemctl restart uptickd && journalctl -u uptickd -f -o cat
 
