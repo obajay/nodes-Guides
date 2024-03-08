@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-SOOON
+wget -O altheam https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Althea/altheam && chmod +x altheam && ./altheam
 ```
 
 # 2) Manual installation
