@@ -133,7 +133,7 @@ EOF
 # StateSync Althea Mainnet
 ```python
 SNAP_RPC=https://althea.rpc.m.stavr.tech:443
-peers="a1ef55814e2b9aa6c75fbdda52a0ce3d10aebfec@althea.peers.stavr.tech:17886"
+peers="063fec5334040572f55b06f9ff6284d0f2f01ced@althea.peers.stavr.tech:17886"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.althea/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
