@@ -235,3 +235,184 @@ sudo journalctl -u c4ed -f -o cat
 ```python
 c4ed query bank balances c4e...address1yjgn7z09ua9vms259j
 ```
+
+<h1 align="center"> 📚Useful commands📚 </h1>
+
+# ⚙️Service
+
+#### Info
+```python
+c4ed status 2>&1 | jq .NodeInfo
+c4ed status 2>&1 | jq .SyncInfo
+c4ed status 2>&1 | jq .ValidatorInfo
+```
+#### Check node logs
+```python
+sudo journalctl -fu c4ed -o cat
+```
+#### Check service status
+```python
+sudo systemctl status c4ed
+```
+#### Restart service
+```python
+sudo systemctl restart c4ed
+```
+#### Stop service
+```python
+sudo systemctl stop c4ed
+```
+#### Start service
+```python
+sudo systemctl start c4ed
+```
+#### reload/disable/enable
+```python
+sudo systemctl daemon-reload
+sudo systemctl disable c4ed
+sudo systemctl enable c4ed
+```
+#### Your Peer
+```python
+echo $(c4ed tendermint show-node-id)'@'$(wget -qO- eth0.me)':'$(cat $HOME/.c4e-chain/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
+```
+
+# 🥅Working with keys
+
+#### New Key or Recover Key
+```python
+c4ed keys add Wallet_Name
+      OR
+c4ed keys add Wallet_Name --recover
+```
+#### Check all keys
+```python
+c4ed keys list
+```
+#### Check Balance
+```python
+c4ed query bank balances c4e...addressjkl1yjgn7z09ua9vms259j
+```
+#### Delete Key
+```python
+c4ed keys delete Wallet_Name
+```
+#### Export Key
+```python
+c4ed keys export wallet
+```
+#### Import Key
+```python
+c4ed keys import wallet wallet.backup
+```
+
+# 🚀Validator Management
+
+#### Edit Validator
+```python
+c4ed tx staking edit-validator \
+--new-moniker "Your_Moniker" \
+--identity "Keybase_ID" \
+--details "Your_Description" \
+--website "Your_Website" \
+--security-contact "Your_Email" \
+--chain-id perun-1 \
+--commission-rate 0.05 \
+--from Wallet_Name \
+--gas 350000 -y
+```
+
+#### Your Valoper-Address
+```python
+c4ed keys show Wallet_Name --bech val
+```
+#### Your Valcons-Address
+```python
+c4ed tendermint show-address
+```
+#### Your Validator-Info
+```python
+c4ed query staking validator c4evaloperaddress......
+```
+#### Jail Info
+```python
+c4ed query slashing signing-info $(c4ed tendermint show-validator)
+```
+#### Unjail
+```python
+c4ed tx slashing unjail --from Wallet_name --chain-id perun-1 --gas 350000 -y
+```
+#### Active Validators List
+```python
+c4ed q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
+```
+#### Inactive Validators List
+```python
+c4ed q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
+```
+#### Check that your key matches the validator  (Win - Good.  Lose - Bad)
+```python
+VALOPER=Enter_Your_valoper_Here
+[[ $(c4ed  q staking validator $VALOPER -oj | jq -r .consensus_pubkey.key) = $(c4ed status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "\nYou win\n" || echo -e "\nYou lose\n"
+```
+
+#### Withdraw all rewards from all validators
+```python
+c4ed tx distribution withdraw-all-rewards --from Wallet_Name --chain-id perun-1 --gas 350000 -y
+```
+#### Withdraw and commission from your Validator
+```python
+c4ed tx distribution withdraw-rewards c4evaloper1amxp0k0hg4edrxg85v07t9ka2tfuhamhldgf8e --from Wallet_Name --gas 350000 --chain-id=perun-1 --commission -y
+```
+#### Delegate tokens to your validator
+```python
+c4ed tx staking delegate Your_c4evalpoer........ "100000000"uc4e --from Wallet_Name --gas 350000 --chain-id=perun-1 -y
+```
+#### Delegate tokens to different validator
+```python
+c4ed tx staking delegate c4evalpoer........ "100000000"uc4e --from Wallet_Name --gas 350000 --chain-id=perun-1 -y
+```
+#### Redelegate tokens to another validator
+```python
+c4ed tx staking redelegate Your_c4evalpoer........ c4evalpoer........ "100000000"uc4e --from Wallet_Name --gas 350000  --chain-id=perun-1 -y
+```
+
+#### Unbond tokens from your validator or different validator
+```python
+c4ed tx staking unbond Your_c4evalpoer........ "100000000"uc4e --from Wallet_Name --gas 350000 --chain-id=perun-1 -y
+c4ed tx staking unbond c4evalpoer........ "100000000"uc4e --from Wallet_Name --gas 350000 --chain-id=perun-1 -y
+```
+
+#### Transfer tokens from wallet to wallet
+```python
+c4ed tx bank send Your_c4eaddress............ c4eaddress........... "1000000000000000000"uc4e --gas 350000 --chain-id=perun-1 -y
+```
+
+# 📝Governance
+
+#### View all proposals
+```python
+c4ed query gov proposals
+```
+
+#### View specific proposal
+```python
+c4ed query gov proposal 1
+```
+
+#### Vote yes
+```python
+c4ed tx gov vote 1 yes --from Wallet_Name --gas 350000  --chain-id=perun-1 -y
+```
+#### Vote no
+```python
+c4ed tx gov vote 1 no --from Wallet_Name --gas 350000  --chain-id=perun-1 -y
+```
+#### Vote abstain
+```python
+c4ed tx gov vote 1 abstain --from Wallet_Name --gas 350000  --chain-id=perun-1 -y
+```
+#### Vote no_with_veto
+```python
+c4ed tx gov vote 1 no_with_veto --from Wallet_Name --gas 350000  --chain-id=perun-1 -y
+```
