@@ -5,34 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/lumnetwork/lumvaloper1rs6733nm675q3hzx85dl75t3q893tfukyz22he)
 =
 
@@ -77,30 +49,30 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 01.02.24
+# Build 12.03.24
 ```python
 cd $HOME
 git clone https://github.com/lum-network/chain.git lum
 cd lum
-git checkout v1.6.4
+git checkout v1.6.5
 make install
 
 ```
-*******🟢UPDATE🟢******* 01.02.24
+*******🟢UPDATE🟢******* 12.03.24
 ```python
 cd $HOME/chain
 git pull
-git checkout v1.6.4
+git checkout v1.6.5
 make install
 lumd version --long | grep -e commit -e version
-#version: 1.6.4
-#commit: 808aad2ee95e4e43ed117de1e2c85acb6e0d9e10
+#version: 1.6.5
+#commit: 255e6e549f3ab50cd24b6b7bfbe72167aadd4e2e
 sudo systemctl restart lumd && sudo journalctl -u lumd -f -o cat
 ```
 
 `lumd version --long | head`
-- version: 1.6.4
-- commit: 808aad2ee95e4e43ed117de1e2c85acb6e0d9e10
+- version: 1.6.5
+- commit: 255e6e549f3ab50cd24b6b7bfbe72167aadd4e2e
 
 ```python
 lumd init STAVR_guide --chain-id lum-network-1
