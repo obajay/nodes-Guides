@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 255.5 | 0.173721 | 44.402552365 |
+| 255.5 | 0.174691 | 44.650481377 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/odin/odinvaloper1qy8ydw4vxpvlkxfkk8lqtpffwpqk0d8th2v9ly)
 =
