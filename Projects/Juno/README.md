@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 7240.9 | 0.428968 | 3106.145523 |
+| 7241.8 | 0.414083 | 2998.734393 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/juno/junovaloper177svs8gyz28pupaj6amgls6rahcmwmwq06fukv)
 =
