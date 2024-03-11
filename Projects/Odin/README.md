@@ -5,18 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/odin/odinvaloper1qy8ydw4vxpvlkxfkk8lqtpffwpqk0d8th2v9ly)
 =
 
@@ -66,7 +54,7 @@ go version
 # Build 11.03.24
 ```python
 cd $HOME && mkdir -p go/bin/
-git clone https://github.com/ODIN-PROTOCOL/odin-core.git
+git checkout 00ae85d4df52a4e2e86b78698fbd82db35168360
 cd odin-core
 git fetch --tags
 git checkout v0.7.11
@@ -77,17 +65,17 @@ make install
 ```python
 cd $HOME/odin-core
 git pull
-git checkout v0.7.11
+git checkout 00ae85d4df52a4e2e86b78698fbd82db35168360
 make install
 odind version --long | grep -e commit -e version
-#version: 0.7.11
-#commit: 159ad293ae15ac944c1905955c2b898a4c6fb90c
+#version: 0.7.11-7-g00ae85d4
+#commit: 00ae85d4df52a4e2e86b78698fbd82db35168360
 sudo systemctl restart odind && sudo journalctl -u odind -f -o cat
 ```
 
 `odind version --long | grep -e commit -e version`
-- version: 0.7.11
-- commit: 159ad293ae15ac944c1905955c2b898a4c6fb90c
+- version: 0.7.11-7-g00ae85d4
+- commit: 00ae85d4df52a4e2e86b78698fbd82db35168360
 
 ```python
 odind init STAVR_guide --chain-id odin-mainnet-freya
