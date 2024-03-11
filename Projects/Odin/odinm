@@ -57,7 +57,7 @@ cd $HOME && mkdir -p go/bin/
 git clone https://github.com/ODIN-PROTOCOL/odin-core.git
 cd odin-core
 git fetch --tags
-git checkout v0.7.11
+git checkout 00ae85d4df52a4e2e86b78698fbd82db35168360
 make install
 
 odind init $Validator_Name --chain-id $CHAIN_ID
@@ -157,7 +157,7 @@ break
 "UPDATE")
 cd $HOME/odin-core
 git pull
-git checkout v0.7.11
+git checkout 00ae85d4df52a4e2e86b78698fbd82db35168360
 make install
 sudo systemctl restart odind && sudo journalctl -u odind -f -o cat
 
