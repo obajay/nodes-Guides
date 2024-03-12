@@ -5,7 +5,8 @@
 
 <!-- END_TABLE -->
 
-
+[🔥OUR VALIDATOR🔥](https://restake.app/chihuahua/chihuahuavaloper1my7fdnj0dl04rvqnjh92r5epq4c8808xw2jytk)
+=
 
 # Chihuahua Mainnet guide
 
