@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 82470.435 | 0.167601 | 13822.127380 |
+| 82470.435 | 0.176305 | 14539.950047 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/agoric/agoricvaloper16w8w9l89av0vey6gdreatkuh43n69u7je2t7l2)
 =
