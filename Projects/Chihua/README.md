@@ -1,3 +1,10 @@
+<!-- START_TABLE -->
+| 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
+|-------------|---------|---------------|
+| 5007100.0 | 0.00039331 | 1969.342501000 |
+
+<!-- END_TABLE -->
+
 # Chihuahua Mainnet guide
 
 ![chihua](https://github.com/obajay/nodes-Guides/assets/44331529/fde200a3-1f5d-46f1-b13f-f07c4d49fe3d)
