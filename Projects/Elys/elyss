@@ -56,8 +56,11 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/elys-network/elys elys
 cd elys
-git checkout v0.29.23
-make install
+git checkout fix/check-eden-price-non-zero
+git tag v0.29.23 -d
+git tag v0.29.23
+make build
+sudo mv $HOME/elys/build/elysd $HOME/go/bin/elysd
 
 elysd init $Validator_Name --chain-id $CHAIN_ID
 
@@ -142,10 +145,12 @@ sudo journalctl -u elysd -f -o cat
 break
 ;;
 "UPDATE")
-cd $HOME/elys
-git fetch --all
-git checkout v0.29.23
-make install
+cd $HOME/elys && git pull
+git checkout fix/check-eden-price-non-zero
+git tag v0.29.23 -d
+git tag v0.29.23
+make build
+sudo mv $HOME/elys/build/elysd $(which elysd)
 sudo systemctl restart elysd && sudo journalctl -u elysd -f -o cat
 
 break
