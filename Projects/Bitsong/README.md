@@ -5,126 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/bitsong/bitsongvaloper1c5p4sqgz5jslpywsk5c0nasqqjfucv9lvjlnry)
 =
 
@@ -166,18 +46,18 @@ source $HOME/.bash_profile && \
 go version
 ```
 
-# Build 17.02.22
+# Build 15.03.24
 ```python
 git clone https://github.com/bitsongofficial/go-bitsong/
 cd go-bitsong
-git checkout v0.14.0
+git checkout v0.15.0
 make install
 ```
-🟢UPDATE🟢 17.02.23
+🟢UPDATE🟢 15.03.24
 ```python
 cd $HOME/go-bitsong
 git fetch --all
-git checkout v0.14.0
+git checkout v0.15.0
 make install
 bitsongd version
 sudo systemctl restart bitsongd && journalctl -u bitsongd -f -o cat
@@ -185,11 +65,11 @@ sudo systemctl restart bitsongd && journalctl -u bitsongd -f -o cat
 ```
 
 `bitsongd version version --long | head`
-- version: 0.14.0
-- commit: e5847ac0b4f0319811d62140f4e438d33163ad0d
+- version: 0.15.0
+- commit: 456826d85f68958c30bc3c731b6ed260cec1aa75
 
 ```python
-bitsongd init STAVRguide --chain-id bitsong-2b
+bitsongd init STAVR_guide --chain-id bitsong-2b
 ```
 
 ## Create/recover wallet
@@ -328,12 +208,12 @@ bitsongd tx staking create-validator \
 ```
 ## Delete node
 ```python
-sudo systemctl stop bitsongd && \
-sudo systemctl disable bitsongd && \
-rm /etc/systemd/system/bitsongd.service && \
-sudo systemctl daemon-reload && \
-cd $HOME && \
-rm -rf .bitsongd && \
-rm -rf go-bitsong && \
+sudo systemctl stop bitsongd
+sudo systemctl disable bitsongd
+rm /etc/systemd/system/bitsongd.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf .bitsongd
+rm -rf go-bitsong
 rm -rf $(which bitsongd)
 ```
