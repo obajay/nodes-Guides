@@ -45,24 +45,31 @@ go version
 cd $HOME
 git clone https://github.com/elys-network/elys elys
 cd elys
-git checkout v0.29.23
-make install
+git checkout fix/check-eden-price-non-zero
+git tag v0.29.23 -d
+git tag v0.29.23
+make build
+sudo mv $HOME/elys/build/elysd $HOME/go/bin/elysd
+
 ```
 
 *******🟢UPDATE🟢******* 14.03.24
 ```python
 cd $HOME/elys && git pull
-git checkout v0.29.23
-make install
+git checkout fix/check-eden-price-non-zero
+git tag v0.29.23 -d
+git tag v0.29.23
+make build
+sudo mv $HOME/elys/build/elysd $(which elysd)
 elysd version --long | grep -e commit -e version
-#commit: 30f4313f0110d639579e78ea1033d027a6b6fa73
+#commit: 8414970048517b0f44387a9d3788b6a4c01d355f
 #version: v0.29.23
 sudo systemctl restart elysd && sudo journalctl -u elysd -f -o cat
 ```
 
 `elysd version --long`
 - version: v0.29.23
-- commit: 30f4313f0110d639579e78ea1033d027a6b6fa73
+- commit: 8414970048517b0f44387a9d3788b6a4c01d355f
 
 ```python
 elysd init STAVR_guide --chain-id elystestnet-1
