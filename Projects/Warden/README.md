@@ -133,11 +133,32 @@ EOF
 ```
 # StateSync Warden Testnet
 ```python
-SOOON
+SNAP_RPC="https://warden.rpc.t.stavr.tech:443"
+sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.warden/config/config.toml
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height) \
+&& BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)) \
+&& TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash); \
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.warden/config/config.toml; \
+wardend tendermint unsafe-reset-all --home $HOME/.warden
+wget -O $HOME/.warden/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Warden/addrbook.json"
+sudo systemctl restart wardend && journalctl -u wardend -f -o cat
 ```
 # SnapShot Testnet updated every 5 hours  
 ```python
-SOOON
+cd $HOME
+apt install lz4
+sudo systemctl stop wardend
+cp $HOME/.warden/data/priv_validator_state.json $HOME/.warden/priv_validator_state.json.backup
+rm -rf $HOME/.warden/data
+curl -o - -L https://warden-t.snapshot.stavr.tech/warden-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.warden --strip-components 2
+mv $HOME/.warden/priv_validator_state.json.backup $HOME/.warden/data/priv_validator_state.json
+wget -O $HOME/.warden/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Warden/addrbook.json"
+sudo systemctl restart wardend && journalctl -u wardend -f -o cat
 ```
 
 ## Start
