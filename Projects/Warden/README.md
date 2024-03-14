@@ -17,7 +17,7 @@
 
 # 1) Auto_install script
 ```python
-SOON
+wget -O wardent https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Warden/wardent && chmod +x wardent && ./wardent
 ```
 
 # 2) Manual installation
