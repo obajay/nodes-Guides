@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 875604.969 | 0.057956 | 50746.561593506 |
+| 875610.734 | 0.052898 | 46318.056611892 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/quicksilver/quickvaloper198arckkz24ag0c32pnhmxpfe2hyu7gkvp9tnmn)
 =
