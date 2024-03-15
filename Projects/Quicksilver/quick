@@ -151,7 +151,7 @@ break
 ;;
 "UPDATE")
 cd $HOME
-wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.5.0/quicksilverd-v1.5.0-amd64
+wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.5.1/quicksilverd-v1.5.1-amd64
 chmod +x quicksilverd
 mv $HOME/quicksilverd $(which quicksilverd)
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
