@@ -5,10 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/quicksilver/quickvaloper198arckkz24ag0c32pnhmxpfe2hyu7gkvp9tnmn)
 =
 
@@ -48,10 +44,10 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-### Bunary 12.03.24
+### Bunary 18.03.24
 ```python
 cd $HOME
-wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.5.0/quicksilverd-v1.5.0-amd64
+wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.5.1/quicksilverd-v1.5.1-amd64
 chmod +x quicksilverd
 mv $HOME/quicksilverd $HOME/go/bin/quicksilverd
 ```
@@ -69,8 +65,8 @@ sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 ```
 
 `quicksilverd version`
-+ version: v1.5.0
-+ commit: f3fb2d9b0a156eb01d8c2d410510ad5ae7bc3247
++ version: v1.5.1
++ commit: ee78617a6fb403baf2cf9c7a951b6a0c7d8be079
 
 ### Initialize the node
 ```python
