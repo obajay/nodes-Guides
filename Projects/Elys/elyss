@@ -76,6 +76,14 @@ sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:2
 peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.elys/config/config.toml
 seeds=""
+CONFIG_TOML="$HOME/.elys/config/config.toml"
+sed -i 's/timeout_propose =.*/timeout_propose = "3s"/g' $CONFIG_TOML
+sed -i 's/timeout_propose_delta =.*/timeout_propose_delta = "500ms"/g' $CONFIG_TOML
+sed -i 's/timeout_prevote =.*/timeout_prevote = "1s"/g' $CONFIG_TOML
+sed -i 's/timeout_prevote_delta =.*/timeout_prevote_delta = "500ms"/g' $CONFIG_TOML
+sed -i 's/timeout_precommit =.*/timeout_precommit = "1s"/g' $CONFIG_TOML
+sed -i 's/timeout_precommit_delta =.*/timeout_precommit_delta = "500ms"/g' $CONFIG_TOML
+sed -i 's/^timeout_commit =.*/timeout_commit = "5s"/g' $CONFIG_TOML
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.elys/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.elys/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.elys/config/config.toml
