@@ -56,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME && mkdir -p go/bin/
 git clone https://github.com/medibloc/panacea-core
 cd panacea-core
-git checkout v2.0.7-2
+git checkout v2.2.0
 make install
 
 panacead init $Validator_Name --chain-id $CHAIN_ID
@@ -151,7 +151,10 @@ sudo systemctl restart panacead && sudo journalctl -u panacead -f -o cat
 break
 ;;
 "UPDATE")
-panacead version
+cd $HOME/panacea-core && git pull
+git checkout v2.2.0
+make install
+sudo systemctl restart panacead && journalctl -u panacead -f -o cat
 
 
 break
