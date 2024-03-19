@@ -1,9 +1,11 @@
 <!-- START_TABLE -->
 | 🛡Trusted Delegations🛡 | Token price🧲 | 💰Result in USD💰 |
 |-------------|---------|---------------|
-| 13502040.625 | 0.194298 | 2623419.489473411 |
+| 13502041.442 | 0.179663 | 2425817.271730410 |
 
 <!-- END_TABLE -->
+
+
 
 [🔥OUR VALIDATOR🔥](https://restake.app/sge/sgevaloper105xysdmvy6xyz3ytyk62fgkwyczx2n4vzkyp6g)
 =
