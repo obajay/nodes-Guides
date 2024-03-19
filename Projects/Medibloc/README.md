@@ -41,23 +41,29 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 04.07.23
+# Build 21.03.24
 ```python
 cd $HOME && mkdir -p go/bin/
 git clone https://github.com/medibloc/panacea-core
 cd panacea-core
-git checkout v2.0.7-2
+git checkout v2.2.0
 make install
 
 ```
-*******🟢UPDATE🟢******* 00.00.23
+*******🟢UPDATE🟢******* 21.03.23
 ```python
-SOOON
+cd $HOME/panacea-core && git pull
+git checkout v2.2.0
+make install
+panacead version --long | grep -e version -e commit
+#commit: 997c018fa069bb99c8e2c46a841aa3e5223067be
+#version: 2.2.0
+sudo systemctl restart panacead && journalctl -u panacead -f -o cat
 ```
 
 `panacead version --long | grep -e commit -e version`
-- version: 2.0.7-2
-- commit: 7202206201b78cb3c72ca05c557f0f8af3dda593
+- version: 2.2.0
+- commit: 997c018fa069bb99c8e2c46a841aa3e5223067be
 
 ```python
 panacead init STAVR_guide --chain-id panacea-3
