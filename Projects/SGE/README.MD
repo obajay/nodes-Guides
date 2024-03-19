@@ -37,30 +37,29 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
-## GO 1.19
-
+## GO 1.21.4
 ```python
-ver="1.19" &&
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" &&
-sudo rm -rf /usr/local/go &&
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" &&
-rm "go$ver.linux-amd64.tar.gz" &&
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &&
-source $HOME/.bash_profile &&
+ver="1.21.4"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 go version
 ```
 
-# Build 14.01.24
+# Build 20.03.24
 ```python
 cd $HOME
 git clone https://github.com/sge-network/sge
 cd sge
-git checkout v1.3.1
+git checkout v1.5.2
 make install
 ```
 `sged version --long`
-- version: v1.3.1
-- commit: 4a96c146cbd06454806e04ad826601597f15ccb3 
+- version: v1.5.2
+- commit: d46adb82099e50f716e514326b62e30cc85ab0e2
 
 ```python
 sged init STAVR_guide --chain-id sgenet-1
