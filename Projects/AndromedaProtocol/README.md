@@ -5,20 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/andromeda/andrvaloper1xsm4dvmh5txrcteyv3yq5z8pm58mu35365tpzq)
 =
 
@@ -96,11 +82,10 @@ andromedad keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget -O $HOME/.andromeda/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/AndromedaProtocol/genesis.json"
-
+wget -L -O $HOME/.andromeda/config/genesis.json https://github.com/andromedaprotocol/mainnet/blob/release/updated_genesis.json
 ```
 `sha256sum $HOME/.andromeda/config/genesis.json`
-+ e56e97c735e0876f17b0108b3f39f955aafcd3c185372b88f04b9e1612139988
++ d98f6c7e9c6eb87d59eac0b60883131d637088415aad91f3fed58488db830452
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
@@ -108,7 +93,7 @@ sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0uandr\"/;" ~
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.andromeda/config/config.toml
 external_address=$(wget -qO- eth0.me) 
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.andromeda/config/config.toml
-peers="7a313867fb7df8e8c84c32ef35fd97a693eb4282@95.56.244.244:56656,864886d24035966ef3f27d10fe313fb5a428ce91@95.56.244.244:56657,301f9b0011f861693e08163f640c39cebbedd2f0@95.56.244.244:56658,17dda7b03ce866dbe36c048282fb742dd895a489@95.56.244.244:56659"
+peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.andromeda/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.andromeda/config/config.toml
