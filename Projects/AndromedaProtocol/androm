@@ -61,7 +61,7 @@ make install
 
 andromedad init $Validator_Name --chain-id $CHAIN_ID
 
-wget -O $HOME/.andromeda/config/genesis.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/AndromedaProtocol/genesis.json"
+wget -L -O $HOME/.andromeda/config/genesis.json https://github.com/andromedaprotocol/mainnet/blob/release/updated_genesis.json
 wget -O $HOME/.andromeda/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/AndromedaProtocol/addrbook.json"
 
 
