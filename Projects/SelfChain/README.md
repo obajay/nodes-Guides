@@ -45,7 +45,7 @@ go version
 # Build 13.09.23
 ```python
 cd $HOME
-wget https://share.utsa.tech/selfchain/selfchaind
+wget https://ss-t.selfchain.nodestake.org/selfchaind
 chmod +x selfchaind
 mv selfchaind /root/go/bin
 
