@@ -54,7 +54,7 @@ go version
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 #INSTALL
 cd $HOME
-wget https://share.utsa.tech/selfchain/selfchaind
+wget https://ss-t.selfchain.nodestake.org/selfchaind
 chmod +x selfchaind
 mv selfchaind /root/go/bin
 
