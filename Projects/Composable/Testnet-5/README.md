@@ -45,7 +45,7 @@ go version
 cd $HOME
 git clone https://github.com/notional-labs/composable-centauri
 cd composable-centauri
-git checkout v6.4.8
+git checkout v6.4.85
 make build
 cd bin
 mv centaurid $HOME/go/bin/centaurid
@@ -55,7 +55,7 @@ mv centaurid $HOME/go/bin/centaurid
 ```python
 cd $HOME/composable-centauri
 git pull
-git checkout v6.4.8
+git checkout v6.4.85
 make install
 centaurid version --long | grep -e commit -e version
 #version: v6.4.8
