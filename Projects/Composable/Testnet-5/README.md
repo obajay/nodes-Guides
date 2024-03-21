@@ -55,17 +55,17 @@ mv centaurid $HOME/go/bin/centaurid
 ```python
 cd $HOME/composable-centauri
 git pull
-git checkout v6.4.85
+git checkout v6.4.88
 make install
 centaurid version --long | grep -e commit -e version
-#version: v6.4.8
-#commit: f0497a8a96511a18bfc87f38aee6181734794545
+#version: v6.4.88
+#commit: a76ebd371059b778aa3e9799366b09e8453f114b
 sudo systemctl restart centaurid && sudo journalctl -u centaurid -f -o cat
 ```
 
 `centaurid version --long`
-- version: v6.4.8
-- commit: f0497a8a96511a18bfc87f38aee6181734794545
+- version: v6.4.88
+- commit: a76ebd371059b778aa3e9799366b09e8453f114b
 
 ```python
 centaurid init STAVR_guide --chain-id banksy-testnet-5
