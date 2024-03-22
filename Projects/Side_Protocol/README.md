@@ -40,27 +40,33 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 22.02.24
+# Build 22.03.24
 ```python
 cd $HOME && mkdir -p go/bin/
 git clone https://github.com/sideprotocol/side.git
 cd side
-git checkout v0.6.0
+git checkout v0.7.0-rc2
 make install
 
 ```
-*******🟢UPDATE🟢******* 00.00.23
+*******🟢UPDATE🟢******* 22.03.23
 ```python
-SOOON
+cd side
+git pull
+git checkout v0.7.0-rc2
+make install
+sided version --long | grep -e commit -e version`
+#version: 0.7.0-rc2
+#commit: abc51da52f8a612e2bbb25ca763b87815b0ba060
 ```
 
 `sided version --long | grep -e commit -e version`
-- version: 0.6.0
-- commit: 5bfe2591a69f6376a83cf9cb3c0124c73b81319d
+- version: 0.7.0-rc2
+- commit: abc51da52f8a612e2bbb25ca763b87815b0ba060
 
 ```python
-sided init STAVR_guide --chain-id side-testnet-2
-sided config chain-id side-testnet-2
+sided init STAVR_guide --chain-id side-testnet-3
+sided config chain-id side-testnet-3
 ```    
 
 ## Create/recover wallet
@@ -72,11 +78,10 @@ sided keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-wget https://raw.githubusercontent.com/sideprotocol/testnet/main/side-testnet-2/genesis.json -O $HOME/.side/config/genesis.json
-
+curl -s https://raw.githubusercontent.com/sideprotocol/testnet/main/side-testnet-3/pregenesis.json > ~/.side/config/genesis.json
 ```
 `sha256sum $HOME/.side/config/genesis.json`
-+ 26ab0a7a1755264e1c189937da753209bbbf4a8557391e3aaf32ddce5739168a
++ c6c90c6070604fbd555675842ea33e168a4546cbc940ce2a148afcd4e4ced8a7
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
@@ -182,7 +187,7 @@ sided tx staking create-validator \
 --pubkey $(sided tendermint show-validator) \
 --from <wallet> \
 --moniker="STAVR_guide" \
---chain-id side-testnet-2 \
+--chain-id side-testnet-3 \
 --gas 350000 \
 --identity="" \
 --website="" \
