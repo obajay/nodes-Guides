@@ -55,7 +55,7 @@ cd side
 git pull
 git checkout v0.7.0-rc2
 make install
-sided version --long | grep -e commit -e version`
+sided version --long | grep -e commit -e version
 #version: 0.7.0-rc2
 #commit: abc51da52f8a612e2bbb25ca763b87815b0ba060
 ```
