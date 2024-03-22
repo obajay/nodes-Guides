@@ -5,48 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/umee/umeevaloper1dkjcas3j43u3v6l94jhhhnjxhlnwxt3m02p4c3)
 =
 
@@ -92,21 +50,21 @@ cd umee
 git checkout v6.3.0
 make install
 ```
-*******🟢UPDATE🟢******* 08.01.24
+*******🟢UPDATE🟢******* 25.03.24
 ```python
 cd $HOME/umee
 git fetch --all
-git checkout v6.3.0
+git checkout v6.4.0
 make install
 umeed version --long | grep -e commit -e version
-#version: 6.3.0
+#version: 6.4.0
 #commit: cbf1d36e9deee4b086235a02e0fc9301e32bbcfc
 sudo systemctl restart umeed && journalctl -u umeed -f -o cat
 ```
 
 `umeed version --long`
-+ version: 6.3.0
-+ commit: cbf1d36e9deee4b086235a02e0fc9301e32bbcfc
++ version: 6.4.0
++ commit: 269f3b837d71da0ebd847bdba2db55e6542a0905
 
 ## Init
 ```python
