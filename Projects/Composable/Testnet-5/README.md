@@ -45,7 +45,7 @@ go version
 cd $HOME
 git clone https://github.com/notional-labs/composable-centauri
 cd composable-centauri
-git checkout v6_4_9
+git checkout v6.4.9
 make build
 cd bin
 mv centaurid $HOME/go/bin/centaurid
@@ -55,10 +55,10 @@ mv centaurid $HOME/go/bin/centaurid
 ```python
 cd $HOME/composable-centauri
 git pull
-git checkout v6_4_9
+git checkout v6.4.9
 make install
 centaurid version --long | grep -e commit -e version
-#version: v6_4_9
+#version: v6.4.9
 #commit: 198a50843d938224dc126b736157c8b0e2022d76
 sudo systemctl restart centaurid && sudo journalctl -u centaurid -f -o cat
 ```
