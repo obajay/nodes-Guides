@@ -56,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/terpnetwork/terp-core.git
 cd terp-core
-git checkout v4.1.1
+git checkout v4.2.0
 make install
 
 terpd init $Validator_Name --chain-id $CHAIN_ID
@@ -141,7 +141,7 @@ break
 "UPDATE")
 cd $HOME/terp-core
 git fetch --all
-git checkout v4.1.1
+git checkout v4.2.0
 make install
 sudo systemctl restart terpd && journalctl -u terpd -f -o cat
 
