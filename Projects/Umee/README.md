@@ -5,12 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/umee/umeevaloper1dkjcas3j43u3v6l94jhhhnjxhlnwxt3m02p4c3)
 =
 
@@ -48,12 +42,12 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 go version
 ```
-# Binary   08.01.24
+# Binary   25.03.24
 ```python
 cd $HOME
 git clone https://github.com/umee-network/umee.git
 cd umee
-git checkout v6.3.0
+git checkout v6.4.0
 make install
 ```
 *******🟢UPDATE🟢******* 25.03.24
