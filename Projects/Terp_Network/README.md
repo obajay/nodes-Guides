@@ -30,41 +30,41 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```
 
-## GO 1.19
+## GO 1.21.4
 ```python
-ver="1.19" && \
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
-sudo rm -rf /usr/local/go && \
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
-rm "go$ver.linux-amd64.tar.gz" && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
-source $HOME/.bash_profile && \
+ver="1.21.4"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 go version
 ```
 
-# Build 11.01.24
+# Build 26.03.24
 ```python
 cd $HOME
 git clone https://github.com/terpnetwork/terp-core.git
 cd terp-core
-git checkout v4.1.1
+git checkout v4.2.0
 make install
 ```
-*******🟢UPDATE🟢******* 11.01.24
+*******🟢UPDATE🟢******* 26.03.24
 ```python
 cd $HOME/terp-core
 git fetch --all
-git checkout v4.1.1
+git checkout v4.2.0
 make install
 terpd version --long | grep -e commit -e version
-#commit: 786a50ce8440abc3dbae17e79c1b3a74e523f6c0
-#version: 4.1.1
+#commit: dfb1cbd64be3dd7e59320a2b7997608eacb6a5c0
+#version: 4.2.0
 sudo systemctl restart terpd && journalctl -u terpd -f -o cat
 ```
 
 `terpd version --long | grep -e commit -e version`
-- version: 4.1.1
-- commit: 786a50ce8440abc3dbae17e79c1b3a74e523f6c0
+- version: 4.2.0
+- commit: dfb1cbd64be3dd7e59320a2b7997608eacb6a5c0
 
 ```python
 terpd init STAVRguide --chain-id morocco-1
