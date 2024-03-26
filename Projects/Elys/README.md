@@ -40,31 +40,31 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 19.03.24
+# Build 26.03.24
 ```python
 cd $HOME
 git clone https://github.com/elys-network/elys elys
 cd elys
-git checkout v0.29.25
+git checkout v0.29.27
 make build
 sudo mv $HOME/elys/build/elysd $HOME/go/bin/elysd
 ```
 
-*******🟢UPDATE🟢******* 19.03.24
+*******🟢UPDATE🟢******* 26.03.24
 ```python
 cd $HOME/elys && git pull
-git checkout v0.29.25
+git checkout v0.29.27
 make build
 sudo mv $HOME/elys/build/elysd $(which elysd)
 elysd version --long | grep -e commit -e version
-#commit: 3c84c6e601306f46767a57e3dd0155d1637889a1
-#version: v0.29.25
+#commit: fb4e9c6ca565524731a5634ce1ca9c41cbbce73f
+#version: v0.29.27
 sudo systemctl restart elysd && sudo journalctl -u elysd -f -o cat
 ```
 
 `elysd version --long`
-- version: v0.29.25
-- commit: 3c84c6e601306f46767a57e3dd0155d1637889a1
+- version: v0.29.27
+- commit: fb4e9c6ca565524731a5634ce1ca9c41cbbce73f
 
 ```python
 elysd init STAVR_guide --chain-id elystestnet-1
@@ -103,7 +103,7 @@ sed -i 's/timeout_prevote =.*/timeout_prevote = "1s"/g' $CONFIG_TOML
 sed -i 's/timeout_prevote_delta =.*/timeout_prevote_delta = "500ms"/g' $CONFIG_TOML
 sed -i 's/timeout_precommit =.*/timeout_precommit = "1s"/g' $CONFIG_TOML
 sed -i 's/timeout_precommit_delta =.*/timeout_precommit_delta = "500ms"/g' $CONFIG_TOML
-sed -i 's/^timeout_commit =.*/timeout_commit = "5s"/g' $CONFIG_TOML
+sed -i 's/^timeout_commit =.*/timeout_commit = "3s"/g' $CONFIG_TOML
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.elys/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.elys/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.elys/config/config.toml
