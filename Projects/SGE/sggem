@@ -56,7 +56,7 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/sge-network/sge
 cd sge
-git checkout v1.5.2
+git checkout v1.5.3
 make install
 
 sged init $Validator_Name --chain-id $CHAIN_ID
@@ -156,7 +156,7 @@ break
 ;;
 "UPDATE")
 cd $HOME/sge && git pull
-git checkout v1.5.2
+git checkout v1.5.3
 make install
 sudo systemctl restart sged && journalctl -u sged -f -o cat
 
