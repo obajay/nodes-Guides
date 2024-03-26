@@ -40,23 +40,33 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 12.03.24
+# Build 27.03.24
 ```python
 cd $HOME && mkdir -p go/bin/
-git clone --depth 1 --branch v0.1.0 https://github.com/warden-protocol/wardenprotocol/
-cd  wardenprotocol/warden/cmd/wardend
-go build
-sudo mv wardend $HOME/go/bin/
+wget https://github.com/warden-protocol/wardenprotocol/releases/download/v0.2.0/wardend_Linux_x86_64.zip
+unzip wardend_Linux_x86_64.zip
+rm -rf wardend_Linux_x86_64.zip
+chmod +x wardend
+mv wardend $HOME/go/bin/wardend
 
 ```
-*******🟢UPDATE🟢******* 00.00.23
+*******🟢UPDATE🟢******* 27.03.23
 ```python
-SOOON
+cd $HOME
+wget https://github.com/warden-protocol/wardenprotocol/releases/download/v0.2.0/wardend_Linux_x86_64.zip
+unzip wardend_Linux_x86_64.zip
+rm -rf wardend_Linux_x86_64.zip
+chmod +x wardend
+mv wardend $(which wardend)
+wardend version --long | grep -e commit -e version
+#commit: 4d37e5aa6eb2a0ee288baf3afbfec0c8b8e2551d
+#version: 0.2.0
+sudo systemctl restart wardend && sudo journalctl -u wardend -f -o cat
 ```
 
 `wardend version --long | grep -e version -e commit`
-- version: 
-- commit: 
+- version: 0.2.0
+- commit: 4d37e5aa6eb2a0ee288baf3afbfec0c8b8e2551d
 
 ```python
 wardend init STAVR_guide
