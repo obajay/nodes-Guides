@@ -5,20 +5,6 @@
 
 <!-- END_TABLE -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [🔥OUR VALIDATOR🔥](https://restake.app/sge/sgevaloper105xysdmvy6xyz3ytyk62fgkwyczx2n4vzkyp6g)
 =
 
@@ -63,17 +49,17 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 20.03.24
+# Build 27.03.24
 ```python
 cd $HOME
 git clone https://github.com/sge-network/sge
 cd sge
-git checkout v1.5.2
+git checkout v1.5.3
 make install
 ```
 `sged version --long`
-- version: v1.5.2
-- commit: d46adb82099e50f716e514326b62e30cc85ab0e2
+- version: v1.5.3
+- commit: 977c6dad66304040a11b7faa84782a1dacc1dc1f
 
 ```python
 sged init STAVR_guide --chain-id sgenet-1
