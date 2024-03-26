@@ -45,7 +45,7 @@ go version
 cd $HOME && mkdir -p go/bin/
 git clone https://github.com/sideprotocol/side.git
 cd side
-git checkout v0.7.0-rc2
+git checkout v0.7.0
 make install
 
 ```
@@ -53,16 +53,16 @@ make install
 ```python
 cd side
 git pull
-git checkout v0.7.0-rc2
+git checkout v0.7.0
 make install
 sided version --long | grep -e commit -e version
-#version: 0.7.0-rc2
-#commit: abc51da52f8a612e2bbb25ca763b87815b0ba060
+#version: 0.7.0
+#commit: 888e3d1bb860b9cb1d4d2e6cb16774fbfc5a0893
 ```
 
 `sided version --long | grep -e commit -e version`
-- version: 0.7.0-rc2
-- commit: abc51da52f8a612e2bbb25ca763b87815b0ba060
+- version: 0.7.0
+- commit: 888e3d1bb860b9cb1d4d2e6cb16774fbfc5a0893
 
 ```python
 sided init STAVR_guide --chain-id side-testnet-3
@@ -78,10 +78,10 @@ sided keys add <walletname> --recover
 
 ## Download Genesis
 ```python
-curl -s https://raw.githubusercontent.com/sideprotocol/testnet/main/side-testnet-3/pregenesis.json > ~/.side/config/genesis.json
+curl -s https://raw.githubusercontent.com/sideprotocol/testnet/main/side-testnet-3/genesis.json > ~/.side/config/genesis.json
 ```
 `sha256sum $HOME/.side/config/genesis.json`
-+ c6c90c6070604fbd555675842ea33e168a4546cbc940ce2a148afcd4e4ced8a7
++ f5ca2aea92a89449f96b9837a027667409378583d7ca8a5bf6e49e4211b93184
 
 ## Set up the minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```python
@@ -90,7 +90,7 @@ external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.side/config/config.toml
 peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.side/config/config.toml
-seeds="693bdfec73a81abddf6f758aa49321de48456a96@13.231.67.192:26656"
+seeds="e9ee4fb923d5aab89207df36ce660ff1b882fc72@136.243.33.177:21656"
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.side/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.side/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.side/config/config.toml
