@@ -40,31 +40,31 @@ source $HOME/.bash_profile
 go version
 ```
 
-# Build 26.03.24
+# Build 27.03.24
 ```python
 cd $HOME
 git clone https://github.com/elys-network/elys elys
 cd elys
-git checkout v0.29.27
+git checkout v0.29.28
 make build
 sudo mv $HOME/elys/build/elysd $HOME/go/bin/elysd
 ```
 
-*******🟢UPDATE🟢******* 26.03.24
+*******🟢UPDATE🟢******* 27.03.24
 ```python
 cd $HOME/elys && git pull
-git checkout v0.29.27
+git checkout v0.29.28
 make build
 sudo mv $HOME/elys/build/elysd $(which elysd)
 elysd version --long | grep -e commit -e version
-#commit: fb4e9c6ca565524731a5634ce1ca9c41cbbce73f
-#version: v0.29.27
+#commit: 192ed1454386fbe1cfc2bdd7b374d457ec7d7782
+#version: v0.29.28
 sudo systemctl restart elysd && sudo journalctl -u elysd -f -o cat
 ```
 
 `elysd version --long`
-- version: v0.29.27
-- commit: fb4e9c6ca565524731a5634ce1ca9c41cbbce73f
+- version: v0.29.28
+- commit: 192ed1454386fbe1cfc2bdd7b374d457ec7d7782
 
 ```python
 elysd init STAVR_guide --chain-id elystestnet-1
